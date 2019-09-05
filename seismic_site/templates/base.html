@@ -1,0 +1,20 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %} {%endblock%}</title>
+    <link csshref="{% static "
+    /base.css" %}" rel="stylesheet">
+</head>
+<body>
+<div id="header">
+    <span class="logo">Risc Seismic</span>
+</div>
+<div id="content">
+
+    {% block content %}
+    {% endblock %}
+</div>
+</body>
+</html>

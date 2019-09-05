@@ -16,27 +16,46 @@ This project is built by amazing volunteers and you can be one of them! Here's a
 
 ### Programming languages
 
-### Platforms
-
-### Frontend framework
-
-### Package managers
+Python 3
 
 ### Database technology & provider
 
-## Repos and projects
+PostgreSQL
 
-Mention all related repos and projects.
+## Getting started
+Risc Seismic is a Django application, built on top of Python 3.x with a PostgreSQL database.
 
-## Deployment
-
-Guide users through getting your code up and running on their own system. In this section you can talk about:
 1. Installation process
-2. Software dependencies
-3. Latest releases
-4. API references
 
-Describe and show how to build your code and run the tests. 
+Create a virtual environment and activate it
+```
+virtualenv venv
+source venv/bin/activate
+```
+Install the Python requirements
+```
+pip install -r requirements.txt
+```
+
+The application expects a Postgres database being set up. It is easy to do so using docker:
+
+```
+docker pull postgres
+
+docker run --name postgres-risc -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=risc_db -p 5432:5432  postgres
+```
+
+Run the initial Django migrations
+
+```
+cd seismic_site
+python manage.py migrate
+```
+
+Set up Django Admin default admin user
+```
+python manage.py createsuperuser
+```
 
 ## Feedback
 
