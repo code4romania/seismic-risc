@@ -1,3 +1,4 @@
+from ckeditor.fields import RichTextField
 from django.db import models
 from django.utils import timezone
 from django.utils.text import slugify
@@ -24,9 +25,7 @@ class Page(models.Model):
     slug = models.SlugField(
         unique=True, blank=True, null=False,
         help_text="Unique URL slug (leave empty to auto-generate)")
-    content = models.TextField(
-        blank=True,
-        help_text="Page content")
+    content = RichTextField()
     updated_on = models.DateTimeField(
         auto_now=timezone.now,
         blank=True, null=True, editable=False,
