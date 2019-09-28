@@ -15,13 +15,18 @@ class SectorChoice(Enum):
     s5 = 'Sector 5'
     s6 = 'Sector 6'
 
+BUILDING_STATUS_CHOICES = [
+    (0, 'Alege'),
+    (1, 'Acceptat'),
+    (-1, 'Respins'),
+]
 
 class SeismicCategoryChoice(Enum):
     pass
     # TODO Implement this and replace in model
 
-class Building(models.Model):
 
+class Building(models.Model):
     id_general = models.AutoField(primary_key=True)
     clasa_categorie = models.CharField(max_length=250)
     nr_pmb = models.IntegerField(null=True)
@@ -30,7 +35,7 @@ class Building(models.Model):
     loc = models.CharField(max_length=60)
     adresa = models.CharField(max_length=250, null=True)
     nr_postal = models.CharField(max_length=250)
-    sector = models.CharField(max_length=20, default='sector')
+    sector = models.CharField(max_length=20)
     nr_sector = models.IntegerField(null=True)
     an_contruire = models.IntegerField
     regim_inaltime = models.CharField(max_length=50)
@@ -41,8 +46,10 @@ class Building(models.Model):
     obs = models.CharField(max_length=1000)
     numar_cadastral = models.IntegerField(null=True)
     nr_carte_funciara = models.CharField(max_length=50)
-    actualizare_pmb = models.DateField(null=True)
-    editare_admin = models.DateField(null=True)
+    actualizare_pmb = models.DateField(null=True, blank=True)
+    editare_admin = models.DateField(null=True, blank=True)
+
+    status = models.SmallIntegerField(default=0, choices=BUILDING_STATUS_CHOICES)
 
     def __str__(self):
         return self.adresa
@@ -54,6 +61,7 @@ class BuildingEncoder(DjangoJSONEncoder):
         if isinstance(obj, Building):
             return str(obj)
         return super().default(obj)
+
 
 class BuildingResource(resources.ModelResource):
     class Meta:
@@ -89,29 +97,3 @@ class CsvFile(models.Model):
         return self.name
 
 
-class CSVFileAdmin(admin.ModelAdmin):
-
-    actions = ['import_files']
-    list_display = ['name', 'status']
-
-    def import_files(self, request, query_set):
-        for q in query_set:
-            data = tablib.import_set(open(q.file.file.name, 'rb').read())
-            changed_headers = []
-            for header in data.headers:
-                changed_headers.append(header.lower().replace(':', '').replace('.', '').strip().replace(' ', '_'))
-            data.headers = changed_headers
-            building_res = BuildingResource()
-            res = building_res.import_data(data, False, False)
-            csv_file = CsvFile.objects.get(name=q.__str__())
-            if res.has_errors() or res.has_validation_errors():
-                csv_file.status = CsvFile.UNSUCCESS
-            else:
-                csv_file.status = CsvFile.SUCCESS
-            self.message_user(request, "File with name {} {} imported.".format(q.__str__(),
-                                                                               "was" if csv_file.status == CsvFile.SUCCESS
-                                                                               else "wasn't"),
-                              messages.WARNING if csv_file.status == CsvFile.UNSUCCESS else messages.SUCCESS)
-            csv_file.save()
-
-    import_files.short_description = "Import selected files"

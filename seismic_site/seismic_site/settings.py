@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'seismic_site.apps.SeismicSiteConfig',
     'api.apps.ApiConfig',
     'map_app.apps.MapAppConfig',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [
@@ -89,8 +90,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'risc_db',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
+        'USER': 'seism',
+        'PASSWORD': 'seism',
         'HOST': 'localhost',
     }
 }
@@ -134,3 +135,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'shared-static'),
 )
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_FAIL_SILENTLY = not DEBUG
