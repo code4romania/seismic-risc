@@ -105,3 +105,4 @@ venv.bak/
 
 #Pycharm
 .idea
+.vscode

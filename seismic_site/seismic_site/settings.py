@@ -37,8 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cms.apps.CmsConfig',
     'seismic_site.apps.SeismicSiteConfig',
-
     'api.apps.ApiConfig',
     'map_app.apps.MapAppConfig',
 ]

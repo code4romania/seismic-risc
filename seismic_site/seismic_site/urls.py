@@ -22,5 +22,6 @@ urlpatterns = [
     path('jet/', include('jet.urls', 'jet')),
     path('admin/', admin.site.urls),
     path('account/', include('account.urls')),
+    path('page/', include('cms.urls')),
     path('', index, name="index"),
 ]
