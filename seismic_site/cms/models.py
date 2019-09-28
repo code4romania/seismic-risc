@@ -61,5 +61,24 @@ class Page(models.Model):
         super().save(*args, **kwargs)
 
 
+class Attachment(models.Model):
+    page = models.ForeignKey(
+        Page, blank=True, null=False, on_delete=models.CASCADE,
+        help_text="Page attachment")
+    name = models.CharField(
+        max_length=150,
+        help_text="Attachment name")
+    upload_date = models.DateTimeField(
+        auto_now=timezone.now,
+        help_text="Attachment upload date")
+    uploaded_file = models.FileField(
+        upload_to='uploads/%Y/%m/%d/', max_length=100)
+
+    def __str__(self):
+        return "{}{}".format(
+            self.uploaded_file.url,
+            self.name)
+
+
 # class InlineResource(models.Model):
 #     pass
