@@ -3,6 +3,16 @@
     <title>{{ page.title }}</title>
 </head>
 <body>
-    {{ page.content|safe }}
+
+    <div>
+        {{ page.content|safe }}
+    </div>
+
+    <ul>
+        {% for document in page.attachment_set.all %}
+        <li>{{ document.uploaded_file.url }}</li>
+        {% endfor %}
+    </ul>
+
 </body>
 </html>
