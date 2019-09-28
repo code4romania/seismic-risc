@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% load static crispy_forms_tags%}
+{% block title %}Seismic Risc{% endblock %}
+{% block content %}
+    {% if form_is_valid %}
+        <h1>Succes</h1>
+        Iți mulțumim pentru implicare. Un moderator va verifica ...
+    {% else %}
+        <h1>Adaugă clădire</h1>
+        <form action="" novalidate="" method="POST">
+            {% csrf_token %}
+            <div class="row">
+                <div class="col-12">
+                    {% crispy building_form%}
+                </div>
+            </div>
+            <input type="submit" class="btn btn-primary" value="Adaugă">
+        </form>
+    {% endif %}
+{% endblock %}

@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-from .views import index
+from . import views
 
 urlpatterns = [
     path('api/', include('api.urls')),
@@ -23,5 +23,6 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('account/', include('account.urls')),
     path('page/', include('cms.urls')),
-    path('', index, name="index"),
+    path('adauga', views.add_building, name="add-building"),
+    path('', views.index, name="index"),
 ]
