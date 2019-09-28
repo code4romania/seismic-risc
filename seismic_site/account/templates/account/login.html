@@ -1,13 +1,20 @@
 {% extends "base.html" %}
+{% load staticfiles %}
+{% block title %}Autentificare{% endblock %}
 
-{% block title %}Log-in{% endblock %}
+{% block css %}
+
+{{block.super}}
+<link href="{% static '/css/account.css' %}" rel="stylesheet" type="text/css">
+
+{% endblock %}
 
 {% block content %}
-<h1>Log-in</h1>
-<p>Please, use the following form to log-in</p>
+<h1>Autentificare</h1>
+<p>Introduceți numele de utilizator și parola pentru a accesa contul Dumneavoastră</p>
 <form action="." method="post">
     {{ form.as_p }}
     {% csrf_token %}
-    <p><input type="submit" value="Log in"</p>
+    <p><input type="submit" value="Autentificare"</p>
 </form>
 {% endblock %}

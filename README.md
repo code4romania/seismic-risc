@@ -42,20 +42,26 @@ The application expects a Postgres database being set up. It is easy to do so us
 ```
 docker pull postgres
 
-docker run --name postgres-risc -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=risc_db -p 5432:5432  postgres
+docker run --name postgres-risc -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=risc_db -p 5432:5432  postgres
 ```
 
 Run the initial Django migrations
 
 ```
 cd seismic_site
-python manage.py migrate
+python3 manage.py migrate
 ```
 
 Set up Django Admin default admin user
 ```
-python manage.py createsuperuser
+python3 manage.py createsuperuser
 ```
+
+Populate the database with some play data
+```
+python3 manage.py loaddata buildings
+```
+
 
 ## Feedback
 
