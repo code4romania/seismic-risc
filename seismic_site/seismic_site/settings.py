@@ -30,13 +30,15 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'account.apps.AccountConfig',
+    'jet',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'map_app.apps.MapAppConfig'
+    'api.apps.ApiConfig',
+    'map_app.apps.MapAppConfig',
 ]
 
 MIDDLEWARE = [
@@ -67,6 +69,8 @@ TEMPLATES = [
     },
 ]
 
+
+
 WSGI_APPLICATION = 'seismic_site.wsgi.application'
 
 # Database
@@ -76,8 +80,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'risc_db',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
+        'USER': 'seism',
+        'PASSWORD': 'seism',
         'HOST': 'localhost',
     }
 }
