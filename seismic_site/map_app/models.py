@@ -60,17 +60,24 @@ class CsvFile(models.Model):
     SUCCESS = 1
     UNSUCCESS = -1
 
+    STATUS_CHOICES = [
+        (UNSUCCESS, 'Unsuccess'),
+        (NOT_TRIED, 'Not tried'),
+        (SUCCESS, 'Success'),
+    ]
+
     name = models.CharField(max_length=255)
     file = models.FileField()
-    status = models.SmallIntegerField(default=NOT_TRIED, editable=False)
+    status = models.SmallIntegerField(default=NOT_TRIED, editable=False, choices=STATUS_CHOICES)
 
     def __str__(self):
         return self.name
 
 
 class CSVFileAdmin(admin.ModelAdmin):
-    #todo add new status field on UI
+
     actions = ['import_files']
+    list_display = ['name', 'status']
 
     def import_files(self, request, query_set):
         for q in query_set:
