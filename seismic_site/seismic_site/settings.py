@@ -75,6 +75,10 @@ TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'shared-templates'),
 )
 
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 WSGI_APPLICATION = 'seismic_site.wsgi.application'
 

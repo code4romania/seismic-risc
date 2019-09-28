@@ -103,6 +103,9 @@ venv.bak/
 # mypy
 .mypy_cache/
 
-#Pycharm
+# IDEs
 .idea
 .vscode
+
+# files
+seismic_site/media/*

@@ -6,7 +6,7 @@ from django.utils.text import slugify
 class Category(models.Model):
     name = models.CharField(
         blank=False, null=False, max_length=150, unique=True)
-    
+
     def __str__(self):
         return "{}".format(self.name)
 
@@ -37,7 +37,7 @@ class Page(models.Model):
     is_published = models.BooleanField(
         default=False, db_index=True,
         help_text="Is this page visible on the website")
-    
+
     def __str__(self):
         return "{}".format(self.title)
 
@@ -59,6 +59,25 @@ class Page(models.Model):
                         self.slug = slugify("{} {}".format(self.title, suffix))
 
         super().save(*args, **kwargs)
+
+
+class Attachment(models.Model):
+    page = models.ForeignKey(
+        Page, blank=True, null=False, on_delete=models.CASCADE,
+        help_text="Page attachment")
+    name = models.CharField(
+        max_length=150,
+        help_text="Attachment name")
+    upload_date = models.DateTimeField(
+        auto_now=timezone.now,
+        help_text="Attachment upload date")
+    uploaded_file = models.FileField(
+        upload_to='uploads/%Y/%m/%d/', max_length=100)
+
+    def __str__(self):
+        return "{}{}".format(
+            self.uploaded_file.url,
+            self.name)
 
 
 # class InlineResource(models.Model):
