@@ -42,7 +42,7 @@ The application expects a Postgres database being set up. It is easy to do so us
 ```
 docker pull postgres
 
-docker run --name postgres-risc -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=risc_db -p 5432:5432  postgres
+docker run --name postgres-risc -e POSTGRES_USER=postgres -e POSTGRES_PASSWORD=postgres -e POSTGRES_DB=risc_db -p 5432:5432  postgres
 ```
 
 Run the initial Django migrations
