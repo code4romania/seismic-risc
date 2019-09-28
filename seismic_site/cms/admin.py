@@ -8,7 +8,6 @@ class CategoryAdmin(admin.ModelAdmin):
     list_display = ('name', )
 
 
-
 class DocumentInline(admin.TabularInline):
     model = Attachment
 
