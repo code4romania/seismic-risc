@@ -6,7 +6,7 @@ from django.utils.text import slugify
 class Category(models.Model):
     name = models.CharField(
         blank=False, null=False, max_length=150, unique=True)
-    
+
     def __str__(self):
         return "{}".format(self.name)
 
@@ -37,7 +37,7 @@ class Page(models.Model):
     is_published = models.BooleanField(
         default=False, db_index=True,
         help_text="Is this page visible on the website")
-    
+
     def __str__(self):
         return "{}".format(self.title)
 
