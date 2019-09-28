@@ -18,6 +18,8 @@ from django.urls import path, include
 from .views import index
 
 urlpatterns = [
+    path('api/', include('api.urls')),
+    path('jet/', include('jet.urls', 'jet')),
     path('admin/', admin.site.urls),
     path('account/', include('account.urls')),
     path('page/', include('cms.urls')),

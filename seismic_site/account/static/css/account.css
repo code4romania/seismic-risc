@@ -1,10 +1,9 @@
+/*Contains CSS specific to the authentication part of the application.*/
+
+
 @import url(http://fonts.googleapis.com/css?family=Muli);
 
-body {
-    margin:0;
-    padding:0;
-    font-family:helvetica, sans-serif;
-}
+
 
 p {
     line-height: 1.8;
@@ -36,13 +35,14 @@ ol {
 }
 
 #header {
-    padding:10px 100px;
-    font-size:14px;
+/*    padding:10px 100px;
+    font-size:14px; */
     background:#12c064;
     color:#fff;
     border-bottom:4px solid #1cdf78;
     overflow:auto;
 }
+
 
 #header .logo {
     font-family: 'Muli', sans-serif;
@@ -80,9 +80,12 @@ ol {
     padding-top:4px;
 }
 
+/*
 #content {
     padding:30px 100px;
 }
+*/
+
 
 /* forms */
 form {
@@ -92,6 +95,7 @@ form {
 form p {
     width:100%;
     overflow:auto;
+    padding: 0px 10px;
 }
 
 label {
@@ -106,12 +110,12 @@ input, textarea {
     margin:0 0 10px;
     background:#efefef;
     border:0;
-    padding:6px 10px;
+    padding:5px 10px;
     font-size:14px;
 }
 input[type=submit], a.button {
     font-weight:bold;
-    background:#12c064;
+    background:#EE741B;
     color:#fff;
     padding:10px 20px;
     font-size:14px;
@@ -275,3 +279,4 @@ img.user-detail {
     font-style:italic;
     color:#ccc;
 }
+
