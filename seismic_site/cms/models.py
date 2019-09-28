@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone
+from django.utils.text import slugify
 
 
 class Category(models.Model):
@@ -20,9 +21,9 @@ class Page(models.Model):
     title = models.CharField(
         blank=True, max_length=150,
         help_text="Page title")
-    url_name = models.SlugField(
-        unique=True, blank=False, null=False,
-        help_text="Page URL name")
+    slug = models.SlugField(
+        unique=True, blank=True, null=False,
+        help_text="Unique URL slug (leave empty to auto-generate)")
     content = models.TextField(
         blank=True,
         help_text="Page content")
@@ -39,6 +40,25 @@ class Page(models.Model):
     
     def __str__(self):
         return "{}".format(self.title)
+
+    def save(self, *args, **kwargs):
+        if not self.slug:
+            self.slug = slugify(self.title)
+            is_unique = False
+            suffix = 0
+            while not is_unique:
+                try:
+                    existing_page = Page.objects.get(slug=self.slug)
+                except Page.DoesNotExist:
+                    is_unique = True
+                else:
+                    if existing_page.id == self.id:
+                        is_unique = True
+                    else:
+                        suffix += 1
+                        self.slug = slugify("{} {}".format(self.title, suffix))
+
+        super().save(*args, **kwargs)
 
 
 # class InlineResource(models.Model):
