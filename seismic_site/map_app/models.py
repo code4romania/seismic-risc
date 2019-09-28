@@ -1,19 +1,27 @@
-# Create your models here.
-
-import tablib
+from django.core.serializers.json import DjangoJSONEncoder
 from django.contrib import admin, messages
 from django.db import models
-from import_export import resources
 
+from import_export import resources
+import tablib
+from enum import Enum
+
+
+class SectorChoice(Enum):
+    s1 = 'Sector 1'
+    s2 = 'Sector 2'
+    s3 = 'Sector 3'
+    s4 = 'Sector 4'
+    s5 = 'Sector 5'
+    s6 = 'Sector 6'
+
+
+class SeismicCategoryChoice(Enum):
+    pass
+    # TODO Implement this and replace in model
 
 class Building(models.Model):
-    # SECTOR_CHOICES = (
-    #     ('s1', 'Sector 1'),
-    #     ('s2', 'Sector 2'),
-    #     ('s3', 'Sector 3'),
-    #     ('s4', 'Sector 4')
-    #     ('s5', 'Sector 5')
-    # )
+
     id_general = models.AutoField(primary_key=True)
     clasa_categorie = models.CharField(max_length=250)
     nr_pmb = models.IntegerField(null=True)
@@ -39,6 +47,13 @@ class Building(models.Model):
     def __str__(self):
         return self.adresa
 
+
+
+class BuildingEncoder(DjangoJSONEncoder):
+    def default(self, obj):
+        if isinstance(obj, Building):
+            return str(obj)
+        return super().default(obj)
 
 class BuildingResource(resources.ModelResource):
     class Meta:

@@ -49,13 +49,19 @@ Run the initial Django migrations
 
 ```
 cd seismic_site
-python manage.py migrate
+python3 manage.py migrate
 ```
 
 Set up Django Admin default admin user
 ```
-python manage.py createsuperuser
+python3 manage.py createsuperuser
 ```
+
+Populate the database with some play data
+```
+python3 manage.py loaddata buildings
+```
+
 
 ## Feedback
 
