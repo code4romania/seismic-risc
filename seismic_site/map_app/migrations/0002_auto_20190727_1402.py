@@ -21,7 +21,7 @@ class Migration(migrations.Migration):
                 ('adresa', models.CharField(max_length=250)),
                 ('nr_postal', models.CharField(max_length=8)),
                 ('sector', models.CharField(default='sector', max_length=20)),
-                ('nr_Sector', models.IntegerField()),
+                ('nr_sector', models.IntegerField()),
                 ('regim_inaltime', models.CharField(max_length=50)),
                 ('nr_apart', models.IntegerField()),
                 ('arie_desfasurata', models.FloatField()),
