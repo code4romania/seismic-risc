@@ -1,191 +1,64 @@
 {% load staticfiles %} {% block css %}
+
 <link href="{% static '/css/map.css' %}" rel="stylesheet" type="text/css">
 <link href="https://openlayers.org/en/v5.3.0/css/ol.css" rel="stylesheet"
       type="text/css"> {% endblock %} {% block content %}
 
 
-<div id="map"></div>
-<div class="ol-popup" id="popup">
-    <a class="ol-popup-closer" href="#" id="popup-closer"></a>
-    <div id="popup-content"></div>
+<nav class="navbar navbar-expand-lg padding-0">
+    <button class="navbar-toggler" data-target="#navbarNav" data-toggle="collapse" type="button">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse navbar-category" id="navbarNav">
+        <ul class="navbar-nav">
+            <li class="filter-button" id="all">
+                <a class="nav-link" href="#">Toate clădirile cu risc seismic</a>
+            </li>
+            <li class="filter-button" id="rs1">
+                <a class="nav-link" href="#">Clasa RS I de risc seismic</a>
+            </li>
+            <li class="filter-button" id="rs2">
+                <a class="nav-link" href="#">Clasa RS II de risc seismic</a>
+            </li>
+            <li class="filter-button" id="rs3">
+                <a class="nav-link" href="#">Clasa RS III de risc seismic</a>
+            </li>
+            <li class="filter-button" id="rs4">
+                <a class="nav-link" href="#">Clasa RS IV de risc seismic</a>
+            </li>
+            <li class="filter-button" id="u1">
+                <a class="nav-link" href="#">Clasa U1 de risc seismic</a>
+            </li>
+            <li class="filter-button" id="u2">
+                <a class="nav-link" href="#">Clasa U2 de risc seismic</a>
+            </li>
+            <li class="filter-button" id="u3">
+                <a class="nav-link" href="#">Clasa U3 de risc seismic</a>
+            </li>
+            <li class="filter-button" id="u4">
+                <a class="nav-link" href="#">Clasa U4 de risc seismic</a>
+            </li>
+            <li class="filter-button" id="na">
+                <a class="nav-link" href="#">Fără clasă de risc seismic</a>
+            </li>
+
+        </ul>
+    </div>
+</nav>
+<div class="container-fluid">
+
+    <div class="row">
+
+        <div class="col-md-12 padding-0" id="map"></div>
+
+        <div class="padding-0" id="sidebar">
+            <a class="sidebar-closer" href="#" id="sidebar-closer"></a>
+            <div id="sidebar-content"></div>
+        </div>
+
+    </div>
+
 </div>
+
 <script src="https://cdn.rawgit.com/openlayers/openlayers.github.io/master/en/v5.3.0/build/ol.js"></script>
-<script type="text/javascript">
-    /**
-     * Elements that make up the popup.
-     */
-    var container = document.getElementById('popup');
-    var content = document.getElementById('popup-content');
-    var closer = document.getElementById('popup-closer');
-
-
-    /**
-     * Create an overlay to anchor the popup to the map.
-     */
-    var overlay = new ol.Overlay({
-        element: container,
-        autoPan: true,
-        autoPanAnimation: {
-            duration: 250
-        }
-    });
-
-
-    /**
-     * Add a click handler to hide the popup.
-     * @return {boolean} Don't follow the href.
-     */
-    closer.onclick = function() {
-        overlay.setPosition(undefined);
-        closer.blur();
-        return false;
-    };
-
-
-    // Center of Bucharest, Piata Universitatii
-    var center = [26.102, 44.435]
-
-    var map = new ol.Map({
-        target: 'map',
-        layers: [
-            new ol.layer.Tile({
-                source: new ol.source.OSM()
-            })
-        ],
-        overlays: [overlay],
-        view: new ol.View({
-            center: ol.proj.fromLonLat(center),
-            zoom: 12
-        })
-    });
-
-    // #region Generate fakeLocations
-
-    var fakeLocations = [];
-
-    function generateRandom() {
-
-        max = 100
-
-        min = -100
-
-        return Math.random() * (Math.floor(Math.random() * (max - min + 1)) + min) / 1000
-    }
-
-    while (fakeLocations.length <= 1000) {
-        fakeLocations.push(
-
-            {
-                name: 'Casa ' + fakeLocations.length.toString(),
-                description: 'Aceasta este casa ' + fakeLocations.length.toString(),
-                severity: fakeLocations.length % 7,
-                latitude: 44.435 + generateRandom(),
-                longitude: 26.102 + generateRandom()
-            })
-    }
-
-    // #endregion
-
-    var parsed = JSON.parse('{{building_data|safe}}');
-
-    var locations = []
-
-    function extract(item, index) {
-
-        locations.push(item.fields);
-
-    };
-
-    parsed.forEach(extract);
-
-
-
-
-    function processLocations(item, index) {
-
-
-        marker = new ol.Feature({
-            geometry: new ol.geom.Point(
-                ol.proj.fromLonLat([item.long, item.lat])
-            ),
-        });
-
-        marker.setProperties(item);
-
-        var srcImage = null;
-
-        if (item.clasa_categorie <= 1) {
-            srcImage = "{% static '/images/red.png' %}"
-        } else if (item.clasa_categorie <= 3) {
-            srcImage = "{% static '/images/orange.png' %}"
-        } else if (item.clasa_categorie <= 5) {
-            srcImage = "{% static '/images/yellow.png' %}"
-        } else {
-            srcImage = "{% static '/images/green.png' %}"
-        }
-
-
-        marker.setStyle(new ol.style.Style({
-            image: new ol.style.Icon(({
-                crossOrigin: 'anonymous',
-                src: srcImage,
-                scale: 1.5
-            })),
-            text: new ol.style.Text({
-                text: item.clasa_categorie.toString(),
-                font: '14px Calibri,sans-serif',
-                fill: new ol.style.Fill({
-                    color: '#000'
-                }),
-                stroke: new ol.style.Stroke({
-                    color: '#fff',
-                    width: 2
-                })
-            })
-        }));
-
-        var vectorSource = new ol.source.Vector({
-            features: [marker]
-        });
-
-        var markerVectorLayer = new ol.layer.Vector({
-            source: vectorSource,
-        });
-
-        map.addLayer(markerVectorLayer);
-
-    }
-
-    //fakeLocations.forEach(processLocations);
-
-    locations.forEach(processLocations);
-
-    map.on('click', function(evt) {
-
-        var feature = map.forEachFeatureAtPixel(evt.pixel, function(feature, layer) {
-            return feature;
-        });
-
-        if (feature) {
-            var coord = feature.getGeometry().getCoordinates();
-            var props = feature.getProperties();
-
-            console.log(props);
-
-            content.innerHTML = `<ul class="popup">
-                              <li>Adresa: ${props.adresa}</li>
-                              <li>Observatii: ${props.obs}</li>
-                              <li>Clasa Risc Seismic: ${props.clasa_categorie} </li>
-                              <li>Coordonate: ${props.lat} , ${props.long} </li>
-                          </ul>`;
-            //TODO Add more details here
-            //TODO Add photo of the house
-            //TODO Add link to a building page
-            overlay.setPosition(coord);
-        }
-    });
-
-
-</script>
-
-{% endblock %}
+<script src="{% static '/js/map.js' %}"></script> {% endblock %}
