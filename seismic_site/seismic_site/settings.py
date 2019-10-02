@@ -31,16 +31,18 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'account.apps.AccountConfig',
     'jet',
+    'ckeditor',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'cms.apps.CmsConfig',
     'seismic_site.apps.SeismicSiteConfig',
-
     'api.apps.ApiConfig',
     'map_app.apps.MapAppConfig',
+    'crispy_forms'
 ]
 
 MIDDLEWARE = [
@@ -74,6 +76,10 @@ TEMPLATES = [
 TEMPLATE_DIRS = (
     os.path.join(BASE_DIR, 'shared-templates'),
 )
+
+MEDIA_URL = '/media/'
+
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 WSGI_APPLICATION = 'seismic_site.wsgi.application'
@@ -130,3 +136,6 @@ STATIC_URL = '/static/'
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, 'shared-static'),
 )
+
+CRISPY_TEMPLATE_PACK = 'bootstrap4'
+CRISPY_FAIL_SILENTLY = not DEBUG
