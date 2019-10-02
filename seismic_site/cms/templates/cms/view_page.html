@@ -4,15 +4,15 @@
 </head>
 <body>
 
-<div>
-    {{ page.content|safe }}
-</div>
+    <div>
+        {{ page.content|safe }}
+    </div>
 
-<ul>
-    {% for document in page.attachment_set.all %}
-    <li>{{ document.uploaded_file.url }}</li>
-    {% endfor %}
-</ul>
+    <ul>
+        {% for document in page.attachment_set.all %}
+        <li>{{ document.uploaded_file.url }}</li>
+        {% endfor %}
+    </ul>
 
 </body>
 </html>

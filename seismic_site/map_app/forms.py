@@ -1,10 +1,10 @@
-from crispy_forms.helper import FormHelper
 from django import forms
-
+from crispy_forms.helper import FormHelper
 from . import models
 
 
 class BuildingForm(forms.ModelForm):
+
     class Meta:
         model = models.Building
         exclude = ['id_general', 'status', 'actualizare_pmb', 'editare_admin', 'lat', 'long']

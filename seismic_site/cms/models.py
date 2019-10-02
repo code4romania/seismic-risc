@@ -78,5 +78,6 @@ class Attachment(models.Model):
             self.uploaded_file.url,
             self.name)
 
+
 # class InlineResource(models.Model):
 #     pass
