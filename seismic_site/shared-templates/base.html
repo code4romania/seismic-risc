@@ -1,28 +1,23 @@
+<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, shrink-to-fit=no" name="viewport">
     <title>{% block title %} {%endblock%}</title>
-    {% load staticfiles %}
-
-    {% block css %}
+    {% load staticfiles %} {% block css %}
     <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+
     <link href="{% static '/css/base.css' %}" rel="stylesheet" type="text/css">
-    {% endblock %}
-
-
-    {% block scripts %}
-
-    <script crossorigin="anonymous"
-            integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    {% endblock %} {% block scripts %}
+    <script crossorigin="anonymous" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
             src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
-    <script crossorigin="anonymous"
-            integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    <script crossorigin="anonymous" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
             src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
-    <script crossorigin="anonymous"
-            integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    <script crossorigin="anonymous" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
-
     {% endblock %}
 
 </head>
@@ -36,7 +31,7 @@
 
 
     <a class="navbar-left" href="{% url 'index' %}">
-        <img class="seismic-logo" src="{% static '/images/logo_seismic_risk.png' %}">
+        <img alt="seismic-logo" class="seismic-logo" src="{% static '/images/logo_seismic_risk.png' %}">
     </a>
 
 
@@ -45,33 +40,33 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="#">Despre</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="#">Ghid pentru asociații de proprietari</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="#">Legislație</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="#">Bucureștiul vulnerabil</a>
             </li>
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
             </li>
 
 
             {% if user.is_authenticated %}
 
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="{% url 'login' %}">Salut, {{user.username}} </a>
                 <a class="nav-link" href="{% url 'logout' %}">Deconectare </a>
             </li>
 
 
             {% else %}
-            <li class="nav-item active">
+            <li class="nav-item">
 
                 <a class="nav-link" href="{% url 'login' %}">Autentificare</a>
 
@@ -81,7 +76,7 @@
 
 
         </ul>
-        <a href="{% url 'add-building' %}" class="btn ml-auto mr-1 add-button">   Adaugă o clădire </a>
+        <a class="btn ml-auto mr-1 add-button" href="{% url 'add-building' %}"> Adaugă o clădire </a>
     </div>
 
 
@@ -92,8 +87,8 @@
 
 <div id="content">
 
-    {% block content %}
-    {% endblock %}
+    {% block content %} {% endblock %}
 </div>
 </body>
+
 </html>

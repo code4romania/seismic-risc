@@ -1,11 +1,9 @@
-from django.core.serializers import serialize
 from django.shortcuts import render
-from map_app import models, forms
+from map_app import forms
 
 
 def index(request):
-    return render(request, "index.html",
-                  context={"building_data": serialize('json', models.Building.objects.all(), cls=models.BuildingEncoder)})
+    return render(request, "index.html")
 
 
 def add_building(request):
