@@ -91,8 +91,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'risc_db',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
+        'USER': 'seism',
+        'PASSWORD': 'seism',
         'HOST': 'localhost',
     }
 }

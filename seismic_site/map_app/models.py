@@ -19,6 +19,7 @@ BUILDING_STATUS_CHOICES = [
     (-1, 'Respins'),
 ]
 
+
 class SeismicCategoryChoice(Enum):
     pass
     # TODO Implement this and replace in model
@@ -51,6 +52,7 @@ class Building(models.Model):
 
     def __str__(self):
         return self.adresa
+
 
 class BuildingResource(resources.ModelResource):
     class Meta:
