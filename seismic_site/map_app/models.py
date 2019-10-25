@@ -1,10 +1,7 @@
-from django.core.serializers.json import DjangoJSONEncoder
-from django.contrib import admin, messages
-from django.db import models
-
-from import_export import resources
-import tablib
 from enum import Enum
+
+from django.db import models
+from import_export import resources
 
 
 class SectorChoice(Enum):
@@ -15,11 +12,13 @@ class SectorChoice(Enum):
     s5 = 'Sector 5'
     s6 = 'Sector 6'
 
+
 BUILDING_STATUS_CHOICES = [
     (0, 'Alege'),
     (1, 'Acceptat'),
     (-1, 'Respins'),
 ]
+
 
 class SeismicCategoryChoice(Enum):
     pass
@@ -37,7 +36,7 @@ class Building(models.Model):
     nr_postal = models.CharField(max_length=250)
     sector = models.CharField(max_length=20)
     nr_sector = models.IntegerField(null=True)
-    an_contruire = models.IntegerField
+    an_construire = models.IntegerField(null=True)
     regim_inaltime = models.CharField(max_length=50)
     nr_apart = models.IntegerField(null=True)
     arie_desfasurata = models.FloatField(null=True)
@@ -53,14 +52,6 @@ class Building(models.Model):
 
     def __str__(self):
         return self.adresa
-
-
-
-class BuildingEncoder(DjangoJSONEncoder):
-    def default(self, obj):
-        if isinstance(obj, Building):
-            return str(obj)
-        return super().default(obj)
 
 
 class BuildingResource(resources.ModelResource):
