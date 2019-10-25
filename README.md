@@ -1,6 +1,25 @@
 # Seismic Risc
-
 [![GitHub contributors](https://img.shields.io/github/contributors/code4romania/seismic-risc.svg?style=for-the-badge)](https://github.com/code4romania/seismic-risc/graphs/contributors) [![GitHub last commit](https://img.shields.io/github/last-commit/code4romania/seismic-risc.svg?style=for-the-badge)](https://github.com/code4romania/seismic-risc/commits/master) [![License: MPL 2.0](https://img.shields.io/badge/license-MPL%202.0-brightgreen.svg?style=for-the-badge)](https://opensource.org/licenses/MPL-2.0)
+
+<!-- Please don't remove this: Grab your social icons from https://github.com/carlsednaoui/gitsocial -->
+
+<!-- display the social media buttons in your README -->
+
+[![code for romania twitter][1.1]][1]
+[![code for romania facebook][2.1]][2]
+
+<!-- links to social media icons -->
+<!-- no need to change these -->
+
+<!-- icons with padding -->
+
+[1.1]: http://i.imgur.com/tXSoThF.png (twitter icon with padding)
+[2.1]: http://i.imgur.com/P3YfQoD.png (facebook icon with padding)
+
+[1]: https://twitter.com/Code4Romania
+[2]: https://www.facebook.com/code4romania/
+
+<!-- Please don't remove this: Grab your social icons from https://github.com/carlsednaoui/gitsocial -->
 
 Un cutremur în București nu este o situație ipotetică. Este o certitudine că acest lucru se va întâmpla. În acest context, la mai bine de 40 de ani de la cutremurul din 1977, memoria colectivă a ascuns în profunzime amintirile acelui dezastru în încercarea de a-și înnăbuși teama. Dar realitatea este că, patru decenii mai târziu, Bucureștiul, la fel ca restul orașelor cu risc seismic ridicat, nu ar face față unui asemenea eveniment, iar pierderile de vieți omenești ar fi uriașe. [Exercițiul Seism 2018](https://www.news.ro/social/exercitiul-seism-2018-cel-mai-recent-bilant-al-cutremurului-simulat-indica-peste-3-900-de-morti-peste-7-000-de-raniti-si-peste-2-300-de-persoane-disparute-1922405315222018102018579831), derulat de DSU arată că cel puţin 4.587 persoane şi-ar pierde viaţa, iar 8.585 ar fost rănite, 6 spitale vor fi distruse, 23 de unităţi spitaliceşti distruse parţial, iar 9 avariate, dar funcţionale O estimare, am spune noi, destul de optimistă.
 
@@ -17,6 +36,7 @@ Let's save lives together.
   - [Getting started](#getting-started)
     - [Installation process](#installation-process)
     - [Initial set-up](#initial-set-up)
+    - [Starting the project](#starting-the-project)
   - [Feedback](#feedback)
   - [License](#license)
   - [About Code4Ro](#about-code4ro)
@@ -92,6 +112,16 @@ Populate the database with some play data
 ```shell
 python3 manage.py loaddata buildings
 ```
+
+### Starting the project
+
+```shell
+cd seismic_site
+python3 manage.py runserver
+```
+
+If you have problems starting the project, first check out the [FAQ](https://github.com/code4romania/seismic-risc/wiki/FAQ) and if that doesn't work, ask someone from the project's channel.
+Maybe the issue you just had is worth adding to the [FAQ](https://github.com/code4romania/seismic-risc/wiki/FAQ), wouldn't it?
 
 ## Feedback
 
