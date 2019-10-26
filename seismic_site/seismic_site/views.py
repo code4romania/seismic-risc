@@ -1,9 +1,16 @@
 from django.shortcuts import render
 from map_app import forms
 
+from map_app.models import Building
+
 
 def index(request):
-    return render(request, "index.html")
+    used_categories = Building.objects.order_by().values_list(
+        'clasa_categorie', flat=True).distinct().order_by('clasa_categorie')
+
+    return render(request, "index.html", {
+        'used_categories': used_categories,
+    })
 
 
 def add_building(request):
