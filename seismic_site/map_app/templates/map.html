@@ -14,33 +14,14 @@
             <li class="filter-button" id="all">
                 <a class="nav-link" href="#">Toate clădirile cu risc seismic</a>
             </li>
-            <li class="filter-button" id="rs1">
-                <a class="nav-link" href="#">Clasa RS I de risc seismic</a>
-            </li>
-            <li class="filter-button" id="rs2">
-                <a class="nav-link" href="#">Clasa RS II de risc seismic</a>
-            </li>
-            <li class="filter-button" id="rs3">
-                <a class="nav-link" href="#">Clasa RS III de risc seismic</a>
-            </li>
-            <li class="filter-button" id="rs4">
-                <a class="nav-link" href="#">Clasa RS IV de risc seismic</a>
-            </li>
-            <li class="filter-button" id="u1">
-                <a class="nav-link" href="#">Clasa U1 de risc seismic</a>
-            </li>
-            <li class="filter-button" id="u2">
-                <a class="nav-link" href="#">Clasa U2 de risc seismic</a>
-            </li>
-            <li class="filter-button" id="u3">
-                <a class="nav-link" href="#">Clasa U3 de risc seismic</a>
-            </li>
-            <li class="filter-button" id="u4">
-                <a class="nav-link" href="#">Clasa U4 de risc seismic</a>
-            </li>
-            <li class="filter-button" id="na">
-                <a class="nav-link" href="#">Fără clasă de risc seismic</a>
-            </li>
+
+            {% for category in used_categories %}
+                <li class="filter-button" id="{{ category }}">
+                    <a class="nav-link" href="#">
+                        Clasa {{ category }} de risc seismic
+                    </a>
+                </li>
+            {% endfor %}
 
         </ul>
     </div>

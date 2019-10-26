@@ -27,7 +27,7 @@ class SeismicCategoryChoice(Enum):
 
 class Building(models.Model):
     id_general = models.AutoField(primary_key=True)
-    clasa_categorie = models.CharField(max_length=250)
+    clasa_categorie = models.CharField(max_length=50, db_index=True)
     nr_pmb = models.IntegerField(null=True)
     lat = models.FloatField(null=True)
     long = models.FloatField(null=True)
@@ -48,7 +48,8 @@ class Building(models.Model):
     actualizare_pmb = models.DateField(null=True, blank=True)
     editare_admin = models.DateField(null=True, blank=True)
 
-    status = models.SmallIntegerField(default=0, choices=BUILDING_STATUS_CHOICES)
+    status = models.SmallIntegerField(
+        default=0, choices=BUILDING_STATUS_CHOICES, db_index=True)
 
     def __str__(self):
         return self.adresa
