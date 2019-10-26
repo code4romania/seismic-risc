@@ -19,7 +19,7 @@
             "an_expertiza": 2004,
             "expert_atestat": "George Marian",
             "obs": "Observatie despre cladirea F",
-            "nr_cadastral": 666,
+            "numar_cadastral": 666,
             "nr_carte_funciara": "777",
             "actualizare_pmb": "2015-01-01",
             "editare_admin": "2015-01-01"
@@ -45,7 +45,7 @@
             "an_expertiza": 2012,
             "expert_atestat": "Ion Vasile",
             "obs": "Observatie despre cladirea E",
-            "nr_cadastral": 555,
+            "numar_cadastral": 555,
             "nr_carte_funciara": "666",
             "actualizare_pmb": "2016-02-01",
             "editare_admin": "2019-01-01"
@@ -71,7 +71,7 @@
             "an_expertiza": 2002,
             "expert_atestat": "George Marian",
             "obs": "Observatie despre cladirea D",
-            "nr_cadastral": 444,
+            "numar_cadastral": 444,
             "nr_carte_funciara": "555",
             "actualizare_pmb": "2018-01-01",
             "editare_admin": "2015-02-01"
@@ -97,7 +97,7 @@
             "an_expertiza": 2003,
             "expert_atestat": "Ion Vasile",
             "obs": "Observatie despre cladirea C",
-            "nr_cadastral": 333,
+            "numar_cadastral": 333,
             "nr_carte_funciara": "444",
             "actualizare_pmb": "2019-01-01",
             "editare_admin": "2014-01-01"
@@ -123,7 +123,7 @@
             "an_expertiza": 2001,
             "expert_atestat": "Ion Vasile",
             "obs": "Observatie despre cladirea A",
-            "nr_cadastral": 111,
+            "numar_cadastral": 111,
             "nr_carte_funciara": "222",
             "actualizare_pmb": "2015-01-01",
             "editare_admin": "2015-01-01"
@@ -149,7 +149,7 @@
             "an_expertiza": 2011,
             "expert_atestat": "George Marian",
             "obs": "Observatie despre cladirea B",
-            "nr_cadastral": 222,
+            "numar_cadastral": 222,
             "nr_carte_funciara": "333",
             "actualizare_pmb": "2015-01-01",
             "editare_admin": "2015-01-01"
