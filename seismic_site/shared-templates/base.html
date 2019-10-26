@@ -8,7 +8,7 @@
     {% load staticfiles %} {% block css %}
     <link crossorigin="anonymous" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
           integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Muli|Titillium+Web&display=swap" rel="stylesheet">
 
     <link href="{% static '/css/base.css' %}" rel="stylesheet" type="text/css">
     {% endblock %} {% block scripts %}
@@ -86,9 +86,41 @@
 
 
 <div id="content">
-
     {% block content %} {% endblock %}
 </div>
+
+{% block footer %}
+<div id="footer">
+    <div class="footer-panes">
+        <div class="footer-left-pane">
+            <div class="footer-title">
+                Linkuri utile
+            </div>
+            <ul class="footer-links">
+                <li><a href="#">Termeni și condiții</a></li>
+                <li><a href="#">Politica de confidențialitate</a></li>
+                <li><a href="#">Codul de conduită</a></li>
+                <li><a href="#">Code for Romania </a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </div>
+        <div class="footer-right-pane">
+            <div class="footer-title">
+                Abonează-te la newsletter
+            </div>
+            <form>
+                <input type="text" class="footer-newsletter-input"
+                       name="newsletter"
+                       placeholder="Introdu adresa de e-mail si apasă ENTER" />
+            </form>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div>© 2019 Code for Romania.</div>
+        <div>Organizație neguvernamentală independentă, neafiliată politic și apolitică.</div>
+    </div>
+</div>
+{% endblock %}
 </body>
 
 </html>
