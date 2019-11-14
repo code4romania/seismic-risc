@@ -5,10 +5,11 @@ var sidebar = document.getElementById('sidebar');
 // Map Div
 var mapDiv = document.getElementById("map");
 
+// TODO: replace center of Bucharest with center of Romania
 // Geographical center of Romania, Dealu Frumos, SB
 //var center = [24.685850, 45.985618]
 
-// Center of Bucharest, Piata Universitatii 
+// Center of Bucharest, Piata Universitatii
 var center = [26.102, 44.435];
 
 var map = new ol.Map({
@@ -42,7 +43,7 @@ function extract(input_array, output_array, filter) {
 
         item = input_array[i];
 
-        if (filter === null || filter === item.fields.clasa_categorie) {
+        if (filter === null || filter === item.fields.risk_category) {
             var _fields = {};
             _fields = item.fields;
             _fields.pk = item.pk;
@@ -81,11 +82,11 @@ function plot_buildings(filter = null) {
 
 plot_buildings();
 
-function createStyle(clasa_categorie) {
+function createStyle(risk_category) {
 
     var iconColor;
 
-    switch (clasa_categorie) {
+    switch (risk_category) {
         case "Rs I":
             iconColor = "#400000"
             break;
@@ -126,7 +127,7 @@ function createStyle(clasa_categorie) {
             })
             /*,
                         text: new ol.style.Text({
-                            text: clasa_categorie,
+                            text: risk_category,
                             font: '10px Calibri,sans-serif',
                             fill: new ol.style.Fill({
                                 color: '#fff'
@@ -139,7 +140,7 @@ function createStyle(clasa_categorie) {
 }
 
 // get a style (color + text) based on category
-function getStyle(clasa_categorie) {
+function getStyle(risk_category) {
 
     // stores styles so we only create them once per category
     mapStyles = {
@@ -155,7 +156,7 @@ function getStyle(clasa_categorie) {
     };
 
 
-    switch (clasa_categorie) {
+    switch (risk_category) {
         case "Rs I":
             return mapStyles.rs1
         case "Rs II":
@@ -181,13 +182,13 @@ function processLocations(item, index) {
 
     marker = new ol.Feature({
         geometry: new ol.geom.Point(
-            ol.proj.fromLonLat([item.long, item.lat])
+            ol.proj.fromLonLat([item.lng, item.lat])
         ),
     });
 
     marker.setProperties(item);
 
-    marker.setStyle(getStyle(item.clasa_categorie));
+    marker.setStyle(getStyle(item.risk_category));
 
     var vectorSource = new ol.source.Vector({
         features: [marker]
@@ -238,13 +239,13 @@ map.on('click', function(evt) {
                 result = data[0].fields
 
                 content.innerHTML = `<ul>
-                        <li><span class="detail-label">Adresă</span> ${result.adresa}  ${result.nr_postal} </li>
-                        <li><span class="detail-label">Anul construcției</span> ${result.an_construire} </li>
-                        <li><span class="detail-label">Regim înălțime</span> ${result.regim_inaltime}</li>
-                        <li><span class="detail-label">Clasa de risc</span> ${result.clasa_categorie} </li>
-                        <li><span class="detail-label">Anul expertizei seismice</span> ${result.an_expertiza}
-                        <li> <span class="detail-label">Observații</span> ${result.obs}</li>
-                        <li> <span class="detail-label">Numele expertului atestat</span> ${result.expert_atestat}</li>
+                        <li><span class="detail-label">Adresă</span> ${result.address}  ${result.post_code} </li>
+                        <li><span class="detail-label">Anul construcției</span> ${result.year_built} </li>
+                        <li><span class="detail-label">Regim înălțime</span> ${result.height_regime}</li>
+                        <li><span class="detail-label">Clasa de risc</span> ${result.risk_category} </li>
+                        <li><span class="detail-label">Anul expertizei seismice</span> ${result.examination_year}
+                        <li> <span class="detail-label">Observații</span> ${result.observations}</li>
+                        <li> <span class="detail-label">Numele expertului atestat</span> ${result.certified_expert}</li>
                     </ul>`;
 
             } else {

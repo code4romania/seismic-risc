@@ -4,10 +4,16 @@ from . import models
 
 
 class BuildingForm(forms.ModelForm):
-
     class Meta:
         model = models.Building
-        exclude = ['id_general', 'status', 'actualizare_pmb', 'editare_admin', 'lat', 'long']
+        exclude = [
+            "general_id",
+            "status",
+            "administration_update",
+            "admin_update",
+            "lat",
+            "lng",
+        ]
 
     def __init__(self, *args, **kwargs):
         super(BuildingForm, self).__init__(*args, **kwargs)
