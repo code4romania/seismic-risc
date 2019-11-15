@@ -5,12 +5,16 @@ from map_app import models
 
 
 def buildings(request):
-    buildings = serializers.serialize('json', models.Building.objects.all(),
-                                      fields=('lat', 'long', 'clasa_categorie'))
+    buildings = serializers.serialize(
+        "json",
+        models.Building.objects.all(),
+        fields=("lat", "lng", "risk_category"),
+    )
     return HttpResponse(buildings, content_type="application/json")
 
 
 def building(request, id):
     buildings = serializers.serialize(
-        'json', models.Building.objects.filter(pk=id))
+        "json", models.Building.objects.filter(pk=id)
+    )
     return HttpResponse(buildings, content_type="application/json")

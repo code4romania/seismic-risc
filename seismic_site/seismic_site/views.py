@@ -5,12 +5,14 @@ from map_app.models import Building
 
 
 def index(request):
-    used_categories = Building.objects.order_by().values_list(
-        'clasa_categorie', flat=True).distinct().order_by('clasa_categorie')
+    used_categories = (
+        Building.objects.order_by()
+        .values_list("risk_category", flat=True)
+        .distinct()
+        .order_by("risk_category")
+    )
 
-    return render(request, "index.html", {
-        'used_categories': used_categories,
-    })
+    return render(request, "index.html", {"used_categories": used_categories})
 
 
 def add_building(request):
@@ -23,8 +25,8 @@ def add_building(request):
         form_is_valid = False
 
     return_dict = {
-        'form_is_valid': form_is_valid,
-        'building_form': building_form,
+        "form_is_valid": form_is_valid,
+        "building_form": building_form,
     }
 
-    return render(request, 'add_building.html', return_dict)
+    return render(request, "add_building.html", return_dict)
