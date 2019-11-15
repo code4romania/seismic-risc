@@ -108,7 +108,6 @@ venv.bak/
 .vscode
 
 
-*.xlsx
-*.csv
 # files
 seismic_site/media/*
+~*.xlsx
