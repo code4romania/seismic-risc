@@ -9,14 +9,14 @@
     <button class="navbar-toggler" data-target="#navbarNav" data-toggle="collapse" type="button">
         <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse navbar-category" id="navbarNav">
+    <div class="collapse navbar-collapse navbar-category justify-content-lg-center" id="navbarNav">
         <ul class="navbar-nav">
-            <li class="filter-button" id="all">
+            <li class="filter-button pl-sm-2 px-lg-0" id="all">
                 <a class="nav-link" href="#">Toate clădirile cu risc seismic</a>
             </li>
 
             {% for category in used_categories %}
-                <li class="filter-button" id="{{ category }}">
+                <li class="filter-button pl-sm-2 px-lg-0" id="{{ category }}">
                     <a class="nav-link" href="#">
                         Clasa {{ category }} de risc seismic
                     </a>

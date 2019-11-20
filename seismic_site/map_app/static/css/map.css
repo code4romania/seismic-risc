@@ -4,6 +4,9 @@
     padding: 0;
 }
 
+#content {
+    padding: 5% 0;
+}
 
 /* General */
 
@@ -86,7 +89,7 @@
 
 /* RS bar */
 
-.active {
+.active, .navbar-category .active:hover {
     background-color: black;
 }
 
@@ -96,6 +99,10 @@
 
 .navbar-category {
     background-color: #EE741B;
+}
+
+.navbar-category li:hover {
+    background-color: #D66718;
 }
 
 .navbar-category a {
