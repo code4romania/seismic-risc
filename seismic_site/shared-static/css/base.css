@@ -49,15 +49,20 @@ body {
 .add-button {
     background-color: #EE741B;
     border-radius: 3px;
-    font-size: 1em;
+    min-width: 175px;
+    min-height: 50px;
+    line-height: 2.5;
+    font-size: 0.9em;
 }
 
-.add-button span {
-    background: #ffffff;
-    color: #EE741B;
-    padding: 1.5px 4px;
-    border-radius: 100%;
+.add-button svg {
+    fill: #fff
 }
+
+.add-button:hover {
+    background-color: #D66718;
+}
+
 
 /* Footer */
 
