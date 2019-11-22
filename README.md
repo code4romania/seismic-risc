@@ -74,8 +74,14 @@ Create a virtual environment and activate it
 
 ```shell
 virtualenv venv
+```
+
+```shell
 # Linux/Mac:
 source venv/bin/activate
+```
+
+```powershell
 # Windows:
 \path\to\env\Scripts\activate
 ```
@@ -92,7 +98,7 @@ The application expects a Postgres database being set up. It is easy to do so us
 
 ```shell
 docker pull postgres
-docker run --name postgres-risc -e POSTGRES_USER=seism -e POSTGRES_PASSWORD=seism -e POSTGRES_DB=risc_db -p 5432:5432  postgres
+docker run -d --name postgres-risc -e POSTGRES_USER=seism -e POSTGRES_PASSWORD=seism -e POSTGRES_DB=risc_db -p 5432:5432  postgres
 ```
 
 Run the initial Django migrations
