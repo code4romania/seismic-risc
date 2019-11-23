@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.core import serializers
 
-from map_app import models
+from buildings import models
 
 
 def buildings(request):
