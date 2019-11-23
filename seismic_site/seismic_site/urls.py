@@ -15,15 +15,20 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
-
-from . import views
-
+from rest_framework.routers import DefaultRouter
 from django.conf import settings
 from django.conf.urls.static import static
 
+from . import views
+from map_app.views import BuildingViewSet
+
+router = DefaultRouter()
+router.register(r'buildings', BuildingViewSet)
+
 
 urlpatterns = [
-    path('api/', include('api.urls')),
+    path('api/v1/', include('api.urls')),  # This is the legacy API
+    path('api/v2/', include(router.urls)),
     path('jet/', include('jet.urls', 'jet')),
     path('admin/', admin.site.urls),
     path('account/', include('account.urls')),
