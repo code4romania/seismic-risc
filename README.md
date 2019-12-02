@@ -101,6 +101,14 @@ docker pull postgres
 docker run -d --name postgres-risc -e POSTGRES_USER=seism -e POSTGRES_PASSWORD=seism -e POSTGRES_DB=risc_db -p 5432:5432  postgres
 ```
 
+If you want to stop the docker container, run the following commands & instructions:
+
+```shell
+docker ps
+# get the CONTAINER ID of the "postgres-risc" container and use it:
+docker stop CONTAINER_ID
+```
+
 Run the initial Django migrations
 
 ```shell
