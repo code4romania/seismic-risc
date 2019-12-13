@@ -1,6 +1,6 @@
 [
     {
-        "model": "map_app.building",
+        "model": "buildings.building",
         "pk": 70,
         "fields": {
             "risk_category": "RS III",
@@ -25,7 +25,7 @@
         }
     },
     {
-        "model": "map_app.building",
+        "model": "buildings.building",
         "pk": 71,
         "fields": {
             "risk_category": "RS II",
@@ -50,7 +50,7 @@
         }
     },
     {
-        "model": "map_app.building",
+        "model": "buildings.building",
         "pk": 72,
         "fields": {
             "risk_category": "RS I",
@@ -75,7 +75,7 @@
         }
     },
     {
-        "model": "map_app.building",
+        "model": "buildings.building",
         "pk": 73,
         "fields": {
             "risk_category": "N/A",
@@ -100,7 +100,7 @@
         }
     },
     {
-        "model": "map_app.building",
+        "model": "buildings.building",
         "pk": 74,
         "fields": {
             "risk_category": "U3",
@@ -125,7 +125,7 @@
         }
     },
     {
-        "model": "map_app.building",
+        "model": "buildings.building",
         "pk": 75,
         "fields": {
             "risk_category": "U1",

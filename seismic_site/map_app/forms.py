@@ -1,6 +1,6 @@
 from django import forms
 from crispy_forms.helper import FormHelper
-from . import models
+from buildings import models
 
 
 class BuildingForm(forms.ModelForm):
