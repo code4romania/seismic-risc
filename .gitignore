@@ -107,6 +107,9 @@ venv.bak/
 .idea
 .vscode
 
+# Mac stuff
+.DS_Store
+
 
 # files
 seismic_site/media/*

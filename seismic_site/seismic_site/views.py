@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from map_app import forms
 
-from map_app.models import Building
+from buildings.models import Building
 
 
 def index(request):
