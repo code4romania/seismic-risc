@@ -1,8 +1,6 @@
+from cms.models import Page
+
 def pages(request):
     return {
-        'pages': [
-            'Ghid pentru asociații de proprietari',
-            'Legislație',
-            'Bucureștiul vulnerabil',
-        ]
+        'pages': Page.objects.filter(is_published=True)
     }
