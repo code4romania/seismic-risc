@@ -1,5 +1,7 @@
 # API
 
+## Buildings
+
 - `GET` `/api/v2/buildings/`
 
 ```json
@@ -51,9 +53,54 @@
 
 ```json
 {
-    "general_id": 75,
     "certified_expert": "Temistocle Popa"
 }
 ```
 
 - `DELETE` `/api/v2/buildings/75/`
+
+
+## CMS - Pages
+
+- `GET` `/api/v2/pages/`
+
+```json
+[
+    {
+        "id": 12,
+        "title": "Page Title",
+        "slug": "page1",
+        "content": "<p>Conteeents</p>",
+        "updated_on": "2019-12-14T10:14:54.781918Z",
+        "publishing_date": null,
+        "is_published": true,
+        "category": null
+    },
+    ...
+]
+```
+
+- `GET` `/api/v2/pages/page1/` 
+
+```json
+{
+    "id": 12,
+    "title": "Page Title",
+    "slug": "page1",
+    "content": "<p>Conteeents</p>",
+    "updated_on": "2019-12-14T10:14:54.781918Z",
+    "publishing_date": null,
+    "is_published": true,
+    "category": null
+}
+```
+
+- `PATCH` `/api/v2/pages/page1/` - update only some fields
+
+```json
+{
+    "title": "New Page Title"
+}
+```
+
+- `DELETE` `/api/v2/pages/page1/`

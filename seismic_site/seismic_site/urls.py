@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 from . import views
+from cms.router import router as cms_router
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -25,6 +26,7 @@ from django.conf.urls.static import static
 urlpatterns = [
     # API
     path('api/v2/', include(('buildings.urls', 'buildings'), namespace='buildings-api')),
+    path('api/v2/', include(cms_router.urls)),
 
     path('jet/', include('jet.urls', 'jet')),
     path('admin/', admin.site.urls),
