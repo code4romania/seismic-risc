@@ -24,7 +24,6 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     # API
-    path('api/v1/', include('api.urls')),  # This is the legacy API
     path('api/v2/', include(('buildings.urls', 'buildings'), namespace='buildings-api')),
 
     path('jet/', include('jet.urls', 'jet')),

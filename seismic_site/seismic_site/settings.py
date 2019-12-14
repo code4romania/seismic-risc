@@ -41,10 +41,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'cms.apps.CmsConfig',
     'seismic_site.apps.SeismicSiteConfig',
-    'api.apps.ApiConfig',
     'map_app.apps.MapAppConfig',
+    'buildings.apps.BuildingsConfig',
     'crispy_forms',
-    'buildings'
 ]
 
 MIDDLEWARE = [
