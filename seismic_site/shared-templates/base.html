@@ -43,15 +43,16 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">Despre</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Ghid pentru asociații de proprietari</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Legislație</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Bucureștiul vulnerabil</a>
-            </li>
+
+
+            {% for page in pages %}
+                <li class="nav-item" id="{{ page }}">
+                    <a class="nav-link" href="#">
+                        {{ page }}
+                    </a>
+                </li>
+            {% endfor %}
+
             <li class="nav-item">
                 <a class="nav-link" href="#">Contact</a>
             </li>
