@@ -14,6 +14,9 @@ class Category(models.Model):
     class Meta:
         verbose_name_plural = "categories"
 
+class PageManager(models.Manager):
+    def published(self):
+        return self.filter(is_published=True)
 
 class Page(models.Model):
     category = models.ForeignKey(
@@ -36,6 +39,7 @@ class Page(models.Model):
     is_published = models.BooleanField(
         default=False, db_index=True,
         help_text="Is this page visible on the website")
+    objects = PageManager()
 
     def __str__(self):
         return "{}".format(self.title)
