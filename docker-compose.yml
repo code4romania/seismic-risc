@@ -1,0 +1,25 @@
+version: '3.7'
+
+services:
+  db:
+    image: postgres:11
+    volumes:
+      - ./.pgdata:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+  api:
+    build:
+      context: .
+      args:
+        DEVBUILD: 1
+    command: ["../wait_for_db.py && ./manage.py migrate --noinput && ./manage.py runserver 0.0.0.0:8000"]
+    volumes:
+      - .:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    environment:
+      DJANGO_CONFIGURATION:
+      DATABASE_URL:

@@ -1,0 +1,5 @@
+pytest
+pytest-django
+pytest-flake8
+pdbpp
+ipython

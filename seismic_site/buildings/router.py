@@ -8,5 +8,5 @@ router = routers.DefaultRouter()
 router.register(
     r'buildings',
     views.BuildingViewSet,
-    base_name='buildings'
+    basename='buildings'
 )
