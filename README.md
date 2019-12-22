@@ -68,67 +68,88 @@ We don't have a specific set of coding guidelines, so just follow the way the co
 
 Risc Seismic is a Django application, built on top of Python 3.x with a PostgreSQL database.
 
-### Installation process
+### Pre-requisites
 
-Create a virtual environment and activate it
+In order to run the project locally, you need to have [Docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/overview/) installed.
 
-```shell
-virtualenv venv
+You can install the above mentioned packages manually or you can use our helper commands.
+
+On `Ubuntu 18.04+` run:
+```bash
+$ make install-docker-ubuntu
 ```
 
-```shell
-# Linux/Mac:
-source venv/bin/activate
+On `MacOS` run:
+```bash
+$ make install-docker-osx
 ```
 
-```powershell
-# Windows:
-\path\to\env\Scripts\activate
-```
+On other platforms please follow the instructions described here:
+- https://docs.docker.com/install/
+- https://docs.docker.com/compose/install/
 
-Install the Python requirements
+The versions the Makefile was tested with are:
 
-```shell
-pip install -r requirements.txt
+```bash
+$ docker --version
+Docker version 19.03.5, build 633a0ea
+$ docker-compose --version
+docker-compose version 1.24.1, build 4667896b
 ```
 
 ### Initial set-up
 
-The application expects a Postgres database being set up. It is easy to do so using [docker](https://www.docker.com/products/developer-tools):
+Initialise the database and development fixtures:
 
-```shell
-docker pull postgres
-docker run -d --name postgres-risc -e POSTGRES_USER=seism -e POSTGRES_PASSWORD=seism -e POSTGRES_DB=risc_db -p 5432:5432  postgres
-```
-
-Run the initial Django migrations
-
-```shell
-cd seismic_site
-python3 manage.py migrate
-```
-
-Set up Django Admin default admin user
-
-```shell
-python3 manage.py createsuperuser
-```
-
-Populate the database with some play data
-
-```shell
-python3 manage.py loaddata buildings
+```bash
+$ make init-env
 ```
 
 ### Starting the project
 
-```shell
-cd seismic_site
-python3 manage.py runserver
+First check the `.env` file created by the init command and see if there are any environment variables that you might need to provide or change. This file is used by `docker-compose` to pass the environment variables to the container it creates.
+
+Get the project up and running:
+
+```bash
+$ docker-compose up
 ```
+
+You should be able to access the local environment site and admin at the following URLs:
+
+* http://localhost:8000/api/v2/
+* http://localhost:8000/admin/
 
 If you have problems starting the project, first check out the [FAQ](https://github.com/code4romania/seismic-risc/wiki/FAQ) and if that doesn't work, ask someone from the project's channel.
 Maybe the issue you just had is worth adding to the [FAQ](https://github.com/code4romania/seismic-risc/wiki/FAQ), wouldn't it?
+
+In order to see all available commands run:
+
+```bash
+$ make
+```
+
+### Development
+
+When creating new models in Django, in order to make sure they are generated in a clean environment, it is recommended to generate the migration files using the `make` command:
+
+```bash
+$ make migrations
+```
+
+When you need to add/remove requirements or restrict the version of a requirement, edit the `requirements.in` (prod) and the `requirements-dev.in` (dev) files accordingly. After doing this run:
+
+```bash
+$ make update-requirements
+```
+
+This will create a clean environment where is uses the [pip-tools](https://github.com/jazzband/pip-tools/) library to compile a the corresponding `requirements.txt` files with the versions of the packages pinned. This is important as it guarantees that every environment this service runs in, has the same dependencies installed and minimizes the risk of `works on my machine`.
+
+## Testing
+
+```bash
+$ make test
+```
 
 ## Feedback
 
