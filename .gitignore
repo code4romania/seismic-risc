@@ -114,3 +114,6 @@ venv.bak/
 # files
 seismic_site/media/*
 ~*.xlsx
+
+.env
+.pgdata
