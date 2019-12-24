@@ -1,5 +1,6 @@
 # django and related apps
 django<3
+django-cms
 django-configurations
 django-import-export
 django-jet
