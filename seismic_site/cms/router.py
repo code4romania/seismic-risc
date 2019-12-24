@@ -8,5 +8,5 @@ router = routers.DefaultRouter()
 router.register(
     r'pages',
     views.PagesViewSet,
-    base_name='pages'
+    basename='pages'
 )
