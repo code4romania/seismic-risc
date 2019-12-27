@@ -66,7 +66,7 @@ update-requirements: build
 	docker-compose run --rm api "cd /code && pip install pip-tools -U && pip-compile --upgrade requirements.in requirements-dev.in -o requirements-dev.txt && chmod a+r requirements-dev.txt"
 
 migrations: build
-	docker-compose run --rm api "./manage.py makemigrations"
+	docker-compose run --rm api "./manage.py makemigrations && ./manage.py migrate"
 
 shell:
 	docker-compose run --rm api "./manage.py shell"
