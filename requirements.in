@@ -20,3 +20,6 @@ brotlipy
 # misc libraries
 pytz
 tablib
+
+# wsgi server
+gunicorn

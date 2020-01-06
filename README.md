@@ -151,6 +151,33 @@ This will create a clean environment where is uses the [pip-tools](https://githu
 $ make test
 ```
 
+## Production
+
+In order to get the container ready for production use we need to first build it:
+
+```bash
+$ docker build -t seismic-risc:latest .
+```
+
+Use the `prod.env.dist` template file and create a `prod.env` file with the correct environment variables and run like so:
+
+```bash
+$ docker run --env-file prod.env -p HOST_PORT:GUNICORN_PORT seismic-risc:latest "./start.sh"
+```
+
+Or, you can provide all the environment variables at runtime:
+
+```bash
+$ docker run -e DJANGO_CONFIGURATION=Prod -e DJANGO_SECRET_KEY= -e DATABASE_URL=postgres://USER:PASSWORD@HOST:PORT/NAME -e GUNICORN_PORT=5000 -e GUNICORN_WORKERS=2 -p HOST_PORT:GUNICORN_PORT seismic-risc:latest "./start.sh"
+```
+
+After testing the container runs properly, tag and upload the image to Docker hub:
+
+```bash
+$ docker tag seismic-risc:latest code4romania/seismic-risc:latest
+$ docker push code4romania/seismic-risc:latest
+```
+
 ## Feedback
 
 - Request a new feature on GitHub.
