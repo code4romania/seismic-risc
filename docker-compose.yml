@@ -4,7 +4,7 @@ services:
   db:
     image: postgres:11
     volumes:
-      - ./.pgdata:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
     ports:
       - "5432:5432"
 
@@ -23,3 +23,6 @@ services:
     environment:
       DJANGO_CONFIGURATION:
       DATABASE_URL:
+
+volumes:
+  pgdata:

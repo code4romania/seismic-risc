@@ -19,11 +19,12 @@ django-import-export==2.0
 django-jet==1.0.8
 django-js-asset==1.2.2    # via django-ckeditor
 django-sekizai==1.0.0     # via django-cms
-django-treebeard==4.3     # via django-cms
+django-treebeard==4.3.1   # via django-cms
 django==2.2.9
 djangocms-admin-style==1.4.0  # via django-cms
 djangorestframework==3.11.0
 et-xmlfile==1.0.1         # via openpyxl
+gunicorn==20.0.4
 jdcal==1.4.1              # via openpyxl
 markuppy==1.14            # via tablib
 odfpy==1.4.0              # via tablib
@@ -31,10 +32,13 @@ openpyxl==3.0.2           # via tablib
 psycopg2==2.8.4
 pycparser==2.19           # via cffi
 pytz==2019.3
-pyyaml==5.2               # via tablib
+pyyaml==5.3               # via tablib
 six==1.13.0               # via django-configurations
 sqlparse==0.3.0
 tablib==0.14.0
 whitenoise==5.0.1
 xlrd==1.2.0               # via tablib
 xlwt==1.3.0               # via tablib
+
+# The following packages are considered to be unsafe in a requirements file:
+# setuptools
