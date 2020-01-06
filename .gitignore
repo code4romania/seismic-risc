@@ -117,3 +117,4 @@ seismic_site/media/*
 
 .env
 .pgdata
+prod.env
