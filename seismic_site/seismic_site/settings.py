@@ -27,7 +27,6 @@ class Base(Configuration):
     INSTALLED_APPS = [
         'account',
         'jet',
-        'ckeditor',
         # django apps
         'django.contrib.admin',
         'django.contrib.auth',
@@ -38,10 +37,15 @@ class Base(Configuration):
         # third-party apps
         'rest_framework',
         'crispy_forms',
-        'cms.apps.CmsConfig',
+        'storages',
+        'taggit',
+        'ckeditor',
+        'ckeditor_uploader',
         # project apps
         'map_app',
         'buildings',
+        'cms',
+        'blog',
     ]
 
     MIDDLEWARE = [
@@ -139,6 +143,8 @@ class Base(Configuration):
             'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
         ]
     }
+
+    CKEDITOR_UPLOAD_PATH = "uploads/"
 
 
 class Dev(Base):

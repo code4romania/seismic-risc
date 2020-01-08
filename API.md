@@ -104,3 +104,41 @@
 ```
 
 - `DELETE` `/api/v2/pages/page1/`
+
+
+## Blog
+
+- `GET` `/api/v2/blog/posts/`
+
+```json
+[
+    {
+        "id": 1,
+        "title": "Article title",
+        "slug": "article-slug",
+        "image": "",
+        "text": "",
+        "published": "2020-01-05T09:30:00Z",
+        "created": "2020-01-08T08:30:09.607091Z",
+        "updated": "2020-01-08T08:31:21.044702Z",
+        "author": 1
+    },
+	...
+]
+```
+
+- `GET` `/api/v2/blog/posts/1/` 
+
+```json
+{
+    "id": 1,
+    "title": "Article title",
+    "slug": "article-slug",
+    "image": "",
+    "text": "",
+    "published": "2020-01-05T09:30:00Z",
+    "created": "2020-01-08T08:30:09.607091Z",
+    "updated": "2020-01-08T08:31:21.044702Z",
+    "author": 1
+}
+```

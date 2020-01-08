@@ -68,6 +68,9 @@ update-requirements: build
 migrations: build
 	docker-compose run --rm api "./manage.py makemigrations"
 
+migrate:
+	docker-compose run --rm api "./manage.py migrate"
+
 shell:
 	docker-compose run --rm api "./manage.py shell"
 
