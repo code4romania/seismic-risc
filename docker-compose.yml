@@ -13,7 +13,7 @@ services:
     build:
       context: ./client
     volumes:
-      - ./client:/app
+      - ./client:/code
     ports:
       - "3000:3000"
     depends_on:
