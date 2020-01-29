@@ -47,11 +47,11 @@ init-env:
 	make init-db
 
 build:
-	docker-compose build --pull api
+	docker-compose build --pull
 
 init-db:
 	docker-compose down -t 60
-	docker-compose run --rm api "../wait_for_db.py && ./manage.py migrate --no-input"
+	docker-compose run --rm api "./wait_for_db.py && ./manage.py migrate --no-input"
 	docker-compose run --rm api "./manage.py createsuperuser"
 	docker-compose run --rm api "./manage.py loaddata buildings"
 
@@ -66,7 +66,7 @@ update-requirements: build
 	docker-compose run --rm api "cd /code && pip install pip-tools -U && pip-compile --upgrade requirements.in requirements-dev.in -o requirements-dev.txt && chmod a+r requirements-dev.txt"
 
 migrations: build
-	docker-compose run --rm api "./manage.py makemigrations && ./manage.py migrate"
+	docker-compose run --rm api "./wait_for_db.py && ./manage.py makemigrations && ./manage.py migrate"
 
 shell:
 	docker-compose run --rm api "./manage.py shell"

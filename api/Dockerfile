@@ -11,9 +11,8 @@ RUN apt-get update && \
 
 RUN pip install pip -U
 
-RUN mkdir /code
-COPY . /code
 WORKDIR /code
+COPY . /code
 
 RUN pip install -r requirements.txt
 
@@ -21,7 +20,5 @@ RUN pip install -r requirements.txt
 # passed to the docker build command. This should allow easy building of
 # the production container image.
 RUN if [ "x$DEVBUILD" != "x" ]; then pip install -r requirements-dev.txt; fi
-
-WORKDIR /code/seismic_site
 
 ENTRYPOINT ["bash", "-c"]
