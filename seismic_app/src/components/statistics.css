@@ -1,0 +1,35 @@
+.statistics-wrapper {
+  margin: 1rem 0;
+  padding: 0 0.5rem;
+}
+
+.statistics-wrapper > div {
+  padding: 2rem 0;
+}
+
+.card {
+  background-color: #ee741b;
+  height: 100%;
+  padding: 3rem 0;
+  cursor: pointer;
+}
+
+.card:hover {
+  background-color: #f8c9a6;
+}
+
+.card p {
+  margin: 0;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1.9rem;
+  text-decoration-line: underline;
+  text-decoration-color: #f8c9a6;
+}
+
+.info {
+  text-align: justify;
+  font-size: 1rem;
+  color: #000000;
+  padding: 0 1rem;
+}
