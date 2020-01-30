@@ -55,10 +55,17 @@ We don't have a specific set of coding guidelines, so just follow the way the co
 ### Programming languages
 
 [Python 3](https://www.python.org)
+[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-### Framework
+### Frameworks
 
-[Django](https://www.djangoproject.com)
+API: [Django](https://www.djangoproject.com)
+Client: [React](https://reactjs.org/)
+
+### Package managers
+
+API: [pip](https://pypi.org/)
+Client: [npm](https://www.npmjs.com/)
 
 ### Database technology & provider
 
@@ -66,7 +73,7 @@ We don't have a specific set of coding guidelines, so just follow the way the co
 
 ## Getting started
 
-Risc Seismic is a Django application, built on top of Python 3.x with a PostgreSQL database.
+Risc Seismic API is a Django application, built on top of Python 3.7+ with a PostgreSQL database, while the Client is a React single page application.
 
 ### Pre-requisites
 
@@ -177,6 +184,14 @@ After testing the container runs properly, tag and upload the image to Docker hu
 $ docker tag seismic-risc:latest code4romania/seismic-risc:latest
 $ docker push code4romania/seismic-risc:latest
 ```
+
+## Client Deployment
+
+* Change directory to `seismic-app`
+* Build the solution `npm install`
+* Start a development server `npm start`
+* Run the tests `npm test`
+* Build the solution `npm run build`
 
 ## Feedback
 

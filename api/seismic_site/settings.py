@@ -27,7 +27,6 @@ class Base(Configuration):
     INSTALLED_APPS = [
         'account',
         'jet',
-        'ckeditor',
         # django apps
         'django.contrib.admin',
         'django.contrib.auth',
@@ -38,8 +37,9 @@ class Base(Configuration):
         # third-party apps
         'rest_framework',
         'crispy_forms',
-        'cms.apps.CmsConfig',
+        'ckeditor',
         # project apps
+        'cms.apps.CmsConfig',
         'map_app',
         'buildings',
     ]
@@ -62,7 +62,7 @@ class Base(Configuration):
             'BACKEND': 'django.template.backends.django.DjangoTemplates',
             'DIRS': [
                 'seismic_site/templates',
-                'shared-templates'
+                'templates'
             ],
             'APP_DIRS': True,
             'OPTIONS': {
@@ -75,10 +75,6 @@ class Base(Configuration):
             },
         },
     ]
-
-    TEMPLATE_DIRS = (
-        os.path.join(BASE_DIR, 'shared-templates'),
-    )
 
     WSGI_APPLICATION = 'seismic_site.wsgi.application'
 
@@ -110,7 +106,7 @@ class Base(Configuration):
     # Internationalization
     # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
-    LANGUAGE_CODE = 'en-us'
+    LANGUAGE_CODE = values.Value(default='en-us')
     TIME_ZONE = 'UTC'
     USE_I18N = True
     USE_L10N = True
@@ -120,14 +116,14 @@ class Base(Configuration):
     # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
     STATIC_URL = '/static/'
-    STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+    STATIC_ROOT = os.path.join(BASE_DIR, '../public/static')
     STATICFILES_DIRS = (
-        os.path.join(BASE_DIR, 'shared-static'),
+        os.path.join(BASE_DIR, 'static'),
     )
     STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
     MEDIA_URL = '/media/'
-    MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+    MEDIA_ROOT = os.path.join(BASE_DIR, '../public/media')
 
     CRISPY_TEMPLATE_PACK = 'bootstrap4'
     CRISPY_FAIL_SILENTLY = not DEBUG
