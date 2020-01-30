@@ -8,14 +8,28 @@ services:
     ports:
       - "5432:5432"
 
-  api:
+  client:
+    container_name: seismic-risc-client
     build:
-      context: .
+      context: ./client
+    volumes:
+      - ./client:/code
+    ports:
+      - "3000:3000"
+    depends_on:
+      - api
+    environment:
+      NODE_ENV:
+
+  api:
+    container_name: seismic-risc-api
+    build:
+      context: ./api
       args:
         DEVBUILD: 1
-    command: ["../wait_for_db.py && ./manage.py migrate --noinput && ./manage.py runserver 0.0.0.0:8000"]
+    command: ["./wait_for_db.py && ./manage.py migrate --noinput && ./manage.py runserver 0.0.0.0:8000"]
     volumes:
-      - .:/code
+      - ./api:/code
     ports:
       - "8000:8000"
     depends_on:
