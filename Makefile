@@ -61,17 +61,20 @@ drop-db:
 
 redo-db: drop-db init-db
 
-update-requirements: build
+update-requirements:
+	docker-compose build --pull api
 	docker-compose run --rm api "cd /code && pip install pip-tools -U && pip-compile --upgrade requirements.in -o requirements.txt && chmod a+r requirements.txt"
 	docker-compose run --rm api "cd /code && pip install pip-tools -U && pip-compile --upgrade requirements.in requirements-dev.in -o requirements-dev.txt && chmod a+r requirements-dev.txt"
 
-migrations: build
+migrations:
+	docker-compose build --pull api
 	docker-compose run --rm api "./wait_for_db.py && ./manage.py makemigrations && ./manage.py migrate"
 
 shell:
 	docker-compose run --rm api "./manage.py shell"
 
-test: build
+test:
+	docker-compose build --pull api
 	docker-compose run --rm api "pytest"
 
 test-pdb:
@@ -79,6 +82,9 @@ test-pdb:
 
 test-lf:
 	docker-compose run --rm api "pytest --lf"
+
+black:
+	docker-compose run --rm api "black --line-length 80 --target-version py37 --exclude migrations ."
 
 clean: clean-docker clean-py
 

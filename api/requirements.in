@@ -1,16 +1,12 @@
 # django and related apps
 django<3
-django-cms
 django-configurations
 django-import-export
-django-jet
-django-crispy-forms<2
 django-ckeditor
 djangorestframework
 
 # database
 psycopg2
-sqlparse
 dj-database-url
 
 # static files handling

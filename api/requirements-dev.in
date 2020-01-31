@@ -1,5 +1,7 @@
 pytest
 pytest-django
 pytest-flake8
+pytest-cov
 pdbpp
 ipython
+black

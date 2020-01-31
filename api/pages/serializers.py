@@ -1,9 +1,9 @@
 from rest_framework import serializers
 
-from .models import Building
+from .models import Page
 
 
-class BuildingSerializer(serializers.ModelSerializer):
+class PageSerializer(serializers.ModelSerializer):
     class Meta:
-        model = Building
+        model = Page
         exclude = ()  # TODO: restrict to the necessary fields if needed
