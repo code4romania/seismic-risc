@@ -73,7 +73,7 @@ migrations:
 migrate:
 	docker-compose run --rm api "./manage.py migrate"
 
-shell:
+pyshell:
 	docker-compose run --rm api "./manage.py shell"
 
 test:
