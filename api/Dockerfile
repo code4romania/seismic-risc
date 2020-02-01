@@ -22,3 +22,5 @@ RUN pip install -r requirements.txt
 RUN if [ "x$DEVBUILD" != "x" ]; then pip install -r requirements-dev.txt; fi
 
 ENTRYPOINT ["bash", "-c"]
+
+CMD ["./start_gunicorn.sh"]

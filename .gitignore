@@ -113,5 +113,4 @@ prod.env
 .DS_Store
 
 # files
-public/
 ~*.xlsx
