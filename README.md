@@ -32,12 +32,17 @@ Let's save lives together.
   - [Contributing](#contributing)
   - [Built With](#built-with)
     - [Programming languages](#programming-languages)
-    - [Framework](#framework)
+    - [Frameworks](#frameworks)
+    - [Package managers](#package-managers)
     - [Database technology & provider](#database-technology--provider)
   - [Getting started](#getting-started)
-    - [Installation process](#installation-process)
+    - [Pre-requisites](#pre-requisites)
     - [Initial set-up](#initial-set-up)
     - [Starting the project](#starting-the-project)
+    - [Development](#development)
+  - [Testing](#testing)
+  - [Production](#production)
+  - [Client Deployment](#client-deployment)
   - [Feedback](#feedback)
   - [License](#license)
   - [About Code4Ro](#about-code4ro)
@@ -55,10 +60,17 @@ We don't have a specific set of coding guidelines, so just follow the way the co
 ### Programming languages
 
 [Python 3](https://www.python.org)
+[JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
 
-### Framework
+### Frameworks
 
-[Django](https://www.djangoproject.com)
+API: [Django](https://www.djangoproject.com)
+Client: [React](https://reactjs.org/)
+
+### Package managers
+
+API: [pip](https://pypi.org/)
+Client: [npm](https://www.npmjs.com/)
 
 ### Database technology & provider
 
@@ -66,7 +78,7 @@ We don't have a specific set of coding guidelines, so just follow the way the co
 
 ## Getting started
 
-Risc Seismic is a Django application, built on top of Python 3.x with a PostgreSQL database.
+Risc Seismic API is a Django application, built on top of Python 3.7+ with a PostgreSQL database, while the Client is a React single page application.
 
 ### Pre-requisites
 
@@ -75,18 +87,21 @@ In order to run the project locally, you need to have [Docker](https://docs.dock
 You can install the above mentioned packages manually or you can use our helper commands.
 
 On `Ubuntu 18.04+` run:
+
 ```bash
-$ make install-docker-ubuntu
+make install-docker-ubuntu
 ```
 
 On `MacOS` run:
+
 ```bash
-$ make install-docker-osx
+make install-docker-osx
 ```
 
 On other platforms please follow the instructions described here:
-- https://docs.docker.com/install/
-- https://docs.docker.com/compose/install/
+
+- <https://docs.docker.com/install/>
+- <https://docs.docker.com/compose/install/>
 
 The versions the Makefile was tested with are:
 
@@ -102,7 +117,7 @@ docker-compose version 1.24.1, build 4667896b
 Initialise the database and development fixtures:
 
 ```bash
-$ make init-env
+make init-env
 ```
 
 ### Starting the project
@@ -112,13 +127,13 @@ First check the `.env` file created by the init command and see if there are any
 Get the project up and running:
 
 ```bash
-$ docker-compose up
+docker-compose up
 ```
 
 You should be able to access the local environment site and admin at the following URLs:
 
-* http://localhost:8000/api/v2/
-* http://localhost:8000/admin/
+- <http://localhost:8000/api/v2/>
+- <http://localhost:8000/admin/>
 
 If you have problems starting the project, first check out the [FAQ](https://github.com/code4romania/seismic-risc/wiki/FAQ) and if that doesn't work, ask someone from the project's channel.
 Maybe the issue you just had is worth adding to the [FAQ](https://github.com/code4romania/seismic-risc/wiki/FAQ), wouldn't it?
@@ -126,7 +141,7 @@ Maybe the issue you just had is worth adding to the [FAQ](https://github.com/cod
 In order to see all available commands run:
 
 ```bash
-$ make
+make
 ```
 
 ### Development
@@ -134,13 +149,13 @@ $ make
 When creating new models in Django, in order to make sure they are generated in a clean environment, it is recommended to generate the migration files using the `make` command:
 
 ```bash
-$ make migrations
+make migrations
 ```
 
 When you need to add/remove requirements or restrict the version of a requirement, edit the `requirements.in` (prod) and the `requirements-dev.in` (dev) files accordingly. After doing this run:
 
 ```bash
-$ make update-requirements
+make update-requirements
 ```
 
 This will create a clean environment where is uses the [pip-tools](https://github.com/jazzband/pip-tools/) library to compile a the corresponding `requirements.txt` files with the versions of the packages pinned. This is important as it guarantees that every environment this service runs in, has the same dependencies installed and minimizes the risk of `works on my machine`.
@@ -148,8 +163,43 @@ This will create a clean environment where is uses the [pip-tools](https://githu
 ## Testing
 
 ```bash
-$ make test
+make test
 ```
+
+## Production
+
+In order to get the container ready for production use we need to first build it:
+
+```bash
+$ docker build -t seismic-risc:latest ./api
+```
+
+Use the `prod.env.dist` template file and create a `prod.env` file with the correct environment variables and run like so:
+
+```bash
+$ docker run --env-file prod.env -p HOST_PORT:GUNICORN_PORT seismic-risc:latest
+```
+
+Or, you can provide all the environment variables at runtime:
+
+```bash
+$ docker run -e DJANGO_CONFIGURATION=Prod -e DJANGO_SECRET_KEY= -e DATABASE_URL=postgres://USER:PASSWORD@HOST:PORT/NAME -e GUNICORN_PORT=5000 -e GUNICORN_WORKERS=2 -p HOST_PORT:GUNICORN_PORT seismic-risc:latest
+```
+
+After testing the container runs properly, tag and upload the image to Docker hub:
+
+```bash
+docker tag seismic-risc:latest code4romania/seismic-risc:latest
+docker push code4romania/seismic-risc:latest
+```
+
+## Client Deployment
+
+* Change directory to `./client`
+* Build the solution `npm install`
+* Start a development server `npm start`
+* Run the tests `npm test`
+* Build the solution `npm run build`
 
 ## Feedback
 

@@ -55,6 +55,7 @@ coverage.xml
 *.log
 local_settings.py
 db.sqlite3
+.pgdata
 
 # Flask stuff:
 instance/
@@ -89,6 +90,7 @@ venv/
 ENV/
 env.bak/
 venv.bak/
+prod.env
 
 # Spyder project settings
 .spyderproject
@@ -110,10 +112,5 @@ venv.bak/
 # Mac stuff
 .DS_Store
 
-
 # files
-seismic_site/media/*
 ~*.xlsx
-
-.env
-.pgdata

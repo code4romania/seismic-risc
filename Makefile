@@ -47,26 +47,28 @@ init-env:
 	make init-db
 
 build:
-	docker-compose build --pull api
+	docker-compose build --pull
 
 init-db:
 	docker-compose down -t 60
-	docker-compose run --rm api "../wait_for_db.py && ./manage.py migrate --no-input"
+	docker-compose run --rm api "./wait_for_db.py && ./manage.py migrate --no-input"
 	docker-compose run --rm api "./manage.py createsuperuser"
 	docker-compose run --rm api "./manage.py loaddata buildings"
 
 drop-db:
 	docker-compose down -t 60
-	rm -rf .pgdata
+	docker volume rm seismic-risc_pgdata
 
 redo-db: drop-db init-db
 
-update-requirements: build
+update-requirements:
+	docker-compose build --pull api
 	docker-compose run --rm api "cd /code && pip install pip-tools -U && pip-compile --upgrade requirements.in -o requirements.txt && chmod a+r requirements.txt"
 	docker-compose run --rm api "cd /code && pip install pip-tools -U && pip-compile --upgrade requirements.in requirements-dev.in -o requirements-dev.txt && chmod a+r requirements-dev.txt"
 
-migrations: build
-	docker-compose run --rm api "./manage.py makemigrations"
+migrations:
+	docker-compose build --pull api
+	docker-compose run --rm api "./wait_for_db.py && ./manage.py makemigrations && ./manage.py migrate"
 
 migrate:
 	docker-compose run --rm api "./manage.py migrate"
@@ -74,7 +76,8 @@ migrate:
 shell:
 	docker-compose run --rm api "./manage.py shell"
 
-test: build
+test:
+	docker-compose build --pull api
 	docker-compose run --rm api "pytest"
 
 test-pdb:
@@ -83,16 +86,16 @@ test-pdb:
 test-lf:
 	docker-compose run --rm api "pytest --lf"
 
+black:
+	docker-compose run --rm api "black --line-length 80 --target-version py37 --exclude migrations ."
+
 clean: clean-docker clean-py
 
 clean-docker:
 	docker-compose down -t 60
 	docker system prune -f
-	docker volume prune -f
 
 clean-py:
 	find . -name '*.pyc' -delete
 	find . -name '*.pyo' -delete
 	find . -name '.coverage' -delete
-	find . -name '.pytest_cache' | xargs rm -rf
-	find . -name '__pycache__' | xargs rm -rf
