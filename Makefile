@@ -54,6 +54,7 @@ init-db:
 	docker-compose run --rm api "./wait_for_db.py && ./manage.py migrate --no-input"
 	docker-compose run --rm api "./manage.py createsuperuser"
 	docker-compose run --rm api "./manage.py loaddata buildings"
+	docker-compose run --rm api "./manage.py loaddata pages"
 
 drop-db:
 	docker-compose down -t 60

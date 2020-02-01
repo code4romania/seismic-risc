@@ -29,6 +29,7 @@ class Page(models.Model):
         unique=True,
         blank=True,
         null=False,
+        max_length=150,
         help_text="Unique URL slug (leave empty to auto-generate)",
     )
     content = RichTextField()
