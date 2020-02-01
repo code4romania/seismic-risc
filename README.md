@@ -171,19 +171,19 @@ make test
 In order to get the container ready for production use we need to first build it:
 
 ```bash
-docker build -t seismic-risc:latest .
+$ docker build -t seismic-risc:latest ./api
 ```
 
 Use the `prod.env.dist` template file and create a `prod.env` file with the correct environment variables and run like so:
 
 ```bash
-docker run --env-file prod.env -p HOST_PORT:GUNICORN_PORT seismic-risc:latest "./start.sh"
+$ docker run --env-file prod.env -p HOST_PORT:GUNICORN_PORT seismic-risc:latest
 ```
 
 Or, you can provide all the environment variables at runtime:
 
 ```bash
-docker run -e DJANGO_CONFIGURATION=Prod -e DJANGO_SECRET_KEY= -e DATABASE_URL=postgres://USER:PASSWORD@HOST:PORT/NAME -e GUNICORN_PORT=5000 -e GUNICORN_WORKERS=2 -p HOST_PORT:GUNICORN_PORT seismic-risc:latest "./start.sh"
+$ docker run -e DJANGO_CONFIGURATION=Prod -e DJANGO_SECRET_KEY= -e DATABASE_URL=postgres://USER:PASSWORD@HOST:PORT/NAME -e GUNICORN_PORT=5000 -e GUNICORN_WORKERS=2 -p HOST_PORT:GUNICORN_PORT seismic-risc:latest
 ```
 
 After testing the container runs properly, tag and upload the image to Docker hub:
@@ -195,11 +195,11 @@ docker push code4romania/seismic-risc:latest
 
 ## Client Deployment
 
-- Change directory to `seismic-app`
-- Build the solution `npm install`
-- Start a development server `npm start`
-- Run the tests `npm test`
-- Build the solution `npm run build`
+* Change directory to `./client`
+* Build the solution `npm install`
+* Start a development server `npm start`
+* Run the tests `npm test`
+* Build the solution `npm run build`
 
 ## Feedback
 
