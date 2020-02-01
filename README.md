@@ -132,7 +132,7 @@ docker-compose up
 
 You should be able to access the local environment site and admin at the following URLs:
 
-- <http://localhost:8000/api/v2/>
+- <http://localhost:8000/api/v1/>
 - <http://localhost:8000/admin/>
 
 If you have problems starting the project, first check out the [FAQ](https://github.com/code4romania/seismic-risc/wiki/FAQ) and if that doesn't work, ask someone from the project's channel.
