@@ -2,7 +2,6 @@
 django<3
 django-configurations
 django-import-export
-django-ckeditor
 djangorestframework
 django-ckeditor
 django-storages

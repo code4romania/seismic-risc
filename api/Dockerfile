@@ -11,6 +11,7 @@ RUN apt-get update && \
 
 RUN pip install pip -U
 
+WORKDIR /code
 COPY . /code
 
 RUN pip install -r /code/requirements.txt
