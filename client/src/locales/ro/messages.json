@@ -1,0 +1,66 @@
+{
+  "Adaugă o clădire": {
+    "translation": "Adaugă o clădire",
+    "origin": [
+      [
+        "src/components/Header.js",
+        21
+      ]
+    ]
+  },
+  "Bucureștiul vulnerabil": {
+    "translation": "Bucureștiul vulnerabil",
+    "origin": [
+      [
+        "src/components/Header.js",
+        17
+      ]
+    ]
+  },
+  "Buna": {
+    "translation": "Buna",
+    "origin": [
+      [
+        "src/containers/home/index.js",
+        12
+      ]
+    ],
+    "obsolete": true
+  },
+  "Contact": {
+    "translation": "Contact",
+    "origin": [
+      [
+        "src/components/Header.js",
+        18
+      ]
+    ]
+  },
+  "Despre": {
+    "translation": "Despre",
+    "origin": [
+      [
+        "src/components/Header.js",
+        14
+      ]
+    ]
+  },
+  "Ghid pentru asociații de proprietari": {
+    "translation": "Ghid pentru asociații de proprietari",
+    "origin": [
+      [
+        "src/components/Header.js",
+        15
+      ]
+    ]
+  },
+  "Legislație": {
+    "translation": "Legislație",
+    "origin": [
+      [
+        "src/components/Header.js",
+        16
+      ]
+    ]
+  }
+}
