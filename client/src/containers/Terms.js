@@ -4,7 +4,9 @@ import Layout from "../components/Layout"
 const Terms = props => {
   return (
     <Layout>
-    <h1>TODO</h1>
+      <div className="page">
+        <h1>TODO</h1>
+      </div>
     </Layout>
   );
 };

@@ -6,7 +6,8 @@ import linkedinLogo from "../../images/linkedin_grey.png";
 import twitterLogo from "../../images/twitter_grey.png";
 
 const socialBarStyle = {
-  backgroundColor: "#F0F0F0"
+  backgroundColor: "#F0F0F0",
+  maxHeight: "60px"
 };
 
 const donateLinkStyle = {
@@ -18,12 +19,14 @@ const donateLinkStyle = {
   fontStyle: "normal",
   fontWeight: "600",
   fontSize: "24px",
-  height: "100%",
+  height: "60px",
   background: "rgba(31, 185, 74, 0.7)",
   borderRadius: "3px",
   textDecoration: "none",
   textTransform: "uppercase",
-  marginRight: "5px"
+  marginLeft: "2px",
+  borderTopRightRadius: "0",
+  borderBottomRightRadius: "0"
 };
 
 const socialImageStyle = {
@@ -31,13 +34,19 @@ const socialImageStyle = {
   height: "100%"
 };
 
+const socialLinkStyle = {
+  marginLeft: "2px",
+  display: "inline-flex",
+  height: "60px"
+}
+
 const SocialBar = () => {
   return (
     <div style={socialBarStyle}>
-      <Row type="flex" justify="end" gutter={2}>
+      <Row type="flex" justify="end">
         <Col md={1} sm={2} xs={3}>
           <a
-            // style={socialLinkStyle}
+            style={socialLinkStyle}
             href="https://www.facebook.com/code4romania"
             target="_blank"
             rel="noopener noreferrer"
@@ -47,7 +56,7 @@ const SocialBar = () => {
         </Col>
         <Col md={1} sm={2} xs={3}>
           <a
-            // style={socialLinkStyle}
+            style={socialLinkStyle}
             href="https://www.instagram.com/code4romania"
             target="_blank"
             rel="noopener noreferrer"
@@ -57,7 +66,7 @@ const SocialBar = () => {
         </Col>
         <Col md={1} sm={2} xs={3}>
           <a
-            // style={socialLinkStyle}
+            style={socialLinkStyle}
             href="https://www.linkedin.com/company/code4romania"
             target="_blank"
             rel="noopener noreferrer"
@@ -67,7 +76,7 @@ const SocialBar = () => {
         </Col>
         <Col md={1} sm={2} xs={3}>
           <a
-            // style={socialLinkStyle}
+            style={socialLinkStyle}
             href="https://twitter.com/Code4Romania"
             target="_blank"
             rel="noopener noreferrer"

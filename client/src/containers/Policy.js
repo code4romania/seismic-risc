@@ -4,7 +4,7 @@ import Layout from "../components/Layout";
 const Policy = props => {
   return (
     <Layout>
-      <div>
+      <div className="page">
         <h1>Politică de confidențialitate</h1>
         <p>
           Acest website folosește cookie-uri pentru a furniza vizitatorilor o
