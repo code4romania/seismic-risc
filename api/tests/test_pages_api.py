@@ -6,22 +6,6 @@ from pages.models import Page
 base_url = "/api/v1/pages/"
 
 
-@pytest.fixture
-def api_client():
-    from rest_framework.test import APIClient
-    return APIClient()
-
-
-@pytest.fixture
-def basic_page_data():
-    # Required fields for Page object
-    return {
-        "title": "Page title",
-        "slug": "pg1",
-        "content": "Contents"
-    }
-
-
 @pytest.mark.django_db
 def test_page_details_get(basic_page_data, api_client):
     Page.objects.create(**basic_page_data)
