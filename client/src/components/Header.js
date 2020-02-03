@@ -1,13 +1,14 @@
 import React from "react"
 import { Layout, Menu, Button } from "antd"
 import logo from "../logo.svg"
+import { Link } from "react-router-dom";
 
 const { Header } = Layout
 
 export default props => (
   <Header style={{ background: "none" }}>
     <div className="App-logo">
-      <img src={logo} alt="Seismic Risc logo"></img>
+      <Link to="/"><img src={logo} alt="Seismic Risc logo"></img></Link>
     </div>
     <Menu theme="light" mode="horizontal" className="App-menu">
       <Menu.Item key="about">Despre</Menu.Item>

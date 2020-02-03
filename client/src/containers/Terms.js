@@ -1,8 +1,13 @@
 import React from "react";
+import Layout from "../components/Layout"
 
 const Terms = props => {
   return (
-    <h1>TODO</h1>
+    <Layout>
+      <div className="page">
+        <h1>TODO</h1>
+      </div>
+    </Layout>
   );
 };
 export default Terms;
