@@ -4,7 +4,7 @@ from .serializers import PageSerializer
 from .models import Page
 
 
-class PagesViewSet(viewsets.ModelViewSet):
+class PagesViewSet(viewsets.ReadOnlyModelViewSet):
     """
     API endpoint that allows pages to be viewed or edited.
     """
