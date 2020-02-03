@@ -2,6 +2,15 @@
   text-align: center;
 }
 
+.App .ant-layout-content .page {
+  text-align: left;
+  margin: 20px;
+}
+
+.App .ant-layout-footer {
+  padding: 0;
+}
+
 .App-logo {
   float: left;
   padding-right: 32px;
