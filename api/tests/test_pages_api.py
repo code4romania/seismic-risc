@@ -39,7 +39,7 @@ def test_page_post_forbidden(basic_page_data, api_client):
     assert response.status_code == 403
 
 @pytest.mark.django_db
-def test_page_post_forbidden(basic_page_data, api_client):
+def test_page_delete_forbidden(basic_page_data, api_client):
     url = f"{base_url}pg1/"
 
     response = api_client.delete(url)
