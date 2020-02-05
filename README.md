@@ -132,11 +132,20 @@ docker-compose up
 
 You should be able to access the local environment site and admin at the following URLs:
 
-- <http://localhost:8000/api/v2/>
+- <http://localhost:8000/api/v1/>
 - <http://localhost:8000/admin/>
 
 If you have problems starting the project, first check out the [FAQ](https://github.com/code4romania/seismic-risc/wiki/FAQ) and if that doesn't work, ask someone from the project's channel.
 Maybe the issue you just had is worth adding to the [FAQ](https://github.com/code4romania/seismic-risc/wiki/FAQ), wouldn't it?
+
+To work on running containers that were started using `docker-compose up`, open another terminal and:
+
+```bash
+cd path/to/repo
+docker-compose exec api bash
+# or
+docker-compose exec client bash
+```
 
 In order to see all available commands run:
 
@@ -161,6 +170,16 @@ make update-requirements
 This will create a clean environment where is uses the [pip-tools](https://github.com/jazzband/pip-tools/) library to compile a the corresponding `requirements.txt` files with the versions of the packages pinned. This is important as it guarantees that every environment this service runs in, has the same dependencies installed and minimizes the risk of `works on my machine`.
 
 ## Testing
+
+Local development testing:
+
+```bash
+cd path/to/repo
+docker-compose exec api bash
+root@3c5df91778ad:/code# pytest
+```
+
+Pipeline testing:
 
 ```bash
 make test

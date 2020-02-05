@@ -71,7 +71,10 @@ migrations:
 	docker-compose build --pull api
 	docker-compose run --rm api "./wait_for_db.py && ./manage.py makemigrations && ./manage.py migrate"
 
-shell:
+migrate:
+	docker-compose run --rm api "./manage.py migrate"
+
+pyshell:
 	docker-compose run --rm api "./manage.py shell"
 
 test:
