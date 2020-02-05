@@ -5,8 +5,4 @@ from cms import views
 
 router = routers.DefaultRouter()
 
-router.register(
-    r'pages',
-    views.PagesViewSet,
-    basename='pages'
-)
+router.register(r"pages", views.PagesViewSet, basename="pages")

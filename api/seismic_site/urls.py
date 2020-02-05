@@ -25,16 +25,15 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     # API
-    path('api/v2/', include(('buildings.urls', 'buildings'), namespace='buildings-api')),
-    path('api/v2/', include(cms_router.urls)),
-
-    path('jet/', include('jet.urls', 'jet')),
-    path('admin/', admin.site.urls),
-    path('account/', include('account.urls')),
-    path('page/', include('cms.urls')),
-    path('adauga', views.add_building, name="add-building"),
-    path('', views.index, name="index"),
-] + static(
-    settings.MEDIA_URL,
-    document_root=settings.MEDIA_ROOT,
-)
+    path(
+        "api/v2/",
+        include(("buildings.urls", "buildings"), namespace="buildings-api"),
+    ),
+    path("api/v2/", include(cms_router.urls)),
+    path("jet/", include("jet.urls", "jet")),
+    path("admin/", admin.site.urls),
+    path("account/", include("account.urls")),
+    path("page/", include("cms.urls")),
+    path("adauga", views.add_building, name="add-building"),
+    path("", views.index, name="index"),
+] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
