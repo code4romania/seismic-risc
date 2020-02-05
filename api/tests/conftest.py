@@ -11,8 +11,4 @@ def api_client():
 @pytest.fixture
 def basic_page_data():
     # Required fields for Page object
-    return {
-        "title": "Page title",
-        "slug": "pg1",
-        "content": "Contents"
-    }
+    return {"title": "Page title", "slug": "pg1", "content": "Contents"}
