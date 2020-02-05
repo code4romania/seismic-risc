@@ -34,10 +34,14 @@ class Base(Configuration):
         "django.contrib.staticfiles",
         # third-party apps
         "rest_framework",
+        "storages",
+        "taggit",
         "ckeditor",
+        "ckeditor_uploader",
         # project apps
         "buildings",
         "pages",
+        "blog",
     ]
 
     MIDDLEWARE = [
@@ -116,6 +120,8 @@ class Base(Configuration):
 
     MEDIA_URL = "/media/"
     MEDIA_ROOT = os.path.join(BASE_DIR, "./public/media")
+
+    CKEDITOR_UPLOAD_PATH = "uploads/"
 
     REST_FRAMEWORK = {
         # Use Django's standard `django.contrib.auth` permissions,

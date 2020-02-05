@@ -2,14 +2,18 @@
 django<3
 django-configurations
 django-import-export
-django-ckeditor
 djangorestframework
+django-ckeditor
+django-storages
+django-taggit
 
 # database
 psycopg2
 dj-database-url
 
-# static files handling
+# file handling
+boto3
+Pillow
 whitenoise
 brotlipy
 
