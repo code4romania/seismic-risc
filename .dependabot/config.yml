@@ -1,0 +1,26 @@
+version: 1
+update_configs:
+  - package_manager: "python"
+    directory: "api/"
+    update_schedule: "live"
+    target_branch: "master"
+    default_reviewers:
+      - "tudoramariei"
+      - "catileptic"
+    default_assignees:
+      - "tudoramariei"
+    default_labels:
+      - "dependencies"
+      - "django"
+  - package_manager: "javascript"
+    directory: "client/"
+    update_schedule: "live"
+    target_branch: "master"
+    default_reviewers:
+      - "tudoramariei"
+      - "catileptic"
+    default_assignees:
+      - "tudoramariei"
+    default_labels:
+      - "dependencies"
+      - "react"
