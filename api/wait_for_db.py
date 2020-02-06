@@ -28,6 +28,11 @@ if __name__ == '__main__':
         'dbname': db_config["NAME"],
         'user': db_config["USER"],
         'password': db_config["PASSWORD"],
+a
+
+
+
+
         'host': db_config["HOST"],
         'port': db_config["PORT"],
     }
