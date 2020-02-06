@@ -5,10 +5,10 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class Post(models.Model):
-    author = models.ForeignKey('auth.User', on_delete=models.PROTECT)
+    author = models.ForeignKey("auth.User", on_delete=models.PROTECT)
     title = models.CharField(max_length=200)
     slug = models.SlugField(unique=True)
-    image = models.ImageField(upload_to='blog/')
+    image = models.ImageField(upload_to="blog/")
     text = RichTextUploadingField()
     tags = TaggableManager()
     is_visible = models.BooleanField(default=False)
@@ -18,7 +18,8 @@ class Post(models.Model):
 
     def get_absolute_url(self):
         from django.urls import reverse
-        return reverse('post_detail', args=[self.slug])
+
+        return reverse("post_detail", args=[self.slug])
 
     def __str__(self):
         return self.title

@@ -6,4 +6,4 @@ from .models import Post
 class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        exclude = ['is_visible']
+        exclude = ["is_visible"]
