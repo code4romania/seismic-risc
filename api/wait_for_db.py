@@ -13,28 +13,16 @@ logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 logger.addHandler(logging.StreamHandler())
 
-
-
-
-
-
-if __name__ == '__main__':
+if __name__ == "__main__":
+    print("abcd")
     db_config = dj_database_url.config()
 
-
-
-
     config = {
-        'dbname': db_config["NAME"],
-        'user': db_config["USER"],
-        'password': db_config["PASSWORD"],
-a
-
-
-
-
-        'host': db_config["HOST"],
-        'port': db_config["PORT"],
+        "dbname": db_config["NAME"],
+        "user": db_config["USER"],
+        "password": db_config["PASSWORD"],
+        "host": db_config["HOST"],
+        "port": db_config["PORT"],
     }
 
     start_time = time()
