@@ -7,8 +7,8 @@ import Blog from "./containers/blog";
 import Footer from "./components/Footer";
 import Terms from "./containers/Terms";
 import Policy from "./containers/Policy";
-import catalogEn from "./locales/en/messages";
-import catalogRo from "./locales/ro/messages";
+import catalogEn from "./locales/en/messages.js";
+import catalogRo from "./locales/ro/messages.js";
 
 import "./styles/theme.scss";
 
@@ -20,7 +20,7 @@ const App = () => {
   const languageChangeCallback = useCallback(languageCode => {
     setLanguage(languageCode);
   }, []);
-
+  console.log(catalogs);
   return (
     <I18nProvider language={language} catalogs={catalogs}>
       <Router>

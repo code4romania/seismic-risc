@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Layout, Menu, Button } from "antd";
 import logo from "../logo.svg";
-import { Link } from "react-router-dom";
 import { Trans } from "@lingui/macro";
 import styles from "./header.module.css";
 
@@ -23,23 +22,23 @@ export default ({ currentLanguage, languageChangeCallback }) => {
         selectable={false}
       >
         <Menu.Item key="about">
-          <Trans>Despre</Trans>
+          <Trans>About</Trans>
         </Menu.Item>
         <Menu.Item key="guide">
-          <Trans>Ghid pentru asociații de proprietari</Trans>
+          <Trans>Homeowners associations guide</Trans>
         </Menu.Item>
         <Menu.Item key="legislation">
-          <Trans>Legislație</Trans>
+          <Trans>Legislation</Trans>
         </Menu.Item>
         <Menu.Item key="bucharest">
-          <Trans>Bucureștiul vulnerabil</Trans>
+          <Trans>Vulnerable Bucharest</Trans>
         </Menu.Item>
         <Menu.Item key="contact">
-          <Trans>Contact</Trans>
+          <Trans>Contact us</Trans>
         </Menu.Item>
         <Menu.Item key="add">
           <Button type="primary" icon="plus-circle" size="large">
-            <Trans>Adaugă o clădire</Trans>
+            <Trans>Add a building</Trans>
           </Button>
         </Menu.Item>
         <Menu.Item key="lang">
