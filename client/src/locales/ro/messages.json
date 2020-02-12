@@ -1,0 +1,56 @@
+{
+  "About": {
+    "translation": "Despre",
+    "origin": [
+      [
+        "src/components/Header.js",
+        25
+      ]
+    ]
+  },
+  "Add a building": {
+    "translation": "Adaugă o clădire",
+    "origin": [
+      [
+        "src/components/Header.js",
+        41
+      ]
+    ]
+  },
+  "Contact us": {
+    "translation": "Contact",
+    "origin": [
+      [
+        "src/components/Header.js",
+        37
+      ]
+    ]
+  },
+  "Homeowners associations guide": {
+    "translation": "Ghid pentru asociații de proprietari",
+    "origin": [
+      [
+        "src/components/Header.js",
+        28
+      ]
+    ]
+  },
+  "Legislation": {
+    "translation": "Legislație",
+    "origin": [
+      [
+        "src/components/Header.js",
+        31
+      ]
+    ]
+  },
+  "Vulnerable Bucharest": {
+    "translation": "Bucureștiul vulnerabil",
+    "origin": [
+      [
+        "src/components/Header.js",
+        34
+      ]
+    ]
+  }
+}
