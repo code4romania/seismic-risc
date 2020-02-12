@@ -1,0 +1,50 @@
+{
+  "About": {
+    "origin": [
+      [
+        "src/components/Header.js",
+        25
+      ]
+    ]
+  },
+  "Homeowners associations guide": {
+    "origin": [
+      [
+        "src/components/Header.js",
+        28
+      ]
+    ]
+  },
+  "Legislation": {
+    "origin": [
+      [
+        "src/components/Header.js",
+        31
+      ]
+    ]
+  },
+  "Vulnerable Bucharest": {
+    "origin": [
+      [
+        "src/components/Header.js",
+        34
+      ]
+    ]
+  },
+  "Contact us": {
+    "origin": [
+      [
+        "src/components/Header.js",
+        37
+      ]
+    ]
+  },
+  "Add a building": {
+    "origin": [
+      [
+        "src/components/Header.js",
+        41
+      ]
+    ]
+  }
+}
