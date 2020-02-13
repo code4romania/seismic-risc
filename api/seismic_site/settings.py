@@ -153,6 +153,12 @@ class Test(Base):
     SECRET_KEY = "secret"
     SITE_URL = "http://localhost"
     EMAIL_BACKEND = "django.core.mail.backends.dummy.EmailBackend"
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": "/tmp/test.db",
+        }
+    }
 
 
 class Prod(Base):

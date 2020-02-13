@@ -1,4 +1,4 @@
-name: CI
+name: API Pipeline
 
 on:
   push:
@@ -11,12 +11,10 @@ on:
       - '**.py'
 
 jobs:
-  build:
-
-    runs-on: ubuntu-latest
-
+  static_analysis:
+    runs-on: ubuntu-18.04
     steps:
-    - uses: actions/checkout@v1
+    - uses: actions/checkout@v2
     - name: Set up Python 3.7
       uses: actions/setup-python@v1
       with:
@@ -28,3 +26,19 @@ jobs:
     - name: Check formatting with black
       run: |
         black --line-length 80 --target-version py37 --exclude migrations --check ./api
+
+  tests:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up Python 3.7
+      uses: actions/setup-python@v1
+      with:
+        python-version: 3.7
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r ./api/requirements-dev.txt
+    - name: Run tests
+      run: |
+        cd ./api && pytest
