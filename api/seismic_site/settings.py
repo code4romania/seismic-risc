@@ -23,6 +23,8 @@ class Base(Configuration):
     SECRET_KEY = values.Value()
 
     ALLOWED_HOSTS = []
+    SITE_URL = values.Value()
+    SITE_ID = 1
 
     INSTALLED_APPS = [
         # django apps
@@ -32,6 +34,9 @@ class Base(Configuration):
         "django.contrib.sessions",
         "django.contrib.messages",
         "django.contrib.staticfiles",
+        "django.contrib.sites",
+        "django.contrib.sitemaps",
+        "django.contrib.humanize",
         # third-party apps
         "rest_framework",
         "storages",
@@ -135,15 +140,26 @@ class Base(Configuration):
 class Dev(Base):
     DEBUG = True
     SECRET_KEY = "secret"
+    SITE_URL = "http://localhost:8000"
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 
 class Test(Base):
     DEBUG = True
     SECRET_KEY = "secret"
+    SITE_URL = "http://localhost"
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 
 class Prod(Base):
     DEBUG = False
     ALLOWED_HOSTS = values.ListValue(default=[".code4.ro"])
+
+    EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+    EMAIL_USE_TLS = True
+    EMAIL_HOST = values.Value(default="smtp.gmail.com")
+    EMAIL_PORT = 587
+    EMAIL_HOST_USER = values.Value()
+    EMAIL_HOST_PASSWORD = values.Value()
+
+    DEFAULT_FROM_EMAIL = values.Value(default="noreply@code4.ro")
