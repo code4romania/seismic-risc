@@ -21,6 +21,7 @@ class Base(Configuration):
     For more info about the `django-configurations` library, see
     https://django-configurations.readthedocs.io/en/latest/
     """
+
     DEBUG = False
 
     SECRET_KEY = values.Value()
