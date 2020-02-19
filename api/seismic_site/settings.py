@@ -10,7 +10,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
-import dj_database_url
 from configurations import Configuration, values
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -18,6 +17,10 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 class Base(Configuration):
+    """
+    For more info about the `django-configurations` library, see
+    https://django-configurations.readthedocs.io/en/latest/
+    """
     DEBUG = False
 
     SECRET_KEY = values.Value()
@@ -82,7 +85,7 @@ class Base(Configuration):
     # Database
     # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-    DATABASES = {"default": dj_database_url.config(conn_max_age=600)}
+    DATABASES = values.DatabaseURLValue()
 
     # Password validation
     # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -148,7 +151,7 @@ class Test(Base):
     DEBUG = True
     SECRET_KEY = "secret"
     SITE_URL = "http://localhost"
-    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+    EMAIL_BACKEND = "django.core.mail.backends.dummy.EmailBackend"
 
 
 class Prod(Base):
@@ -162,4 +165,4 @@ class Prod(Base):
     EMAIL_HOST_USER = values.Value()
     EMAIL_HOST_PASSWORD = values.Value()
 
-    DEFAULT_FROM_EMAIL = values.Value(default="noreply@code4.ro")
+    DEFAULT_FROM_EMAIL = values.EmailValue(default="noreply@code4.ro")
