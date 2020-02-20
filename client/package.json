@@ -11,7 +11,7 @@
     "react-scripts": "^3.4.0",
     "typeface-open-sans": "0.0.75",
     "typeface-titillium-web": "0.0.72",
-    "typescript": "^3.7.5"
+    "typescript": "^3.8.2"
   },
   "scripts": {
     "start": "react-app-rewired start",
