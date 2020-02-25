@@ -10,7 +10,6 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 
 import os
 
-import dj_database_url
 from configurations import Configuration, values
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -18,11 +17,18 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 
 class Base(Configuration):
+    """
+    For more info about the `django-configurations` library, see
+    https://django-configurations.readthedocs.io/en/latest/
+    """
+
     DEBUG = False
 
     SECRET_KEY = values.Value()
 
     ALLOWED_HOSTS = []
+    SITE_URL = values.Value()
+    SITE_ID = 1
 
     INSTALLED_APPS = [
         # django apps
@@ -32,6 +38,9 @@ class Base(Configuration):
         "django.contrib.sessions",
         "django.contrib.messages",
         "django.contrib.staticfiles",
+        "django.contrib.sites",
+        "django.contrib.sitemaps",
+        "django.contrib.humanize",
         # third-party apps
         "rest_framework",
         "storages",
@@ -77,7 +86,7 @@ class Base(Configuration):
     # Database
     # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
-    DATABASES = {"default": dj_database_url.config(conn_max_age=600)}
+    DATABASES = values.DatabaseURLValue()
 
     # Password validation
     # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -135,15 +144,26 @@ class Base(Configuration):
 class Dev(Base):
     DEBUG = True
     SECRET_KEY = "secret"
+    SITE_URL = "http://localhost:8000"
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 
 class Test(Base):
     DEBUG = True
     SECRET_KEY = "secret"
-    EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+    SITE_URL = "http://localhost"
+    EMAIL_BACKEND = "django.core.mail.backends.dummy.EmailBackend"
 
 
 class Prod(Base):
     DEBUG = False
     ALLOWED_HOSTS = values.ListValue(default=[".code4.ro"])
+
+    EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
+    EMAIL_USE_TLS = True
+    EMAIL_HOST = values.Value(default="smtp.gmail.com")
+    EMAIL_PORT = 587
+    EMAIL_HOST_USER = values.Value()
+    EMAIL_HOST_PASSWORD = values.Value()
+
+    DEFAULT_FROM_EMAIL = values.EmailValue(default="noreply@code4.ro")
