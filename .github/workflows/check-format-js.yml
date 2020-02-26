@@ -1,0 +1,17 @@
+name: JS Linting
+
+on: pull_request
+
+jobs:
+  run-linters:
+    name: Run linters
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+      - name: Run linters
+        uses: samuelmeuli/lint-action@v0.6
+        with:
+          # Enable linters
+          eslint: true
+          prettier: true
