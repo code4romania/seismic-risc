@@ -10,8 +10,9 @@ jobs:
       - name: Check out Git repository
         uses: actions/checkout@v2
       - name: Run linters
-        uses: samuelmeuli/lint-action@v0.6
+        uses: samuelmeuli/lint-action@v1.2.0
         with:
+          github_token: ""
           # Enable linters
           eslint: true
           prettier: true
