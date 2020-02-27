@@ -18,5 +18,8 @@ jobs:
       - name: Install Node.js dependencies
         run: npm install ./client
 
+      - name: Install ESLint
+        run: npm i -g eslint
+
       - name: Run linters
         run: eslint ./client
