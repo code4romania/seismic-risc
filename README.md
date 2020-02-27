@@ -14,9 +14,8 @@
 
 <!-- icons with padding -->
 
-[1.1]: http://i.imgur.com/tXSoThF.png (twitter icon with padding)
-[2.1]: http://i.imgur.com/P3YfQoD.png (facebook icon with padding)
-
+[1.1]: http://i.imgur.com/tXSoThF.png "twitter icon with padding"
+[2.1]: http://i.imgur.com/P3YfQoD.png "facebook icon with padding"
 [1]: https://twitter.com/Code4Romania
 [2]: https://www.facebook.com/code4romania/
 
@@ -71,6 +70,23 @@ Client: [React](https://reactjs.org/)
 
 API: [pip](https://pypi.org/)
 Client: [npm](https://www.npmjs.com/)
+
+### Code styling
+
+API: [Black](https://black.readthedocs.io/en/stable/)
+Client: [Prettier](https://prettier.io/) [ESLint](https://eslint.org/) + [Airbnb style guide](https://github.com/airbnb/javascript)
+
+Add the following option to user settings in VS Code if ESlint fails to load Prettier plugin.
+
+```json
+{
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ]
+}
+```
 
 ### Database technology & provider
 
@@ -214,11 +230,11 @@ docker push code4romania/seismic-risc:latest
 
 ## Client Deployment
 
-* Change directory to `./client`
-* Build the solution `npm install`
-* Start a development server `npm start`
-* Run the tests `npm test`
-* Build the solution `npm run build`
+- Change directory to `./client`
+- Build the solution `npm install`
+- Start a development server `npm start`
+- Run the tests `npm test`
+- Build the solution `npm run build`
 
 ## Feedback
 
