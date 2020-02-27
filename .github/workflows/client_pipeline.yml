@@ -16,10 +16,7 @@ jobs:
           node-version: 12
 
       - name: Install Node.js dependencies
-        run: npm install ./client
-
-      - name: Install ESLint
-        run: npm i -g eslint
+        run: npm install -g ./client
 
       - name: Run linters
         run: eslint ./client
