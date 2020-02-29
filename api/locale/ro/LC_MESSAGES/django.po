@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-29 12:53+0200\n"
+"POT-Creation-Date: 2020-02-29 15:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,6 +18,10 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
 "2:1));\n"
+
+#: blog/apps.py:7
+msgid "Blog"
+msgstr "Jurnal"
 
 #: blog/models.py:11 blog/models.py:32
 msgid "post"
@@ -62,6 +66,10 @@ msgstr "actualizat"
 #: blog/models.py:33
 msgid "posts"
 msgstr "articole"
+
+#: buildings/apps.py:7
+msgid "Buildings"
+msgstr "Clădiri"
 
 #: buildings/models.py:11
 msgid "Sector 1"
@@ -109,7 +117,7 @@ msgstr "categorie risc"
 
 #: buildings/models.py:37
 msgid "registration number"
-msgstr "numar inregistrare"
+msgstr "număr înregistrare"
 
 #: buildings/models.py:39
 msgid "examination year"
@@ -121,7 +129,7 @@ msgstr "expert certificat"
 
 #: buildings/models.py:43
 msgid "observations"
-msgstr "observatii"
+msgstr "observații"
 
 #: buildings/models.py:45
 msgid "latitude"
@@ -133,15 +141,15 @@ msgstr "longitudine"
 
 #: buildings/models.py:48
 msgid "county"
-msgstr "judet"
+msgstr "județ"
 
 #: buildings/models.py:49
 msgid "address"
-msgstr "adresa"
+msgstr "adresă"
 
 #: buildings/models.py:50
 msgid "post code"
-msgstr "cod postal"
+msgstr "cod poștal"
 
 #: buildings/models.py:51
 msgid "locality"
@@ -149,23 +157,23 @@ msgstr "localitate"
 
 #: buildings/models.py:53
 msgid "year built"
-msgstr "an constructie"
+msgstr "an construcție"
 
 #: buildings/models.py:55
 msgid "height regime"
-msgstr "regim inaltime"
+msgstr "regim înălțime"
 
 #: buildings/models.py:56
 msgid "apartment count"
-msgstr "numar apartamente"
+msgstr "total apartamente"
 
 #: buildings/models.py:57
 msgid "surface"
-msgstr "suprafata"
+msgstr "suprafață"
 
 #: buildings/models.py:59
 msgid "cadastre number"
-msgstr "numar cadastru"
+msgstr "număr cadastru"
 
 #: buildings/models.py:61
 msgid "land registry number"
@@ -189,27 +197,27 @@ msgstr "creat la"
 
 #: buildings/models.py:76
 msgid "building"
-msgstr "cladire"
+msgstr "clădire"
 
 #: buildings/models.py:77
 msgid "buildings"
-msgstr "cladiri"
+msgstr "clădiri"
 
 #: buildings/models.py:96
 msgid "building resource"
-msgstr "resursa cladire"
+msgstr "resursă clădire"
 
 #: buildings/models.py:97
 msgid "building resources"
-msgstr "resurse cladire"
+msgstr "resurse clădire"
 
 #: buildings/models.py:106
 msgid "Unsuccess"
-msgstr "Esec"
+msgstr "Eșec"
 
 #: buildings/models.py:107
 msgid "Not tried"
-msgstr "Neincercat"
+msgstr "Neîncercat"
 
 #: buildings/models.py:108
 msgid "Success"
@@ -221,15 +229,19 @@ msgstr "nume"
 
 #: buildings/models.py:112
 msgid "file"
-msgstr "fisier"
+msgstr "fișier"
 
 #: buildings/models.py:119
 msgid "CSV file"
-msgstr "fisier CSV"
+msgstr "fișier CSV"
 
 #: buildings/models.py:120
 msgid "CSV files"
-msgstr "fisiere CSV"
+msgstr "fișiere CSV"
+
+#: pages/apps.py:7
+msgid "Pages"
+msgstr "Pagini"
 
 #: pages/models.py:18 pages/models.py:29
 msgid "category"
@@ -241,11 +253,11 @@ msgstr "categorii"
 
 #: pages/models.py:28
 msgid "Page category"
-msgstr "Categorie pagina"
+msgstr "Categorie pagină"
 
 #: pages/models.py:33
 msgid "Page title"
-msgstr "Titlu pagina"
+msgstr "Titlu pagină"
 
 #: pages/models.py:40
 msgid "Unique URL slug (leave empty to auto-generate)"
@@ -253,7 +265,7 @@ msgstr ""
 
 #: pages/models.py:42
 msgid "content"
-msgstr "continut"
+msgstr "conținut"
 
 #: pages/models.py:44
 msgid "updated on"
@@ -261,15 +273,15 @@ msgstr "actualizat la"
 
 #: pages/models.py:49
 msgid "Last update time"
-msgstr "Data ultimei actualizari"
+msgstr "Data ultimei actualizări"
 
 #: pages/models.py:52
 msgid "publishing date"
-msgstr "data publicare"
+msgstr "dată publicare"
 
 #: pages/models.py:53
 msgid "Public page publishing date"
-msgstr "Data publicarii paginii"
+msgstr "Data publicării paginii"
 
 #: pages/models.py:56
 msgid "is published"
@@ -277,11 +289,11 @@ msgstr "este publicata"
 
 #: pages/models.py:59
 msgid "Is this page visible on the website"
-msgstr "Este aceasta pagina vizibila pe website"
+msgstr "Este această pagină vizibila pe website"
 
 #: pages/models.py:63
 msgid "page"
-msgstr "pagina"
+msgstr "pagină"
 
 #: pages/models.py:64
 msgid "pages"
@@ -289,28 +301,31 @@ msgstr "pagini"
 
 #: pages/models.py:95
 msgid "Page attachment"
-msgstr "Atasament pagina"
+msgstr "Atașament pagină"
 
 #: pages/models.py:96 pages/models.py:111
 msgid "attachment"
-msgstr "atasament"
+msgstr "atașament"
 
 #: pages/models.py:100
 msgid "Attachment name"
-msgstr "Nume atasament"
+msgstr "Nume atașament"
 
 #: pages/models.py:102
 msgid "upload date"
-msgstr "data incarcare"
+msgstr "dată încărcare"
 
 #: pages/models.py:103
 msgid "Attachment upload date"
-msgstr "Data incarcarii atasamentului"
+msgstr "Data încărcării atașamentului"
 
 #: pages/models.py:106
 msgid "uploaded file"
-msgstr "fisier incarcat"
+msgstr "fișier încărcat"
 
 #: pages/models.py:112
 msgid "attachments"
-msgstr "atasamente"
+msgstr "atașamente"
+
+#~ msgid "blog"
+#~ msgstr "jurnal"

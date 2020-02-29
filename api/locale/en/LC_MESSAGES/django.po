@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-29 12:39+0200\n"
+"POT-Creation-Date: 2020-02-29 15:52+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -17,6 +17,10 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: blog/apps.py:7
+msgid "Blog"
+msgstr ""
 
 #: blog/models.py:11 blog/models.py:32
 msgid "post"
@@ -60,6 +64,10 @@ msgstr ""
 
 #: blog/models.py:33
 msgid "posts"
+msgstr ""
+
+#: buildings/apps.py:7
+msgid "Buildings"
 msgstr ""
 
 #: buildings/models.py:11
@@ -228,6 +236,10 @@ msgstr ""
 
 #: buildings/models.py:120
 msgid "CSV files"
+msgstr ""
+
+#: pages/apps.py:7
+msgid "Pages"
 msgstr ""
 
 #: pages/models.py:18 pages/models.py:29
