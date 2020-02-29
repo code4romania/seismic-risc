@@ -1,44 +1,44 @@
-import React from "react";
-import { Row, Col } from "antd";
-import facebookLogo from "../../images/facebook_grey.png";
-import instagramLogo from "../../images/instagram_grey.png";
-import linkedinLogo from "../../images/linkedin_grey.png";
-import twitterLogo from "../../images/twitter_grey.png";
+import React from 'react';
+import { Row, Col } from 'antd';
+import facebookLogo from '../../images/facebook_grey.png';
+import instagramLogo from '../../images/instagram_grey.png';
+import linkedinLogo from '../../images/linkedin_grey.png';
+import twitterLogo from '../../images/twitter_grey.png';
 
 const socialBarStyle = {
-  backgroundColor: "#F0F0F0",
-  maxHeight: "60px"
+  backgroundColor: '#F0F0F0',
+  maxHeight: '60px',
 };
 
 const donateLinkStyle = {
-  display: "flex",
-  alignItems: "center",
-  justifyContent: "center",
-  color: "#fff",
-  fontFamily: "Titillium Web",
-  fontStyle: "normal",
-  fontWeight: "600",
-  fontSize: "24px",
-  height: "60px",
-  background: "rgba(31, 185, 74, 0.7)",
-  borderRadius: "3px",
-  textDecoration: "none",
-  textTransform: "uppercase",
-  marginLeft: "2px",
-  borderTopRightRadius: "0",
-  borderBottomRightRadius: "0"
+  display: 'flex',
+  alignItems: 'center',
+  justifyContent: 'center',
+  color: '#fff',
+  fontFamily: 'Titillium Web',
+  fontStyle: 'normal',
+  fontWeight: '600',
+  fontSize: '24px',
+  height: '60px',
+  background: 'rgba(31, 185, 74, 0.7)',
+  borderRadius: '3px',
+  textDecoration: 'none',
+  textTransform: 'uppercase',
+  marginLeft: '2px',
+  borderTopRightRadius: '0',
+  borderBottomRightRadius: '0',
 };
 
 const socialImageStyle = {
-  width: "100%",
-  height: "100%"
+  width: '100%',
+  height: '100%',
 };
 
 const socialLinkStyle = {
-  marginLeft: "2px",
-  display: "inline-flex",
-  height: "60px"
-}
+  marginLeft: '2px',
+  display: 'inline-flex',
+  height: '60px',
+};
 
 const SocialBar = () => {
   return (

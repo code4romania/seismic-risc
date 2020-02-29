@@ -1,32 +1,33 @@
-import React from "react";
-import { Row, Col, Typography, Input } from "antd";
+import React from 'react';
+import { Row, Col, Typography, Input } from 'antd';
 
 const { Title, Text } = Typography;
 
-function subscribe(event) {
-  const email = event.target.value;
-  console.log(`TODO: send email to ${email}`);
+// eslint-disable-next-line
+function subscribe(e) {
+  // const email = e.target.value;
+  // TODO console.log(`TODO: send email to ${email}`);
 }
 
-const Footer = props => {
+const Footer = () => {
   const [textStyle, setTextStyle] = React.useState({
-    textAlign: window.innerWidth > 768 ? "start" : "center"
+    textAlign: window.innerWidth > 768 ? 'start' : 'center',
   });
 
   const updateWidth = () => {
     const width = window.innerWidth;
     if (width < 768) {
-      textStyle.textAlign = "center";
+      textStyle.textAlign = 'center';
       setTextStyle(textStyle);
     } else {
-      textStyle.textAlign = "start";
+      textStyle.textAlign = 'start';
       setTextStyle(textStyle);
     }
   };
 
   React.useEffect(() => {
-    window.addEventListener("resize", updateWidth);
-    return () => window.removeEventListener("resize", updateWidth);
+    window.addEventListener('resize', updateWidth);
+    return () => window.removeEventListener('resize', updateWidth);
   });
 
   return (
@@ -70,7 +71,7 @@ const Footer = props => {
                     Abonează-te la newsletter
                   </Title>
                   <Input
-                    style={{ width: "100%" }}
+                    style={{ width: '100%' }}
                     size="large"
                     placeholder="Introdu adresa de e-mail si apasă ENTER"
                     onPressEnter={subscribe}
@@ -83,8 +84,7 @@ const Footer = props => {
                     <Text level={4}>
                       © 2019 Code for Romania.
                       <br />
-                      Organizație neguvernamentală independentă, neafiliată
-                      politic și apolitică.
+                      Organizație neguvernamentală independentă, neafiliată politic și apolitică.
                     </Text>
                   </Col>
                 </Row>

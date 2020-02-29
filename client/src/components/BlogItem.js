@@ -1,11 +1,14 @@
-import { Col } from "antd";
-import React from "react";
+import { Col } from 'antd';
+import React from 'react';
 
-const getColumnSize = (size) => {
-  switch(size) {
-    case 'md': return 10;
-    case 'lg': return 14;
-    default: return 8;
+const getColumnSize = size => {
+  switch (size) {
+    case 'md':
+      return 10;
+    case 'lg':
+      return 14;
+    default:
+      return 8;
   }
 };
 
