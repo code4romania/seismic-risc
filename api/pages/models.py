@@ -61,7 +61,7 @@ class Page(models.Model):
 
     class Meta:
         verbose_name = _("page")
-        verbose_plural = _("pages")
+        verbose_name_plural = _("pages")
 
     def __str__(self):
         return "{}".format(self.title)
@@ -109,7 +109,7 @@ class Attachment(models.Model):
 
     class Meta:
         verbose_name = _("attachment")
-        verbose_plural = _("attachments")
+        verbose_name_plural = _("attachments")
 
     def __str__(self):
         return "{}{}".format(self.uploaded_file.url, self.name)

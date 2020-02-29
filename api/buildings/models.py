@@ -74,7 +74,7 @@ class Building(models.Model):
 
     class Meta:
         verbose_name = _("building")
-        verbose_plural = _("buildings")
+        verbose_name_plural = _("buildings")
 
     def __str__(self):
         return self.address
@@ -94,7 +94,7 @@ class BuildingResource(resources.ModelResource):
         }
 
         verbose_name = _("building resource")
-        verbose_plural = _("building resources")
+        verbose_name_plural = _("building resources")
 
 
 class CsvFile(models.Model):
@@ -117,7 +117,7 @@ class CsvFile(models.Model):
 
     class Meta:
         verbose_name = _("CSV file")
-        verbose_plural = _("CSV files")
+        verbose_name_plural = _("CSV files")
 
     def __str__(self):
         return self.name
