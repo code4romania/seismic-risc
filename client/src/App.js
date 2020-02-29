@@ -20,7 +20,6 @@ const App = () => {
   const languageChangeCallback = useCallback(languageCode => {
     setLanguage(languageCode);
   }, []);
-  console.log(catalogs);
   return (
     <I18nProvider language={language} catalogs={catalogs}>
       <Router>
