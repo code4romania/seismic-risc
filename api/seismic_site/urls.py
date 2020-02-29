@@ -1,4 +1,5 @@
 from django.conf import settings
+from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
@@ -21,7 +22,7 @@ router.register(r"pages", PagesViewSet, basename="pages")
 router.register(r"posts", PostViewSet, basename="posts")
 
 
-urlpatterns = [
+urlpatterns = i18n_patterns(
     path(
         "admin/password_reset/",
         auth_views.PasswordResetView.as_view(),
@@ -45,4 +46,4 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("ckeditor/", include("ckeditor_uploader.urls")),
     path("api/v1/", include(router.urls)),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
