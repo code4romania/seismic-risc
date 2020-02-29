@@ -1,21 +1,21 @@
-import React, { useState } from "react";
-import { Layout, Menu, Button } from "antd";
-import logo from "../logo.svg";
-import { Trans } from "@lingui/macro";
-import styles from "./header.module.css";
+import React, { useState } from 'react';
+import { Layout, Menu, Button } from 'antd';
+import { Trans } from '@lingui/macro';
+import logo from '../logo.svg';
+import styles from './header.module.css';
 
 const { Header } = Layout;
 
 export default ({ currentLanguage, languageChangeCallback }) => {
-  const [langText, setLangText] = useState("English");
+  const [langText, setLangText] = useState('English');
 
   return (
-    <Header style={{ background: "none" }}>
+    <Header style={{ background: 'none' }}>
       <div className="App-logo">
-        <img src={logo} alt="Seismic Risc logo"></img>
+        <img src={logo} alt="Seismic Risc logo" />
       </div>
       <Menu
-        style={{ float: "right" }}
+        style={{ float: 'right' }}
         theme="light"
         mode="horizontal"
         className="App-menu"
@@ -44,13 +44,14 @@ export default ({ currentLanguage, languageChangeCallback }) => {
         <Menu.Item key="lang">
           <div
             className={styles.languageChangeButton}
+            role="layout"
             onClick={() => {
-              if (currentLanguage === "en") {
-                languageChangeCallback("ro");
-                setLangText("English");
+              if (currentLanguage === 'en') {
+                languageChangeCallback('ro');
+                setLangText('English');
               } else {
-                languageChangeCallback("en");
-                setLangText("Romană");
+                languageChangeCallback('en');
+                setLangText('Romană');
               }
             }}
           >
