@@ -139,7 +139,7 @@ msgid "address"
 msgstr ""
 
 #: buildings/models.py:50
-msgid "post_code"
+msgid "post code"
 msgstr ""
 
 #: buildings/models.py:51

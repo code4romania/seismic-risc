@@ -47,7 +47,7 @@ class Building(models.Model):
 
     county = models.CharField(_("county"), max_length=60)
     address = models.CharField(_("address"), max_length=250, null=True)
-    post_code = models.CharField(_("post_code"), max_length=250)
+    post_code = models.CharField(_("post code"), max_length=250)
     locality = models.CharField(_("locality"), max_length=20)
 
     year_built = models.IntegerField(_("year built"), null=True)

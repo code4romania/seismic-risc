@@ -21,11 +21,11 @@ msgstr ""
 
 #: blog/models.py:11 blog/models.py:32
 msgid "post"
-msgstr ""
+msgstr "articol"
 
 #: blog/models.py:13 pages/models.py:32
 msgid "title"
-msgstr ""
+msgstr "titlu"
 
 #: blog/models.py:14 pages/models.py:35
 msgid "slug"
@@ -33,139 +33,139 @@ msgstr ""
 
 #: blog/models.py:15
 msgid "image"
-msgstr ""
+msgstr "imagine"
 
 #: blog/models.py:16
 msgid "text"
-msgstr ""
+msgstr "text"
 
 #: blog/models.py:17
 msgid "tags"
-msgstr ""
+msgstr "cuvinte cheie"
 
 #: blog/models.py:18
 msgid "is visible"
-msgstr ""
+msgstr "este vizibil"
 
 #: blog/models.py:19
 msgid "published"
-msgstr ""
+msgstr "publicat"
 
 #: blog/models.py:20
 msgid "created"
-msgstr ""
+msgstr "creat"
 
 #: blog/models.py:21
 msgid "updated"
-msgstr ""
+msgstr "actualizat"
 
 #: blog/models.py:33
 msgid "posts"
-msgstr ""
+msgstr "articole"
 
 #: buildings/models.py:11
 msgid "Sector 1"
-msgstr ""
+msgstr "Sector 1"
 
 #: buildings/models.py:12
 msgid "Sector 2"
-msgstr ""
+msgstr "Sector 2"
 
 #: buildings/models.py:13
 msgid "Sector 3"
-msgstr ""
+msgstr "Sector 3"
 
 #: buildings/models.py:14
 msgid "Sector 4"
-msgstr ""
+msgstr "Sector 4"
 
 #: buildings/models.py:15
 msgid "Sector 5"
-msgstr ""
+msgstr "Sector 5"
 
 #: buildings/models.py:16
 msgid "Sector 6"
-msgstr ""
+msgstr "Sector 6"
 
 #: buildings/models.py:20
 msgid "Choose"
-msgstr ""
+msgstr "Alege"
 
 #: buildings/models.py:21
 msgid "Accepted"
-msgstr ""
+msgstr "Acceptat"
 
 #: buildings/models.py:22
 msgid "Rejected"
-msgstr ""
+msgstr "Respins"
 
 #: buildings/models.py:32
 msgid "general id"
-msgstr ""
+msgstr "id general"
 
 #: buildings/models.py:35
 msgid "risk category"
-msgstr ""
+msgstr "categorie risc"
 
 #: buildings/models.py:37
 msgid "registration number"
-msgstr ""
+msgstr "numar inregistrare"
 
 #: buildings/models.py:39
 msgid "examination year"
-msgstr ""
+msgstr "an examinare"
 
 #: buildings/models.py:41
 msgid "certified expert"
-msgstr ""
+msgstr "expert certificat"
 
 #: buildings/models.py:43
 msgid "observations"
-msgstr ""
+msgstr "observatii"
 
 #: buildings/models.py:45
 msgid "latitude"
-msgstr ""
+msgstr "latitudine"
 
 #: buildings/models.py:46
 msgid "longitude"
-msgstr ""
+msgstr "longitudine"
 
 #: buildings/models.py:48
 msgid "county"
-msgstr ""
+msgstr "judet"
 
 #: buildings/models.py:49
 msgid "address"
-msgstr ""
+msgstr "adresa"
 
 #: buildings/models.py:50
-msgid "post_code"
-msgstr ""
+msgid "post code"
+msgstr "cod postal"
 
 #: buildings/models.py:51
 msgid "locality"
-msgstr ""
+msgstr "localitate"
 
 #: buildings/models.py:53
 msgid "year built"
-msgstr ""
+msgstr "an constructie"
 
 #: buildings/models.py:55
 msgid "height regime"
-msgstr ""
+msgstr "regim inaltime"
 
 #: buildings/models.py:56
 msgid "apartment count"
-msgstr ""
+msgstr "numar apartamente"
 
 #: buildings/models.py:57
 msgid "surface"
-msgstr ""
+msgstr "suprafata"
 
 #: buildings/models.py:59
 msgid "cadastre number"
-msgstr ""
+msgstr "numar cadastru"
 
 #: buildings/models.py:61
 msgid "land registry number"
@@ -173,7 +173,7 @@ msgstr ""
 
 #: buildings/models.py:63
 msgid "administration update"
-msgstr ""
+msgstr "actualizare administrare"
 
 #: buildings/models.py:65
 msgid "admin update"
@@ -185,67 +185,67 @@ msgstr ""
 
 #: buildings/models.py:73
 msgid "created on"
-msgstr ""
+msgstr "creat la"
 
 #: buildings/models.py:76
 msgid "building"
-msgstr ""
+msgstr "cladire"
 
 #: buildings/models.py:77
 msgid "buildings"
-msgstr ""
+msgstr "cladiri"
 
 #: buildings/models.py:96
 msgid "building resource"
-msgstr ""
+msgstr "resursa cladire"
 
 #: buildings/models.py:97
 msgid "building resources"
-msgstr ""
+msgstr "resurse cladire"
 
 #: buildings/models.py:106
 msgid "Unsuccess"
-msgstr ""
+msgstr "Esec"
 
 #: buildings/models.py:107
 msgid "Not tried"
-msgstr ""
+msgstr "Neincercat"
 
 #: buildings/models.py:108
 msgid "Success"
-msgstr ""
+msgstr "Succes"
 
 #: buildings/models.py:111 pages/models.py:10 pages/models.py:99
 msgid "name"
-msgstr ""
+msgstr "nume"
 
 #: buildings/models.py:112
 msgid "file"
-msgstr ""
+msgstr "fisier"
 
 #: buildings/models.py:119
 msgid "CSV file"
-msgstr ""
+msgstr "fisier CSV"
 
 #: buildings/models.py:120
 msgid "CSV files"
-msgstr ""
+msgstr "fisiere CSV"
 
 #: pages/models.py:18 pages/models.py:29
 msgid "category"
-msgstr ""
+msgstr "categorie"
 
 #: pages/models.py:19
 msgid "categories"
-msgstr ""
+msgstr "categorii"
 
 #: pages/models.py:28
 msgid "Page category"
-msgstr ""
+msgstr "Categorie pagina"
 
 #: pages/models.py:33
 msgid "Page title"
-msgstr ""
+msgstr "Titlu pagina"
 
 #: pages/models.py:40
 msgid "Unique URL slug (leave empty to auto-generate)"
@@ -253,64 +253,64 @@ msgstr ""
 
 #: pages/models.py:42
 msgid "content"
-msgstr ""
+msgstr "continut"
 
 #: pages/models.py:44
 msgid "updated on"
-msgstr ""
+msgstr "actualizat la"
 
 #: pages/models.py:49
 msgid "Last update time"
-msgstr ""
+msgstr "Data ultimei actualizari"
 
 #: pages/models.py:52
 msgid "publishing date"
-msgstr ""
+msgstr "data publicare"
 
 #: pages/models.py:53
 msgid "Public page publishing date"
-msgstr ""
+msgstr "Data publicarii paginii"
 
 #: pages/models.py:56
 msgid "is published"
-msgstr ""
+msgstr "este publicata"
 
 #: pages/models.py:59
 msgid "Is this page visible on the website"
-msgstr ""
+msgstr "Este aceasta pagina vizibila pe website"
 
 #: pages/models.py:63
 msgid "page"
-msgstr ""
+msgstr "pagina"
 
 #: pages/models.py:64
 msgid "pages"
-msgstr ""
+msgstr "pagini"
 
 #: pages/models.py:95
 msgid "Page attachment"
-msgstr ""
+msgstr "Atasament pagina"
 
 #: pages/models.py:96 pages/models.py:111
 msgid "attachment"
-msgstr ""
+msgstr "atasament"
 
 #: pages/models.py:100
 msgid "Attachment name"
-msgstr ""
+msgstr "Nume atasament"
 
 #: pages/models.py:102
 msgid "upload date"
-msgstr ""
+msgstr "data incarcare"
 
 #: pages/models.py:103
 msgid "Attachment upload date"
-msgstr ""
+msgstr "Data incarcarii atasamentului"
 
 #: pages/models.py:106
 msgid "uploaded file"
-msgstr ""
+msgstr "fisier incarcat"
 
 #: pages/models.py:112
 msgid "attachments"
-msgstr ""
+msgstr "atasamente"
