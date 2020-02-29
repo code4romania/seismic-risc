@@ -130,6 +130,8 @@ class Base(Configuration):
     MEDIA_URL = "/media/"
     MEDIA_ROOT = os.path.join(BASE_DIR, "./public/media")
 
+    LOCALE_PATHS = [os.path.join(BASE_DIR, "./locale")]
+
     CKEDITOR_UPLOAD_PATH = "uploads/"
 
     REST_FRAMEWORK = {
