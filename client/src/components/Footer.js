@@ -1,4 +1,3 @@
-import "../css/footer.css";
 import React from "react";
 import { Row, Col, Typography, Input } from "antd";
 
