@@ -28,6 +28,9 @@ jobs:
       run: |
       make install-docker-osx
       open /Applications/Docker.app
+    - name: Wait for Docker to start
+      run: |
+        for ((i = 0; i <30; i++)); do docker ps &> /dev/null && break || echo "Docker is not open yet. Retrying in 1 second..."; sleep 1; done
     - name: Initialize environment
       run: |
         make init-env
