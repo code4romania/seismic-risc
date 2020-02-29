@@ -1,0 +1,36 @@
+name: Run first-time set-up for MacOS and Linux
+
+on:
+  push:
+    branches:
+      - 'master'
+  pull_request:
+    branches:
+      - 'master'
+
+jobs:
+  ubuntu-set-up:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set-up Docker
+      run: |
+        make install-docker-ubuntu
+    - name: Initialize environment
+      run: |
+        make init-env
+
+  macos-set-up:
+    runs-on: macos-10.15
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set-up Docker
+      run: |
+      make install-docker-osx
+      open /Applications/Docker.app
+    - name: Wait for Docker to start
+      run: |
+        for ((i = 0; i <30; i++)); do docker ps &> /dev/null && break || echo "Docker is not open yet. Retrying in 1 second..."; sleep 1; done
+    - name: Initialize environment
+      run: |
+        make init-env
