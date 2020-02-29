@@ -1,13 +1,14 @@
-import React from "react";
-import {Button} from "antd";
-import {Link} from "react-router-dom";
+import React from 'react';
+import { Button } from 'antd';
+import { Link } from 'react-router-dom';
 
-const LinkButton = ({ children, to, ...props }) => (
-  <Link to={to}>
-    <Button {...props}>
-      {children}
-    </Button>
-  </Link>
-);
+const LinkButton = props => {
+  const { children, to, ...otherProps } = props;
+  return (
+    <Link to={to}>
+      <Button {...otherProps}>{children}</Button>
+    </Link>
+  );
+};
 
 export default LinkButton;

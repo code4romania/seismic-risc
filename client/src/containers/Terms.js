@@ -1,7 +1,7 @@
-import React from "react";
-import Layout from "../components/Layout"
+import React from 'react';
+import Layout from '../components/Layout';
 
-const Terms = props => {
+const Terms = () => {
   return (
     <Layout>
       <div className="page">
