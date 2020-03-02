@@ -1,0 +1,21 @@
+name: Run first-time set-up for MacOS and Linux
+
+on:
+  push:
+    branches:
+      - 'master'
+  pull_request:
+    branches:
+      - 'master'
+
+jobs:
+  ubuntu-set-up:
+    runs-on: ubuntu-18.04
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set-up Docker
+      run: |
+        make install-docker-ubuntu
+    - name: Initialize environment
+      run: |
+        make init-env
