@@ -44,6 +44,7 @@ class Base(Configuration):
         # third-party apps
         "rest_framework",
         "storages",
+        "admin_reorder",
         "taggit",
         "ckeditor",
         "ckeditor_uploader",
@@ -57,6 +58,7 @@ class Base(Configuration):
         "django.middleware.security.SecurityMiddleware",
         "whitenoise.middleware.WhiteNoiseMiddleware",
         "django.contrib.sessions.middleware.SessionMiddleware",
+        "admin_reorder.middleware.ModelAdminReorder",
         "django.middleware.common.CommonMiddleware",
         "django.middleware.csrf.CsrfViewMiddleware",
         "django.contrib.auth.middleware.AuthenticationMiddleware",
@@ -83,6 +85,12 @@ class Base(Configuration):
 
     WSGI_APPLICATION = "seismic_site.wsgi.application"
 
+    ADMIN_REORDER = (
+        {'app': 'auth', 'models': ('auth.Group', 'auth.User')},
+        {'app': 'blog', 'models': ('blog.Post', 'blog.Category', 'taggit.Tag')},
+        {'app': 'buildings', 'models': ('buildings.Building', 'buildings.CsvFile',)},
+        {'app': 'pages', 'models': ('pages.Page',)},
+    )
     # Database
     # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 

@@ -3,27 +3,7 @@ from django.db import models
 from django.utils import timezone
 from django.utils.text import slugify
 
-
-class Category(models.Model):
-    name = models.CharField(
-        blank=False, null=False, max_length=150, unique=True
-    )
-
-    def __str__(self):
-        return "{}".format(self.name)
-
-    class Meta:
-        verbose_name_plural = "categories"
-
-
 class Page(models.Model):
-    category = models.ForeignKey(
-        Category,
-        blank=True,
-        null=True,
-        on_delete=models.SET_NULL,
-        help_text="Page category",
-    )
     title = models.CharField(blank=True, max_length=150, help_text="Page title")
     slug = models.SlugField(
         unique=True,
