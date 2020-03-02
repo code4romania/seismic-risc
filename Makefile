@@ -40,6 +40,7 @@ install-docker-osx:
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	brew update
 	brew cask install docker
+	brew install docker-compose
 
 init-env:
 	cp .env.dist .env
