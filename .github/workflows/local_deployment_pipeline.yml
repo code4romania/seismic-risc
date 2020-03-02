@@ -19,3 +19,18 @@ jobs:
     - name: Initialize environment
       run: |
         make init-env
+
+  macos-set-up:
+    runs-on: macos-10.15
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set-up Docker
+      run: |
+        make install-docker-osx
+    - name: Open Docker and wait for it to start-up
+      run: |
+        open /Applications/Docker.app
+        for ((i = 0; i <120; i++)); do docker ps &> /dev/null && break || echo "Docker is not open yet. Retrying in 1 second..."; sleep 1; done
+    - name: Initialize environment
+      run: |
+        make init-env
