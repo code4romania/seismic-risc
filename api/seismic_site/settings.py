@@ -86,10 +86,13 @@ class Base(Configuration):
     WSGI_APPLICATION = "seismic_site.wsgi.application"
 
     ADMIN_REORDER = (
-        {'app': 'auth', 'models': ('auth.Group', 'auth.User')},
-        {'app': 'blog', 'models': ('blog.Post', 'blog.Category', 'taggit.Tag')},
-        {'app': 'buildings', 'models': ('buildings.Building', 'buildings.CsvFile',)},
-        {'app': 'pages', 'models': ('pages.Page',)},
+        {"app": "auth", "models": ("auth.Group", "auth.User")},
+        {"app": "blog", "models": ("blog.Post", "blog.Category", "taggit.Tag")},
+        {
+            "app": "buildings",
+            "models": ("buildings.Building", "buildings.CsvFile",),
+        },
+        {"app": "pages", "models": ("pages.Page",)},
     )
     # Database
     # https://docs.djangoproject.com/en/2.2/ref/settings/#databases

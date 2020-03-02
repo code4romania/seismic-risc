@@ -2,6 +2,7 @@ from django.contrib import admin
 
 from .models import Post, Category
 
+
 @admin.register(Category)
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ("name",)
@@ -9,7 +10,14 @@ class CategoryAdmin(admin.ModelAdmin):
 
 class PostAdmin(admin.ModelAdmin):
     prepopulated_fields = {"slug": ("title",)}
-    list_display = ("title", "category", "slug", "created", "published", "is_visible")
+    list_display = (
+        "title",
+        "category",
+        "slug",
+        "created",
+        "published",
+        "is_visible",
+    )
     fieldsets = [
         (
             None,

@@ -3,6 +3,7 @@ from django.db import models
 from taggit.managers import TaggableManager
 from ckeditor_uploader.fields import RichTextUploadingField
 
+
 class Category(models.Model):
     name = models.CharField(
         blank=False, null=False, max_length=150, unique=True

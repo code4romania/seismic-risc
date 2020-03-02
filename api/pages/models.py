@@ -3,6 +3,7 @@ from django.db import models
 from django.utils import timezone
 from django.utils.text import slugify
 
+
 class Page(models.Model):
     title = models.CharField(blank=True, max_length=150, help_text="Page title")
     slug = models.SlugField(
