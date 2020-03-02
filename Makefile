@@ -65,7 +65,7 @@ redo-db: drop-db init-db
 update-requirements:
 	docker-compose build --pull api
 	docker-compose run --rm api "cd /code && pip install pip-tools -U && pip-compile --upgrade requirements.in -o requirements.txt && chmod a+r requirements.txt"
-	docker-compose run --rm api "cd /code && pip install pip-tools -U && pip-compile --upgrade requirements.in requirements-dev.in -o requirements-dev.txt && chmod a+r requirements-dev.txt"
+	docker-compose run --rm api "cd /code && pip install pip-tools -U && pip-compile --upgrade requirements-dev.in -o requirements-dev.txt && chmod a+r requirements-dev.txt"
 
 migrations:
 	docker-compose build --pull api
