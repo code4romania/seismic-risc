@@ -1,0 +1,11 @@
+.marker {
+  margin: -12px 0 0 -12px;
+}
+
+.marker > svg {
+  fill: #ee741b;
+}
+
+.marker svg:hover {
+  cursor: pointer;
+}
