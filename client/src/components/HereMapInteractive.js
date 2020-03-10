@@ -35,7 +35,7 @@ const HereMapInteractive = props => {
       {apikey ? (
         <div ref={mapRef} style={{ width: '100%', height: '400px', background: 'grey' }}>
           {points.map(p => (
-            <MapMarker map={currentMap} poi={p} key={p.general_id} />
+            <MapMarker map={currentMap} poi={p} key={p.land_registry_number} />
           ))}
         </div>
       ) : (
