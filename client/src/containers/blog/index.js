@@ -1,4 +1,4 @@
-import React from "react"
-import Blog from "./Blog"
+import React from 'react';
+import Blog from './Blog';
 
-export default () => <Blog />
+export default () => <Blog />;
