@@ -1,5 +1,5 @@
-import React from "react"
-import LinkButton from "../../components/LinkButton"
+import React from 'react';
+import LinkButton from '../../components/LinkButton';
 
 const Blog = () => (
   <>
@@ -8,6 +8,6 @@ const Blog = () => (
       Home
     </LinkButton>
   </>
-)
+);
 
-export default Blog
+export default Blog;
