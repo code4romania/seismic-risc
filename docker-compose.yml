@@ -1,15 +1,6 @@
 version: '3.7'
 
 services:
-  db:
-    image: postgres:11
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
-    environment:
-      - POSTGRES_HOST_AUTH_METHOD=trust
-
   client:
     container_name: seismic-risc-client
     build:
@@ -21,7 +12,7 @@ services:
     depends_on:
       - api
     environment:
-      NODE_ENV:
+      NODE_ENV: development
 
   api:
     container_name: seismic-risc-api
@@ -29,16 +20,13 @@ services:
       context: ./api
       args:
         DEVBUILD: 1
-    command: ["./wait_for_db.py && ./manage.py migrate --noinput && ./manage.py runserver 0.0.0.0:8000"]
+    command: ["./manage.py migrate --noinput && ./manage.py runserver 0.0.0.0:8000"]
     volumes:
       - ./api:/code
     ports:
       - "8000:8000"
-    depends_on:
-      - db
     environment:
-      DJANGO_CONFIGURATION:
-      DATABASE_URL:
+      DJANGO_CONFIGURATION: Dev
 
 volumes:
   pgdata:

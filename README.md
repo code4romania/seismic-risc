@@ -133,7 +133,7 @@ docker-compose version 1.24.1, build 4667896b
 Initialise the database and development fixtures:
 
 ```bash
-make init-env
+make init
 ```
 
 ### Starting the project
@@ -146,10 +146,11 @@ Get the project up and running:
 docker-compose up
 ```
 
-You should be able to access the local environment site and admin at the following URLs:
+You should be able to access the local environment at the following URLs:
 
-- <http://localhost:8000/api/v1/>
-- <http://localhost:8000/admin/>
+- Main website (client): <http://localhost:8000/>
+- API: <http://localhost:8000/api/v1/>
+- Admin interface: <http://localhost:8000/admin/>
 
 If you have problems starting the project, first check out the [FAQ](https://github.com/code4romania/seismic-risc/wiki/FAQ) and if that doesn't work, ask someone from the project's channel.
 Maybe the issue you just had is worth adding to the [FAQ](https://github.com/code4romania/seismic-risc/wiki/FAQ), wouldn't it?
@@ -191,7 +192,7 @@ Local development testing:
 
 ```bash
 cd path/to/repo
-docker-compose exec api bash
+docker-compose run --rm api bash
 root@3c5df91778ad:/code# pytest
 ```
 

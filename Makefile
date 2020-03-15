@@ -41,8 +41,7 @@ install-docker-osx:
 	brew update
 	brew cask install docker
 
-init-env:
-	cp .env.dist .env
+init:
 	make build
 	make init-db
 
@@ -51,25 +50,24 @@ build:
 
 init-db:
 	docker-compose down -t 60
-	docker-compose run --rm api "./wait_for_db.py && ./manage.py migrate --no-input"
+	docker-compose run --rm api "./manage.py migrate --no-input"
 	docker-compose run --rm api "./manage.py createsuperuser"
 	docker-compose run --rm api "./manage.py loaddata buildings"
 	docker-compose run --rm api "./manage.py loaddata pages"
 
 drop-db:
 	docker-compose down -t 60
-	docker volume rm seismic-risc_pgdata
+	rm seismic_risc.db
 
 redo-db: drop-db init-db
 
 update-requirements:
 	docker-compose build --pull api
-	docker-compose run --rm api "cd /code && pip install pip-tools -U && pip-compile --upgrade requirements.in -o requirements.txt && chmod a+r requirements.txt"
-	docker-compose run --rm api "cd /code && pip install pip-tools -U && pip-compile --upgrade requirements-dev.in -o requirements-dev.txt && chmod a+r requirements-dev.txt"
+	docker-compose run --rm api "pip install pip-tools -U && pip-compile -U requirements.in -o requirements.txt && chmod a+r requirements.txt && pip-compile -U requirements-dev.in -o requirements-dev.txt && chmod a+r requirements-dev.txt"
 
 migrations:
 	docker-compose build --pull api
-	docker-compose run --rm api "./wait_for_db.py && ./manage.py makemigrations && ./manage.py migrate"
+	docker-compose run --rm api "./manage.py makemigrations && ./manage.py migrate --no-input"
 
 migrate:
 	docker-compose run --rm api "./manage.py migrate"

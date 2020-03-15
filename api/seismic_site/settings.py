@@ -147,6 +147,13 @@ class Dev(Base):
     SITE_URL = "http://localhost:8000"
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
+    DATABASES = {
+        "default": {
+            "ENGINE": "django.db.backends.sqlite3",
+            "NAME": "/code/seismic_risc.db",
+        }
+    }
+
 
 class Test(Base):
     DEBUG = True
