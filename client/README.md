@@ -9,6 +9,10 @@ npm install -g json-server
 json-server --watch db.json
 ```
 
+## Node version
+
+Requires at least version 10.13.0 of Node
+
 ## Available Scripts
 
 In the project directory, you can run:

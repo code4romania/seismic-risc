@@ -1,12 +1,13 @@
-import React from "react"
-import HereMap from "../../components/HereMap"
-import { Tabs } from "antd"
-const { TabPane } = Tabs
+import React from 'react';
+import { Tabs } from 'antd';
+import HereMap from '../../components/HereMap';
+
+const { TabPane } = Tabs;
 
 const dummyPoints = [
   [44.4368, 26.1125],
   [44.4398, 26.1195],
-]
+];
 
 export default () => {
   return (
@@ -24,5 +25,5 @@ export default () => {
         <HereMap points={dummyPoints} />
       </TabPane>
     </Tabs>
-  )
-}
+  );
+};
