@@ -16,7 +16,9 @@ jobs:
           node-version: 12
 
       - name: Install Node.js dependencies
-        run: npm install -g ./client
+        run: npm install
+	working-directory: client/
 
       - name: Run linters
-        run: eslint ./client
+        run: npm run lint
+	working-directory: client/
