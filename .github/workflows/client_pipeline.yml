@@ -17,8 +17,8 @@ jobs:
 
       - name: Install Node.js dependencies
         run: npm install
-	      working-directory: client/
+        working-directory: client/
 
       - name: Run linters
         run: npm run lint
-	      working-directory: client/
+        working-directory: client/
