@@ -4,8 +4,8 @@
 #
 #    pip-compile --output-file=requirements.txt requirements.in
 #
-boto3==1.12.11            # via -r requirements.in
-botocore==1.15.11         # via boto3, s3transfer
+boto3==1.12.30            # via -r requirements.in
+botocore==1.15.30         # via boto3, s3transfer
 brotlipy==0.7.0           # via -r requirements.in
 cffi==1.14.0              # via brotlipy
 defusedxml==0.6.0         # via odfpy
