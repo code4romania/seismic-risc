@@ -22,6 +22,7 @@ services:
       - api
     environment:
       NODE_ENV:
+      REACT_APP_API_KEY:
 
   api:
     container_name: seismic-risc-api
