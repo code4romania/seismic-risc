@@ -70,7 +70,7 @@
     "less-loader": "^5.0.0",
     "lint-staged": "^10.0.8",
     "node-sass": "^4.13.1",
-    "prettier": "^1.19.1",
+    "prettier": "^2.0.3",
     "react-app-rewired": "^2.1.5"
   }
 }
