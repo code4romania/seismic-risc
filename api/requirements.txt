@@ -28,7 +28,7 @@ markuppy==1.14            # via tablib
 odfpy==1.4.1              # via tablib
 openpyxl==3.0.3           # via tablib
 pillow==7.0.0             # via -r requirements.in
-psycopg2==2.8.4           # via -r requirements.in
+psycopg2==2.8.5           # via -r requirements.in
 pycparser==2.19           # via cffi
 python-dateutil==2.8.1    # via botocore
 pytz==2019.3              # via -r requirements.in, django
