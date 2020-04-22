@@ -6,9 +6,13 @@ on:
       - 'master'
     paths:
       - '**.py'
+      - '**/requirements*.in'
+      - '**/requirements*.txt'
   pull_request:
     paths:
       - '**.py'
+      - '**/requirements*.in'
+      - '**/requirements*.txt'
 
 jobs:
   static_analysis:
@@ -19,10 +23,10 @@ jobs:
       uses: actions/setup-python@v1
       with:
         python-version: 3.7
-    - name: Install dependencies
+    - name: Install Black with latest pip
       run: |
         python -m pip install --upgrade pip
-        pip install black
+        cat ./api/requirements-dev.txt | grep black== | cut -d' ' -f1 | xargs pip install
     - name: Check formatting with black
       run: |
         black --line-length 80 --target-version py37 --exclude migrations --check ./api
