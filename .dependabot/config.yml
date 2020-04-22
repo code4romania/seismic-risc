@@ -3,7 +3,7 @@ update_configs:
   - package_manager: "javascript"
     directory: "client/"
     update_schedule: "live"
-    target_branch: "master"
+    target_branch: "develop"
     default_reviewers:
       - "tudoramariei"
       - "catileptic"
