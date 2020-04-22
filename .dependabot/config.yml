@@ -12,15 +12,3 @@ update_configs:
     default_labels:
       - "dependencies"
       - "react"
-  # - package_manager: "python"
-  #   directory: "api/"
-  #   update_schedule: "live"
-  #   target_branch: "master"
-  #   default_reviewers:
-  #     - "tudoramariei"
-  #     - "catileptic"
-  #   default_assignees:
-  #     - "tudoramariei"
-  #   default_labels:
-  #     - "dependencies"
-  #     - "django"
