@@ -5,7 +5,7 @@ import React from 'react';
 
 const baseUrl = 'https://image.maps.ls.hereapi.com/mia/1.6/mapview';
 const mapConfig = {
-  // apiKey: "API_KEY_HERE",
+  apiKey: process.env.REACT_APP_API_KEY,
   w: 1000,
   h: 300,
   // zoom level
