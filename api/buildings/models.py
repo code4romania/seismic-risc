@@ -17,9 +17,9 @@ class SectorChoice(Enum):
 
 
 BUILDING_STATUS_CHOICES = [
-    (0, _("Choose")), 
-    (1, _("Accepted")), 
-    (-1, _("Rejected"))
+    (0, _("Choose")),
+    (1, _("Accepted")),
+    (-1, _("Rejected")),
 ]
 
 
@@ -32,15 +32,18 @@ class Building(models.Model):
     general_id = models.AutoField(_("general id"), primary_key=True)
 
     risk_category = models.CharField(
-        _("risk category"), max_length=50, db_index=True)
+        _("risk category"), max_length=50, db_index=True
+    )
     registration_number = models.IntegerField(
-        _("registration number"), null=True)
-    examination_year = models.IntegerField(
-        _("examination year"), null=True)
+        _("registration number"), null=True
+    )
+    examination_year = models.IntegerField(_("examination year"), null=True)
     certified_expert = models.CharField(
-        _("certified expert"), max_length=100, null=True)
+        _("certified expert"), max_length=100, null=True
+    )
     observations = models.CharField(
-        _("observations"), max_length=1000, null=True)
+        _("observations"), max_length=1000, null=True
+    )
 
     lat = models.FloatField(_("latitude"), null=True)
     lng = models.FloatField(_("longitude"), null=True)
@@ -52,25 +55,27 @@ class Building(models.Model):
 
     year_built = models.IntegerField(_("year built"), null=True)
     height_regime = models.CharField(
-        _("height regime"), max_length=50, null=True)
+        _("height regime"), max_length=50, null=True
+    )
     apartment_count = models.IntegerField(_("apartment count"), null=True)
     surface = models.FloatField(_("surface"), null=True)
 
     cadastre_number = models.IntegerField(_("cadastre number"), null=True)
     land_registry_number = models.CharField(
-        _("land registry number"), max_length=50, null=True)
+        _("land registry number"), max_length=50, null=True
+    )
     administration_update = models.DateField(
-        _("administration update"), null=True, blank=True)
-    admin_update = models.DateField(
-        _("admin update"), null=True, blank=True)
+        _("administration update"), null=True, blank=True
+    )
+    admin_update = models.DateField(_("admin update"), null=True, blank=True)
 
     status = models.SmallIntegerField(
-        _("status"), 
-        default=0, choices=BUILDING_STATUS_CHOICES, db_index=True
+        _("status"), default=0, choices=BUILDING_STATUS_CHOICES, db_index=True
     )
 
     created_on = models.DateTimeField(
-        _("created on"), default=timezone.now, blank=True)
+        _("created on"), default=timezone.now, blank=True
+    )
 
     class Meta:
         verbose_name = _("building")
@@ -111,8 +116,7 @@ class CsvFile(models.Model):
     name = models.CharField(_("name"), max_length=255)
     file = models.FileField(_("file"))
     status = models.SmallIntegerField(
-        _("status"), 
-        default=NOT_TRIED, editable=False, choices=STATUS_CHOICES
+        _("status"), default=NOT_TRIED, editable=False, choices=STATUS_CHOICES
     )
 
     class Meta:

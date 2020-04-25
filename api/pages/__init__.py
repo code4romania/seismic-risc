@@ -1,1 +1,1 @@
-default_app_config = 'pages.apps.PagesConfig'
+default_app_config = "pages.apps.PagesConfig"

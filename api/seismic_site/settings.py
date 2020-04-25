@@ -118,8 +118,8 @@ class Base(Configuration):
     USE_TZ = True
 
     LANGUAGES = [
-        ('en', _('English')),
-        ('ro', _('Romanian')),
+        ("en", _("English")),
+        ("ro", _("Romanian")),
     ]
 
     # Static files (CSS, JavaScript, Images)
