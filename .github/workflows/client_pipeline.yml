@@ -1,0 +1,24 @@
+name: JS Linting
+
+on: pull_request
+
+jobs:
+  run-linters:
+    name: Run linters
+    runs-on: ubuntu-18.04
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: 12
+
+      - name: Install Node.js dependencies
+        run: npm install
+        working-directory: client/
+
+      - name: Run linters
+        run: npm run lint
+        working-directory: client/
