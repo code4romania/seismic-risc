@@ -1,6 +1,11 @@
-name: JS Linting
+name: Client Pipeline
 
-on: pull_request
+on:
+  pull_request:
+    paths:
+      - 'client/**'
+      - '**.js'
+      - '**/package*.json'
 
 jobs:
   run-linters:
