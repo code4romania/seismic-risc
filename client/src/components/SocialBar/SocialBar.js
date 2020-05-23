@@ -1,32 +1,26 @@
 import React from 'react';
-import { Row, Col } from 'antd';
 import facebookLogo from '../../images/facebook_grey.png';
 import instagramLogo from '../../images/instagram_grey.png';
 import linkedinLogo from '../../images/linkedin_grey.png';
 import twitterLogo from '../../images/twitter_grey.png';
-
-const socialBarStyle = {
-  backgroundColor: '#F0F0F0',
-  maxHeight: '60px',
-};
 
 const donateLinkStyle = {
   display: 'flex',
   alignItems: 'center',
   justifyContent: 'center',
   color: '#fff',
-  fontFamily: 'Titillium Web',
   fontStyle: 'normal',
   fontWeight: '600',
   fontSize: '24px',
-  height: '60px',
+  height: '64px',
   background: 'rgba(31, 185, 74, 0.7)',
   borderRadius: '3px',
   textDecoration: 'none',
   textTransform: 'uppercase',
-  marginLeft: '2px',
+  margin: '0 2px',
   borderTopRightRadius: '0',
   borderBottomRightRadius: '0',
+  padding: '0 5px',
 };
 
 const socialImageStyle = {
@@ -37,65 +31,60 @@ const socialImageStyle = {
 const socialLinkStyle = {
   marginLeft: '2px',
   display: 'inline-flex',
-  height: '60px',
+  height: '64px',
+  width: '64px',
+};
+
+const flexRow = {
+  display: 'flex',
+  justifyContent: 'flex-end',
+  maxHeight: '64px',
 };
 
 const SocialBar = () => {
   return (
-    <div style={socialBarStyle}>
-      <Row type="flex" justify="end">
-        <Col md={1} sm={2} xs={3}>
-          <a
-            style={socialLinkStyle}
-            href="https://www.facebook.com/code4romania"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={facebookLogo} style={socialImageStyle} alt="Facebook" />
-          </a>
-        </Col>
-        <Col md={1} sm={2} xs={3}>
-          <a
-            style={socialLinkStyle}
-            href="https://www.instagram.com/code4romania"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={instagramLogo} style={socialImageStyle} alt="Instagram" />
-          </a>
-        </Col>
-        <Col md={1} sm={2} xs={3}>
-          <a
-            style={socialLinkStyle}
-            href="https://www.linkedin.com/company/code4romania"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={linkedinLogo} style={socialImageStyle} alt="LinkedIn" />
-          </a>
-        </Col>
-        <Col md={1} sm={2} xs={3}>
-          <a
-            style={socialLinkStyle}
-            href="https://twitter.com/Code4Romania"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img src={twitterLogo} style={socialImageStyle} alt="Twitter" />
-          </a>
-        </Col>
+    <div style={flexRow}>
+      <a
+        style={socialLinkStyle}
+        href="https://www.facebook.com/code4romania"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src={facebookLogo} style={socialImageStyle} alt="Facebook" />
+      </a>
+      <a
+        style={socialLinkStyle}
+        href="https://www.instagram.com/code4romania"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src={instagramLogo} style={socialImageStyle} alt="Instagram" />
+      </a>
+      <a
+        style={socialLinkStyle}
+        href="https://www.linkedin.com/company/code4romania"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src={linkedinLogo} style={socialImageStyle} alt="LinkedIn" />
+      </a>
+      <a
+        style={socialLinkStyle}
+        href="https://twitter.com/Code4Romania"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        <img src={twitterLogo} style={socialImageStyle} alt="Twitter" />
+      </a>
 
-        <Col md={4} sm={4} xs={12}>
-          <a
-            style={donateLinkStyle}
-            target="_blank"
-            rel="noopener noreferrer"
-            href="https://code4.ro/ro/doneaza/"
-          >
-            DONEAZĂ
-          </a>
-        </Col>
-      </Row>
+      <a
+        style={donateLinkStyle}
+        target="_blank"
+        rel="noopener noreferrer"
+        href="https://code4.ro/ro/doneaza/"
+      >
+        DONEAZĂ
+      </a>
     </div>
   );
 };
