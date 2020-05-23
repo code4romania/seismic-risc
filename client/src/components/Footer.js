@@ -10,31 +10,11 @@ function subscribe(e) {
 }
 
 const Footer = () => {
-  const [textStyle, setTextStyle] = React.useState({
-    textAlign: window.innerWidth > 768 ? 'start' : 'center',
-  });
-
-  const updateWidth = () => {
-    const width = window.innerWidth;
-    if (width < 768) {
-      textStyle.textAlign = 'center';
-      setTextStyle(textStyle);
-    } else {
-      textStyle.textAlign = 'start';
-      setTextStyle(textStyle);
-    }
-  };
-
-  React.useEffect(() => {
-    window.addEventListener('resize', updateWidth);
-    return () => window.removeEventListener('resize', updateWidth);
-  });
-
   return (
     <div className="App-footer">
       <div className="footer-inside">
         <Row type="flex" justify="space-between" gutter={[0, 40]}>
-          <Col md={8} xs={24} style={textStyle}>
+          <Col md={8} xs={24}>
             <Title level={4}>Link-uri utile</Title>
             <Row>
               <a href="/termeni-si-conditii">
@@ -66,7 +46,7 @@ const Footer = () => {
           <Col md={8} xs={24} justify="space-between">
             <Row gutter={[0, 40]}>
               <Col>
-                <Row style={textStyle}>
+                <Row>
                   <Title level={4} strong>
                     Abonează-te la newsletter
                   </Title>
@@ -80,7 +60,7 @@ const Footer = () => {
               </Col>
               <Col>
                 <Row>
-                  <Col style={textStyle}>
+                  <Col>
                     <Text level={4}>
                       © 2019 Code for Romania.
                       <br />
