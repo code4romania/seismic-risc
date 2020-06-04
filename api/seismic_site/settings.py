@@ -41,6 +41,7 @@ class Base(Configuration):
         "django.contrib.sites",
         "django.contrib.sitemaps",
         "django.contrib.humanize",
+        "django.contrib.postgres",
         # third-party apps
         "rest_framework",
         "storages",
@@ -139,6 +140,8 @@ class Base(Configuration):
             "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
         ]
     }
+
+    TRIGRAM_SIMILARITY_THRESHOLD = 0.1
 
 
 class Dev(Base):
