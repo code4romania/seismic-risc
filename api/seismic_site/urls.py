@@ -6,7 +6,7 @@ from django.urls import path, include
 
 from rest_framework import routers
 
-from buildings.views import BuildingViewSet
+from buildings.views import BuildingViewSet, building_search
 from pages.views import PagesViewSet
 from blog.views import PostViewSet
 
@@ -44,5 +44,6 @@ urlpatterns = [
     ),
     path("admin/", admin.site.urls),
     path("ckeditor/", include("ckeditor_uploader.urls")),
+    path("api/v1/buildings/search", building_search, name="building_search"),
     path("api/v1/", include(router.urls)),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
