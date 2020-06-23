@@ -52,7 +52,7 @@
     "@babel/core": "^7.9.6",
     "@lingui/babel-preset-react": "^2.9.1",
     "@lingui/cli": "^2.9.1",
-    "@testing-library/jest-dom": "^5.5.0",
+    "@testing-library/jest-dom": "^5.10.1",
     "@testing-library/react": "^10.0.4",
     "babel-core": "^7.0.0-bridge.0",
     "babel-plugin-import": "^1.13.0",
