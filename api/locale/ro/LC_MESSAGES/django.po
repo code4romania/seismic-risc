@@ -1,0 +1,331 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-02-29 15:52+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n==1?0:(((n%100>19)||((n%100==0)&&(n!=0)))?"
+"2:1));\n"
+
+#: blog/apps.py:7
+msgid "Blog"
+msgstr "Jurnal"
+
+#: blog/models.py:11 blog/models.py:32
+msgid "post"
+msgstr "articol"
+
+#: blog/models.py:13 pages/models.py:32
+msgid "title"
+msgstr "titlu"
+
+#: blog/models.py:14 pages/models.py:35
+msgid "slug"
+msgstr ""
+
+#: blog/models.py:15
+msgid "image"
+msgstr "imagine"
+
+#: blog/models.py:16
+msgid "text"
+msgstr "text"
+
+#: blog/models.py:17
+msgid "tags"
+msgstr "cuvinte cheie"
+
+#: blog/models.py:18
+msgid "is visible"
+msgstr "este vizibil"
+
+#: blog/models.py:19
+msgid "published"
+msgstr "publicat"
+
+#: blog/models.py:20
+msgid "created"
+msgstr "creat"
+
+#: blog/models.py:21
+msgid "updated"
+msgstr "actualizat"
+
+#: blog/models.py:33
+msgid "posts"
+msgstr "articole"
+
+#: buildings/apps.py:7
+msgid "Buildings"
+msgstr "Clădiri"
+
+#: buildings/models.py:11
+msgid "Sector 1"
+msgstr "Sector 1"
+
+#: buildings/models.py:12
+msgid "Sector 2"
+msgstr "Sector 2"
+
+#: buildings/models.py:13
+msgid "Sector 3"
+msgstr "Sector 3"
+
+#: buildings/models.py:14
+msgid "Sector 4"
+msgstr "Sector 4"
+
+#: buildings/models.py:15
+msgid "Sector 5"
+msgstr "Sector 5"
+
+#: buildings/models.py:16
+msgid "Sector 6"
+msgstr "Sector 6"
+
+#: buildings/models.py:20
+msgid "Choose"
+msgstr "Alege"
+
+#: buildings/models.py:21
+msgid "Accepted"
+msgstr "Acceptat"
+
+#: buildings/models.py:22
+msgid "Rejected"
+msgstr "Respins"
+
+#: buildings/models.py:32
+msgid "general id"
+msgstr "id general"
+
+#: buildings/models.py:35
+msgid "risk category"
+msgstr "categorie risc"
+
+#: buildings/models.py:37
+msgid "registration number"
+msgstr "număr înregistrare"
+
+#: buildings/models.py:39
+msgid "examination year"
+msgstr "an examinare"
+
+#: buildings/models.py:41
+msgid "certified expert"
+msgstr "expert certificat"
+
+#: buildings/models.py:43
+msgid "observations"
+msgstr "observații"
+
+#: buildings/models.py:45
+msgid "latitude"
+msgstr "latitudine"
+
+#: buildings/models.py:46
+msgid "longitude"
+msgstr "longitudine"
+
+#: buildings/models.py:48
+msgid "county"
+msgstr "județ"
+
+#: buildings/models.py:49
+msgid "address"
+msgstr "adresă"
+
+#: buildings/models.py:50
+msgid "post code"
+msgstr "cod poștal"
+
+#: buildings/models.py:51
+msgid "locality"
+msgstr "localitate"
+
+#: buildings/models.py:53
+msgid "year built"
+msgstr "an construcție"
+
+#: buildings/models.py:55
+msgid "height regime"
+msgstr "regim înălțime"
+
+#: buildings/models.py:56
+msgid "apartment count"
+msgstr "total apartamente"
+
+#: buildings/models.py:57
+msgid "surface"
+msgstr "suprafață"
+
+#: buildings/models.py:59
+msgid "cadastre number"
+msgstr "număr cadastru"
+
+#: buildings/models.py:61
+msgid "land registry number"
+msgstr ""
+
+#: buildings/models.py:63
+msgid "administration update"
+msgstr "actualizare administrare"
+
+#: buildings/models.py:65
+msgid "admin update"
+msgstr ""
+
+#: buildings/models.py:68 buildings/models.py:114
+msgid "status"
+msgstr ""
+
+#: buildings/models.py:73
+msgid "created on"
+msgstr "creat la"
+
+#: buildings/models.py:76
+msgid "building"
+msgstr "clădire"
+
+#: buildings/models.py:77
+msgid "buildings"
+msgstr "clădiri"
+
+#: buildings/models.py:96
+msgid "building resource"
+msgstr "resursă clădire"
+
+#: buildings/models.py:97
+msgid "building resources"
+msgstr "resurse clădire"
+
+#: buildings/models.py:106
+msgid "Unsuccess"
+msgstr "Eșec"
+
+#: buildings/models.py:107
+msgid "Not tried"
+msgstr "Neîncercat"
+
+#: buildings/models.py:108
+msgid "Success"
+msgstr "Succes"
+
+#: buildings/models.py:111 pages/models.py:10 pages/models.py:99
+msgid "name"
+msgstr "nume"
+
+#: buildings/models.py:112
+msgid "file"
+msgstr "fișier"
+
+#: buildings/models.py:119
+msgid "CSV file"
+msgstr "fișier CSV"
+
+#: buildings/models.py:120
+msgid "CSV files"
+msgstr "fișiere CSV"
+
+#: pages/apps.py:7
+msgid "Pages"
+msgstr "Pagini"
+
+#: pages/models.py:18 pages/models.py:29
+msgid "category"
+msgstr "categorie"
+
+#: pages/models.py:19
+msgid "categories"
+msgstr "categorii"
+
+#: pages/models.py:28
+msgid "Page category"
+msgstr "Categorie pagină"
+
+#: pages/models.py:33
+msgid "Page title"
+msgstr "Titlu pagină"
+
+#: pages/models.py:40
+msgid "Unique URL slug (leave empty to auto-generate)"
+msgstr ""
+
+#: pages/models.py:42
+msgid "content"
+msgstr "conținut"
+
+#: pages/models.py:44
+msgid "updated on"
+msgstr "actualizat la"
+
+#: pages/models.py:49
+msgid "Last update time"
+msgstr "Data ultimei actualizări"
+
+#: pages/models.py:52
+msgid "publishing date"
+msgstr "dată publicare"
+
+#: pages/models.py:53
+msgid "Public page publishing date"
+msgstr "Data publicării paginii"
+
+#: pages/models.py:56
+msgid "is published"
+msgstr "este publicata"
+
+#: pages/models.py:59
+msgid "Is this page visible on the website"
+msgstr "Este această pagină vizibila pe website"
+
+#: pages/models.py:63
+msgid "page"
+msgstr "pagină"
+
+#: pages/models.py:64
+msgid "pages"
+msgstr "pagini"
+
+#: pages/models.py:95
+msgid "Page attachment"
+msgstr "Atașament pagină"
+
+#: pages/models.py:96 pages/models.py:111
+msgid "attachment"
+msgstr "atașament"
+
+#: pages/models.py:100
+msgid "Attachment name"
+msgstr "Nume atașament"
+
+#: pages/models.py:102
+msgid "upload date"
+msgstr "dată încărcare"
+
+#: pages/models.py:103
+msgid "Attachment upload date"
+msgstr "Data încărcării atașamentului"
+
+#: pages/models.py:106
+msgid "uploaded file"
+msgstr "fișier încărcat"
+
+#: pages/models.py:112
+msgid "attachments"
+msgstr "atașamente"
+
+#~ msgid "blog"
+#~ msgstr "jurnal"
