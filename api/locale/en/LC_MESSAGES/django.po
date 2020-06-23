@@ -1,0 +1,327 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2020-02-29 15:52+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: blog/apps.py:7
+msgid "Blog"
+msgstr ""
+
+#: blog/models.py:11 blog/models.py:32
+msgid "post"
+msgstr ""
+
+#: blog/models.py:13 pages/models.py:32
+msgid "title"
+msgstr ""
+
+#: blog/models.py:14 pages/models.py:35
+msgid "slug"
+msgstr ""
+
+#: blog/models.py:15
+msgid "image"
+msgstr ""
+
+#: blog/models.py:16
+msgid "text"
+msgstr ""
+
+#: blog/models.py:17
+msgid "tags"
+msgstr ""
+
+#: blog/models.py:18
+msgid "is visible"
+msgstr ""
+
+#: blog/models.py:19
+msgid "published"
+msgstr ""
+
+#: blog/models.py:20
+msgid "created"
+msgstr ""
+
+#: blog/models.py:21
+msgid "updated"
+msgstr ""
+
+#: blog/models.py:33
+msgid "posts"
+msgstr ""
+
+#: buildings/apps.py:7
+msgid "Buildings"
+msgstr ""
+
+#: buildings/models.py:11
+msgid "Sector 1"
+msgstr ""
+
+#: buildings/models.py:12
+msgid "Sector 2"
+msgstr ""
+
+#: buildings/models.py:13
+msgid "Sector 3"
+msgstr ""
+
+#: buildings/models.py:14
+msgid "Sector 4"
+msgstr ""
+
+#: buildings/models.py:15
+msgid "Sector 5"
+msgstr ""
+
+#: buildings/models.py:16
+msgid "Sector 6"
+msgstr ""
+
+#: buildings/models.py:20
+msgid "Choose"
+msgstr ""
+
+#: buildings/models.py:21
+msgid "Accepted"
+msgstr ""
+
+#: buildings/models.py:22
+msgid "Rejected"
+msgstr ""
+
+#: buildings/models.py:32
+msgid "general id"
+msgstr ""
+
+#: buildings/models.py:35
+msgid "risk category"
+msgstr ""
+
+#: buildings/models.py:37
+msgid "registration number"
+msgstr ""
+
+#: buildings/models.py:39
+msgid "examination year"
+msgstr ""
+
+#: buildings/models.py:41
+msgid "certified expert"
+msgstr ""
+
+#: buildings/models.py:43
+msgid "observations"
+msgstr ""
+
+#: buildings/models.py:45
+msgid "latitude"
+msgstr ""
+
+#: buildings/models.py:46
+msgid "longitude"
+msgstr ""
+
+#: buildings/models.py:48
+msgid "county"
+msgstr ""
+
+#: buildings/models.py:49
+msgid "address"
+msgstr ""
+
+#: buildings/models.py:50
+msgid "post code"
+msgstr ""
+
+#: buildings/models.py:51
+msgid "locality"
+msgstr ""
+
+#: buildings/models.py:53
+msgid "year built"
+msgstr ""
+
+#: buildings/models.py:55
+msgid "height regime"
+msgstr ""
+
+#: buildings/models.py:56
+msgid "apartment count"
+msgstr ""
+
+#: buildings/models.py:57
+msgid "surface"
+msgstr ""
+
+#: buildings/models.py:59
+msgid "cadastre number"
+msgstr ""
+
+#: buildings/models.py:61
+msgid "land registry number"
+msgstr ""
+
+#: buildings/models.py:63
+msgid "administration update"
+msgstr ""
+
+#: buildings/models.py:65
+msgid "admin update"
+msgstr ""
+
+#: buildings/models.py:68 buildings/models.py:114
+msgid "status"
+msgstr ""
+
+#: buildings/models.py:73
+msgid "created on"
+msgstr ""
+
+#: buildings/models.py:76
+msgid "building"
+msgstr ""
+
+#: buildings/models.py:77
+msgid "buildings"
+msgstr ""
+
+#: buildings/models.py:96
+msgid "building resource"
+msgstr ""
+
+#: buildings/models.py:97
+msgid "building resources"
+msgstr ""
+
+#: buildings/models.py:106
+msgid "Unsuccess"
+msgstr ""
+
+#: buildings/models.py:107
+msgid "Not tried"
+msgstr ""
+
+#: buildings/models.py:108
+msgid "Success"
+msgstr ""
+
+#: buildings/models.py:111 pages/models.py:10 pages/models.py:99
+msgid "name"
+msgstr ""
+
+#: buildings/models.py:112
+msgid "file"
+msgstr ""
+
+#: buildings/models.py:119
+msgid "CSV file"
+msgstr ""
+
+#: buildings/models.py:120
+msgid "CSV files"
+msgstr ""
+
+#: pages/apps.py:7
+msgid "Pages"
+msgstr ""
+
+#: pages/models.py:18 pages/models.py:29
+msgid "category"
+msgstr ""
+
+#: pages/models.py:19
+msgid "categories"
+msgstr ""
+
+#: pages/models.py:28
+msgid "Page category"
+msgstr ""
+
+#: pages/models.py:33
+msgid "Page title"
+msgstr ""
+
+#: pages/models.py:40
+msgid "Unique URL slug (leave empty to auto-generate)"
+msgstr ""
+
+#: pages/models.py:42
+msgid "content"
+msgstr ""
+
+#: pages/models.py:44
+msgid "updated on"
+msgstr ""
+
+#: pages/models.py:49
+msgid "Last update time"
+msgstr ""
+
+#: pages/models.py:52
+msgid "publishing date"
+msgstr ""
+
+#: pages/models.py:53
+msgid "Public page publishing date"
+msgstr ""
+
+#: pages/models.py:56
+msgid "is published"
+msgstr ""
+
+#: pages/models.py:59
+msgid "Is this page visible on the website"
+msgstr ""
+
+#: pages/models.py:63
+msgid "page"
+msgstr ""
+
+#: pages/models.py:64
+msgid "pages"
+msgstr ""
+
+#: pages/models.py:95
+msgid "Page attachment"
+msgstr ""
+
+#: pages/models.py:96 pages/models.py:111
+msgid "attachment"
+msgstr ""
+
+#: pages/models.py:100
+msgid "Attachment name"
+msgstr ""
+
+#: pages/models.py:102
+msgid "upload date"
+msgstr ""
+
+#: pages/models.py:103
+msgid "Attachment upload date"
+msgstr ""
+
+#: pages/models.py:106
+msgid "uploaded file"
+msgstr ""
+
+#: pages/models.py:112
+msgid "attachments"
+msgstr ""
