@@ -1,7 +1,7 @@
 import { Col } from 'antd';
 import React from 'react';
 
-const getColumnSize = size => {
+const getColumnSize = (size) => {
   switch (size) {
     case 'md':
       return 10;

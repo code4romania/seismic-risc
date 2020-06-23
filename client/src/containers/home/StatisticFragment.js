@@ -1,7 +1,7 @@
 import React from 'react';
 import { Row, Col, Card } from 'antd';
 
-const StatisticCard = props => (
+const StatisticCard = (props) => (
   <Card style={{ border: 'none', backgroundColor: '#ee741b' }}>
     <div>
       <h1 style={{ color: 'white' }}>{props.value}</h1>

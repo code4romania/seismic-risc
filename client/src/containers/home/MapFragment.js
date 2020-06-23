@@ -11,9 +11,9 @@ export default () => {
   const [dummyPoints, setDummyPoints] = React.useState([]);
   React.useEffect(() => {
     fetch(URL)
-      .then(res => res.json())
-      .then(points => {
-        setDummyPoints(points.map(poi => poi.fields));
+      .then((res) => res.json())
+      .then((points) => {
+        setDummyPoints(points.map((poi) => poi.fields));
       });
   }, []);
 
@@ -25,7 +25,7 @@ export default () => {
       <TabPane tab="Clasa U1 de risc seismic" key="classU1">
         <HereMapInteractive
           apikey={MAP_API_KEY}
-          points={dummyPoints.filter(poi => {
+          points={dummyPoints.filter((poi) => {
             return poi.risk_category === 'U1' || poi.risk_category === 'RS I';
           })}
         />
@@ -33,7 +33,7 @@ export default () => {
       <TabPane tab="Clasa U2 de risc seismic" key="classU2">
         <HereMapInteractive
           apikey={MAP_API_KEY}
-          points={dummyPoints.filter(poi => {
+          points={dummyPoints.filter((poi) => {
             return poi.risk_category === 'U2' || poi.risk_category === 'RS II';
           })}
         />
@@ -41,7 +41,7 @@ export default () => {
       <TabPane tab="Clasa U3 de risc seismic" key="classU3">
         <HereMapInteractive
           apikey={MAP_API_KEY}
-          points={dummyPoints.filter(poi => {
+          points={dummyPoints.filter((poi) => {
             return poi.risk_category === 'U3' || poi.risk_category === 'RS III';
           })}
         />
