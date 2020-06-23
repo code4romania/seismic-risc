@@ -8,7 +8,7 @@
     "antd": "^3.26.12",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-router-dom": "^5.1.2",
+    "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.0",
     "typeface-open-sans": "0.0.75",
     "typeface-titillium-web": "0.0.72",
