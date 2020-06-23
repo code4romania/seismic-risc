@@ -2,7 +2,7 @@ import React from 'react';
 
 import MapMarker from './MapMarker';
 
-const HereMapInteractive = props => {
+const HereMapInteractive = (props) => {
   const { apikey, points } = props;
   const mapRef = React.useRef(null);
   const [currentMap, setCurrentMap] = React.useState(null);
@@ -34,7 +34,7 @@ const HereMapInteractive = props => {
     <div>
       {apikey ? (
         <div ref={mapRef} style={{ width: '100%', height: '400px', background: 'grey' }}>
-          {points.map(p => (
+          {points.map((p) => (
             <MapMarker map={currentMap} poi={p} key={p.land_registry_number} />
           ))}
         </div>

@@ -5,7 +5,7 @@ const handleClick = (poi, map) => {
   map.getViewModel().setLookAtData({ position: poi.b, zoom: 17 }, true);
 };
 
-export default props => {
+export default (props) => {
   const { map, poi } = props;
   React.useEffect(() => {
     if (map) {
@@ -16,7 +16,7 @@ export default props => {
       const icon = new H.map.DomIcon(svgMarkup);
       const marker = new H.map.DomMarker({ lat: poi.lat, lng: poi.lng }, { icon });
 
-      marker.addEventListener('tap', event => handleClick(event.currentTarget, map));
+      marker.addEventListener('tap', (event) => handleClick(event.currentTarget, map));
 
       map.addObject(marker);
     }

@@ -17,7 +17,7 @@ export default () => (
       <Search
         loading={false}
         placeholder="Scrie adresa clădirii aici"
-        onSearch={value => value}
+        onSearch={(value) => value}
         style={{ width: '80%' }}
       />
     </Col>
