@@ -49,7 +49,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.9.6",
+    "@babel/core": "^7.10.3",
     "@lingui/babel-preset-react": "^2.9.1",
     "@lingui/cli": "^2.9.1",
     "@testing-library/jest-dom": "^5.10.1",
