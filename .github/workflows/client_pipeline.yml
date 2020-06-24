@@ -1,24 +1,58 @@
-name: JS Linting
+name: Client Pipeline
 
-on: pull_request
+on:
+  pull_request:
+    branches:
+      - 'master'
+      - 'develop'
+    paths:
+      - 'client/**.js'
+      - 'client/package*.json'
+      - 'client/Dockerfile'
+      - 'docker-compose.yml'
+      - '.github/workflows/client_pipeline.yml'
 
 jobs:
   run-linters:
     name: Run linters
     runs-on: ubuntu-18.04
     steps:
-      - name: Check out Git repository
-        uses: actions/checkout@v2
+    - name: Check out Git repository
+      uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: 12
+    - name: Set up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12
 
-      - name: Install Node.js dependencies
-        run: npm install
-        working-directory: client/
+    - name: Install Node.js dependencies
+      run: npm install
+      working-directory: client/
 
-      - name: Run linters
-        run: npm run lint
-        working-directory: client/
+    - name: Run linters
+      run: npm run lint
+      working-directory: client/
+
+  tests:
+    name: Run client tests
+    runs-on: ubuntu-18.04
+    steps:
+    - name: Check out Git repository
+      uses: actions/checkout@v2
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v1
+      with:
+        node-version: 12
+
+    - name: Install Node.js dependencies
+      run: npm install
+      working-directory: client/
+
+    - name: Build app
+      run: npm run build --if-present
+      working-directory: client/
+
+    - name: Run tests
+      run: npm test
+      working-directory: client/

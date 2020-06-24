@@ -44,7 +44,7 @@ export default ({ currentLanguage, languageChangeCallback }) => {
         <Menu.Item key="lang">
           <div
             className={styles.languageChangeButton}
-            role="layout"
+            role="button"
             onClick={() => {
               if (currentLanguage === 'en') {
                 languageChangeCallback('ro');
