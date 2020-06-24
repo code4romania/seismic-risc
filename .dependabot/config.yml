@@ -2,11 +2,10 @@ version: 1
 update_configs:
   - package_manager: "javascript"
     directory: "client/"
-    update_schedule: "live"
+    update_schedule: "weekly"
     target_branch: "develop"
     default_reviewers:
       - "tudoramariei"
-      - "catileptic"
     default_assignees:
       - "tudoramariei"
     default_labels:
