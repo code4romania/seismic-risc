@@ -46,6 +46,7 @@ class Base(Configuration):
         "rest_framework",
         "storages",
         "taggit",
+        "corsheaders",
         "ckeditor",
         "ckeditor_uploader",
         # project apps
@@ -56,6 +57,7 @@ class Base(Configuration):
 
     MIDDLEWARE = [
         "django.middleware.security.SecurityMiddleware",
+        "corsheaders.middleware.CorsMiddleware",
         "whitenoise.middleware.WhiteNoiseMiddleware",
         "django.contrib.sessions.middleware.SessionMiddleware",
         "django.middleware.common.CommonMiddleware",
@@ -146,6 +148,9 @@ class Base(Configuration):
 
 class Dev(Base):
     DEBUG = True
+    ALLOWED_HOSTS = ["*"]
+    CORS_ORIGIN_ALLOW_ALL = True
+
     SECRET_KEY = "secret"
     SITE_URL = "http://localhost:8000"
     EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"

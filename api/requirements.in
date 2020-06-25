@@ -3,6 +3,7 @@ django<3
 django-configurations
 django-import-export
 djangorestframework
+django-cors-headers
 django-ckeditor
 django-storages
 django-taggit
