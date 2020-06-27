@@ -53,6 +53,7 @@ urlpatterns = (
         path(
             "api/v1/buildings/search", building_search, name="building_search"
         ),
+        path("i18n/", include("django.conf.urls.i18n")),
         path("api/v1/", include(router.urls)),
     ]
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
