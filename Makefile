@@ -32,7 +32,7 @@ install-docker-ubuntu:
 	sudo apt-key fingerprint 0EBFCD88
 	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(shell lsb_release -cs) stable" || { echo "$(shell lsb_release -cs) is not yet supported by docker.com."; exit 1; }
 	sudo apt-get update
-	sudo apt-get install -y docker-ce
+	sudo apt-get install -y docker-ce gettext
 	sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(shell uname -s)-$(shell uname -m)" -o /usr/local/bin/docker-compose
 	sudo chmod +x /usr/local/bin/docker-compose
 
@@ -40,7 +40,7 @@ install-docker-osx:
 	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	brew update
 	brew cask install docker
-	brew install docker-compose
+	brew install docker-compose gettext
 
 init-env:
 	cp .env.dist .env

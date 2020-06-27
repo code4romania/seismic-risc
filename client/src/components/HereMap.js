@@ -19,7 +19,7 @@ const mapConfig = {
   bbox: '44.4268,26.1025,44.4468,26.1225',
 };
 
-const getPOIs = points => {
+const getPOIs = (points) => {
   return points && points.length
     ? points.reduce(
         (accumulator, [latitude, longitude]) => `${accumulator}${latitude},${longitude},`,
@@ -28,7 +28,7 @@ const getPOIs = points => {
     : '';
 };
 
-export default props => {
+export default (props) => {
   const imageUrl =
     Object.entries(mapConfig).reduce(
       (accumulator, [key, value]) => `${accumulator}&${key}=${value}`,

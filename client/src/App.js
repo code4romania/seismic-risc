@@ -17,7 +17,7 @@ const catalogs = { en: catalogEn, ro: catalogRo };
 const App = () => {
   const [language, setLanguage] = useState('ro');
 
-  const languageChangeCallback = useCallback(languageCode => {
+  const languageChangeCallback = useCallback((languageCode) => {
     setLanguage(languageCode);
   }, []);
   return (
