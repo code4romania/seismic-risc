@@ -1,64 +1,58 @@
 import React, { useState } from 'react';
-import { Layout, Menu, Button } from 'antd';
+import { NavLink, Link } from 'react-router-dom';
+import { Layout, Button } from 'antd';
+import { MenuOutlined } from '@ant-design/icons';
 import { Trans } from '@lingui/macro';
 import logo from '../logo.svg';
-import styles from './header.module.css';
 
 const { Header } = Layout;
 
 export default ({ currentLanguage, languageChangeCallback }) => {
   const [langText, setLangText] = useState('English');
+  const [showMenu, setShowMenu] = useState(false);
+
+  const handleMenuClick = () => {
+    setShowMenu(!showMenu);
+  };
 
   return (
-    <Header style={{ background: 'none' }}>
+    <Header className={showMenu ? 'overlay' : ''}>
       <div className="App-logo">
-        <img src={logo} alt="Seismic Risc logo" />
+        <Link to="/">
+          <img src={logo} alt="Seismic Risc logo" />
+        </Link>
       </div>
-      <Menu
-        style={{ float: 'right' }}
-        theme="light"
-        mode="horizontal"
-        className="App-menu"
-        selectable={false}
+      <ul className={`App-menu ${showMenu ? 'show' : ''}`}>
+        <li>
+          <NavLink to="/" activeClassName="active">
+            <Trans>About</Trans>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/contact" activeClassName="active">
+            <Trans>Contact us</Trans>
+          </NavLink>
+        </li>
+      </ul>
+      <div
+        className="languageChangeButton"
+        role="button"
+        onClick={() => {
+          if (currentLanguage === 'en') {
+            languageChangeCallback('ro');
+            setLangText('English');
+          } else {
+            languageChangeCallback('en');
+            setLangText('Romană');
+          }
+        }}
       >
-        <Menu.Item key="about">
-          <Trans>About</Trans>
-        </Menu.Item>
-        <Menu.Item key="guide">
-          <Trans>Homeowners associations guide</Trans>
-        </Menu.Item>
-        <Menu.Item key="legislation">
-          <Trans>Legislation</Trans>
-        </Menu.Item>
-        <Menu.Item key="bucharest">
-          <Trans>Vulnerable Bucharest</Trans>
-        </Menu.Item>
-        <Menu.Item key="contact">
-          <Trans>Contact us</Trans>
-        </Menu.Item>
-        <Menu.Item key="add">
-          <Button type="primary" icon="plus-circle" size="large">
-            <Trans>Add a building</Trans>
-          </Button>
-        </Menu.Item>
-        <Menu.Item key="lang">
-          <div
-            className={styles.languageChangeButton}
-            role="button"
-            onClick={() => {
-              if (currentLanguage === 'en') {
-                languageChangeCallback('ro');
-                setLangText('English');
-              } else {
-                languageChangeCallback('en');
-                setLangText('Romană');
-              }
-            }}
-          >
-            {langText}
-          </div>
-        </Menu.Item>
-      </Menu>
+        {langText}
+      </div>
+      <Button className="App-menu-button" onClick={handleMenuClick}>
+        <MenuOutlined />
+      </Button>
+      <div className={`overlay ${showMenu ? 'show' : ''}`} onClick={handleMenuClick} />
     </Header>
   );
 };

@@ -1,0 +1,110 @@
+@use 'variables';
+
+.languageChangeButton {
+  user-select: none;
+}
+
+.languageChangeButton,
+.App-menu > li > a {
+  cursor: pointer;
+  transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+  &:hover,
+  &:focus {
+    color: $primary-color !important;
+  }
+}
+
+.App-logo {
+  margin-right: auto;
+}
+
+.App-menu {
+  list-style-type: none;
+  text-align: center;
+  display: flex;
+  margin-bottom: 0;
+
+  @media (max-width: $breakpoint-tablet) {
+    background-color: #fff;
+    display: initial;
+    max-height: 0;
+    overflow: hidden;
+    position: absolute;
+    left: 0;
+    top: $header-height;
+    width: 100%;
+    z-index: 100;
+    padding: 0;
+    transition: max-height 0.3s ease;
+    line-height: 48px;
+
+    &.show {
+      max-height: 500px;
+    }
+  }
+
+  li > a {
+    color: unset !important;
+    display: inline-block;
+    padding: 0 1.5rem;
+    width: 100%;
+
+    &.active {
+      color: $primary-color !important;
+    }
+
+    @media (min-width: $breakpoint-tablet) {
+      border-bottom: 2px solid transparent;
+      transition: border-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
+      &:hover {
+        border-bottom: 2px solid $primary-color;
+      }
+      &.active {
+        border-bottom: 2px solid $primary-color;
+      }
+    }
+  }
+}
+
+.ant-layout-header {
+  background-color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  @media (max-width: $breakpoint-tablet) {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    z-index: 5;
+    & div.overlay {
+      opacity: 0;
+      position: fixed;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.7);
+      &.show {
+        width: 100%;
+        top: $header-height;
+        bottom: 0;
+        height: 100%;
+        opacity: 1;
+        z-index: 10;
+      }
+    }
+  }
+}
+
+.App-menu-button {
+  margin-left: 1rem;
+  display: none;
+
+  @media (max-width: $breakpoint-tablet) {
+    display: initial;
+  }
+}
+
+.ant-layout-content {
+  @media (max-width: $breakpoint-tablet) {
+    margin-top: $header-height;
+  }
+}
