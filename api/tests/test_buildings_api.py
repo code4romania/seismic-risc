@@ -32,6 +32,7 @@ def test_building_delete_forbidden(basic_building_data, api_client):
     assert response.status_code == 403
 
 @pytest.mark.django_db
+@pytest.mark.skip(reason="SIMILARITY available only in dev environment")
 def test_building_search(basic_building_data, random_words,  api_client):
     building_data = basic_building_data
 
