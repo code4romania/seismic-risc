@@ -4,6 +4,7 @@ from pages.models import Page
 
 base_url = "/api/v1/pages/"
 
+
 @pytest.mark.django_db
 def test_page_details_get(basic_page_data, api_client):
     Page.objects.create(**basic_page_data)
@@ -14,6 +15,7 @@ def test_page_details_get(basic_page_data, api_client):
     response = api_client.get(url)
     assert response.status_code == 200
     assert response.data["slug"] == page1.slug
+
 
 @pytest.mark.django_db
 def test_page_slugify(basic_page_data, api_client):
@@ -28,6 +30,7 @@ def test_page_slugify(basic_page_data, api_client):
     assert pg2.slug == "this-is-a-title-1"
     assert pg3.slug == "this-is-a-title-2"
 
+
 @pytest.mark.django_db
 def test_page_post_forbidden(basic_page_data, api_client):
     response = api_client.post(base_url, basic_page_data, format="json")
@@ -41,8 +44,8 @@ def test_page_delete_forbidden(basic_page_data, api_client):
     response = api_client.delete(url)
     assert response.status_code == 403
 
+
 @pytest.fixture
 def basic_page_data():
     # Required fields for Page object
     return {"title": "Page title", "slug": "pg1", "content": "Contents"}
-

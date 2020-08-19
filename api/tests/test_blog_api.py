@@ -4,6 +4,7 @@ from blog.models import Post
 
 base_url = "/api/v1/posts"
 
+
 @pytest.mark.django_db
 def test_post_details_get(basic_post_data, api_client, test_user):
     basic_post_data["author_id"] = test_user.id
@@ -13,6 +14,7 @@ def test_post_details_get(basic_post_data, api_client, test_user):
 
     assert response.status_code == 200
     assert response.data["slug"] == basic_post_data["slug"]
+
 
 @pytest.mark.django_db
 def test_post_post_forbidden(basic_post_data, api_client):
@@ -27,6 +29,7 @@ def test_post_delete_forbidden(basic_post_data, api_client):
     response = api_client.delete(url)
     assert response.status_code == 403
 
+
 @pytest.fixture
 def basic_post_data():
     from django.utils import timezone
@@ -38,4 +41,3 @@ def basic_post_data():
         "is_visible": True,
         "published": timezone.now(),
     }
-
