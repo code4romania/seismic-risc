@@ -27,7 +27,7 @@ def building_search(request):
 
     buildings = (
         Building.objects.annotate(
-            similarity=TrigramSimilarity("address", query),
+            similarity=TrigramSimilarity("address", query)
         )
         .filter(similarity__gt=settings.TRIGRAM_SIMILARITY_THRESHOLD)
         .order_by("-similarity")
