@@ -2,10 +2,11 @@ import React from 'react';
 import { Tabs } from 'antd';
 import HereMapInteractive from '../../components/HereMapInteractive';
 
+import config from '../../config';
+
 const { TabPane } = Tabs;
 
-const MAP_API_KEY = process.env.REACT_APP_API_KEY;
-const URL = 'http://localhost:3001/buildings';
+const { BUILDINGS_URL, MAP_API_KEY } = config;
 
 export default () => {
   const [state, setState] = React.useState({
@@ -13,12 +14,18 @@ export default () => {
     filteredPoints: null,
   });
   React.useEffect(() => {
-    fetch(URL)
+    fetch(BUILDINGS_URL)
       .then((res) => res.json())
       .then((points) => {
         setState((prevState) => ({
           ...prevState,
-          initialPoints: points.map((poi) => poi.fields),
+          initialPoints: points,
+        }));
+      })
+      .catch(() => {
+        setState((prevState) => ({
+          ...prevState,
+          initialPoints: [],
         }));
       });
   }, []);
