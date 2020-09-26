@@ -1,4 +1,4 @@
-version: '3.7'
+version: "3.7"
 
 services:
   db:
@@ -23,6 +23,9 @@ services:
     environment:
       NODE_ENV:
       REACT_APP_API_KEY:
+      REACT_APP_DJANGO_SITE_URL:
+      REACT_APP_DJANGO_PORT:
+      REACT_APP_DJANGO_API_ENDPOINT:
 
   api:
     container_name: seismic-risc-api
@@ -30,7 +33,10 @@ services:
       context: ./api
       args:
         DEVBUILD: 1
-    command: ["./wait_for_db.py && ./manage.py migrate --noinput && ./manage.py runserver 0.0.0.0:8000"]
+    command:
+      [
+        "./wait_for_db.py && ./manage.py migrate --noinput && ./manage.py runserver 0.0.0.0:8000",
+      ]
     volumes:
       - ./api:/code
     ports:
