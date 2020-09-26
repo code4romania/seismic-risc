@@ -10,17 +10,37 @@ const StatisticCard = (props) => (
   </Card>
 );
 
+const STATISTICS_URL = '/api/v1/statistics';
+
 export default () => {
+  const [state, setState] = React.useState({
+    peopleUnderRisk: '',
+    evaluatedBuildings: '',
+    consolidatedBuilding: '',
+  });
+  React.useEffect(() => {
+    fetch(STATISTICS_URL)
+      .then((res) => res.json())
+      .then(({ people_under_risk, evaluated_buildings, consolidated_buildings }) => {
+        setState((prevState) => ({
+          ...prevState,
+          peopleUnderRisk: people_under_risk,
+          evaluatedBuildings: evaluated_buildings,
+          consolidatedBuilding: consolidated_buildings,
+        }));
+      });
+  }, []);
+
   return (
     <Row gutter={[8, 32]} type="flex" justify="space-around" style={{ margin: '2rem' }}>
       <Col span={8}>
-        <StatisticCard value={6121} text="oameni sub risc" />
+        <StatisticCard value={state.peopleUnderRisk} text="oameni sub risc" />
       </Col>
       <Col span={8}>
-        <StatisticCard value={458} text="clădiri evaluate" />
+        <StatisticCard value={state.evaluatedBuildings} text="clădiri evaluate" />
       </Col>
       <Col span={8}>
-        <StatisticCard value={84} text="clădiri consolidate" />
+        <StatisticCard value={state.consolidatedBuilding} text="clădiri consolidate" />
       </Col>
     </Row>
   );
