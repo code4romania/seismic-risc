@@ -39,6 +39,7 @@ Let's save lives together.
     - [Initial set-up](#initial-set-up)
     - [Starting the project](#starting-the-project)
     - [Development](#development)
+    - [Known Issues](#known-issues)
   - [Testing](#testing)
   - [Production](#production)
   - [Client Deployment](#client-deployment)
@@ -184,6 +185,23 @@ make update-requirements
 ```
 
 This will create a clean environment where is uses the [pip-tools](https://github.com/jazzband/pip-tools/) library to compile a the corresponding `requirements.txt` files with the versions of the packages pinned. This is important as it guarantees that every environment this service runs in, has the same dependencies installed and minimizes the risk of `works on my machine`.
+
+### Known Issues
+
+#### Client hot-reload on Windows Docker is not working
+
+Try following these steps:
+1. open up a terminal in **seismic-risc_client** container
+2. `cd ./node_modules/react-scripts/config/`
+3. `vi webpackDevServer.config.js`
+4. on the exported config object, update the value of `watchOptions` to include the following properties:
+```bash
+aggregateTimeout: 100,
+poll: 500
+```
+5. save the file and restart the client container
+
+This way, webpack-dev-server should be watching files in polling mode, instead of listening for file change events.
 
 ## Testing
 
