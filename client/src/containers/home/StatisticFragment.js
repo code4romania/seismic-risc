@@ -21,12 +21,12 @@ export default () => {
   React.useEffect(() => {
     fetch(STATISTICS_URL)
       .then((res) => res.json())
-      .then(({ people_under_risk, evaluated_buildings, consolidated_buildings }) => {
+      .then(({ peopleUnderRisk, evaluatedBuildings, consolidatedBuildings }) => {
         setState((prevState) => ({
           ...prevState,
-          peopleUnderRisk: people_under_risk,
-          evaluatedBuildings: evaluated_buildings,
-          consolidatedBuilding: consolidated_buildings,
+          peopleUnderRisk,
+          evaluatedBuildings,
+          consolidatedBuildings,
         }));
       });
   }, []);
