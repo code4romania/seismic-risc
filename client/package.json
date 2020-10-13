@@ -11,7 +11,7 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^3.4.0",
-    "typeface-open-sans": "0.0.75",
+    "typeface-open-sans": "1.1.13",
     "typeface-titillium-web": "0.0.72",
     "typescript": "^3.9.7"
   },
