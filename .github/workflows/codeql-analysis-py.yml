@@ -1,0 +1,44 @@
+name: "Py CodeQL analysis"
+
+on:
+  push:
+    branches: [develop, master]
+  pull_request:
+    branches: [develop]
+    paths:
+      - 'api/**.py'
+      - 'api/requirements*.*'
+      - 'api/Dockerfile'
+      - 'docker-compose.yml'
+      - '.github/workflows/api_pipeline.yml'
+      - '.github/workflows/code-analysis-py.yml'
+  schedule:
+    - cron: '15 7 * * 2'
+
+jobs:
+  analyze_js:
+    name: Analyze code
+    runs-on: ubuntu-latest
+
+    strategy:
+      fail-fast: false
+      matrix:
+        language: ['python']
+
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      with:
+        fetch-depth: 2
+
+    - run: git checkout HEAD^2
+      if: ${{ github.event_name == 'pull_request' }}
+
+    - name: Initialize CodeQL
+      uses: github/codeql-action/init@v1
+      with:
+        languages: ${{ matrix.language }}
+
+
+    - name: Perform CodeQL Analysis
+      uses: github/codeql-action/analyze@v1
