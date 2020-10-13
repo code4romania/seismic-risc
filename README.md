@@ -1,6 +1,9 @@
 # Seismic Risc
 
-[![Datree](https://s3.amazonaws.com/catalog.static.datree.io/datree-badge-20px.svg)](https://datree.io/?src=badge) [![GitHub contributors](https://img.shields.io/github/contributors/code4romania/seismic-risc.svg)](https://github.com/code4romania/seismic-risc/graphs/contributors) [![GitHub last commit](https://img.shields.io/github/last-commit/code4romania/seismic-risc.svg)](https://github.com/code4romania/seismic-risc/commits/master) [![License: MPL 2.0](https://img.shields.io/badge/license-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
+[![Datree](https://s3.amazonaws.com/catalog.static.datree.io/datree-badge-20px.svg)](https://datree.io/?src=badge) 
+[![GitHub contributors](https://img.shields.io/github/contributors/code4romania/seismic-risc.svg)](https://github.com/code4romania/seismic-risc/graphs/contributors) 
+[![GitHub last commit](https://img.shields.io/github/last-commit/code4romania/seismic-risc.svg)](https://github.com/code4romania/seismic-risc/commits/master) 
+[![License: MPL 2.0](https://img.shields.io/badge/license-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 
 <!-- Please don't remove this: Grab your social icons from https://github.com/carlsednaoui/gitsocial -->
 
@@ -25,7 +28,7 @@ Un cutremur în București nu este o situație ipotetică. Este o certitudine c�
 
 Ce putem face pentru a deveni mai puțin vulnerabili? Să știm totul despre oraș, despre clădirile în care locuim astfel încât să putem cere consolidarea lor. Seismic Risc nu este doar "un nou site de informare", ci o platformă care colectează și validează apoi cu experți date despre clădirile din România, la nivel national, ajută asociațiile de proprietari să își consolideze clădirile, te ține la curent cu legislația și ți-o explică și are grijă să ai la îndemână informații utile la orice moment.
 
-Let's save lives together.
+**Let's save lives together.**
 
 - [Seismic Risc](#seismic-risc)
   - [Contributing](#contributing)
@@ -51,7 +54,7 @@ Let's save lives together.
 
 If you would like to contribute to one of our repositories, first identify the scale of what you would like to contribute. If it is small (grammar/spelling or a bug fix) feel free to start working on a fix. If you are submitting a feature or substantial code contribution, please discuss it with the team and ensure it follows the product roadmap.
 
-Our collaboration model [is described here](.github/CONTRIBUTING.MD).
+Our collaboration model [is described here](.github/CONTRIBUTING.MD). **And make sure you check the [workflow document](.github/WORKFLOW.MD)**; it helps you keep your environment in a good shape and it helps everyone move faster with code reviews.
 
 We don't have a specific set of coding guidelines, so just follow the way the code was written until now, if in doubt, you can use [Google's style guide](http://google.github.io/styleguide/pyguide.html).
 
@@ -64,30 +67,18 @@ We don't have a specific set of coding guidelines, so just follow the way the co
 
 ### Frameworks
 
-API: [Django](https://www.djangoproject.com)
-Client: [React](https://reactjs.org/)
+**API:** [Django](https://www.djangoproject.com)
+**Client:** [React](https://reactjs.org/)
 
 ### Package managers
 
-API: [pip](https://pypi.org/)
-Client: [npm](https://www.npmjs.com/)
+**API:** [pip](https://pypi.org/)
+**Client:** [npm](https://www.npmjs.com/)
 
 ### Code styling
 
-API: [Black](https://black.readthedocs.io/en/stable/)
-Client: [Prettier](https://prettier.io/) [ESLint](https://eslint.org/) + [Airbnb style guide](https://github.com/airbnb/javascript)
-
-Add the following option to user settings in VS Code if ESlint fails to load Prettier plugin.
-
-```json
-{
-  "eslint.workingDirectories": [
-    {
-      "mode": "auto"
-    }
-  ]
-}
-```
+**API:** [Black](https://black.readthedocs.io/en/stable/)
+**Client:** [Prettier](https://prettier.io/) + [ESLint](https://eslint.org/) + [Airbnb style guide](https://github.com/airbnb/javascript)
 
 ### Database technology & provider
 
@@ -105,13 +96,13 @@ You can install the above mentioned packages manually or you can use our helper 
 
 On `Ubuntu 18.04+` run:
 
-```bash
+```shell script
 make install-docker-ubuntu
 ```
 
 On `MacOS` run:
 
-```bash
+```shell script
 make install-docker-osx
 ```
 
@@ -122,7 +113,7 @@ On other platforms please follow the instructions described here:
 
 The versions the Makefile was tested with are:
 
-```bash
+```shell script
 $ docker --version
 Docker version 19.03.5, build 633a0ea
 $ docker-compose --version
@@ -133,7 +124,7 @@ docker-compose version 1.24.1, build 4667896b
 
 Initialise the database and development fixtures:
 
-```bash
+```shell script
 make init-env
 ```
 
@@ -143,7 +134,7 @@ First check the `.env` file created by the init command and see if there are any
 
 Get the project up and running:
 
-```bash
+```shell script
 docker-compose up
 ```
 
@@ -157,7 +148,7 @@ Maybe the issue you just had is worth adding to the [FAQ](https://github.com/cod
 
 To work on running containers that were started using `docker-compose up`, open another terminal and:
 
-```bash
+```shell script
 cd path/to/repo
 docker-compose exec api bash
 # or
@@ -166,7 +157,7 @@ docker-compose exec client bash
 
 In order to see all available commands run:
 
-```bash
+```shell script
 make
 ```
 
@@ -174,13 +165,13 @@ make
 
 When creating new models in Django, in order to make sure they are generated in a clean environment, it is recommended to generate the migration files using the `make` command:
 
-```bash
+```shell script
 make migrations
 ```
 
 When you need to add/remove requirements or restrict the version of a requirement, edit the `requirements.in` (prod) and the `requirements-dev.in` (dev) files accordingly. After doing this run:
 
-```bash
+```shell script
 make update-requirements
 ```
 
@@ -188,26 +179,42 @@ This will create a clean environment where is uses the [pip-tools](https://githu
 
 ### Known Issues
 
-#### Client hot-reload on Windows Docker is not working
+**Client hot-reload on Windows Docker is not working**
 
 Try following these steps:
 1. open up a terminal in **seismic-risc_client** container
 2. `cd ./node_modules/react-scripts/config/`
 3. `vi webpackDevServer.config.js`
 4. on the exported config object, update the value of `watchOptions` to include the following properties:
-```bash
-aggregateTimeout: 100,
-poll: 500
-```
+
+    ```shell script
+    aggregateTimeout: 100,
+    poll: 500
+    ```
+
 5. save the file and restart the client container
 
 This way, webpack-dev-server should be watching files in polling mode, instead of listening for file change events.
+
+**In VS Code, ESLint fails to load the Prettier plugin**
+
+Add the following option to user settings in VS Code if ESLint fails to load the Prettier plugin.
+
+```json
+{
+  "eslint.workingDirectories": [
+    {
+      "mode": "auto"
+    }
+  ]
+}
+```
 
 ## Testing
 
 Local development testing:
 
-```bash
+```shell script
 cd path/to/repo
 docker-compose exec api bash
 root@3c5df91778ad:/code# pytest
@@ -215,7 +222,7 @@ root@3c5df91778ad:/code# pytest
 
 Pipeline testing:
 
-```bash
+```shell script
 make test
 ```
 
@@ -223,25 +230,25 @@ make test
 
 In order to get the container ready for production use we need to first build it:
 
-```bash
+```shell script
 $ docker build -t seismic-risc:latest ./api
 ```
 
 Use the `prod.env.dist` template file and create a `prod.env` file with the correct environment variables and run like so:
 
-```bash
+```shell script
 $ docker run --env-file prod.env -p HOST_PORT:GUNICORN_PORT seismic-risc:latest
 ```
 
 Or, you can provide all the environment variables at runtime:
 
-```bash
+```shell script
 $ docker run -e DJANGO_CONFIGURATION=Prod -e DJANGO_SECRET_KEY= -e DATABASE_URL=postgres://USER:PASSWORD@HOST:PORT/NAME -e GUNICORN_PORT=5000 -e GUNICORN_WORKERS=2 -p HOST_PORT:GUNICORN_PORT seismic-risc:latest
 ```
 
 After testing the container runs properly, tag and upload the image to Docker hub:
 
-```bash
+```shell script
 docker tag seismic-risc:latest code4romania/seismic-risc:latest
 docker push code4romania/seismic-risc:latest
 ```
