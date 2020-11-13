@@ -151,6 +151,7 @@ class Base(Configuration):
     }
 
     TRIGRAM_SIMILARITY_THRESHOLD = 0.1
+    IMPORT_EXPORT_CHUNK_SIZE = 100
 
     LOGGING = {
         "version": 1,
@@ -160,7 +161,15 @@ class Base(Configuration):
                 "class": "logging.StreamHandler",
             },
         },
-        "root": {
+        "django-import-export": {
+            "handlers": ["console"],
+            "level": "DEBUG",
+        },
+        "django": {
+            "handlers": ["console"],
+            "level": "DEBUG",
+        },
+        "": {
             "handlers": ["console"],
             "level": "DEBUG",
         }
