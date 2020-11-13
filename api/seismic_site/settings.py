@@ -23,7 +23,7 @@ class Base(Configuration):
     https://django-configurations.readthedocs.io/en/latest/
     """
 
-    DEBUG = False
+    DEBUG = True
 
     SECRET_KEY = values.Value()
 
@@ -152,6 +152,20 @@ class Base(Configuration):
 
     TRIGRAM_SIMILARITY_THRESHOLD = 0.1
 
+    LOGGING = {
+        "version": 1,
+        "disable_existing_loggers": False,
+        "handlers": {
+            "console": {
+                "class": "logging.StreamHandler",
+            },
+        },
+        "root": {
+            "handlers": ["console"],
+            "level": "DEBUG",
+        }
+    }
+
 
 class Dev(Base):
     DEBUG = True
@@ -177,7 +191,7 @@ class Test(Base):
 
 
 class Prod(Base):
-    DEBUG = False
+    DEBUG = True
     ALLOWED_HOSTS = values.ListValue(default=[".code4.ro"])
 
     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
