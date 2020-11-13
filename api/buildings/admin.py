@@ -62,6 +62,8 @@ class CSVFileAdmin(admin.ModelAdmin):
             res = building_res.import_data(
                 data, dry_run=False, raise_errors=True
             )
+            self.message_user(request, "Transforming everything into objects", messages.WARNING)
+            logger.info("Transforming everything into objects")
             csv_file = models.CsvFile.objects.get(name=q.__str__())
             self.message_user(request, "Evaluating file import", messages.WARNING)
             logger.info("Evaluating file import")
