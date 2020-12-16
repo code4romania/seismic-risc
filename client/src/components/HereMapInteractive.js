@@ -58,19 +58,6 @@ const HereMapInteractive = (props) => {
       pointsRef.current = points;
       setState({ ...state, isDrawerVisible: false });
       currentMap.removeObjects(currentMap.getObjects(true));
-      if (points.length > 1) {
-        const latitudes = points.map((p) => p.lat);
-        const longitudes = points.map((p) => p.lng);
-        const bounds = new H.geo.Rect(
-          Math.max(...latitudes),
-          Math.min(...longitudes),
-          Math.min(...latitudes),
-          Math.max(...longitudes),
-        );
-        currentMap.getViewModel().setLookAtData({ bounds, zoom: 10 }, true);
-      } else {
-        currentMap.getViewModel().setLookAtData({ zoom: 10 }, true);
-      }
 
       points.forEach((poi) => {
         const svgMarkup =
