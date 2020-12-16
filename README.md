@@ -52,9 +52,9 @@ Ce putem face pentru a deveni mai puțin vulnerabili? Să știm totul despre ora
 
 ## Contributing
 
-If you would like to contribute to one of our repositories, first identify the scale of what you would like to contribute. If it is small (grammar/spelling or a bug fix) feel free to start working on a fix. If you are submitting a feature or substantial code contribution, please discuss it with the team and ensure it follows the product roadmap.
+If you would like to contribute to one of our repositories, first identify the scale of what you would like to contribute. If it is small (grammar/spelling, or a bug fix) feel free to start working on a fix. If you are submitting a feature or substantial code contribution, please discuss it with the team and ensure it follows the product roadmap.
 
-Our collaboration model [is described here](.github/CONTRIBUTING.MD). **And make sure you check the [workflow document](.github/WORKFLOW.MD)**; it helps you keep your environment in a good shape and it helps everyone move faster with code reviews.
+Our collaboration model [is described here](https://github.com/code4romania/.github/blob/master/CONTRIBUTING.md). **And make sure you check the [workflow document](https://github.com/code4romania/.github/blob/master/WORKFLOW.md)**; it helps you keep your environment in a good shape, and it helps everyone move faster with code reviews. If you want to make any change to this repository, please **make a fork first**.
 
 We don't have a specific set of coding guidelines, so just follow the way the code was written until now, if in doubt, you can use [Google's style guide](http://google.github.io/styleguide/pyguide.html).
 
@@ -92,7 +92,7 @@ Risc Seismic API is a Django application, built on top of Python 3.7+ with a Pos
 
 In order to run the project locally, you need to have [Docker](https://docs.docker.com/install/) and [docker-compose](https://docs.docker.com/compose/overview/) installed.
 
-You can install the above mentioned packages manually or you can use our helper commands.
+You can install the above mentioned packages manually, or you can use our helper commands.
 
 On `Ubuntu 18.04+` run:
 
@@ -175,7 +175,7 @@ When you need to add/remove requirements or restrict the version of a requiremen
 make update-requirements
 ```
 
-This will create a clean environment where is uses the [pip-tools](https://github.com/jazzband/pip-tools/) library to compile a the corresponding `requirements.txt` files with the versions of the packages pinned. This is important as it guarantees that every environment this service runs in, has the same dependencies installed and minimizes the risk of `works on my machine`.
+This will create a clean environment where it uses the [pip-tools](https://github.com/jazzband/pip-tools/) library to compile the corresponding `requirements.txt` files with the versions of the packages pinned. This is important as it guarantees that every environment this service runs in, has the same dependencies installed and minimizes the risk of `works on my machine`.
 
 ### Known Issues
 
@@ -274,6 +274,6 @@ This project is licensed under the MPL 2.0 License - see the [LICENSE](LICENSE) 
 
 ## About Code4Ro
 
-Started in 2016, Code for Romania is a civic tech NGO, official member of the Code for All network. We have a community of over 500 volunteers (developers, ux/ui, communications, data scientists, graphic designers, devops, it security and more) who work pro-bono for developing digital solutions to solve social problems. #techforsocialgood. If you want to learn more details about our projects [visit our site](https://www.code4.ro/en/) or if you want to talk to one of our staff members, please e-mail us at contact@code4.ro.
+Started in 2016, Code for Romania is a civic tech NGO, official member of the Code for All network. We have a community of over 500 volunteers (developers, ux/ui, communications, data scientists, graphic designers, devops, IT security and more) who work pro-bono for developing digital solutions to solve social problems. #techforsocialgood. If you want to learn more details about our projects [visit our site](https://www.code4.ro/en/) or if you want to talk to one of our staff members, please e-mail us at contact@code4.ro.
 
 Last, but not least, we rely on donations to ensure the infrastructure, logistics and management of our community that is widely spread across 11 timezones, coding for social change to make Romania and the world a better place. If you want to support us, [you can do it here](https://code4.ro/en/donate/).
