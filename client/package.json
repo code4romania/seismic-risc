@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^4.2.2",
-    "@lingui/macro": "^2.9.1",
+    "@lingui/macro": "^3.3.0",
     "@lingui/react": "^2.9.2",
     "antd": "^3.26.12",
     "react": "^16.14.0",
