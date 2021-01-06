@@ -5,7 +5,7 @@
   "dependencies": {
     "@ant-design/icons": "^4.3.0",
     "@lingui/macro": "^3.3.0",
-    "@lingui/react": "^2.9.2",
+    "@lingui/react": "^3.3.0",
     "antd": "^3.26.12",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
