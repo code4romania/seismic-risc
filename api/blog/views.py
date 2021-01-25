@@ -1,16 +1,31 @@
 from django.utils import timezone
+from .serializers import PostSerializer, TagSerializer
+from .permissions import IsUserOrReadOnly
 from rest_framework import viewsets
+from taggit.models import Tag
 
-from .serializers import PostSerializer
 from .models import Post
 
 
-class PostViewSet(viewsets.ReadOnlyModelViewSet):
+class TagViewSet(viewsets.ModelViewSet):
+    """
+    API endpoint that lists blog posts tags
+    """
+
+    permissions_classes = (IsUserOrReadOnly,)
+    queryset = Tag.objects.all()
+    serializer_class = TagSerializer
+
+
+class PostViewSet(viewsets.ModelViewSet):
     """
     API endpoint that lists blog posts
     """
 
-    queryset = Post.objects.filter(
-        published__lte=timezone.now(), is_visible=True
-    ).order_by("-published")
+    permissions_classes = (IsUserOrReadOnly,)
+    queryset = (
+        Post.objects.select_related("author")
+        .filter(published__lte=timezone.now(), is_visible=True)
+        .order_by("-published")
+    )
     serializer_class = PostSerializer

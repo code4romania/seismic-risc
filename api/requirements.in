@@ -7,6 +7,7 @@ django-cors-headers
 django-ckeditor
 django-storages
 django-taggit
+django-taggit-serializer
 
 # database
 psycopg2
