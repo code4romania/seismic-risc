@@ -48,6 +48,7 @@ class Base(Configuration):
         "rest_framework",
         "storages",
         "taggit",
+        "taggit_serializer",
         "corsheaders",
         "ckeditor",
         "ckeditor_uploader",
