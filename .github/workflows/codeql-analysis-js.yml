@@ -2,7 +2,7 @@ name: "JS CodeQL analysis"
 
 on:
   push:
-    branches: [develop, master]
+    branches: [develop, main]
   pull_request:
     branches: [develop]
     paths:

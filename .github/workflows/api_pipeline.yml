@@ -3,7 +3,7 @@ name: API Pipeline
 on:
   pull_request:
     branches:
-      - 'master'
+      - 'main'
       - 'develop'
     paths:
       - 'api/**.py'

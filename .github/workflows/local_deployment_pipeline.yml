@@ -3,11 +3,11 @@ name: Run first-time set-up for MacOS and Linux
 on:
   push:
     branches:
-      - 'master'
+      - 'main'
       - 'develop'
   pull_request:
     branches:
-      - 'master'
+      - 'main'
       - 'develop'
     paths:
       - 'api/**'

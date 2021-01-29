@@ -2,7 +2,7 @@
 
 [![Datree](https://s3.amazonaws.com/catalog.static.datree.io/datree-badge-20px.svg)](https://datree.io/?src=badge) 
 [![GitHub contributors](https://img.shields.io/github/contributors/code4romania/seismic-risc.svg)](https://github.com/code4romania/seismic-risc/graphs/contributors) 
-[![GitHub last commit](https://img.shields.io/github/last-commit/code4romania/seismic-risc.svg)](https://github.com/code4romania/seismic-risc/commits/master) 
+[![GitHub last commit](https://img.shields.io/github/last-commit/code4romania/seismic-risc.svg)](https://github.com/code4romania/seismic-risc/commits/develop) 
 [![License: MPL 2.0](https://img.shields.io/badge/license-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 
 <!-- Please don't remove this: Grab your social icons from https://github.com/carlsednaoui/gitsocial -->
@@ -54,7 +54,7 @@ Ce putem face pentru a deveni mai puțin vulnerabili? Să știm totul despre ora
 
 If you would like to contribute to one of our repositories, first identify the scale of what you would like to contribute. If it is small (grammar/spelling, or a bug fix) feel free to start working on a fix. If you are submitting a feature or substantial code contribution, please discuss it with the team and ensure it follows the product roadmap.
 
-Our collaboration model [is described here](https://github.com/code4romania/.github/blob/master/CONTRIBUTING.md). **And make sure you check the [workflow document](https://github.com/code4romania/.github/blob/master/WORKFLOW.md)**; it helps you keep your environment in a good shape, and it helps everyone move faster with code reviews. If you want to make any change to this repository, please **make a fork first**.
+Our collaboration model [is described here](https://github.com/code4romania/.github/blob/main/CONTRIBUTING.md). **And make sure you check the [workflow document](https://github.com/code4romania/.github/blob/main/WORKFLOW.md)**; it helps you keep your environment in a good shape, and it helps everyone move faster with code reviews. If you want to make any change to this repository, please **make a fork first**.
 
 We don't have a specific set of coding guidelines, so just follow the way the code was written until now, if in doubt, you can use [Google's style guide](http://google.github.io/styleguide/pyguide.html).
 
