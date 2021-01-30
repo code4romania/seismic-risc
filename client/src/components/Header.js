@@ -24,8 +24,13 @@ export default ({ currentLanguage, languageChangeCallback }) => {
       </div>
       <ul className={`App-menu ${showMenu ? 'show' : ''}`}>
         <li>
-          <NavLink to="/" activeClassName="active">
+          <NavLink to="/" exact activeClassName="active">
             <Trans>About</Trans>
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/ghid" activeClassName="active">
+            <Trans>Guide</Trans>
           </NavLink>
         </li>
         <li>
