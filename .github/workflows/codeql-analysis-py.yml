@@ -16,7 +16,7 @@ on:
     - cron: '15 7 * * 2'
 
 jobs:
-  analyze_js:
+  analyze_py:
     name: Analyze code
     runs-on: ubuntu-latest
 
