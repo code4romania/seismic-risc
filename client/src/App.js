@@ -3,6 +3,7 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { I18nProvider } from '@lingui/react';
 
 import Home from './containers/home';
+import Guide from './containers/guide';
 import Blog from './containers/blog';
 import Footer from './components/Footer';
 import Terms from './containers/Terms';
@@ -26,6 +27,9 @@ const App = () => {
         <Switch>
           <Route exact path="/">
             <Home language={language} languageChangeCallback={languageChangeCallback} />
+          </Route>
+          <Route path="/ghid">
+            <Guide />
           </Route>
           <Route path="/blog">
             <Blog />

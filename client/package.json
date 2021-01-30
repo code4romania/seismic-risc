@@ -9,6 +9,7 @@
     "antd": "^3.26.12",
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
+    "react-pdf": "^5.1.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "^4.0.1",
     "typeface-open-sans": "0.0.75",
