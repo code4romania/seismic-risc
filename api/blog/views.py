@@ -29,3 +29,4 @@ class PostViewSet(viewsets.ModelViewSet):
         .order_by("-published")
     )
     serializer_class = PostSerializer
+    lookup_field = "slug"

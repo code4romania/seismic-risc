@@ -10,7 +10,7 @@ def test_post_details_get(basic_post_data, api_client, test_user):
     basic_post_data["author_id"] = test_user.id
     post_obj = Post.objects.create(**basic_post_data)
 
-    response = api_client.get(f"{base_url}/{post_obj.id}/")
+    response = api_client.get(f"{base_url}/{post_obj.slug}/")
 
     assert response.status_code == 200
     assert response.data["slug"] == basic_post_data["slug"]
