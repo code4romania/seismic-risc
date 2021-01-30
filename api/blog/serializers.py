@@ -29,3 +29,4 @@ class PostSerializer(TaggitSerializer, serializers.ModelSerializer):
             "created",
             "updated",
         ]
+        extra_kwargs = {"url": {"lookup_field": "slug"}}
