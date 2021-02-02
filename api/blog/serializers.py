@@ -15,11 +15,14 @@ class TagSerializer(serializers.HyperlinkedModelSerializer):
 
 class PostSerializer(TaggitSerializer, serializers.ModelSerializer):
     tags = TagListSerializerField()
+    author_first_name = serializers.ReadOnlyField(source="author.first_name")
+    author_last_name = serializers.ReadOnlyField(source="author.last_name")
 
     class Meta:
         model = Post
         fields = [
-            "author",
+            "author_first_name",
+            "author_last_name",
             "title",
             "slug",
             "image",
