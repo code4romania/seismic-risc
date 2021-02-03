@@ -1,7 +1,7 @@
 from django.utils import timezone
 from .serializers import PostSerializer, TagSerializer
 from .permissions import IsUserOrReadOnly
-from rest_framework import viewsets
+from rest_framework import viewsets, filters
 from taggit.models import Tag
 
 from .models import Post
@@ -24,9 +24,19 @@ class PostViewSet(viewsets.ModelViewSet):
 
     permissions_classes = (IsUserOrReadOnly,)
     queryset = (
-        Post.objects.select_related("author")
+        Post.objects.all()
+        .select_related("author")
         .filter(published__lte=timezone.now(), is_visible=True)
         .order_by("-published")
     )
     serializer_class = PostSerializer
     lookup_field = "slug"
+    filter_backends = [filters.SearchFilter, filters.OrderingFilter]
+    search_fields = [
+        "title",
+        "text",
+        "^author__username",
+        "author__first_name",
+        "author__last_name",
+    ]
+    ordering_fields = ["created", "updated", "published"]
