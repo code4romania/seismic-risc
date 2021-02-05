@@ -6,8 +6,8 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework import permissions
 from rest_framework.response import Response
 
-from .serializers import BuildingSerializer
-from .models import Building
+from .serializers import BuildingSerializer, StatisticSerializer
+from .models import Building, Statistic
 
 
 class BuildingViewSet(viewsets.ModelViewSet):
@@ -34,5 +34,14 @@ def building_search(request):
     )
 
     serializer = BuildingSerializer(buildings, many=True)
+
+    return Response(serializer.data)
+
+
+@api_view(["GET"])
+@permission_classes((permissions.AllowAny,))
+def statistics(self):
+    statistics = Statistic.objects.first()
+    serializer = StatisticSerializer(statistics, many=False)
 
     return Response(serializer.data)
