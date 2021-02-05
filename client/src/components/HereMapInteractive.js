@@ -1,9 +1,13 @@
 import React from 'react';
 import BuildingDetails from './BuildingDetails';
+import SearchResults from './SearchResults';
+
+import { useGlobalContext } from '../context';
 
 const { H } = window;
 
 const HereMapInteractive = (props) => {
+  const { onHereMapLoaded } = useGlobalContext();
   const { apikey, points } = props;
   const mapRef = React.useRef(null);
   const pointsRef = React.useRef();
@@ -32,6 +36,7 @@ const HereMapInteractive = (props) => {
     const ui = new H.ui.UI.createDefault(map, layer);
 
     setState((prevState) => ({ ...prevState, currentMap: map }));
+    onHereMapLoaded(map);
 
     // eslint-disable-next-line consistent-return
     return () => map.dispose();
@@ -94,6 +99,7 @@ const HereMapInteractive = (props) => {
             onClose={() => setState({ ...state, isDrawerVisible: false })}
             details={state.buildingDetails}
           />
+          <SearchResults />
         </div>
       ) : (
         <h1>Here Maps API Key not set</h1>
