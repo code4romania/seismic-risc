@@ -4,6 +4,19 @@ from django.contrib import admin, messages
 from . import models
 
 
+@admin.register(models.Statistic)
+class StatisticAdmin(admin.ModelAdmin):
+    def has_add_permission(self, request):
+        base_add_permission = super(StatisticAdmin, self).has_add_permission(
+            request
+        )
+        if base_add_permission:
+            has_entry = models.Statistic.objects.count() != 0
+            if not has_entry:
+                return True
+        return False
+
+
 @admin.register(models.Building)
 class BuildingAdmin(admin.ModelAdmin):
     list_filter = ("status", "risk_category", "post_code")
