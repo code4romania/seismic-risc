@@ -1,5 +1,14 @@
 {
-    "localeDir": "src/locales/",
-    "srcPathDirs": ["src/"],
-    "sourceLocale": "en"
+  "catalogs": [
+    {
+      "path": "<rootDir>/{locale}/messages",
+      "exclude": [
+        "**/node_modules/**"
+      ]
+    }
+  ],
+  "format": "lingui",
+  "locales": ["ro", "en"],
+  "rootDir": "src/locales",
+  "sourceLocale": "en"
 }
