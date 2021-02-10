@@ -1,5 +1,7 @@
 import tablib
 from django.contrib import admin, messages
+from django.utils.translation import ngettext
+from django.utils.translation import gettext_lazy as _
 
 from . import models
 
@@ -29,6 +31,53 @@ class BuildingAdmin(admin.ModelAdmin):
         "general_id",
     )
     search_fields = ("address",)
+    actions = (
+        "make_pending",
+        "make_accepted",
+        "make_rejected",
+    )
+
+    def make_pending(self, request, queryset):
+        updated = queryset.update(status="0")
+        self.message_user(
+            request,
+            ngettext(
+                "%d building was successfully marked as pending.",
+                "%d buildings were successfully marked as pending.",
+                updated,
+            )
+            % updated,
+            messages.SUCCESS,
+        )
+    make_pending.short_description = _("Mark selected buildings as pending")
+
+    def make_accepted(self, request, queryset):
+        updated = queryset.update(status="1")
+        self.message_user(
+            request,
+            ngettext(
+                "%d building was successfully marked as accepted.",
+                "%d buildings were successfully marked as accepted.",
+                updated,
+            )
+            % updated,
+            messages.SUCCESS,
+        )
+    make_accepted.short_description = _("Mark selected buildings as accepted")
+
+    def make_rejected(self, request, queryset):
+        updated = queryset.update(status="-1")
+        self.message_user(
+            request,
+            ngettext(
+                "%d building was successfully marked as rejected.",
+                "%d buildings were successfully marked as rejected.",
+                updated,
+            )
+            % updated,
+            messages.SUCCESS,
+        )
+    make_rejected.short_description = _("Mark selected buildings as rejected")
 
 
 @admin.register(models.CsvFile)

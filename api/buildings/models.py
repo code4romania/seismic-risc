@@ -17,7 +17,7 @@ class SectorChoice(Enum):
 
 
 BUILDING_STATUS_CHOICES = [
-    (0, _("Choose")),
+    (0, _("Pending")),
     (1, _("Accepted")),
     (-1, _("Rejected")),
 ]
