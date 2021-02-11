@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-29 15:52+0200\n"
+"POT-Creation-Date: 2021-02-11 13:30+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,47 +23,47 @@ msgstr ""
 msgid "Blog"
 msgstr "Jurnal"
 
-#: blog/models.py:11 blog/models.py:32
+#: blog/models.py:10 blog/models.py:31
 msgid "post"
 msgstr "articol"
 
-#: blog/models.py:13 pages/models.py:32
+#: blog/models.py:12 pages/models.py:31
 msgid "title"
 msgstr "titlu"
 
-#: blog/models.py:14 pages/models.py:35
+#: blog/models.py:13 pages/models.py:34
 msgid "slug"
-msgstr ""
+msgstr "adresă"
 
-#: blog/models.py:15
+#: blog/models.py:14
 msgid "image"
 msgstr "imagine"
 
-#: blog/models.py:16
+#: blog/models.py:15
 msgid "text"
 msgstr "text"
 
-#: blog/models.py:17
+#: blog/models.py:16
 msgid "tags"
 msgstr "cuvinte cheie"
 
-#: blog/models.py:18
+#: blog/models.py:17
 msgid "is visible"
 msgstr "este vizibil"
 
-#: blog/models.py:19
+#: blog/models.py:18
 msgid "published"
 msgstr "publicat"
 
-#: blog/models.py:20
+#: blog/models.py:19
 msgid "created"
 msgstr "creat"
 
-#: blog/models.py:21
+#: blog/models.py:20
 msgid "updated"
 msgstr "actualizat"
 
-#: blog/models.py:33
+#: blog/models.py:32
 msgid "posts"
 msgstr "articole"
 
@@ -115,127 +115,143 @@ msgstr "id general"
 msgid "risk category"
 msgstr "categorie risc"
 
-#: buildings/models.py:37
+#: buildings/models.py:38
 msgid "registration number"
 msgstr "număr înregistrare"
 
-#: buildings/models.py:39
+#: buildings/models.py:40
 msgid "examination year"
 msgstr "an examinare"
 
-#: buildings/models.py:41
+#: buildings/models.py:42
 msgid "certified expert"
 msgstr "expert certificat"
 
-#: buildings/models.py:43
+#: buildings/models.py:45
 msgid "observations"
 msgstr "observații"
 
-#: buildings/models.py:45
+#: buildings/models.py:48
 msgid "latitude"
 msgstr "latitudine"
 
-#: buildings/models.py:46
+#: buildings/models.py:49
 msgid "longitude"
 msgstr "longitudine"
 
-#: buildings/models.py:48
+#: buildings/models.py:51
 msgid "county"
 msgstr "județ"
 
-#: buildings/models.py:49
+#: buildings/models.py:52
 msgid "address"
 msgstr "adresă"
 
-#: buildings/models.py:50
+#: buildings/models.py:53
 msgid "post code"
 msgstr "cod poștal"
 
-#: buildings/models.py:51
+#: buildings/models.py:54
 msgid "locality"
 msgstr "localitate"
 
-#: buildings/models.py:53
+#: buildings/models.py:56
 msgid "year built"
 msgstr "an construcție"
 
-#: buildings/models.py:55
+#: buildings/models.py:58
 msgid "height regime"
 msgstr "regim înălțime"
 
-#: buildings/models.py:56
+#: buildings/models.py:60
 msgid "apartment count"
 msgstr "total apartamente"
 
-#: buildings/models.py:57
+#: buildings/models.py:61
 msgid "surface"
 msgstr "suprafață"
 
-#: buildings/models.py:59
+#: buildings/models.py:63
 msgid "cadastre number"
 msgstr "număr cadastru"
 
-#: buildings/models.py:61
+#: buildings/models.py:65
 msgid "land registry number"
-msgstr ""
+msgstr "număr carte funciară"
 
-#: buildings/models.py:63
+#: buildings/models.py:68
 msgid "administration update"
 msgstr "actualizare administrare"
 
-#: buildings/models.py:65
+#: buildings/models.py:70
 msgid "admin update"
-msgstr ""
+msgstr "actualizare de admin"
 
-#: buildings/models.py:68 buildings/models.py:114
+#: buildings/models.py:73 buildings/models.py:133
 msgid "status"
-msgstr ""
+msgstr "stare"
 
-#: buildings/models.py:73
+#: buildings/models.py:77
 msgid "created on"
 msgstr "creat la"
 
-#: buildings/models.py:76
+#: buildings/models.py:81
 msgid "building"
 msgstr "clădire"
 
-#: buildings/models.py:77
+#: buildings/models.py:82
 msgid "buildings"
 msgstr "clădiri"
 
+#: buildings/models.py:89
+msgid "people under risk"
+msgstr "persoane aflate sub risc"
+
+#: buildings/models.py:91
+msgid "consolidated buildings"
+msgstr "clădiri consolidate"
+
+#: buildings/models.py:95
+msgid "statistic"
+msgstr "statistică"
+
 #: buildings/models.py:96
+msgid "statistics"
+msgstr "statistici"
+
+#: buildings/models.py:115
 msgid "building resource"
 msgstr "resursă clădire"
 
-#: buildings/models.py:97
+#: buildings/models.py:116
 msgid "building resources"
 msgstr "resurse clădire"
 
-#: buildings/models.py:106
+#: buildings/models.py:125
 msgid "Unsuccess"
 msgstr "Eșec"
 
-#: buildings/models.py:107
+#: buildings/models.py:126
 msgid "Not tried"
 msgstr "Neîncercat"
 
-#: buildings/models.py:108
+#: buildings/models.py:127
 msgid "Success"
 msgstr "Succes"
 
-#: buildings/models.py:111 pages/models.py:10 pages/models.py:99
+#: buildings/models.py:130 pages/models.py:10 pages/models.py:100
 msgid "name"
 msgstr "nume"
 
-#: buildings/models.py:112
+#: buildings/models.py:131
 msgid "file"
 msgstr "fișier"
 
-#: buildings/models.py:119
+#: buildings/models.py:137
 msgid "CSV file"
 msgstr "fișier CSV"
 
-#: buildings/models.py:120
+#: buildings/models.py:138
 msgid "CSV files"
 msgstr "fișiere CSV"
 
@@ -243,67 +259,67 @@ msgstr "fișiere CSV"
 msgid "Pages"
 msgstr "Pagini"
 
-#: pages/models.py:18 pages/models.py:29
+#: pages/models.py:17 pages/models.py:28
 msgid "category"
 msgstr "categorie"
 
-#: pages/models.py:19
+#: pages/models.py:18
 msgid "categories"
 msgstr "categorii"
 
-#: pages/models.py:28
+#: pages/models.py:27
 msgid "Page category"
 msgstr "Categorie pagină"
 
-#: pages/models.py:33
+#: pages/models.py:31
 msgid "Page title"
 msgstr "Titlu pagină"
 
-#: pages/models.py:40
+#: pages/models.py:39
 msgid "Unique URL slug (leave empty to auto-generate)"
-msgstr ""
+msgstr "Adresa unică a URL-ului (lăsați gol pentru a genera automat)"
 
-#: pages/models.py:42
+#: pages/models.py:41
 msgid "content"
 msgstr "conținut"
 
-#: pages/models.py:44
+#: pages/models.py:43
 msgid "updated on"
 msgstr "actualizat la"
 
-#: pages/models.py:49
+#: pages/models.py:48
 msgid "Last update time"
 msgstr "Data ultimei actualizări"
 
-#: pages/models.py:52
+#: pages/models.py:51
 msgid "publishing date"
 msgstr "dată publicare"
 
-#: pages/models.py:53
+#: pages/models.py:54
 msgid "Public page publishing date"
 msgstr "Data publicării paginii"
 
-#: pages/models.py:56
+#: pages/models.py:57
 msgid "is published"
 msgstr "este publicata"
 
-#: pages/models.py:59
+#: pages/models.py:60
 msgid "Is this page visible on the website"
 msgstr "Este această pagină vizibila pe website"
 
-#: pages/models.py:63
+#: pages/models.py:64
 msgid "page"
 msgstr "pagină"
 
-#: pages/models.py:64
+#: pages/models.py:65
 msgid "pages"
 msgstr "pagini"
 
-#: pages/models.py:95
+#: pages/models.py:96
 msgid "Page attachment"
 msgstr "Atașament pagină"
 
-#: pages/models.py:96 pages/models.py:111
+#: pages/models.py:97 pages/models.py:112
 msgid "attachment"
 msgstr "atașament"
 
@@ -311,21 +327,29 @@ msgstr "atașament"
 msgid "Attachment name"
 msgstr "Nume atașament"
 
-#: pages/models.py:102
+#: pages/models.py:103
 msgid "upload date"
 msgstr "dată încărcare"
 
-#: pages/models.py:103
+#: pages/models.py:105
 msgid "Attachment upload date"
 msgstr "Data încărcării atașamentului"
 
-#: pages/models.py:106
+#: pages/models.py:108
 msgid "uploaded file"
 msgstr "fișier încărcat"
 
-#: pages/models.py:112
+#: pages/models.py:113
 msgid "attachments"
 msgstr "atașamente"
+
+#: seismic_site/settings.py:126
+msgid "English"
+msgstr "Engleză"
+
+#: seismic_site/settings.py:126
+msgid "Romanian"
+msgstr "Română"
 
 #~ msgid "blog"
 #~ msgstr "jurnal"
