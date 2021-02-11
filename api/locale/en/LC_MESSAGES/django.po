@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2020-02-29 15:52+0200\n"
+"POT-Creation-Date: 2021-02-11 13:30+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -22,47 +22,47 @@ msgstr ""
 msgid "Blog"
 msgstr ""
 
-#: blog/models.py:11 blog/models.py:32
+#: blog/models.py:10 blog/models.py:31
 msgid "post"
 msgstr ""
 
-#: blog/models.py:13 pages/models.py:32
+#: blog/models.py:12 pages/models.py:31
 msgid "title"
 msgstr ""
 
-#: blog/models.py:14 pages/models.py:35
+#: blog/models.py:13 pages/models.py:34
 msgid "slug"
 msgstr ""
 
-#: blog/models.py:15
+#: blog/models.py:14
 msgid "image"
 msgstr ""
 
-#: blog/models.py:16
+#: blog/models.py:15
 msgid "text"
 msgstr ""
 
-#: blog/models.py:17
+#: blog/models.py:16
 msgid "tags"
 msgstr ""
 
-#: blog/models.py:18
+#: blog/models.py:17
 msgid "is visible"
 msgstr ""
 
-#: blog/models.py:19
+#: blog/models.py:18
 msgid "published"
 msgstr ""
 
-#: blog/models.py:20
+#: blog/models.py:19
 msgid "created"
 msgstr ""
 
-#: blog/models.py:21
+#: blog/models.py:20
 msgid "updated"
 msgstr ""
 
-#: blog/models.py:33
+#: blog/models.py:32
 msgid "posts"
 msgstr ""
 
@@ -114,127 +114,143 @@ msgstr ""
 msgid "risk category"
 msgstr ""
 
-#: buildings/models.py:37
+#: buildings/models.py:38
 msgid "registration number"
 msgstr ""
 
-#: buildings/models.py:39
+#: buildings/models.py:40
 msgid "examination year"
 msgstr ""
 
-#: buildings/models.py:41
+#: buildings/models.py:42
 msgid "certified expert"
 msgstr ""
 
-#: buildings/models.py:43
+#: buildings/models.py:45
 msgid "observations"
 msgstr ""
 
-#: buildings/models.py:45
+#: buildings/models.py:48
 msgid "latitude"
 msgstr ""
 
-#: buildings/models.py:46
+#: buildings/models.py:49
 msgid "longitude"
 msgstr ""
 
-#: buildings/models.py:48
+#: buildings/models.py:51
 msgid "county"
 msgstr ""
 
-#: buildings/models.py:49
+#: buildings/models.py:52
 msgid "address"
 msgstr ""
 
-#: buildings/models.py:50
+#: buildings/models.py:53
 msgid "post code"
 msgstr ""
 
-#: buildings/models.py:51
+#: buildings/models.py:54
 msgid "locality"
 msgstr ""
 
-#: buildings/models.py:53
+#: buildings/models.py:56
 msgid "year built"
 msgstr ""
 
-#: buildings/models.py:55
+#: buildings/models.py:58
 msgid "height regime"
 msgstr ""
 
-#: buildings/models.py:56
+#: buildings/models.py:60
 msgid "apartment count"
 msgstr ""
 
-#: buildings/models.py:57
+#: buildings/models.py:61
 msgid "surface"
 msgstr ""
 
-#: buildings/models.py:59
+#: buildings/models.py:63
 msgid "cadastre number"
 msgstr ""
 
-#: buildings/models.py:61
+#: buildings/models.py:65
 msgid "land registry number"
 msgstr ""
 
-#: buildings/models.py:63
+#: buildings/models.py:68
 msgid "administration update"
 msgstr ""
 
-#: buildings/models.py:65
+#: buildings/models.py:70
 msgid "admin update"
 msgstr ""
 
-#: buildings/models.py:68 buildings/models.py:114
+#: buildings/models.py:73 buildings/models.py:133
 msgid "status"
 msgstr ""
 
-#: buildings/models.py:73
+#: buildings/models.py:77
 msgid "created on"
 msgstr ""
 
-#: buildings/models.py:76
+#: buildings/models.py:81
 msgid "building"
 msgstr ""
 
-#: buildings/models.py:77
+#: buildings/models.py:82
 msgid "buildings"
 msgstr ""
 
+#: buildings/models.py:89
+msgid "people under risk"
+msgstr ""
+
+#: buildings/models.py:91
+msgid "consolidated buildings"
+msgstr ""
+
+#: buildings/models.py:95
+msgid "statistic"
+msgstr ""
+
 #: buildings/models.py:96
+msgid "statistics"
+msgstr ""
+
+#: buildings/models.py:115
 msgid "building resource"
 msgstr ""
 
-#: buildings/models.py:97
+#: buildings/models.py:116
 msgid "building resources"
 msgstr ""
 
-#: buildings/models.py:106
+#: buildings/models.py:125
 msgid "Unsuccess"
 msgstr ""
 
-#: buildings/models.py:107
+#: buildings/models.py:126
 msgid "Not tried"
 msgstr ""
 
-#: buildings/models.py:108
+#: buildings/models.py:127
 msgid "Success"
 msgstr ""
 
-#: buildings/models.py:111 pages/models.py:10 pages/models.py:99
+#: buildings/models.py:130 pages/models.py:10 pages/models.py:100
 msgid "name"
 msgstr ""
 
-#: buildings/models.py:112
+#: buildings/models.py:131
 msgid "file"
 msgstr ""
 
-#: buildings/models.py:119
+#: buildings/models.py:137
 msgid "CSV file"
 msgstr ""
 
-#: buildings/models.py:120
+#: buildings/models.py:138
 msgid "CSV files"
 msgstr ""
 
@@ -242,67 +258,67 @@ msgstr ""
 msgid "Pages"
 msgstr ""
 
-#: pages/models.py:18 pages/models.py:29
+#: pages/models.py:17 pages/models.py:28
 msgid "category"
 msgstr ""
 
-#: pages/models.py:19
+#: pages/models.py:18
 msgid "categories"
 msgstr ""
 
-#: pages/models.py:28
+#: pages/models.py:27
 msgid "Page category"
 msgstr ""
 
-#: pages/models.py:33
+#: pages/models.py:31
 msgid "Page title"
 msgstr ""
 
-#: pages/models.py:40
+#: pages/models.py:39
 msgid "Unique URL slug (leave empty to auto-generate)"
 msgstr ""
 
-#: pages/models.py:42
+#: pages/models.py:41
 msgid "content"
 msgstr ""
 
-#: pages/models.py:44
+#: pages/models.py:43
 msgid "updated on"
 msgstr ""
 
-#: pages/models.py:49
+#: pages/models.py:48
 msgid "Last update time"
 msgstr ""
 
-#: pages/models.py:52
+#: pages/models.py:51
 msgid "publishing date"
 msgstr ""
 
-#: pages/models.py:53
+#: pages/models.py:54
 msgid "Public page publishing date"
 msgstr ""
 
-#: pages/models.py:56
+#: pages/models.py:57
 msgid "is published"
 msgstr ""
 
-#: pages/models.py:59
+#: pages/models.py:60
 msgid "Is this page visible on the website"
 msgstr ""
 
-#: pages/models.py:63
+#: pages/models.py:64
 msgid "page"
 msgstr ""
 
-#: pages/models.py:64
+#: pages/models.py:65
 msgid "pages"
 msgstr ""
 
-#: pages/models.py:95
+#: pages/models.py:96
 msgid "Page attachment"
 msgstr ""
 
-#: pages/models.py:96 pages/models.py:111
+#: pages/models.py:97 pages/models.py:112
 msgid "attachment"
 msgstr ""
 
@@ -310,18 +326,26 @@ msgstr ""
 msgid "Attachment name"
 msgstr ""
 
-#: pages/models.py:102
+#: pages/models.py:103
 msgid "upload date"
 msgstr ""
 
-#: pages/models.py:103
+#: pages/models.py:105
 msgid "Attachment upload date"
 msgstr ""
 
-#: pages/models.py:106
+#: pages/models.py:108
 msgid "uploaded file"
 msgstr ""
 
-#: pages/models.py:112
+#: pages/models.py:113
 msgid "attachments"
+msgstr ""
+
+#: seismic_site/settings.py:126
+msgid "English"
+msgstr ""
+
+#: seismic_site/settings.py:126
+msgid "Romanian"
 msgstr ""
