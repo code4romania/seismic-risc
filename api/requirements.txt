@@ -4,33 +4,33 @@
 #
 #    pip-compile --output-file=requirements.txt requirements.in
 #
-boto3==1.14.10
+boto3==1.17.5
     # via -r requirements.in
-botocore==1.17.10
+botocore==1.20.5
     # via
     #   boto3
     #   s3transfer
 brotlipy==0.7.0
     # via -r requirements.in
-cffi==1.14.0
+cffi==1.14.4
     # via brotlipy
 defusedxml==0.6.0
     # via odfpy
-diff-match-patch==20181111
+diff-match-patch==20200713
     # via django-import-export
 dj-database-url==0.5.0
     # via -r requirements.in
-django-ckeditor==5.9.0
+django-ckeditor==6.0.0
     # via -r requirements.in
 django-configurations==2.2
     # via -r requirements.in
-django-cors-headers==3.4.0
+django-cors-headers==3.7.0
     # via -r requirements.in
-django-import-export==2.2.0
+django-import-export==2.5.0
     # via -r requirements.in
 django-js-asset==1.2.2
     # via django-ckeditor
-django-storages==1.9.1
+django-storages==1.11.1
     # via -r requirements.in
 django-taggit-serializer==0.1.7
     # via -r requirements.in
@@ -38,7 +38,7 @@ django-taggit==1.3.0
     # via
     #   -r requirements.in
     #   django-taggit-serializer
-django==2.2.13
+django==2.2.18
     # via
     #   -r requirements.in
     #   django-cors-headers
@@ -46,10 +46,8 @@ django==2.2.13
     #   django-storages
     #   django-taggit
     #   djangorestframework
-djangorestframework==3.11.0
+djangorestframework==3.12.2
     # via -r requirements.in
-docutils==0.15.2
-    # via botocore
 et-xmlfile==1.0.1
     # via openpyxl
 gunicorn==20.0.4
@@ -64,40 +62,40 @@ markuppy==1.14
     # via tablib
 odfpy==1.4.1
     # via tablib
-openpyxl==3.0.4
+openpyxl==3.0.6
     # via tablib
-pillow==7.1.2
+pillow==8.1.0
     # via -r requirements.in
-psycopg2==2.8.5
+psycopg2==2.8.6
     # via -r requirements.in
 pycparser==2.20
     # via cffi
 python-dateutil==2.8.1
     # via botocore
-pytz==2020.1
+pytz==2021.1
     # via
     #   -r requirements.in
     #   django
-pyyaml==5.3.1
+pyyaml==5.4.1
     # via tablib
-s3transfer==0.3.3
+s3transfer==0.3.4
     # via boto3
 six==1.15.0
     # via
     #   django-configurations
     #   django-taggit-serializer
     #   python-dateutil
-sqlparse==0.3.1
+sqlparse==0.4.1
     # via django
-tablib[html,ods,xls,xlsx,yaml]==2.0.0
+tablib[html,ods,xls,xlsx,yaml]==3.0.0
     # via
     #   -r requirements.in
     #   django-import-export
-urllib3==1.25.9
+urllib3==1.26.3
     # via botocore
-whitenoise==5.1.0
+whitenoise==5.2.0
     # via -r requirements.in
-xlrd==1.2.0
+xlrd==2.0.1
     # via tablib
 xlwt==1.3.0
     # via tablib

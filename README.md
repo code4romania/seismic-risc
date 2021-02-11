@@ -210,6 +210,24 @@ Add the following option to user settings in VS Code if ESLint fails to load the
 }
 ```
 
+## Management Commands
+
+The new custom command can be called using 
+`python manage.py buildings <number>`
+required arguments:
+ - --delete          
+ - --create
+
+```shell script
+cd path/to/repo
+docker-compose exec api bash
+root@ba4fd81f9023:/code# python manage.py buildings 30 --create
+100% |███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 30/30 [00:00<00:00, 37.89it/s]
+Successfully created 30 buildings.
+root@ba4fd81f9023:/code# python manage.py buildings 25 --delete
+Successfully deleted 25 buildings.
+```
+
 ## Testing
 
 Local development testing:

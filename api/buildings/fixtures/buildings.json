@@ -3,7 +3,7 @@
         "model": "buildings.building",
         "pk": 70,
         "fields": {
-            "risk_category": "RS III",
+            "risk_category": "RS3",
             "registration_number": 2,
             "lat": 44.41339,
             "lng": 26.146,
@@ -28,7 +28,7 @@
         "model": "buildings.building",
         "pk": 71,
         "fields": {
-            "risk_category": "RS II",
+            "risk_category": "RS2",
             "registration_number": 4,
             "lat": 44.40553,
             "lng": 26.186,
@@ -53,7 +53,7 @@
         "model": "buildings.building",
         "pk": 72,
         "fields": {
-            "risk_category": "RS I",
+            "risk_category": "RS1",
             "registration_number": 2,
             "lat": 44.42556,
             "lng": 26.176,
@@ -78,7 +78,7 @@
         "model": "buildings.building",
         "pk": 73,
         "fields": {
-            "risk_category": "N/A",
+            "risk_category": "NA",
             "registration_number": 11,
             "lat": 44.39556,
             "lng": 26.156,
