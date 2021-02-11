@@ -24,15 +24,30 @@ BUILDING_STATUS_CHOICES = [
 
 
 class SeismicCategoryChoice(Enum):
-    pass
-    # TODO Implement this and replace in model
+    NA = _("N/A")
+    U1 = _("U1")
+    U2 = _("U2")
+    U3 = _("U3")
+    U4 = _("U4")
+    RS1 = _("RS I")
+    RS2 = _("RS II")
+    RS3 = _("RS III")
+    RS4 = _("RS IV")
+
+    @classmethod
+    def choices(cls):
+        return [(i.name, i.value) for i in cls]
 
 
 class Building(models.Model):
     general_id = models.AutoField(_("general id"), primary_key=True)
 
     risk_category = models.CharField(
-        _("risk category"), max_length=50, db_index=True
+        _("risk category"),
+        max_length=3,
+        choices=SeismicCategoryChoice.choices(),
+        default=SeismicCategoryChoice.NA,
+        db_index=True,
     )
     registration_number = models.IntegerField(
         _("registration number"), null=True

@@ -6,49 +6,45 @@
 #
 appdirs==1.4.4
     # via black
-attrs==19.3.0
-    # via
-    #   black
-    #   pytest
+attrs==20.3.0
+    # via pytest
 backcall==0.2.0
     # via ipython
-black==19.10b0
+black==20.8b1
     # via -r requirements-dev.in
-boto3==1.14.10
+boto3==1.17.5
     # via -r requirements.in
-botocore==1.17.10
+botocore==1.20.5
     # via
     #   boto3
     #   s3transfer
 brotlipy==0.7.0
     # via -r requirements.in
-cffi==1.14.0
+cffi==1.14.4
     # via brotlipy
 click==7.1.2
     # via black
-coverage==5.1
+coverage==5.4
     # via pytest-cov
 decorator==4.4.2
-    # via
-    #   ipython
-    #   traitlets
+    # via ipython
 defusedxml==0.6.0
     # via odfpy
-diff-match-patch==20181111
+diff-match-patch==20200713
     # via django-import-export
 dj-database-url==0.5.0
     # via -r requirements.in
-django-ckeditor==5.9.0
+django-ckeditor==6.0.0
     # via -r requirements.in
 django-configurations==2.2
     # via -r requirements.in
-django-cors-headers==3.4.0
+django-cors-headers==3.7.0
     # via -r requirements.in
-django-import-export==2.2.0
+django-import-export==2.5.0
     # via -r requirements.in
 django-js-asset==1.2.2
     # via django-ckeditor
-django-storages==1.9.1
+django-storages==1.11.1
     # via -r requirements.in
 django-taggit-serializer==0.1.7
     # via -r requirements.in
@@ -56,7 +52,7 @@ django-taggit==1.3.0
     # via
     #   -r requirements.in
     #   django-taggit-serializer
-django==2.2.13
+django==2.2.18
     # via
     #   -r requirements.in
     #   django-cors-headers
@@ -64,30 +60,32 @@ django==2.2.13
     #   django-storages
     #   django-taggit
     #   djangorestframework
-djangorestframework==3.11.0
+djangorestframework==3.12.2
     # via -r requirements.in
-docutils==0.15.2
-    # via botocore
 et-xmlfile==1.0.1
     # via openpyxl
+faker==6.1.1
+    # via -r requirements-dev.in
 fancycompleter==0.9.1
     # via pdbpp
-flake8==3.8.3
+flake8==3.8.4
     # via pytest-flake8
 gunicorn==20.0.4
     # via -r requirements.in
-importlib-metadata==1.6.1
+importlib-metadata==3.4.0
     # via
     #   flake8
     #   pluggy
     #   pytest
+iniconfig==1.1.1
+    # via pytest
 ipython-genutils==0.2.0
     # via traitlets
-ipython==7.15.0
+ipython==7.20.0
     # via -r requirements-dev.in
 jdcal==1.4.1
     # via openpyxl
-jedi==0.17.1
+jedi==0.18.0
     # via ipython
 jmespath==0.10.0
     # via
@@ -97,17 +95,17 @@ markuppy==1.14
     # via tablib
 mccabe==0.6.1
     # via flake8
-more-itertools==8.4.0
-    # via pytest
+mypy-extensions==0.4.3
+    # via black
 odfpy==1.4.1
     # via tablib
-openpyxl==3.0.4
+openpyxl==3.0.6
     # via tablib
-packaging==20.4
+packaging==20.9
     # via pytest
-parso==0.7.0
+parso==0.8.1
     # via jedi
-pathspec==0.8.0
+pathspec==0.8.1
     # via black
 pdbpp==0.10.2
     # via -r requirements-dev.in
@@ -115,17 +113,17 @@ pexpect==4.8.0
     # via ipython
 pickleshare==0.7.5
     # via ipython
-pillow==7.1.2
+pillow==8.1.0
     # via -r requirements.in
 pluggy==0.13.1
     # via pytest
-prompt-toolkit==3.0.5
+prompt-toolkit==3.0.15
     # via ipython
-psycopg2==2.8.5
+psycopg2==2.8.6
     # via -r requirements.in
-ptyprocess==0.6.0
+ptyprocess==0.7.0
     # via pexpect
-py==1.9.0
+py==1.10.0
     # via pytest
 pycodestyle==2.6.0
     # via flake8
@@ -133,7 +131,7 @@ pycparser==2.20
     # via cffi
 pyflakes==2.2.0
     # via flake8
-pygments==2.6.1
+pygments==2.7.4
     # via
     #   ipython
     #   pdbpp
@@ -141,64 +139,72 @@ pyparsing==2.4.7
     # via packaging
 pyrepl==0.9.0
     # via fancycompleter
-pytest-cov==2.10.0
+pytest-cov==2.11.1
     # via -r requirements-dev.in
-pytest-django==3.9.0
+pytest-django==4.1.0
     # via -r requirements-dev.in
-pytest-flake8==1.0.6
+pytest-flake8==1.0.7
     # via -r requirements-dev.in
-pytest==5.4.3
+pytest==6.2.2
     # via
     #   -r requirements-dev.in
     #   pytest-cov
     #   pytest-django
     #   pytest-flake8
 python-dateutil==2.8.1
-    # via botocore
-pytz==2020.1
+    # via
+    #   botocore
+    #   faker
+pytz==2021.1
     # via
     #   -r requirements.in
     #   django
-pyyaml==5.3.1
+pyyaml==5.4.1
     # via tablib
-regex==2020.6.8
+regex==2020.11.13
     # via black
-s3transfer==0.3.3
+s3transfer==0.3.4
     # via boto3
 six==1.15.0
     # via
     #   django-configurations
     #   django-taggit-serializer
-    #   packaging
     #   python-dateutil
-    #   traitlets
-sqlparse==0.3.1
+sqlparse==0.4.1
     # via django
-tablib[html,ods,xls,xlsx,yaml]==2.0.0
+tablib[html,ods,xls,xlsx,yaml]==3.0.0
     # via
     #   -r requirements.in
     #   django-import-export
-toml==0.10.1
-    # via black
-traitlets==4.3.3
+text-unidecode==1.3
+    # via faker
+toml==0.10.2
+    # via
+    #   black
+    #   pytest
+tqdm==4.56.2
+    # via -r requirements-dev.in
+traitlets==5.0.5
     # via ipython
-typed-ast==1.4.1
+typed-ast==1.4.2
     # via black
-urllib3==1.25.9
+typing-extensions==3.7.4.3
+    # via
+    #   black
+    #   importlib-metadata
+urllib3==1.26.3
     # via botocore
 wcwidth==0.2.5
-    # via
-    #   prompt-toolkit
-    #   pytest
-whitenoise==5.1.0
+    # via prompt-toolkit
+whitenoise==5.2.0
     # via -r requirements.in
 wmctrl==0.3
     # via pdbpp
-xlrd==1.2.0
+xlrd==2.0.1
     # via tablib
 xlwt==1.3.0
     # via tablib
-zipp==3.1.0
+zipp==3.4.0
     # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:

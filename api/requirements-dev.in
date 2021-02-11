@@ -5,5 +5,7 @@ pytest-cov
 pdbpp
 ipython
 black
+Faker
+tqdm
 
 -r requirements.in
