@@ -2,6 +2,10 @@ import React from 'react';
 import { Row, Col, Card } from 'antd';
 import { Trans } from '@lingui/react';
 
+import config from '../../config';
+
+const { STATISTICS_URL } = config;
+
 const StatisticCard = ({ children }, props) => (
   <Card style={{ border: 'none', backgroundColor: '#ee741b' }}>
     <div>
@@ -11,23 +15,21 @@ const StatisticCard = ({ children }, props) => (
   </Card>
 );
 
-const STATISTICS_URL = '/api/v1/statistics';
-
 export default () => {
   const [state, setState] = React.useState({
-    peopleUnderRisk: '',
-    evaluatedBuildings: '',
-    consolidatedBuilding: '',
+    statistics: {
+      people_under_risk: '',
+      evaluated_buildings: '',
+      consolidated_buildings: '',
+    },
   });
   React.useEffect(() => {
     fetch(STATISTICS_URL)
       .then((res) => res.json())
-      .then(({ peopleUnderRisk, evaluatedBuildings, consolidatedBuildings }) => {
+      .then((statistics) => {
         setState((prevState) => ({
           ...prevState,
-          peopleUnderRisk,
-          evaluatedBuildings,
-          consolidatedBuildings,
+          statistics,
         }));
       });
   }, []);
@@ -35,17 +37,17 @@ export default () => {
   return (
     <Row gutter={[8, 32]} type="flex" justify="space-around" style={{ margin: '2rem' }}>
       <Col span={8}>
-        <StatisticCard value={state.peopleUnderRisk}>
+        <StatisticCard value={state.statistics.people_under_risk}>
           <Trans id="People under risk" />
         </StatisticCard>
       </Col>
       <Col span={8}>
-        <StatisticCard value={state.evaluatedBuildings}>
+        <StatisticCard value={state.statistics.evaluated_buildings}>
           <Trans id="Evaluated buildings" />
         </StatisticCard>
       </Col>
       <Col span={8}>
-        <StatisticCard value={state.consolidatedBuilding}>
+        <StatisticCard value={state.statistics.consolidated_buildings}>
           <Trans id="Consolidated buildings" />
         </StatisticCard>
       </Col>
