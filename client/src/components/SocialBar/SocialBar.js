@@ -1,4 +1,5 @@
 import React from 'react';
+import { Trans } from '@lingui/macro';
 import facebookLogo from '../../images/facebook_grey.png';
 import instagramLogo from '../../images/instagram_grey.png';
 import linkedinLogo from '../../images/linkedin_grey.png';
@@ -83,7 +84,7 @@ const SocialBar = () => {
         rel="noopener noreferrer"
         href="https://code4.ro/ro/doneaza/"
       >
-        DONEAZĂ
+        <Trans>DONATE</Trans>
       </a>
     </div>
   );

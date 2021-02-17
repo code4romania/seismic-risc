@@ -1,6 +1,7 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import { Col, Row, Tag, Typography } from 'antd';
+import { Trans } from '@lingui/macro';
 import useWindowSize from '../../../hooks/useWindowSize';
 
 import config from '../../../config';
@@ -35,7 +36,13 @@ const BlogPostDetailsFragment = () => {
   }, []);
 
   if (state.postDetails === null) {
-    return state.requestError ? <p>Nu a fost găsit</p> : <p />;
+    return state.requestError ? (
+      <p>
+        <Trans>Article not found</Trans>
+      </p>
+    ) : (
+      <p />
+    );
   }
   const authorFullName = `${state.postDetails.author_first_name} ${state.postDetails.author_last_name}`;
 
@@ -51,7 +58,10 @@ const BlogPostDetailsFragment = () => {
           {state.postDetails.title}
         </Title>
         <Paragraph style={{ textAlign: 'left' }}>
-          Publicat de {authorFullName} • {new Date(state.postDetails.created).toLocaleDateString()}
+          <Trans>
+            Published by {authorFullName} •{' '}
+            {new Date(state.postDetails.created).toLocaleDateString()}
+          </Trans>
         </Paragraph>
         <Paragraph style={{ textAlign: 'left' }}>
           {state.postDetails.tags.map((tag) => (

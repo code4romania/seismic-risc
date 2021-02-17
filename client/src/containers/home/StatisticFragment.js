@@ -1,11 +1,12 @@
 import React from 'react';
 import { Row, Col, Card } from 'antd';
+import { Trans } from '@lingui/react';
 
-const StatisticCard = (props) => (
+const StatisticCard = ({ children }, props) => (
   <Card style={{ border: 'none', backgroundColor: '#ee741b' }}>
     <div>
       <h1 style={{ color: 'white' }}>{props.value}</h1>
-      <h3 style={{ color: 'white' }}>{props.text}</h3>
+      <h3 style={{ color: 'white' }}>{children}</h3>
     </div>
   </Card>
 );
@@ -34,13 +35,19 @@ export default () => {
   return (
     <Row gutter={[8, 32]} type="flex" justify="space-around" style={{ margin: '2rem' }}>
       <Col span={8}>
-        <StatisticCard value={state.peopleUnderRisk} text="oameni sub risc" />
+        <StatisticCard value={state.peopleUnderRisk}>
+          <Trans id="People under risk" />
+        </StatisticCard>
       </Col>
       <Col span={8}>
-        <StatisticCard value={state.evaluatedBuildings} text="clădiri evaluate" />
+        <StatisticCard value={state.evaluatedBuildings}>
+          <Trans id="Evaluated buildings" />
+        </StatisticCard>
       </Col>
       <Col span={8}>
-        <StatisticCard value={state.consolidatedBuilding} text="clădiri consolidate" />
+        <StatisticCard value={state.consolidatedBuilding}>
+          <Trans id="Consolidated buildings" />
+        </StatisticCard>
       </Col>
     </Row>
   );

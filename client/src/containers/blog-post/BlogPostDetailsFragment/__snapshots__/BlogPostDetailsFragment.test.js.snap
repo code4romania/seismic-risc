@@ -20,10 +20,7 @@ exports[`BlogPostDetailsFragment component should render correctly 1`] = `
           class="ant-typography"
           style="text-align: left;"
         >
-          Publicat de 
-          First Last
-           • 
-          1/1/1970
+          Publicat de First Last • 1/1/1970
         </div>
         <div
           class="ant-typography"
@@ -71,7 +68,7 @@ exports[`BlogPostDetailsFragment component should render correctly if error 1`] 
 <body>
   <div>
     <p>
-      Nu a fost găsit
+      Articolul nu a fost găsit
     </p>
   </div>
 </body>

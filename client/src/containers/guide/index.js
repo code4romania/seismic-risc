@@ -2,6 +2,7 @@ import React from 'react';
 import { useLocation } from 'react-router-dom';
 import qs from 'qs';
 import { Row, Col, Button } from 'antd';
+import { Trans } from '@lingui/macro';
 import Layout from '../../components/Layout';
 import PdfViewer from './PdfViewer';
 
@@ -17,7 +18,9 @@ const Guide = () => {
   return (
     <Layout>
       <div className="page">
-        <h1>Ghid</h1>
+        <h1>
+          <Trans>Homeowners associations guide</Trans>
+        </h1>
         <Row
           type="flex"
           justify="center"
@@ -30,7 +33,7 @@ const Guide = () => {
         </Row>
         <Row type="flex" justify="center">
           <Button type="primary" icon="download" href={GUIDE_PDF_URL} download>
-            Descarcă
+            <Trans>Download</Trans>
           </Button>
         </Row>
       </div>

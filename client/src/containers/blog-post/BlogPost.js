@@ -2,9 +2,9 @@ import React from 'react';
 import Layout from '../../components/Layout';
 import BlogPostDetailsFragment from './BlogPostDetailsFragment/BlogPostDetailsFragment';
 
-const BlogPost = ({ language, languageChangeCallback }) => {
+const BlogPost = () => {
   return (
-    <Layout language={language} languageChangeCallback={languageChangeCallback}>
+    <Layout>
       <BlogPostDetailsFragment />
     </Layout>
   );

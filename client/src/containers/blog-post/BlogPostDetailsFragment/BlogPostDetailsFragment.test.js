@@ -1,7 +1,18 @@
 import React from 'react';
-import { render, cleanup } from '@testing-library/react';
+import { render, cleanup, act } from '@testing-library/react';
 import '@testing-library/jest-dom/extend-expect';
+import { i18n } from '@lingui/core';
+import { I18nProvider } from '@lingui/react';
 import BlogPostDetailsFragment from './BlogPostDetailsFragment';
+import { messages as enMessages } from '../../../locales/en/messages';
+import { messages as roMessages } from '../../../locales/ro/messages';
+
+i18n.load({
+  en: enMessages,
+  ro: roMessages,
+});
+
+const TestingProvider = ({ children }) => <I18nProvider i18n={i18n}>{children}</I18nProvider>;
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
@@ -23,6 +34,10 @@ describe('BlogPostDetailsFragment component', () => {
     jest.restoreAllMocks();
   });
 
+  act(() => {
+    i18n.activate('ro');
+  });
+
   it('should render correctly', async () => {
     const blogPost = {
       title: 'Title',
@@ -37,7 +52,7 @@ describe('BlogPostDetailsFragment component', () => {
       json: jest.fn().mockResolvedValue(blogPost),
       status: 200,
     });
-    const container = render(<BlogPostDetailsFragment />);
+    const container = render(<BlogPostDetailsFragment />, { wrapper: TestingProvider });
     await container.findByText('Title');
     expect(container.baseElement).toMatchSnapshot();
   });
@@ -47,8 +62,8 @@ describe('BlogPostDetailsFragment component', () => {
       json: jest.fn().mockResolvedValue(null),
       status: 404,
     });
-    const container = render(<BlogPostDetailsFragment />);
-    await container.findByText('Nu a fost găsit');
+    const container = render(<BlogPostDetailsFragment />, { wrapper: TestingProvider });
+    await container.findByText('Articolul nu a fost găsit');
     expect(container.baseElement).toMatchSnapshot();
   });
 });

@@ -1,4 +1,5 @@
 import React, { useReducer, useContext } from 'react';
+import { i18n } from '@lingui/core';
 
 import reducer from './reducer';
 import config from './config';
@@ -13,10 +14,18 @@ const initialState = {
   searchResults: [],
   showSearchResults: false,
   searchError: null,
+  currentLanguage: 'ro',
 };
 
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
+
+  const languageChange = async (locale) => {
+    const { messages } = await import(`./locales/${locale}/messages`);
+    i18n.load(locale, messages);
+    i18n.activate(locale);
+    dispatch({ type: 'LANGUAGE_CHANGE', payload: locale });
+  };
 
   const onSearchInputChange = (searchInput) => {
     dispatch({ type: 'SEARCH_INPUT', payload: searchInput });
@@ -52,6 +61,7 @@ const AppProvider = ({ children }) => {
         onCloseSearchResults,
         onHereMapLoaded,
         onSearchInputChange,
+        languageChange,
       }}
     >
       {children}

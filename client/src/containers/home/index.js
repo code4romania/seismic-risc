@@ -6,8 +6,8 @@ import ParagraphFragment from './ParagraphFragment';
 import SearchFragment from './SearchFragment';
 import StatisticFragment from './StatisticFragment';
 
-export default ({ language, languageChangeCallback }) => (
-  <Layout language={language} languageChangeCallback={languageChangeCallback}>
+export default () => (
+  <Layout>
     <SearchFragment />
     <MapFragment />
     <StatisticFragment />
