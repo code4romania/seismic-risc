@@ -6,7 +6,7 @@
     "@ant-design/icons": "^4.3.0",
     "@lingui/core": "^3.5.1",
     "@lingui/macro": "^3.5.0",
-    "@lingui/react": "^3.5.0",
+    "@lingui/react": "^3.5.1",
     "antd": "^3.26.12",
     "qs": "^6.9.6",
     "react": "^16.14.0",
