@@ -2,10 +2,11 @@
   "About": {
     "origin": [
       [
-        "src/components/Header.js",
-        25
+        "components/Header.js",
+        63
       ]
-    ]
+    ],
+    "extractedComments": []
   },
   "Add a building": {
     "origin": [
@@ -13,23 +14,179 @@
         "src/components/Header.js",
         41
       ]
-    ]
+    ],
+    "obsolete": true
+  },
+  "Address": {
+    "origin": [
+      [
+        "components/BuildingDetails.js",
+        25
+      ]
+    ],
+    "extractedComments": []
+  },
+  "All seismic risk classes": {
+    "origin": [
+      [
+        "containers/home/MapFragment.js",
+        50
+      ]
+    ],
+    "extractedComments": []
+  },
+  "An independent, non-partisan, non-political, non-govermental organization.": {
+    "origin": [
+      [
+        "components/Footer.js",
+        93
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Article not found": {
+    "origin": [
+      [
+        "containers/blog-post/BlogPostDetailsFragment/BlogPostDetailsFragment.js",
+        41
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Building Info": {
+    "origin": [
+      [
+        "components/BuildingDetails.js",
+        19
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Certified expert name": {
+    "origin": [
+      [
+        "components/BuildingDetails.js",
+        61
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Check here if a building is on the seismic risk list": {
+    "origin": [
+      [
+        "containers/home/SearchFragment.js",
+        53
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Code of conduct": {
+    "origin": [
+      [
+        "components/Footer.js",
+        56
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Consolidated buildings": {
+    "origin": [
+      [
+        "containers/home/StatisticFragment.js",
+        49
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Construction Year": {
+    "origin": [
+      [
+        "components/BuildingDetails.js",
+        31
+      ]
+    ],
+    "extractedComments": []
   },
   "Contact us": {
     "origin": [
       [
-        "src/components/Header.js",
+        "components/Header.js",
+        73
+      ]
+    ],
+    "extractedComments": []
+  },
+  "DONATE": {
+    "origin": [
+      [
+        "components/SocialBar/SocialBar.js",
+        87
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Download": {
+    "origin": [
+      [
+        "containers/guide/index.js",
+        36
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Evaluated buildings": {
+    "origin": [
+      [
+        "containers/home/StatisticFragment.js",
+        44
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Examination year": {
+    "origin": [
+      [
+        "components/BuildingDetails.js",
+        55
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Guide": {
+    "origin": [
+      [
+        "components/Header.js",
+        68
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Height regime": {
+    "origin": [
+      [
+        "components/BuildingDetails.js",
         37
       ]
-    ]
+    ],
+    "extractedComments": []
   },
   "Homeowners associations guide": {
     "origin": [
       [
-        "src/components/Header.js",
-        28
+        "containers/guide/index.js",
+        22
       ]
-    ]
+    ],
+    "extractedComments": []
+  },
+  "Information missing": {
+    "origin": [
+      [
+        "components/BuildingDetails.js",
+        68
+      ]
+    ],
+    "extractedComments": []
   },
   "Legislation": {
     "origin": [
@@ -37,7 +194,125 @@
         "src/components/Header.js",
         31
       ]
-    ]
+    ],
+    "obsolete": true
+  },
+  "Next page": {
+    "origin": [
+      [
+        "containers/guide/PdfViewer.js",
+        89
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Other": {
+    "origin": [
+      [
+        "containers/home/MapFragment.js",
+        59
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Page {pageNumber} of {numPages}": {
+    "origin": [
+      [
+        "containers/guide/PdfViewer.js",
+        80
+      ]
+    ],
+    "extractedComments": []
+  },
+  "People under risk": {
+    "origin": [
+      [
+        "containers/home/StatisticFragment.js",
+        39
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Previous page": {
+    "origin": [
+      [
+        "containers/guide/PdfViewer.js",
+        86
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Privacy policy": {
+    "origin": [
+      [
+        "components/Footer.js",
+        49
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Published by {authorFullName} • {0}": {
+    "origin": [
+      [
+        "containers/blog-post/BlogPostDetailsFragment/BlogPostDetailsFragment.js",
+        61
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Risk category": {
+    "origin": [
+      [
+        "components/BuildingDetails.js",
+        49
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Search Results": {
+    "origin": [
+      [
+        "components/SearchResults.js",
+        29
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Subscribe to the newsletter": {
+    "origin": [
+      [
+        "components/Footer.js",
+        77
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Terms & conditions": {
+    "origin": [
+      [
+        "components/Footer.js",
+        42
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Total surface": {
+    "origin": [
+      [
+        "components/BuildingDetails.js",
+        43
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Useful links": {
+    "origin": [
+      [
+        "components/Footer.js",
+        37
+      ]
+    ],
+    "extractedComments": []
   },
   "Vulnerable Bucharest": {
     "origin": [
@@ -45,6 +320,7 @@
         "src/components/Header.js",
         34
       ]
-    ]
+    ],
+    "obsolete": true
   }
 }

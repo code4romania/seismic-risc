@@ -1,5 +1,6 @@
 import React from 'react';
 import { Tabs } from 'antd';
+import { Trans } from '@lingui/macro';
 import HereMapInteractive from '../../components/HereMapInteractive';
 
 import config from '../../config';
@@ -46,7 +47,7 @@ export default () => {
   return (
     <div>
       <Tabs size="large" animated={false} defaultActiveKey="1" onChange={onChange}>
-        <TabPane tab="Toate clasele de risc seismic" key="all" />
+        <TabPane tab={<Trans>All seismic risk classes</Trans>} key="all" />
         <TabPane tab="U1" key="U1" />
         <TabPane tab="U2" key="U2" />
         <TabPane tab="U3" key="U3" />
@@ -55,7 +56,7 @@ export default () => {
         <TabPane tab="RS2" key="Rs II" />
         <TabPane tab="RS3" key="Rs III" />
         <TabPane tab="RS4" key="Rs IV" />
-        <TabPane tab="Altele" key="n/a" />
+        <TabPane tab={<Trans>Other</Trans>} key="n/a" />
       </Tabs>
       <HereMapInteractive
         apikey={MAP_API_KEY}

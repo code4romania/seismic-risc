@@ -1,5 +1,6 @@
 import React from 'react';
 import { Drawer, Typography } from 'antd';
+import { Trans } from '@lingui/macro';
 import './searchResults.css';
 
 import { useGlobalContext } from '../context';
@@ -25,7 +26,7 @@ export default function SearchResults() {
       style={{ position: 'absolute' }}
     >
       <Typography.Title level={4} style={{ color: 'white' }}>
-        Rezultate cautare
+        <Trans>Search Results</Trans>
       </Typography.Title>
       <ul className="search-results">
         {searchResults.map((building) => (

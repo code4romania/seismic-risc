@@ -1,5 +1,8 @@
 import React from 'react';
-import { Drawer } from 'antd';
+import { Drawer, Typography } from 'antd';
+import { Trans } from '@lingui/macro';
+
+const { Title } = Typography;
 
 export default function BuildingDetails(props) {
   const { visible, onClose, details } = props;
@@ -12,32 +15,58 @@ export default function BuildingDetails(props) {
       getContainer={false}
       style={{ position: 'absolute' }}
     >
+      <Title className="building-details-title" level={3}>
+        <Trans>Building Info</Trans>
+      </Title>
       {details ? (
         <div>
           <p>
-            <strong>Adresa</strong> {details.address}
+            <strong>
+              <Trans>Address</Trans>:
+            </strong>
+            {details.address}
           </p>
           <p>
-            <strong>Anul constructiei</strong> {details.year_built}
+            <strong>
+              <Trans>Construction Year</Trans>:
+            </strong>
+            {details.year_built}
           </p>
           <p>
-            <strong>Regimul de intaltime</strong> {details.height_regime}
+            <strong>
+              <Trans>Height regime</Trans>:
+            </strong>
+            {details.height_regime} m
           </p>
           <p>
-            <strong>Suprafata desfasurata</strong> {details.surface} mp
+            <strong>
+              <Trans>Total surface</Trans>:
+            </strong>
+            {details.surface} mp
           </p>
           <p>
-            <strong>Clasa de risc</strong> {details.risk_category}
+            <strong>
+              <Trans>Risk category</Trans>:
+            </strong>
+            {details.risk_category}
           </p>
           <p>
-            <strong>Anul expertizei seismice</strong> {details.examination_year}
+            <strong>
+              <Trans>Examination year</Trans>:
+            </strong>
+            {details.examination_year}
           </p>
           <p>
-            <strong>Numele expertului evaluator</strong> {details.certified_expert}
+            <strong>
+              <Trans>Certified expert name</Trans>:
+            </strong>
+            {details.certified_expert}
           </p>
         </div>
       ) : (
-        <p>Fara informatii</p>
+        <p>
+          <Trans>Information missing</Trans>
+        </p>
       )}
     </Drawer>
   );

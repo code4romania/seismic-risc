@@ -1,5 +1,6 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Row, Col, Input, Typography, message } from 'antd';
+import { Trans } from '@lingui/macro';
 
 import { useGlobalContext } from '../../context';
 
@@ -7,13 +8,32 @@ const { Search } = Input;
 const { Title, Paragraph } = Typography;
 
 export default () => {
-  const { searchBuildings, searchError, searchInput, onSearchInputChange } = useGlobalContext();
+  const {
+    currentLanguage,
+    searchBuildings,
+    searchError,
+    searchInput,
+    onSearchInputChange,
+  } = useGlobalContext();
+  const [searchPlaceholderText, setSearchPlaceholderText] = useState('');
 
   useEffect(() => {
     if (searchError) {
       message.warning(searchError);
     }
-  });
+  }, [searchError]);
+
+  useEffect(() => {
+    switch (currentLanguage) {
+      case 'ro':
+        setSearchPlaceholderText('Scrie adresa clădirii aici');
+        break;
+
+      case 'hu':
+      default:
+        setSearchPlaceholderText('Insert building address here');
+    }
+  }, [currentLanguage]);
 
   return (
     <Row
@@ -29,11 +49,13 @@ export default () => {
           infancy. Various versions have evolved over the years, sometimes by accident, sometimes on
           purpose (injected humour and the like).
         </Paragraph>
-        <Title level={3}>Verifică aici dacă o clădire se află pe lista de risc seismic:</Title>
+        <Title level={3}>
+          <Trans>Check here if a building is on the seismic risk list</Trans>:
+        </Title>
         <Search
           value={searchInput}
           loading={false}
-          placeholder="Scrie adresa clădirii aici"
+          placeholder={searchPlaceholderText}
           onChange={(e) => onSearchInputChange(e.target.value)}
           onSearch={(value) => searchBuildings(value)}
           style={{ width: '80%' }}

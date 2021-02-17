@@ -1,6 +1,7 @@
 import React, { useState, useLayoutEffect, useEffect } from 'react';
 import { Document, Page, pdfjs } from 'react-pdf';
 import { Row, Button } from 'antd';
+import { Trans } from '@lingui/macro';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `https://cdnjs.cloudflare.com/ajax/libs/pdf.js/${pdfjs.version}/pdf.worker.js`;
 
@@ -76,14 +77,16 @@ const PdfViewer = ({ file, defaultPageNumber = 1 }) => {
       {numPages && (
         <>
           <p style={{ textAlign: 'center' }}>
-            Pagina {pageNumber} din {numPages}
+            <Trans>
+              Page {pageNumber} of {numPages}
+            </Trans>
           </p>
           <Row type="flex" justify="center">
             <Button disabled={pageNumber <= 1} onClick={previousPage} style={{ marginRight: 16 }}>
-              Pagina anterioară
+              <Trans>Previous page</Trans>
             </Button>
             <Button type="Primary" disabled={pageNumber >= numPages} onClick={nextPage}>
-              Pagina următoare
+              <Trans>Next page</Trans>
             </Button>
           </Row>
         </>

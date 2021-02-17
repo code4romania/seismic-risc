@@ -7,10 +7,10 @@ import '../App.css';
 
 const { Footer, Content } = Layout;
 
-export default ({ language, languageChangeCallback, children }) => (
+export default ({ children }) => (
   <div className="App">
     <Layout style={{ background: 'none' }}>
-      <Header currentLanguage={language} languageChangeCallback={languageChangeCallback} />
+      <Header />
       <Content>{children}</Content>
       <Footer>
         <SocialBar />
