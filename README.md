@@ -1,8 +1,8 @@
 # Seismic Risc
 
-[![Datree](https://s3.amazonaws.com/catalog.static.datree.io/datree-badge-20px.svg)](https://datree.io/?src=badge) 
-[![GitHub contributors](https://img.shields.io/github/contributors/code4romania/seismic-risc.svg)](https://github.com/code4romania/seismic-risc/graphs/contributors) 
-[![GitHub last commit](https://img.shields.io/github/last-commit/code4romania/seismic-risc.svg)](https://github.com/code4romania/seismic-risc/commits/develop) 
+[![Datree](https://s3.amazonaws.com/catalog.static.datree.io/datree-badge-20px.svg)](https://datree.io/?src=badge)
+[![GitHub contributors](https://img.shields.io/github/contributors/code4romania/seismic-risc.svg)](https://github.com/code4romania/seismic-risc/graphs/contributors)
+[![GitHub last commit](https://img.shields.io/github/last-commit/code4romania/seismic-risc.svg)](https://github.com/code4romania/seismic-risc/commits/develop)
 [![License: MPL 2.0](https://img.shields.io/badge/license-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 
 <!-- Please don't remove this: Grab your social icons from https://github.com/carlsednaoui/gitsocial -->
@@ -24,9 +24,27 @@
 
 <!-- Please don't remove this: Grab your social icons from https://github.com/carlsednaoui/gitsocial -->
 
-Un cutremur în București nu este o situație ipotetică. Este o certitudine că acest lucru se va întâmpla. În acest context, la mai bine de 40 de ani de la cutremurul din 1977, memoria colectivă a ascuns în profunzime amintirile acelui dezastru în încercarea de a-și înnăbuși teama. Dar realitatea este că, patru decenii mai târziu, Bucureștiul, la fel ca restul orașelor cu risc seismic ridicat, nu ar face față unui asemenea eveniment, iar pierderile de vieți omenești ar fi uriașe. [Exercițiul Seism 2018](https://www.news.ro/social/exercitiul-seism-2018-cel-mai-recent-bilant-al-cutremurului-simulat-indica-peste-3-900-de-morti-peste-7-000-de-raniti-si-peste-2-300-de-persoane-disparute-1922405315222018102018579831), derulat de DSU arată că cel puţin 4.587 persoane şi-ar pierde viaţa, iar 8.585 ar fost rănite, 6 spitale vor fi distruse, 23 de unităţi spitaliceşti distruse parţial, iar 9 avariate, dar funcţionale O estimare, am spune noi, destul de optimistă.
+:romania: Un cutremur în București nu este o situație ipotetică.
+Este o certitudine că acest lucru se va întâmpla.
+În acest context, la mai bine de 40 de ani de la cutremurul din 1977, memoria colectivă a ascuns în profunzime amintirile acelui dezastru în încercarea de a-și înăbuși teama.
+Dar realitatea este că, patru decenii mai târziu, Bucureștiul, la fel ca restul orașelor cu risc seismic ridicat, nu ar face față unui asemenea eveniment, iar pierderile de vieți omenești ar fi uriașe.
+[Exercițiul Seism 2018](https://www.news.ro/social/exercitiul-seism-2018-cel-mai-recent-bilant-al-cutremurului-simulat-indica-peste-3-900-de-morti-peste-7-000-de-raniti-si-peste-2-300-de-persoane-disparute-1922405315222018102018579831) derulat de DSU arată că cel puţin 4.587 persoane şi-ar pierde viaţa, iar 8.585 ar fost rănite, 6 spitale vor fi distruse, 23 de unităţi spitaliceşti distruse parţial, iar 9 avariate, dar funcţionale.
+O estimare, am spune noi, destul de optimistă.
 
-Ce putem face pentru a deveni mai puțin vulnerabili? Să știm totul despre oraș, despre clădirile în care locuim astfel încât să putem cere consolidarea lor. Seismic Risc nu este doar "un nou site de informare", ci o platformă care colectează și validează apoi cu experți date despre clădirile din România, la nivel national, ajută asociațiile de proprietari să își consolideze clădirile, te ține la curent cu legislația și ți-o explică și are grijă să ai la îndemână informații utile la orice moment.
+Ce putem face pentru a deveni mai puțin vulnerabili?
+Să știm totul despre oraș, despre clădirile în care locuim astfel încât să putem cere consolidarea lor.
+Seismic Risc nu este doar "un nou site de informare", ci o platformă care colectează și validează apoi cu experți date despre clădirile din România, la nivel național, ajută asociațiile de proprietari să își consolideze clădirile, te ține la curent cu legislația și ți-o explică și are grijă să ai la îndemână informații utile la orice moment.
+
+:gb: An earthquake in Bucharest is not a hypothetical situation.
+It is certain that this will happen.
+In this context, after more than 40 years from the 1977 earthquake, the collective memory has hidden deep the memories of that disaster in its attempt of stifling its fear.
+The reality is that, four decades later, Bucharest, as well as the rest of the cities with a high seismic risk, would not stand up tu such an event, and the loss of life would be tremendous.
+[The Earthquake 2018 Exercise](https://www.romania-insider.com/seism-2018-exercise-bucharest) conducted by the DSU shows that at least 4,587 people would have died and 8,585 would have been injured, 6 hospitals would be destroyed, 23 more would be partially destroyed, and 9 would be damaged, though still functional.
+An estimation that we would consider quite optimistic.
+
+What can we do to become less vulnerable?
+Find out everything about the city, about the buildings in which we live so that we can ask for their consolidation.
+Seismic Risc is not just "a new information site", but a platform that collects and then validates with the help of experts data about the buildings in Romania, at a national level, it helps owners associations to consolidate their buildings, it keeps you in touch with the current legislation and explains it to you, and it makes sure that you have useful information at your disposal at all times.
 
 **Let's save lives together.**
 
@@ -36,6 +54,7 @@ Ce putem face pentru a deveni mai puțin vulnerabili? Să știm totul despre ora
     - [Programming languages](#programming-languages)
     - [Frameworks](#frameworks)
     - [Package managers](#package-managers)
+    - [Code styling](#code-styling)
     - [Database technology & provider](#database-technology--provider)
   - [Getting started](#getting-started)
     - [Pre-requisites](#pre-requisites)
@@ -43,6 +62,9 @@ Ce putem face pentru a deveni mai puțin vulnerabili? Să știm totul despre ora
     - [Starting the project](#starting-the-project)
     - [Development](#development)
     - [Known Issues](#known-issues)
+      - [Client hot-reload on Windows Docker is not working](#client-hot-reload-on-windows-docker-is-not-working)
+      - [In VS Code, ESLint fails to load the Prettier plugin](#in-vs-code-eslint-fails-to-load-the-prettier-plugin)
+  - [Management Commands](#management-commands)
   - [Testing](#testing)
   - [Production](#production)
   - [Client Deployment](#client-deployment)
@@ -179,9 +201,10 @@ This will create a clean environment where it uses the [pip-tools](https://githu
 
 ### Known Issues
 
-**Client hot-reload on Windows Docker is not working**
+#### Client hot-reload on Windows Docker is not working
 
 Try following these steps:
+
 1. open up a terminal in **seismic-risc_client** container
 2. `cd ./node_modules/react-scripts/config/`
 3. `vi webpackDevServer.config.js`
@@ -196,7 +219,7 @@ Try following these steps:
 
 This way, webpack-dev-server should be watching files in polling mode, instead of listening for file change events.
 
-**In VS Code, ESLint fails to load the Prettier plugin**
+#### In VS Code, ESLint fails to load the Prettier plugin
 
 Add the following option to user settings in VS Code if ESLint fails to load the Prettier plugin.
 
@@ -212,11 +235,12 @@ Add the following option to user settings in VS Code if ESLint fails to load the
 
 ## Management Commands
 
-The new custom command can be called using 
+The new custom command can be called using
 `python manage.py buildings <number>`
 required arguments:
- - --delete          
- - --create
+
+- --delete
+- --create
 
 ```shell script
 cd path/to/repo
@@ -249,19 +273,19 @@ make test
 In order to get the container ready for production use we need to first build it:
 
 ```shell script
-$ docker build -t seismic-risc:latest ./api
+docker build -t seismic-risc:latest ./api
 ```
 
 Use the `prod.env.dist` template file and create a `prod.env` file with the correct environment variables and run like so:
 
 ```shell script
-$ docker run --env-file prod.env -p HOST_PORT:GUNICORN_PORT seismic-risc:latest
+docker run --env-file prod.env -p HOST_PORT:GUNICORN_PORT seismic-risc:latest
 ```
 
 Or, you can provide all the environment variables at runtime:
 
 ```shell script
-$ docker run -e DJANGO_CONFIGURATION=Prod -e DJANGO_SECRET_KEY= -e DATABASE_URL=postgres://USER:PASSWORD@HOST:PORT/NAME -e GUNICORN_PORT=5000 -e GUNICORN_WORKERS=2 -p HOST_PORT:GUNICORN_PORT seismic-risc:latest
+docker run -e DJANGO_CONFIGURATION=Prod -e DJANGO_SECRET_KEY= -e DATABASE_URL=postgres://USER:PASSWORD@HOST:PORT/NAME -e GUNICORN_PORT=5000 -e GUNICORN_WORKERS=2 -p HOST_PORT:GUNICORN_PORT seismic-risc:latest
 ```
 
 After testing the container runs properly, tag and upload the image to Docker hub:
