@@ -17,7 +17,7 @@ services:
     volumes:
       - ./client:/code
     ports:
-      - "3000:3000"
+      - "3030:3030"
     depends_on:
       - api
     environment:
@@ -35,12 +35,12 @@ services:
         DEVBUILD: 1
     command:
       [
-        "./wait_for_db.py && ./manage.py migrate --noinput && ./manage.py runserver 0.0.0.0:8000",
+        "./wait_for_db.py && ./manage.py migrate --noinput && ./manage.py runserver 0.0.0.0:8030",
       ]
     volumes:
       - ./api:/code
     ports:
-      - "8030:8000"
+      - "8030:8030"
     depends_on:
       - db
     environment:
