@@ -6,10 +6,10 @@ import config from '../../config';
 
 const { STATISTICS_URL } = config;
 
-const StatisticCard = ({ children }, props) => (
+const StatisticCard = ({ children, value }) => (
   <Card style={{ border: 'none', backgroundColor: '#ee741b' }}>
     <div>
-      <h1 style={{ color: 'white' }}>{props.value}</h1>
+      <h1 style={{ color: 'white' }}>{value}</h1>
       <h3 style={{ color: 'white' }}>{children}</h3>
     </div>
   </Card>
