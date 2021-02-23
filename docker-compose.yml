@@ -17,7 +17,7 @@ services:
     volumes:
       - ./client:/code
     ports:
-      - "3030:3030"
+      - "3030:3000"
     depends_on:
       - api
     environment:
