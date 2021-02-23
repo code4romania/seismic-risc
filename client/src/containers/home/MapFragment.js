@@ -52,10 +52,10 @@ export default () => {
         <TabPane tab="U2" key="U2" />
         <TabPane tab="U3" key="U3" />
         <TabPane tab="U4" key="U4" />
-        <TabPane tab="RS1" key="Rs I" />
-        <TabPane tab="RS2" key="Rs II" />
-        <TabPane tab="RS3" key="Rs III" />
-        <TabPane tab="RS4" key="Rs IV" />
+        <TabPane tab="RS1" key="RS1" />
+        <TabPane tab="RS2" key="RS2" />
+        <TabPane tab="RS3" key="RS3" />
+        <TabPane tab="RS4" key="RS4" />
         <TabPane tab={<Trans>Other</Trans>} key="n/a" />
       </Tabs>
       <HereMapInteractive
