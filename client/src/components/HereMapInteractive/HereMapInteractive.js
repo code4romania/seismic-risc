@@ -16,10 +16,12 @@ const HereMapInteractive = (props) => {
 
   const { onHereMapLoaded } = useGlobalContext();
 
-  const { isDrawerVisible, buildingDetails, setDrawerVisible } = useDecoratedClusteredMap(
-    currentMap,
-    points,
-  );
+  const {
+    isDrawerVisible,
+    buildingDetails,
+    onSelectBuilding,
+    onHideBuilding,
+  } = useDecoratedClusteredMap(currentMap, points);
 
   useLayoutEffect(() => {
     if (!mapRef.current) return;
@@ -56,10 +58,10 @@ const HereMapInteractive = (props) => {
         >
           <BuildingDetails
             visible={isDrawerVisible}
-            onClose={() => setDrawerVisible(false)}
+            onClose={onHideBuilding}
             details={buildingDetails}
           />
-          <SearchResults />
+          <SearchResults onItemSelected={onSelectBuilding} />
         </div>
       )}
     </div>
