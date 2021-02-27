@@ -19,4 +19,3 @@ ENTRYPOINT ["docker-entrypoint"]
 
 # start app
 CMD ["npm", "start"]
-
