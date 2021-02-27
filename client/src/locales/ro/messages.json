@@ -9,6 +9,16 @@
     ],
     "extractedComments": []
   },
+  "About Vulnerable Romania": {
+    "translation": "Despre Romania Vulnerabilă",
+    "origin": [
+      [
+        "containers/blog/Blog.js",
+        77
+      ]
+    ],
+    "extractedComments": []
+  },
   "Add a building": {
     "translation": "Adaugă o clădire",
     "origin": [
@@ -104,7 +114,7 @@
     "origin": [
       [
         "containers/home/StatisticFragment.js",
-        49
+        51
       ]
     ],
     "extractedComments": []
@@ -124,7 +134,7 @@
     "origin": [
       [
         "components/Header.js",
-        73
+        78
       ]
     ],
     "extractedComments": []
@@ -154,7 +164,7 @@
     "origin": [
       [
         "containers/home/StatisticFragment.js",
-        44
+        46
       ]
     ],
     "extractedComments": []
@@ -219,6 +229,16 @@
     ],
     "obsolete": true
   },
+  "Load more articles": {
+    "translation": "Încarcă mai multe articole",
+    "origin": [
+      [
+        "components/LoadMoreArticlesLink/LoadMoreArticlesLink.js",
+        7
+      ]
+    ],
+    "extractedComments": []
+  },
   "Next page": {
     "translation": "Pagina următoare",
     "origin": [
@@ -254,7 +274,7 @@
     "origin": [
       [
         "containers/home/StatisticFragment.js",
-        39
+        41
       ]
     ],
     "extractedComments": []
@@ -283,8 +303,22 @@
     "translation": "Publicat de {authorFullName} • {0}",
     "origin": [
       [
+        "components/BlogItem/BlogItem.js",
+        22
+      ],
+      [
         "containers/blog-post/BlogPostDetailsFragment/BlogPostDetailsFragment.js",
         61
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Read more": {
+    "translation": "Citește mai mult",
+    "origin": [
+      [
+        "components/BlogItem/BlogItem.js",
+        28
       ]
     ],
     "extractedComments": []
@@ -305,6 +339,16 @@
       [
         "components/SearchResults.js",
         29
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Server unavailable": {
+    "translation": "Server indisponibil",
+    "origin": [
+      [
+        "containers/blog/Blog.js",
+        66
       ]
     ],
     "extractedComments": []
@@ -349,14 +393,14 @@
     ],
     "extractedComments": []
   },
-  "Vulnerable Bucharest": {
-    "translation": "Bucureștiul vulnerabil",
+  "Vulnerable Romania": {
+    "translation": "România Vulnerabilă",
     "origin": [
       [
-        "src/components/Header.js",
-        34
+        "components/Header.js",
+        73
       ]
     ],
-    "obsolete": true
+    "extractedComments": []
   }
 }
