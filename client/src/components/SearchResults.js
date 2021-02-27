@@ -5,13 +5,12 @@ import './searchResults.css';
 
 import { useGlobalContext } from '../context';
 
-export default function SearchResults() {
-  const { searchResults, onCloseSearchResults, hereMap } = useGlobalContext();
+export default function SearchResults(props) {
+  const { onItemSelected } = props;
+  const { searchResults, onCloseSearchResults } = useGlobalContext();
 
   const onItemClick = (poi) => {
-    hereMap
-      .getViewModel()
-      .setLookAtData({ position: { lat: poi.lat, lng: poi.lng }, zoom: 15 }, true);
+    onItemSelected(poi);
     onCloseSearchResults();
   };
 

@@ -7,8 +7,15 @@
   margin: -12px 0 0 -12px;
 }
 
-.marker > svg {
-  fill: #ee741b;
+.marker {
+  > svg {
+    fill: #ee741b;
+  }
+  &.selected {
+    > svg {
+      fill: #000000;
+    }
+  }
 }
 
 .marker svg:hover {
