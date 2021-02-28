@@ -73,9 +73,7 @@ const HereMapInteractive = (props) => {
       }
 
       points.forEach((poi) => {
-        const svgMarkup =
-          '<div class="marker"><svg xmlns="http://www.w3.org/2000/svg" height="24" viewBox="0 0 24 24" width="24"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/><path d="M0 0h24v24H0z" fill="none"/></svg></div>';
-
+        const svgMarkup = `<div class="marker-${poi.risk_category.toLowerCase()}"><svg width="24" height="24" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><circle style="" cx="12.43" cy="8.37" r="8.107"/><path style="" transform="matrix(0.033909, 0.021505, -0.022542, 0.035546, 11.993942, -9.750627)" d="M 176 536 A 303.401 303.401 0 0 1 452 358.599 L 452 662 Z"/><text style="fill: rgb(255, 249, 249); font-size: 7.9px; white-space: pre; text-anchor: middle;" x="12" y="11.114">${poi.risk_category.toUpperCase()}</text></svg></div>`;
         const icon = new H.map.DomIcon(svgMarkup);
         const marker = new H.map.DomMarker({ lat: poi.lat, lng: poi.lng }, { icon });
 
