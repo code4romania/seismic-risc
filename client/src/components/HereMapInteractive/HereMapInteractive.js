@@ -1,5 +1,5 @@
 import React, { useLayoutEffect, useRef, useState } from 'react';
-import BuildingDetails from '../BuildingDetails';
+import BuildingDetailsFragment from '../../containers/building/BuildingDetailsFragment';
 import SearchResults from '../SearchResults';
 
 import { useGlobalContext } from '../../context';
@@ -56,10 +56,10 @@ const HereMapInteractive = (props) => {
           ref={mapRef}
           style={{ width: '100%', height: '400px', background: 'grey' }}
         >
-          <BuildingDetails
+          <BuildingDetailsFragment
             visible={isDrawerVisible}
             onClose={onHideBuilding}
-            details={buildingDetails}
+            incompleteDetails={buildingDetails}
           />
           <SearchResults onItemSelected={onSelectBuilding} />
         </div>

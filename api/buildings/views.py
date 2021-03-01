@@ -6,7 +6,12 @@ from rest_framework.decorators import api_view, permission_classes
 from rest_framework import permissions
 from rest_framework.response import Response
 
-from .serializers import BuildingSerializer, StatisticSerializer
+from .serializers import (
+    BuildingSerializer,
+    BuildingListSerializer,
+    BuildingSearchSerializer,
+    StatisticSerializer,
+)
 from .models import Building, Statistic
 
 
@@ -16,8 +21,12 @@ class BuildingViewSet(viewsets.ModelViewSet):
     """
 
     queryset = Building.objects.all().order_by("-created_on")
-    serializer_class = BuildingSerializer
     lookup_field = "general_id"
+
+    def get_serializer_class(self):
+        if self.action == "list":
+            return BuildingListSerializer
+        return BuildingSerializer
 
 
 @api_view(["GET"])
@@ -33,7 +42,7 @@ def building_search(request):
         .order_by("-similarity")
     )
 
-    serializer = BuildingSerializer(buildings, many=True)
+    serializer = BuildingSearchSerializer(buildings, many=True)
 
     return Response(serializer.data)
 

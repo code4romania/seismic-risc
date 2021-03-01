@@ -6,7 +6,19 @@ from .models import Building, Statistic
 class BuildingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Building
-        exclude = ()  # TODO: restrict to the necessary fields if needed
+        fields = "__all__"
+
+
+class BuildingListSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Building
+        fields = ("general_id", "risk_category", "lat", "lng")
+
+
+class BuildingSearchSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Building
+        fields = ("general_id", "lat", "lng", "address", "post_code")
 
 
 class StatisticSerializer(serializers.ModelSerializer):
