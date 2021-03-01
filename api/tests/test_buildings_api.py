@@ -2,9 +2,24 @@ import pytest
 import random, string
 
 from buildings.models import Building
+from buildings.serializers import BuildingListSerializer
 from django.urls import reverse
 
 base_url = "/api/v1/buildings"
+
+
+@pytest.mark.django_db
+def test_building_list_get(basic_building_data, api_client):
+    for _ in range(3):
+        building_obj = Building.objects.create(**basic_building_data)
+
+    url = f"{base_url}/"
+    response = api_client.get(url)
+
+    assert response.status_code == 200
+    for building in response.data:
+        for key in building.keys():
+            assert key in BuildingListSerializer.Meta.fields
 
 
 @pytest.mark.django_db
