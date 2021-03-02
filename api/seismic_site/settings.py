@@ -118,7 +118,7 @@ class Base(Configuration):
     # https://docs.djangoproject.com/en/2.2/topics/i18n/
 
     LANGUAGE_CODE = values.Value(default="en-us")
-    TIME_ZONE = "UTC"
+    TIME_ZONE = "Europe/Bucharest"
     USE_I18N = True
     USE_L10N = True
     USE_TZ = True
