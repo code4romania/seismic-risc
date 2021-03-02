@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-02-11 13:30+0200\n"
+"POT-Creation-Date: 2021-03-02 18:03+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -23,7 +23,7 @@ msgstr ""
 msgid "Blog"
 msgstr "Jurnal"
 
-#: blog/models.py:10 blog/models.py:31
+#: blog/models.py:10 blog/models.py:32
 msgid "post"
 msgstr "articol"
 
@@ -40,30 +40,34 @@ msgid "image"
 msgstr "imagine"
 
 #: blog/models.py:15
+msgid "preview text"
+msgstr "text previzualizare"
+
+#: blog/models.py:16
 msgid "text"
 msgstr "text"
 
-#: blog/models.py:16
+#: blog/models.py:17
 msgid "tags"
 msgstr "cuvinte cheie"
 
-#: blog/models.py:17
+#: blog/models.py:18
 msgid "is visible"
 msgstr "este vizibil"
 
-#: blog/models.py:18
+#: blog/models.py:19
 msgid "published"
 msgstr "publicat"
 
-#: blog/models.py:19
+#: blog/models.py:20
 msgid "created"
 msgstr "creat"
 
-#: blog/models.py:20
+#: blog/models.py:21
 msgid "updated"
 msgstr "actualizat"
 
-#: blog/models.py:32
+#: blog/models.py:33
 msgid "posts"
 msgstr "articole"
 
@@ -107,151 +111,187 @@ msgstr "Acceptat"
 msgid "Rejected"
 msgstr "Respins"
 
+#: buildings/models.py:27
+msgid "N/A"
+msgstr ""
+
+#: buildings/models.py:28
+msgid "U1"
+msgstr ""
+
+#: buildings/models.py:29
+msgid "U2"
+msgstr ""
+
+#: buildings/models.py:30
+msgid "U3"
+msgstr ""
+
+#: buildings/models.py:31
+msgid "U4"
+msgstr ""
+
 #: buildings/models.py:32
+msgid "RS I"
+msgstr ""
+
+#: buildings/models.py:33
+msgid "RS II"
+msgstr ""
+
+#: buildings/models.py:34
+msgid "RS III"
+msgstr ""
+
+#: buildings/models.py:35
+msgid "RS IV"
+msgstr ""
+
+#: buildings/models.py:43
 msgid "general id"
 msgstr "id general"
 
-#: buildings/models.py:35
+#: buildings/models.py:46
 msgid "risk category"
 msgstr "categorie risc"
 
-#: buildings/models.py:38
+#: buildings/models.py:53
 msgid "registration number"
 msgstr "număr înregistrare"
 
-#: buildings/models.py:40
+#: buildings/models.py:55
 msgid "examination year"
 msgstr "an examinare"
 
-#: buildings/models.py:42
+#: buildings/models.py:57
 msgid "certified expert"
 msgstr "expert certificat"
 
-#: buildings/models.py:45
+#: buildings/models.py:60
 msgid "observations"
 msgstr "observații"
 
-#: buildings/models.py:48
+#: buildings/models.py:63
 msgid "latitude"
 msgstr "latitudine"
 
-#: buildings/models.py:49
+#: buildings/models.py:64
 msgid "longitude"
 msgstr "longitudine"
 
-#: buildings/models.py:51
+#: buildings/models.py:66
 msgid "county"
 msgstr "județ"
 
-#: buildings/models.py:52
+#: buildings/models.py:67
 msgid "address"
 msgstr "adresă"
 
-#: buildings/models.py:53
+#: buildings/models.py:68
 msgid "post code"
 msgstr "cod poștal"
 
-#: buildings/models.py:54
+#: buildings/models.py:69
 msgid "locality"
 msgstr "localitate"
 
-#: buildings/models.py:56
+#: buildings/models.py:71
 msgid "year built"
 msgstr "an construcție"
 
-#: buildings/models.py:58
+#: buildings/models.py:73
 msgid "height regime"
 msgstr "regim înălțime"
 
-#: buildings/models.py:60
+#: buildings/models.py:75
 msgid "apartment count"
 msgstr "total apartamente"
 
-#: buildings/models.py:61
+#: buildings/models.py:76
 msgid "surface"
 msgstr "suprafață"
 
-#: buildings/models.py:63
+#: buildings/models.py:78
 msgid "cadastre number"
 msgstr "număr cadastru"
 
-#: buildings/models.py:65
+#: buildings/models.py:80
 msgid "land registry number"
 msgstr "număr carte funciară"
 
-#: buildings/models.py:68
+#: buildings/models.py:83
 msgid "administration update"
 msgstr "actualizare administrare"
 
-#: buildings/models.py:70
+#: buildings/models.py:85
 msgid "admin update"
 msgstr "actualizare de admin"
 
-#: buildings/models.py:73 buildings/models.py:133
+#: buildings/models.py:88 buildings/models.py:148
 msgid "status"
 msgstr "stare"
 
-#: buildings/models.py:77
+#: buildings/models.py:92
 msgid "created on"
 msgstr "creat la"
 
-#: buildings/models.py:81
+#: buildings/models.py:96
 msgid "building"
 msgstr "clădire"
 
-#: buildings/models.py:82
+#: buildings/models.py:97
 msgid "buildings"
 msgstr "clădiri"
 
-#: buildings/models.py:89
+#: buildings/models.py:104
 msgid "people under risk"
 msgstr "persoane aflate sub risc"
 
-#: buildings/models.py:91
+#: buildings/models.py:106
 msgid "consolidated buildings"
 msgstr "clădiri consolidate"
 
-#: buildings/models.py:95
+#: buildings/models.py:110
 msgid "statistic"
 msgstr "statistică"
 
-#: buildings/models.py:96
+#: buildings/models.py:111
 msgid "statistics"
 msgstr "statistici"
 
-#: buildings/models.py:115
+#: buildings/models.py:130
 msgid "building resource"
 msgstr "resursă clădire"
 
-#: buildings/models.py:116
+#: buildings/models.py:131
 msgid "building resources"
 msgstr "resurse clădire"
 
-#: buildings/models.py:125
+#: buildings/models.py:140
 msgid "Unsuccess"
 msgstr "Eșec"
 
-#: buildings/models.py:126
+#: buildings/models.py:141
 msgid "Not tried"
 msgstr "Neîncercat"
 
-#: buildings/models.py:127
+#: buildings/models.py:142
 msgid "Success"
 msgstr "Succes"
 
-#: buildings/models.py:130 pages/models.py:10 pages/models.py:100
+#: buildings/models.py:145 pages/models.py:10 pages/models.py:100
 msgid "name"
 msgstr "nume"
 
-#: buildings/models.py:131
+#: buildings/models.py:146
 msgid "file"
 msgstr "fișier"
 
-#: buildings/models.py:137
+#: buildings/models.py:152
 msgid "CSV file"
 msgstr "fișier CSV"
 
-#: buildings/models.py:138
+#: buildings/models.py:153
 msgid "CSV files"
 msgstr "fișiere CSV"
 
