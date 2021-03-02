@@ -27,6 +27,7 @@ class PostSerializer(TaggitSerializer, serializers.ModelSerializer):
             "slug",
             "image",
             "text",
+            "preview_text",
             "tags",
             "published",
             "created",
