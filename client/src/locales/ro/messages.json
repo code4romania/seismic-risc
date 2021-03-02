@@ -9,15 +9,25 @@
     ],
     "extractedComments": []
   },
+  "About the project": {
+    "translation": "Despre proiect",
+    "origin": [
+      [
+        "components/Footer.js",
+        51
+      ]
+    ],
+    "extractedComments": []
+  },
   "Add a building": {
     "translation": "Adaugă o clădire",
     "origin": [
       [
-        "src/components/Header.js",
-        41
+        "components/Footer.js",
+        58
       ]
     ],
-    "obsolete": true
+    "extractedComments": []
   },
   "Address": {
     "translation": "Adresa",
@@ -47,7 +57,8 @@
         93
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "Article not found": {
     "translation": "Articolul nu a fost găsit",
@@ -97,14 +108,15 @@
         56
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "Consolidated buildings": {
     "translation": "Clădiri consolidate",
     "origin": [
       [
         "containers/home/StatisticFragment.js",
-        49
+        51
       ]
     ],
     "extractedComments": []
@@ -139,6 +151,16 @@
     ],
     "extractedComments": []
   },
+  "Donate": {
+    "translation": "Donează",
+    "origin": [
+      [
+        "components/Footer.js",
+        94
+      ]
+    ],
+    "extractedComments": []
+  },
   "Download": {
     "translation": "Descarcă",
     "origin": [
@@ -154,7 +176,7 @@
     "origin": [
       [
         "containers/home/StatisticFragment.js",
-        44
+        46
       ]
     ],
     "extractedComments": []
@@ -195,6 +217,16 @@
       [
         "containers/guide/index.js",
         22
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Implementat de": {
+    "translation": "",
+    "origin": [
+      [
+        "components/Footer.js",
+        35
       ]
     ],
     "extractedComments": []
@@ -249,12 +281,22 @@
     ],
     "extractedComments": []
   },
+  "Partners": {
+    "translation": "Parteneri",
+    "origin": [
+      [
+        "components/Footer.js",
+        44
+      ]
+    ],
+    "extractedComments": []
+  },
   "People under risk": {
     "translation": "Oameni sub risc",
     "origin": [
       [
         "containers/home/StatisticFragment.js",
-        39
+        41
       ]
     ],
     "extractedComments": []
@@ -274,7 +316,27 @@
     "origin": [
       [
         "components/Footer.js",
-        49
+        65
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Proiect realizat de": {
+    "translation": "",
+    "origin": [
+      [
+        "components/Footer.js",
+        23
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Proiectat de": {
+    "translation": "",
+    "origin": [
+      [
+        "components/Footer.js",
+        29
       ]
     ],
     "extractedComments": []
@@ -317,14 +379,15 @@
         77
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "Terms & conditions": {
     "translation": "Termeni şi condiţii",
     "origin": [
       [
         "components/Footer.js",
-        42
+        72
       ]
     ],
     "extractedComments": []
@@ -347,7 +410,8 @@
         37
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "Vulnerable Bucharest": {
     "translation": "Bucureștiul vulnerabil",

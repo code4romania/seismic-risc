@@ -8,14 +8,24 @@
     ],
     "extractedComments": []
   },
+  "About the project": {
+    "translation": "About the project",
+    "origin": [
+      [
+        "components/Footer.js",
+        51
+      ]
+    ],
+    "extractedComments": []
+  },
   "Add a building": {
     "origin": [
       [
-        "src/components/Header.js",
-        41
+        "components/Footer.js",
+        58
       ]
     ],
-    "obsolete": true
+    "extractedComments": []
   },
   "Address": {
     "origin": [
@@ -42,7 +52,8 @@
         93
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "Article not found": {
     "origin": [
@@ -87,13 +98,14 @@
         56
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "Consolidated buildings": {
     "origin": [
       [
         "containers/home/StatisticFragment.js",
-        49
+        51
       ]
     ],
     "extractedComments": []
@@ -125,6 +137,16 @@
     ],
     "extractedComments": []
   },
+  "Donate": {
+    "translation": "",
+    "origin": [
+      [
+        "components/Footer.js",
+        94
+      ]
+    ],
+    "extractedComments": []
+  },
   "Download": {
     "origin": [
       [
@@ -138,7 +160,7 @@
     "origin": [
       [
         "containers/home/StatisticFragment.js",
-        44
+        46
       ]
     ],
     "extractedComments": []
@@ -175,6 +197,16 @@
       [
         "containers/guide/index.js",
         22
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Implementat de": {
+    "translation": "Implementat de",
+    "origin": [
+      [
+        "components/Footer.js",
+        35
       ]
     ],
     "extractedComments": []
@@ -224,11 +256,21 @@
     ],
     "extractedComments": []
   },
+  "Partners": {
+    "translation": "Partners",
+    "origin": [
+      [
+        "components/Footer.js",
+        44
+      ]
+    ],
+    "extractedComments": []
+  },
   "People under risk": {
     "origin": [
       [
         "containers/home/StatisticFragment.js",
-        39
+        41
       ]
     ],
     "extractedComments": []
@@ -246,7 +288,27 @@
     "origin": [
       [
         "components/Footer.js",
-        49
+        65
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Proiect realizat de": {
+    "translation": "Proiect realizat de",
+    "origin": [
+      [
+        "components/Footer.js",
+        23
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Proiectat de": {
+    "translation": "Proiectat de",
+    "origin": [
+      [
+        "components/Footer.js",
+        29
       ]
     ],
     "extractedComments": []
@@ -285,13 +347,14 @@
         77
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "Terms & conditions": {
     "origin": [
       [
         "components/Footer.js",
-        42
+        72
       ]
     ],
     "extractedComments": []
@@ -312,7 +375,8 @@
         37
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "Vulnerable Bucharest": {
     "origin": [
