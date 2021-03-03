@@ -1,7 +1,7 @@
 import React from 'react';
 import { Tabs } from 'antd';
 import { Trans } from '@lingui/macro';
-import HereMapInteractive from '../../components/HereMapInteractive';
+import HereMapInteractive from '../../components/HereMapInteractive/HereMapInteractive';
 
 import config from '../../config';
 

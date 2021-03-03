@@ -23,12 +23,6 @@ class PostViewSet(viewsets.ModelViewSet):
     """
 
     permissions_classes = (IsUserOrReadOnly,)
-    queryset = (
-        Post.objects.all()
-        .select_related("author")
-        .filter(published__lte=timezone.now(), is_visible=True)
-        .order_by("-published")
-    )
     serializer_class = PostSerializer
     lookup_field = "slug"
     filter_backends = [filters.SearchFilter, filters.OrderingFilter]
@@ -40,3 +34,11 @@ class PostViewSet(viewsets.ModelViewSet):
         "author__last_name",
     ]
     ordering_fields = ["created", "updated", "published"]
+
+    def get_queryset(self):
+        return (
+            Post.objects.all()
+            .select_related("author")
+            .filter(published__lte=timezone.localtime(), is_visible=True)
+            .order_by("-published")
+        )

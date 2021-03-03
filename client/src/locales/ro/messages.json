@@ -23,11 +23,11 @@
     "translation": "Adaugă o clădire",
     "origin": [
       [
-        "src/components/Header.js",
-        41
+        "components/Footer.js",
+        58
       ]
     ],
-    "obsolete": true
+    "extractedComments": []
   },
   "Address": {
     "translation": "Adresa",
@@ -57,7 +57,8 @@
         93
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "Article not found": {
     "translation": "Articolul nu a fost găsit",
@@ -107,7 +108,8 @@
         56
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "Consolidated buildings": {
     "translation": "Clădiri consolidate",
@@ -145,6 +147,16 @@
       [
         "components/SocialBar/SocialBar.js",
         87
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Donate": {
+    "translation": "Donează",
+    "origin": [
+      [
+        "components/Footer.js",
+        94
       ]
     ],
     "extractedComments": []
@@ -209,6 +221,16 @@
     ],
     "extractedComments": []
   },
+  "Implementat de": {
+    "translation": "",
+    "origin": [
+      [
+        "components/Footer.js",
+        35
+      ]
+    ],
+    "extractedComments": []
+  },
   "Information missing": {
     "translation": "Fără informații",
     "origin": [
@@ -269,6 +291,16 @@
     ],
     "extractedComments": []
   },
+  "Partners": {
+    "translation": "Parteneri",
+    "origin": [
+      [
+        "components/Footer.js",
+        44
+      ]
+    ],
+    "extractedComments": []
+  },
   "People under risk": {
     "translation": "Oameni sub risc",
     "origin": [
@@ -294,7 +326,27 @@
     "origin": [
       [
         "components/Footer.js",
-        49
+        65
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Proiect realizat de": {
+    "translation": "",
+    "origin": [
+      [
+        "components/Footer.js",
+        23
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Proiectat de": {
+    "translation": "",
+    "origin": [
+      [
+        "components/Footer.js",
+        29
       ]
     ],
     "extractedComments": []
@@ -361,14 +413,15 @@
         77
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "Terms & conditions": {
     "translation": "Termeni şi condiţii",
     "origin": [
       [
         "components/Footer.js",
-        42
+        72
       ]
     ],
     "extractedComments": []
@@ -391,7 +444,8 @@
         37
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "Vulnerable Romania": {
     "translation": "România Vulnerabilă",

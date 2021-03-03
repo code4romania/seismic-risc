@@ -1,103 +1,123 @@
-import React, { useEffect, useState } from 'react';
-import { Row, Col, Typography, Input } from 'antd';
+import React from 'react';
+import { Button, Row, Col, Typography } from 'antd';
 import { Trans } from '@lingui/macro';
+import { Link } from 'react-router-dom';
 
-import { useGlobalContext } from '../context';
+import Facebook from '../images/footer_fb_icon.svg';
+import Instagram from '../images/footer_instagram_logo.svg';
+import YouTube from '../images/footer_youtube_logo.svg';
+import Github from '../images/footer_github_logo.svg';
+import Mkbt from '../images/footer_mkbt.svg';
+import CfR from '../images/footer_CfR.svg';
+import Tfsg from '../images/footer_tfsg.svg';
 
-const { Title, Text } = Typography;
-
-// eslint-disable-next-line
-function subscribe(e) {
-  // const email = e.target.value;
-  // TODO console.log(`TODO: send email to ${email}`);
-}
+const { Text } = Typography;
 
 const Footer = () => {
-  const { currentLanguage } = useGlobalContext();
-  const [newsletterPlaceholderText, setNewsletterPlaceholderText] = useState('');
-
-  useEffect(() => {
-    switch (currentLanguage) {
-      case 'ro':
-        setNewsletterPlaceholderText('Introdu adresa de e-mail si apasă ENTER');
-        break;
-
-      case 'hu':
-      default:
-        setNewsletterPlaceholderText('Insert the e-mail address and press ENTER');
-    }
-  }, [currentLanguage]);
-
   return (
     <div className="App-footer">
       <div className="footer-inside">
-        <Row type="flex" justify="space-between" gutter={[0, 40]}>
-          <Col md={8} xs={24}>
-            <Title level={4}>
-              <Trans>Useful links</Trans>
-            </Title>
-            <Row>
-              <a href="/termeni-si-conditii">
-                <Text>
-                  <Trans>Terms &amp; conditions</Trans>
-                </Text>
-              </a>
-            </Row>
-            <Row>
-              <a href="/politica-de-confidentialitate">
-                <Text>
-                  <Trans>Privacy policy</Trans>
-                </Text>
-              </a>
-            </Row>
-            <Row>
-              <a href={`https://code4.ro/${currentLanguage}/codul-de-conduita`}>
-                <Text>
-                  <Trans>Code of conduct</Trans>
-                </Text>
-              </a>
-            </Row>
-            <Row>
-              <a href={`https://code4.ro/${currentLanguage}`}>
-                <Text>Code for Romania</Text>
-              </a>
-            </Row>
-            <Row>
-              <a href="mailto: contact@code4.ro">
-                <Text>Contact</Text>
-              </a>
-            </Row>
+        <Row type="flex" justify="center" gutter={[40, 20]} style={{ margin: '2rem 0rem' }}>
+          <Col>
+            <Text>
+              <Trans>Proiect realizat de </Trans>
+            </Text>
+            <img src={Mkbt} alt="" height="40px" />
           </Col>
-
-          <Col md={8} xs={24} justify="space-between">
-            <Row gutter={[0, 40]}>
-              <Col>
-                <Row>
-                  <Title level={4} strong>
-                    <Trans>Subscribe to the newsletter</Trans>
-                  </Title>
-                  <Input
-                    style={{ width: '100%' }}
-                    size="large"
-                    placeholder={newsletterPlaceholderText}
-                    onPressEnter={subscribe}
-                  />
-                </Row>
-              </Col>
-              <Col>
-                <Row>
-                  <Col>
-                    <Text level={4}>
-                      © 2019 Code for Romania.
-                      <br />
-                      <Trans>
-                        An independent, non-partisan, non-political, non-govermental organization.
-                      </Trans>
-                    </Text>
-                  </Col>
-                </Row>
-              </Col>
-            </Row>
+          <Col>
+            <Text>
+              <Trans>Proiectat de </Trans>
+            </Text>
+            <img src={CfR} alt="" height="40px" />
+          </Col>
+          <Col>
+            <Text>
+              <Trans>Implementat de </Trans>
+            </Text>
+            <img src={Tfsg} alt="" height="40px" />
+          </Col>
+        </Row>
+        <Row type="flex" justify="space-between" gutter={[0, 20]} style={{ alignItems: 'center' }}>
+          <Col>
+            <Link to="/parteneri">
+              <Text>
+                <Trans>Partners</Trans>
+              </Text>
+            </Link>
+          </Col>
+          <Col>
+            <Link to="/despre">
+              <Text>
+                <Trans>About the project</Trans>
+              </Text>
+            </Link>
+          </Col>
+          <Col>
+            <Link to="/adauga-cladire">
+              <Text>
+                <Trans>Add a building</Trans>
+              </Text>
+            </Link>
+          </Col>
+          <Col>
+            <Link to="/politica-de-confidentialitate">
+              <Text>
+                <Trans>Privacy policy</Trans>
+              </Text>
+            </Link>
+          </Col>
+          <Col>
+            <Link to="/termeni-si-conditii">
+              <Text>
+                <Trans>Terms &amp; conditions</Trans>
+              </Text>
+            </Link>
+          </Col>
+          <Button
+            style={{
+              width: '15rem',
+              height: '3.5rem',
+              backgroundColor: '#7BCF95',
+              borderColor: '#7BCF95',
+              radius: '3px',
+            }}
+          >
+            <Text
+              style={{
+                fontFamily: 'Titillium Web',
+                fontStyle: 'normal',
+                fontWeight: '600',
+                fontSize: '16px',
+                lineHeight: '24px',
+              }}
+            >
+              <Trans>Donate</Trans>
+            </Text>
+          </Button>
+        </Row>
+        <Row style={{ margin: '2rem 0px' }}>
+          <hr />
+        </Row>
+        <Row type="flex" justify="center">
+          <Col md={2}>
+            <a href="https://facebook.com" target="_blank" rel="noreferrer">
+              <img src={Facebook} alt="" />
+            </a>
+          </Col>
+          <Col md={2}>
+            <a href="https://instagram.com" target="_blank" rel="noreferrer">
+              <img src={Instagram} alt="" />
+            </a>
+          </Col>
+          <Col md={2}>
+            <a href="https://youtube.com" target="_blank" rel="noreferrer">
+              <img src={YouTube} alt="" />
+            </a>
+          </Col>
+          <Col md={2}>
+            <a href="github" target="_blank" rel="noreferrer">
+              <img src={Github} alt="" />
+            </a>
           </Col>
         </Row>
       </div>

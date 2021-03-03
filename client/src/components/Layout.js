@@ -1,7 +1,6 @@
 import React from 'react';
 import { Layout } from 'antd';
 import Header from './Header';
-import SocialBar from './SocialBar/SocialBar';
 
 import '../App.css';
 
@@ -12,9 +11,7 @@ export default ({ children }) => (
     <Layout style={{ background: 'none' }}>
       <Header />
       <Content>{children}</Content>
-      <Footer>
-        <SocialBar />
-      </Footer>
+      <Footer />
     </Layout>
   </div>
 );

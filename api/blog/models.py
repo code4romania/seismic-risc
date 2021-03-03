@@ -12,6 +12,7 @@ class Post(models.Model):
     title = models.CharField(_("title"), max_length=200)
     slug = models.SlugField(_("slug"), unique=True)
     image = models.ImageField(_("image"), upload_to="blog/")
+    preview_text = models.CharField(_("preview text"), max_length=300)
     text = RichTextUploadingField(_("text"))
     tags = TaggableManager(_("tags"))
     is_visible = models.BooleanField(_("is visible"), default=False)
