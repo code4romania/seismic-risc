@@ -1,0 +1,9 @@
+.sharing{
+    text-align: left;
+    margin: 1rem 4rem 3rem 4rem;
+}
+@media screen and (max-width: 1000px){
+    .sharing{
+        margin: 1rem 4rem 3rem 1rem;
+    }
+}

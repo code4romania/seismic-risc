@@ -59,7 +59,7 @@ export default () => {
       </div>
       <ul className={`App-menu ${showMenu ? 'show' : ''}`}>
         <li>
-          <NavLink to="/" exact activeClassName="active">
+          <NavLink to="/despre" exact activeClassName="active">
             <Trans>About</Trans>
           </NavLink>
         </li>

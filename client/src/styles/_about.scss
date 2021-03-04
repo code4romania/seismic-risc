@@ -1,0 +1,36 @@
+.aboutTitle{
+    margin-top: 4rem;
+    font-family: Titillium Web;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 37px;
+    color: #000000;
+    text-decoration: none;
+}
+.aboutTextBox{
+    border: solid 1px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    margin: 4rem; 
+    padding: 3rem;
+    align-items: center;
+    .aboutTextBoxCol{
+        justify-content: center;
+    }
+    .aboutTextBox-paragraph{
+        font-family: 'Open Sans';
+        font-style: normal;
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 22px;
+        display: flex;
+        align-items: left;
+        color: #000000;
+         text-align: left;
+    }
+}
+.about-authors-col{
+    display: inline-flex;
+    justify-content: center;
+    padding: 3rem;
+}
