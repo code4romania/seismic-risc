@@ -7,6 +7,7 @@ import { useGlobalContext } from './context';
 import Home from './containers/home';
 import Guide from './containers/guide';
 import Blog from './containers/blog';
+import BlogPost from './containers/blog-post';
 import Footer from './components/Footer';
 import Terms from './containers/Terms';
 import Policy from './containers/Policy';
@@ -30,8 +31,11 @@ const App = () => {
           <Route path="/ghid">
             <Guide />
           </Route>
-          <Route path="/blog">
+          <Route exact path="/blog">
             <Blog />
+          </Route>
+          <Route path="/blog/:slug">
+            <BlogPost />
           </Route>
           <Route path="/termeni-si-conditii">
             <Terms />

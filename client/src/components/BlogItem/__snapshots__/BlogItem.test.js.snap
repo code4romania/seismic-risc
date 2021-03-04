@@ -1,0 +1,95 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`BlogItem component should be translated correctly in English 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-row blog-item"
+    >
+      <div
+        class="ant-col blog-image ant-col-sm-24 ant-col-md-12 ant-col-lg-10"
+      >
+        <img
+          alt="Title"
+          src="image-url"
+        />
+      </div>
+      <div
+        class="ant-col blog-meta ant-col-sm-24 ant-col-md-12 ant-col-lg-14"
+      >
+        <h3
+          class="ant-typography"
+        >
+          <u>
+            Title
+          </u>
+        </h3>
+        <span
+          class="ant-typography ant-typography-secondary"
+        >
+          Published by First Last • 1/1/1970
+        </span>
+        <div
+          class="ant-typography"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit
+          ...
+        </div>
+        <a
+          class="show-more"
+          href="//undefined"
+        >
+          Read more
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+`;
+
+exports[`BlogItem component should be translated correctly in Romanian 1`] = `
+<body>
+  <div>
+    <div
+      class="ant-row blog-item"
+    >
+      <div
+        class="ant-col blog-image ant-col-sm-24 ant-col-md-12 ant-col-lg-10"
+      >
+        <img
+          alt="Title"
+          src="image-url"
+        />
+      </div>
+      <div
+        class="ant-col blog-meta ant-col-sm-24 ant-col-md-12 ant-col-lg-14"
+      >
+        <h3
+          class="ant-typography"
+        >
+          <u>
+            Title
+          </u>
+        </h3>
+        <span
+          class="ant-typography ant-typography-secondary"
+        >
+          Publicat de First Last • 1/1/1970
+        </span>
+        <div
+          class="ant-typography"
+        >
+          Lorem ipsum dolor sit amet consectetur adipisicing elit
+          ...
+        </div>
+        <a
+          class="show-more"
+          href="//undefined"
+        >
+          Citește mai mult
+        </a>
+      </div>
+    </div>
+  </div>
+</body>
+`;

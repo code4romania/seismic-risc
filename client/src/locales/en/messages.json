@@ -8,8 +8,16 @@
     ],
     "extractedComments": []
   },
+  "About Vulnerable Romania": {
+    "origin": [
+      [
+        "containers/blog/Blog.js",
+        83
+      ]
+    ],
+    "extractedComments": []
+  },
   "About the project": {
-    "translation": "About the project",
     "origin": [
       [
         "components/Footer.js",
@@ -44,16 +52,6 @@
       ]
     ],
     "extractedComments": []
-  },
-  "An independent, non-partisan, non-political, non-govermental organization.": {
-    "origin": [
-      [
-        "components/Footer.js",
-        93
-      ]
-    ],
-    "extractedComments": [],
-    "obsolete": true
   },
   "Article not found": {
     "origin": [
@@ -91,16 +89,6 @@
     ],
     "extractedComments": []
   },
-  "Code of conduct": {
-    "origin": [
-      [
-        "components/Footer.js",
-        56
-      ]
-    ],
-    "extractedComments": [],
-    "obsolete": true
-  },
   "Consolidated buildings": {
     "origin": [
       [
@@ -123,7 +111,7 @@
     "origin": [
       [
         "components/Header.js",
-        73
+        78
       ]
     ],
     "extractedComments": []
@@ -138,7 +126,6 @@
     "extractedComments": []
   },
   "Donate": {
-    "translation": "",
     "origin": [
       [
         "components/Footer.js",
@@ -220,14 +207,14 @@
     ],
     "extractedComments": []
   },
-  "Legislation": {
+  "Load more articles": {
     "origin": [
       [
-        "src/components/Header.js",
-        31
+        "components/LoadMoreArticlesLink/LoadMoreArticlesLink.js",
+        7
       ]
     ],
-    "obsolete": true
+    "extractedComments": []
   },
   "Next page": {
     "origin": [
@@ -257,7 +244,6 @@
     "extractedComments": []
   },
   "Partners": {
-    "translation": "Partners",
     "origin": [
       [
         "components/Footer.js",
@@ -316,8 +302,21 @@
   "Published by {authorFullName} • {0}": {
     "origin": [
       [
+        "components/BlogItem/BlogItem.js",
+        23
+      ],
+      [
         "containers/blog-post/BlogPostDetailsFragment/BlogPostDetailsFragment.js",
         61
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Read more": {
+    "origin": [
+      [
+        "components/BlogItem/BlogItem.js",
+        29
       ]
     ],
     "extractedComments": []
@@ -340,15 +339,14 @@
     ],
     "extractedComments": []
   },
-  "Subscribe to the newsletter": {
+  "Server unavailable": {
     "origin": [
       [
-        "components/Footer.js",
-        77
+        "containers/blog/Blog.js",
+        72
       ]
     ],
-    "extractedComments": [],
-    "obsolete": true
+    "extractedComments": []
   },
   "Terms & conditions": {
     "origin": [
@@ -367,24 +365,5 @@
       ]
     ],
     "extractedComments": []
-  },
-  "Useful links": {
-    "origin": [
-      [
-        "components/Footer.js",
-        37
-      ]
-    ],
-    "extractedComments": [],
-    "obsolete": true
-  },
-  "Vulnerable Bucharest": {
-    "origin": [
-      [
-        "src/components/Header.js",
-        34
-      ]
-    ],
-    "obsolete": true
   }
 }
