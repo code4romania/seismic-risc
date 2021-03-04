@@ -9,6 +9,16 @@
     ],
     "extractedComments": []
   },
+  "About Vulnerable Romania": {
+    "translation": "Despre Romania Vulnerabilă",
+    "origin": [
+      [
+        "containers/blog/Blog.js",
+        83
+      ]
+    ],
+    "extractedComments": []
+  },
   "About the project": {
     "translation": "Despre proiect",
     "origin": [
@@ -48,17 +58,6 @@
       ]
     ],
     "extractedComments": []
-  },
-  "An independent, non-partisan, non-political, non-govermental organization.": {
-    "translation": "Organizație neguvernamentală independentă, neafiliată politic și apolitică.",
-    "origin": [
-      [
-        "components/Footer.js",
-        93
-      ]
-    ],
-    "extractedComments": [],
-    "obsolete": true
   },
   "Article not found": {
     "translation": "Articolul nu a fost găsit",
@@ -100,17 +99,6 @@
     ],
     "extractedComments": []
   },
-  "Code of conduct": {
-    "translation": "Codul de conduită",
-    "origin": [
-      [
-        "components/Footer.js",
-        56
-      ]
-    ],
-    "extractedComments": [],
-    "obsolete": true
-  },
   "Consolidated buildings": {
     "translation": "Clădiri consolidate",
     "origin": [
@@ -136,7 +124,7 @@
     "origin": [
       [
         "components/Header.js",
-        73
+        78
       ]
     ],
     "extractedComments": []
@@ -241,15 +229,15 @@
     ],
     "extractedComments": []
   },
-  "Legislation": {
-    "translation": "Legislație",
+  "Load more articles": {
+    "translation": "Încarcă mai multe articole",
     "origin": [
       [
-        "src/components/Header.js",
-        31
+        "components/LoadMoreArticlesLink/LoadMoreArticlesLink.js",
+        7
       ]
     ],
-    "obsolete": true
+    "extractedComments": []
   },
   "Next page": {
     "translation": "Pagina următoare",
@@ -345,8 +333,22 @@
     "translation": "Publicat de {authorFullName} • {0}",
     "origin": [
       [
+        "components/BlogItem/BlogItem.js",
+        23
+      ],
+      [
         "containers/blog-post/BlogPostDetailsFragment/BlogPostDetailsFragment.js",
         61
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Read more": {
+    "translation": "Citește mai mult",
+    "origin": [
+      [
+        "components/BlogItem/BlogItem.js",
+        29
       ]
     ],
     "extractedComments": []
@@ -371,16 +373,15 @@
     ],
     "extractedComments": []
   },
-  "Subscribe to the newsletter": {
-    "translation": "Abonează-te la newsletter",
+  "Server unavailable": {
+    "translation": "Server indisponibil",
     "origin": [
       [
-        "components/Footer.js",
-        77
+        "containers/blog/Blog.js",
+        72
       ]
     ],
-    "extractedComments": [],
-    "obsolete": true
+    "extractedComments": []
   },
   "Terms & conditions": {
     "translation": "Termeni şi condiţii",
@@ -401,26 +402,5 @@
       ]
     ],
     "extractedComments": []
-  },
-  "Useful links": {
-    "translation": "Link-uri utile",
-    "origin": [
-      [
-        "components/Footer.js",
-        37
-      ]
-    ],
-    "extractedComments": [],
-    "obsolete": true
-  },
-  "Vulnerable Bucharest": {
-    "translation": "Bucureștiul vulnerabil",
-    "origin": [
-      [
-        "src/components/Header.js",
-        34
-      ]
-    ],
-    "obsolete": true
   }
 }
