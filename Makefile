@@ -75,6 +75,12 @@ migrations:
 migrate:
 	docker-compose run --rm api "./manage.py migrate"
 
+messages:
+	docker-compose run --rm api "./manage.py makemessages && ./manage.py compilemessages"
+
+compile-messages:
+	docker-compose run --rm api "./manage.py compilemessages"
+
 pyshell:
 	docker-compose run --rm api "./manage.py shell"
 
