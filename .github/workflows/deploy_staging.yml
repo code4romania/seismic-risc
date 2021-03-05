@@ -18,4 +18,4 @@ jobs:
             host: ${{ secrets.DEV_SERVER_IP }}
             username: ${{ secrets.DEV_SERVER_SSH_USERNAME }}
             key: ${{ secrets.DEV_SERVER_SSH_KEY }}
-            script: "/root/seismic-risc/deploy/pull.sh"
+            script: "/home/runner/work/seismic-risc/seismic-risc/deploy/pull.sh"
