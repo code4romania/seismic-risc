@@ -1,15 +1,18 @@
 name: Deploy to staging env
 
-on: [push]
+on:
+  push:
+    branches:
+      - 'develop'
 
 jobs:
   deploy:
     name: Deploy to staging env
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-18.04
 
     steps:
-        - name: executing remote ssh commands
-          if: github.ref == 'refs/heads/master'
+        - name: Executing remote SSH commands
+          if: github.ref == 'refs/heads/develop'
           uses: appleboy/ssh-action@master
           with:
             host: ${{ secrets.DEV_SERVER_IP }}
