@@ -1,4 +1,34 @@
 {
+  "404.contact_message": {
+    "translation": "Dacă mai întâmpini probleme, te rugăm să ne trimiți un e-mail la ",
+    "origin": [
+      [
+        "containers/404.js",
+        34
+      ]
+    ],
+    "extractedComments": []
+  },
+  "404.sorry_message": {
+    "translation": "Nu reușim să găsim pagina pe care o cauți. Te rugăm să revii la pagina principală și să reiei căutarea sau să navighezi prin restul platformei nostre cu ajutorul meniului de sus.",
+    "origin": [
+      [
+        "containers/404.js",
+        31
+      ]
+    ],
+    "extractedComments": []
+  },
+  "404.title": {
+    "translation": "Ne pare rău",
+    "origin": [
+      [
+        "containers/404.js",
+        28
+      ]
+    ],
+    "extractedComments": []
+  },
   "About": {
     "translation": "Despre",
     "origin": [

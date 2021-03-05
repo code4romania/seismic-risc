@@ -1,4 +1,34 @@
 {
+  "404.contact_message": {
+    "translation": "If you encounter other issues, please send us an e-mail at ",
+    "origin": [
+      [
+        "containers/404.js",
+        34
+      ]
+    ],
+    "extractedComments": []
+  },
+  "404.sorry_message": {
+    "translation": "We can not find the page you are looking for. Please go back to the main page and start your search again or navigate through the rest of our platform with the help of the top menu.",
+    "origin": [
+      [
+        "containers/404.js",
+        31
+      ]
+    ],
+    "extractedComments": []
+  },
+  "404.title": {
+    "translation": "We are sorry",
+    "origin": [
+      [
+        "containers/404.js",
+        28
+      ]
+    ],
+    "extractedComments": []
+  },
   "About": {
     "origin": [
       [
