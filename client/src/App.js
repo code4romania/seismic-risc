@@ -12,6 +12,7 @@ import BlogPost from './containers/blog-post';
 import Footer from './components/Footer';
 import Terms from './containers/Terms';
 import Policy from './containers/Policy';
+import NotFound from './containers/404/404';
 
 import './styles/theme.scss';
 
@@ -47,6 +48,7 @@ const App = () => {
           <Route path="/politica-de-confidentialitate">
             <Policy />
           </Route>
+          <Route component={NotFound} />
         </Switch>
         <Footer />
       </Router>
