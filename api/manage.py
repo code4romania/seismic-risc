@@ -7,6 +7,7 @@ import sys
 def main():
     os.environ.setdefault("DJANGO_SETTINGS_MODULE", "seismic_site.settings")
     os.environ.setdefault("DJANGO_CONFIGURATION", "Prod")
+
     try:
         from configurations.management import execute_from_command_line
     except ImportError as exc:
