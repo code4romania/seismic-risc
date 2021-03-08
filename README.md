@@ -183,6 +183,80 @@ In order to see all available commands run:
 make
 ```
 
+### Starting the project without docker
+
+#### Windows platform
+##### Prerequisites
+1. [PostgreSQL](https://www.enterprisedb.com/postgresql-tutorial-resources-training?cid=55)
+2. [Python 3.7](https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe)
+3. [Node.js](https://nodejs.org/dist/v14.16.0/node-v14.16.0-x64.msi)
+
+##### Steps to set your environment
+1. In project directory run: 
+
+```shell
+python -m venv .venv
+.venv\Scripts\activate.bat
+pip install -r ./api/requirements-dev.txt
+copy .env.dist .env
+```
+2. Check the .env file created by the copy command and see if there are any environment variables that you might need to provide or change. Double check database config line in .env. It has to follow this pattern: `postgres://USER:PASSWORD@HOST:PORT/NAME`
+
+3. Run following in order to set needed environment variables:
+```shell
+activate_dev_env.bat
+```
+
+4. Check database connection. If this fails double check database configuration.
+```shell
+python api\wait_for_db.py
+```
+
+5. Run migrations:
+```shell
+python api\manage.py migrate --noinput
+```
+
+6. Create admin user (user to login into admin pannel):
+```shell
+python api\manage.py createsuperuser
+```
+
+7. Load dummy data in database:
+```shell
+python api\manage.py loaddata buildings
+python api\manage.py loaddata pages
+```
+
+8. Install node modules.
+```shell
+cd client
+npm install
+```
+#### Steps needed to start development servers
+*1. Start API server.*
+
+Open terminal in project direcotry and run environment activation script, then
+start the server.
+```shell
+.venv\Scripts\activate.bat
+activate_dev_env.bat
+python api\manage.py runserver 0.0.0.0:8000
+```
+Check functionality at http://localhost:8000 you shoul get 404 page.
+
+
+*2. Start front-end server.*
+
+Open terminal in project direcotry and run environment activation script, then
+start the server.
+```shell
+activate_dev_env.bat
+cd client
+npm start
+```
+Check functionality at http://localhost:3000.
+
 ### Development
 
 When creating new models in Django, in order to make sure they are generated in a clean environment, it is recommended to generate the migration files using the `make` command:
