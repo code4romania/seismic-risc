@@ -1,17 +1,20 @@
+import random
+import string
+
 import pytest
-import random, string
 
 from buildings.models import Building
 from buildings.serializers import BuildingListSerializer
-from django.urls import reverse
 
 base_url = "/api/v1/buildings"
 
 
 @pytest.mark.django_db
-def test_building_list_get(basic_building_data, api_client):
+def test_building_list_get_if_status_is_approved(
+    approved_building_data, api_client
+):
     for _ in range(3):
-        building_obj = Building.objects.create(**basic_building_data)
+        Building.objects.create(**approved_building_data)
 
     url = f"{base_url}/"
     response = api_client.get(url)
@@ -23,28 +26,54 @@ def test_building_list_get(basic_building_data, api_client):
 
 
 @pytest.mark.django_db
-def test_building_details_get(basic_building_data, api_client):
-    building_obj = Building.objects.create(**basic_building_data)
+def test_building_details_get_if_status_is_approved(
+    approved_building_data, api_client
+):
+    building_obj = Building.objects.create(**approved_building_data)
 
     url = f"{base_url}/{building_obj.general_id}/"
     response = api_client.get(url)
 
     assert response.status_code == 200
-    for key in basic_building_data.keys():
-        assert response.data[key] == basic_building_data[key]
+    for key in approved_building_data.keys():
+        assert response.data[key] == approved_building_data[key]
 
 
 @pytest.mark.django_db
-def test_building_post_forbidden(basic_building_data, api_client):
+def test_building_details_cannot_get_if_status_is_pending(
+    pending_building_data, api_client
+):
+    building_obj = Building.objects.create(**pending_building_data)
+
+    url = f"{base_url}/{building_obj.general_id}/"
+    response = api_client.get(url)
+
+    assert response.status_code == 404
+
+
+@pytest.mark.django_db
+def test_building_details_cannot_get_if_status_is_rejected(
+    rejected_building_data, api_client
+):
+    building_obj = Building.objects.create(**rejected_building_data)
+
+    url = f"{base_url}/{building_obj.general_id}/"
+    response = api_client.get(url)
+
+    assert response.status_code == 404
+
+
+@pytest.mark.django_db
+def test_building_post_forbidden(approved_building_data, api_client):
     response = api_client.post(
-        f"{base_url}/", basic_building_data, format="json"
+        f"{base_url}/", approved_building_data, format="json"
     )
     assert response.status_code == 403
 
 
 @pytest.mark.django_db
-def test_building_delete_forbidden(basic_building_data, api_client):
-    building_obj = Building.objects.create(**basic_building_data)
+def test_building_delete_forbidden(approved_building_data, api_client):
+    building_obj = Building.objects.create(**approved_building_data)
 
     url = f"{base_url}/{building_obj.general_id}/"
     response = api_client.delete(url)
@@ -54,12 +83,12 @@ def test_building_delete_forbidden(basic_building_data, api_client):
 
 @pytest.mark.django_db
 @pytest.mark.skip(reason="SIMILARITY available only in dev environment")
-def test_building_search(basic_building_data, random_words, api_client):
-    building_data = basic_building_data
+def test_building_search(approved_building_data, random_words, api_client):
+    building_data = approved_building_data
 
     for random_word in random_words:
         building_data["address"] = random_word
-        building_obj = Building.objects.create(**basic_building_data)
+        Building.objects.create(**approved_building_data)
 
     for random_word in random_words:
         response = api_client.get(f"{base_url}/search?query={random_word}/")
@@ -78,12 +107,32 @@ def random_words():
     ]
 
 
-@pytest.fixture
 def basic_building_data():
     return {
         "risk_category": "U1",
         "county": "Bucuresti",
         "post_code": "020244",
         "locality": "2",
-        "status": 0,
+        "status": 1,
     }
+
+
+@pytest.fixture
+def approved_building_data():
+    basic_data = basic_building_data()
+    basic_data["status"] = 1
+    return basic_data
+
+
+@pytest.fixture
+def pending_building_data():
+    basic_data = basic_building_data()
+    basic_data["status"] = 0
+    return basic_data
+
+
+@pytest.fixture
+def rejected_building_data():
+    basic_data = basic_building_data()
+    basic_data["status"] = -1
+    return basic_data

@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-02 18:03+0200\n"
+"POT-Creation-Date: 2021-03-05 13:47+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -71,6 +71,26 @@ msgstr "actualizat"
 msgid "posts"
 msgstr "articole"
 
+#: buildings/admin.py:44
+msgid "Mark selected buildings as pending"
+msgstr "Marchează clădirile selectate ca în așteptare"
+
+#: buildings/admin.py:49
+msgid "Mark selected buildings as accepted"
+msgstr "Marchează clădirile selectate ca acceptate"
+
+#: buildings/admin.py:54
+msgid "Mark selected buildings as rejected"
+msgstr "Marchează clădirile selectate ca respinse"
+
+#: buildings/admin.py:61
+#, python-brace-format
+msgid "{updated} building was successfully marked as {status}."
+msgid_plural "{updated} buildings were successfully marked as {status}."
+msgstr[0] "{updated} clădire a fost marcată ca {status}"
+msgstr[1] "{updated} clădiri au fost marcate ca {status}"
+msgstr[2] "{updated} de clădiri au fost marcate ca {status}"
+
 #: buildings/apps.py:7
 msgid "Buildings"
 msgstr "Clădiri"
@@ -100,8 +120,8 @@ msgid "Sector 6"
 msgstr "Sector 6"
 
 #: buildings/models.py:20
-msgid "Choose"
-msgstr "Alege"
+msgid "Pending"
+msgstr "În așteptare"
 
 #: buildings/models.py:21
 msgid "Accepted"
@@ -390,6 +410,9 @@ msgstr "Engleză"
 #: seismic_site/settings.py:126
 msgid "Romanian"
 msgstr "Română"
+
+#~ msgid "Choose"
+#~ msgstr "Alege"
 
 #~ msgid "blog"
 #~ msgstr "jurnal"
