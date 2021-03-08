@@ -6,7 +6,21 @@ from .models import Building, Statistic
 class BuildingSerializer(serializers.ModelSerializer):
     class Meta:
         model = Building
-        fields = "__all__"
+        fields = (
+            "general_id",
+            "risk_category",
+            "examination_year",
+            "certified_expert",
+            "lat",
+            "lng",
+            "address",
+            "post_code",
+            "locality",
+            "county",
+            "year_built",
+            "height_regime",
+            "status",
+        )
 
 
 class BuildingListSerializer(serializers.ModelSerializer):

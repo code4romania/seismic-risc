@@ -20,8 +20,10 @@ class BuildingViewSet(viewsets.ModelViewSet):
     API endpoint that allows buildings to be viewed or edited.
     """
 
-    queryset = Building.objects.all().order_by("-created_on")
     lookup_field = "general_id"
+
+    def get_queryset(self):
+        return Building.objects.all().filter(status=1).order_by("general_id")
 
     def get_serializer_class(self):
         if self.action == "list":
@@ -38,7 +40,7 @@ def building_search(request):
         Building.objects.annotate(
             similarity=TrigramSimilarity("address", query)
         )
-        .filter(similarity__gt=settings.TRIGRAM_SIMILARITY_THRESHOLD)
+        .filter(status=1, similarity__gt=settings.TRIGRAM_SIMILARITY_THRESHOLD)
         .order_by("-similarity")
     )
 

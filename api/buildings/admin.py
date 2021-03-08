@@ -1,7 +1,10 @@
 import tablib
 from django.contrib import admin, messages
+from django.utils.translation import ngettext
+from django.utils.translation import gettext_lazy as _
 
 from . import models
+from .models import BUILDING_STATUS_CHOICES
 
 
 @admin.register(models.Statistic)
@@ -29,6 +32,49 @@ class BuildingAdmin(admin.ModelAdmin):
         "general_id",
     )
     search_fields = ("address",)
+    actions = (
+        "make_pending",
+        "make_accepted",
+        "make_rejected",
+    )
+
+    def make_pending(self, request, queryset):
+        self._perform_status_change(request, queryset, "0")
+
+    make_pending.short_description = _("Mark selected buildings as pending")
+
+    def make_accepted(self, request, queryset):
+        self._perform_status_change(request, queryset, "1")
+
+    make_accepted.short_description = _("Mark selected buildings as accepted")
+
+    def make_rejected(self, request, queryset):
+        self._perform_status_change(request, queryset, "-1")
+
+    make_rejected.short_description = _("Mark selected buildings as rejected")
+
+    def _perform_status_change(self, request, queryset, status):
+        updated = queryset.update(status=status)
+
+        status_str = self.choice_to_string(status)
+        message = ngettext(
+            "{updated} building was successfully marked as {status}.",
+            "{updated} buildings were successfully marked as {status}.",
+            updated,
+        ).format(updated=updated, status=status_str)
+
+        self.message_user(request, message, messages.SUCCESS)
+
+    @staticmethod
+    def choice_to_string(status):
+        status = int(status)
+        for status_choice in BUILDING_STATUS_CHOICES:
+            if status_choice[0] == status:
+                status_str = status_choice[1]
+                break
+        else:
+            status_str = ""
+        return status_str
 
 
 @admin.register(models.CsvFile)
