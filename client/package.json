@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@ant-design/icons": "^4.3.0",
+    "@ant-design/icons": "^4.5.0",
     "@lingui/core": "^3.5.1",
     "@lingui/macro": "^3.5.0",
     "@lingui/react": "^3.5.1",
