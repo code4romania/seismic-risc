@@ -70,7 +70,7 @@
     "extractedComments": []
   },
   "Address": {
-    "translation": "Adresa",
+    "translation": "Adresă",
     "origin": [
       [
         "components/BuildingDetails.js",
@@ -100,7 +100,7 @@
     "extractedComments": []
   },
   "Building Info": {
-    "translation": "Informații Clădire",
+    "translation": "Informații despre clădire",
     "origin": [
       [
         "components/BuildingDetails.js",
