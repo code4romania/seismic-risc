@@ -32,7 +32,7 @@ export default function BuildingDetails(props) {
               <Trans>Address</Trans>:
             </Col>
             <Col lg={9} span={11}>
-              {details.address}
+              {details.address} <Trans>no.</Trans> {parseInt(details.post_code, 10)}
             </Col>
           </Row>
           <Row>
