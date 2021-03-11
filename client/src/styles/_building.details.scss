@@ -8,16 +8,29 @@
 }
 
 .ant-drawer-body {
-  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
   text-align: left;
+
+  & .ant-row {
+    margin-bottom: 18px;
+  }
+
 }
 
 .anticon-close, h3.building-details-title {
   color: #fff;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  text-decoration-line: underline;
+  margin-bottom: 40px;
 }
 
 .ant-drawer-content-wrapper {
-  width: 450px !important;
+  width: 480px !important;
   @media (max-width: 575px) {
     width: 250px !important;
   }
