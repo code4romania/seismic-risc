@@ -35,18 +35,23 @@ export default () => {
   }, []);
 
   return (
-    <Row gutter={[8, 32]} type="flex" justify="space-around" style={{ margin: '2rem' }}>
-      <Col span={8}>
+    <Row
+      gutter={[0, { xs: 20, sm: 20, md: 0 }]}
+      justify="space-around"
+      type="flex"
+      style={{ marginTop: '1rem' }}
+    >
+      <Col xs={24} md={8}>
         <StatisticCard value={state.statistics.people_under_risk}>
           <Trans id="People under risk" />
         </StatisticCard>
       </Col>
-      <Col span={8}>
+      <Col xs={24} md={7}>
         <StatisticCard value={state.statistics.evaluated_buildings}>
           <Trans id="Evaluated buildings" />
         </StatisticCard>
       </Col>
-      <Col span={8}>
+      <Col xs={24} md={8}>
         <StatisticCard value={state.statistics.consolidated_buildings}>
           <Trans id="Consolidated buildings" />
         </StatisticCard>
