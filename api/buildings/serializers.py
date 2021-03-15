@@ -23,6 +23,21 @@ class BuildingSerializer(serializers.ModelSerializer):
         )
 
 
+class PublicBuildingCreateSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Building
+        fields = (
+            "post_code",
+            "address",
+            "county",
+            "locality",
+            "lat",
+            "lng",
+            "height_regime",
+            "risk_category",
+        )
+
+
 class BuildingListSerializer(serializers.ModelSerializer):
     class Meta:
         model = Building
