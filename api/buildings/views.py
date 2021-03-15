@@ -33,7 +33,7 @@ class BuildingViewSet(viewsets.ModelViewSet):
             return PublicBuildingCreateSerializer
         return BuildingSerializer
 
-    @action(detail=False, methods=['post'], permission_classes=[permissions.AllowAny])
+    @action(detail=False, methods=["post"], permission_classes=[permissions.AllowAny])
     def public_create(self, request):
         """
         Special action to allow the public to create a building, while
@@ -44,7 +44,8 @@ class BuildingViewSet(viewsets.ModelViewSet):
             serializer.save()
             headers = self.get_success_headers(serializer.data)
             return Response(
-                serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+                serializer.data, status=status.HTTP_201_CREATED, headers=headers
+            )
         else:
             return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
@@ -55,9 +56,7 @@ def building_search(request):
     query = request.GET.get("query")
 
     buildings = (
-        Building.objects.annotate(
-            similarity=TrigramSimilarity("address", query)
-        )
+        Building.objects.annotate(similarity=TrigramSimilarity("address", query))
         .filter(status=1, similarity__gt=settings.TRIGRAM_SIMILARITY_THRESHOLD)
         .order_by("-similarity")
     )
