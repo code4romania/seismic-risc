@@ -102,6 +102,20 @@
     ],
     "extractedComments": []
   },
+  "Blog": {
+    "translation": "Blog",
+    "origin": [
+      [
+        "containers/home/BlogPreviewFragment.js",
+        56
+      ],
+      [
+        "containers/home/BlogPreviewFragment.js",
+        77
+      ]
+    ],
+    "extractedComments": []
+  },
   "Building Info": {
     "origin": [
       [
@@ -442,6 +456,10 @@
       [
         "containers/blog/Blog.js",
         72
+      ],
+      [
+        "containers/home/BlogPreviewFragment.js",
+        63
       ]
     ],
     "extractedComments": []
