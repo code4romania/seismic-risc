@@ -5,6 +5,7 @@ import MapFragment from './MapFragment';
 import ParagraphFragment from './ParagraphFragment';
 import SearchFragment from './SearchFragment';
 import StatisticFragment from './StatisticFragment';
+import BlogPreviewFragment from './BlogPreviewFragment';
 
 export default () => (
   <Layout>
@@ -12,5 +13,6 @@ export default () => (
     <MapFragment />
     <StatisticFragment />
     <ParagraphFragment />
+    <BlogPreviewFragment />
   </Layout>
 );
