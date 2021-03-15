@@ -1,13 +1,14 @@
 from django.contrib.postgres.search import TrigramSimilarity
 from django.conf import settings
 
-from rest_framework import viewsets
-from rest_framework.decorators import api_view, permission_classes
+from rest_framework import status, viewsets
+from rest_framework.decorators import api_view, permission_classes, action
 from rest_framework import permissions
 from rest_framework.response import Response
 
 from .serializers import (
     BuildingSerializer,
+    PublicBuildingCreateSerializer,
     BuildingListSerializer,
     BuildingSearchSerializer,
     StatisticSerializer,
@@ -28,7 +29,24 @@ class BuildingViewSet(viewsets.ModelViewSet):
     def get_serializer_class(self):
         if self.action == "list":
             return BuildingListSerializer
+        elif self.action == "public_create":
+            return PublicBuildingCreateSerializer
         return BuildingSerializer
+
+    @action(detail=False, methods=['post'], permission_classes=[permissions.AllowAny])
+    def public_create(self, request):
+        """
+        Special action to allow the public to create a building, while
+        keeping the default create action available for staff only
+        """
+        serializer = PublicBuildingCreateSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            headers = self.get_success_headers(serializer.data)
+            return Response(
+                serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(["GET"])
