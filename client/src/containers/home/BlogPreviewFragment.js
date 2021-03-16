@@ -94,7 +94,7 @@ export default () => {
       >
         {state.posts.map((post) => (
           <Col key={post.slug} lg={8} span={24}>
-            <BlogCard title={post.title} imageUrl={post.image} />
+            <BlogCard title={post.title} imageUrl={post.image} slug={post.slug} />
           </Col>
         ))}
       </Row>
