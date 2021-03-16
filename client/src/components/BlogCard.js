@@ -8,7 +8,15 @@ export default ({ title, imageUrl, slug }) => {
   return (
     <Link to={`/blog/${slug}`}>
       <Card className="blog-post-card">
-        <Title level={4}>{title}</Title>
+        <div className="title-container">
+          <Title
+            ellipsis={{ rows: 2, expandable: false }}
+            level={4}
+            style={{ fontWeight: 400, paddingTop: '1rem' }}
+          >
+            {title}
+          </Title>
+        </div>
         <div className="img-container">
           <img src={imageUrl} alt={title} />
         </div>
