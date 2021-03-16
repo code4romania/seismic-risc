@@ -18,11 +18,11 @@
         padding-right: 1rem;
         padding-left: 1rem;
         padding-top: 5%;
-        padding-bottom: 5%;
-        max-height: 20%;
+        line-height: 1.3em;
+        font-weight: 400;
+        height: 20%;
         text-overflow: ellipsis;
         overflow: hidden;
-        font-weight: 400;
         white-space: nowrap;
         margin: 0;
     }
@@ -36,8 +36,7 @@
     }
 
     .img-container {
-        position: absolute;
-        bottom: 0;
+        position: relative;
         width: 100%;
         height: 75%;
         overflow: hidden;
