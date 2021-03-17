@@ -1,20 +1,11 @@
 import React from 'react';
 import { cleanup, render } from '@testing-library/react';
-import { I18nProvider } from '@lingui/react';
 import { i18n } from '@lingui/core';
 import { act } from 'react-dom/test-utils';
 import HereMapInteractive from './HereMapInteractive';
-import { messages as enMessages } from '../../locales/en/messages';
-import { messages as roMessages } from '../../locales/ro/messages';
+import { LinguiWrapper } from '../TestUtils';
 
 const { H } = window;
-
-i18n.load({
-  en: enMessages,
-  ro: roMessages,
-});
-
-const TestingProvider = ({ children }) => <I18nProvider i18n={i18n}>{children}</I18nProvider>;
 
 jest.mock('../../context', () => ({
   __esModule: true,
@@ -37,7 +28,7 @@ describe('HereMapInteractive component', () => {
   });
 
   it('renders correctly without points', () => {
-    render(<HereMapInteractive apikey="api-key" points={[]} />, { wrapper: TestingProvider });
+    render(<HereMapInteractive apikey="api-key" points={[]} />, { wrapper: LinguiWrapper });
     expect(H.geo.Rect).toHaveBeenCalledTimes(0);
     expect(H.clustering.DataPoint).toHaveBeenCalledTimes(0);
   });
@@ -53,7 +44,7 @@ describe('HereMapInteractive component', () => {
         lng: 26.101978,
       },
     ];
-    render(<HereMapInteractive apikey="api-key" points={points} />, { wrapper: TestingProvider });
+    render(<HereMapInteractive apikey="api-key" points={points} />, { wrapper: LinguiWrapper });
     expect(H.geo.Rect).toHaveBeenCalled();
     expect(H.clustering.DataPoint).toHaveBeenNthCalledWith(
       1,

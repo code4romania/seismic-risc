@@ -1,18 +1,14 @@
-.ant-drawer {
-  z-index: 3;
-}
-
-.ant-drawer-wrapper-body {
+.building-details {
   background: #000;
   color: #fff;
-}
-
-.ant-drawer-body {
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
   text-align: left;
+  height: 400px;
+  padding: 18px;
+  overflow-y: scroll;
 
   & .ant-row {
     margin-bottom: 18px;
@@ -26,12 +22,5 @@
   font-size: 20px;
   line-height: 30px;
   text-decoration-line: underline;
-  margin-bottom: 40px;
-}
-
-.ant-drawer-content-wrapper {
-  width: 480px !important;
-  @media (max-width: 575px) {
-    width: 250px !important;
-  }
+  margin-bottom: 22px;
 }

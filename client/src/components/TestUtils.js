@@ -9,6 +9,10 @@ i18n.load({
   en: enMessages,
   ro: roMessages,
 });
+i18n.loadLocaleData({
+  en: { plurals: {} },
+  ro: { plurals: {} },
+});
 
 const LinguiWrapper = ({ children }) => <I18nProvider i18n={i18n}>{children}</I18nProvider>;
 

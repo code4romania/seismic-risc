@@ -1,5 +1,5 @@
 import React from 'react';
-import { Drawer, Typography } from 'antd';
+import { Col, Icon, Row, Typography } from 'antd';
 import { Trans } from '@lingui/macro';
 import './searchResults.css';
 
@@ -15,18 +15,17 @@ export default function SearchResults(props) {
   };
 
   return (
-    <Drawer
-      className="search-results-drawer"
-      placement="right"
-      mask={false}
-      onClose={onCloseSearchResults}
-      visible={searchResults.length > 0}
-      getContainer={false}
-      style={{ position: 'absolute' }}
-    >
-      <Typography.Title level={4} style={{ color: 'white' }}>
-        <Trans>Search Results</Trans>
-      </Typography.Title>
+    <Col className="search-results-container">
+      <Row>
+        <Col span={23}>
+          <Typography.Title level={4} style={{ color: 'white' }}>
+            <Trans>Search Results</Trans>
+          </Typography.Title>
+        </Col>
+        <Col span={1}>
+          <Icon type="close" onClick={onCloseSearchResults} />
+        </Col>
+      </Row>
       <ul className="search-results">
         {searchResults.map((building) => (
           <li key={building.general_id} onClick={() => onItemClick(building)}>
@@ -36,6 +35,6 @@ export default function SearchResults(props) {
           </li>
         ))}
       </ul>
-    </Drawer>
+    </Col>
   );
 }
