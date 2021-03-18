@@ -7,7 +7,7 @@ from taggit.models import Tag
 from .models import Post
 
 
-class TagSerializer(serializers.HyperlinkedModelSerializer):
+class TagSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tag
         fields = ("name", "slug")

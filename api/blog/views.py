@@ -1,7 +1,7 @@
 from django.utils import timezone
 from .serializers import PostSerializer, TagSerializer
 from .permissions import IsUserOrReadOnly
-from rest_framework import viewsets, filters
+from rest_framework import views, viewsets, filters
 from taggit.models import Tag
 
 from .models import Post
@@ -32,6 +32,7 @@ class PostViewSet(viewsets.ModelViewSet):
         "^author__username",
         "author__first_name",
         "author__last_name",
+        "tags__name"
     ]
     ordering_fields = ["created", "updated", "published"]
 
