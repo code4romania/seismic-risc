@@ -32,7 +32,7 @@ class PostViewSet(viewsets.ModelViewSet):
         "^author__username",
         "author__first_name",
         "author__last_name",
-        "tags__name"
+        "tags__name",
     ]
     ordering_fields = ["created", "updated", "published"]
 
