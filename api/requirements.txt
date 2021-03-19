@@ -64,7 +64,7 @@ odfpy==1.4.1
     # via tablib
 openpyxl==3.0.6
     # via tablib
-pillow==8.1.0
+pillow==8.1.1
     # via -r requirements.in
 psycopg2==2.8.6
     # via -r requirements.in
