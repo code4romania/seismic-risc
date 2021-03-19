@@ -4,17 +4,17 @@
 #
 #    pip-compile --output-file=requirements.txt requirements.in
 #
-boto3==1.17.5
+boto3==1.17.32
     # via -r requirements.in
-botocore==1.20.5
+botocore==1.20.32
     # via
     #   boto3
     #   s3transfer
 brotlipy==0.7.0
     # via -r requirements.in
-cffi==1.14.4
+cffi==1.14.5
     # via brotlipy
-defusedxml==0.6.0
+defusedxml==0.7.1
     # via odfpy
 diff-match-patch==20200713
     # via django-import-export
@@ -38,7 +38,7 @@ django-taggit==1.3.0
     # via
     #   -r requirements.in
     #   django-taggit-serializer
-django==2.2.18
+django==2.2.19
     # via
     #   -r requirements.in
     #   django-cors-headers
@@ -52,8 +52,6 @@ et-xmlfile==1.0.1
     # via openpyxl
 gunicorn==20.0.4
     # via -r requirements.in
-jdcal==1.4.1
-    # via openpyxl
 jmespath==0.10.0
     # via
     #   boto3
@@ -62,9 +60,9 @@ markuppy==1.14
     # via tablib
 odfpy==1.4.1
     # via tablib
-openpyxl==3.0.6
+openpyxl==3.0.7
     # via tablib
-pillow==8.1.0
+pillow==8.1.2
     # via -r requirements.in
 psycopg2==2.8.6
     # via -r requirements.in
@@ -78,7 +76,7 @@ pytz==2021.1
     #   django
 pyyaml==5.4.1
     # via tablib
-s3transfer==0.3.4
+s3transfer==0.3.6
     # via boto3
 six==1.15.0
     # via
@@ -91,7 +89,7 @@ tablib[html,ods,xls,xlsx,yaml]==3.0.0
     # via
     #   -r requirements.in
     #   django-import-export
-urllib3==1.26.3
+urllib3==1.26.4
     # via botocore
 whitenoise==5.2.0
     # via -r requirements.in
