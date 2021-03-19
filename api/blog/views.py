@@ -12,6 +12,7 @@ class TagViewSet(viewsets.ModelViewSet):
     API endpoint that lists blog posts tags
     """
 
+    lookup_field = "slug"
     permissions_classes = (IsUserOrReadOnly,)
     queryset = Tag.objects.all()
     serializer_class = TagSerializer
@@ -32,6 +33,7 @@ class PostViewSet(viewsets.ModelViewSet):
         "^author__username",
         "author__first_name",
         "author__last_name",
+        "tags__name",
     ]
     ordering_fields = ["created", "updated", "published"]
 
