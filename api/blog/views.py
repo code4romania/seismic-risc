@@ -1,7 +1,7 @@
 from django.utils import timezone
 from .serializers import PostSerializer, TagSerializer
 from .permissions import IsUserOrReadOnly
-from rest_framework import views, viewsets, filters
+from rest_framework import viewsets, filters
 from taggit.models import Tag
 
 from .models import Post
@@ -11,7 +11,7 @@ class TagViewSet(viewsets.ModelViewSet):
     """
     API endpoint that lists blog posts tags
     """
-
+    lookup_field = 'slug'
     permissions_classes = (IsUserOrReadOnly,)
     queryset = Tag.objects.all()
     serializer_class = TagSerializer
