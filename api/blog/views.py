@@ -11,7 +11,8 @@ class TagViewSet(viewsets.ModelViewSet):
     """
     API endpoint that lists blog posts tags
     """
-    lookup_field = 'slug'
+
+    lookup_field = "slug"
     permissions_classes = (IsUserOrReadOnly,)
     queryset = Tag.objects.all()
     serializer_class = TagSerializer
