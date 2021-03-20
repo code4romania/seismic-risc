@@ -1,10 +1,11 @@
+from zipfile import BadZipFile
+
 import tablib
 from django.contrib import admin, messages
-from django.utils.translation import ngettext
 from django.utils.translation import gettext_lazy as _
+from django.utils.translation import ngettext
 
 from . import models
-from .models import BUILDING_STATUS_CHOICES
 
 
 @admin.register(models.Statistic)
@@ -22,7 +23,7 @@ class StatisticAdmin(admin.ModelAdmin):
 
 @admin.register(models.Building)
 class BuildingAdmin(admin.ModelAdmin):
-    list_filter = ("status", "risk_category", "post_code")
+    list_filter = ("status", "risk_category", "county", "locality")
     list_display = (
         "address",
         "risk_category",
@@ -68,7 +69,7 @@ class BuildingAdmin(admin.ModelAdmin):
     @staticmethod
     def choice_to_string(status):
         status = int(status)
-        for status_choice in BUILDING_STATUS_CHOICES:
+        for status_choice in models.Building.BUILDING_STATUS_CHOICES:
             if status_choice[0] == status:
                 status_str = status_choice[1]
                 break
@@ -84,39 +85,73 @@ class CSVFileAdmin(admin.ModelAdmin):
 
     def import_files(self, request, query_set):
         for q in query_set:
-            data = tablib.import_set(
-                open(q.file.file.name, "rb").read(), format="xlsx"
-            )
-            changed_headers = []
-            for header in data.headers:
-                changed_headers.append(
-                    header.lower()
-                    .replace(":", "")
-                    .replace(".", "")
-                    .strip()
-                    .replace(" ", "_")
+            try:
+                data = tablib.import_set(
+                    open(q.file.file.name, "rb").read(), format="xlsx"
                 )
-            data.headers = changed_headers
-            building_res = models.BuildingResource()
-            res = building_res.import_data(
-                data, dry_run=False, raise_errors=True
-            )
-            csv_file = models.CsvFile.objects.get(name=q.__str__())
+                changed_headers = []
+                for header in data.headers:
+                    changed_headers.append(
+                        header.lower()
+                        .replace(":", "")
+                        .replace(".", "")
+                        .strip()
+                        .replace(" ", "_")
+                    )
+                data.headers = changed_headers
+                building_res = models.BuildingResource()
+                res = building_res.import_data(
+                    data, dry_run=False, raise_errors=True
+                )
+                csv_file = models.CsvFile.objects.get(name=q.__str__())
 
-            if res.has_errors() or res.has_validation_errors():
-                csv_file.status = models.CsvFile.UNSUCCESS
-                message_str = "File with name {} wasn't imported.".format(
-                    q.__str__()
+                if res.has_errors() or res.has_validation_errors():
+                    csv_file.status = models.CsvFile.FAILURE
+                    message_str = _(
+                        "File with name '{file_name}' wasn't imported.".format(
+                            file_name=q.__str__()
+                        )
+                    )
+                    message_level = messages.WARNING
+                else:
+                    csv_file.status = models.CsvFile.SUCCESS
+                    message_str = _(
+                        "File with name '{file_name}' was imported.".format(
+                            file_name=q.__str__()
+                        )
+                    )
+                    message_level = messages.SUCCESS
+                csv_file.save()
+            except BadZipFile:
+                self.save_file_as_failed(q)
+
+                message_str = _(
+                    "File with name '{file_name}' wasn't an XLSX.".format(
+                        file_name=q.__str__()
+                    )
                 )
-                message_level = messages.WARNING
-            else:
-                csv_file.status = models.CsvFile.SUCCESS
-                message_str = "File with name {} was imported.".format(
-                    q.__str__()
+                message_level = messages.ERROR
+            except ValueError as e:
+                self.save_file_as_failed(q)
+
+                message_str = _(
+                    "File with name '{file_name}' couldn't be imported. The error received was: `{error_args}`".format(
+                        file_name=q.__str__(),
+                        error_args=e.args[0],
+                    )
                 )
-                message_level = messages.SUCCESS
+
+                message_level = messages.ERROR
+            except Exception as e:
+                self.save_file_as_failed(q)
+                raise e
 
             self.message_user(request, message_str, message_level)
-            csv_file.save()
+
+    @staticmethod
+    def save_file_as_failed(q):
+        csv_file = models.CsvFile.objects.get(name=q.__str__())
+        csv_file.status = models.CsvFile.FAILURE
+        csv_file.save()
 
     import_files.short_description = "Import selected files"

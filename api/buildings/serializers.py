@@ -55,8 +55,9 @@ class StatisticSerializer(serializers.ModelSerializer):
         "get_total_buildings"
     )
 
-    def get_total_buildings(self, obj):
-        total_buildings = Building.objects.count()
+    @staticmethod
+    def get_total_buildings(_):
+        total_buildings = Building.approved.count()
         return int(total_buildings)
 
     class Meta:

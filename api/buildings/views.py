@@ -24,7 +24,7 @@ class BuildingViewSet(viewsets.ModelViewSet):
     lookup_field = "general_id"
 
     def get_queryset(self):
-        return Building.objects.all().filter(status=1).order_by("general_id")
+        return Building.approved.all().order_by("general_id")
 
     def get_serializer_class(self):
         if self.action == "list":
@@ -62,10 +62,10 @@ def building_search(request):
     query = request.GET.get("query")
 
     buildings = (
-        Building.objects.annotate(
+        Building.approved.annotate(
             similarity=TrigramSimilarity("address", query)
         )
-        .filter(status=1, similarity__gt=settings.TRIGRAM_SIMILARITY_THRESHOLD)
+        .filter(similarity__gt=settings.TRIGRAM_SIMILARITY_THRESHOLD)
         .order_by("-similarity")
     )
 
@@ -77,7 +77,7 @@ def building_search(request):
 @api_view(["GET"])
 @permission_classes((permissions.AllowAny,))
 def statistics(self):
-    statistics = Statistic.objects.first()
-    serializer = StatisticSerializer(statistics, many=False)
+    stats = Statistic.objects.first()
+    serializer = StatisticSerializer(stats, many=False)
 
     return Response(serializer.data)
