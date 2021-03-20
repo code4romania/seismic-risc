@@ -16,13 +16,6 @@ class SectorChoice(Enum):
     s6 = _("Sector 6")
 
 
-BUILDING_STATUS_CHOICES = [
-    (0, _("Pending")),
-    (1, _("Accepted")),
-    (-1, _("Rejected")),
-]
-
-
 class SeismicCategoryChoice(Enum):
     NA = _("N/A")
     U1 = _("U1")
@@ -39,7 +32,22 @@ class SeismicCategoryChoice(Enum):
         return [(i.name, i.value) for i in cls]
 
 
+class ApprovedBuilding(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(status=Building.ACCEPTED)
+
+
 class Building(models.Model):
+    PENDING = 0
+    ACCEPTED = 1
+    REJECTED = -1
+
+    BUILDING_STATUS_CHOICES = [
+        (PENDING, _("Pending")),
+        (ACCEPTED, _("Accepted")),
+        (REJECTED, _("Rejected")),
+    ]
+
     general_id = models.AutoField(_("general id"), primary_key=True)
 
     risk_category = models.CharField(
@@ -85,12 +93,18 @@ class Building(models.Model):
     admin_update = models.DateField(_("admin update"), null=True, blank=True)
 
     status = models.SmallIntegerField(
-        _("status"), default=0, choices=BUILDING_STATUS_CHOICES, db_index=True
+        _("status"),
+        default=PENDING,
+        choices=BUILDING_STATUS_CHOICES,
+        db_index=True,
     )
 
     created_on = models.DateTimeField(
         _("created on"), default=timezone.now, blank=True
     )
+
+    objects = models.Manager()
+    approved = ApprovedBuilding()
 
     class Meta:
         verbose_name = _("building")
@@ -134,12 +148,12 @@ class BuildingResource(resources.ModelResource):
 class CsvFile(models.Model):
     NOT_TRIED = 0
     SUCCESS = 1
-    UNSUCCESS = -1
+    FAILURE = -1
 
     STATUS_CHOICES = [
-        (UNSUCCESS, _("Unsuccess")),
         (NOT_TRIED, _("Not tried")),
-        (SUCCESS, _("Success")),
+        (SUCCESS, _("Imported successfully")),
+        (FAILURE, _("Import failed")),
     ]
 
     name = models.CharField(_("name"), max_length=255)
