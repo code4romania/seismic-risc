@@ -1,4 +1,6 @@
 import React, { useLayoutEffect, useRef, useState } from 'react';
+import { Col, Row } from 'antd';
+
 import BuildingDetailsFragment from '../../containers/building/BuildingDetailsFragment';
 import SearchResults from '../SearchResults';
 
@@ -14,14 +16,15 @@ const HereMapInteractive = (props) => {
 
   const mapRef = useRef(null);
 
-  const { onHereMapLoaded } = useGlobalContext();
+  const { searchResults, onHereMapLoaded } = useGlobalContext();
 
-  const {
-    isDrawerVisible,
-    buildingDetails,
-    onSelectBuilding,
-    onHideBuilding,
-  } = useDecoratedClusteredMap(currentMap, points);
+  const { buildingDetails, onSelectBuilding, onHideBuilding } = useDecoratedClusteredMap(
+    currentMap,
+    points,
+  );
+
+  const showSearchResults = searchResults.length > 0;
+  const showRightPanel = showSearchResults || buildingDetails;
 
   useLayoutEffect(() => {
     if (!mapRef.current) return;
@@ -51,18 +54,33 @@ const HereMapInteractive = (props) => {
   return (
     <div>
       {apikey && (
-        <div
-          className="map-container"
-          ref={mapRef}
-          style={{ width: '100%', height: '400px', background: 'grey' }}
-        >
-          <BuildingDetailsFragment
-            visible={isDrawerVisible}
-            onClose={onHideBuilding}
-            incompleteDetails={buildingDetails}
-          />
-          <SearchResults onItemSelected={onSelectBuilding} />
-        </div>
+        <Row type="flex">
+          <Col
+            xs={{ span: showRightPanel ? 0 : 24 }}
+            sm={{ span: showRightPanel ? 12 : 24 }}
+            md={{ span: showRightPanel ? 16 : 24 }}
+          >
+            <div
+              className="map-container"
+              ref={mapRef}
+              style={{ width: '100%', height: '400px', background: 'grey' }}
+            />
+          </Col>
+          <Col
+            xs={{ span: showRightPanel ? 24 : 0 }}
+            sm={{ span: showRightPanel ? 12 : 0 }}
+            md={{ span: showRightPanel ? 8 : 0 }}
+          >
+            {showSearchResults ? (
+              <SearchResults onItemSelected={onSelectBuilding} />
+            ) : (
+              <BuildingDetailsFragment
+                onClose={onHideBuilding}
+                incompleteDetails={buildingDetails}
+              />
+            )}
+          </Col>
+        </Row>
       )}
     </div>
   );

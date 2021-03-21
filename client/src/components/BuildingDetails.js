@@ -1,30 +1,26 @@
 import React from 'react';
-import { Drawer, Typography, Row, Col, Icon } from 'antd';
+import { Typography, Row, Col, Icon } from 'antd';
 import { Trans } from '@lingui/macro';
 
 const { Title } = Typography;
 
 export default function BuildingDetails(props) {
-  const { visible, onClose, details } = props;
+  const { onClose, details } = props;
   return (
-    <Drawer
-      placement="right"
-      mask={false}
-      visible={visible}
-      onClose={onClose}
-      getContainer={false}
-      style={{ position: 'absolute' }}
-    >
-      <Title className="building-details-title" level={3}>
-        <Row>
+    <Row className="building-details">
+      <Row>
+        <Title className="building-details-title" level={3}>
           <Col lg={1} span={0}>
             <Icon type="environment" />
           </Col>
-          <Col lg={{ span: 22, offset: 1 }} span={24}>
+          <Col lg={{ span: 21, offset: 1 }} span={23}>
             <Trans>Building Info</Trans>
           </Col>
-        </Row>
-      </Title>
+          <Col span={1}>
+            <Icon type="close" onClick={onClose} />
+          </Col>
+        </Title>
+      </Row>
       {details ? (
         <div>
           <Row>
@@ -32,7 +28,12 @@ export default function BuildingDetails(props) {
               <Trans>Address</Trans>:
             </Col>
             <Col lg={9} span={11}>
-              {details.address} <Trans>no.</Trans> {details.post_code}
+              {details.address && `${details.address} `}
+              {details.post_code && (
+                <>
+                  <Trans>no.</Trans> {details.post_code}
+                </>
+              )}
             </Col>
           </Row>
           <Row>
@@ -81,6 +82,6 @@ export default function BuildingDetails(props) {
           <Trans>Information missing</Trans>
         </p>
       )}
-    </Drawer>
+    </Row>
   );
 }

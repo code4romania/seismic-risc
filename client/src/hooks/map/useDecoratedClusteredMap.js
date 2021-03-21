@@ -4,8 +4,8 @@ import ClusterLayerBuilder from './ClusterLayerBuilder';
 const { H } = window;
 
 export default function useDecoratedClusteredMap(currentMap, points) {
-  const [isDrawerVisible, setDrawerVisible] = useState(false);
   const [buildingDetails, setBuildingDetails] = useState(undefined);
+  const [detailsOpen, setDetailsOpen] = useState(false);
   const [selectedMarker, setSelectedMarker] = useState(undefined);
   const [zoom, setZoom] = useState(undefined);
 
@@ -26,7 +26,6 @@ export default function useDecoratedClusteredMap(currentMap, points) {
     setZoom(currentZoom > zoomToSet ? currentZoom : zoomToSet);
     setSelectedMarker(marker);
     setBuildingDetails(marker.getData().getData());
-    setDrawerVisible(true);
   };
 
   const calculateBounds = () => {
@@ -62,7 +61,7 @@ export default function useDecoratedClusteredMap(currentMap, points) {
   };
 
   const onHideBuilding = () => {
-    setDrawerVisible(false);
+    setBuildingDetails(undefined);
     if (selectedMarker) {
       ClusterLayerBuilder.unhighlightMarker(selectedMarker);
       setSelectedMarker(undefined);
@@ -79,14 +78,19 @@ export default function useDecoratedClusteredMap(currentMap, points) {
   };
 
   useEffect(() => {
-    if (!currentMap || !selectedMarker || !zoom) {
+    setDetailsOpen(buildingDetails !== undefined);
+  }, [buildingDetails]);
+
+  useEffect(() => {
+    if (!currentMap || !zoom) {
       return;
     }
-    if (isDrawerVisible) {
+    currentMap.getViewPort().resize();
+    if (selectedMarker) {
       const position = { ...selectedMarker.getData().getPosition() };
       currentMap.getViewModel().setLookAtData({ position, zoom }, true);
     }
-  }, [isDrawerVisible, selectedMarker]);
+  }, [detailsOpen]);
 
   useEffect(() => {
     if (prevSelectedMarker.current) {
@@ -100,7 +104,7 @@ export default function useDecoratedClusteredMap(currentMap, points) {
 
   useEffect(() => {
     if (currentMap) {
-      setDrawerVisible(false);
+      setBuildingDetails(undefined);
       clearMap();
       const bounds = calculateBounds();
       currentMap.getViewModel().setLookAtData({ bounds, zoom: 10 }, true);
@@ -110,5 +114,5 @@ export default function useDecoratedClusteredMap(currentMap, points) {
     }
   }, [points, currentMap]);
 
-  return { isDrawerVisible, buildingDetails, onSelectBuilding, onHideBuilding };
+  return { buildingDetails, onSelectBuilding, onHideBuilding };
 }
