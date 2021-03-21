@@ -111,7 +111,7 @@ def basic_building_data():
     return {
         "risk_category": "U1",
         "county": "Bucuresti",
-        "post_code": "020244",
+        "street_number": "12",
         "locality": "2",
         "status": 1,
     }

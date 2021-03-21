@@ -30,7 +30,7 @@ export default function SearchResults(props) {
         {searchResults.map((building) => (
           <li key={building.general_id} onClick={() => onItemClick(building)}>
             <p>
-              {building.address}, {building.post_code}
+              {building.address}, {building.street_number}
             </p>
           </li>
         ))}

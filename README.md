@@ -209,23 +209,23 @@ activate_dev_env.bat
 
 4. Check database connection. If this fails double check database configuration.
 ```shell
-python api\wait_for_db.py
+python api/wait_for_db.py
 ```
 
 5. Run migrations:
 ```shell
-python api\manage.py migrate --noinput
+python api/manage.py migrate --noinput
 ```
 
 6. Create admin user (user to login into admin pannel):
 ```shell
-python api\manage.py createsuperuser
+python api/manage.py createsuperuser
 ```
 
 7. Load dummy data in database:
 ```shell
-python api\manage.py loaddata buildings
-python api\manage.py loaddata pages
+python api/manage.py loaddata buildings
+python api/manage.py loaddata pages
 ```
 
 8. Install node modules.

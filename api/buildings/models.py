@@ -73,7 +73,7 @@ class Building(models.Model):
 
     county = models.CharField(_("county"), max_length=60)
     address = models.CharField(_("address"), max_length=250, null=True)
-    post_code = models.CharField(_("post code"), max_length=250)
+    street_number = models.CharField(_("street number"), max_length=100)
     locality = models.CharField(_("locality"), max_length=20)
 
     year_built = models.IntegerField(_("year built"), null=True)
@@ -150,7 +150,7 @@ class CsvFile(models.Model):
     SUCCESS = 1
     FAILURE = -1
 
-    STATUS_CHOICES = [
+    DATA_FILE_STATUS_CHOICES = [
         (NOT_TRIED, _("Not tried")),
         (SUCCESS, _("Imported successfully")),
         (FAILURE, _("Import failed")),
@@ -159,7 +159,7 @@ class CsvFile(models.Model):
     name = models.CharField(_("name"), max_length=255)
     file = models.FileField(_("file"))
     status = models.SmallIntegerField(
-        _("status"), default=NOT_TRIED, editable=False, choices=STATUS_CHOICES
+        _("status"), default=0, editable=False, choices=DATA_FILE_STATUS_CHOICES
     )
 
     class Meta:

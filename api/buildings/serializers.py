@@ -14,7 +14,7 @@ class BuildingSerializer(serializers.ModelSerializer):
             "lat",
             "lng",
             "address",
-            "post_code",
+            "street_number",
             "locality",
             "county",
             "year_built",
@@ -27,7 +27,7 @@ class PublicBuildingCreateSerializer(serializers.ModelSerializer):
     class Meta:
         model = Building
         fields = (
-            "post_code",
+            "street_number",
             "address",
             "county",
             "locality",
@@ -47,7 +47,7 @@ class BuildingListSerializer(serializers.ModelSerializer):
 class BuildingSearchSerializer(serializers.ModelSerializer):
     class Meta:
         model = Building
-        fields = ("general_id", "lat", "lng", "address", "post_code")
+        fields = ("general_id", "lat", "lng", "address", "street_number")
 
 
 class StatisticSerializer(serializers.ModelSerializer):

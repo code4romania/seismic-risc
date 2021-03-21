@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-03-20 12:54+0200\n"
+"POT-Creation-Date: 2021-03-21 16:06+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -231,8 +231,8 @@ msgid "address"
 msgstr "adresă"
 
 #: buildings/models.py:76
-msgid "post code"
-msgstr "cod poștal"
+msgid "street number"
+msgstr "număr stradal"
 
 #: buildings/models.py:77
 msgid "locality"
@@ -433,6 +433,9 @@ msgstr "Engleză"
 #: seismic_site/settings.py:126
 msgid "Romanian"
 msgstr "Română"
+
+#~ msgid "post code"
+#~ msgstr "cod poștal"
 
 #~ msgid "Import selected files"
 #~ msgstr "Importă fișierele selectate"
