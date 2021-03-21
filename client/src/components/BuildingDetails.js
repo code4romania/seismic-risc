@@ -29,9 +29,9 @@ export default function BuildingDetails(props) {
             </Col>
             <Col lg={9} span={11}>
               {details.address && `${details.address} `}
-              {details.post_code && (
+              {details.street_number && (
                 <>
-                  <Trans>no.</Trans> {details.post_code}
+                  <Trans>no.</Trans> {details.street_number}
                 </>
               )}
             </Col>

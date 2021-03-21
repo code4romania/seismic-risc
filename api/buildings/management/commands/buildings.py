@@ -60,7 +60,9 @@ class Command(BaseCommand):
                         "Sibiu",
                     ]
                 )
-                post_code = random.choice(["020244", "905600"])
+                street_number = random.choice(
+                    ["1", "3", "4", "23", "77T", "179", "23a"]
+                )
                 locality = random.choice(["1", "2", "3", "4", "5", "6"])
                 status = random.choice(["-1", "0", "1"])
                 certified_expert = fake.first_name() + " " + fake.last_name()
@@ -74,7 +76,7 @@ class Command(BaseCommand):
                     address=address,
                     risk_category=risk_category,
                     county=county,
-                    post_code=post_code,
+                    street_number=street_number,
                     locality=locality,
                     status=status,
                     certified_expert=certified_expert,
