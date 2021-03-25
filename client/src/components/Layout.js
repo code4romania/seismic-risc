@@ -9,6 +9,7 @@ const { Footer, Content } = Layout;
 export default ({ children }) => (
   <div className="App">
     <Layout style={{ background: 'none' }}>
+      <div className="navbar" />
       <Header />
       <Content>{children}</Content>
       <Footer />

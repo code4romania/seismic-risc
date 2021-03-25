@@ -1,0 +1,12 @@
+.App > .ant-layout > .ant-layout-content {
+  margin: 0 auto;
+  padding: 0 $gutter;
+  max-width: 1200px;
+  width: 100%;
+}
+
+.navbar {
+  @media (max-width: $breakpoint-tablet) {
+    height: $header-height;
+  }
+}

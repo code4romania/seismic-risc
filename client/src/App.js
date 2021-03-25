@@ -48,6 +48,10 @@ const App = () => {
           <Route path="/politica-de-confidentialitate">
             <Policy />
           </Route>
+          <Route path="/adauga-cladire">
+            {/* TODO: add container */}
+            <div>Add a building</div>
+          </Route>
           <Route component={NotFound} />
         </Switch>
         <Footer />
