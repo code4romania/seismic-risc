@@ -83,9 +83,6 @@
   height: $header-height;
   padding: 0;
   & > div {
-    max-width: $container-width;
-    margin: 0 auto;
-    padding: 0 $gutter;
     display: flex;
     align-items: center;
 
