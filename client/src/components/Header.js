@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { Button, Dropdown, Layout, Menu } from 'antd';
-import { DownOutlined, GlobalOutlined, MenuOutlined } from '@ant-design/icons';
+import { DownOutlined, GlobalOutlined, MenuOutlined, PlusCircleFilled } from '@ant-design/icons';
 import { Trans } from '@lingui/macro';
 import logo from '../logo.svg';
 
@@ -51,44 +51,59 @@ export default () => {
   }, []);
 
   return (
-    <Header className={showMenu ? 'overlay' : ''}>
-      <div className="App-logo">
-        <Link to="/">
-          <img src={logo} alt="Seismic Risc logo" />
-        </Link>
-      </div>
-      <ul className={`App-menu ${showMenu ? 'show' : ''}`}>
-        <li>
-          <NavLink to="/despre" exact activeClassName="active">
-            <Trans>About</Trans>
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/ghid" activeClassName="active">
-            <Trans>Guide</Trans>
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/blog" activeClassName="active">
-            Blog
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="/contact" activeClassName="active">
-            <Trans>Contact us</Trans>
-          </NavLink>
-        </li>
-      </ul>
-      <Dropdown overlay={() => languageMenu(langText, handleLanguageBtnClick)} trigger={['click']}>
-        <Button>
-          <GlobalOutlined />
-          <DownOutlined />
-        </Button>
-      </Dropdown>
-      <Button className="App-menu-button" onClick={handleMenuClick}>
-        <MenuOutlined />
-      </Button>
-      <div className={`overlay ${showMenu ? 'show' : ''}`} onClick={handleMenuClick} />
-    </Header>
+    <div className="navbar">
+      <Header className={showMenu ? 'overlay' : ''}>
+        <div className="container">
+          <div className="App-logo">
+            <Link to="/">
+              <img src={logo} alt="Seismic Risc logo" />
+            </Link>
+          </div>
+          <ul className={`App-menu ${showMenu ? 'show' : ''}`}>
+            <li>
+              <NavLink className="menu-item" to="/despre" exact activeClassName="active">
+                <Trans>About</Trans>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="menu-item" to="/ghid" activeClassName="active">
+                <Trans>Guide</Trans>
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="menu-item" to="/blog" activeClassName="active">
+                Blog
+              </NavLink>
+            </li>
+            <li>
+              <NavLink className="menu-item" to="/contact" activeClassName="active">
+                <Trans>Contact us</Trans>
+              </NavLink>
+            </li>
+            <li>
+              <Button className="add-building" type="primary" href="/adauga-cladire">
+                <PlusCircleFilled />
+                <span>
+                  <Trans>Add a building</Trans>
+                </span>
+              </Button>
+            </li>
+          </ul>
+          <Dropdown
+            overlay={() => languageMenu(langText, handleLanguageBtnClick)}
+            trigger={['click']}
+          >
+            <Button>
+              <GlobalOutlined />
+              <DownOutlined />
+            </Button>
+          </Dropdown>
+          <Button className="App-menu-button" onClick={handleMenuClick}>
+            <MenuOutlined />
+          </Button>
+          <div className={`overlay ${showMenu ? 'show' : ''}`} onClick={handleMenuClick} />
+        </div>
+      </Header>
+    </div>
   );
 };

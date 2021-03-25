@@ -1,0 +1,13 @@
+.container {
+  margin: 0 auto;
+  padding: 0 $gutter;
+  max-width: $container-width;
+}
+
+.App > .ant-layout > .ant-layout-content {
+  width: 100%;
+}
+
+.navbar {
+    height: $header-height;
+}

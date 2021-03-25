@@ -5,7 +5,7 @@
 }
 
 .languageChangeButton,
-.App-menu > li > a {
+.App-menu .menu-item {
   cursor: pointer;
   transition: color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
   &:hover,
@@ -16,6 +16,12 @@
 
 .App-logo {
   margin-right: auto;
+
+  a {
+    display: inline-flex;
+    height: $header-height;
+    align-items: center;
+  }
 }
 
 .App-menu {
@@ -23,6 +29,12 @@
   text-align: center;
   display: flex;
   margin-bottom: 0;
+  margin-right: 1rem;
+  padding-left: 0;
+
+  @media (max-width: $breakpoint-desktop){
+    margin-right: 0.8rem;
+  }
 
   @media (max-width: $breakpoint-tablet) {
     background-color: #fff;
@@ -43,26 +55,24 @@
     }
   }
 
-  li > a {
-    color: unset !important;
+  .menu-item {
+    color: unset;
     display: inline-block;
-    padding: 0 1.5rem;
+    padding: 0 15px;
     width: 100%;
 
     &.active {
       color: $primary-color !important;
     }
 
-    @media (min-width: $breakpoint-tablet) {
-      border-bottom: 2px solid transparent;
-      transition: border-color 0.3s cubic-bezier(0.645, 0.045, 0.355, 1);
-      &:hover {
-        border-bottom: 2px solid $primary-color;
-      }
-      &.active {
-        border-bottom: 2px solid $primary-color;
-      }
+    @media (max-width: $breakpoint-desktop) {
+      padding: 0 0.8rem;
     }
+  }
+
+  a.add-building {
+    color: #fff;
+    padding-top: 0px;
   }
 }
 
@@ -70,11 +80,20 @@
   background-color: #fff;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
   box-shadow: 0 0 3px rgba(0, 0, 0, 0.1);
-  display: flex;
-  align-items: center;
+  height: $header-height;
+  padding: 0;
+  & > div {
+    display: flex;
+    align-items: center;
+
+    & > .ant-btn.ant-dropdown-trigger {
+      padding: 0 10px;
+    }
+
+  }
+
   @media (max-width: $breakpoint-tablet) {
     position: fixed;
-    left: 0;
     width: 100%;
     z-index: 5;
     & div.overlay {
@@ -95,16 +114,10 @@
 }
 
 .App-menu-button {
-  margin-left: 1rem;
+  margin-left: 0.8rem;
   display: none;
 
   @media (max-width: $breakpoint-tablet) {
     display: initial;
-  }
-}
-
-.ant-layout-content {
-  @media (max-width: $breakpoint-tablet) {
-    margin-top: $header-height;
   }
 }

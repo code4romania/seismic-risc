@@ -10,7 +10,7 @@ export default ({ children }) => (
   <div className="App">
     <Layout style={{ background: 'none' }}>
       <Header />
-      <Content>{children}</Content>
+      <Content className="container">{children}</Content>
       <Footer />
     </Layout>
   </div>
