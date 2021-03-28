@@ -9,7 +9,7 @@ describe('BlogItem component', () => {
     title: 'Title',
     image: 'image-url',
     preview_text: 'Lorem ipsum dolor sit amet consectetur adipisicing elit',
-    created: new Date(0),
+    published: new Date(0),
     author_first_name: 'First',
     author_last_name: 'Last',
   };

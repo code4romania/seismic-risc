@@ -22,7 +22,7 @@ const Blog = () => {
 
   const loadPosts = useCallback(async () => {
     try {
-      const res = await fetch(`${POSTS_URL}/?ordering=-created`);
+      const res = await fetch(`${POSTS_URL}/?ordering=-published`);
       if (res.ok) {
         const posts = await res.json();
         setState((prevState) => {

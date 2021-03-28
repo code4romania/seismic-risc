@@ -1,27 +1,6 @@
 .blog-wrapper {
   min-height: 65vh;
-  padding: 32px;
-  width: 65%;
-  margin: auto;
-
-  @media (max-width: 1199px) {
-    padding: 24px;
-    width: 80%;
-  }
-
-  @media (max-width: $breakpoint-desktop) {
-    padding: 24px;
-    width: 90%;
-  }
-
-  @media (max-width: $breakpoint-tablet) {
-    padding: 16px;
-    width: 100%;
-  }
-
-  @media (max-width: $breakpoint-mobile) {
-    padding: 8px;
-  }
+  padding: 32px 0;
 }
 
 .blog-wrapper.loaded {
@@ -62,13 +41,24 @@
   font-family: 'Titillium Web', sans-serif;
   height: 200px;
   margin-bottom: 4rem;
+  cursor: pointer;
+
+  &:hover {
+    background-color: #fafafa;
+  }
 
   .blog-image{
     height: 100%;
+    padding-right: $gutter;
     img {
       height: 100%;
       width: 100%;
       object-fit: cover;
+    }
+
+    @media (max-width: $breakpoint-tablet){
+      padding-right: 0;
+      padding-bottom: $gutter;
     }
   }
 
