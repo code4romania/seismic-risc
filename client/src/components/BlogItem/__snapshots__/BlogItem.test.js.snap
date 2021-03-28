@@ -37,7 +37,6 @@ exports[`BlogItem component should be translated correctly in English 1`] = `
             class="ant-typography"
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit
-            ...
           </div>
         </div>
       </div>
@@ -83,7 +82,6 @@ exports[`BlogItem component should be translated correctly in Romanian 1`] = `
             class="ant-typography"
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit
-            ...
           </div>
         </div>
       </div>

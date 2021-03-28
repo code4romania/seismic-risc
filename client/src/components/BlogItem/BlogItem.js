@@ -25,7 +25,7 @@ const BlogItem = ({ postDetails }) => {
               Published by {authorFullName} • {new Date(published).toLocaleDateString()}
             </Trans>
           </Text>
-          <Paragraph>{previewText}...</Paragraph>
+          <Paragraph>{previewText}</Paragraph>
         </Col>
       </Row>
     </Link>
