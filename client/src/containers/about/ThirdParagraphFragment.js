@@ -6,12 +6,8 @@ const { Paragraph } = Typography;
 
 export default () => {
   return (
-    <Row
-      type="flex"
-      justify="space-around"
-      style={{ margin: '1rem', textAlign: 'left', marginBottom: '6rem' }}
-    >
-      <Col sm={24} md={22}>
+    <Row type="flex" justify="space-around" style={{ textAlign: 'left', marginBottom: '6rem' }}>
+      <Col span={24}>
         <Paragraph>
           <Trans>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor

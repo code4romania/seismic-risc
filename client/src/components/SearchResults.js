@@ -1,7 +1,6 @@
 import React from 'react';
 import { Col, Icon, Row, Typography } from 'antd';
 import { Trans } from '@lingui/macro';
-import './searchResults.css';
 
 import { useGlobalContext } from '../context';
 
