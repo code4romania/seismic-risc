@@ -8,7 +8,7 @@ const { Paragraph } = Typography;
 export default () => {
   return (
     <Row type="flex" justify="space-around" className="aboutTextBox">
-      <Col sm={24} md={12} className="aboutTextBoxCol">
+      <Col sm={24} md={20} className="aboutTextBoxCol">
         <Paragraph className="aboutTextBox-paragraph">
           <Trans>
             #NumeProiect este proiectat de Code for Romania în Civic Labs și dezvoltat pro-bono de
@@ -17,7 +17,7 @@ export default () => {
           </Trans>
         </Paragraph>
       </Col>
-      <Col sm={24} md={12}>
+      <Col sm={24} md={4}>
         <img src={Tfsg} alt="Tech For Social Good" />
       </Col>
     </Row>

@@ -9,14 +9,14 @@ const { Paragraph } = Typography;
 
 export default () => {
   return (
-    <Row type="flex" justify="space-around" style={{ margin: '1rem', textAlign: 'left' }}>
-      <Col sm={20} md={12} className="about-authors-col">
+    <Row type="flex" justify="space-around" style={{ textAlign: 'left' }}>
+      <Col sm={24} md={12} className="about-authors-col">
         <Paragraph style={{ padding: '1.5rem' }}>
           <Trans>Proiect realizat de</Trans>
         </Paragraph>
         <img src={MAME1} alt="Make it better" width="186.36" height="80" />
       </Col>
-      <Col sm={20} md={12} className="about-authors-col">
+      <Col sm={24} md={12} className="about-authors-col">
         <Paragraph style={{ padding: '1.5rem' }}>
           <Trans>Proiectat de</Trans>
         </Paragraph>
