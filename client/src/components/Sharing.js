@@ -8,7 +8,7 @@ import telegramLogo from '../images/telegram.svg';
 function Sharing() {
   return (
     <div className="sharing">
-      <Trans> Distribuie pe:</Trans>
+      <Trans>Share:</Trans>
       <a
         target="_blank"
         rel="noreferrer"

@@ -9,14 +9,7 @@ export default () => {
     <Row type="flex" justify="space-around" style={{ textAlign: 'left' }}>
       <Col span={24}>
         <Paragraph>
-          <Trans>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            incididunt ut labore et dolore magna aliqua. Pellentesque nec nam aliquam sem et tortor
-            consequat id. Varius morbi enim nunc faucibus a pellentesque sit amet porttitor. Diam
-            donec adipiscing tristique risus nec feugiat in. Purus in mollis nunc sed id semper.
-            Adipiscing at in tellus integer feugiat scelerisque. Vitae nunc sed velit dignissim
-            sodales ut eu sem. Lacus viverra vitae congue eu consequat.
-          </Trans>
+          <Trans id="about.third_paragraph" />
         </Paragraph>
       </Col>
     </Row>

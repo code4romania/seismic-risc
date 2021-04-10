@@ -1,14 +1,4 @@
 {
-  "#NumeProiect este proiectat de Code for Romania în Civic Labs și dezvoltat pro-bono de către voluntarii organizației noastre. Acest proiect nu are nicio altă sursă de finanțare și este administrat în întregime din donațiile voastre.": {
-    "translation": "#NumeProiect este proiectat de Code for Romania în Civic Labs și dezvoltat pro-bono de către voluntarii organizației noastre. Acest proiect nu are nicio altă sursă de finanțare și este administrat în întregime din donațiile voastre.",
-    "origin": [
-      [
-        "containers/about/TextBoxFragment.js",
-        13
-      ]
-    ],
-    "extractedComments": []
-  },
   "404.contact_message": {
     "translation": "If you encounter other issues, please send us an e-mail at ",
     "origin": [
@@ -43,7 +33,7 @@
     "origin": [
       [
         "components/Header.js",
-        63
+        65
       ]
     ],
     "extractedComments": []
@@ -62,6 +52,10 @@
       [
         "components/Footer.js",
         51
+      ],
+      [
+        "containers/about/TitleFragment.js",
+        10
       ]
     ],
     "extractedComments": []
@@ -71,6 +65,10 @@
       [
         "components/Footer.js",
         58
+      ],
+      [
+        "components/Header.js",
+        87
       ]
     ],
     "extractedComments": []
@@ -79,7 +77,7 @@
     "origin": [
       [
         "components/BuildingDetails.js",
-        32
+        28
       ]
     ],
     "extractedComments": []
@@ -103,15 +101,14 @@
     "extractedComments": []
   },
   "Blog": {
-    "translation": "Blog",
     "origin": [
       [
         "containers/home/BlogPreviewFragment.js",
-        56
+        60
       ],
       [
         "containers/home/BlogPreviewFragment.js",
-        77
+        85
       ]
     ],
     "extractedComments": []
@@ -120,7 +117,7 @@
     "origin": [
       [
         "components/BuildingDetails.js",
-        24
+        17
       ]
     ],
     "extractedComments": []
@@ -129,7 +126,7 @@
     "origin": [
       [
         "components/BuildingDetails.js",
-        72
+        73
       ]
     ],
     "extractedComments": []
@@ -147,7 +144,7 @@
     "origin": [
       [
         "containers/home/StatisticFragment.js",
-        51
+        56
       ]
     ],
     "extractedComments": []
@@ -156,7 +153,7 @@
     "origin": [
       [
         "components/BuildingDetails.js",
-        40
+        41
       ]
     ],
     "extractedComments": []
@@ -165,7 +162,7 @@
     "origin": [
       [
         "components/Header.js",
-        78
+        80
       ]
     ],
     "extractedComments": []
@@ -175,26 +172,6 @@
       [
         "components/SocialBar/SocialBar.js",
         87
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Despre proiect": {
-    "translation": "Despre proiect",
-    "origin": [
-      [
-        "containers/about/TitleFragment.js",
-        10
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Distribuie pe:": {
-    "translation": "Distribuie pe:",
-    "origin": [
-      [
-        "components/Sharing.js",
-        11
       ]
     ],
     "extractedComments": []
@@ -221,7 +198,7 @@
     "origin": [
       [
         "containers/home/StatisticFragment.js",
-        46
+        51
       ]
     ],
     "extractedComments": []
@@ -230,7 +207,7 @@
     "origin": [
       [
         "components/BuildingDetails.js",
-        64
+        65
       ]
     ],
     "extractedComments": []
@@ -239,7 +216,7 @@
     "origin": [
       [
         "components/Header.js",
-        68
+        70
       ]
     ],
     "extractedComments": []
@@ -248,7 +225,7 @@
     "origin": [
       [
         "components/BuildingDetails.js",
-        48
+        49
       ]
     ],
     "extractedComments": []
@@ -272,21 +249,11 @@
     ],
     "extractedComments": []
   },
-  "In the research and design program developed by Code for Romania, we focused on the non-governmental sector to identify the hotspots of civil society and to intervene with digital solutions where we can bring about change for the better. We often design solutions that digitize processes and simplify procedures and mechanics that need to be streamlined, but in many cases we come up with solutions that address the need to build completely new tools that solve problems with the support of technology.": {
-    "translation": "In the research and design program developed by Code for Romania, we focused on the non-governmental sector to identify the hotspots of civil society and to intervene with digital solutions where we can bring about change for the better. We often design solutions that digitize processes and simplify procedures and mechanics that need to be streamlined, but in many cases we come up with solutions that address the need to build completely new tools that solve problems with the support of technology.",
-    "origin": [
-      [
-        "containers/about/FirstParagraphsFragment.js",
-        12
-      ]
-    ],
-    "extractedComments": []
-  },
   "Information missing": {
     "origin": [
       [
         "components/BuildingDetails.js",
-        81
+        82
       ]
     ],
     "extractedComments": []
@@ -296,26 +263,6 @@
       [
         "components/LoadMoreArticlesLink/LoadMoreArticlesLink.js",
         7
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque nec nam aliquam sem et tortor consequat id. Varius morbi enim nunc faucibus a pellentesque sit amet porttitor. Diam donec adipiscing tristique risus nec feugiat in. Purus in mollis nunc sed id semper. Adipiscing at in tellus integer feugiat scelerisque. Vitae nunc sed velit dignissim sodales ut eu sem. Lacus viverra vitae congue eu consequat.": {
-    "translation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque nec nam aliquam sem et tortor consequat id. Varius morbi enim nunc faucibus a pellentesque sit amet porttitor. Diam donec adipiscing tristique risus nec feugiat in. Purus in mollis nunc sed id semper. Adipiscing at in tellus integer feugiat scelerisque. Vitae nunc sed velit dignissim sodales ut eu sem. Lacus viverra vitae congue eu consequat.",
-    "origin": [
-      [
-        "containers/about/SecondParagraphFragment.js",
-        12
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque nec nam aliquam sem et tortor consequat id. Varius morbi enim nunc faucibus a pellentesque sit amet porttitor. Diam donec adipiscing tristique risus nec feugiat in. Purus in mollis nunc sed id semper. Adipiscing at in tellus integer feugiat scelerisque. Vitae nunc sed velit dignissim sodales ut eu sem. Lacus viverra vitae congue eu consequat. Lacus vestibulum sed arcu non odio euismod lacinia at. Tincidunt nunc pulvinar sapien et ligula ullamcorper. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. Fermentum et sollicitudin ac orci phasellus egestas tellus rutrum. Nam libero justo laoreet sit amet cursus. Augue ut lectus arcu bibendum at varius. Duis at tellus at urna condimentum. Ornare suspendisse sed nisi lacus sed viverra tellus in hac. Varius quam quisque id diam vel quam elementum. Malesuada bibendum arcu vitae elementum curabitur vitae nunc. Viverra maecenas accumsan lacus vel.": {
-    "translation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque nec nam aliquam sem et tortor consequat id. Varius morbi enim nunc faucibus a pellentesque sit amet porttitor. Diam donec adipiscing tristique risus nec feugiat in. Purus in mollis nunc sed id semper. Adipiscing at in tellus integer feugiat scelerisque. Vitae nunc sed velit dignissim sodales ut eu sem. Lacus viverra vitae congue eu consequat. Lacus vestibulum sed arcu non odio euismod lacinia at. Tincidunt nunc pulvinar sapien et ligula ullamcorper. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. Fermentum et sollicitudin ac orci phasellus egestas tellus rutrum. Nam libero justo laoreet sit amet cursus. Augue ut lectus arcu bibendum at varius. Duis at tellus at urna condimentum. Ornare suspendisse sed nisi lacus sed viverra tellus in hac. Varius quam quisque id diam vel quam elementum. Malesuada bibendum arcu vitae elementum curabitur vitae nunc. Viverra maecenas accumsan lacus vel.",
-    "origin": [
-      [
-        "containers/about/ThirdParagraphFragment.js",
-        16
       ]
     ],
     "extractedComments": []
@@ -360,7 +307,7 @@
     "origin": [
       [
         "containers/home/StatisticFragment.js",
-        41
+        46
       ]
     ],
     "extractedComments": []
@@ -415,7 +362,7 @@
     "origin": [
       [
         "components/BlogItem/BlogItem.js",
-        23
+        24
       ],
       [
         "containers/blog-post/BlogPostDetailsFragment/BlogPostDetailsFragment.js",
@@ -424,20 +371,11 @@
     ],
     "extractedComments": []
   },
-  "Read more": {
-    "origin": [
-      [
-        "components/BlogItem/BlogItem.js",
-        29
-      ]
-    ],
-    "extractedComments": []
-  },
   "Risk category": {
     "origin": [
       [
         "components/BuildingDetails.js",
-        56
+        57
       ]
     ],
     "extractedComments": []
@@ -446,7 +384,7 @@
     "origin": [
       [
         "components/SearchResults.js",
-        28
+        21
       ]
     ],
     "extractedComments": []
@@ -459,7 +397,16 @@
       ],
       [
         "containers/home/BlogPreviewFragment.js",
-        63
+        67
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Share:": {
+    "origin": [
+      [
+        "components/Sharing.js",
+        11
       ]
     ],
     "extractedComments": []
@@ -473,32 +420,61 @@
     ],
     "extractedComments": []
   },
-  "The solution you are using right now is a platform that responds to the need to increase the the representativeness of non-profit organizations, through clear and transparent selection mechanisms that carry out the sector's missions in decision-making forums. VotONG is, therefore, the necessary piece of infrastructure for the self-regulation of the NGO sector in Romania, which in time, through the active participation of organizations, will lead to an efficient communication and consultation between all actors in the field. That is why we invite you to join us in this endeavor because together we can trigger the positive changes we want for the Romanian society. Together we are invincible. Both us and our beneficiaries. Romania.": {
-    "translation": "The solution you are using right now is a platform that responds to the need to increase the the representativeness of non-profit organizations, through clear and transparent selection mechanisms that carry out the sector's missions in decision-making forums. VotONG is, therefore, the necessary piece of infrastructure for the self-regulation of the NGO sector in Romania, which in time, through the active participation of organizations, will lead to an efficient communication and consultation between all actors in the field. That is why we invite you to join us in this endeavor because together we can trigger the positive changes we want for the Romanian society. Together we are invincible. Both us and our beneficiaries. Romania.",
+  "about.first_paragraph": {
+    "translation": "In the research and design program developed by Code for Romania, we focused on the non-governmental sector to identify the hotspots of civil society and to intervene with digital solutions where we can bring about change for the better. We often design solutions that digitize processes and simplify procedures and mechanics that need to be streamlined, but in many cases we come up with solutions that address the need to build completely new tools that solve problems with the support of technology.",
     "origin": [
       [
         "containers/about/FirstParagraphsFragment.js",
-        22
+        12
       ]
     ],
     "extractedComments": []
   },
-  "Total surface": {
+  "about.last_paragraph": {
+    "translation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque nec nam aliquam sem et tortor consequat id. Varius morbi enim nunc faucibus a pellentesque sit amet porttitor. Diam donec adipiscing tristique risus nec feugiat in. Purus in mollis nunc sed id semper. Adipiscing at in tellus integer feugiat scelerisque. Vitae nunc sed velit dignissim sodales ut eu sem. Lacus viverra vitae congue eu consequat. Lacus vestibulum sed arcu non odio euismod lacinia at. Tincidunt nunc pulvinar sapien et ligula ullamcorper. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. Fermentum et sollicitudin ac orci phasellus egestas tellus rutrum. Nam libero justo laoreet sit amet cursus. Augue ut lectus arcu bibendum at varius. Duis at tellus at urna condimentum. Ornare suspendisse sed nisi lacus sed viverra tellus in hac. Varius quam quisque id diam vel quam elementum. Malesuada bibendum arcu vitae elementum curabitur vitae nunc. Viverra maecenas accumsan lacus vel.",
     "origin": [
       [
-        "components/BuildingDetails.js",
-        43
+        "containers/about/ThirdParagraphFragment.js",
+        12
       ]
     ],
-    "extractedComments": [],
-    "obsolete": true
+    "extractedComments": []
+  },
+  "about.project_details": {
+    "translation": "Seismic Risk is designed by Code for Romania in Civic Labs and developed pro bono by our organization's volunteers. This project does not have any other source of funding and is being managed entirely from your donations.",
+    "origin": [
+      [
+        "containers/about/TextBoxFragment.js",
+        13
+      ]
+    ],
+    "extractedComments": []
+  },
+  "about.second_paragraph": {
+    "translation": "The solution you are using right now is a platform that responds to the need to increase the the representativeness of non-profit organizations, through clear and transparent selection mechanisms that carry out the sector's missions in decision-making forums. VotONG is, therefore, the necessary piece of infrastructure for the self-regulation of the NGO sector in Romania, which in time, through the active participation of organizations, will lead to an efficient communication and consultation between all actors in the field. That is why we invite you to join us in this endeavor because together we can trigger the positive changes we want for the Romanian society. Together we are invincible. Both us and our beneficiaries. Romania.",
+    "origin": [
+      [
+        "containers/about/FirstParagraphsFragment.js",
+        15
+      ]
+    ],
+    "extractedComments": []
+  },
+  "about.third_paragraph": {
+    "translation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque nec nam aliquam sem et tortor consequat id. Varius morbi enim nunc faucibus a pellentesque sit amet porttitor. Diam donec adipiscing tristique risus nec feugiat in. Purus in mollis nunc sed id semper. Adipiscing at in tellus integer feugiat scelerisque. Vitae nunc sed velit dignissim sodales ut eu sem. Lacus viverra vitae congue eu consequat.",
+    "origin": [
+      [
+        "containers/about/SecondParagraphFragment.js",
+        12
+      ]
+    ],
+    "extractedComments": []
   },
   "no.": {
-    "translation": "no.",
     "origin": [
       [
         "components/BuildingDetails.js",
-        35
+        34
       ]
     ],
     "extractedComments": []
