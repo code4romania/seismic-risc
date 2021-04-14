@@ -4,9 +4,9 @@
 #
 #    pip-compile --output-file=requirements.txt requirements.in
 #
-boto3==1.17.32
+boto3==1.17.48
     # via -r requirements.in
-botocore==1.20.32
+botocore==1.20.48
     # via
     #   boto3
     #   s3transfer
@@ -38,7 +38,7 @@ django-taggit==1.3.0
     # via
     #   -r requirements.in
     #   django-taggit-serializer
-django==2.2.19
+django==2.2.20
     # via
     #   -r requirements.in
     #   django-cors-headers
@@ -46,11 +46,11 @@ django==2.2.19
     #   django-storages
     #   django-taggit
     #   djangorestframework
-djangorestframework==3.12.2
+djangorestframework==3.12.4
     # via -r requirements.in
 et-xmlfile==1.0.1
     # via openpyxl
-gunicorn==20.0.4
+gunicorn==20.1.0
     # via -r requirements.in
 jmespath==0.10.0
     # via
@@ -62,7 +62,7 @@ odfpy==1.4.1
     # via tablib
 openpyxl==3.0.7
     # via tablib
-pillow==8.1.2
+pillow==8.2.0
     # via -r requirements.in
 psycopg2==2.8.6
     # via -r requirements.in
