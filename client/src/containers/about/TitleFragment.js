@@ -7,7 +7,7 @@ export default () => {
     <Row type="flex" justify="space-around" style={{ textAlign: 'left' }}>
       <Col span={24}>
         <h1 className="aboutTitle">
-          <Trans>Despre proiect</Trans>
+          <Trans>About the project</Trans>
         </h1>
       </Col>
     </Row>
