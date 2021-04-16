@@ -73,6 +73,14 @@
       [
         "components/Header.js",
         87
+      ],
+      [
+        "containers/add-building/FormFragment.js",
+        164
+      ],
+      [
+        "containers/add-building/index.js",
+        13
       ]
     ],
     "extractedComments": []
@@ -127,6 +135,10 @@
       [
         "components/BuildingDetails.js",
         17
+      ],
+      [
+        "containers/add-building/FormFragment.js",
+        107
       ]
     ],
     "extractedComments": []
@@ -177,6 +189,16 @@
       [
         "components/Header.js",
         80
+      ]
+    ],
+    "extractedComments": []
+  },
+  "County": {
+    "translation": "Județ",
+    "origin": [
+      [
+        "containers/add-building/FormFragment.js",
+        133
       ]
     ],
     "extractedComments": []
@@ -247,6 +269,10 @@
       [
         "components/BuildingDetails.js",
         49
+      ],
+      [
+        "containers/add-building/FormFragment.js",
+        141
       ]
     ],
     "extractedComments": []
@@ -271,6 +297,16 @@
     ],
     "extractedComments": []
   },
+  "In the meantime, keep being awesome!": {
+    "translation": "Între timp, continuă să fii minunat!",
+    "origin": [
+      [
+        "containers/thankyou/index.js",
+        22
+      ]
+    ],
+    "extractedComments": []
+  },
   "Information missing": {
     "translation": "Fără informații",
     "origin": [
@@ -287,6 +323,16 @@
       [
         "components/LoadMoreArticlesLink/LoadMoreArticlesLink.js",
         7
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Locality": {
+    "translation": "Localitate/Sector",
+    "origin": [
+      [
+        "containers/add-building/FormFragment.js",
+        125
       ]
     ],
     "extractedComments": []
@@ -409,6 +455,10 @@
       [
         "components/BuildingDetails.js",
         57
+      ],
+      [
+        "containers/add-building/FormFragment.js",
+        149
       ]
     ],
     "extractedComments": []
@@ -426,6 +476,10 @@
   "Server unavailable": {
     "translation": "Server indisponibil",
     "origin": [
+      [
+        "containers/add-building/FormFragment.js",
+        93
+      ],
       [
         "containers/blog/Blog.js",
         72
@@ -447,12 +501,42 @@
     ],
     "extractedComments": []
   },
+  "Street": {
+    "translation": "Strada",
+    "origin": [
+      [
+        "containers/add-building/FormFragment.js",
+        109
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Street number": {
+    "translation": "Număr stradă",
+    "origin": [
+      [
+        "containers/add-building/FormFragment.js",
+        117
+      ]
+    ],
+    "extractedComments": []
+  },
   "Terms & conditions": {
     "translation": "Termeni şi condiţii",
     "origin": [
       [
         "components/Footer.js",
         72
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Thank you!": {
+    "translation": "Îți mulțumim!",
+    "origin": [
+      [
+        "containers/thankyou/index.js",
+        12
       ]
     ],
     "extractedComments": []
@@ -513,6 +597,17 @@
       [
         "components/BuildingDetails.js",
         34
+      ]
+    ],
+    "extractedComments": []
+  },
+  "thank-you-message": {
+    "translation": "Îți mulțumim pentru informațiile pe care ni le-ai transmis. În zilele următoare cineva din echipa noastră va evalua informațiile transmise către noi și, de îndată ce avem toate datele necesare pentru a adăuga clădirea pe hartă, te vom anunța.",
+    "message": "Thank you for the information that you sent us. In the following days someone from our team will evaluate the information sent to us and, as soon as we will have all the necessary data to add the building on the map, we will notify you.",
+    "origin": [
+      [
+        "containers/thankyou/index.js",
+        15
       ]
     ],
     "extractedComments": []

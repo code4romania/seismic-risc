@@ -1,0 +1,171 @@
+import React, { useState, useEffect } from 'react';
+import { Button, Form, Input, Select, Spin, Typography } from 'antd';
+import { Trans } from '@lingui/macro';
+import { Redirect } from 'react-router-dom';
+import PinDrop from '../../images/pin_drop.svg';
+
+import config from '../../config';
+
+const { Title } = Typography;
+
+const { BUILDINGS_URL } = config;
+
+const layout = {
+  labelCol: { sm: { span: 24 }, md: { span: 6 }, lg: { span: 4 } },
+  wrapperCol: { sm: { span: 24 }, md: { span: 10 }, lg: { span: 10 } },
+};
+
+const { Option } = Select;
+
+const FormFragment = ({ form }) => {
+  const [state, setState] = useState({
+    riskCategories: [],
+    requestError: false,
+    loading: true,
+    finished: false,
+  });
+
+  const { getFieldDecorator } = form;
+
+  const onFinish = (e) => {
+    e.preventDefault();
+    form.validateFields(async (err, values) => {
+      if (!err) {
+        try {
+          const res = await fetch(`${BUILDINGS_URL}/public_create/`, {
+            method: 'POST',
+            headers: { 'Content-type': 'application/json' },
+            body: JSON.stringify(values),
+          });
+          if (res.ok) {
+            if (res.status === 201) {
+              setState((prevState) => ({
+                ...prevState,
+                finished: true,
+              }));
+            }
+          } else {
+            throw new Error(res.statusText);
+          }
+        } catch (error) {
+          setState((prevState) => ({ ...prevState, loading: false, requestError: true }));
+        }
+      }
+    });
+  };
+
+  useEffect(() => {
+    const getRiskCategories = async () => {
+      try {
+        const res = await fetch(`${BUILDINGS_URL}/public_create/`, { method: 'OPTIONS' });
+        if (res.ok) {
+          const posts = await res.json();
+          const { choices } = posts.actions.POST.risk_category;
+          setState((prevState) => ({
+            ...prevState,
+            requestError: false,
+            riskCategories: choices,
+            loading: false,
+          }));
+        } else {
+          throw new Error(res.statusText);
+        }
+      } catch (err) {
+        setState((prevState) => ({ ...prevState, loading: false, requestError: true }));
+      }
+    };
+
+    getRiskCategories();
+  }, []);
+
+  if (state.loading) {
+    return (
+      <div className="form-loading">
+        <Spin size="large" />
+      </div>
+    );
+  }
+
+  if (state.requestError) {
+    return (
+      <div className="form-loading">
+        <Title level={3}>
+          <Trans>Server unavailable</Trans>
+        </Title>
+      </div>
+    );
+  }
+
+  if (state.finished) {
+    return <Redirect push to="/multumim" />;
+  }
+
+  return (
+    <Form labelAlign="left" {...layout} onSubmit={onFinish}>
+      <Title level={3} underline>
+        <img src={PinDrop} alt="" height="20px" />
+        <Trans>Building Info</Trans>
+      </Title>
+      <Form.Item label={<Trans>Street</Trans>}>
+        {getFieldDecorator('address', {
+          rules: [
+            { required: true, message: 'Cannot be left empty!' },
+            { max: 250, message: 'Field cannot exceed a maximum of 250 characters!' },
+          ],
+        })(<Input disabled={state.requestError} />)}
+      </Form.Item>
+      <Form.Item label={<Trans>Street number</Trans>}>
+        {getFieldDecorator('street_number', {
+          rules: [
+            { required: true, message: 'Cannot be left empty!' },
+            { max: 100, message: 'Field cannot exceed a maximum of 100 characters!' },
+          ],
+        })(<Input disabled={state.requestError} />)}
+      </Form.Item>
+      <Form.Item label={<Trans>Locality</Trans>}>
+        {getFieldDecorator('locality', {
+          rules: [
+            { required: true, message: 'Cannot be left empty!' },
+            { max: 20, message: 'Field cannot exceed a maximum of 20 characters!' },
+          ],
+        })(<Input disabled={state.requestError} />)}
+      </Form.Item>
+      <Form.Item label={<Trans>County</Trans>}>
+        {getFieldDecorator('county', {
+          rules: [
+            { required: true, message: 'Cannot be left empty!' },
+            { max: 60, message: 'Field cannot exceed a maximum of 60 characters!' },
+          ],
+        })(<Input disabled={state.requestError} />)}
+      </Form.Item>
+      <Form.Item label={<Trans>Height regime</Trans>}>
+        {getFieldDecorator('height_regime', {
+          rules: [
+            { required: true, message: 'Cannot be left empty!' },
+            { max: 50, message: 'Field cannot exceed a maximum of 50 characters!' },
+          ],
+        })(<Input disabled={state.requestError} />)}
+      </Form.Item>
+      <Form.Item label={<Trans>Risk category</Trans>}>
+        {getFieldDecorator('risk_category', {
+          rules: [{ required: true, message: 'Cannot be left empty!' }],
+        })(
+          <Select disabled={state.requestError}>
+            {state.riskCategories.map((category) => (
+              <Option key={category.value} value={category.value}>
+                {category.display_name}
+              </Option>
+            ))}
+          </Select>,
+        )}
+      </Form.Item>
+      <Form.Item>
+        <Button type="primary" htmlType="submit" disabled={state.requestError}>
+          <Trans>Add a building</Trans>
+        </Button>
+      </Form.Item>
+    </Form>
+  );
+};
+
+export default Form.create({ name: 'add_building' })(FormFragment);

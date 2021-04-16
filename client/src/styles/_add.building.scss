@@ -1,0 +1,31 @@
+div.add-building {
+  margin-top: 3rem;
+  text-align: left;
+
+  & > h2.ant-typography {
+    color: $primary-color;
+    font-size: 1.5rem;
+  }
+
+  & h3.ant-typography {
+    font-size: 1.25rem;
+
+    img {
+      margin-right: 1rem;
+    }
+  }
+
+  label {
+    font-size: 1rem;
+    font-weight: 600;
+  }
+
+  .ant-form-item {
+    margin-left: 2.25rem;
+  }
+
+  .form-loading {
+    text-align: center;
+    height: 300px;
+  }
+}
