@@ -76,7 +76,7 @@
       ],
       [
         "containers/add-building/FormFragment.js",
-        164
+        169
       ],
       [
         "containers/add-building/index.js",
@@ -138,7 +138,17 @@
       ],
       [
         "containers/add-building/FormFragment.js",
-        107
+        112
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Cannot be left empty!": {
+    "translation": "Câmpul nu poate fi lăsat gol!",
+    "origin": [
+      [
+        "containers/add-building/FormFragment.js",
+        20
       ]
     ],
     "extractedComments": []
@@ -198,7 +208,7 @@
     "origin": [
       [
         "containers/add-building/FormFragment.js",
-        133
+        138
       ]
     ],
     "extractedComments": []
@@ -253,6 +263,16 @@
     ],
     "extractedComments": []
   },
+  "Field cannot exceed a maximum of {maxLen} characters!": {
+    "translation": "Câmpul nu poate depăși {maxLen} de caractere!",
+    "origin": [
+      [
+        "containers/add-building/FormFragment.js",
+        22
+      ]
+    ],
+    "extractedComments": []
+  },
   "Guide": {
     "translation": "Ghid",
     "origin": [
@@ -272,7 +292,7 @@
       ],
       [
         "containers/add-building/FormFragment.js",
-        141
+        146
       ]
     ],
     "extractedComments": []
@@ -332,7 +352,7 @@
     "origin": [
       [
         "containers/add-building/FormFragment.js",
-        125
+        130
       ]
     ],
     "extractedComments": []
@@ -458,7 +478,7 @@
       ],
       [
         "containers/add-building/FormFragment.js",
-        149
+        154
       ]
     ],
     "extractedComments": []
@@ -478,7 +498,7 @@
     "origin": [
       [
         "containers/add-building/FormFragment.js",
-        93
+        98
       ],
       [
         "containers/blog/Blog.js",
@@ -506,7 +526,7 @@
     "origin": [
       [
         "containers/add-building/FormFragment.js",
-        109
+        114
       ]
     ],
     "extractedComments": []
@@ -516,7 +536,7 @@
     "origin": [
       [
         "containers/add-building/FormFragment.js",
-        117
+        122
       ]
     ],
     "extractedComments": []

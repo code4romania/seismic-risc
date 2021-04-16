@@ -17,6 +17,11 @@ const layout = {
 
 const { Option } = Select;
 
+const EmptyFieldMessage = () => <Trans>Cannot be left empty!</Trans>;
+const MaxLengthMessage = ({ maxLen }) => (
+  <Trans>Field cannot exceed a maximum of {maxLen} characters!</Trans>
+);
+
 const FormFragment = ({ form }) => {
   const [state, setState] = useState({
     riskCategories: [],
@@ -109,46 +114,46 @@ const FormFragment = ({ form }) => {
       <Form.Item label={<Trans>Street</Trans>}>
         {getFieldDecorator('address', {
           rules: [
-            { required: true, message: 'Cannot be left empty!' },
-            { max: 250, message: 'Field cannot exceed a maximum of 250 characters!' },
+            { required: true, message: <EmptyFieldMessage /> },
+            { max: 250, message: <MaxLengthMessage maxLen={250} /> },
           ],
         })(<Input disabled={state.requestError} />)}
       </Form.Item>
       <Form.Item label={<Trans>Street number</Trans>}>
         {getFieldDecorator('street_number', {
           rules: [
-            { required: true, message: 'Cannot be left empty!' },
-            { max: 100, message: 'Field cannot exceed a maximum of 100 characters!' },
+            { required: true, message: <EmptyFieldMessage /> },
+            { max: 100, message: <MaxLengthMessage maxLen={100} /> },
           ],
         })(<Input disabled={state.requestError} />)}
       </Form.Item>
       <Form.Item label={<Trans>Locality</Trans>}>
         {getFieldDecorator('locality', {
           rules: [
-            { required: true, message: 'Cannot be left empty!' },
-            { max: 20, message: 'Field cannot exceed a maximum of 20 characters!' },
+            { required: true, message: <EmptyFieldMessage /> },
+            { max: 20, message: <MaxLengthMessage maxLen={20} /> },
           ],
         })(<Input disabled={state.requestError} />)}
       </Form.Item>
       <Form.Item label={<Trans>County</Trans>}>
         {getFieldDecorator('county', {
           rules: [
-            { required: true, message: 'Cannot be left empty!' },
-            { max: 60, message: 'Field cannot exceed a maximum of 60 characters!' },
+            { required: true, message: <EmptyFieldMessage /> },
+            { max: 60, message: <MaxLengthMessage maxLen={60} /> },
           ],
         })(<Input disabled={state.requestError} />)}
       </Form.Item>
       <Form.Item label={<Trans>Height regime</Trans>}>
         {getFieldDecorator('height_regime', {
           rules: [
-            { required: true, message: 'Cannot be left empty!' },
-            { max: 50, message: 'Field cannot exceed a maximum of 50 characters!' },
+            { required: true, message: <EmptyFieldMessage /> },
+            { max: 50, message: <MaxLengthMessage maxLen={50} /> },
           ],
         })(<Input disabled={state.requestError} />)}
       </Form.Item>
       <Form.Item label={<Trans>Risk category</Trans>}>
         {getFieldDecorator('risk_category', {
-          rules: [{ required: true, message: 'Cannot be left empty!' }],
+          rules: [{ required: true, message: <EmptyFieldMessage /> }],
         })(
           <Select disabled={state.requestError}>
             {state.riskCategories.map((category) => (
