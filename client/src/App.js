@@ -13,6 +13,8 @@ import Footer from './components/Footer';
 import Terms from './containers/Terms';
 import Policy from './containers/Policy';
 import NotFound from './containers/404/404';
+import AddBuilding from './containers/add-building';
+import ThankYou from './containers/thankyou';
 
 import './styles/theme.scss';
 
@@ -49,8 +51,10 @@ const App = () => {
             <Policy />
           </Route>
           <Route path="/adauga-cladire">
-            {/* TODO: add container */}
-            <div>Add a building</div>
+            <AddBuilding />
+          </Route>
+          <Route path="/multumim">
+            <ThankYou />
           </Route>
           <Route component={NotFound} />
         </Switch>
