@@ -29,6 +29,19 @@
     ],
     "extractedComments": []
   },
+  "A project by": {
+    "origin": [
+      [
+        "components/Footer.js",
+        38
+      ],
+      [
+        "containers/about/AuthorsFragment.js",
+        15
+      ]
+    ],
+    "extractedComments": []
+  },
   "About": {
     "origin": [
       [
@@ -51,7 +64,7 @@
     "origin": [
       [
         "components/Footer.js",
-        51
+        72
       ],
       [
         "containers/about/TitleFragment.js",
@@ -64,7 +77,7 @@
     "origin": [
       [
         "components/Footer.js",
-        58
+        79
       ],
       [
         "components/Header.js",
@@ -206,11 +219,24 @@
     ],
     "extractedComments": []
   },
+  "Designed by": {
+    "origin": [
+      [
+        "components/Footer.js",
+        46
+      ],
+      [
+        "containers/about/AuthorsFragment.js",
+        21
+      ]
+    ],
+    "extractedComments": []
+  },
   "Donate": {
     "origin": [
       [
         "components/Footer.js",
-        94
+        107
       ]
     ],
     "extractedComments": []
@@ -282,12 +308,11 @@
     ],
     "extractedComments": []
   },
-  "Implementat de": {
-    "translation": "Implementat de",
+  "Implemented by": {
     "origin": [
       [
         "components/Footer.js",
-        35
+        54
       ]
     ],
     "extractedComments": []
@@ -359,7 +384,7 @@
     "origin": [
       [
         "components/Footer.js",
-        44
+        65
       ]
     ],
     "extractedComments": []
@@ -386,35 +411,7 @@
     "origin": [
       [
         "components/Footer.js",
-        65
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Proiect realizat de": {
-    "translation": "Proiect realizat de",
-    "origin": [
-      [
-        "components/Footer.js",
-        23
-      ],
-      [
-        "containers/about/AuthorsFragment.js",
-        15
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Proiectat de": {
-    "translation": "Proiectat de",
-    "origin": [
-      [
-        "components/Footer.js",
-        29
-      ],
-      [
-        "containers/about/AuthorsFragment.js",
-        21
+        86
       ]
     ],
     "extractedComments": []
@@ -502,7 +499,7 @@
     "origin": [
       [
         "components/Footer.js",
-        72
+        93
       ]
     ],
     "extractedComments": []

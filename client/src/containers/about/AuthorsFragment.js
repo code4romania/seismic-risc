@@ -12,13 +12,13 @@ export default () => {
     <Row type="flex" justify="space-around" style={{ textAlign: 'left' }}>
       <Col sm={24} md={12} className="about-authors-col">
         <Paragraph style={{ padding: '1.5rem' }}>
-          <Trans>Proiect realizat de</Trans>
+          <Trans>A project by</Trans>
         </Paragraph>
         <img src={MAME1} alt="Make it better" width="186.36" height="80" />
       </Col>
       <Col sm={24} md={12} className="about-authors-col">
         <Paragraph style={{ padding: '1.5rem' }}>
-          <Trans>Proiectat de</Trans>
+          <Trans>Designed by</Trans>
         </Paragraph>
         <img src={CfR} alt="Code for Romania" width="186.36" height="80" />
       </Col>
