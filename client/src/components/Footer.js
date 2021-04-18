@@ -3,10 +3,10 @@ import { Button, Col, Layout, Row, Typography } from 'antd';
 import { Trans } from '@lingui/macro';
 import { Link } from 'react-router-dom';
 
-import Facebook from '../images/footer_fb_icon.svg';
-import Instagram from '../images/footer_instagram_logo.svg';
-import YouTube from '../images/footer_youtube_logo.svg';
-import Github from '../images/footer_github_logo.svg';
+import { ReactComponent as Facebook } from '../images/footer_fb_icon.svg';
+import { ReactComponent as Instagram } from '../images/footer_instagram_logo.svg';
+import { ReactComponent as Twitter } from '../images/footer_twitter_logo.svg';
+import { ReactComponent as Github } from '../images/footer_github_logo.svg';
 import Mkbt from '../images/MKBT-logo-black.png';
 import CfR from '../images/footer_CfR.svg';
 import Tfsg from '../images/footer_tfsg.svg';
@@ -113,23 +113,23 @@ const FooterFragment = () => {
         </Row>
         <Row type="flex" justify="center" style={{ color: '#000' }}>
           <Col xs={6} sm={2}>
-            <a href="https://facebook.com" target="_blank" rel="noreferrer">
-              <img src={Facebook} alt="" />
+            <a href="https://www.facebook.com/code4romania" target="_blank" rel="noreferrer">
+              <Facebook style={{ height: '32px' }} />
             </a>
           </Col>
           <Col xs={6} sm={2}>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer">
-              <img src={Instagram} alt="" />
+            <a href="https://www.instagram.com/code4romania" target="_blank" rel="noreferrer">
+              <Instagram style={{ height: '32px' }} />
             </a>
           </Col>
           <Col xs={6} sm={2}>
-            <a href="https://youtube.com" target="_blank" rel="noreferrer">
-              <img src={YouTube} alt="" />
+            <a href="https://twitter.com/code4romania" target="_blank" rel="noreferrer">
+              <Twitter style={{ height: '32px' }} />
             </a>
           </Col>
           <Col xs={6} sm={2}>
-            <a href="github" target="_blank" rel="noreferrer">
-              <img src={Github} alt="" />
+            <a href="https://github.com/code4romania/seismic-risc" target="_blank" rel="noreferrer">
+              <Github style={{ height: '32px' }} />
             </a>
           </Col>
         </Row>
