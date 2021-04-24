@@ -97,9 +97,9 @@ const FooterFragment = () => {
           <Button href={`https://code4.ro/${currentLanguage}/${donateTxt}`}>
             <Text
               style={{
-                fontFamily: 'Titillium Web',
+                fontFamily: "'Titillium Web', sans-serif",
                 fontStyle: 'normal',
-                fontWeight: '600',
+                fontWeight: '700',
                 fontSize: '16px',
                 lineHeight: '50px',
               }}

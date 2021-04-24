@@ -22,6 +22,10 @@
     }
   }
 
+  .logo-col > span {
+    padding-right: $gutter;
+  }
+
   @media (max-width: $breakpoint-tablet){
     .logos-row {
       flex-direction: column;
