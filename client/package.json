@@ -13,7 +13,7 @@
     "react-dom": "^16.14.0",
     "react-pdf": "^5.1.0",
     "react-router-dom": "^5.2.0",
-    "react-scripts": "^4.0.1",
+    "react-scripts": "^4.0.3",
     "typeface-open-sans": "0.0.75",
     "typeface-titillium-web": "1.1.13",
     "typescript": "^4.1.3"
