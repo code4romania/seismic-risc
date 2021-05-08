@@ -19,16 +19,6 @@ const { Footer } = Layout;
 const FooterFragment = () => {
   const { currentLanguage } = useGlobalContext();
 
-  let donateTxt = 'donate';
-  switch (currentLanguage) {
-    case 'ro':
-      donateTxt = 'doneaza';
-      break;
-    // TODO: add translation for other languages
-    default:
-      break;
-  }
-
   return (
     <Footer className="container App-footer">
       <div className="footer-inside">
@@ -94,7 +84,7 @@ const FooterFragment = () => {
               </Text>
             </Link>
           </Col>
-          <Button href={`https://code4.ro/${currentLanguage}/${donateTxt}`}>
+          <Button href="https://code4.ro/en/donate">
             <Text
               style={{
                 fontFamily: "'Titillium Web', sans-serif",
