@@ -8,6 +8,7 @@ from django.contrib.auth import views as auth_views
 from django.urls import include, path
 from pages.views import PagesViewSet
 from rest_framework import routers
+from drf_spectacular.views import SpectacularAPIView, SpectacularRedocView, SpectacularSwaggerView
 
 admin.site.site_title = "Seismic Risk Admin"
 admin.site.site_header = "Seismic Risk Admin"
@@ -54,7 +55,8 @@ urlpatterns = (
         ),
         path("api/v1/statistics/", statistics, name="statistics"),
         path("i18n/", include("django.conf.urls.i18n")),
-        path("api/v1/", include(router.urls)),
+        path("api/v1/schema/", SpectacularAPIView.as_view(), name="schema"),
+        path("api/v1/schema/swagger-ui/", SpectacularSwaggerView.as_view(url_name="swagger-ui"), name="swagger-ui"),
         path(
             "api-auth/",
             include("rest_framework.urls", namespace="rest_framework"),

@@ -4,9 +4,11 @@
 #
 #    pip-compile --output-file=requirements.txt requirements.in
 #
-boto3==1.17.48
+attrs==20.3.0
+    # via jsonschema
+boto3==1.17.62
     # via -r requirements.in
-botocore==1.20.48
+botocore==1.20.62
     # via
     #   boto3
     #   s3transfer
@@ -34,7 +36,7 @@ django-storages==1.11.1
     # via -r requirements.in
 django-taggit-serializer==0.1.7
     # via -r requirements.in
-django-taggit==1.3.0
+django-taggit==1.4.0
     # via
     #   -r requirements.in
     #   django-taggit-serializer
@@ -46,16 +48,27 @@ django==2.2.20
     #   django-storages
     #   django-taggit
     #   djangorestframework
+    #   drf-spectacular
 djangorestframework==3.12.4
+    # via
+    #   -r requirements.in
+    #   drf-spectacular
+drf-spectacular==0.15.1
     # via -r requirements.in
-et-xmlfile==1.0.1
+et-xmlfile==1.1.0
     # via openpyxl
 gunicorn==20.1.0
     # via -r requirements.in
+importlib-metadata==4.0.1
+    # via jsonschema
+inflection==0.5.1
+    # via drf-spectacular
 jmespath==0.10.0
     # via
     #   boto3
     #   botocore
+jsonschema==3.2.0
+    # via drf-spectacular
 markuppy==1.14
     # via tablib
 odfpy==1.4.1
@@ -68,6 +81,8 @@ psycopg2==2.8.6
     # via -r requirements.in
 pycparser==2.20
     # via cffi
+pyrsistent==0.17.3
+    # via jsonschema
 python-dateutil==2.8.1
     # via botocore
 pytz==2021.1
@@ -75,13 +90,16 @@ pytz==2021.1
     #   -r requirements.in
     #   django
 pyyaml==5.4.1
-    # via tablib
-s3transfer==0.3.6
+    # via
+    #   drf-spectacular
+    #   tablib
+s3transfer==0.4.2
     # via boto3
 six==1.15.0
     # via
     #   django-configurations
     #   django-taggit-serializer
+    #   jsonschema
     #   python-dateutil
 sqlparse==0.4.1
     # via django
@@ -89,6 +107,10 @@ tablib[html,ods,xls,xlsx,yaml]==3.0.0
     # via
     #   -r requirements.in
     #   django-import-export
+typing-extensions==3.10.0.0
+    # via importlib-metadata
+uritemplate==3.0.1
+    # via drf-spectacular
 urllib3==1.26.4
     # via botocore
 whitenoise==5.2.0
@@ -97,6 +119,8 @@ xlrd==2.0.1
     # via tablib
 xlwt==1.3.0
     # via tablib
+zipp==3.4.1
+    # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools

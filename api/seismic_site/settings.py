@@ -56,6 +56,7 @@ class Base(Configuration):
         "buildings",
         "pages",
         "blog",
+        'drf_spectacular',
     ]
 
     MIDDLEWARE = [
@@ -149,7 +150,8 @@ class Base(Configuration):
         # or allow read-only access for unauthenticated users.
         "DEFAULT_PERMISSION_CLASSES": [
             "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
-        ]
+        ],
+        'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     }
 
     TRIGRAM_SIMILARITY_THRESHOLD = 0.1
@@ -192,3 +194,10 @@ class Prod(Base):
     EMAIL_HOST_PASSWORD = values.Value()
 
     DEFAULT_FROM_EMAIL = values.EmailValue(default="noreply@code4.ro")
+
+SPECTACULAR_SETTINGS = {
+    'SCHEMA_PATH_PREFIX': r'/api/v[0-9]',
+    'SWAGGER_UI_SETTINGS': {
+        'url': 'schema.yml'
+    },
+}

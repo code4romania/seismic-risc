@@ -25,3 +25,6 @@ tablib
 
 # wsgi server
 gunicorn
+
+# doc-generation
+drf-spectacular
