@@ -3,27 +3,27 @@ import { Row, Col, Card } from 'antd';
 import { Trans } from '@lingui/macro';
 
 import { ReactComponent as PeopleRisk } from '../../images/user-solid.svg';
-import { ReactComponent as EvaluatedBuildings } from '../../images/home-solid.svg';
-import { ReactComponent as ConsolidatedBuildings } from '../../images/house-damage-solid.svg';
+import { ReactComponent as EvaluatedBuildings } from '../../images/house-damage-solid.svg';
+import { ReactComponent as ConsolidatedBuildings } from '../../images/home-solid.svg';
 
 import config from '../../config';
 
 const { STATISTICS_URL } = config;
 
 const StatisticCard = ({ title, value, icon }) => (
-  <Card style={{ border: 'none', backgroundColor: '#ee741b', color: 'white' }} size="small">
+  <Card className="statistics-card" size="small">
     <Row type="flex" justify="space-between" align="middle">
       <Col span={4}>{icon}</Col>
-      <Col span={18} style={{ textAlign: 'left' }}>
+      <Col span={18}>
         {value > 0 ? (
           <>
-            <h3 style={{ color: '#fff' }}>{value}</h3>
-            <h4 style={{ color: '#fff' }}>{title}</h4>
+            <h3>{value}</h3>
+            <h4>{title}</h4>
           </>
         ) : (
           <>
-            <h3 style={{ color: '#fff' }}>{title}</h3>
-            <h4 style={{ color: '#fff' }}>
+            <h3>{title}</h3>
+            <h4>
               <Trans>Information being updated</Trans>
             </h4>
           </>
@@ -66,21 +66,21 @@ export default () => {
         <StatisticCard
           title={<Trans>People under risk</Trans>}
           value={state.statistics.people_under_risk}
-          icon={<PeopleRisk style={{ width: '38px', height: '38px' }} />}
+          icon={<PeopleRisk />}
         />
       </Col>
       <Col xs={24} md={8}>
         <StatisticCard
           title={<Trans>Evaluated buildings</Trans>}
           value={state.statistics.evaluated_buildings}
-          icon={<EvaluatedBuildings style={{ width: '38px', height: '38px' }} />}
+          icon={<EvaluatedBuildings />}
         />
       </Col>
       <Col xs={24} md={8}>
         <StatisticCard
           title={<Trans>Consolidated buildings</Trans>}
           value={state.statistics.consolidated_buildings}
-          icon={<ConsolidatedBuildings style={{ width: '38px', height: '38px' }} />}
+          icon={<ConsolidatedBuildings />}
         />
       </Col>
     </Row>

@@ -45,3 +45,21 @@ code {
 .navbar {
     height: $header-height;
 }
+
+.statistics-card {
+  border: none;
+  background-color: $primary-color;
+
+  &, & h3, & h4 {
+    color: #fff;
+  }
+
+  & h3, & h4 {
+    text-align: left;
+  }
+
+  & svg {
+    width: 38px;
+    height: 38px;
+  }
+}
