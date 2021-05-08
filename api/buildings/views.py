@@ -1,5 +1,6 @@
 from django.contrib.postgres.search import TrigramSimilarity
 from django.conf import settings
+from drf_spectacular.utils import extend_schema, OpenApiParameter, OpenApiExample
 
 from rest_framework import status, viewsets
 from rest_framework.decorators import api_view, permission_classes, action
@@ -38,6 +39,10 @@ class BuildingViewSet(viewsets.ModelViewSet):
         methods=["post"],
         permission_classes=[permissions.AllowAny],
     )
+    @extend_schema(
+        request=PublicBuildingCreateSerializer,
+        responses = {200: PublicBuildingCreateSerializer},
+    )
     def public_create(self, request):
         """
         Special action to allow the public to create a building, while
@@ -58,6 +63,11 @@ class BuildingViewSet(viewsets.ModelViewSet):
 
 @api_view(["GET"])
 @permission_classes((permissions.AllowAny,))
+@extend_schema(
+    parameters=[
+        OpenApiParameter(name='query', description='Search building by', required=True, type=str)
+    ]
+)
 def building_search(request):
     query = request.GET.get("query")
 

@@ -156,6 +156,12 @@ class Base(Configuration):
 
     TRIGRAM_SIMILARITY_THRESHOLD = 0.1
 
+    SPECTACULAR_SETTINGS = {
+        'SWAGGER_UI_SETTINGS': {
+            'url': '/api/v1/schema'
+        },
+    }
+
 
 class Dev(Base):
     DEBUG = True
@@ -194,10 +200,3 @@ class Prod(Base):
     EMAIL_HOST_PASSWORD = values.Value()
 
     DEFAULT_FROM_EMAIL = values.EmailValue(default="noreply@code4.ro")
-
-SPECTACULAR_SETTINGS = {
-    'SCHEMA_PATH_PREFIX': r'/api/v[0-9]',
-    'SWAGGER_UI_SETTINGS': {
-        'url': 'schema.yml'
-    },
-}
