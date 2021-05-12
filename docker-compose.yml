@@ -46,6 +46,7 @@ services:
     environment:
       DJANGO_CONFIGURATION:
       DATABASE_URL:
+      DEVBUILD:
 
 volumes:
   pgdata:

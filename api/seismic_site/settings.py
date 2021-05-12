@@ -56,7 +56,7 @@ class Base(Configuration):
         "buildings",
         "pages",
         "blog",
-        'drf_spectacular',
+        "drf_spectacular",
     ]
 
     MIDDLEWARE = [
@@ -151,15 +151,13 @@ class Base(Configuration):
         "DEFAULT_PERMISSION_CLASSES": [
             "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
         ],
-        'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
+        "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
     }
 
     TRIGRAM_SIMILARITY_THRESHOLD = 0.1
 
     SPECTACULAR_SETTINGS = {
-        'SWAGGER_UI_SETTINGS': {
-            'url': '/api/v1/schema'
-        },
+        "SWAGGER_UI_SETTINGS": {"url": "/api/v1/schema"},
     }
 
 
