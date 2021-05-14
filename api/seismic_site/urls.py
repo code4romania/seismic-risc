@@ -10,7 +10,6 @@ from pages.views import PagesViewSet
 from rest_framework import routers
 from drf_spectacular.views import (
     SpectacularAPIView,
-    SpectacularRedocView,
     SpectacularSwaggerView,
 )
 

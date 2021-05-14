@@ -3,7 +3,6 @@ from django.conf import settings
 from drf_spectacular.utils import (
     extend_schema,
     OpenApiParameter,
-    OpenApiExample,
 )
 
 from rest_framework import status, viewsets
