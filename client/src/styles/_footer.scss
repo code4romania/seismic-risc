@@ -1,17 +1,48 @@
 .App-footer {
-    background-color: black;
-    min-height: 350px;
-    min-width: 100%;
+    background-color: #fff;
+    width: 100%;
     position: static;
     bottom: 0;
-    
+    padding-bottom: 1.5rem;
+
   .footer-inside {
-    padding: 10px 75px 75px;
     position: relative;
     height: 100%;
   }
 
-  .ant-typography {
-    color: white !important;
+  .footer-links {
+    align-items: center;
+
+    & > a {
+      width: 15rem;
+      height: 3.5rem;
+      background-color: #7BCF95;
+      border-color: #7BCF95;
+      border-radius: 3px;
+    }
+  }
+
+  .logo-col > span {
+    padding-right: $gutter;
+  }
+
+  @media (max-width: $breakpoint-tablet){
+    .logos-row {
+      flex-direction: column;
+    }
+
+    .logo-col {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .footer-links {
+      flex-direction: column;
+      align-items: flex-start;
+
+      a {
+        width: 100%;
+      }
+    }
   }
 }

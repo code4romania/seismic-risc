@@ -1,43 +1,54 @@
 import React from 'react';
-import { Button, Row, Col, Typography } from 'antd';
+import { Button, Col, Layout, Row, Typography } from 'antd';
 import { Trans } from '@lingui/macro';
 import { Link } from 'react-router-dom';
 
-import Facebook from '../images/footer_fb_icon.svg';
-import Instagram from '../images/footer_instagram_logo.svg';
-import YouTube from '../images/footer_youtube_logo.svg';
-import Github from '../images/footer_github_logo.svg';
-import Mkbt from '../images/footer_mkbt.svg';
+import { ReactComponent as Facebook } from '../images/footer_fb_icon.svg';
+import { ReactComponent as Instagram } from '../images/footer_instagram_logo.svg';
+import { ReactComponent as Twitter } from '../images/footer_twitter_logo.svg';
+import { ReactComponent as Github } from '../images/footer_github_logo.svg';
+import Mkbt from '../images/MKBT-logo-black.png';
 import CfR from '../images/footer_CfR.svg';
 import Tfsg from '../images/footer_tfsg.svg';
 
-const { Text } = Typography;
+import { useGlobalContext } from '../context';
 
-const Footer = () => {
+const { Text } = Typography;
+const { Footer } = Layout;
+
+const FooterFragment = () => {
+  const { currentLanguage } = useGlobalContext();
+
   return (
-    <div className="App-footer">
+    <Footer className="container App-footer">
       <div className="footer-inside">
-        <Row type="flex" justify="center" gutter={[40, 20]} style={{ margin: '2rem 0rem' }}>
-          <Col>
+        <Row className="logos-row" type="flex" gutter={[0, 20]} style={{ margin: '2rem 0' }}>
+          <Col className="logo-col" sm={24} md={8}>
             <Text>
-              <Trans>Proiect realizat de </Trans>
+              <Trans>A project by </Trans>
             </Text>
-            <img src={Mkbt} alt="" height="40px" />
+            <a href={`https://mkbt.ro/?lang=${currentLanguage}`}>
+              <img src={Mkbt} alt="" height="40px" />
+            </a>
           </Col>
-          <Col>
+          <Col className="logo-col" sm={24} md={8}>
             <Text>
-              <Trans>Proiectat de </Trans>
+              <Trans>Designed by </Trans>
             </Text>
-            <img src={CfR} alt="" height="40px" />
+            <a href={`https://code4.ro/${currentLanguage}`}>
+              <img src={CfR} alt="" height="40px" />
+            </a>
           </Col>
-          <Col>
+          <Col className="logo-col" sm={24} md={8}>
             <Text>
-              <Trans>Implementat de </Trans>
+              <Trans>Implemented by </Trans>
             </Text>
-            <img src={Tfsg} alt="" height="40px" />
+            <a href={`https://tfsg.code4.ro/${currentLanguage}`}>
+              <img src={Tfsg} alt="" height="40px" />
+            </a>
           </Col>
         </Row>
-        <Row type="flex" justify="space-between" gutter={[0, 20]} style={{ alignItems: 'center' }}>
+        <Row className="footer-links" type="flex" justify="space-between" gutter={[0, 20]}>
           <Col>
             <Link to="/parteneri">
               <Text>
@@ -73,22 +84,14 @@ const Footer = () => {
               </Text>
             </Link>
           </Col>
-          <Button
-            style={{
-              width: '15rem',
-              height: '3.5rem',
-              backgroundColor: '#7BCF95',
-              borderColor: '#7BCF95',
-              radius: '3px',
-            }}
-          >
+          <Button href="https://code4.ro/en/donate">
             <Text
               style={{
-                fontFamily: 'Titillium Web',
+                fontFamily: "'Titillium Web', sans-serif",
                 fontStyle: 'normal',
-                fontWeight: '600',
+                fontWeight: '700',
                 fontSize: '16px',
-                lineHeight: '24px',
+                lineHeight: '50px',
               }}
             >
               <Trans>Donate</Trans>
@@ -98,31 +101,31 @@ const Footer = () => {
         <Row style={{ margin: '2rem 0px' }}>
           <hr />
         </Row>
-        <Row type="flex" justify="center">
-          <Col md={2}>
-            <a href="https://facebook.com" target="_blank" rel="noreferrer">
-              <img src={Facebook} alt="" />
+        <Row type="flex" justify="center" style={{ color: '#000' }}>
+          <Col xs={6} sm={2}>
+            <a href="https://www.facebook.com/code4romania" target="_blank" rel="noreferrer">
+              <Facebook style={{ height: '32px' }} />
             </a>
           </Col>
-          <Col md={2}>
-            <a href="https://instagram.com" target="_blank" rel="noreferrer">
-              <img src={Instagram} alt="" />
+          <Col xs={6} sm={2}>
+            <a href="https://www.instagram.com/code4romania" target="_blank" rel="noreferrer">
+              <Instagram style={{ height: '32px' }} />
             </a>
           </Col>
-          <Col md={2}>
-            <a href="https://youtube.com" target="_blank" rel="noreferrer">
-              <img src={YouTube} alt="" />
+          <Col xs={6} sm={2}>
+            <a href="https://twitter.com/code4romania" target="_blank" rel="noreferrer">
+              <Twitter style={{ height: '32px' }} />
             </a>
           </Col>
-          <Col md={2}>
-            <a href="github" target="_blank" rel="noreferrer">
-              <img src={Github} alt="" />
+          <Col xs={6} sm={2}>
+            <a href="https://github.com/code4romania/seismic-risc" target="_blank" rel="noreferrer">
+              <Github style={{ height: '32px' }} />
             </a>
           </Col>
         </Row>
       </div>
-    </div>
+    </Footer>
   );
 };
 
-export default Footer;
+export default FooterFragment;
