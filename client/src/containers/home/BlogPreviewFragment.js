@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Row, Col, Icon, Typography, Spin } from 'antd';
 import { Trans } from '@lingui/macro';
 import config from '../../config';
@@ -17,25 +17,32 @@ export default () => {
     loading: true,
   });
 
-  useEffect(() => {
-    fetch(`${POSTS_URL}/?ordering=-published`)
-      .then((response) => response.json())
-      .then((data) => {
-        const latestPosts = data.slice(0, LIMIT);
+  const loadPosts = useCallback(async () => {
+    try {
+      const res = await fetch(`${POSTS_URL}/?limit=${LIMIT}&ordering=-published`);
+      if (res.ok) {
+        const { results: posts } = await res.json();
         setState((prevState) => ({
           ...prevState,
-          posts: latestPosts,
+          posts,
           loading: false,
           requestError: false,
         }));
-      })
-      .catch(() => {
-        setState((prevState) => ({
-          ...prevState,
-          requestError: true,
-          loading: false,
-        }));
-      });
+      } else {
+        throw new Error(res.statusText);
+      }
+    } catch (err) {
+      setState((prevState) => ({
+        ...prevState,
+        posts: [],
+        requestError: true,
+        loading: false,
+      }));
+    }
+  }, []);
+
+  useEffect(() => {
+    loadPosts();
   }, []);
 
   if (state.loading) {

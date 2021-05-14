@@ -1,7 +1,7 @@
 from django.utils import timezone
 from .serializers import PostSerializer, TagSerializer
 from .permissions import IsUserOrReadOnly
-from rest_framework import viewsets, filters
+from rest_framework import viewsets, filters, pagination
 from taggit.models import Tag
 
 from .models import Post
@@ -18,6 +18,11 @@ class TagViewSet(viewsets.ModelViewSet):
     serializer_class = TagSerializer
 
 
+class PostsPagination(pagination.LimitOffsetPagination):
+    default_limit = 4
+    max_limit = 10
+
+
 class PostViewSet(viewsets.ModelViewSet):
     """
     API endpoint that lists blog posts
@@ -25,6 +30,7 @@ class PostViewSet(viewsets.ModelViewSet):
 
     permissions_classes = (IsUserOrReadOnly,)
     serializer_class = PostSerializer
+    pagination_class = PostsPagination
     lookup_field = "slug"
     filter_backends = [filters.SearchFilter, filters.OrderingFilter]
     search_fields = [
