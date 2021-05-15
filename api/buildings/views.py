@@ -1,5 +1,9 @@
 from django.contrib.postgres.search import TrigramSimilarity
 from django.conf import settings
+from drf_spectacular.utils import (
+    extend_schema,
+    OpenApiParameter,
+)
 
 from rest_framework import status, viewsets
 from rest_framework.decorators import api_view, permission_classes, action
@@ -58,6 +62,15 @@ class BuildingViewSet(viewsets.ModelViewSet):
 
 @api_view(["GET"])
 @permission_classes((permissions.AllowAny,))
+@extend_schema(
+    parameters=[
+        BuildingSearchSerializer,
+        OpenApiParameter(
+            "query", BuildingSearchSerializer, OpenApiParameter.QUERY
+        ),
+    ],
+    description="Some cool building search",
+)
 def building_search(request):
     query = request.GET.get("query")
 
