@@ -34,7 +34,7 @@
     "origin": [
       [
         "components/Footer.js",
-        38
+        28
       ],
       [
         "containers/about/AuthorsFragment.js",
@@ -68,7 +68,7 @@
     "origin": [
       [
         "components/Footer.js",
-        72
+        62
       ],
       [
         "containers/about/TitleFragment.js",
@@ -82,7 +82,7 @@
     "origin": [
       [
         "components/Footer.js",
-        79
+        69
       ],
       [
         "components/Header.js",
@@ -192,7 +192,7 @@
     "origin": [
       [
         "containers/home/StatisticFragment.js",
-        56
+        81
       ]
     ],
     "extractedComments": []
@@ -242,7 +242,7 @@
     "origin": [
       [
         "components/Footer.js",
-        46
+        36
       ],
       [
         "containers/about/AuthorsFragment.js",
@@ -256,7 +256,7 @@
     "origin": [
       [
         "components/Footer.js",
-        107
+        97
       ]
     ],
     "extractedComments": []
@@ -276,7 +276,7 @@
     "origin": [
       [
         "containers/home/StatisticFragment.js",
-        51
+        74
       ]
     ],
     "extractedComments": []
@@ -340,7 +340,7 @@
     "origin": [
       [
         "components/Footer.js",
-        54
+        44
       ]
     ],
     "extractedComments": []
@@ -351,6 +351,16 @@
       [
         "containers/thankyou/index.js",
         22
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Information being updated": {
+    "translation": "Informații în curs de actualizare",
+    "origin": [
+      [
+        "containers/home/StatisticFragment.js",
+        27
       ]
     ],
     "extractedComments": []
@@ -420,7 +430,7 @@
     "origin": [
       [
         "components/Footer.js",
-        65
+        55
       ]
     ],
     "extractedComments": []
@@ -430,7 +440,7 @@
     "origin": [
       [
         "containers/home/StatisticFragment.js",
-        46
+        67
       ]
     ],
     "extractedComments": []
@@ -450,7 +460,7 @@
     "origin": [
       [
         "components/Footer.js",
-        86
+        76
       ]
     ],
     "extractedComments": []
@@ -546,7 +556,7 @@
     "origin": [
       [
         "components/Footer.js",
-        93
+        83
       ]
     ],
     "extractedComments": []
