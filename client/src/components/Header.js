@@ -25,6 +25,19 @@ const languageMenu = (langText, handleMenuClick) => {
   );
 };
 
+const languageButtons = (langText, handleBtnClick) => {
+  return (
+    <li className="language-btn-mobile">
+      <GlobalOutlined />
+      {langText.map((language) => (
+        <Button key={language} onClick={() => handleBtnClick(language)} type="link">
+          {language}
+        </Button>
+      ))}
+    </li>
+  );
+};
+
 export default () => {
   const { currentLanguage, languageChange } = useGlobalContext();
   const [langText, setLangText] = useState([]);
@@ -88,8 +101,10 @@ export default () => {
                 </span>
               </Button>
             </li>
+            {languageButtons(langText, handleLanguageBtnClick)}
           </ul>
           <Dropdown
+            className="language-btn-desktop"
             overlay={() => languageMenu(langText, handleLanguageBtnClick)}
             trigger={['click']}
           >
