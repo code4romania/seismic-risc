@@ -5,10 +5,11 @@ import { Redirect } from 'react-router-dom';
 import PinDrop from '../../images/pin_drop.svg';
 
 import config from '../../config';
+import HereMapAddBuilding from '../../components/HereMapAddBuilding/HereMapAddBuilding';
 
 const { Title } = Typography;
 
-const { BUILDINGS_URL } = config;
+const { BUILDINGS_URL, MAP_API_KEY } = config;
 
 const layout = {
   labelCol: { sm: { span: 24 }, md: { span: 6 }, lg: { span: 4 } },
@@ -29,18 +30,21 @@ const FormFragment = ({ form }) => {
     loading: true,
     finished: false,
   });
-
+  const [mapSearchText, setMapSearchText] = useState(undefined);
+  const [coordinates, setCoordinates] = useState(undefined);
   const { getFieldDecorator } = form;
+  const fields = form.getFieldsValue();
 
   const onFinish = (e) => {
     e.preventDefault();
     form.validateFields(async (err, values) => {
       if (!err) {
         try {
+          const valuesToSend = { ...values, ...coordinates };
           const res = await fetch(`${BUILDINGS_URL}/public_create/`, {
             method: 'POST',
             headers: { 'Content-type': 'application/json' },
-            body: JSON.stringify(values),
+            body: JSON.stringify(valuesToSend),
           });
           if (res.ok) {
             if (res.status === 201) {
@@ -58,6 +62,18 @@ const FormFragment = ({ form }) => {
       }
     });
   };
+
+  const onCoordinatesChange = (newCoordinates) => {
+    setCoordinates(newCoordinates);
+  };
+
+  useEffect(() => {
+    if (fields.address && fields.street_number && fields.locality && fields.county) {
+      setMapSearchText(
+        `${fields.address} ${fields.street_number} ${fields.locality} ${fields.county}`,
+      );
+    }
+  }, [fields]);
 
   useEffect(() => {
     const getRiskCategories = async () => {
@@ -142,6 +158,13 @@ const FormFragment = ({ form }) => {
             { max: 60, message: <MaxLengthMessage maxLen={60} /> },
           ],
         })(<Input disabled={state.requestError} />)}
+      </Form.Item>
+      <Form.Item wrapperCol={{ sm: { span: 48 }, md: { span: 16 }, lg: { span: 14 } }}>
+        <HereMapAddBuilding
+          apiKey={MAP_API_KEY}
+          searchText={mapSearchText}
+          onCoordinatesChange={onCoordinatesChange}
+        />
       </Form.Item>
       <Form.Item label={<Trans>Height regime</Trans>}>
         {getFieldDecorator('height_regime', {
