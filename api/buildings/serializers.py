@@ -55,9 +55,7 @@ class BuildingSearchSerializer(serializers.ModelSerializer):
 
 
 class StatisticSerializer(serializers.ModelSerializer):
-    evaluated_buildings = serializers.SerializerMethodField(
-        "get_total_buildings"
-    )
+    evaluated_buildings = serializers.SerializerMethodField("get_total_buildings")
 
     @staticmethod
     def get_total_buildings(_):

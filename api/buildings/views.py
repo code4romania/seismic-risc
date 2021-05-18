@@ -58,15 +58,18 @@ class BuildingViewSet(viewsets.ModelViewSet):
                 serializer.data, status=status.HTTP_201_CREATED, headers=headers
             )
         else:
-            return Response(
-                serializer.errors, status=status.HTTP_400_BAD_REQUEST
-            )
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     @extend_schema(
         parameters=[
-            OpenApiParameter("query", SearchQuerySerializer, OpenApiParameter.QUERY)
+            OpenApiParameter(
+                name="query",
+                type=SearchQuerySerializer,
+                location=OpenApiParameter.QUERY,
+                description="The address of the building",
+            )
         ],
-        responses=BuildingSearchSerializer
+        responses=BuildingSearchSerializer,
     )
     @action(
         detail=False,
@@ -74,7 +77,7 @@ class BuildingViewSet(viewsets.ModelViewSet):
     )
     def search(self, request):
         """
-        Some cool building search
+        Search a building by its address
         """
 
         # DRF recommends using request.query_params instead of request.GET
@@ -89,8 +92,6 @@ class BuildingViewSet(viewsets.ModelViewSet):
                 .filter(similarity__gt=settings.TRIGRAM_SIMILARITY_THRESHOLD)
                 .order_by("-similarity")
             )
-            # Or a basic search example:
-            # buildings = Building.objects.filter(address__icontains=query).all()
         else:
             buildings = None
 
