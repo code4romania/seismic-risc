@@ -58,7 +58,9 @@ class BuildingViewSet(viewsets.ModelViewSet):
                 serializer.data, status=status.HTTP_201_CREATED, headers=headers
             )
         else:
-            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+            return Response(
+                serializer.errors, status=status.HTTP_400_BAD_REQUEST
+            )
 
     @extend_schema(
         parameters=[
