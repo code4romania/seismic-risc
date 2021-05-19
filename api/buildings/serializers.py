@@ -44,6 +44,10 @@ class BuildingListSerializer(serializers.ModelSerializer):
         fields = ("general_id", "risk_category", "lat", "lng")
 
 
+class SearchQuerySerializer(serializers.Serializer):
+    query = serializers.CharField(max_length=100)
+
+
 class BuildingSearchSerializer(serializers.ModelSerializer):
     class Meta:
         model = Building
