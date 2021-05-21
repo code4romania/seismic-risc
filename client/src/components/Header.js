@@ -94,7 +94,7 @@ export default () => {
               </NavLink>
             </li>
             <li>
-              <Button className="add-building" type="primary" href="/adauga-cladire">
+              <Button className="add-building" href="/adauga-cladire">
                 <PlusCircleFilled />
                 <span>
                   <Trans>Add a building</Trans>
