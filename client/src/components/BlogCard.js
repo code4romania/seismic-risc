@@ -4,11 +4,11 @@ import { Card, Typography } from 'antd';
 
 const { Title } = Typography;
 
-export default ({ title, imageUrl, slug }) => {
+export default ({ title, imageUrl, slug, cardIndex }) => {
   return (
     <Link to={`/blog/${slug}`}>
       <Card className="blog-post-card">
-        <div className="title-container">
+        <div className={`title-container card-${cardIndex}`}>
           <Title
             ellipsis={{ rows: 2, expandable: false }}
             level={4}

@@ -1,19 +1,25 @@
-.blog-post-card {
+$card-colors: ("0": $secondary-main, "1": $secondary-dark, "2": $secondary-light);
 
+.blog-post-card {
     &:hover {
-        .ant-card-body {
+        background-color: #FAFAFA;
+        & .title-container {
             border-top: 1rem solid #525F7F;
-            background-color: #FAFAFA;
         }
     }
-    
+
     .ant-card-body {
         height: 450px;
         padding: 0;
-        border-top: 1rem solid #EE741B;
-        ;
         border-radius: 2px 2px 0 0;
     }
+
+    @each $i, $color in $card-colors {
+        .card-#{$i} {
+            border-top: 1rem solid $color;
+        }
+    }
+
     img {
         position: absolute;
         width: 100%;
@@ -31,7 +37,7 @@
 
     .title-container{
         height: 25%;
-        margin-right: 1rem;
-        margin-left: 1rem;
+        padding-right: 1rem;
+        padding-left: 1rem;
     }
 }

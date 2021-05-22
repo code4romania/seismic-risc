@@ -20,8 +20,8 @@ const FooterFragment = () => {
   const { currentLanguage } = useGlobalContext();
 
   return (
-    <Footer className="container App-footer">
-      <div className="footer-inside">
+    <Footer className="App-footer">
+      <div className="footer-inside container">
         <Row className="logos-row" type="flex" gutter={[0, 20]} style={{ margin: '2rem 0' }}>
           <Col className="logo-col" sm={24} md={8}>
             <Text>

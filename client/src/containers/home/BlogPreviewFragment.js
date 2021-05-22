@@ -56,14 +56,10 @@ export default () => {
   if (state.requestError) {
     return (
       <div className="blog-preview">
-        <Row
-          type="flex"
-          justify="space-around"
-          style={{ margin: '1rem 2rem 1rem 2rem', textAlign: 'left' }}
-        >
+        <Row>
           <Col span={24}>
-            <Title level={3} underline>
-              <Icon type="environment" style={{ marginRight: '5px' }} />
+            <Title level={3} underline type="secondary">
+              <Icon type="environment" />
               <Trans>Blog</Trans>
             </Title>
           </Col>
@@ -81,27 +77,18 @@ export default () => {
 
   return (
     <div className="blog-preview">
-      <Row
-        type="flex"
-        justify="space-around"
-        style={{ margin: '1rem 2rem 1rem 2rem', textAlign: 'left' }}
-      >
+      <Row type="flex" justify="space-around">
         <Col span={24}>
-          <Title level={3} underline>
-            <Icon type="environment" style={{ marginRight: '5px' }} />
+          <Title level={3} type="secondary" underline>
+            <Icon type="environment" />
             <Trans>Blog</Trans>
           </Title>
         </Col>
       </Row>
-      <Row
-        gutter={[20, 8]}
-        type="flex"
-        justify="start"
-        style={{ margin: '1rem 2rem 1rem 2rem', textAlign: 'left' }}
-      >
-        {state.posts.map((post) => (
+      <Row gutter={[20, 8]} type="flex" justify="start">
+        {state.posts.map((post, i) => (
           <Col key={post.slug} lg={8} span={24}>
-            <BlogCard title={post.title} imageUrl={post.image} slug={post.slug} />
+            <BlogCard cardIndex={i} title={post.title} imageUrl={post.image} slug={post.slug} />
           </Col>
         ))}
       </Row>

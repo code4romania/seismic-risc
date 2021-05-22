@@ -122,3 +122,26 @@ code {
     width: 19px;
   }
 }
+
+.blog-preview, .about-preview {
+  margin-top: 4rem;
+  text-align: left;
+
+  i {
+    margin-right: 5px;
+  }
+}
+
+.about-preview {
+  i {
+    color: $primary-color;
+  }
+}
+
+.blog-preview {
+  margin-bottom: 4rem;
+
+  i {
+    color: $secondary-main;
+  }
+}
