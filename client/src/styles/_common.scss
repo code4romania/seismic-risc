@@ -46,7 +46,7 @@ code {
     height: $header-height;
 }
 
-.statistics-card {
+.stats-card {
   border: none;
   background-color: $primary-color;
   border-radius: 16px;
@@ -61,7 +61,7 @@ code {
     margin-bottom: 0;
   }
 
-  & .stats {
+  & .stats-heading {
     font-size: 30px;
     text-decoration: underline;
   }

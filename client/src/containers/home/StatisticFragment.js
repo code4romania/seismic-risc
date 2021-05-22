@@ -4,7 +4,7 @@ import { Trans } from '@lingui/macro';
 
 import { ReactComponent as PeopleRisk } from '../../images/user-solid.svg';
 import { ReactComponent as EvaluatedBuildings } from '../../images/house-damage-solid.svg';
-import { ReactComponent as ConsolidatedBuildings } from '../../images/home-solid.svg';
+import { ReactComponent as ConsolidatedBuildings } from '../../images/wrench-solid.svg';
 import { ReactComponent as StatsIconBackground } from '../../images/stats-icon-background.svg';
 
 import config from '../../config';
@@ -12,15 +12,15 @@ import config from '../../config';
 const { STATISTICS_URL } = config;
 
 const StatisticCard = ({ title, value, icon, type = '' }) => (
-  <Card className={`statistics-card ${type}`} size="small">
+  <Card className={`stats-card ${type}`} size="small">
     {value > 0 ? (
       <>
-        <h3 className="stats">{value}</h3>
+        <h3 className="stats-heading">{value}</h3>
         <h4>{title}</h4>
       </>
     ) : (
       <>
-        <h3 className="stats">{title}</h3>
+        <h3 className="stats-heading">{title}</h3>
         <h4>
           <Trans>Information being updated</Trans>
         </h4>
