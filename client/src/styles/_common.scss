@@ -23,6 +23,10 @@ code {
   text-align: center;
 }
 
+.App > section {
+  min-height: 100vh;
+}
+
 .App .ant-layout-content .page {
   text-align: left;
   margin: 20px 0;
