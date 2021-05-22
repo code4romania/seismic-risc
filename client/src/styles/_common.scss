@@ -106,3 +106,19 @@ code {
     top: 12px;
   }
 }
+
+.badge {
+  background-color: $primary-dark;
+  border-radius: 10px;
+  color: #fff;
+  display: inline-flex;
+  height: 26px;
+  line-height: 23px;
+  padding: 0 5px;
+  white-space: nowrap;
+
+  svg {
+    margin-left: 5px;
+    width: 19px;
+  }
+}

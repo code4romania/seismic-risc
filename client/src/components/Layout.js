@@ -5,10 +5,11 @@ import Footer from './Footer';
 
 const { Content } = Layout;
 
-export default ({ children }) => (
+export default ({ children, hero }) => (
   <div className="App">
-    <Layout style={{ background: 'none' }}>
+    <Layout style={{ background: '#F0F0F0' }}>
       <Header />
+      {hero || null}
       <Content className="container">{children}</Content>
       <Footer />
     </Layout>
