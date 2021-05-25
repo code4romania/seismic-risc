@@ -46,9 +46,11 @@ code {
     height: $header-height;
 }
 
-.statistics-card {
+.stats-card {
   border: none;
   background-color: $primary-color;
+  border-radius: 16px;
+  padding: 30px 10px 10px;
 
   &, & h3, & h4 {
     color: #fff;
@@ -56,10 +58,51 @@ code {
 
   & h3, & h4 {
     text-align: left;
+    margin-bottom: 0;
   }
 
-  & svg {
-    width: 38px;
-    height: 38px;
+  & .stats-heading {
+    font-size: 30px;
+    text-decoration: underline;
+  }
+
+  &.people-under-risk {
+    background-color: #FF7648;
+  }
+
+  &.evaluated-buildings {
+    background-color: #FE6262;
+  }
+
+  &.consolidated-buildings {
+    background-color: #FF6984;
+  }
+
+  .stats-background {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 122px;
+    border-top-right-radius: 16px;
+
+    &.people-under-risk {
+      color: #FFC278;
+    }
+
+    &.evaluated-buildings {
+      color: #FA0F00;
+    }
+
+    &.consolidated-buildings {
+      color: #BE3386;
+    }
+  }
+
+  .stats-icon {
+    position: absolute;
+    color: #fff;
+    width: 28px;
+    right: 40px;
+    top: 12px;
   }
 }
