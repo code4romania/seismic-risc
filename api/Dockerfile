@@ -19,7 +19,7 @@ RUN pip install -r requirements.txt
 # The dev requirements should be installed only if a DEVBUILD variable is
 # passed to the docker build command. This should allow easy building of
 # the production container image.
-RUN if [ "x$DEVBUILD" != "x" ]; then pip install -r requirements-dev.txt; fi
+RUN if [ ! -z "${DEVBUILD}" ]; then pip install -r requirements-dev.txt; fi
 
 ENTRYPOINT ["bash", "-c"]
 

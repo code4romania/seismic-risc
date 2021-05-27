@@ -53,9 +53,7 @@ def test_post_pagination(basic_post_data, api_client, test_user):
 
     custom_limit = PostsPagination.default_limit // 2
     custom_offset = PostsPagination.max_limit // 2
-    response = api_client.get(
-        f"{base_url}/?offset={custom_offset}&limit={custom_limit}"
-    )
+    response = api_client.get(f"{base_url}/?offset={custom_offset}&limit={custom_limit}")
     assert response.status_code == 200
     assert len(response.data["results"]) == custom_limit
     assert response.data["results"][0]["slug"] == str(custom_offset)
