@@ -54,13 +54,9 @@ class BuildingViewSet(viewsets.ModelViewSet):
         if serializer.is_valid():
             serializer.save()
             headers = self.get_success_headers(serializer.data)
-            return Response(
-                serializer.data, status=status.HTTP_201_CREATED, headers=headers
-            )
+            return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
         else:
-            return Response(
-                serializer.errors, status=status.HTTP_400_BAD_REQUEST
-            )
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
     @extend_schema(
         parameters=[
@@ -88,9 +84,7 @@ class BuildingViewSet(viewsets.ModelViewSet):
         if serializer.is_valid():
             query = serializer.data["query"]
             buildings = (
-                Building.approved.annotate(
-                    similarity=TrigramSimilarity("address", query)
-                )
+                Building.approved.annotate(similarity=TrigramSimilarity("address", query))
                 .filter(similarity__gt=settings.TRIGRAM_SIMILARITY_THRESHOLD)
                 .order_by("-similarity")
             )

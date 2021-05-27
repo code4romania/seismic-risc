@@ -11,9 +11,7 @@ from . import models
 @admin.register(models.Statistic)
 class StatisticAdmin(admin.ModelAdmin):
     def has_add_permission(self, request):
-        base_add_permission = super(StatisticAdmin, self).has_add_permission(
-            request
-        )
+        base_add_permission = super(StatisticAdmin, self).has_add_permission(request)
         if base_add_permission:
             has_entry = models.Statistic.objects.count() != 0
             if not has_entry:
@@ -86,50 +84,28 @@ class CSVFileAdmin(admin.ModelAdmin):
     def import_files(self, request, query_set):
         for q in query_set:
             try:
-                data = tablib.import_set(
-                    open(q.file.file.name, "rb").read(), format="xlsx"
-                )
+                data = tablib.import_set(open(q.file.file.name, "rb").read(), format="xlsx")
                 changed_headers = []
                 for header in data.headers:
-                    changed_headers.append(
-                        header.lower()
-                        .replace(":", "")
-                        .replace(".", "")
-                        .strip()
-                        .replace(" ", "_")
-                    )
+                    changed_headers.append(header.lower().replace(":", "").replace(".", "").strip().replace(" ", "_"))
                 data.headers = changed_headers
                 building_res = models.BuildingResource()
-                res = building_res.import_data(
-                    data, dry_run=False, raise_errors=True
-                )
+                res = building_res.import_data(data, dry_run=False, raise_errors=True)
                 csv_file = models.CsvFile.objects.get(name=q.__str__())
 
                 if res.has_errors() or res.has_validation_errors():
                     csv_file.status = models.CsvFile.FAILURE
-                    message_str = _(
-                        "File with name '{file_name}' wasn't imported.".format(
-                            file_name=q.__str__()
-                        )
-                    )
+                    message_str = _("File with name '{file_name}' wasn't imported.".format(file_name=q.__str__()))
                     message_level = messages.WARNING
                 else:
                     csv_file.status = models.CsvFile.SUCCESS
-                    message_str = _(
-                        "File with name '{file_name}' was imported.".format(
-                            file_name=q.__str__()
-                        )
-                    )
+                    message_str = _("File with name '{file_name}' was imported.".format(file_name=q.__str__()))
                     message_level = messages.SUCCESS
                 csv_file.save()
             except BadZipFile:
                 self.save_file_as_failed(q)
 
-                message_str = _(
-                    "File with name '{file_name}' wasn't an XLSX.".format(
-                        file_name=q.__str__()
-                    )
-                )
+                message_str = _("File with name '{file_name}' wasn't an XLSX.".format(file_name=q.__str__()))
                 message_level = messages.ERROR
             except ValueError as e:
                 self.save_file_as_failed(q)

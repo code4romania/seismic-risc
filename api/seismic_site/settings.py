@@ -101,18 +101,10 @@ class Base(Configuration):
     # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
     AUTH_PASSWORD_VALIDATORS = [
-        {
-            "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"  # noqa
-        },
-        {
-            "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"  # noqa
-        },
-        {
-            "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"  # noqa
-        },
-        {
-            "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"  # noqa
-        },
+        {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},  # noqa
+        {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},  # noqa
+        {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},  # noqa
+        {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},  # noqa
     ]
 
     # Internationalization
@@ -134,9 +126,7 @@ class Base(Configuration):
     # STATICFILES_DIRS = (
     #     os.path.join(BASE_DIR, 'static'),
     # )
-    STATICFILES_STORAGE = (
-        "whitenoise.storage.CompressedManifestStaticFilesStorage"
-    )
+    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
     MEDIA_URL = "/media/"
     MEDIA_ROOT = os.path.join(BASE_DIR, "./public/media")
@@ -148,9 +138,7 @@ class Base(Configuration):
     REST_FRAMEWORK = {
         # Use Django's standard `django.contrib.auth` permissions,
         # or allow read-only access for unauthenticated users.
-        "DEFAULT_PERMISSION_CLASSES": [
-            "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
-        ],
+        "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"],
         "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
     }
 

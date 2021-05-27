@@ -57,16 +57,10 @@ class Building(models.Model):
         default=SeismicCategoryChoice.NA,
         db_index=True,
     )
-    registration_number = models.IntegerField(
-        _("registration number"), null=True
-    )
+    registration_number = models.IntegerField(_("registration number"), null=True)
     examination_year = models.IntegerField(_("examination year"), null=True)
-    certified_expert = models.CharField(
-        _("certified expert"), max_length=100, null=True
-    )
-    observations = models.CharField(
-        _("observations"), max_length=1000, null=True
-    )
+    certified_expert = models.CharField(_("certified expert"), max_length=100, null=True)
+    observations = models.CharField(_("observations"), max_length=1000, null=True)
 
     lat = models.FloatField(_("latitude"), null=True)
     lng = models.FloatField(_("longitude"), null=True)
@@ -77,19 +71,13 @@ class Building(models.Model):
     locality = models.CharField(_("locality"), max_length=20)
 
     year_built = models.IntegerField(_("year built"), null=True)
-    height_regime = models.CharField(
-        _("height regime"), max_length=50, null=True
-    )
+    height_regime = models.CharField(_("height regime"), max_length=50, null=True)
     apartment_count = models.IntegerField(_("apartment count"), null=True)
     surface = models.FloatField(_("surface"), null=True)
 
     cadastre_number = models.IntegerField(_("cadastre number"), null=True)
-    land_registry_number = models.CharField(
-        _("land registry number"), max_length=50, null=True
-    )
-    administration_update = models.DateField(
-        _("administration update"), null=True, blank=True
-    )
+    land_registry_number = models.CharField(_("land registry number"), max_length=50, null=True)
+    administration_update = models.DateField(_("administration update"), null=True, blank=True)
     admin_update = models.DateField(_("admin update"), null=True, blank=True)
 
     status = models.SmallIntegerField(
@@ -99,9 +87,7 @@ class Building(models.Model):
         db_index=True,
     )
 
-    created_on = models.DateTimeField(
-        _("created on"), default=timezone.now, blank=True
-    )
+    created_on = models.DateTimeField(_("created on"), default=timezone.now, blank=True)
 
     objects = models.Manager()
     approved = ApprovedBuilding()
@@ -116,9 +102,7 @@ class Building(models.Model):
 
 class Statistic(models.Model):
     people_under_risk = models.IntegerField(_("people under risk"), null=True)
-    consolidated_buildings = models.IntegerField(
-        _("consolidated buildings"), null=True
-    )
+    consolidated_buildings = models.IntegerField(_("consolidated buildings"), null=True)
 
     class Meta:
         verbose_name = _("statistic")
@@ -158,9 +142,7 @@ class CsvFile(models.Model):
 
     name = models.CharField(_("name"), max_length=255)
     file = models.FileField(_("file"))
-    status = models.SmallIntegerField(
-        _("status"), default=0, editable=False, choices=DATA_FILE_STATUS_CHOICES
-    )
+    status = models.SmallIntegerField(_("status"), default=0, editable=False, choices=DATA_FILE_STATUS_CHOICES)
 
     class Meta:
         verbose_name = _("CSV file")

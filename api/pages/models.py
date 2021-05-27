@@ -6,9 +6,7 @@ from django.utils.translation import gettext_lazy as _
 
 
 class Category(models.Model):
-    name = models.CharField(
-        _("name"), blank=False, null=False, max_length=150, unique=True
-    )
+    name = models.CharField(_("name"), blank=False, null=False, max_length=150, unique=True)
 
     def __str__(self):
         return "{}".format(self.name)
@@ -27,9 +25,7 @@ class Page(models.Model):
         help_text=_("Page category"),
         verbose_name=_("category"),
     )
-    title = models.CharField(
-        _("title"), blank=True, max_length=150, help_text=_("Page title")
-    )
+    title = models.CharField(_("title"), blank=True, max_length=150, help_text=_("Page title"))
     slug = models.SlugField(
         _("slug"),
         unique=True,
@@ -96,17 +92,13 @@ class Attachment(models.Model):
         help_text=_("Page attachment"),
         verbose_name=_("attachment"),
     )
-    name = models.CharField(
-        _("name"), max_length=150, help_text=_("Attachment name")
-    )
+    name = models.CharField(_("name"), max_length=150, help_text=_("Attachment name"))
     upload_date = models.DateTimeField(
         _("upload date"),
         auto_now=timezone.now,
         help_text=_("Attachment upload date"),
     )
-    uploaded_file = models.FileField(
-        _("uploaded file"), upload_to="uploads/%Y/%m/%d/", max_length=100
-    )
+    uploaded_file = models.FileField(_("uploaded file"), upload_to="uploads/%Y/%m/%d/", max_length=100)
 
     class Meta:
         verbose_name = _("attachment")
