@@ -67,12 +67,20 @@
         62
       ],
       [
+        "containers/about/HeroFragment.js",
+        15
+      ],
+      [
         "containers/about/TitleFragment.js",
         10
       ],
       [
         "containers/home/HeroFragment.js",
-        25
+        24
+      ],
+      [
+        "containers/home/ParagraphFragment.js",
+        13
       ]
     ],
     "extractedComments": []
@@ -97,7 +105,7 @@
       ],
       [
         "containers/home/HeroFragment.js",
-        22
+        21
       ]
     ],
     "extractedComments": []
@@ -124,7 +132,7 @@
     "origin": [
       [
         "containers/blog-post/BlogPostDetailsFragment/BlogPostDetailsFragment.js",
-        41
+        42
       ]
     ],
     "extractedComments": []
@@ -133,11 +141,11 @@
     "origin": [
       [
         "containers/home/BlogPreviewFragment.js",
-        67
+        63
       ],
       [
         "containers/home/BlogPreviewFragment.js",
-        92
+        84
       ]
     ],
     "extractedComments": []
@@ -438,10 +446,6 @@
       [
         "components/BlogItem/BlogItem.js",
         24
-      ],
-      [
-        "containers/blog-post/BlogPostDetailsFragment/BlogPostDetailsFragment.js",
-        61
       ]
     ],
     "extractedComments": []
@@ -480,7 +484,7 @@
       ],
       [
         "containers/home/BlogPreviewFragment.js",
-        74
+        70
       ]
     ],
     "extractedComments": []
@@ -534,7 +538,7 @@
     "origin": [
       [
         "containers/home/HeroFragment.js",
-        14
+        13
       ]
     ],
     "extractedComments": []

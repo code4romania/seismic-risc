@@ -43,8 +43,13 @@ describe('BlogPostDetailsFragment component', () => {
       json: jest.fn().mockResolvedValue(blogPost),
       status: 200,
     });
-    const container = render(<BlogPostDetailsFragment />, { wrapper: LinguiWrapper });
-    await container.findByText('Title');
+
+    const handlePostLoaded = jest.fn();
+
+    const container = render(<BlogPostDetailsFragment handlePostLoaded={handlePostLoaded} />, {
+      wrapper: LinguiWrapper,
+    });
+    await container.findByText('Text');
     expect(container.baseElement).toMatchSnapshot();
   });
 
@@ -53,7 +58,12 @@ describe('BlogPostDetailsFragment component', () => {
       json: jest.fn().mockResolvedValue(null),
       status: 404,
     });
-    const container = render(<BlogPostDetailsFragment />, { wrapper: LinguiWrapper });
+
+    const handlePostLoaded = jest.fn();
+
+    const container = render(<BlogPostDetailsFragment handlePostLoaded={handlePostLoaded} />, {
+      wrapper: LinguiWrapper,
+    });
     await container.findByText('Articolul nu a fost găsit');
     expect(container.baseElement).toMatchSnapshot();
   });
