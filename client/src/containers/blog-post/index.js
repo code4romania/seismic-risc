@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Layout from '../../components/Layout';
 import BlogPost from './BlogPost';
+import BlogPreviewFragment from './BlogPreviewFragment';
 import HeroFramgment from './HeroFragment';
 
 export default () => {
@@ -13,6 +14,7 @@ export default () => {
   return (
     <Layout hero={<HeroFramgment postDetails={postDetails} />}>
       <BlogPost handlePostLoaded={handlePostLoaded} />
+      <BlogPreviewFragment postSlug={postDetails.slug} />
     </Layout>
   );
 };

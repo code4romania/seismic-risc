@@ -141,11 +141,7 @@
     "origin": [
       [
         "containers/home/BlogPreviewFragment.js",
-        63
-      ],
-      [
-        "containers/home/BlogPreviewFragment.js",
-        84
+        6
       ]
     ],
     "extractedComments": []
@@ -270,7 +266,7 @@
     "origin": [
       [
         "containers/home/StatisticFragment.js",
-        74
+        73
       ]
     ],
     "extractedComments": []
@@ -346,7 +342,7 @@
     "origin": [
       [
         "containers/home/StatisticFragment.js",
-        27
+        25
       ]
     ],
     "extractedComments": []
@@ -396,6 +392,15 @@
     ],
     "extractedComments": []
   },
+  "Other articles": {
+    "origin": [
+      [
+        "containers/blog-post/BlogPreviewFragment.js",
+        7
+      ]
+    ],
+    "extractedComments": []
+  },
   "Page {pageNumber} of {numPages}": {
     "origin": [
       [
@@ -418,7 +423,7 @@
     "origin": [
       [
         "containers/home/StatisticFragment.js",
-        67
+        65
       ]
     ],
     "extractedComments": []
@@ -475,16 +480,16 @@
   "Server unavailable": {
     "origin": [
       [
+        "components/BlogPreview.js",
+        77
+      ],
+      [
         "containers/add-building/FormFragment.js",
         114
       ],
       [
         "containers/blog/Blog.js",
         69
-      ],
-      [
-        "containers/home/BlogPreviewFragment.js",
-        70
       ]
     ],
     "extractedComments": []

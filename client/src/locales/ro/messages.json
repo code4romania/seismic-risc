@@ -150,11 +150,7 @@
     "origin": [
       [
         "containers/home/BlogPreviewFragment.js",
-        63
-      ],
-      [
-        "containers/home/BlogPreviewFragment.js",
-        84
+        6
       ]
     ],
     "extractedComments": []
@@ -292,7 +288,7 @@
     "origin": [
       [
         "containers/home/StatisticFragment.js",
-        74
+        73
       ]
     ],
     "extractedComments": []
@@ -376,7 +372,7 @@
     "origin": [
       [
         "containers/home/StatisticFragment.js",
-        27
+        25
       ]
     ],
     "extractedComments": []
@@ -431,6 +427,16 @@
     ],
     "extractedComments": []
   },
+  "Other articles": {
+    "translation": "Alte articole",
+    "origin": [
+      [
+        "containers/blog-post/BlogPreviewFragment.js",
+        7
+      ]
+    ],
+    "extractedComments": []
+  },
   "Page {pageNumber} of {numPages}": {
     "translation": "Pagina {pageNumber} din {numPages}",
     "origin": [
@@ -456,7 +462,7 @@
     "origin": [
       [
         "containers/home/StatisticFragment.js",
-        67
+        65
       ]
     ],
     "extractedComments": []
@@ -519,16 +525,16 @@
     "translation": "Server indisponibil",
     "origin": [
       [
+        "components/BlogPreview.js",
+        77
+      ],
+      [
         "containers/add-building/FormFragment.js",
         114
       ],
       [
         "containers/blog/Blog.js",
         69
-      ],
-      [
-        "containers/home/BlogPreviewFragment.js",
-        70
       ]
     ],
     "extractedComments": []
