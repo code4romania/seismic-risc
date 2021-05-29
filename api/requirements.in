@@ -1,5 +1,5 @@
 # django and related apps
-django<3
+django~=3.2.3
 django-configurations
 django-import-export
 djangorestframework
