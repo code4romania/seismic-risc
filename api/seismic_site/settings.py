@@ -56,6 +56,7 @@ class Base(Configuration):
         "buildings",
         "pages",
         "blog",
+        "drf_spectacular",
     ]
 
     MIDDLEWARE = [
@@ -96,22 +97,16 @@ class Base(Configuration):
 
     DATABASES = values.DatabaseURLValue()
 
+    DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
+
     # Password validation
     # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
     AUTH_PASSWORD_VALIDATORS = [
-        {
-            "NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"  # noqa
-        },
-        {
-            "NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"  # noqa
-        },
-        {
-            "NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"  # noqa
-        },
-        {
-            "NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"  # noqa
-        },
+        {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},  # noqa
+        {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},  # noqa
+        {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},  # noqa
+        {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},  # noqa
     ]
 
     # Internationalization
@@ -133,9 +128,7 @@ class Base(Configuration):
     # STATICFILES_DIRS = (
     #     os.path.join(BASE_DIR, 'static'),
     # )
-    STATICFILES_STORAGE = (
-        "whitenoise.storage.CompressedManifestStaticFilesStorage"
-    )
+    STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
     MEDIA_URL = "/media/"
     MEDIA_ROOT = os.path.join(BASE_DIR, "./public/media")
@@ -147,18 +140,17 @@ class Base(Configuration):
     REST_FRAMEWORK = {
         # Use Django's standard `django.contrib.auth` permissions,
         # or allow read-only access for unauthenticated users.
-        "DEFAULT_PERMISSION_CLASSES": [
-            "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
-        ],
-        'DEFAULT_THROTTLE_CLASSES': [
-            'rest_framework.throttling.AnonRateThrottle'
-        ],
-        'DEFAULT_THROTTLE_RATES': {
-            'anon': '50/day'
-        }
+        "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"],
+        "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
+        'DEFAULT_THROTTLE_CLASSES': ['rest_framework.throttling.AnonRateThrottle'],
+        'DEFAULT_THROTTLE_RATES': {'anon': '50/day'},
     }
 
     TRIGRAM_SIMILARITY_THRESHOLD = 0.1
+
+    SPECTACULAR_SETTINGS = {
+        "SWAGGER_UI_SETTINGS": {"url": "/api/v1/schema"},
+    }
 
 
 class Dev(Base):
@@ -187,8 +179,8 @@ class Test(Base):
 class Prod(Base):
     DEBUG = False
     ALLOWED_HOSTS = values.ListValue(default=[".code4.ro"])
-    CORS_ORIGIN_WHITELIST = values.ListValue(default=[".code4.ro"])
-    CORS_ORIGIN_REGEX_WHITELIST = values.ListValue(default=["*.code4.ro"])
+    CORS_ALLOWED_ORIGINS = values.ListValue(default=[".code4.ro"])
+    CORS_ALLOWED_ORIGIN_REGEXES = values.ListValue(default=["*.code4.ro"])
 
     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
     EMAIL_USE_TLS = True

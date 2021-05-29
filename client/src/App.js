@@ -9,7 +9,6 @@ import About from './containers/about';
 import Guide from './containers/guide';
 import Blog from './containers/blog';
 import BlogPost from './containers/blog-post';
-import Footer from './components/Footer';
 import Terms from './containers/Terms';
 import Policy from './containers/Policy';
 import NotFound from './containers/404/404';
@@ -58,7 +57,6 @@ const App = () => {
           </Route>
           <Route component={NotFound} />
         </Switch>
-        <Footer />
       </Router>
     </I18nProvider>
   );

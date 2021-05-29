@@ -44,6 +44,10 @@ class BuildingListSerializer(serializers.ModelSerializer):
         fields = ("general_id", "risk_category", "lat", "lng")
 
 
+class SearchQuerySerializer(serializers.Serializer):
+    query = serializers.CharField(max_length=100)
+
+
 class BuildingSearchSerializer(serializers.ModelSerializer):
     class Meta:
         model = Building
@@ -51,9 +55,7 @@ class BuildingSearchSerializer(serializers.ModelSerializer):
 
 
 class StatisticSerializer(serializers.ModelSerializer):
-    evaluated_buildings = serializers.SerializerMethodField(
-        "get_total_buildings"
-    )
+    evaluated_buildings = serializers.SerializerMethodField("get_total_buildings")
 
     @staticmethod
     def get_total_buildings(_):

@@ -29,6 +29,19 @@
     ],
     "extractedComments": []
   },
+  "A project by": {
+    "origin": [
+      [
+        "components/Footer.js",
+        28
+      ],
+      [
+        "containers/about/AuthorsFragment.js",
+        15
+      ]
+    ],
+    "extractedComments": []
+  },
   "About": {
     "origin": [
       [
@@ -51,7 +64,7 @@
     "origin": [
       [
         "components/Footer.js",
-        51
+        62
       ],
       [
         "containers/about/TitleFragment.js",
@@ -64,7 +77,7 @@
     "origin": [
       [
         "components/Footer.js",
-        58
+        69
       ],
       [
         "components/Header.js",
@@ -165,7 +178,7 @@
     "origin": [
       [
         "containers/home/StatisticFragment.js",
-        56
+        81
       ]
     ],
     "extractedComments": []
@@ -206,11 +219,24 @@
     ],
     "extractedComments": []
   },
+  "Designed by": {
+    "origin": [
+      [
+        "components/Footer.js",
+        36
+      ],
+      [
+        "containers/about/AuthorsFragment.js",
+        21
+      ]
+    ],
+    "extractedComments": []
+  },
   "Donate": {
     "origin": [
       [
         "components/Footer.js",
-        94
+        97
       ]
     ],
     "extractedComments": []
@@ -228,7 +254,7 @@
     "origin": [
       [
         "containers/home/StatisticFragment.js",
-        51
+        74
       ]
     ],
     "extractedComments": []
@@ -282,12 +308,11 @@
     ],
     "extractedComments": []
   },
-  "Implementat de": {
-    "translation": "Implementat de",
+  "Implemented by": {
     "origin": [
       [
         "components/Footer.js",
-        35
+        44
       ]
     ],
     "extractedComments": []
@@ -297,6 +322,15 @@
       [
         "containers/thankyou/index.js",
         22
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Information being updated": {
+    "origin": [
+      [
+        "containers/home/StatisticFragment.js",
+        27
       ]
     ],
     "extractedComments": []
@@ -359,7 +393,7 @@
     "origin": [
       [
         "components/Footer.js",
-        44
+        55
       ]
     ],
     "extractedComments": []
@@ -368,7 +402,7 @@
     "origin": [
       [
         "containers/home/StatisticFragment.js",
-        46
+        67
       ]
     ],
     "extractedComments": []
@@ -386,35 +420,7 @@
     "origin": [
       [
         "components/Footer.js",
-        65
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Proiect realizat de": {
-    "translation": "Proiect realizat de",
-    "origin": [
-      [
-        "components/Footer.js",
-        23
-      ],
-      [
-        "containers/about/AuthorsFragment.js",
-        15
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Proiectat de": {
-    "translation": "Proiectat de",
-    "origin": [
-      [
-        "components/Footer.js",
-        29
-      ],
-      [
-        "containers/about/AuthorsFragment.js",
-        21
+        76
       ]
     ],
     "extractedComments": []
@@ -502,7 +508,7 @@
     "origin": [
       [
         "components/Footer.js",
-        72
+        83
       ]
     ],
     "extractedComments": []

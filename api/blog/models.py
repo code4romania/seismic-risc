@@ -6,9 +6,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 
 
 class Post(models.Model):
-    author = models.ForeignKey(
-        "auth.User", on_delete=models.PROTECT, verbose_name=_("post")
-    )
+    author = models.ForeignKey("auth.User", on_delete=models.PROTECT, verbose_name=_("post"))
     title = models.CharField(_("title"), max_length=200)
     slug = models.SlugField(_("slug"), unique=True)
     image = models.ImageField(_("image"), upload_to="blog/")

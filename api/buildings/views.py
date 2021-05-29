@@ -1,5 +1,9 @@
 from django.contrib.postgres.search import TrigramSimilarity
 from django.conf import settings
+from drf_spectacular.utils import (
+    extend_schema,
+    OpenApiParameter,
+)
 
 from rest_framework import status, viewsets
 from rest_framework.decorators import api_view, permission_classes, action
@@ -12,6 +16,7 @@ from .serializers import (
     PublicBuildingCreateSerializer,
     BuildingListSerializer,
     BuildingSearchSerializer,
+    SearchQuerySerializer,
     StatisticSerializer,
 )
 from .models import Building, Statistic
@@ -32,6 +37,8 @@ class BuildingViewSet(viewsets.ModelViewSet):
             return BuildingListSerializer
         elif self.action == "public_create":
             return PublicBuildingCreateSerializer
+        elif self.action == "search":
+            return SearchQuerySerializer
         return BuildingSerializer
 
     @action(
@@ -49,31 +56,45 @@ class BuildingViewSet(viewsets.ModelViewSet):
         if serializer.is_valid():
             serializer.save()
             headers = self.get_success_headers(serializer.data)
-            return Response(
-                serializer.data, status=status.HTTP_201_CREATED, headers=headers
+            return Response(serializer.data, status=status.HTTP_201_CREATED, headers=headers)
+        else:
+            return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+    @extend_schema(
+        parameters=[
+            OpenApiParameter(
+                name="query",
+                type=SearchQuerySerializer,
+                location=OpenApiParameter.QUERY,
+                description="The address of the building",
+            )
+        ],
+        responses=BuildingSearchSerializer,
+    )
+    @action(
+        detail=False,
+        permission_classes=[permissions.AllowAny],
+    )
+    def search(self, request):
+        """
+        Search a building by its address
+        """
+
+        # DRF recommends using request.query_params instead of request.GET
+        serializer = SearchQuerySerializer(data=request.query_params)
+
+        if serializer.is_valid():
+            query = serializer.data["query"]
+            buildings = (
+                Building.approved.annotate(similarity=TrigramSimilarity("address", query))
+                .filter(similarity__gt=settings.TRIGRAM_SIMILARITY_THRESHOLD)
+                .order_by("-similarity")
             )
         else:
-            return Response(
-                serializer.errors, status=status.HTTP_400_BAD_REQUEST
-            )
+            buildings = None
 
-
-@api_view(["GET"])
-@permission_classes((permissions.AllowAny,))
-def building_search(request):
-    query = request.GET.get("query")
-
-    buildings = (
-        Building.approved.annotate(
-            similarity=TrigramSimilarity("address", query)
-        )
-        .filter(similarity__gt=settings.TRIGRAM_SIMILARITY_THRESHOLD)
-        .order_by("-similarity")
-    )
-
-    serializer = BuildingSearchSerializer(buildings, many=True)
-
-    return Response(serializer.data)
+        result_serializer = BuildingSearchSerializer(buildings, many=True)
+        return Response(result_serializer.data)
 
 
 @api_view(["GET"])

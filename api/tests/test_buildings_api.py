@@ -10,9 +10,7 @@ base_url = "/api/v1/buildings"
 
 
 @pytest.mark.django_db
-def test_building_list_get_if_status_is_approved(
-    approved_building_data, api_client
-):
+def test_building_list_get_if_status_is_approved(approved_building_data, api_client):
     for _ in range(3):
         Building.objects.create(**approved_building_data)
 
@@ -26,9 +24,7 @@ def test_building_list_get_if_status_is_approved(
 
 
 @pytest.mark.django_db
-def test_building_details_get_if_status_is_approved(
-    approved_building_data, api_client
-):
+def test_building_details_get_if_status_is_approved(approved_building_data, api_client):
     building_obj = Building.objects.create(**approved_building_data)
 
     url = f"{base_url}/{building_obj.general_id}/"
@@ -40,9 +36,7 @@ def test_building_details_get_if_status_is_approved(
 
 
 @pytest.mark.django_db
-def test_building_details_cannot_get_if_status_is_pending(
-    pending_building_data, api_client
-):
+def test_building_details_cannot_get_if_status_is_pending(pending_building_data, api_client):
     building_obj = Building.objects.create(**pending_building_data)
 
     url = f"{base_url}/{building_obj.general_id}/"
@@ -52,9 +46,7 @@ def test_building_details_cannot_get_if_status_is_pending(
 
 
 @pytest.mark.django_db
-def test_building_details_cannot_get_if_status_is_rejected(
-    rejected_building_data, api_client
-):
+def test_building_details_cannot_get_if_status_is_rejected(rejected_building_data, api_client):
     building_obj = Building.objects.create(**rejected_building_data)
 
     url = f"{base_url}/{building_obj.general_id}/"
@@ -65,9 +57,7 @@ def test_building_details_cannot_get_if_status_is_rejected(
 
 @pytest.mark.django_db
 def test_building_post_forbidden(approved_building_data, api_client):
-    response = api_client.post(
-        f"{base_url}/", approved_building_data, format="json"
-    )
+    response = api_client.post(f"{base_url}/", approved_building_data, format="json")
     assert response.status_code == 403
 
 
@@ -101,10 +91,7 @@ def random_words():
     length = 5
     how_many = 4
     letters = string.ascii_lowercase
-    return [
-        "".join(random.choice(letters) for i in range(length))
-        for _ in range(how_many)
-    ]
+    return ["".join(random.choice(letters) for i in range(length)) for _ in range(how_many)]
 
 
 def basic_building_data():

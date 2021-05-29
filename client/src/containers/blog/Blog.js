@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState, useCallback } from 'react';
 import { Col, Row, Spin, Typography } from 'antd';
 import { Trans } from '@lingui/macro';
 import BlogItem from '../../components/BlogItem/BlogItem';
@@ -22,22 +22,19 @@ const Blog = () => {
 
   const loadPosts = useCallback(async () => {
     try {
-      const res = await fetch(`${POSTS_URL}/?ordering=-published`);
+      const res = await fetch(
+        `${POSTS_URL}/?limit=${LIMIT}&offset=${state.index}&ordering=-published`,
+      );
       if (res.ok) {
-        const posts = await res.json();
-        setState((prevState) => {
-          const newIndex = prevState.index + LIMIT;
-          const newList = [...prevState.posts, ...posts.slice(prevState.index, newIndex)];
-          const newShowMore = newIndex < posts.length;
-          return {
-            ...prevState,
-            posts: newList,
-            loading: false,
-            index: newIndex,
-            showMore: newShowMore,
-            requestError: false,
-          };
-        });
+        const { results: posts, next } = await res.json();
+        setState((prevState) => ({
+          ...prevState,
+          posts: [...prevState.posts, ...posts],
+          loading: false,
+          index: prevState.index + posts.length,
+          showMore: next !== null,
+          requestError: false,
+        }));
       } else {
         throw new Error(res.statusText);
       }
@@ -51,11 +48,11 @@ const Blog = () => {
         showMore: true,
       }));
     }
-  }, []);
+  }, [state.index]);
 
   useEffect(() => {
     loadPosts();
-  }, [loadPosts]);
+  }, []);
 
   if (state.loading) {
     return (

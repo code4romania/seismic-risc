@@ -121,3 +121,15 @@
     display: initial;
   }
 }
+
+.language-btn-desktop {
+  @media (max-width: $breakpoint-tablet) {
+    display: none;
+  }
+}
+
+.language-btn-mobile {
+  @media (min-width: $breakpoint-tablet) {
+    display: none;
+  }
+}
