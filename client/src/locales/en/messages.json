@@ -3,8 +3,8 @@
     "translation": "If you encounter other issues, please send us an e-mail at ",
     "origin": [
       [
-        "containers/404/404.js",
-        34
+        "containers/404/HeroFragment.js",
+        18
       ]
     ],
     "extractedComments": []
@@ -13,8 +13,8 @@
     "translation": "We can not find the page you are looking for. Please go back to the main page and start your search again or navigate through the rest of our platform with the help of the top menu.",
     "origin": [
       [
-        "containers/404/404.js",
-        31
+        "containers/404/HeroFragment.js",
+        15
       ]
     ],
     "extractedComments": []
@@ -23,8 +23,8 @@
     "translation": "We are sorry",
     "origin": [
       [
-        "containers/404/404.js",
-        28
+        "containers/404/HeroFragment.js",
+        13
       ]
     ],
     "extractedComments": []
@@ -54,8 +54,8 @@
   "About Vulnerable Romania": {
     "origin": [
       [
-        "containers/blog/Blog.js",
-        80
+        "containers/blog/HeroFragment.js",
+        13
       ]
     ],
     "extractedComments": []
@@ -65,6 +65,10 @@
       [
         "components/Footer.js",
         62
+      ],
+      [
+        "containers/404/HeroFragment.js",
+        25
       ],
       [
         "containers/about/HeroFragment.js",
@@ -144,6 +148,10 @@
   "Back to home page": {
     "origin": [
       [
+        "containers/404/HeroFragment.js",
+        22
+      ],
+      [
         "containers/thankyou/HeroFragment.js",
         25
       ]
@@ -152,6 +160,10 @@
   },
   "Blog": {
     "origin": [
+      [
+        "containers/404/BlogPreviewFragment.js",
+        6
+      ],
       [
         "containers/home/BlogPreviewFragment.js",
         6
@@ -377,7 +389,7 @@
     "origin": [
       [
         "components/LoadMoreArticlesLink/LoadMoreArticlesLink.js",
-        7
+        8
       ]
     ],
     "extractedComments": []
