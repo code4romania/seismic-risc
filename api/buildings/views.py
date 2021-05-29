@@ -5,6 +5,7 @@ from rest_framework import status, viewsets
 from rest_framework.decorators import api_view, permission_classes, action
 from rest_framework import permissions
 from rest_framework.response import Response
+from rest_framework.throttling import UserRateThrottle
 
 from .serializers import (
     BuildingSerializer,
@@ -37,6 +38,7 @@ class BuildingViewSet(viewsets.ModelViewSet):
         detail=False,
         methods=["post"],
         permission_classes=[permissions.AllowAny],
+        throttle_classes=[UserRateThrottle],
     )
     def public_create(self, request):
         """

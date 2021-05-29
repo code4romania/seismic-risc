@@ -149,7 +149,13 @@ class Base(Configuration):
         # or allow read-only access for unauthenticated users.
         "DEFAULT_PERMISSION_CLASSES": [
             "rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"
-        ]
+        ],
+        'DEFAULT_THROTTLE_CLASSES': [
+            'rest_framework.throttling.AnonRateThrottle'
+        ],
+        'DEFAULT_THROTTLE_RATES': {
+            'anon': '50/day'
+        }
     }
 
     TRIGRAM_SIMILARITY_THRESHOLD = 0.1
