@@ -97,6 +97,8 @@ class Base(Configuration):
 
     DATABASES = values.DatabaseURLValue()
 
+    DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
+
     # Password validation
     # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
 
@@ -175,8 +177,8 @@ class Test(Base):
 class Prod(Base):
     DEBUG = False
     ALLOWED_HOSTS = values.ListValue(default=[".code4.ro"])
-    CORS_ORIGIN_WHITELIST = values.ListValue(default=[".code4.ro"])
-    CORS_ORIGIN_REGEX_WHITELIST = values.ListValue(default=["*.code4.ro"])
+    CORS_ALLOWED_ORIGINS = values.ListValue(default=[".code4.ro"])
+    CORS_ALLOWED_ORIGIN_REGEXES = values.ListValue(default=["*.code4.ro"])
 
     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"
     EMAIL_USE_TLS = True
