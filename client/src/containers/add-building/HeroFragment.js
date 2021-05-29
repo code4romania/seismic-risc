@@ -10,7 +10,7 @@ const { Paragraph } = Typography;
 
 export default () => {
   return (
-    <Hero heroImage={heroImage} title={<Trans>Add a building!</Trans>}>
+    <Hero heroImage={heroImage} title={<Trans>Add a building</Trans>}>
       <Paragraph>
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Purus id id ut aenean nunc. Morbi
         rhoncus, ut vitae eget pellentesque sollicitudin leo sollicitudin. Phasellus orci pulvinar

@@ -81,6 +81,10 @@
       [
         "containers/home/ParagraphFragment.js",
         13
+      ],
+      [
+        "containers/thankyou/HeroFragment.js",
+        28
       ]
     ],
     "extractedComments": []
@@ -100,7 +104,7 @@
         192
       ],
       [
-        "containers/add-building/index.js",
+        "containers/add-building/HeroFragment.js",
         13
       ],
       [
@@ -137,10 +141,23 @@
     ],
     "extractedComments": []
   },
+  "Back to home page": {
+    "origin": [
+      [
+        "containers/thankyou/HeroFragment.js",
+        25
+      ]
+    ],
+    "extractedComments": []
+  },
   "Blog": {
     "origin": [
       [
         "containers/home/BlogPreviewFragment.js",
+        6
+      ],
+      [
+        "containers/thankyou/BlogPreviewFragment.js",
         6
       ]
     ],
@@ -332,7 +349,7 @@
   "In the meantime, keep being awesome!": {
     "origin": [
       [
-        "containers/thankyou/index.js",
+        "containers/thankyou/HeroFragment.js",
         22
       ]
     ],
@@ -530,11 +547,12 @@
     ],
     "extractedComments": []
   },
-  "Thank you!": {
+  "Thank you": {
+    "translation": "Thank you",
     "origin": [
       [
-        "containers/thankyou/index.js",
-        12
+        "containers/thankyou/HeroFragment.js",
+        13
       ]
     ],
     "extractedComments": []
@@ -612,7 +630,7 @@
     "message": "Thank you for the information that you sent us. In the following days someone from our team will evaluate the information sent to us and, as soon as we will have all the necessary data to add the building on the map, we will notify you.",
     "origin": [
       [
-        "containers/thankyou/index.js",
+        "containers/thankyou/HeroFragment.js",
         15
       ]
     ],

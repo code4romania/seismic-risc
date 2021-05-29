@@ -85,6 +85,10 @@
       [
         "containers/home/ParagraphFragment.js",
         13
+      ],
+      [
+        "containers/thankyou/HeroFragment.js",
+        28
       ]
     ],
     "extractedComments": []
@@ -105,7 +109,7 @@
         192
       ],
       [
-        "containers/add-building/index.js",
+        "containers/add-building/HeroFragment.js",
         13
       ],
       [
@@ -145,11 +149,25 @@
     ],
     "extractedComments": []
   },
+  "Back to home page": {
+    "translation": "Înapoi la prima pagină",
+    "origin": [
+      [
+        "containers/thankyou/HeroFragment.js",
+        25
+      ]
+    ],
+    "extractedComments": []
+  },
   "Blog": {
     "translation": "",
     "origin": [
       [
         "containers/home/BlogPreviewFragment.js",
+        6
+      ],
+      [
+        "containers/thankyou/BlogPreviewFragment.js",
         6
       ]
     ],
@@ -361,7 +379,7 @@
     "translation": "Între timp, continuă să fii minunat!",
     "origin": [
       [
-        "containers/thankyou/index.js",
+        "containers/thankyou/HeroFragment.js",
         22
       ]
     ],
@@ -579,12 +597,12 @@
     ],
     "extractedComments": []
   },
-  "Thank you!": {
-    "translation": "Îți mulțumim!",
+  "Thank you": {
+    "translation": "Îți mulțumim",
     "origin": [
       [
-        "containers/thankyou/index.js",
-        12
+        "containers/thankyou/HeroFragment.js",
+        13
       ]
     ],
     "extractedComments": []
@@ -664,7 +682,7 @@
     "message": "Thank you for the information that you sent us. In the following days someone from our team will evaluate the information sent to us and, as soon as we will have all the necessary data to add the building on the map, we will notify you.",
     "origin": [
       [
-        "containers/thankyou/index.js",
+        "containers/thankyou/HeroFragment.js",
         15
       ]
     ],
