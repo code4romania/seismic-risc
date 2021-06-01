@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button, Form, Input, Select, Spin, Typography } from 'antd';
 import { Trans } from '@lingui/macro';
 import { Redirect } from 'react-router-dom';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 import PinDrop from '../../images/pin_drop.svg';
 
 import config from '../../config';
@@ -65,6 +66,10 @@ const FormFragment = ({ form }) => {
 
   const onCoordinatesChange = (newCoordinates) => {
     setCoordinates(newCoordinates);
+  };
+
+  const handleVerifyCaptcha = (token, eKey) => {
+    console.log(`Captcha validated: ${token}, ${eKey}`);
   };
 
   useEffect(() => {
@@ -186,6 +191,11 @@ const FormFragment = ({ form }) => {
             ))}
           </Select>,
         )}
+      </Form.Item>
+      <Form.Item label={<Trans>Captcha</Trans>}>
+        {getFieldDecorator('captcha', {
+          rules: [{ required: true, message: <EmptyFieldMessage /> }],
+        })(<HCaptcha sitekey="your-sitekey" onVerify={handleVerifyCaptcha} />)}
       </Form.Item>
       <Form.Item>
         <Button type="primary" htmlType="submit" disabled={state.requestError}>
