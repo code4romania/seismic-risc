@@ -109,7 +109,7 @@ tablib[html,ods,xls,xlsx,yaml]==3.0.0
     #   django-import-export
 uritemplate==3.0.1
     # via drf-spectacular
-urllib3==1.26.4
+urllib3==1.26.5
     # via botocore
 whitenoise==5.2.0
     # via -r requirements.in
