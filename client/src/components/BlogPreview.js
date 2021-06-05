@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useCallback } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Row, Col, Icon, Typography, Spin } from 'antd';
 import { Trans } from '@lingui/macro';
 import config from '../config';
@@ -17,38 +17,38 @@ export default ({ title, postSlug = null }) => {
     loading: true,
   });
 
-  const loadPosts = useCallback(async (slug) => {
-    try {
-      const res = await fetch(`${POSTS_URL}/?limit=${LIMIT}&ordering=-published`);
-      if (res.ok) {
-        let { results: posts } = await res.json();
-        if (slug) {
-          posts = posts.filter((post) => post.slug !== slug);
-        }
-        if (posts.length > 3) {
-          posts.pop();
-        }
+  useEffect(() => {
+    const loadPosts = async (slug) => {
+      try {
+        const res = await fetch(`${POSTS_URL}/?limit=${LIMIT}&ordering=-published`);
+        if (res.ok) {
+          let { results: posts } = await res.json();
+          if (slug) {
+            posts = posts.filter((post) => post.slug !== slug);
+          }
+          if (posts.length === LIMIT) {
+            posts.pop();
+          }
 
+          setState((prevState) => ({
+            ...prevState,
+            posts,
+            loading: false,
+            requestError: false,
+          }));
+        } else {
+          throw new Error(res.statusText);
+        }
+      } catch (err) {
         setState((prevState) => ({
           ...prevState,
-          posts,
+          posts: [],
+          requestError: true,
           loading: false,
-          requestError: false,
         }));
-      } else {
-        throw new Error(res.statusText);
       }
-    } catch (err) {
-      setState((prevState) => ({
-        ...prevState,
-        posts: [],
-        requestError: true,
-        loading: false,
-      }));
-    }
-  }, []);
+    };
 
-  useEffect(() => {
     loadPosts(postSlug);
   }, [postSlug]);
 

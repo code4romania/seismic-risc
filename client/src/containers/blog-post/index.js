@@ -7,13 +7,9 @@ import HeroFramgment from './HeroFragment';
 export default () => {
   const [postDetails, setPostDetails] = useState({});
 
-  const handlePostLoaded = (post) => {
-    setPostDetails(post);
-  };
-
   return (
     <Layout hero={<HeroFramgment postDetails={postDetails} />}>
-      <BlogPost handlePostLoaded={handlePostLoaded} />
+      <BlogPost handlePostLoaded={(post) => setPostDetails(post)} />
       <BlogPreviewFragment postSlug={postDetails.slug} />
     </Layout>
   );
