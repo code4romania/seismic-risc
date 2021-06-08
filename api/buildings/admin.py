@@ -1,3 +1,4 @@
+import requests
 from zipfile import BadZipFile
 
 import tablib
@@ -7,6 +8,21 @@ from django.utils.translation import ngettext
 
 from . import models
 
+# class MyAdminSite(admin.AdminSite):
+#     site_header = 'Monty Python administration'
+#     list_filter = ("status", "risk_category", "county", "locality")
+#     list_display = (
+#         "address",
+#         "risk_category",
+#         "examination_year",
+#         "certified_expert",
+#         "status",
+#         "general_id",
+#     )
+#     search_fields = ("address",)
+#
+# admin_site = MyAdminSite(name='myadmin')
+# admin_site.register(models.CustomBuildingAdmin)
 
 @admin.register(models.Statistic)
 class StatisticAdmin(admin.ModelAdmin):
@@ -28,7 +44,7 @@ class BuildingAdmin(admin.ModelAdmin):
         "examination_year",
         "certified_expert",
         "status",
-        "general_id",
+        "general_id"
     )
     search_fields = ("address",)
     actions = (
@@ -63,6 +79,22 @@ class BuildingAdmin(admin.ModelAdmin):
         ).format(updated=updated, status=status_str)
 
         self.message_user(request, message, messages.SUCCESS)
+
+    # class Media:
+    #     """
+    #     If maps are enabled then we add the JS and CSS for either
+    #     Google JS Maps API or the Mapbox APIs (including Geocoding).
+    #     """
+    #     library_css = ()
+    #
+    #     library_js = (
+    #         "https://js.api.here.com/v3/3.1/mapsjs-core.js",
+    #         "https://js.api.here.com/v3/3.1/mapsjs-service.js",
+    #         "static/js/admin/here_map.js",
+    #     )
+    #
+    #     css = {"all": ("static/css/admin/location_picker.css",)}
+    #     js = library_js
 
     @staticmethod
     def choice_to_string(status):

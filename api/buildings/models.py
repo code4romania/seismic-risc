@@ -1,3 +1,5 @@
+import base64
+import requests
 from enum import Enum
 
 from django.db import models
@@ -36,6 +38,12 @@ class ApprovedBuilding(models.Manager):
     def get_queryset(self):
         return super().get_queryset().filter(status=Building.ACCEPTED)
 
+def get_map(lat, lng):
+    base_url = 'https://image.maps.ls.hereapi.com/mia/1.6'
+    API_KEY='LTPA3gUdM8WZnXPbcZ1Rkv94zzUPFPWa0mRowDwnIcA'
+
+    r = requests.get(f'{base_url}/mapview?apiKey={API_KEY}&c={lat},{lng}&u=5m&z=8')
+    return r.text
 
 class Building(models.Model):
     PENDING = 0

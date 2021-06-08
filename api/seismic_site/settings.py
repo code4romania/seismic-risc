@@ -15,7 +15,7 @@ from configurations import Configuration, values
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-
+HERE_MAPS_API_KEY = 'ZMYRTYl3Tih7lfgv7tCz8UyuemS6lTD9us7FLvexFio'
 
 class Base(Configuration):
     """
@@ -34,7 +34,7 @@ class Base(Configuration):
 
     INSTALLED_APPS = [
         # django apps
-        "django.contrib.admin",
+        "django.contrib.admin.apps.SimpleAdminConfig",
         "django.contrib.auth",
         "django.contrib.contenttypes",
         "django.contrib.sessions",

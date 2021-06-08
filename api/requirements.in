@@ -28,3 +28,6 @@ gunicorn
 
 # doc-generation
 drf-spectacular
+
+# django-jquery
+django-jquery
