@@ -68,9 +68,8 @@ const FormFragment = ({ form }) => {
     setCoordinates(newCoordinates);
   };
 
-  const handleVerifyCaptcha = (token, eKey) => {
-    console.log(`Captcha validated: ${token}, ${eKey}`);
-  };
+  // eslint-disable-next-line no-unused-vars
+  const handleVerifyCaptcha = (token, eKey) => {};
 
   useEffect(() => {
     if (fields.address && fields.street_number && fields.locality && fields.county) {
