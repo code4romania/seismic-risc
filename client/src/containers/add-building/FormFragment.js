@@ -10,7 +10,7 @@ import HereMapAddBuilding from '../../components/HereMapAddBuilding/HereMapAddBu
 
 const { Title } = Typography;
 
-const { BUILDINGS_URL, MAP_API_KEY } = config;
+const { BUILDINGS_URL, MAP_API_KEY, CAPTCHA_API_KEY } = config;
 
 const layout = {
   labelCol: { sm: { span: 24 }, md: { span: 6 }, lg: { span: 4 } },
@@ -195,7 +195,7 @@ const FormFragment = ({ form }) => {
       <Form.Item label={<Trans>Captcha</Trans>}>
         {getFieldDecorator('captcha', {
           rules: [{ required: true, message: <EmptyFieldMessage /> }],
-        })(<HCaptcha sitekey="your-sitekey" onVerify={handleVerifyCaptcha} />)}
+        })(<HCaptcha sitekey={CAPTCHA_API_KEY} onVerify={handleVerifyCaptcha} />)}
       </Form.Item>
       <Form.Item>
         <Button type="primary" htmlType="submit" disabled={state.requestError}>
