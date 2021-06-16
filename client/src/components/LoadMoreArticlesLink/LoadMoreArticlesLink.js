@@ -1,11 +1,12 @@
 import React from 'react';
 import { Trans } from '@lingui/macro';
+import { Button } from 'antd';
 
 const LoadMoreArticlesLink = (props) => (
   <div className="load-more">
-    <button type="button" onClick={(e) => e.preventDefault()} {...props}>
+    <Button onClick={(e) => e.preventDefault()} {...props}>
       <Trans>Load more articles</Trans>
-    </button>
+    </Button>
   </div>
 );
 

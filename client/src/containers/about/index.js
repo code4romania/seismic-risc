@@ -1,18 +1,15 @@
 import React from 'react';
 import Layout from '../../components/Layout';
-import Share from '../../components/Sharing';
 
-import TitleFragment from './TitleFragment';
 import FirstParagraphs from './FirstParagraphsFragment';
 import TextBox from './TextBoxFragment';
 import SecondParagraph from './SecondParagraphFragment';
 import Authors from './AuthorsFragment';
 import ThirdParagraph from './ThirdParagraphFragment';
+import HeroFragment from './HeroFragment';
 
 export default () => (
-  <Layout>
-    <TitleFragment />
-    <Share />
+  <Layout hero={<HeroFragment />}>
     <FirstParagraphs />
     <TextBox />
     <SecondParagraph />

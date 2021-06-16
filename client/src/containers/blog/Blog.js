@@ -1,11 +1,11 @@
 import React, { useEffect, useState, useCallback } from 'react';
-import { Col, Row, Spin, Typography } from 'antd';
+import { Spin, Typography } from 'antd';
 import { Trans } from '@lingui/macro';
 import BlogItem from '../../components/BlogItem/BlogItem';
 import config from '../../config';
 import LoadMore from '../../components/LoadMoreArticlesLink/LoadMoreArticlesLink';
 
-const { Title, Paragraph } = Typography;
+const { Title } = Typography;
 
 const { POSTS_URL } = config;
 
@@ -74,18 +74,6 @@ const Blog = () => {
 
   return (
     <div className="blog-wrapper loaded">
-      <Row>
-        <Col className="blog-top">
-          <Title level={2} underline>
-            <Trans>About Vulnerable Romania</Trans>
-          </Title>
-          <Paragraph>
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Earum, natus, illum nobis non
-            quibusdam exercitationem temporibus tenetur est doloremque, voluptate quas minus nemo?
-            Quidem nobis quae quo, blanditiis sequi omnis?
-          </Paragraph>
-        </Col>
-      </Row>
       {state.posts.map((post) => {
         const { slug } = post;
         return <BlogItem key={slug} postDetails={post} />;

@@ -3,8 +3,8 @@
     "translation": "Dacă mai întâmpini probleme, te rugăm să ne trimiți un e-mail la ",
     "origin": [
       [
-        "containers/404/404.js",
-        34
+        "containers/404/HeroFragment.js",
+        18
       ]
     ],
     "extractedComments": []
@@ -13,8 +13,8 @@
     "translation": "Nu reușim să găsim pagina pe care o cauți. Te rugăm să revii la pagina principală și să reiei căutarea sau să navighezi prin restul platformei nostre cu ajutorul meniului de sus.",
     "origin": [
       [
-        "containers/404/404.js",
-        31
+        "containers/404/HeroFragment.js",
+        15
       ]
     ],
     "extractedComments": []
@@ -23,8 +23,8 @@
     "translation": "Ne pare rău",
     "origin": [
       [
-        "containers/404/404.js",
-        28
+        "containers/404/HeroFragment.js",
+        13
       ]
     ],
     "extractedComments": []
@@ -48,7 +48,7 @@
     "origin": [
       [
         "components/Header.js",
-        65
+        78
       ]
     ],
     "extractedComments": []
@@ -57,8 +57,8 @@
     "translation": "Despre Romania Vulnerabilă",
     "origin": [
       [
-        "containers/blog/Blog.js",
-        83
+        "containers/blog/HeroFragment.js",
+        13
       ]
     ],
     "extractedComments": []
@@ -71,8 +71,28 @@
         62
       ],
       [
+        "containers/404/HeroFragment.js",
+        25
+      ],
+      [
+        "containers/about/HeroFragment.js",
+        15
+      ],
+      [
         "containers/about/TitleFragment.js",
         10
+      ],
+      [
+        "containers/home/HeroFragment.js",
+        24
+      ],
+      [
+        "containers/home/ParagraphFragment.js",
+        13
+      ],
+      [
+        "containers/thankyou/HeroFragment.js",
+        28
       ]
     ],
     "extractedComments": []
@@ -86,15 +106,19 @@
       ],
       [
         "components/Header.js",
-        87
+        100
       ],
       [
         "containers/add-building/FormFragment.js",
-        169
+        192
       ],
       [
-        "containers/add-building/index.js",
+        "containers/add-building/HeroFragment.js",
         13
+      ],
+      [
+        "containers/home/HeroFragment.js",
+        21
       ]
     ],
     "extractedComments": []
@@ -124,7 +148,21 @@
     "origin": [
       [
         "containers/blog-post/BlogPostDetailsFragment/BlogPostDetailsFragment.js",
-        41
+        42
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Back to home page": {
+    "translation": "Înapoi la prima pagină",
+    "origin": [
+      [
+        "containers/404/HeroFragment.js",
+        22
+      ],
+      [
+        "containers/thankyou/HeroFragment.js",
+        25
       ]
     ],
     "extractedComments": []
@@ -133,12 +171,16 @@
     "translation": "",
     "origin": [
       [
-        "containers/home/BlogPreviewFragment.js",
-        60
+        "containers/404/BlogPreviewFragment.js",
+        6
       ],
       [
         "containers/home/BlogPreviewFragment.js",
-        85
+        6
+      ],
+      [
+        "containers/thankyou/BlogPreviewFragment.js",
+        6
       ]
     ],
     "extractedComments": []
@@ -152,7 +194,7 @@
       ],
       [
         "containers/add-building/FormFragment.js",
-        112
+        128
       ]
     ],
     "extractedComments": []
@@ -162,7 +204,7 @@
     "origin": [
       [
         "containers/add-building/FormFragment.js",
-        20
+        21
       ]
     ],
     "extractedComments": []
@@ -177,12 +219,12 @@
     ],
     "extractedComments": []
   },
-  "Check here if a building is on the seismic risk list": {
-    "translation": "Verifică aici dacă o clădire se află pe lista de risc seismic",
+  "Check here if a building is on the <0>seismic risk <1/></0> list": {
+    "translation": "Verifică aici dacă o clădire se află pe lista de <0>risc seismic<1/></0>",
     "origin": [
       [
         "containers/home/SearchFragment.js",
-        53
+        49
       ]
     ],
     "extractedComments": []
@@ -212,7 +254,7 @@
     "origin": [
       [
         "components/Header.js",
-        80
+        93
       ]
     ],
     "extractedComments": []
@@ -222,7 +264,7 @@
     "origin": [
       [
         "containers/add-building/FormFragment.js",
-        138
+        154
       ]
     ],
     "extractedComments": []
@@ -276,7 +318,7 @@
     "origin": [
       [
         "containers/home/StatisticFragment.js",
-        74
+        73
       ]
     ],
     "extractedComments": []
@@ -296,7 +338,7 @@
     "origin": [
       [
         "containers/add-building/FormFragment.js",
-        22
+        23
       ]
     ],
     "extractedComments": []
@@ -306,7 +348,7 @@
     "origin": [
       [
         "components/Header.js",
-        70
+        83
       ]
     ],
     "extractedComments": []
@@ -320,7 +362,7 @@
       ],
       [
         "containers/add-building/FormFragment.js",
-        146
+        169
       ]
     ],
     "extractedComments": []
@@ -349,7 +391,7 @@
     "translation": "Între timp, continuă să fii minunat!",
     "origin": [
       [
-        "containers/thankyou/index.js",
+        "containers/thankyou/HeroFragment.js",
         22
       ]
     ],
@@ -360,7 +402,7 @@
     "origin": [
       [
         "containers/home/StatisticFragment.js",
-        27
+        25
       ]
     ],
     "extractedComments": []
@@ -380,7 +422,7 @@
     "origin": [
       [
         "components/LoadMoreArticlesLink/LoadMoreArticlesLink.js",
-        7
+        8
       ]
     ],
     "extractedComments": []
@@ -390,7 +432,7 @@
     "origin": [
       [
         "containers/add-building/FormFragment.js",
-        130
+        146
       ]
     ],
     "extractedComments": []
@@ -411,6 +453,16 @@
       [
         "containers/home/MapFragment.js",
         59
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Other articles": {
+    "translation": "Alte articole",
+    "origin": [
+      [
+        "containers/blog-post/BlogPreviewFragment.js",
+        7
       ]
     ],
     "extractedComments": []
@@ -440,7 +492,7 @@
     "origin": [
       [
         "containers/home/StatisticFragment.js",
-        67
+        65
       ]
     ],
     "extractedComments": []
@@ -471,10 +523,6 @@
       [
         "components/BlogItem/BlogItem.js",
         24
-      ],
-      [
-        "containers/blog-post/BlogPostDetailsFragment/BlogPostDetailsFragment.js",
-        61
       ]
     ],
     "extractedComments": []
@@ -488,7 +536,7 @@
       ],
       [
         "containers/add-building/FormFragment.js",
-        154
+        177
       ]
     ],
     "extractedComments": []
@@ -507,16 +555,16 @@
     "translation": "Server indisponibil",
     "origin": [
       [
+        "components/BlogPreview.js",
+        77
+      ],
+      [
         "containers/add-building/FormFragment.js",
-        98
+        114
       ],
       [
         "containers/blog/Blog.js",
-        72
-      ],
-      [
-        "containers/home/BlogPreviewFragment.js",
-        67
+        69
       ]
     ],
     "extractedComments": []
@@ -536,7 +584,7 @@
     "origin": [
       [
         "containers/add-building/FormFragment.js",
-        114
+        130
       ]
     ],
     "extractedComments": []
@@ -546,7 +594,7 @@
     "origin": [
       [
         "containers/add-building/FormFragment.js",
-        122
+        138
       ]
     ],
     "extractedComments": []
@@ -561,12 +609,22 @@
     ],
     "extractedComments": []
   },
-  "Thank you!": {
-    "translation": "Îți mulțumim!",
+  "Thank you": {
+    "translation": "Îți mulțumim",
     "origin": [
       [
-        "containers/thankyou/index.js",
-        12
+        "containers/thankyou/HeroFragment.js",
+        13
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Welcome!": {
+    "translation": "Bine ai venit!",
+    "origin": [
+      [
+        "containers/home/HeroFragment.js",
+        13
       ]
     ],
     "extractedComments": []
@@ -636,7 +694,7 @@
     "message": "Thank you for the information that you sent us. In the following days someone from our team will evaluate the information sent to us and, as soon as we will have all the necessary data to add the building on the map, we will notify you.",
     "origin": [
       [
-        "containers/thankyou/index.js",
+        "containers/thankyou/HeroFragment.js",
         15
       ]
     ],
