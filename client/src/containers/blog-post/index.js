@@ -9,7 +9,7 @@ export default () => {
 
   return (
     <Layout hero={<HeroFramgment postDetails={postDetails} />}>
-      <BlogPost handlePostLoaded={(post) => setPostDetails(post)} />
+      <BlogPost handlePostLoaded={setPostDetails} />
       <BlogPreviewFragment postSlug={postDetails.slug} />
     </Layout>
   );
