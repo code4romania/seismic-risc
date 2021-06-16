@@ -42,7 +42,7 @@ django-taggit==1.4.0
     # via
     #   -r requirements.in
     #   django-taggit-serializer
-django==3.2.3
+django==3.2.4
     # via
     #   -r requirements.in
     #   django-cors-headers
