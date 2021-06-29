@@ -16,6 +16,7 @@ from configurations import Configuration, values
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
+
 class Base(Configuration):
     """
     For more info about the `django-configurations` library, see
@@ -131,7 +132,6 @@ class Base(Configuration):
     # )
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
-
     MEDIA_URL = "/media/"
     MEDIA_ROOT = os.path.join(BASE_DIR, "./public/media")
 
@@ -154,8 +154,9 @@ class Base(Configuration):
         "SWAGGER_UI_SETTINGS": {"url": "/api/v1/schema"},
     }
 
-    HERE_MAPS_API_KEY = os.getenv('HERE_MAPS_API_KEY')
+    HERE_MAPS_API_KEY = os.getenv("HERE_MAPS_API_KEY")
     HERE_MAPS = {"api_key": HERE_MAPS_API_KEY}
+
 
 class Dev(Base):
     DEBUG = True

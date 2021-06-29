@@ -36,6 +36,7 @@ class ApprovedBuilding(models.Manager):
     def get_queryset(self):
         return super().get_queryset().filter(status=Building.ACCEPTED)
 
+
 class Building(models.Model):
     PENDING = 0
     ACCEPTED = 1

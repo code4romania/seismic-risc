@@ -8,6 +8,7 @@ from django.conf import settings
 
 from . import models
 
+
 @admin.register(models.Statistic)
 class StatisticAdmin(admin.ModelAdmin):
     def has_add_permission(self, request):
@@ -28,7 +29,7 @@ class BuildingAdmin(admin.ModelAdmin):
         "examination_year",
         "certified_expert",
         "status",
-        "general_id"
+        "general_id",
     )
     search_fields = ("address",)
     actions = (
@@ -69,6 +70,7 @@ class BuildingAdmin(admin.ModelAdmin):
         If maps are enabled then we add the JS and CSS for either
         Google JS Maps API or the Mapbox APIs (including Geocoding).
         """
+
         library_css = "https://js.api.here.com/v3/3.1/mapsjs-ui.css"
 
         library_js = (
@@ -100,9 +102,7 @@ class BuildingAdmin(admin.ModelAdmin):
         """
         extra = extra_context or {}
         extra["HERE_MAPS"] = settings.HERE_MAPS
-        return super(BuildingAdmin, self).change_view(
-            request, object_id, form_url, extra_context=extra
-        )
+        return super(BuildingAdmin, self).change_view(request, object_id, form_url, extra_context=extra)
 
     @staticmethod
     def choice_to_string(status):
