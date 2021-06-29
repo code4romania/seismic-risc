@@ -1,28 +1,12 @@
-import requests
 from zipfile import BadZipFile
 
 import tablib
 from django.contrib import admin, messages
 from django.utils.translation import gettext_lazy as _
 from django.utils.translation import ngettext
+from django.conf import settings
 
 from . import models
-
-# class MyAdminSite(admin.AdminSite):
-#     site_header = 'Monty Python administration'
-#     list_filter = ("status", "risk_category", "county", "locality")
-#     list_display = (
-#         "address",
-#         "risk_category",
-#         "examination_year",
-#         "certified_expert",
-#         "status",
-#         "general_id",
-#     )
-#     search_fields = ("address",)
-#
-# admin_site = MyAdminSite(name='myadmin')
-# admin_site.register(models.CustomBuildingAdmin)
 
 @admin.register(models.Statistic)
 class StatisticAdmin(admin.ModelAdmin):
@@ -80,21 +64,45 @@ class BuildingAdmin(admin.ModelAdmin):
 
         self.message_user(request, message, messages.SUCCESS)
 
-    # class Media:
-    #     """
-    #     If maps are enabled then we add the JS and CSS for either
-    #     Google JS Maps API or the Mapbox APIs (including Geocoding).
-    #     """
-    #     library_css = ()
-    #
-    #     library_js = (
-    #         "https://js.api.here.com/v3/3.1/mapsjs-core.js",
-    #         "https://js.api.here.com/v3/3.1/mapsjs-service.js",
-    #         "static/js/admin/here_map.js",
-    #     )
-    #
-    #     css = {"all": ("static/css/admin/location_picker.css",)}
-    #     js = library_js
+    class Media:
+        """
+        If maps are enabled then we add the JS and CSS for either
+        Google JS Maps API or the Mapbox APIs (including Geocoding).
+        """
+        library_css = "https://js.api.here.com/v3/3.1/mapsjs-ui.css"
+
+        library_js = (
+            "https://js.api.here.com/v3/3.1/mapsjs-core.js",
+            "https://js.api.here.com/v3/3.1/mapsjs-service.js",
+            "https://js.api.here.com/v3/3.1/mapsjs-ui.js",
+            "https://js.api.here.com/v3/3.1/mapsjs-mapevents.js",
+            "js/admin/here_map.js",
+        )
+
+        css = {"all": ("css/admin/location_picker.css", library_css)}
+        js = library_js
+
+    def add_view(self, request, form_url="", extra_context=None):
+        """
+        Add the SPECTATOR_MAPS setting to context.
+        Only currently needed if we're using Mapbox, because we need to set
+        the API key in JS in the page.
+        """
+        extra = extra_context or {}
+        extra["HERE_MAPS"] = settings.HERE_MAPS
+        return super(BuildingAdmin, self).add_view(request, form_url, extra_context=extra)
+
+    def change_view(self, request, object_id, form_url="", extra_context=None):
+        """
+        Add the SPECTATOR_MAPS setting to context.
+        Only currently needed if we're using Mapbox, because we need to set
+        the API key in JS in the page.
+        """
+        extra = extra_context or {}
+        extra["HERE_MAPS"] = settings.HERE_MAPS
+        return super(BuildingAdmin, self).change_view(
+            request, object_id, form_url, extra_context=extra
+        )
 
     @staticmethod
     def choice_to_string(status):

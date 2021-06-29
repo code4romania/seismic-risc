@@ -47,6 +47,7 @@ services:
       DJANGO_CONFIGURATION:
       DATABASE_URL:
       DEVBUILD:
+      HERE_MAPS_API_KEY:
 
 volumes:
   pgdata:

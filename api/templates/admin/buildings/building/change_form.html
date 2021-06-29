@@ -3,9 +3,17 @@
 {% load static %}
 
 {% block head %}
-<script src="https://js.api.here.com/v3/3.1/mapsjs-core.js" type="text/javascript" charset="utf-8"></script>
-<script src="https://js.api.here.com/v3/3.1/mapsjs-service.js" type="text/javascript" charset="utf-8"></script>
 <meta name="viewport" content="initial-scale=1.0, width=device-width" />
 {% endblock %}
+
+{% block footer %}
+    {{ block.super }}
+        {{ HERE_MAPS|json_script:"here-maps-config" }}
+        <script>
+            var here_map_config = JSON.parse(
+               document.getElementById("here-maps-config").textContent
+            );
+        </script>
+{% endblock footer %}
 
 {% block userlinks %}{% endblock %}

@@ -15,7 +15,6 @@ from configurations import Configuration, values
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-HERE_MAPS_API_KEY = 'ZMYRTYl3Tih7lfgv7tCz8UyuemS6lTD9us7FLvexFio'
 
 class Base(Configuration):
     """
@@ -34,7 +33,7 @@ class Base(Configuration):
 
     INSTALLED_APPS = [
         # django apps
-        "django.contrib.admin.apps.SimpleAdminConfig",
+        "django.contrib.admin",
         "django.contrib.auth",
         "django.contrib.contenttypes",
         "django.contrib.sessions",
@@ -56,6 +55,7 @@ class Base(Configuration):
         "buildings",
         "pages",
         "blog",
+        # api documentation
         "drf_spectacular",
     ]
 
@@ -124,11 +124,13 @@ class Base(Configuration):
     # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
     STATIC_URL = "/static/"
-    STATIC_ROOT = os.path.join(BASE_DIR, "./public/static")
+    # STATIC_ROOT = os.path.join(BASE_DIR, "./public/static")
+    STATIC_ROOT = os.path.join(BASE_DIR, "static")
     # STATICFILES_DIRS = (
     #     os.path.join(BASE_DIR, 'static'),
     # )
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
+
 
     MEDIA_URL = "/media/"
     MEDIA_ROOT = os.path.join(BASE_DIR, "./public/media")
@@ -152,6 +154,8 @@ class Base(Configuration):
         "SWAGGER_UI_SETTINGS": {"url": "/api/v1/schema"},
     }
 
+    HERE_MAPS_API_KEY = os.getenv('HERE_MAPS_API_KEY')
+    HERE_MAPS = {"api_key": HERE_MAPS_API_KEY}
 
 class Dev(Base):
     DEBUG = True
