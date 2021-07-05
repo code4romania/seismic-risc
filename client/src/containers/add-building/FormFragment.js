@@ -69,7 +69,11 @@ const FormFragment = ({ form }) => {
   };
 
   // eslint-disable-next-line no-unused-vars
-  const handleVerifyCaptcha = (token, eKey) => {};
+  const handleVerifyCaptcha = (token, eKey) => {
+    form.setFieldsValue({
+      captcha: token,
+    });
+  };
 
   useEffect(() => {
     if (fields.address && fields.street_number && fields.locality && fields.county) {
