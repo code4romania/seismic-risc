@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Button, Form, Input, Select, Spin, Typography } from 'antd';
 import { Trans } from '@lingui/macro';
 import { Redirect } from 'react-router-dom';
+import HCaptcha from '@hcaptcha/react-hcaptcha';
 import PinDrop from '../../images/pin_drop.svg';
 
 import config from '../../config';
@@ -9,7 +10,7 @@ import HereMapAddBuilding from '../../components/HereMapAddBuilding/HereMapAddBu
 
 const { Title } = Typography;
 
-const { BUILDINGS_URL, MAP_API_KEY } = config;
+const { BUILDINGS_URL, MAP_API_KEY, CAPTCHA_API_KEY } = config;
 
 const layout = {
   labelCol: { sm: { span: 24 }, md: { span: 6 }, lg: { span: 4 } },
@@ -65,6 +66,13 @@ const FormFragment = ({ form }) => {
 
   const onCoordinatesChange = (newCoordinates) => {
     setCoordinates(newCoordinates);
+  };
+
+  // eslint-disable-next-line no-unused-vars
+  const handleVerifyCaptcha = (token, eKey) => {
+    form.setFieldsValue({
+      captcha: token,
+    });
   };
 
   useEffect(() => {
@@ -186,6 +194,11 @@ const FormFragment = ({ form }) => {
             ))}
           </Select>,
         )}
+      </Form.Item>
+      <Form.Item label={<Trans>Captcha</Trans>}>
+        {getFieldDecorator('captcha', {
+          rules: [{ required: true, message: <EmptyFieldMessage /> }],
+        })(<HCaptcha sitekey={CAPTCHA_API_KEY} onVerify={handleVerifyCaptcha} />)}
       </Form.Item>
       <Form.Item>
         <Button type="primary" htmlType="submit" disabled={state.requestError}>

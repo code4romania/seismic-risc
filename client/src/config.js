@@ -8,4 +8,5 @@ export default {
   POSTS_URL: `${HOST_URL}${PORT}/${API}/posts`,
   STATISTICS_URL: `${HOST_URL}${PORT}/${API}/statistics`,
   MAP_API_KEY: process.env.REACT_APP_API_KEY,
+  CAPTCHA_API_KEY: process.env.REACT_APP_CAPTCHA_API_KEY,
 };
