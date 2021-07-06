@@ -8,6 +8,7 @@ django-ckeditor
 django-storages
 django-taggit
 django-taggit-serializer
+django-jquery
 
 # database
 psycopg2
@@ -29,5 +30,3 @@ gunicorn
 # doc-generation
 drf-spectacular
 
-# django-jquery
-django-jquery
