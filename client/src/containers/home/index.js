@@ -6,9 +6,10 @@ import ParagraphFragment from './ParagraphFragment';
 import SearchFragment from './SearchFragment';
 import StatisticFragment from './StatisticFragment';
 import BlogPreviewFragment from './BlogPreviewFragment';
+import HeroFragment from './HeroFragment';
 
 export default () => (
-  <Layout>
+  <Layout hero={<HeroFragment />}>
     <SearchFragment />
     <MapFragment />
     <StatisticFragment />

@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { Button, Dropdown, Layout, Menu } from 'antd';
-import { DownOutlined, GlobalOutlined, MenuOutlined, PlusCircleFilled } from '@ant-design/icons';
+import { DownOutlined, GlobalOutlined, MenuOutlined, PlusCircleOutlined } from '@ant-design/icons';
 import { Trans } from '@lingui/macro';
 import logo from '../logo.svg';
 
@@ -94,8 +94,8 @@ export default () => {
               </NavLink>
             </li>
             <li>
-              <Button className="add-building" type="primary" href="/adauga-cladire">
-                <PlusCircleFilled />
+              <Button className="add-building" href="/adauga-cladire">
+                <PlusCircleOutlined />
                 <span>
                   <Trans>Add a building</Trans>
                 </span>

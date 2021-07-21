@@ -1,15 +1,15 @@
 import React from 'react';
 import { useParams } from 'react-router-dom';
-import { Col, Row, Tag, Typography } from 'antd';
+import { Col, Row, Typography } from 'antd';
 import { Trans } from '@lingui/macro';
 import useWindowSize from '../../../hooks/useWindowSize';
 
 import config from '../../../config';
 
-const { Title, Paragraph } = Typography;
+const { Paragraph } = Typography;
 const { POSTS_URL } = config;
 
-const BlogPostDetailsFragment = () => {
+const BlogPostDetailsFragment = ({ handlePostLoaded }) => {
   const { slug } = useParams();
   const windowSize = useWindowSize();
   const [state, setState] = React.useState({
@@ -25,6 +25,7 @@ const BlogPostDetailsFragment = () => {
           postDetails,
           requestError: postDetails === null,
         }));
+        handlePostLoaded(postDetails);
       })
       .catch(() => {
         setState((prevState) => ({
@@ -33,7 +34,7 @@ const BlogPostDetailsFragment = () => {
           requestError: true,
         }));
       });
-  }, []);
+  }, [slug]);
 
   if (state.postDetails === null) {
     return state.requestError ? (
@@ -44,7 +45,6 @@ const BlogPostDetailsFragment = () => {
       <p />
     );
   }
-  const authorFullName = `${state.postDetails.author_first_name} ${state.postDetails.author_last_name}`;
 
   return (
     <Row
@@ -53,21 +53,7 @@ const BlogPostDetailsFragment = () => {
       align="top"
       style={{ marginTop: '2rem', marginBottom: '2rem' }}
     >
-      <Col span={16}>
-        <Title level={3} style={{ textTransform: 'uppercase', textAlign: 'left' }}>
-          {state.postDetails.title}
-        </Title>
-        <Paragraph style={{ textAlign: 'left' }}>
-          <Trans>
-            Published by {authorFullName} •{' '}
-            {new Date(state.postDetails.created).toLocaleDateString()}
-          </Trans>
-        </Paragraph>
-        <Paragraph style={{ textAlign: 'left' }}>
-          {state.postDetails.tags.map((tag) => (
-            <Tag key={tag}>#{tag}</Tag>
-          ))}
-        </Paragraph>
+      <Col>
         <Paragraph style={{ textAlign: 'justify' }}>
           {/* eslint-disable-next-line react/no-danger */}
           <div dangerouslySetInnerHTML={{ __html: state.postDetails.text }} />

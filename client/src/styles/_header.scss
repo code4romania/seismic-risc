@@ -71,8 +71,15 @@
   }
 
   a.add-building {
-    color: #fff;
-    padding-top: 0px;
+    border: 2px solid $primary-color;
+    color: $primary-color;
+    height: 45px;
+    display: inline-block;
+    line-height: 40px;
+
+    &:hover {
+      background-color: lighten($primary-color, 60%);
+    }
   }
 }
 

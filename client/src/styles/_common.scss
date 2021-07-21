@@ -23,6 +23,10 @@ code {
   text-align: center;
 }
 
+.App > section {
+  min-height: 100vh;
+}
+
 .App .ant-layout-content .page {
   text-align: left;
   margin: 20px 0;
@@ -104,5 +108,44 @@ code {
     width: 28px;
     right: 40px;
     top: 12px;
+  }
+}
+
+.badge {
+  background-color: $primary-dark;
+  border-radius: 10px;
+  color: #fff;
+  display: inline-flex;
+  height: 26px;
+  line-height: 23px;
+  padding: 0 5px;
+  white-space: nowrap;
+
+  svg {
+    margin-left: 5px;
+    width: 19px;
+  }
+}
+
+.blog-preview, .about-preview {
+  margin-top: 4rem;
+  text-align: left;
+
+  i {
+    margin-right: 5px;
+  }
+}
+
+.about-preview {
+  i {
+    color: $primary-color;
+  }
+}
+
+.blog-preview {
+  margin-bottom: 4rem;
+
+  i {
+    color: $secondary-main;
   }
 }

@@ -60,7 +60,7 @@ django-taggit==1.4.0
     # via
     #   -r requirements.in
     #   django-taggit-serializer
-django==3.2.3
+django==3.2.4
     # via
     #   -r requirements.in
     #   django-cors-headers
@@ -227,7 +227,7 @@ typing-extensions==3.10.0.0
     #   importlib-metadata
 uritemplate==3.0.1
     # via drf-spectacular
-urllib3==1.26.4
+urllib3==1.26.5
     # via botocore
 wcwidth==0.2.5
     # via prompt-toolkit

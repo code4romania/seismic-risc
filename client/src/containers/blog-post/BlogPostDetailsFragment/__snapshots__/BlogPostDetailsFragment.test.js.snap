@@ -8,37 +8,8 @@ exports[`BlogPostDetailsFragment component should render correctly 1`] = `
       style="margin-top: 2rem; margin-bottom: 2rem;"
     >
       <div
-        class="ant-col ant-col-16"
+        class="ant-col"
       >
-        <h3
-          class="ant-typography"
-          style="text-transform: uppercase; text-align: left;"
-        >
-          Title
-        </h3>
-        <div
-          class="ant-typography"
-          style="text-align: left;"
-        >
-          Publicat de First Last • 1/1/1970
-        </div>
-        <div
-          class="ant-typography"
-          style="text-align: left;"
-        >
-          <span
-            class="ant-tag"
-          >
-            #
-            tag1
-          </span>
-          <span
-            class="ant-tag"
-          >
-            #
-            tag2
-          </span>
-        </div>
         <div
           class="ant-typography"
           style="text-align: justify;"

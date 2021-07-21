@@ -22,7 +22,6 @@ services:
       - api
     environment:
       NODE_ENV:
-      REACT_APP_API_KEY:
       REACT_APP_DJANGO_SITE_URL:
       REACT_APP_DJANGO_PORT:
       REACT_APP_DJANGO_API_ENDPOINT:
