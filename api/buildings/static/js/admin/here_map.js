@@ -19,6 +19,7 @@
   var initial_with_loc_zoom = 18;
   var initial_lat = 44.4268;
   var initial_lon = 26.1025;
+  var is_view_building_change_form = false;
 
   function addDraggableMarker(map, behavior, lat, lng) {
     var marker = new H.map.Marker({lat:lat, lng:lng}, {
@@ -148,6 +149,10 @@
   }
 
   $(document).ready(function() {
-    initMap();
+      is_view_building_change_form = $("#building_form").length
+
+      if (is_view_building_change_form > 0) {
+          initMap();
+      }
   });
 })(django.jQuery);

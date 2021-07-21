@@ -86,9 +86,7 @@ class BuildingAdmin(admin.ModelAdmin):
 
     def add_view(self, request, form_url="", extra_context=None):
         """
-        Add the SPECTATOR_MAPS setting to context.
-        Only currently needed if we're using Mapbox, because we need to set
-        the API key in JS in the page.
+        Add the HERE_MAPS setting to context.
         """
         extra = extra_context or {}
         extra["HERE_MAPS"] = settings.HERE_MAPS
@@ -96,13 +94,19 @@ class BuildingAdmin(admin.ModelAdmin):
 
     def change_view(self, request, object_id, form_url="", extra_context=None):
         """
-        Add the SPECTATOR_MAPS setting to context.
-        Only currently needed if we're using Mapbox, because we need to set
-        the API key in JS in the page.
+        Add the HERE_MAPS setting to context.
         """
         extra = extra_context or {}
         extra["HERE_MAPS"] = settings.HERE_MAPS
         return super(BuildingAdmin, self).change_view(request, object_id, form_url, extra_context=extra)
+
+    def changelist_view(self, request, extra_context=None):
+        """
+        Add the HERE_MAPS setting to the change list view context.
+        """
+        extra = extra_context or {}
+        extra["HERE_MAPS"] = settings.HERE_MAPS
+        return super(BuildingAdmin, self).changelist_view(request, extra_context=extra)
 
     @staticmethod
     def choice_to_string(status):
