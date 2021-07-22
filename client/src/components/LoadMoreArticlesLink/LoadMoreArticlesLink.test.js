@@ -2,7 +2,7 @@ import React from 'react';
 import { i18n } from '@lingui/core';
 import { act, getByText, render } from '@testing-library/react';
 import { LinguiWrapper } from '../TestUtils';
-import LoadMore from './LoadMoreArticlesLink';
+import LoadMore from '.';
 
 describe('LoadMoreArticlesLink component', () => {
   it('should be translated correctly in English', () => {

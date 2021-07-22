@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Icon, Row, Typography } from 'antd';
 import { Trans } from '@lingui/macro';
 
-import { useGlobalContext } from '../context';
+import { useGlobalContext } from '../../context';
 
 export default function SearchResults(props) {
   const { onItemSelected } = props;

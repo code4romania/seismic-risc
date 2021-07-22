@@ -3,15 +3,15 @@ import { Button, Col, Layout, Row, Typography } from 'antd';
 import { Trans } from '@lingui/macro';
 import { Link } from 'react-router-dom';
 
-import { ReactComponent as Facebook } from '../images/footer_fb_icon.svg';
-import { ReactComponent as Instagram } from '../images/footer_instagram_logo.svg';
-import { ReactComponent as Twitter } from '../images/footer_twitter_logo.svg';
-import { ReactComponent as Github } from '../images/footer_github_logo.svg';
-import Mkbt from '../images/MKBT-logo-black.png';
-import CfR from '../images/footer_CfR.svg';
-import Tfsg from '../images/footer_tfsg.svg';
+import { ReactComponent as Facebook } from '../../images/footer_fb_icon.svg';
+import { ReactComponent as Instagram } from '../../images/footer_instagram_logo.svg';
+import { ReactComponent as Twitter } from '../../images/footer_twitter_logo.svg';
+import { ReactComponent as Github } from '../../images/footer_github_logo.svg';
+import Mkbt from '../../images/MKBT-logo-black.png';
+import CfR from '../../images/footer_CfR.svg';
+import Tfsg from '../../images/footer_tfsg.svg';
 
-import { useGlobalContext } from '../context';
+import { useGlobalContext } from '../../context';
 
 const { Text } = Typography;
 const { Footer } = Layout;

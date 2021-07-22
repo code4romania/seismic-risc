@@ -6,7 +6,7 @@ import HCaptcha from '@hcaptcha/react-hcaptcha';
 import PinDrop from '../../images/pin_drop.svg';
 
 import config from '../../config';
-import HereMapAddBuilding from '../../components/HereMapAddBuilding/HereMapAddBuilding';
+import HereMapAddBuilding from '../../components/HereMapAddBuilding';
 
 const { Title } = Typography;
 

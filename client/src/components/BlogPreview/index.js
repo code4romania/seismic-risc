@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { Row, Col, Icon, Typography, Spin } from 'antd';
 import { Trans } from '@lingui/macro';
-import config from '../config';
-import BlogCard from './BlogCard';
+import config from '../../config';
+import BlogCard from '../BlogCard';
 
 const { Title } = Typography;
 

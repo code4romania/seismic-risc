@@ -1,5 +1,5 @@
 import React from 'react';
-import HereMapAddBuilding from './HereMapAddBuilding';
+import HereMapAddBuilding from '.';
 
 const Template = (args) => <HereMapAddBuilding {...args} />;
 

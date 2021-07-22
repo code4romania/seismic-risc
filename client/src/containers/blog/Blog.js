@@ -1,9 +1,9 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { Spin, Typography } from 'antd';
 import { Trans } from '@lingui/macro';
-import BlogItem from '../../components/BlogItem/BlogItem';
+import BlogItem from '../../components/BlogItem';
 import config from '../../config';
-import LoadMore from '../../components/LoadMoreArticlesLink/LoadMoreArticlesLink';
+import LoadMore from '../../components/LoadMoreArticlesLink';
 
 const { Title } = Typography;
 
