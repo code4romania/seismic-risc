@@ -5,24 +5,26 @@
 [![GitHub last commit](https://img.shields.io/github/last-commit/code4romania/seismic-risc.svg)](https://github.com/code4romania/seismic-risc/commits/develop)
 [![License: MPL 2.0](https://img.shields.io/badge/license-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 
-<!-- Please don't remove this: Grab your social icons from https://github.com/carlsednaoui/gitsocial -->
-
-<!-- display the social media buttons in your README -->
+<!-- Social icons from https://github.com/konsav/social-icons -->
 
 [![code for romania twitter][1.1]][1]
 [![code for romania facebook][2.1]][2]
+[![code for romania instagram][3.1]][3]
+[![code for romania linkedin][4.1]][4]
 
 <!-- links to social media icons -->
-<!-- no need to change these -->
 
-<!-- icons with padding -->
+[1.1]: https://raw.githubusercontent.com/code4romania/.github/main/social_icons/social_img_twitter.png
+[2.1]: https://raw.githubusercontent.com/code4romania/.github/main/social_icons/social_img_facebook.png
+[3.1]: https://raw.githubusercontent.com/code4romania/.github/main/social_icons/social_img_instagram.png
+[4.1]: https://raw.githubusercontent.com/code4romania/.github/main/social_icons/social_img_linkedin.png
 
-[1.1]: http://i.imgur.com/tXSoThF.png "twitter icon with padding"
-[2.1]: http://i.imgur.com/P3YfQoD.png "facebook icon with padding"
 [1]: https://twitter.com/Code4Romania
-[2]: https://www.facebook.com/code4romania/
+[2]: https://facebook.com/code4romania/
+[3]: https://instagram.com/code4romania/
+[4]: https://linkedin.com/in/code4romania/
 
-<!-- Please don't remove this: Grab your social icons from https://github.com/carlsednaoui/gitsocial -->
+<!-- social icons section end -->
 
 :romania: Un cutremur în București nu este o situație ipotetică.
 Este o certitudine că acest lucru se va întâmpla.
@@ -48,6 +50,9 @@ Seismic Risc is not just "a new information site", but a platform that collects 
 
 **Let's save lives together.**
 
+<details>
+  <summary><b> TABLE OF CONTENTS </b></summary>
+
 - [Seismic Risc](#seismic-risc)
   - [Contributing](#contributing)
   - [Built With](#built-with)
@@ -59,11 +64,11 @@ Seismic Risc is not just "a new information site", but a platform that collects 
   - [Getting started](#getting-started)
     - [Pre-requisites](#pre-requisites)
     - [Initial set-up](#initial-set-up)
+    - [External services API keys](#external-services-api-keys)
     - [Starting the project](#starting-the-project)
+    - [Starting the project without docker](#starting-the-project-without-docker)
     - [Development](#development)
     - [Known Issues](#known-issues)
-      - [Client hot-reload on Windows Docker is not working](#client-hot-reload-on-windows-docker-is-not-working)
-      - [In VS Code, ESLint fails to load the Prettier plugin](#in-vs-code-eslint-fails-to-load-the-prettier-plugin)
   - [Management Commands](#management-commands)
   - [Testing](#testing)
   - [Production](#production)
@@ -71,6 +76,9 @@ Seismic Risc is not just "a new information site", but a platform that collects 
   - [Feedback](#feedback)
   - [License](#license)
   - [About Code4Ro](#about-code4ro)
+
+</details>
+
 
 ## Contributing
 
@@ -133,7 +141,7 @@ On other platforms please follow the instructions described here:
 - <https://docs.docker.com/install/>
 - <https://docs.docker.com/compose/install/>
 
-The versions the Makefile was tested with are:
+The Docker versions the Makefile was tested with are:
 
 ```shell script
 $ docker --version
@@ -148,6 +156,34 @@ Initialise the database and development fixtures:
 
 ```shell script
 make init-env
+```
+
+### External services API keys
+
+In order to have a fully functional project, you have to get two API keys: HERE Maps API Key and hCAPTCHA API Key.
+
+#### HERE Maps API Key 
+
+Tutorial: [https://developer.here.com/tutorials/getting-here-credentials/]()
+
+Keys added to the `.env` file:
+
+```shell
+# the same key can be used for both variables
+HERE_MAPS_API_KEY
+REACT_APP_HERE_MAPS_API_KEY
+```
+
+#### hCAPTCHA API Key
+
+1. [Create a hCAPTCHA account](https://dashboard.hcaptcha.com/signup)
+1. Go to [your settings page](https://dashboard.hcaptcha.com/settings)
+1. Add a new key and add it to the environment variables list
+
+Keys added to the `.env` file:
+
+```shell
+REACT_APP_CAPTCHA_API_KEY
 ```
 
 ### Starting the project

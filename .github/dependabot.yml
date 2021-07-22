@@ -12,5 +12,5 @@ updates:
   assignees:
   - tudoramariei
   labels:
-  - dependencies
-  - react
+  - "dependencies"
+  - "client: ReactJS"
