@@ -262,7 +262,7 @@ Check functionality at http://localhost:3000.
 When creating new models in Django, in order to make sure they are generated in a clean environment, it is recommended to generate the migration files using the `make` command:
 
 ```shell script
-make migrations
+make makemigrations && make migrate
 ```
 
 When you need to add/remove requirements or restrict the version of a requirement, edit the `requirements.in` (prod) and the `requirements-dev.in` (dev) files accordingly. After doing this run:

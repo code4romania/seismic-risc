@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-27 14:56+0300\n"
+"POT-Creation-Date: 2021-06-29 09:49+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,19 +70,19 @@ msgstr "actualizat"
 msgid "posts"
 msgstr "articole"
 
-#: buildings/admin.py:43
+#: buildings/admin.py:55
 msgid "Mark selected buildings as pending"
 msgstr "Marchează clădirile selectate ca în așteptare"
 
-#: buildings/admin.py:48
+#: buildings/admin.py:60
 msgid "Mark selected buildings as accepted"
 msgstr "Marchează clădirile selectate ca acceptate"
 
-#: buildings/admin.py:53
+#: buildings/admin.py:65
 msgid "Mark selected buildings as rejected"
 msgstr "Marchează clădirile selectate ca respinse"
 
-#: buildings/admin.py:60
+#: buildings/admin.py:72
 #, python-brace-format
 msgid "{updated} building was successfully marked as {status}."
 msgid_plural "{updated} buildings were successfully marked as {status}."
@@ -90,22 +90,31 @@ msgstr[0] "{updated} clădire a fost marcată ca {status}"
 msgstr[1] "{updated} clădiri au fost marcate ca {status}"
 msgstr[2] "{updated} de clădiri au fost marcate ca {status}"
 
-#: buildings/admin.py:98
-#, python-brace-format
-msgid "File with name '{file_name}' wasn't imported."
-msgstr "Fișierul cu numele '{file_name}' a fost importat."
+#: buildings/admin.py:104
+msgid "building resource"
+msgstr "resursă clădire"
 
-#: buildings/admin.py:102
+#: buildings/admin.py:105
+msgid "building resources"
+msgstr "resurse clădire"
+
+#: buildings/admin.py:133
+#, python-brace-format
+msgid "File with name '{file_name}' wasn't imported. Errors: {row_errors}"
+msgstr ""
+"Fișierul cu numele '{file_name}' nu a fost importat. Erori: {row_errors}"
+
+#: buildings/admin.py:140
 #, python-brace-format
 msgid "File with name '{file_name}' was imported."
 msgstr "Fișierul cu numele '{file_name}' a fost importat."
 
-#: buildings/admin.py:108
+#: buildings/admin.py:146
 #, python-brace-format
 msgid "File with name '{file_name}' wasn't an XLSX."
 msgstr "Fișierul cu numele '{file_name}' nu este XLSX."
 
-#: buildings/admin.py:114
+#: buildings/admin.py:152
 #, python-brace-format
 msgid ""
 "File with name '{file_name}' couldn't be imported. The error received was: "
@@ -118,223 +127,323 @@ msgstr ""
 msgid "Buildings"
 msgstr "Clădiri"
 
-#: buildings/models.py:11
+#: buildings/models.py:9
 msgid "Sector 1"
 msgstr "Sector 1"
 
-#: buildings/models.py:12
+#: buildings/models.py:10
 msgid "Sector 2"
 msgstr "Sector 2"
 
-#: buildings/models.py:13
+#: buildings/models.py:11
 msgid "Sector 3"
 msgstr "Sector 3"
 
-#: buildings/models.py:14
+#: buildings/models.py:12
 msgid "Sector 4"
 msgstr "Sector 4"
 
-#: buildings/models.py:15
+#: buildings/models.py:13
 msgid "Sector 5"
 msgstr "Sector 5"
 
-#: buildings/models.py:16
+#: buildings/models.py:14
 msgid "Sector 6"
 msgstr "Sector 6"
 
-#: buildings/models.py:20
+#: buildings/models.py:18
 msgid "N/A"
 msgstr "N/A"
 
-#: buildings/models.py:21
+#: buildings/models.py:19
 msgid "U1"
 msgstr "U1"
 
-#: buildings/models.py:22
+#: buildings/models.py:20
 msgid "U2"
 msgstr "U2"
 
-#: buildings/models.py:23
+#: buildings/models.py:21
 msgid "U3"
 msgstr "U3"
 
-#: buildings/models.py:24
+#: buildings/models.py:22
 msgid "U4"
 msgstr "U4"
 
-#: buildings/models.py:25
+#: buildings/models.py:23
 msgid "RS I"
 msgstr "RS I"
 
-#: buildings/models.py:26
+#: buildings/models.py:24
 msgid "RS II"
 msgstr "RS II"
 
-#: buildings/models.py:27
+#: buildings/models.py:25
 msgid "RS III"
 msgstr "RS III"
 
-#: buildings/models.py:28
+#: buildings/models.py:26
 msgid "RS IV"
 msgstr "RS IV"
 
-#: buildings/models.py:46
+#: buildings/models.py:49 buildings/models.py:161
+msgid "work performed"
+msgstr "lucrare efectuată"
+
+#: buildings/models.py:50
+msgid "works performed"
+msgstr "lucrări efectuate"
+
+#: buildings/models.py:69
+msgid "proximal utility"
+msgstr "utilitate din vecinătate"
+
+#: buildings/models.py:70 buildings/models.py:142
+msgid "proximal utilities"
+msgstr "utilități din vecinătate"
+
+#: buildings/models.py:84
 msgid "Pending"
 msgstr "În așteptare"
 
-#: buildings/models.py:47
+#: buildings/models.py:85
 msgid "Accepted"
 msgstr "Acceptat"
 
-#: buildings/models.py:48
+#: buildings/models.py:86
 msgid "Rejected"
 msgstr "Respins"
 
-#: buildings/models.py:51
+#: buildings/models.py:90
+msgid "no"
+msgstr "nu"
+
+#: buildings/models.py:91
+msgid "yes, with private funding"
+msgstr "da, cu fonduri proprii"
+
+#: buildings/models.py:92
+msgid "yes, with public funding"
+msgstr "da, cu fonduri publice"
+
+#: buildings/models.py:93
+msgid "demolished"
+msgstr "demolat"
+
+#: buildings/models.py:96
 msgid "general id"
 msgstr "id general"
 
-#: buildings/models.py:54
+#: buildings/models.py:99
 msgid "risk category"
 msgstr "categorie de risc"
 
-#: buildings/models.py:60
+#: buildings/models.py:105
 msgid "registration number"
 msgstr "număr înregistrare"
 
-#: buildings/models.py:61
+#: buildings/models.py:106
 msgid "examination year"
 msgstr "an examinare"
 
-#: buildings/models.py:62
+#: buildings/models.py:107
 msgid "certified expert"
 msgstr "expert certificat"
 
-#: buildings/models.py:63
+#: buildings/models.py:108
 msgid "observations"
 msgstr "observații"
 
-#: buildings/models.py:65
+#: buildings/models.py:110
 msgid "latitude"
 msgstr "latitudine"
 
-#: buildings/models.py:66
+#: buildings/models.py:111
 msgid "longitude"
 msgstr "longitudine"
 
-#: buildings/models.py:68
+#: buildings/models.py:113
 msgid "county"
 msgstr "județ"
 
-#: buildings/models.py:69
+#: buildings/models.py:114
 msgid "address"
 msgstr "adresă"
 
-#: buildings/models.py:70
+#: buildings/models.py:115
 msgid "street number"
 msgstr "număr stradal"
 
-#: buildings/models.py:71
+#: buildings/models.py:116
 msgid "locality"
 msgstr "localitate"
 
-#: buildings/models.py:73
+#: buildings/models.py:118
 msgid "year built"
 msgstr "an construcție"
 
-#: buildings/models.py:74
+#: buildings/models.py:119
 msgid "height regime"
 msgstr "regim înălțime"
 
-#: buildings/models.py:75
+#: buildings/models.py:120
 msgid "apartment count"
-msgstr "total apartamente"
+msgstr "număr de apartamente"
 
-#: buildings/models.py:76
+#: buildings/models.py:122
+msgid "permanently inhabited apartment count"
+msgstr "număr de locuințe ocupate permanent"
+
+#: buildings/models.py:124
+msgid "rented apartment count"
+msgstr "număr de apartamente închiriate"
+
+#: buildings/models.py:125
+msgid "resident count"
+msgstr "număr de locatari"
+
+#: buildings/models.py:126
+msgid "owner count"
+msgstr "număr de proprietari"
+
+#: buildings/models.py:127
+msgid "public apartment count"
+msgstr "număr de apartamente în proprietatea statului"
+
+#: buildings/models.py:128
+msgid "public owners"
+msgstr "apartamente în proprietatea statului"
+
+#: buildings/models.py:129
 msgid "surface"
 msgstr "suprafață"
 
-#: buildings/models.py:78
-msgid "cadastre number"
-msgstr "număr cadastru"
+#: buildings/models.py:131
+msgid "has owners association"
+msgstr "are asociație de proprietari"
 
-#: buildings/models.py:79
+#: buildings/models.py:132
+msgid "6 month debt apartment count"
+msgstr "număr de apartamente cu datorii la întreținere mai mari de 6 luni"
+
+#: buildings/models.py:133
+msgid "disconnected utilities"
+msgstr "imobil deconectat de la un serviciu de utilitate publică"
+
+#: buildings/models.py:134
+msgid "broken utilities"
+msgstr "imobilul are elemente tehnice nefuncționale"
+
+#: buildings/models.py:136
+msgid "office count"
+msgstr "număr de birouri"
+
+#: buildings/models.py:137
+msgid "commercial space count"
+msgstr "număr de spații comerciale"
+
+#: buildings/models.py:139
+msgid "self-owned commercial space count"
+msgstr "spații comerciale deținute de firmele care le utilizează"
+
+#: buildings/models.py:145
+msgid "proximal utilities description"
+msgstr "comentarii privind utilitățile din vecinătate"
+
+#: buildings/models.py:148
+msgid "cadastre number"
+msgstr "număr cadastral"
+
+#: buildings/models.py:149
 msgid "land registry number"
 msgstr "număr carte funciară"
 
-#: buildings/models.py:80
+#: buildings/models.py:150
 msgid "administration update"
 msgstr "actualizare administrare"
 
-#: buildings/models.py:81
+#: buildings/models.py:151
 msgid "admin update"
 msgstr "actualizare de admin"
 
-#: buildings/models.py:84 buildings/models.py:145
+#: buildings/models.py:153 buildings/models.py:214
 msgid "status"
 msgstr "stare"
 
-#: buildings/models.py:90
+#: buildings/models.py:155
 msgid "created on"
 msgstr "creat la"
 
-#: buildings/models.py:96
+#: buildings/models.py:157
+msgid "is standing"
+msgstr "clădirea există"
+
+#: buildings/models.py:158
+msgid "is consolidated"
+msgstr "clădire consolidată"
+
+#: buildings/models.py:171
 msgid "building"
 msgstr "clădire"
 
-#: buildings/models.py:97
+#: buildings/models.py:172
 msgid "buildings"
 msgstr "clădiri"
 
-#: buildings/models.py:104
+#: buildings/models.py:182
+msgid "date work performed"
+msgstr "dată efectuare lucrări"
+
+#: buildings/models.py:185
+msgid "work performed event"
+msgstr "eveniment de efectuare lucrări"
+
+#: buildings/models.py:186
+msgid "work performed events"
+msgstr "evenimente de efectuare lucrări"
+
+#: buildings/models.py:190
 msgid "people under risk"
 msgstr "persoane aflate sub risc"
 
-#: buildings/models.py:105
+#: buildings/models.py:191
 msgid "consolidated buildings"
 msgstr "clădiri consolidate"
 
-#: buildings/models.py:108
+#: buildings/models.py:194
 msgid "statistic"
 msgstr "statistică"
 
-#: buildings/models.py:109
+#: buildings/models.py:195
 msgid "statistics"
 msgstr "statistici"
 
-#: buildings/models.py:128
-msgid "building resource"
-msgstr "resursă clădire"
-
-#: buildings/models.py:129
-msgid "building resources"
-msgstr "resurse clădire"
-
-#: buildings/models.py:138
+#: buildings/models.py:207
 msgid "Not tried"
 msgstr "Neîncercat"
 
-#: buildings/models.py:139
+#: buildings/models.py:208
 msgid "Imported successfully"
 msgstr "Importat cu succes"
 
-#: buildings/models.py:140
+#: buildings/models.py:209
 msgid "Import failed"
 msgstr "Importare eșuată"
 
-#: buildings/models.py:143 pages/models.py:9 pages/models.py:95
+#: buildings/models.py:212 pages/models.py:9 pages/models.py:95
 msgid "name"
 msgstr "nume"
 
-#: buildings/models.py:144
+#: buildings/models.py:213
 msgid "file"
 msgstr "fișier"
 
-#: buildings/models.py:148
+#: buildings/models.py:217
 msgid "CSV file"
 msgstr "fișier CSV"
 
-#: buildings/models.py:149
+#: buildings/models.py:218
 msgid "CSV files"
 msgstr "fișiere CSV"
 
@@ -426,11 +535,11 @@ msgstr "fișier încărcat"
 msgid "attachments"
 msgstr "atașamente"
 
-#: seismic_site/settings.py:119
+#: seismic_site/settings.py:121
 msgid "English"
 msgstr "Engleză"
 
-#: seismic_site/settings.py:119
+#: seismic_site/settings.py:121
 msgid "Romanian"
 msgstr "Română"
 

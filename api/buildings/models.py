@@ -2,9 +2,7 @@ from enum import Enum
 
 from django.db import models
 from django.utils import timezone
-from django.utils.translation import gettext_lazy as _
-
-from import_export import resources
+from django.utils.translation import get_language, gettext_lazy as _
 
 
 class SectorChoice(Enum):
@@ -32,6 +30,46 @@ class SeismicCategoryChoice(Enum):
         return [(i.name, i.value) for i in cls]
 
 
+class BuildingWorkPerformed(models.Model):
+    work_name_en = models.CharField("work name", max_length=200, unique=True, blank=False, default="")
+    work_name_ro = models.CharField("denumire lucrare", max_length=200, unique=True, blank=False, default="")
+
+    @property
+    def work_name(self):
+        current_language = get_language()
+        if "ro" in current_language:
+            return self.work_name_ro
+        else:
+            return self.work_name_en
+
+    def __str__(self):
+        return self.work_name
+
+    class Meta:
+        verbose_name = _("work performed")
+        verbose_name_plural = _("works performed")
+
+
+class BuildingProximalUtilities(models.Model):
+    utility_name_en = models.CharField("utility name", max_length=200, unique=True, blank=False, default="")
+    utility_name_ro = models.CharField("denumire utilitate", max_length=200, unique=True, blank=False, default="")
+
+    @property
+    def utility_name(self):
+        current_language = get_language()
+        if "ro" in current_language:
+            return self.utility_name_ro
+        else:
+            return self.utility_name_en
+
+    def __str__(self):
+        return self.utility_name
+
+    class Meta:
+        verbose_name = _("proximal utility")
+        verbose_name_plural = _("proximal utilities")
+
+
 class ApprovedBuilding(models.Manager):
     def get_queryset(self):
         return super().get_queryset().filter(status=Building.ACCEPTED)
@@ -46,6 +84,13 @@ class Building(models.Model):
         (PENDING, _("Pending")),
         (ACCEPTED, _("Accepted")),
         (REJECTED, _("Rejected")),
+    ]
+
+    CONSOLIDATION_CHOICES = [
+        (0, _("no")),
+        (1, _("yes, with private funding")),
+        (2, _("yes, with public funding")),
+        (-1, _("demolished")),
     ]
 
     general_id = models.AutoField(_("general id"), primary_key=True)
@@ -72,22 +117,52 @@ class Building(models.Model):
 
     year_built = models.IntegerField(_("year built"), null=True)
     height_regime = models.CharField(_("height regime"), max_length=50, null=True)
-    apartment_count = models.IntegerField(_("apartment count"), null=True)
-    surface = models.FloatField(_("surface"), null=True)
+    apartment_count = models.IntegerField(_("apartment count"), null=True, blank=True)
+    permanently_occupied_apartment_count = models.IntegerField(
+        _("permanently inhabited apartment count"), null=True, blank=True
+    )
+    rented_apartment_count = models.IntegerField(_("rented apartment count"), null=True, blank=True)
+    residents_count = models.IntegerField(_("resident count"), null=True, blank=True)
+    owners_count = models.IntegerField(_("owner count"), null=True, blank=True)
+    public_apartment_count = models.IntegerField(_("public apartment count"), null=True, blank=True)
+    public_owners = models.CharField(_("public owners"), null=True, blank=True, max_length=200)
+    surface = models.FloatField(_("surface"), null=True, blank=True)
 
-    cadastre_number = models.IntegerField(_("cadastre number"), null=True)
-    land_registry_number = models.CharField(_("land registry number"), max_length=50, null=True)
+    has_owners_association = models.BooleanField(_("has owners association"), null=True, blank=True, default=None)
+    apartments_with_6_months_debt = models.IntegerField(_("6 month debt apartment count"), null=True, blank=True)
+    disconnected_utilities = models.CharField(_("disconnected utilities"), null=True, blank=True, max_length=200)
+    broken_utilities = models.CharField(_("broken utilities"), null=True, blank=True, max_length=200)
+
+    office_count = models.IntegerField(_("office count"), null=True, blank=True)
+    commercial_space_count = models.IntegerField(_("commercial space count"), null=True, blank=True)
+    self_owned_commercial_space_count = models.IntegerField(
+        _("self-owned commercial space count"), null=True, blank=True
+    )
+    proximal_utilities = models.ManyToManyField(
+        BuildingProximalUtilities, verbose_name=_("proximal utilities"), blank=True
+    )
+    proximal_utilities_description = models.CharField(
+        _("proximal utilities description"), null=True, blank=True, max_length=200
+    )
+
+    cadastre_number = models.IntegerField(_("cadastre number"), null=True, blank=True)
+    land_registry_number = models.CharField(_("land registry number"), max_length=50, null=True, blank=True)
     administration_update = models.DateField(_("administration update"), null=True, blank=True)
     admin_update = models.DateField(_("admin update"), null=True, blank=True)
 
-    status = models.SmallIntegerField(
-        _("status"),
-        default=PENDING,
-        choices=BUILDING_STATUS_CHOICES,
-        db_index=True,
-    )
+    status = models.SmallIntegerField(_("status"), default=PENDING, choices=BUILDING_STATUS_CHOICES, db_index=True)
 
     created_on = models.DateTimeField(_("created on"), default=timezone.now, blank=True)
+
+    is_still_present = models.BooleanField(_("is standing"), default=True, null=True, blank=True)
+    consolidation_status = models.SmallIntegerField(_("is consolidated"), default=0, choices=CONSOLIDATION_CHOICES)
+    work_performed = models.ManyToManyField(
+        BuildingWorkPerformed,
+        verbose_name=_("work performed"),
+        through="BuildingWorkPerformedEvent",
+        through_fields=("building", "work_performed"),
+        blank=True,
+    )
 
     objects = models.Manager()
     approved = ApprovedBuilding()
@@ -97,7 +172,18 @@ class Building(models.Model):
         verbose_name_plural = _("buildings")
 
     def __str__(self):
-        return self.address
+        return f"{self.address}, {self.street_number} - {self.county}, {self.locality}"
+
+
+class BuildingWorkPerformedEvent(models.Model):
+    building = models.ForeignKey(Building, on_delete=models.CASCADE)
+    work_performed = models.ForeignKey(BuildingWorkPerformed, on_delete=models.CASCADE)
+
+    date_performed = models.DateField(_("date work performed"), blank=True)
+
+    class Meta:
+        verbose_name = _("work performed event")
+        verbose_name_plural = _("work performed events")
 
 
 class Statistic(models.Model):
@@ -110,23 +196,6 @@ class Statistic(models.Model):
 
     def __str__(self):
         return "Statistics"
-
-
-class BuildingResource(resources.ModelResource):
-    class Meta:
-        DATE_FORMAT = {"format": "%d.%m.%Y"}
-
-        model = Building
-        exclude = ("id",)
-        import_id_fields = ("general_id",)
-
-        widgets = {
-            "administration_update": DATE_FORMAT,
-            "admin_update": DATE_FORMAT,
-        }
-
-        verbose_name = _("building resource")
-        verbose_name_plural = _("building resources")
 
 
 class CsvFile(models.Model):
