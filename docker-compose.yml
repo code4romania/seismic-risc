@@ -5,8 +5,6 @@ services:
     image: postgres:11
     volumes:
       - pgdata:/var/lib/postgresql/data
-    # ports:
-    #   - "5432:5432"
     environment:
       - POSTGRES_HOST_AUTH_METHOD=trust
 
@@ -22,10 +20,11 @@ services:
       - api
     environment:
       NODE_ENV:
+      REACT_APP_CAPTCHA_API_KEY:
+      REACT_APP_HERE_MAPS_API_KEY:
       REACT_APP_DJANGO_SITE_URL:
       REACT_APP_DJANGO_PORT:
       REACT_APP_DJANGO_API_ENDPOINT:
-      HERE_MAPS_API_KEY:
 
   api:
     container_name: seismic-risc-api
