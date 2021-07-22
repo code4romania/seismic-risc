@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@ant-design/icons": "^4.3.0",
+    "@ant-design/icons": "^4.6.2",
     "@hcaptcha/react-hcaptcha": "^0.3.6",
     "@lingui/core": "^3.8.10",
     "@lingui/macro": "^3.8.2",
