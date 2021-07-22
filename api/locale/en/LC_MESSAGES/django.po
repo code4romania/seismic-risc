@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-05-27 14:56+0300\n"
+"POT-Creation-Date: 2021-06-29 09:49+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,41 +69,49 @@ msgstr ""
 msgid "posts"
 msgstr ""
 
-#: buildings/admin.py:43
+#: buildings/admin.py:55
 msgid "Mark selected buildings as pending"
 msgstr ""
 
-#: buildings/admin.py:48
+#: buildings/admin.py:60
 msgid "Mark selected buildings as accepted"
 msgstr ""
 
-#: buildings/admin.py:53
+#: buildings/admin.py:65
 msgid "Mark selected buildings as rejected"
 msgstr ""
 
-#: buildings/admin.py:60
+#: buildings/admin.py:72
 #, python-brace-format
 msgid "{updated} building was successfully marked as {status}."
 msgid_plural "{updated} buildings were successfully marked as {status}."
 msgstr[0] ""
 msgstr[1] ""
 
-#: buildings/admin.py:98
-#, python-brace-format
-msgid "File with name '{file_name}' wasn't imported."
+#: buildings/admin.py:104
+msgid "building resource"
 msgstr ""
 
-#: buildings/admin.py:102
+#: buildings/admin.py:105
+msgid "building resources"
+msgstr ""
+
+#: buildings/admin.py:133
+#, python-brace-format
+msgid "File with name '{file_name}' wasn't imported. Errors: {row_errors}"
+msgstr ""
+
+#: buildings/admin.py:140
 #, python-brace-format
 msgid "File with name '{file_name}' was imported."
 msgstr ""
 
-#: buildings/admin.py:108
+#: buildings/admin.py:146
 #, python-brace-format
 msgid "File with name '{file_name}' wasn't an XLSX."
 msgstr ""
 
-#: buildings/admin.py:114
+#: buildings/admin.py:152
 #, python-brace-format
 msgid ""
 "File with name '{file_name}' couldn't be imported. The error received was: "
@@ -114,223 +122,325 @@ msgstr ""
 msgid "Buildings"
 msgstr ""
 
-#: buildings/models.py:11
+#: buildings/models.py:9
 msgid "Sector 1"
 msgstr ""
 
-#: buildings/models.py:12
+#: buildings/models.py:10
 msgid "Sector 2"
 msgstr ""
 
-#: buildings/models.py:13
+#: buildings/models.py:11
 msgid "Sector 3"
 msgstr ""
 
-#: buildings/models.py:14
+#: buildings/models.py:12
 msgid "Sector 4"
 msgstr ""
 
-#: buildings/models.py:15
+#: buildings/models.py:13
 msgid "Sector 5"
 msgstr ""
 
-#: buildings/models.py:16
+#: buildings/models.py:14
 msgid "Sector 6"
 msgstr ""
 
-#: buildings/models.py:20
+#: buildings/models.py:18
 msgid "N/A"
 msgstr ""
 
-#: buildings/models.py:21
+#: buildings/models.py:19
 msgid "U1"
 msgstr ""
 
-#: buildings/models.py:22
+#: buildings/models.py:20
 msgid "U2"
 msgstr ""
 
-#: buildings/models.py:23
+#: buildings/models.py:21
 msgid "U3"
 msgstr ""
 
-#: buildings/models.py:24
+#: buildings/models.py:22
 msgid "U4"
 msgstr ""
 
-#: buildings/models.py:25
+#: buildings/models.py:23
 msgid "RS I"
 msgstr ""
 
-#: buildings/models.py:26
+#: buildings/models.py:24
 msgid "RS II"
 msgstr ""
 
-#: buildings/models.py:27
+#: buildings/models.py:25
 msgid "RS III"
 msgstr ""
 
-#: buildings/models.py:28
+#: buildings/models.py:26
 msgid "RS IV"
 msgstr ""
 
-#: buildings/models.py:46
-msgid "Pending"
+#: buildings/models.py:49 buildings/models.py:161
+msgid "work performed"
 msgstr ""
 
-#: buildings/models.py:47
-msgid "Accepted"
-msgstr ""
-
-#: buildings/models.py:48
-msgid "Rejected"
-msgstr ""
-
-#: buildings/models.py:51
-msgid "general id"
-msgstr ""
-
-#: buildings/models.py:54
-msgid "risk category"
-msgstr ""
-
-#: buildings/models.py:60
-msgid "registration number"
-msgstr ""
-
-#: buildings/models.py:61
-msgid "examination year"
-msgstr ""
-
-#: buildings/models.py:62
-msgid "certified expert"
-msgstr ""
-
-#: buildings/models.py:63
-msgid "observations"
-msgstr ""
-
-#: buildings/models.py:65
-msgid "latitude"
-msgstr ""
-
-#: buildings/models.py:66
-msgid "longitude"
-msgstr ""
-
-#: buildings/models.py:68
-msgid "county"
+#: buildings/models.py:50
+msgid "works performed"
 msgstr ""
 
 #: buildings/models.py:69
-msgid "address"
+#, fuzzy
+#| msgid "proximal utilities description"
+msgid "proximal utility"
+msgstr "comments on the proximal utilities"
+
+#: buildings/models.py:70 buildings/models.py:142
+msgid "proximal utilities"
 msgstr ""
 
-#: buildings/models.py:70
-msgid "street number"
+#: buildings/models.py:84
+msgid "Pending"
 msgstr ""
 
-#: buildings/models.py:71
-msgid "locality"
+#: buildings/models.py:85
+msgid "Accepted"
 msgstr ""
 
-#: buildings/models.py:73
-msgid "year built"
-msgstr ""
-
-#: buildings/models.py:74
-msgid "height regime"
-msgstr ""
-
-#: buildings/models.py:75
-msgid "apartment count"
-msgstr ""
-
-#: buildings/models.py:76
-msgid "surface"
-msgstr ""
-
-#: buildings/models.py:78
-msgid "cadastre number"
-msgstr ""
-
-#: buildings/models.py:79
-msgid "land registry number"
-msgstr ""
-
-#: buildings/models.py:80
-msgid "administration update"
-msgstr ""
-
-#: buildings/models.py:81
-msgid "admin update"
-msgstr ""
-
-#: buildings/models.py:84 buildings/models.py:145
-msgid "status"
+#: buildings/models.py:86
+msgid "Rejected"
 msgstr ""
 
 #: buildings/models.py:90
-msgid "created on"
+msgid "no"
+msgstr ""
+
+#: buildings/models.py:91
+msgid "yes, with private funding"
+msgstr ""
+
+#: buildings/models.py:92
+msgid "yes, with public funding"
+msgstr ""
+
+#: buildings/models.py:93
+msgid "demolished"
 msgstr ""
 
 #: buildings/models.py:96
-msgid "building"
+msgid "general id"
 msgstr ""
 
-#: buildings/models.py:97
-msgid "buildings"
-msgstr ""
-
-#: buildings/models.py:104
-msgid "people under risk"
+#: buildings/models.py:99
+msgid "risk category"
 msgstr ""
 
 #: buildings/models.py:105
-msgid "consolidated buildings"
+msgid "registration number"
+msgstr ""
+
+#: buildings/models.py:106
+msgid "examination year"
+msgstr ""
+
+#: buildings/models.py:107
+msgid "certified expert"
 msgstr ""
 
 #: buildings/models.py:108
-msgid "statistic"
+msgid "observations"
 msgstr ""
 
-#: buildings/models.py:109
-msgid "statistics"
+#: buildings/models.py:110
+msgid "latitude"
+msgstr ""
+
+#: buildings/models.py:111
+msgid "longitude"
+msgstr ""
+
+#: buildings/models.py:113
+msgid "county"
+msgstr ""
+
+#: buildings/models.py:114
+msgid "address"
+msgstr ""
+
+#: buildings/models.py:115
+msgid "street number"
+msgstr ""
+
+#: buildings/models.py:116
+msgid "locality"
+msgstr ""
+
+#: buildings/models.py:118
+msgid "year built"
+msgstr ""
+
+#: buildings/models.py:119
+msgid "height regime"
+msgstr ""
+
+#: buildings/models.py:120
+msgid "apartment count"
+msgstr ""
+
+#: buildings/models.py:122
+msgid "permanently inhabited apartment count"
+msgstr ""
+
+#: buildings/models.py:124
+msgid "rented apartment count"
+msgstr ""
+
+#: buildings/models.py:125
+msgid "resident count"
+msgstr ""
+
+#: buildings/models.py:126
+msgid "owner count"
+msgstr ""
+
+#: buildings/models.py:127
+msgid "public apartment count"
 msgstr ""
 
 #: buildings/models.py:128
-msgid "building resource"
-msgstr ""
+msgid "public owners"
+msgstr "state owned apartments"
 
 #: buildings/models.py:129
-msgid "building resources"
+msgid "surface"
 msgstr ""
 
-#: buildings/models.py:138
-msgid "Not tried"
+#: buildings/models.py:131
+msgid "has owners association"
+msgstr ""
+
+#: buildings/models.py:132
+msgid "6 month debt apartment count"
+msgstr "number of apartments with utilities debts longer than 6 months"
+
+#: buildings/models.py:133
+msgid "disconnected utilities"
+msgstr "building disconnected from public utilities"
+
+#: buildings/models.py:134
+msgid "broken utilities"
+msgstr "building has broken public utilities"
+
+#: buildings/models.py:136
+msgid "office count"
+msgstr ""
+
+#: buildings/models.py:137
+msgid "commercial space count"
 msgstr ""
 
 #: buildings/models.py:139
-msgid "Imported successfully"
-msgstr ""
+msgid "self-owned commercial space count"
+msgstr "commercial space owned by the company using it"
 
-#: buildings/models.py:140
-msgid "Import failed"
-msgstr ""
-
-#: buildings/models.py:143 pages/models.py:9 pages/models.py:95
-msgid "name"
-msgstr ""
-
-#: buildings/models.py:144
-msgid "file"
-msgstr ""
+#: buildings/models.py:145
+msgid "proximal utilities description"
+msgstr "comments on the proximal utilities"
 
 #: buildings/models.py:148
-msgid "CSV file"
+msgid "cadastre number"
 msgstr ""
 
 #: buildings/models.py:149
+msgid "land registry number"
+msgstr ""
+
+#: buildings/models.py:150
+msgid "administration update"
+msgstr ""
+
+#: buildings/models.py:151
+msgid "admin update"
+msgstr ""
+
+#: buildings/models.py:153 buildings/models.py:214
+msgid "status"
+msgstr ""
+
+#: buildings/models.py:155
+msgid "created on"
+msgstr ""
+
+#: buildings/models.py:157
+msgid "is standing"
+msgstr ""
+
+#: buildings/models.py:158
+msgid "is consolidated"
+msgstr ""
+
+#: buildings/models.py:171
+msgid "building"
+msgstr ""
+
+#: buildings/models.py:172
+msgid "buildings"
+msgstr ""
+
+#: buildings/models.py:182
+msgid "date work performed"
+msgstr ""
+
+#: buildings/models.py:185
+msgid "work performed event"
+msgstr ""
+
+#: buildings/models.py:186
+msgid "work performed events"
+msgstr ""
+
+#: buildings/models.py:190
+msgid "people under risk"
+msgstr ""
+
+#: buildings/models.py:191
+msgid "consolidated buildings"
+msgstr ""
+
+#: buildings/models.py:194
+msgid "statistic"
+msgstr ""
+
+#: buildings/models.py:195
+msgid "statistics"
+msgstr ""
+
+#: buildings/models.py:207
+msgid "Not tried"
+msgstr ""
+
+#: buildings/models.py:208
+msgid "Imported successfully"
+msgstr ""
+
+#: buildings/models.py:209
+msgid "Import failed"
+msgstr ""
+
+#: buildings/models.py:212 pages/models.py:9 pages/models.py:95
+msgid "name"
+msgstr ""
+
+#: buildings/models.py:213
+msgid "file"
+msgstr ""
+
+#: buildings/models.py:217
+msgid "CSV file"
+msgstr ""
+
+#: buildings/models.py:218
 msgid "CSV files"
 msgstr ""
 
@@ -422,10 +532,10 @@ msgstr ""
 msgid "attachments"
 msgstr ""
 
-#: seismic_site/settings.py:119
+#: seismic_site/settings.py:121
 msgid "English"
 msgstr ""
 
-#: seismic_site/settings.py:119
+#: seismic_site/settings.py:121
 msgid "Romanian"
 msgstr ""

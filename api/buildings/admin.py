@@ -1,12 +1,18 @@
 from zipfile import BadZipFile
 
 import tablib
+from django.conf import settings
 from django.contrib import admin, messages
 from django.utils.translation import gettext_lazy as _
 from django.utils.translation import ngettext
-from django.conf import settings
+from import_export import resources
 
-from . import models
+from buildings import models
+
+
+class BuildingWorkPerformedInline(admin.TabularInline):
+    model = models.BuildingWorkPerformedEvent
+    extra = 1
 
 
 @admin.register(models.Statistic)
@@ -18,6 +24,11 @@ class StatisticAdmin(admin.ModelAdmin):
             if not has_entry:
                 return True
         return False
+
+
+@admin.register(models.BuildingProximalUtilities, models.BuildingWorkPerformed)
+class BuildingAttributes(admin.ModelAdmin):
+    pass
 
 
 @admin.register(models.Building)
@@ -37,6 +48,7 @@ class BuildingAdmin(admin.ModelAdmin):
         "make_accepted",
         "make_rejected",
     )
+    inlines = (BuildingWorkPerformedInline,)
 
     def make_pending(self, request, queryset):
         self._perform_status_change(request, queryset, "0")
@@ -120,6 +132,23 @@ class BuildingAdmin(admin.ModelAdmin):
         return status_str
 
 
+class BuildingResource(resources.ModelResource):
+    class Meta:
+        DATE_FORMAT = {"format": "%d.%m.%Y"}
+
+        model = models.Building
+        exclude = ("id",)
+        import_id_fields = ("general_id",)
+
+        widgets = {
+            "administration_update": DATE_FORMAT,
+            "admin_update": DATE_FORMAT,
+        }
+
+        verbose_name = _("building resource")
+        verbose_name_plural = _("building resources")
+
+
 @admin.register(models.CsvFile)
 class CSVFileAdmin(admin.ModelAdmin):
     actions = ("import_files",)
@@ -133,13 +162,22 @@ class CSVFileAdmin(admin.ModelAdmin):
                 for header in data.headers:
                     changed_headers.append(header.lower().replace(":", "").replace(".", "").strip().replace(" ", "_"))
                 data.headers = changed_headers
-                building_res = models.BuildingResource()
-                res = building_res.import_data(data, dry_run=False, raise_errors=True)
+                building_res = BuildingResource()
+                res = building_res.import_data(data, dry_run=False, raise_errors=False, collect_failed_rows=True)
                 csv_file = models.CsvFile.objects.get(name=q.__str__())
 
                 if res.has_errors() or res.has_validation_errors():
                     csv_file.status = models.CsvFile.FAILURE
-                    message_str = _("File with name '{file_name}' wasn't imported.".format(file_name=q.__str__()))
+                    row_errors = [
+                        f"error#{error[0]}: {error[1][0].error} FAILED ON ROW DATA {error[1][0].row} "
+                        f"||| TRACEBACK: {error[1][0].traceback}"
+                        for error in res.row_errors()
+                    ]
+                    message_str = _(
+                        "File with name '{file_name}' wasn't imported. Errors: {row_errors}".format(
+                            file_name=q.__str__(), row_errors=row_errors
+                        )
+                    )
                     message_level = messages.WARNING
                 else:
                     csv_file.status = models.CsvFile.SUCCESS
@@ -156,11 +194,9 @@ class CSVFileAdmin(admin.ModelAdmin):
 
                 message_str = _(
                     "File with name '{file_name}' couldn't be imported. The error received was: `{error_args}`".format(
-                        file_name=q.__str__(),
-                        error_args=e.args[0],
+                        file_name=q.__str__(), error_args=e.args[0]
                     )
                 )
-
                 message_level = messages.ERROR
             except Exception as e:
                 self.save_file_as_failed(q)
