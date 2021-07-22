@@ -116,3 +116,5 @@ prod.env
 
 # files
 ~*.xlsx
+
+client/storybook-static/

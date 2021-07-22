@@ -1,4 +1,4 @@
-import React, { useReducer, useContext } from 'react';
+import React, { createContext, useReducer, useContext } from 'react';
 import { i18n } from '@lingui/core';
 
 import reducer from './reducer';
@@ -6,7 +6,7 @@ import config from './config';
 
 const { BUILDINGS_URL } = config;
 
-const AppContext = React.createContext();
+const AppContext = createContext();
 
 const initialState = {
   hereMap: null,
@@ -73,4 +73,4 @@ export const useGlobalContext = () => {
   return useContext(AppContext);
 };
 
-export { AppProvider };
+export { AppProvider, AppContext };

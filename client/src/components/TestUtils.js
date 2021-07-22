@@ -14,7 +14,11 @@ i18n.loadLocaleData({
   ro: { plurals: {} },
 });
 
-const LinguiWrapper = ({ children }) => <I18nProvider i18n={i18n}>{children}</I18nProvider>;
+const LinguiWrapper = ({ children }) => (
+  <I18nProvider i18n={i18n} forceRenderOnLocaleChange={false}>
+    {children}
+  </I18nProvider>
+);
 
 const RouterWrapper = ({ children }) => (
   <MemoryRouter>
