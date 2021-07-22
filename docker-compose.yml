@@ -22,10 +22,10 @@ services:
       - api
     environment:
       NODE_ENV:
-      REACT_APP_API_KEY:
       REACT_APP_DJANGO_SITE_URL:
       REACT_APP_DJANGO_PORT:
       REACT_APP_DJANGO_API_ENDPOINT:
+      HERE_MAPS_API_KEY:
 
   api:
     container_name: seismic-risc-api
@@ -47,6 +47,7 @@ services:
       DJANGO_CONFIGURATION:
       DATABASE_URL:
       DEVBUILD:
+      HERE_MAPS_API_KEY:
 
 volumes:
   pgdata:

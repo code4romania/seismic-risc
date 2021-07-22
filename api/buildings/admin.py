@@ -4,6 +4,7 @@ import tablib
 from django.contrib import admin, messages
 from django.utils.translation import gettext_lazy as _
 from django.utils.translation import ngettext
+from django.conf import settings
 
 from . import models
 
@@ -63,6 +64,49 @@ class BuildingAdmin(admin.ModelAdmin):
         ).format(updated=updated, status=status_str)
 
         self.message_user(request, message, messages.SUCCESS)
+
+    class Media:
+        """
+        If maps are enabled then we add the JS and CSS for either
+        Google JS Maps API or the Mapbox APIs (including Geocoding).
+        """
+
+        library_css = "https://js.api.here.com/v3/3.1/mapsjs-ui.css"
+
+        library_js = (
+            "https://js.api.here.com/v3/3.1/mapsjs-core.js",
+            "https://js.api.here.com/v3/3.1/mapsjs-service.js",
+            "https://js.api.here.com/v3/3.1/mapsjs-ui.js",
+            "https://js.api.here.com/v3/3.1/mapsjs-mapevents.js",
+            "js/admin/here_map.js",
+        )
+
+        css = {"all": ("css/admin/location_picker.css", library_css)}
+        js = library_js
+
+    def add_view(self, request, form_url="", extra_context=None):
+        """
+        Add the HERE_MAPS setting to context.
+        """
+        extra = extra_context or {}
+        extra["HERE_MAPS"] = settings.HERE_MAPS
+        return super(BuildingAdmin, self).add_view(request, form_url, extra_context=extra)
+
+    def change_view(self, request, object_id, form_url="", extra_context=None):
+        """
+        Add the HERE_MAPS setting to context.
+        """
+        extra = extra_context or {}
+        extra["HERE_MAPS"] = settings.HERE_MAPS
+        return super(BuildingAdmin, self).change_view(request, object_id, form_url, extra_context=extra)
+
+    def changelist_view(self, request, extra_context=None):
+        """
+        Add the HERE_MAPS setting to the change list view context.
+        """
+        extra = extra_context or {}
+        extra["HERE_MAPS"] = settings.HERE_MAPS
+        return super(BuildingAdmin, self).changelist_view(request, extra_context=extra)
 
     @staticmethod
     def choice_to_string(status):

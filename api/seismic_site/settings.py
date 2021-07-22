@@ -56,6 +56,7 @@ class Base(Configuration):
         "buildings",
         "pages",
         "blog",
+        # api documentation
         "drf_spectacular",
     ]
 
@@ -124,10 +125,7 @@ class Base(Configuration):
     # https://docs.djangoproject.com/en/2.2/howto/static-files/
 
     STATIC_URL = "/static/"
-    STATIC_ROOT = os.path.join(BASE_DIR, "./public/static")
-    # STATICFILES_DIRS = (
-    #     os.path.join(BASE_DIR, 'static'),
-    # )
+    STATIC_ROOT = os.path.join(BASE_DIR, "static")
     STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
     MEDIA_URL = "/media/"
@@ -151,6 +149,9 @@ class Base(Configuration):
     SPECTACULAR_SETTINGS = {
         "SWAGGER_UI_SETTINGS": {"url": "/api/v1/schema"},
     }
+
+    HERE_MAPS_API_KEY = os.getenv("HERE_MAPS_API_KEY")
+    HERE_MAPS = {"api_key": HERE_MAPS_API_KEY}
 
 
 class Dev(Base):
