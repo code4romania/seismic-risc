@@ -1,7 +1,7 @@
 import React from 'react';
 import { i18n } from '@lingui/core';
 import { act, getByText, render } from '@testing-library/react';
-import SocialBar from './SocialBar';
+import SocialBar from '.';
 import { LinguiWrapper } from '../TestUtils';
 
 it('should be translated correctly in English', () => {

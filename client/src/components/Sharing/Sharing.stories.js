@@ -1,5 +1,5 @@
 import React from 'react';
-import Sharing from '../Sharing';
+import Sharing from '.';
 
 const Template = (args) => <Sharing {...args} />;
 

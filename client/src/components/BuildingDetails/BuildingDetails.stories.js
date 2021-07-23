@@ -1,5 +1,5 @@
 import React from 'react';
-import BuildingDetails from '../BuildingDetails';
+import BuildingDetails from '.';
 
 const Template = (args) => <BuildingDetails {...args} />;
 

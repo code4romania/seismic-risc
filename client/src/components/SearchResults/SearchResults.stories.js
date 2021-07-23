@@ -1,5 +1,5 @@
 import React from 'react';
-import SearchResults from '../SearchResults';
+import SearchResults from '.';
 
 const Template = (args) => <SearchResults {...args} />;
 

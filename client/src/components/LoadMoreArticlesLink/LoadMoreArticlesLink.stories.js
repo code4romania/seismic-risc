@@ -1,5 +1,5 @@
 import React from 'react';
-import LoadMoreArticlesLink from './LoadMoreArticlesLink';
+import LoadMoreArticlesLink from '.';
 
 const Template = (args) => <LoadMoreArticlesLink {...args} />;
 

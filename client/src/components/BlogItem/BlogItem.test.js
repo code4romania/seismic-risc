@@ -2,7 +2,7 @@ import React from 'react';
 import { i18n } from '@lingui/core';
 import { act, render } from '@testing-library/react';
 import { RouterWrapper } from '../TestUtils';
-import BlogItem from './BlogItem';
+import BlogItem from '.';
 
 describe('BlogItem component', () => {
   const postDetails = {

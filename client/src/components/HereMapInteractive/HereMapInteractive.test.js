@@ -2,7 +2,7 @@ import React from 'react';
 import { cleanup, render } from '@testing-library/react';
 import { i18n } from '@lingui/core';
 import { act } from 'react-dom/test-utils';
-import HereMapInteractive from './HereMapInteractive';
+import HereMapInteractive from '.';
 import { LinguiWrapper } from '../TestUtils';
 
 const { H } = window;

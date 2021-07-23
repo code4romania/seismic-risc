@@ -3,9 +3,9 @@ import { NavLink, Link } from 'react-router-dom';
 import { Button, Dropdown, Layout, Menu } from 'antd';
 import { DownOutlined, GlobalOutlined, MenuOutlined, PlusCircleOutlined } from '@ant-design/icons';
 import { Trans } from '@lingui/macro';
-import logo from '../logo.svg';
+import logo from '../../logo.svg';
 
-import { useGlobalContext } from '../context';
+import { useGlobalContext } from '../../context';
 
 const { Header } = Layout;
 

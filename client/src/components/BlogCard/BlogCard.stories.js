@@ -1,5 +1,5 @@
 import React from 'react';
-import BlogCard from '../BlogCard';
+import BlogCard from './index';
 
 const Template = (args) => <BlogCard {...args} />;
 

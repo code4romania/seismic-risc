@@ -1,9 +1,9 @@
 import React from 'react';
 import { Trans } from '@lingui/macro';
 
-import facebookLogo from '../images/facebook.svg';
-import twitterLogo from '../images/twitter.svg';
-import telegramLogo from '../images/telegram.svg';
+import facebookLogo from '../../images/facebook.svg';
+import twitterLogo from '../../images/twitter.svg';
+import telegramLogo from '../../images/telegram.svg';
 
 function Sharing() {
   return (
