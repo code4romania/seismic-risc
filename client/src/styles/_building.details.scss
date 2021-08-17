@@ -1,13 +1,11 @@
 .building-details {
-  background: #000;
-  color: #fff;
   font-style: normal;
-  font-weight: 600;
   font-size: 16px;
   line-height: 24px;
   text-align: left;
   height: 400px;
   padding: 18px;
+  overflow: hidden;
   overflow-y: scroll;
 
   & .ant-row {
@@ -16,11 +14,46 @@
 
 }
 
+.building-details {
+
+  .ant-descriptions-title {
+    color:#EE4036;
+  }
+
+  .ant-descriptions-item-label,
+  .ant-descriptions-item-content {
+    font-size: 16px;
+  }
+}
+
+.buildingDetails__divider.ant-divider.ant-divider-with-text-left {
+  margin-top: 70px;
+
+  &:after {
+    border-top: .5px solid #EE4036;
+    width: 100%;
+    transform: translateX(16px);
+  }
+  &:before{
+    display: none;
+  }
+  .ant-divider-inner-text{
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translatey(-50%);
+    padding: 0;
+    z-index: 10;
+  }
+}
+
+.buildingDetails__contribute {
+  margin-left: 16px;
+}
+
 .anticon-close, h3.building-details-title {
   color: #fff;
   font-weight: 600;
-  font-size: 20px;
-  line-height: 30px;
   text-decoration-line: underline;
   margin-bottom: 22px;
 }
