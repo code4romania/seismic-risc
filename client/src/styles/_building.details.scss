@@ -7,6 +7,8 @@
   padding: 18px;
   overflow: hidden;
   overflow-y: scroll;
+  border: 1px solid rgba(228, 51, 40, 0.2);
+  border-radius: 10px;
 
   & .ant-row {
     margin-bottom: 18px;
@@ -27,7 +29,7 @@
 }
 
 .buildingDetails__divider.ant-divider.ant-divider-with-text-left {
-  margin-top: 70px;
+  margin-top: 40px;
 
   &:after {
     border-top: .5px solid #EE4036;

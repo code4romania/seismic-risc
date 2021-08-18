@@ -20,7 +20,8 @@ export default function BuildingDetails(props) {
                   {details.address}
                   {details.street_number && (
                     <>
-                      <Trans> no.</Trans> {details.street_number}
+                      {' '}
+                      <Trans>no.</Trans> {details.street_number}
                     </>
                   )}
                   <Button type="link">
