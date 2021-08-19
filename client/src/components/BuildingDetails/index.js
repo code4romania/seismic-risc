@@ -1,5 +1,5 @@
 import React from 'react';
-import { Row, Descriptions, Divider } from 'antd';
+import { Row, Descriptions, Divider, Empty } from 'antd';
 import { Trans } from '@lingui/macro';
 import { InfoCircleFilled } from '@ant-design/icons';
 import BuildingDetailsTitle from './BuildingDetailsTitle';
@@ -9,7 +9,7 @@ export default function BuildingDetails(props) {
   const { onClose, details } = props;
   return (
     <Row className="building-details">
-      {details ? (
+      {details.address ? (
         <div>
           <Descriptions
             column={1}
@@ -45,9 +45,7 @@ export default function BuildingDetails(props) {
           <BuildingDetailsFooter />
         </div>
       ) : (
-        <p>
-          <Trans>Information missing</Trans>
-        </p>
+        <Empty description={<Trans>Information missing</Trans>} />
       )}
     </Row>
   );
