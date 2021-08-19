@@ -3,7 +3,7 @@
   font-size: 16px;
   line-height: 24px;
   text-align: left;
-  height: 400px;
+  height: 100%;
   padding: 18px;
   overflow: hidden;
   overflow-y: scroll;
@@ -19,7 +19,11 @@
 .building-details {
 
   .ant-descriptions-title {
-    color:#EE4036;
+    color: $primary-color;
+
+    .ant-btn-link {
+      color: #888;
+    }
   }
 
   .ant-descriptions-item-label,
@@ -29,10 +33,11 @@
 }
 
 .buildingDetails__divider.ant-divider.ant-divider-with-text-left {
+  color: $primary-color;
   margin-top: 40px;
 
   &:after {
-    border-top: .5px solid #EE4036;
+    border-top: .5px solid $primary-color;
     width: 100%;
     transform: translateX(16px);
   }
@@ -47,15 +52,4 @@
     padding: 0;
     z-index: 10;
   }
-}
-
-.buildingDetails__contribute {
-  margin-left: 16px;
-}
-
-.anticon-close, h3.building-details-title {
-  color: #fff;
-  font-weight: 600;
-  text-decoration-line: underline;
-  margin-bottom: 22px;
 }
