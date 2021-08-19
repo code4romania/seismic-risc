@@ -22,6 +22,10 @@ from .serializers import (
 from .models import Building, Statistic
 
 
+class PublicCreateAnonRateThrottle(AnonRateThrottle):
+    rate = "50/day"
+
+
 class BuildingViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows buildings to be viewed or edited.
@@ -45,7 +49,7 @@ class BuildingViewSet(viewsets.ModelViewSet):
         detail=False,
         methods=["post"],
         permission_classes=[permissions.AllowAny],
-        throttle_classes=[AnonRateThrottle],
+        throttle_classes=[PublicCreateAnonRateThrottle],
     )
     def public_create(self, request):
         """
