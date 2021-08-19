@@ -1,5 +1,5 @@
-import '../src/styles/theme.scss';
 import 'antd/dist/antd.css';
+import '../src/styles/theme.scss';
 import React from 'react';
 import { RouterWrapper } from '../src/components/TestUtils';
 import { AppContext } from '../src/context';
