@@ -8,7 +8,7 @@ const BuildingDetailsTitle = ({ address, streetNumber, onClose }) => (
       <Icon type="environment" />
     </Col>
     <Col>
-      <div>
+      <span className="buildingDetailsTitle__text">
         {address}
         {streetNumber && (
           <>
@@ -16,10 +16,10 @@ const BuildingDetailsTitle = ({ address, streetNumber, onClose }) => (
             <Trans>no.</Trans> {streetNumber}
           </>
         )}
-        <Button type="link">
-          (<Trans>see images</Trans>)
-        </Button>
-      </div>
+      </span>
+      <Button type="link">
+        (<Trans>see images</Trans>)
+      </Button>
     </Col>
     <Col style={{ marginLeft: 'auto' }}>
       <Icon type="close" onClick={onClose} />

@@ -21,8 +21,18 @@
   .ant-descriptions-title {
     color: $primary-color;
 
+    .anticon {
+      margin-top: 6px;
+    }
+
     .ant-btn-link {
       color: #888;
+      text-decoration: underline;
+      padding: 0;
+
+      &:hover {
+        text-decoration: none;
+      }
     }
   }
 
@@ -30,6 +40,10 @@
   .ant-descriptions-item-content {
     font-size: 16px;
   }
+}
+
+.buildingDetailsTitle__text {
+  margin-right: 6px;
 }
 
 .buildingDetails__divider.ant-divider.ant-divider-with-text-left {
