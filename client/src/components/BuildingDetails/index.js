@@ -5,11 +5,33 @@ import { InfoCircleFilled } from '@ant-design/icons';
 import BuildingDetailsTitle from './BuildingDetailsTitle';
 import BuildingDetailsFooter from './BuildingDetailsFooter';
 
-export default function BuildingDetails(props) {
-  const { onClose, details } = props;
+const BuildingDetails = ({ onClose, details }) => {
+  const detailsItems = [
+    {
+      label: <Trans>Construction Year</Trans>,
+      value: details.year_built,
+    },
+    {
+      label: <Trans>Height regime</Trans>,
+      value: details.height_regime,
+    },
+    {
+      label: <Trans>Risk category</Trans>,
+      value: details.risk_category,
+    },
+    {
+      label: <Trans>Examination year</Trans>,
+      value: details.examination_year,
+    },
+    {
+      label: <Trans>Certified expert name</Trans>,
+      value: details.certified_expert,
+    },
+  ].filter(({ value }) => value);
+
   return (
     <Row className="building-details">
-      {details.address ? (
+      {detailsItems.length > 0 ? (
         <div>
           <Descriptions
             column={1}
@@ -21,21 +43,11 @@ export default function BuildingDetails(props) {
               />
             }
           >
-            <Descriptions.Item label={<Trans>Construction Year</Trans>}>
-              {details.year_built}
-            </Descriptions.Item>
-            <Descriptions.Item label={<Trans>Height regime</Trans>}>
-              {details.height_regime}
-            </Descriptions.Item>
-            <Descriptions.Item label={<Trans>Risk category</Trans>}>
-              {details.risk_category}
-            </Descriptions.Item>
-            <Descriptions.Item label={<Trans>Examination year</Trans>}>
-              {details.examination_year}
-            </Descriptions.Item>
-            <Descriptions.Item label={<Trans>Certified expert name</Trans>}>
-              {details.certified_expert}
-            </Descriptions.Item>
+            {detailsItems.map(({ label, value }) => (
+              <Descriptions.Item key={label} label={label}>
+                {value}
+              </Descriptions.Item>
+            ))}
           </Descriptions>
           <div style={{ overflow: 'hidden' }}>
             <Divider className="buildingDetails__divider" orientation="left">
@@ -49,4 +61,6 @@ export default function BuildingDetails(props) {
       )}
     </Row>
   );
-}
+};
+
+export default BuildingDetails;
