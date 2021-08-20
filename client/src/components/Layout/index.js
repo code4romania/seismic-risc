@@ -7,7 +7,7 @@ const { Content } = Layout;
 
 export default ({ children, hero }) => (
   <div className="App">
-    <Layout style={{ background: '#F0F0F0' }}>
+    <Layout style={{ background: '#F8F8F8' }}>
       <Header />
       {hero || null}
       <Content className="container">{children}</Content>
