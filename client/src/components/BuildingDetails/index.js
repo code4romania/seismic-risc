@@ -6,28 +6,30 @@ import BuildingDetailsTitle from './BuildingDetailsTitle';
 import BuildingDetailsFooter from './BuildingDetailsFooter';
 
 const BuildingDetails = ({ onClose, details }) => {
-  const detailsItems = [
-    {
-      label: <Trans>Construction Year</Trans>,
-      value: details.year_built,
-    },
-    {
-      label: <Trans>Height regime</Trans>,
-      value: details.height_regime,
-    },
-    {
-      label: <Trans>Risk category</Trans>,
-      value: details.risk_category,
-    },
-    {
-      label: <Trans>Examination year</Trans>,
-      value: details.examination_year,
-    },
-    {
-      label: <Trans>Certified expert name</Trans>,
-      value: details.certified_expert,
-    },
-  ].filter(({ value }) => value);
+  const detailsItems = details
+    ? [
+        {
+          label: <Trans>Construction Year</Trans>,
+          value: details.year_built,
+        },
+        {
+          label: <Trans>Height regime</Trans>,
+          value: details.height_regime,
+        },
+        {
+          label: <Trans>Risk category</Trans>,
+          value: details.risk_category,
+        },
+        {
+          label: <Trans>Examination year</Trans>,
+          value: details.examination_year,
+        },
+        {
+          label: <Trans>Certified expert name</Trans>,
+          value: details.certified_expert,
+        },
+      ].filter(({ value }) => value)
+    : [];
 
   return (
     <Row className="building-details">
