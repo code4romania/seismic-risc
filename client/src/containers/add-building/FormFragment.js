@@ -131,7 +131,7 @@ const FormFragment = ({ form }) => {
 
   return (
     <Form labelAlign="left" {...layout} onSubmit={onFinish}>
-      <Title level={3} underline>
+      <Title level={3}>
         <img src={PinDrop} alt="" height="20px" />
         <Trans>Building Info</Trans>
       </Title>
