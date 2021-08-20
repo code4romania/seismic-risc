@@ -1,7 +1,6 @@
 import React from 'react';
-import { Row, Descriptions, Divider, Empty } from 'antd';
+import { Row, Descriptions, Empty } from 'antd';
 import { Trans } from '@lingui/macro';
-import { InfoCircleFilled } from '@ant-design/icons';
 import BuildingDetailsTitle from './BuildingDetailsTitle';
 import BuildingDetailsFooter from './BuildingDetailsFooter';
 
@@ -34,7 +33,7 @@ const BuildingDetails = ({ onClose, details }) => {
   return (
     <Row className="building-details">
       {detailsItems.length > 0 ? (
-        <div>
+        <>
           <Descriptions
             column={1}
             title={
@@ -51,13 +50,8 @@ const BuildingDetails = ({ onClose, details }) => {
               </Descriptions.Item>
             ))}
           </Descriptions>
-          <div style={{ overflow: 'hidden' }}>
-            <Divider className="buildingDetails__divider" orientation="left">
-              <InfoCircleFilled />
-            </Divider>
-          </div>
           <BuildingDetailsFooter />
-        </div>
+        </>
       ) : (
         <Empty description={<Trans>Information missing</Trans>} />
       )}

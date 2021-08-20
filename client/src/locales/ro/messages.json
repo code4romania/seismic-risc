@@ -311,7 +311,7 @@
     "extractedComments": []
   },
   "Do you have more details about this building?": {
-    "translation": "Ai informații suplimentare despre această clădire?",
+    "translation": "Ai alte informații despre această clădire?",
     "origin": [
       [
         "components/BuildingDetails/BuildingDetailsFooter.js",

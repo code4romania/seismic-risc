@@ -55,14 +55,22 @@ const HereMapInteractive = (props) => {
     <div>
       {apikey && (
         <Row type="flex" gutter={30}>
-          <Col xs={{ span: showRightPanel ? 0 : 24 }} sm={{ span: showRightPanel ? 12 : 24 }}>
+          <Col
+            xs={{ span: showRightPanel ? 0 : 24 }}
+            sm={{ span: showRightPanel ? 12 : 24 }}
+            lg={{ span: showRightPanel ? 16 : 24 }}
+          >
             <div
               className="map-container"
               ref={mapRef}
               style={{ width: '100%', height: '422px', background: 'grey' }}
             />
           </Col>
-          <Col xs={{ span: showRightPanel ? 24 : 0 }} sm={{ span: showRightPanel ? 12 : 0 }}>
+          <Col
+            xs={{ span: showRightPanel ? 24 : 0 }}
+            sm={{ span: showRightPanel ? 12 : 0 }}
+            lg={{ span: showRightPanel ? 8 : 0 }}
+          >
             {showSearchResults ? (
               <SearchResults onItemSelected={onSelectBuilding} />
             ) : (
