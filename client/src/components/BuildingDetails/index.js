@@ -1,10 +1,10 @@
 import React from 'react';
-import { Row, Descriptions, Empty } from 'antd';
+import { Card, Skeleton, Row, Descriptions, Empty } from 'antd';
 import { Trans } from '@lingui/macro';
 import BuildingDetailsTitle from './BuildingDetailsTitle';
 import BuildingDetailsFooter from './BuildingDetailsFooter';
 
-const BuildingDetails = ({ onClose, details }) => {
+const BuildingDetails = ({ onClose, isLoading, details }) => {
   const detailsItems = details
     ? [
         {
@@ -31,31 +31,29 @@ const BuildingDetails = ({ onClose, details }) => {
     : [];
 
   return (
-    <Row className="building-details">
-      {detailsItems.length > 0 ? (
-        <>
-          <Descriptions
-            column={1}
-            title={
-              <BuildingDetailsTitle
-                address={details.address}
-                streetNumber={details.street_number}
-                onClose={onClose}
-              />
-            }
-          >
+    <Card className="building-details">
+      <Skeleton loading={isLoading}>
+        <BuildingDetailsTitle
+          address={details?.address}
+          streetNumber={details?.street_number}
+          onClose={onClose}
+        />
+        {detailsItems.length > 0 ? (
+          <Descriptions column={1}>
             {detailsItems.map(({ label, value }) => (
               <Descriptions.Item key={label} label={label}>
                 {value}
               </Descriptions.Item>
             ))}
           </Descriptions>
-          <BuildingDetailsFooter />
-        </>
-      ) : (
-        <Empty description={<Trans>Information missing</Trans>} />
-      )}
-    </Row>
+        ) : (
+          <Row type="flex" align="middle" justify="space-around" style={{ height: '100%' }}>
+            <Empty description={<Trans>Information missing</Trans>} />
+          </Row>
+        )}
+        <BuildingDetailsFooter />
+      </Skeleton>
+    </Card>
   );
 };
 

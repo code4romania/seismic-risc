@@ -4,7 +4,7 @@ import { Trans } from '@lingui/macro';
 import { InfoCircleFilled } from '@ant-design/icons';
 
 const BuildingDetailsFooter = () => (
-  <div>
+  <div className="buildingDetailsFooter">
     <Row type="flex" justify="space-between" gutter={['8', '8']} style={{ alignItems: 'center' }}>
       <Col className="buildingDetails__contribute">
         <InfoCircleFilled />

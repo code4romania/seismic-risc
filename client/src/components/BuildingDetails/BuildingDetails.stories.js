@@ -5,6 +5,7 @@ const Template = (args) => <BuildingDetails {...args} />;
 
 const buildingDetails = (
   <BuildingDetails
+    isLoading={false}
     details={{
       address: 'Bucuresti, Sector 6, Str. Dambovita',
       street_number: '10',
