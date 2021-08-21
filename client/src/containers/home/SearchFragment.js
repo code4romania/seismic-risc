@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Row, Col, Typography, message, AutoComplete } from 'antd';
+import { Row, Col, Typography, message, AutoComplete, Input, Icon } from 'antd';
 import { Trans } from '@lingui/macro';
 import { debounce, groupBy } from 'lodash';
 
@@ -15,9 +15,10 @@ export default () => {
     searchBuildings,
     searchResults,
     searchError,
-    searchInput,
     onSearchInputChange,
+    searchInput,
   } = useGlobalContext();
+
   const [searchPlaceholderText, setSearchPlaceholderText] = useState('');
 
   useEffect(() => {
@@ -78,7 +79,9 @@ export default () => {
           onSelect={onSelect}
           placeholder={searchPlaceholderText}
           style={{ width: '80%' }}
-        />
+        >
+          <Input suffix={<Icon type="search" />} />
+        </AutoComplete>
       </Col>
     </Row>
   );
