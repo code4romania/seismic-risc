@@ -65,7 +65,7 @@ export default ({ title, postSlug = null }) => {
       <div className="blog-preview">
         <Row>
           <Col span={24}>
-            <Title level={3} underline type="secondary">
+            <Title level={3} type="secondary">
               <Icon type="environment" />
               {title}
             </Title>
@@ -86,7 +86,7 @@ export default ({ title, postSlug = null }) => {
     <div className="blog-preview">
       <Row type="flex" justify="space-around">
         <Col span={24}>
-          <Title level={3} type="secondary" underline>
+          <Title level={3} type="secondary">
             <Icon type="environment" />
             {title}
           </Title>
