@@ -14,6 +14,7 @@ import Policy from './containers/Policy';
 import NotFound from './containers/404/404';
 import AddBuilding from './containers/add-building';
 import ThankYou from './containers/thankyou';
+import ScrollToTop from './components/ScrollToTop';
 
 import './styles/theme.scss';
 
@@ -27,6 +28,7 @@ const App = () => {
   return (
     <I18nProvider i18n={i18n} forceRenderOnLocaleChange={false}>
       <Router>
+        <ScrollToTop />
         <Switch>
           <Route exact path="/">
             <Home />
