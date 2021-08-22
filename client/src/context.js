@@ -31,10 +31,15 @@ const AppProvider = ({ children }) => {
     dispatch({ type: 'SEARCH_INPUT', payload: searchInput });
   };
 
+  const onSearchLoading = (isLoading) => {
+    dispatch({ type: 'SEARCH_LOADING', payload: isLoading });
+  };
+
   const searchBuildings = async (searchInput) => {
     try {
       const res = await fetch(`${BUILDINGS_URL}/search?query=${searchInput}`);
       const searchResults = await res.json();
+      onSearchLoading(false);
       if (searchResults.length > 0) {
         dispatch({ type: 'DISPLAY_SEARCH_RESULTS', payload: searchResults });
       } else {
@@ -58,6 +63,7 @@ const AppProvider = ({ children }) => {
       value={{
         ...state,
         searchBuildings,
+        onSearchLoading,
         onCloseSearchResults,
         onHereMapLoaded,
         onSearchInputChange,

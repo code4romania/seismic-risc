@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Row, Col, Typography, message, AutoComplete, Input, Icon } from 'antd';
+import { Row, Col, Typography, message, AutoComplete, Input, Icon, Spin } from 'antd';
 import { Trans } from '@lingui/macro';
 import { debounce, groupBy } from 'lodash';
 
@@ -9,13 +9,25 @@ import { useGlobalContext } from '../../context';
 
 const { Title } = Typography;
 
+const Suffix = ({ input, loading }) => {
+  if (loading) {
+    return <Spin />;
+  }
+  if (!input) {
+    return <Icon type="search" />;
+  }
+  return <span />;
+};
+
 export default () => {
   const {
     currentLanguage,
     searchBuildings,
     searchResults,
+    searchLoading,
     searchError,
     onSearchInputChange,
+    onSearchLoading,
     searchInput,
   } = useGlobalContext();
 
@@ -46,7 +58,13 @@ export default () => {
       })
     : [];
 
-  const onSearch = useRef(debounce(searchBuildings, 1000)).current;
+  const debounceSearch = useRef(debounce(searchBuildings, 1000)).current;
+  const onSearch = (value) => {
+    if (value.length > 3) {
+      onSearchLoading(true);
+      debounceSearch(value);
+    }
+  };
 
   const onSelect = (value) => {
     console.log('select', dataByStreet[value][0]);
@@ -70,8 +88,9 @@ export default () => {
           </Trans>
           :
         </Title>
+
         <AutoComplete
-          allowClear
+          allowClear={!searchLoading}
           value={searchInput}
           dataSource={dataSource}
           onChange={onSearchInputChange}
@@ -80,7 +99,7 @@ export default () => {
           placeholder={searchPlaceholderText}
           style={{ width: '80%' }}
         >
-          <Input suffix={<Icon type="search" />} />
+          <Input minLength={3} suffix={<Suffix input={searchInput} loading={searchLoading} />} />
         </AutoComplete>
       </Col>
     </Row>
