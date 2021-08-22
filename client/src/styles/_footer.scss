@@ -1,51 +1,59 @@
-.App-footer {
-    background-color: #fff;
-    width: 100%;
-    position: static;
-    bottom: 0;
-    padding-bottom: 1.5rem;
-    padding-right: 0;
-    padding-left: 0;
-    margin-top: auto;
+.footer.ant-layout-footer {
+  background-color: #fff;
+  border-top: 14px solid $primary-color;
+  width: 100%;
+  position: static;
+  bottom: 0;
+  padding: 50px 0;
+  margin-top: auto;
+}
 
-  .footer-inside {
-    position: relative;
-    height: 100%;
+.footer__logos {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerLogo {
+  margin: 0 0 40px;
+}
+
+.footerLogo__label {
+  margin-bottom: 24px;
+}
+
+.footerLogo__image {
+  max-width: 100%;
+}
+
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 30px;
+
+  a {
+    margin: 0 12px;
+    text-decoration: underline;
+    color: $footer-text-color;
+  }
+}
+
+.footer__donate {
+  font-weight: 700;
+  text-decoration-color: $green-color;
+
+  span {
+    color: $green-color;
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .footer__logos {
+    flex-direction: row;
+    justify-content: center;
   }
 
-  .footer-links {
-    align-items: center;
-
-    & > a {
-      width: 15rem;
-      height: 3.5rem;
-      background-color: #7BCF95;
-      border-color: #7BCF95;
-      border-radius: 3px;
-    }
-  }
-
-  .logo-col > span {
-    padding-right: $gutter;
-  }
-
-  @media (max-width: $breakpoint-tablet){
-    .logos-row {
-      flex-direction: column;
-    }
-
-    .logo-col {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    .footer-links {
-      flex-direction: column;
-      align-items: flex-start;
-
-      a {
-        width: 100%;
-      }
-    }
+  .footerLogo {
+    margin: 0 30px;
   }
 }
