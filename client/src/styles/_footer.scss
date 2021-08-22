@@ -29,16 +29,16 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  margin-top: 30px;
+  margin-top: 16px;
 
   a {
-    margin: 0 12px;
+    margin: 6px 12px;
     text-decoration: underline;
     color: $footer-text-color;
   }
 }
 
-.footer__donate {
+a.footer__donate {
   font-weight: 700;
   text-decoration-color: $green-color;
 

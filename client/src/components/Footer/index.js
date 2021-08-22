@@ -40,11 +40,6 @@ const FooterFragment = () => {
           />
         </div>
         <div className="footer__links">
-          <Link to="/parteneri">
-            <Text>
-              <Trans>Partners</Trans>
-            </Text>
-          </Link>
           <Link to="/despre">
             <Text>
               <Trans>About the project</Trans>
