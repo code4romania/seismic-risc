@@ -54,6 +54,13 @@ const reducer = (state, action) => {
       };
     }
 
+    case 'SEARCH_SELECTED_BUILDING': {
+      return {
+        ...state,
+        searchSelectedBuilding: action.payload,
+      };
+    }
+
     case 'CLEAR_SEARCH':
       return { ...state, searchResults: [], searchError: null, searchInput: '' };
 

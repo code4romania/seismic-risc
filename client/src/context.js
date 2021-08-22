@@ -12,6 +12,8 @@ const initialState = {
   hereMap: null,
   searchInput: '',
   searchResults: [],
+  searchLoading: false,
+  searchSelectedBuilding: null,
   showSearchResults: false,
   searchError: null,
   currentLanguage: 'ro',
@@ -50,6 +52,10 @@ const AppProvider = ({ children }) => {
     }
   };
 
+  const onSearchSelectBuilding = (building) => {
+    dispatch({ type: 'SEARCH_SELECTED_BUILDING', payload: building });
+  };
+
   const onCloseSearchResults = () => {
     dispatch({ type: 'CLEAR_SEARCH' });
   };
@@ -64,6 +70,7 @@ const AppProvider = ({ children }) => {
         ...state,
         searchBuildings,
         onSearchLoading,
+        onSearchSelectBuilding,
         onCloseSearchResults,
         onHereMapLoaded,
         onSearchInputChange,

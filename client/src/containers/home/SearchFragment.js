@@ -28,6 +28,7 @@ export default () => {
     searchError,
     onSearchInputChange,
     onSearchLoading,
+    onSearchSelectBuilding,
     searchInput,
   } = useGlobalContext();
 
@@ -54,7 +55,10 @@ export default () => {
   const dataByStreet = groupBy(searchResults, (item) => item.general_id);
   const dataSource = searchResults
     ? searchResults.map((item) => {
-        return { value: item.general_id, text: `${item.address}, ${item.street_number}` };
+        return {
+          value: item.general_id,
+          text: item.street_number ? `${item.address}, ${item.street_number}` : item.address,
+        };
       })
     : [];
 
@@ -67,7 +71,7 @@ export default () => {
   };
 
   const onSelect = (value) => {
-    console.log('select', dataByStreet[value][0]);
+    onSearchSelectBuilding(dataByStreet[value][0]);
   };
 
   return (
