@@ -64,7 +64,7 @@ export default () => {
 
   const debounceSearch = useRef(debounce(searchBuildings, 1000)).current;
   const onSearch = (value) => {
-    if (value.length > 3) {
+    if (value.length > 2) {
       onSearchLoading(true);
       debounceSearch(value);
     }
