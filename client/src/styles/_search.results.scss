@@ -1,14 +1,21 @@
 .search-results-container {
-  background: #000;
-  color: #fff;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
   text-align: left;
-  height: 400px;
+  height: 422px;
   padding: 18px;
   overflow-y: scroll;
+}
+
+.search-results__title {
+  color: $primary-color;
+  margin-bottom: 10px;
+}
+
+.search-results__titleText {
+  font-size: 20px;
 }
 
 .search-results {
@@ -18,6 +25,7 @@
 
 .search-results > li {
   padding: 0.45rem 1rem;
+  padding-left: 0;
   cursor: pointer;
   display: flex;
 }

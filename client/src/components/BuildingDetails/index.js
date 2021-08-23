@@ -1,87 +1,60 @@
 import React from 'react';
-import { Typography, Row, Col, Icon } from 'antd';
+import { Card, Skeleton, Row, Descriptions, Empty } from 'antd';
 import { Trans } from '@lingui/macro';
+import BuildingDetailsTitle from './BuildingDetailsTitle';
+import BuildingDetailsFooter from './BuildingDetailsFooter';
 
-const { Title } = Typography;
+const BuildingDetails = ({ onClose, isLoading, details }) => {
+  const detailsItems = details
+    ? [
+        {
+          label: <Trans>Construction Year</Trans>,
+          value: details.year_built,
+        },
+        {
+          label: <Trans>Height regime</Trans>,
+          value: details.height_regime,
+        },
+        {
+          label: <Trans>Risk category</Trans>,
+          value: details.risk_category,
+        },
+        {
+          label: <Trans>Examination year</Trans>,
+          value: details.examination_year,
+        },
+        {
+          label: <Trans>Certified expert name</Trans>,
+          value: details.certified_expert,
+        },
+      ].filter(({ value }) => value)
+    : [];
 
-export default function BuildingDetails(props) {
-  const { onClose, details } = props;
   return (
-    <Row className="building-details">
-      <Row>
-        <Title className="building-details-title" level={3}>
-          <Col lg={1} span={0}>
-            <Icon type="environment" />
-          </Col>
-          <Col lg={{ span: 21, offset: 1 }} span={23}>
-            <Trans>Building Info</Trans>
-          </Col>
-          <Col span={1}>
-            <Icon type="close" onClick={onClose} />
-          </Col>
-        </Title>
-      </Row>
-      {details ? (
-        <div>
-          <Row>
-            <Col lg={{ span: 13, offset: 2 }} span={13}>
-              <Trans>Address</Trans>:
-            </Col>
-            <Col lg={9} span={11}>
-              {details.address && `${details.address} `}
-              {details.street_number && (
-                <>
-                  <Trans>no.</Trans> {details.street_number}
-                </>
-              )}
-            </Col>
+    <Card className="building-details">
+      <Skeleton loading={isLoading}>
+        <BuildingDetailsTitle
+          address={details?.address}
+          streetNumber={details?.street_number}
+          onClose={onClose}
+        />
+        {detailsItems.length > 0 ? (
+          <Descriptions column={1}>
+            {detailsItems.map(({ label, value }) => (
+              <Descriptions.Item key={label} label={label}>
+                {value}
+              </Descriptions.Item>
+            ))}
+          </Descriptions>
+        ) : (
+          <Row type="flex" align="middle" justify="space-around" style={{ height: '100%' }}>
+            <Empty description={<Trans>Information missing</Trans>} />
           </Row>
-          <Row>
-            <Col lg={{ span: 13, offset: 2 }} span={13}>
-              <Trans>Construction Year</Trans>:
-            </Col>
-            <Col lg={9} span={11}>
-              {details.year_built}
-            </Col>
-          </Row>
-          <Row>
-            <Col lg={{ span: 13, offset: 2 }} span={13}>
-              <Trans>Height regime</Trans>:
-            </Col>
-            <Col lg={9} span={11}>
-              {details.height_regime}
-            </Col>
-          </Row>
-          <Row>
-            <Col lg={{ span: 13, offset: 2 }} span={13}>
-              <Trans>Risk category</Trans>:
-            </Col>
-            <Col lg={9} span={11}>
-              {details.risk_category}
-            </Col>
-          </Row>
-          <Row gutter={1}>
-            <Col lg={{ span: 13, offset: 2 }} span={13}>
-              <Trans>Examination year</Trans>:
-            </Col>
-            <Col lg={9} span={11}>
-              {details.examination_year}
-            </Col>
-          </Row>
-          <Row>
-            <Col lg={{ span: 13, offset: 2 }} span={13}>
-              <Trans>Certified expert name</Trans>:
-            </Col>
-            <Col lg={9} span={11}>
-              {details.certified_expert}
-            </Col>
-          </Row>
-        </div>
-      ) : (
-        <p>
-          <Trans>Information missing</Trans>
-        </p>
-      )}
-    </Row>
+        )}
+        <BuildingDetailsFooter />
+      </Skeleton>
+    </Card>
   );
-}
+};
+
+export default BuildingDetails;

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Col, Icon, Row, Typography } from 'antd';
+import { Col, Icon, Row } from 'antd';
 import { Trans } from '@lingui/macro';
 
 import { useGlobalContext } from '../../context';
@@ -15,11 +15,9 @@ export default function SearchResults(props) {
 
   return (
     <Col className="search-results-container">
-      <Row>
-        <Col span={23}>
-          <Typography.Title level={4} style={{ color: 'white' }}>
-            <Trans>Search Results</Trans>
-          </Typography.Title>
+      <Row className="search-results__title">
+        <Col span={23} className="search-results__titleText">
+          <Trans>Search Results</Trans>
         </Col>
         <Col span={1}>
           <Icon type="close" onClick={onCloseSearchResults} />
