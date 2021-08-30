@@ -52,7 +52,7 @@ export default () => {
     }
   }, [currentLanguage]);
 
-  const dataByStreet = groupBy(searchResults, (item) => item.general_id);
+  const dataByGeneralId = groupBy(searchResults, (item) => item.general_id);
   const dataSource = searchResults
     ? searchResults.map((item) => {
         return {
@@ -71,7 +71,10 @@ export default () => {
   };
 
   const onSelect = (value) => {
-    onSearchSelectBuilding(dataByStreet[value][0]);
+    const selectedBuilding = dataByGeneralId[value] && dataByGeneralId[value][0];
+    if (selectedBuilding) {
+      onSearchSelectBuilding(dataByGeneralId[value][0]);
+    }
   };
 
   return (
