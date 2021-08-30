@@ -1,22 +1,37 @@
-import React, { useEffect, useState } from 'react';
-import { Row, Col, Input, Typography, message } from 'antd';
+import React, { useEffect, useState, useRef } from 'react';
+import { Row, Col, Typography, message, AutoComplete, Input, Icon, Spin } from 'antd';
 import { Trans } from '@lingui/macro';
+import { debounce, groupBy } from 'lodash';
 
 import { ReactComponent as InfoIcon } from '../../images/info-circle-solid.svg';
 
 import { useGlobalContext } from '../../context';
 
-const { Search } = Input;
 const { Title } = Typography;
+
+const Suffix = ({ input, loading }) => {
+  if (loading) {
+    return <Spin />;
+  }
+  if (!input) {
+    return <Icon type="search" />;
+  }
+  return <span />;
+};
 
 export default () => {
   const {
     currentLanguage,
     searchBuildings,
+    searchResults,
+    searchLoading,
     searchError,
-    searchInput,
     onSearchInputChange,
+    onSearchLoading,
+    onSearchSelectBuilding,
+    searchInput,
   } = useGlobalContext();
+
   const [searchPlaceholderText, setSearchPlaceholderText] = useState('');
 
   useEffect(() => {
@@ -37,6 +52,31 @@ export default () => {
     }
   }, [currentLanguage]);
 
+  const dataByGeneralId = groupBy(searchResults, (item) => item.general_id);
+  const dataSource = searchResults
+    ? searchResults.map((item) => {
+        return {
+          value: item.general_id,
+          text: item.street_number ? `${item.address}, ${item.street_number}` : item.address,
+        };
+      })
+    : [];
+
+  const debounceSearch = useRef(debounce(searchBuildings, 1000)).current;
+  const onSearch = (value) => {
+    if (value.length > 2) {
+      onSearchLoading(true);
+      debounceSearch(value);
+    }
+  };
+
+  const onSelect = (value) => {
+    const selectedBuilding = dataByGeneralId[value] && dataByGeneralId[value][0];
+    if (selectedBuilding) {
+      onSearchSelectBuilding(dataByGeneralId[value][0]);
+    }
+  };
+
   return (
     <Row
       type="flex"
@@ -55,14 +95,19 @@ export default () => {
           </Trans>
           :
         </Title>
-        <Search
+
+        <AutoComplete
+          allowClear={!searchLoading}
           value={searchInput}
-          loading={false}
+          dataSource={dataSource}
+          onChange={onSearchInputChange}
+          onSearch={onSearch}
+          onSelect={onSelect}
           placeholder={searchPlaceholderText}
-          onChange={(e) => onSearchInputChange(e.target.value)}
-          onSearch={(value) => searchBuildings(value)}
           style={{ width: '80%' }}
-        />
+        >
+          <Input minLength={3} suffix={<Suffix input={searchInput} loading={searchLoading} />} />
+        </AutoComplete>
       </Col>
     </Row>
   );

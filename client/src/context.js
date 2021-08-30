@@ -12,6 +12,8 @@ const initialState = {
   hereMap: null,
   searchInput: '',
   searchResults: [],
+  searchLoading: false,
+  searchSelectedBuilding: null,
   showSearchResults: false,
   searchError: null,
   currentLanguage: 'ro',
@@ -31,10 +33,15 @@ const AppProvider = ({ children }) => {
     dispatch({ type: 'SEARCH_INPUT', payload: searchInput });
   };
 
+  const onSearchLoading = (isLoading) => {
+    dispatch({ type: 'SEARCH_LOADING', payload: isLoading });
+  };
+
   const searchBuildings = async (searchInput) => {
     try {
       const res = await fetch(`${BUILDINGS_URL}/search?query=${searchInput}`);
       const searchResults = await res.json();
+      onSearchLoading(false);
       if (searchResults.length > 0) {
         dispatch({ type: 'DISPLAY_SEARCH_RESULTS', payload: searchResults });
       } else {
@@ -43,6 +50,10 @@ const AppProvider = ({ children }) => {
     } catch (err) {
       dispatch({ type: 'SEARCH_ERROR' });
     }
+  };
+
+  const onSearchSelectBuilding = (building) => {
+    dispatch({ type: 'SEARCH_SELECTED_BUILDING', payload: building });
   };
 
   const onCloseSearchResults = () => {
@@ -58,6 +69,8 @@ const AppProvider = ({ children }) => {
       value={{
         ...state,
         searchBuildings,
+        onSearchLoading,
+        onSearchSelectBuilding,
         onCloseSearchResults,
         onHereMapLoaded,
         onSearchInputChange,

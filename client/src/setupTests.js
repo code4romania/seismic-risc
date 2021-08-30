@@ -1,4 +1,6 @@
 /* eslint-disable max-classes-per-file */
+window.scrollTo = jest.fn();
+
 window.H = {
   service: {},
   ui: {},

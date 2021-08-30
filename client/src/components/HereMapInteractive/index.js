@@ -1,8 +1,7 @@
-import React, { useLayoutEffect, useRef, useState } from 'react';
+import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { Col, Row } from 'antd';
 
 import BuildingDetailsFragment from '../../containers/building/BuildingDetailsFragment';
-import SearchResults from '../SearchResults';
 
 import { useGlobalContext } from '../../context';
 import useDecoratedClusteredMap from '../../hooks/map/useDecoratedClusteredMap';
@@ -16,14 +15,20 @@ const HereMapInteractive = (props) => {
 
   const mapRef = useRef(null);
 
-  const { searchResults, onHereMapLoaded } = useGlobalContext();
+  const { onHereMapLoaded, searchSelectedBuilding } = useGlobalContext();
 
   const { buildingDetails, onSelectBuilding, onHideBuilding } = useDecoratedClusteredMap(
     currentMap,
     points,
   );
 
-  const showSearchResults = searchResults.length > 0;
+  useEffect(() => {
+    if (searchSelectedBuilding) {
+      onSelectBuilding(searchSelectedBuilding);
+    }
+  }, [searchSelectedBuilding]);
+
+  const showSearchResults = buildingDetails;
   const showRightPanel = showSearchResults || buildingDetails;
 
   useLayoutEffect(() => {
@@ -71,14 +76,7 @@ const HereMapInteractive = (props) => {
             sm={{ span: showRightPanel ? 12 : 0 }}
             lg={{ span: showRightPanel ? 8 : 0 }}
           >
-            {showSearchResults ? (
-              <SearchResults onItemSelected={onSelectBuilding} />
-            ) : (
-              <BuildingDetailsFragment
-                onClose={onHideBuilding}
-                incompleteDetails={buildingDetails}
-              />
-            )}
+            <BuildingDetailsFragment onClose={onHideBuilding} incompleteDetails={buildingDetails} />
           </Col>
         </Row>
       )}

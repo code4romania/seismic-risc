@@ -15,6 +15,9 @@ describe('App component', () => {
       showSearchResults: false,
       searchError: null,
       currentLanguage: 'ro',
+      searchBuildings: jest.fn(),
+      onSearchLoading: jest.fn(),
+      onSearchSelectBuilding: jest.fn(),
       onHereMapLoaded: jest.fn(),
       languageChange: jest.fn(),
     };
