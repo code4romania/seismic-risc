@@ -60,7 +60,7 @@
     "@babel/core": "^7.14.8",
     "@lingui/babel-preset-react": "^2.9.2",
     "@lingui/cli": "^3.10.2",
-    "@storybook/addon-actions": "^6.2.9",
+    "@storybook/addon-actions": "^6.3.7",
     "@storybook/addon-essentials": "^6.2.9",
     "@storybook/addon-links": "^6.2.9",
     "@storybook/node-logger": "^6.2.9",
