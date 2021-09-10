@@ -190,7 +190,7 @@ six==1.15.0
     #   django-taggit-serializer
     #   jsonschema
     #   python-dateutil
-sqlparse==0.4.1
+sqlparse==0.4.2
     # via django
 tablib[html,ods,xls,xlsx,yaml]==3.0.0
     # via
