@@ -17,7 +17,7 @@ install-docker-ubuntu:            ## installs docker and docker-compose on Ubunt
 	sudo chmod +x /usr/local/bin/docker-compose
 
 install-docker-osx:               ## installs homebrew (you can skip this at runtime), docker and docker-compose on OSX
-	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 	brew update
 	brew cask install docker
 	brew install docker-compose gettext
