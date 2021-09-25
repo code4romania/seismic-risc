@@ -48,6 +48,68 @@ class BuildingAdmin(admin.ModelAdmin):
         "make_accepted",
         "make_rejected",
     )
+    fieldsets = (
+        (_("Operational Data"), {"fields": ("parent_id", "status")}),
+        (_("Seismic Data"), {"fields": ("risk_category", "height_regime")}),
+        (_("Geo Data"), {"fields": ("street_number", "address", "county", "locality", "lat", "lng")}),
+        (
+            _("General Data"),
+            {
+                "fields": (
+                    "is_still_present",
+                    "consolidation_status",
+                    "apartment_count",
+                    "permanently_occupied_apartment_count",
+                    "residents_count",
+                    "owners_count",
+                    "public_apartment_count",
+                    "public_owners",
+                    "rented_apartment_count",
+                )
+            },
+        ),
+        (
+            _("Building Functioning"),
+            {
+                "fields": (
+                    "has_owners_association",
+                    "apartments_with_6_months_debt",
+                    "disconnected_utilities",
+                    "broken_utilities",
+                )
+            },
+        ),
+        (
+            _("Structure and Occupancy Type"),
+            {
+                "fields": (
+                    "office_count",
+                    "commercial_space_count",
+                    "self_owned_commercial_space_count",
+                    "proximal_utilities",
+                    "proximal_utilities_description",
+                )
+            },
+        ),
+        (
+            _("Other info"),
+            {
+                "fields": (
+                    "registration_number",
+                    "examination_year",
+                    "certified_expert",
+                    "observations",
+                    "year_built",
+                    "surface",
+                    "cadastre_number",
+                    "land_registry_number",
+                    "administration_update",
+                    "admin_update",
+                    "created_on",
+                )
+            },
+        ),
+    )
     inlines = (BuildingWorkPerformedInline,)
 
     def make_pending(self, request, queryset):

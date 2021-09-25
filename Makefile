@@ -54,7 +54,7 @@ requirements-update:              ## run pip compile and rebuild the requirement
 	docker-compose run --rm --no-deps --entrypoint "bash -c" api "cd /code && pip-compile -r -U -o requirements-dev.txt requirements-dev.in requirements.in && pip-compile -r -U -o requirements.txt requirements.in && chmod a+r requirements.txt && chmod a+r requirements-dev.txt"
 
 migrations:                       ## generate migrations in a clean container
-	docker-compose run --rm api "./wait_for_db.py && ./manage.py makemigrations && ./manage.py migrate"
+	docker-compose run --rm api "./wait_for_db.py && ./manage.py makemigrations"
 
 migrate:                          ## apply migrations in a clean container
 	docker-compose run --rm api "./manage.py migrate"
@@ -88,10 +88,11 @@ clean-docker:                     ## stop docker containers and remove orphaned 
 	docker-compose down -t 60
 	docker system prune -f
 
-clean-py:                         ## remove test, coverage and Python file artifacts
-	find . -name '*.pyc' -delete
-	find . -name '*.pyo' -delete
-	find . -name '.coverage' -delete
-	find . -name '.pytest_cache' -delete
-	find . -name '__pycache__' -delete
-	find . -name 'htmlcov' -delete
+clean-py:                         ## remove Python test, coverage, file artifacts, and compiled message files
+	find ./api -name '.coverage' -delete
+	find ./api -name '.pytest_cache' -delete
+	find ./api -name '__pycache__' -delete
+	find ./api -name 'htmlcov' -delete
+	find ./api -name '*.pyc' -delete
+	find ./api -name '*.pyo' -delete
+	find ./api -name '*.mo' -delete
