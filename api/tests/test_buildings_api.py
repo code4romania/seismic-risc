@@ -81,7 +81,7 @@ def test_building_search(approved_building_data, random_words, api_client):
         Building.objects.create(**approved_building_data)
 
     for random_word in random_words:
-        response = api_client.get(f"{base_url}/search?query={random_word}/")
+        response = api_client.get(f"{base_url}/search/?query={random_word}/")
         assert response.status_code == 200
         assert response.data[0]["address"] == random_word
 
