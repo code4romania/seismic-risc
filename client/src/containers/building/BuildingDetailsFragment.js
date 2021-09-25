@@ -13,7 +13,7 @@ export default (props) => {
   React.useEffect(() => {
     if (incompleteDetails == null) return;
     if (completeDetails?.general_id !== incompleteDetails?.general_id) {
-      const buildingURL = `${BUILDINGS_URL}/${incompleteDetails.general_id}`;
+      const buildingURL = `${BUILDINGS_URL}/${incompleteDetails.general_id}/`;
       const fetchData = async () => {
         setIsLoading(true);
         setCompleteDetails(null);

@@ -39,7 +39,7 @@ const AppProvider = ({ children }) => {
 
   const searchBuildings = async (searchInput) => {
     try {
-      const res = await fetch(`${BUILDINGS_URL}/search?query=${searchInput}`);
+      const res = await fetch(`${BUILDINGS_URL}/search/?query=${searchInput}`);
       const searchResults = await res.json();
       onSearchLoading(false);
       if (searchResults.length > 0) {

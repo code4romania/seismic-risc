@@ -40,7 +40,7 @@ export default () => {
     },
   });
   React.useEffect(() => {
-    fetch(STATISTICS_URL)
+    fetch(`${STATISTICS_URL}/`)
       .then((res) => res.json())
       .then((statistics) => {
         setState((prevState) => ({

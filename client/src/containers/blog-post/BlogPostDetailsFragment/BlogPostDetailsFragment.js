@@ -17,7 +17,7 @@ const BlogPostDetailsFragment = ({ handlePostLoaded }) => {
     requestError: false,
   });
   React.useEffect(() => {
-    fetch(`${POSTS_URL}/${slug}`)
+    fetch(`${POSTS_URL}/${slug}/`)
       .then((res) => (res.status === 200 ? res.json() : null))
       .then((postDetails) => {
         setState((prevState) => ({
