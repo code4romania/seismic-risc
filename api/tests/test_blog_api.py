@@ -1,6 +1,7 @@
 import pytest
 
 from blog.models import Post
+from blog.views import PostsPagination
 
 base_url = "/api/v1/posts"
 
@@ -10,7 +11,7 @@ def test_post_details_get(basic_post_data, api_client, test_user):
     basic_post_data["author_id"] = test_user.id
     post_obj = Post.objects.create(**basic_post_data)
 
-    response = api_client.get(f"{base_url}/{post_obj.id}/")
+    response = api_client.get(f"{base_url}/{post_obj.slug}/")
 
     assert response.status_code == 200
     assert response.data["slug"] == basic_post_data["slug"]
@@ -41,3 +42,18 @@ def basic_post_data():
         "is_visible": True,
         "published": timezone.now(),
     }
+
+
+@pytest.mark.django_db
+def test_post_pagination(basic_post_data, api_client, test_user):
+    for i in range(PostsPagination.max_limit + 1):
+        basic_post_data["slug"] = str(i)
+        basic_post_data["author_id"] = test_user.id
+        Post.objects.create(**basic_post_data)
+
+    custom_limit = PostsPagination.default_limit // 2
+    custom_offset = PostsPagination.max_limit // 2
+    response = api_client.get(f"{base_url}/?offset={custom_offset}&limit={custom_limit}")
+    assert response.status_code == 200
+    assert len(response.data["results"]) == custom_limit
+    assert response.data["results"][0]["slug"] == str(custom_offset)

@@ -1,5 +1,5 @@
 # django and related apps
-django<3
+django~=3.2.4
 django-configurations
 django-import-export
 djangorestframework
@@ -8,6 +8,7 @@ django-ckeditor
 django-storages
 django-taggit
 django-taggit-serializer
+django-jquery
 
 # database
 psycopg2
@@ -25,3 +26,7 @@ tablib
 
 # wsgi server
 gunicorn
+
+# doc-generation
+drf-spectacular
+

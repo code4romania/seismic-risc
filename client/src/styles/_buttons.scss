@@ -1,0 +1,9 @@
+.ant-btn.ant-btn-background-ghost.ant-btn-primary {
+  &:hover {
+    background-color: lighten($primary-color, 60%);
+  }
+
+  span {
+    font-size: 14px;
+  }
+}

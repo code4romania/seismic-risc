@@ -5,12 +5,15 @@ import MapFragment from './MapFragment';
 import ParagraphFragment from './ParagraphFragment';
 import SearchFragment from './SearchFragment';
 import StatisticFragment from './StatisticFragment';
+import BlogPreviewFragment from './BlogPreviewFragment';
+import HeroFragment from './HeroFragment';
 
-export default ({ language, languageChangeCallback }) => (
-  <Layout language={language} languageChangeCallback={languageChangeCallback}>
+export default () => (
+  <Layout hero={<HeroFragment />}>
     <SearchFragment />
     <MapFragment />
     <StatisticFragment />
     <ParagraphFragment />
+    <BlogPreviewFragment />
   </Layout>
 );

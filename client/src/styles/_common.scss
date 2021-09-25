@@ -1,0 +1,147 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+#root {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.App > section {
+  min-height: 100vh;
+}
+
+.App .ant-layout-content .page {
+  text-align: left;
+  margin: 20px 0;
+}
+
+.App-link {
+  color: #09d3ac;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 $gutter;
+  max-width: $container-width;
+}
+
+.App > .ant-layout > .ant-layout-content {
+  width: 100%;
+}
+
+.navbar {
+    height: $header-height;
+}
+
+.stats-card {
+  border: none;
+  background-color: $primary-color;
+  border-radius: 16px;
+  padding: 30px 10px 10px;
+
+  &, & h3, & h4 {
+    color: #fff;
+  }
+
+  & h3, & h4 {
+    text-align: left;
+    margin-bottom: 0;
+  }
+
+  & .stats-heading {
+    font-size: 30px;
+    text-decoration: underline;
+  }
+
+  &.people-under-risk {
+    background-color: #FF7648;
+  }
+
+  &.evaluated-buildings {
+    background-color: #FE6262;
+  }
+
+  &.consolidated-buildings {
+    background-color: #FF6984;
+  }
+
+  .stats-background {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 122px;
+    border-top-right-radius: 16px;
+
+    &.people-under-risk {
+      color: #FFC278;
+    }
+
+    &.evaluated-buildings {
+      color: #FA0F00;
+    }
+
+    &.consolidated-buildings {
+      color: #BE3386;
+    }
+  }
+
+  .stats-icon {
+    position: absolute;
+    color: #fff;
+    width: 28px;
+    right: 40px;
+    top: 12px;
+  }
+}
+
+.badge {
+  background-color: $primary-dark;
+  border-radius: 10px;
+  color: #fff;
+  display: inline-flex;
+  height: 26px;
+  line-height: 23px;
+  padding: 0 5px;
+  white-space: nowrap;
+
+  svg {
+    margin-left: 5px;
+    width: 19px;
+  }
+}
+
+.blog-preview, .about-preview {
+  margin-top: 4rem;
+  text-align: left;
+
+  i {
+    margin-right: 5px;
+  }
+}
+
+.about-preview {
+  i {
+    color: $primary-color;
+  }
+}
+
+.blog-preview {
+  margin-bottom: 4rem;
+
+  i {
+    color: $secondary-main;
+  }
+}

@@ -4,9 +4,9 @@
     "jest": true
   },
   "plugins": ["prettier"],
-  "extends": ["airbnb-base", "airbnb/rules/react", "plugin:prettier/recommended", "prettier/react"],
+  "extends": ["airbnb-base", "airbnb/rules/react", "plugin:prettier/recommended", "prettier"],
   "parser": "babel-eslint",
-  "ignorePatterns": ["serviceWorker.js", "node_modules/"],
+  "ignorePatterns": ["serviceWorker.js", "node_modules/", "src/locales/"],
   "rules": {
     "react/jsx-props-no-spreading": 0,
     "react/no-unescaped-entities": ["error", { "forbid": [">", "}"] }],

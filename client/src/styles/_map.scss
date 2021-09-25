@@ -1,16 +1,90 @@
 .map-container {
   position: relative;
   overflow: hidden;
+  border-radius: 10px;
+}
+
+%marker_base {
+  margin: -12px 0 0 -12px;
+
+  & svg {
+    fill: #ee741b;
+  }
+  
+  & svg:hover {
+    cursor: pointer;
+  }
+
+  &.selected {
+    > svg {
+      fill: #000000;
+    }
+  }
+}
+
+.marker-na {
+  @extend %marker_base;
+  & svg {
+    fill: #AED581;
+  }
 }
 
 .marker {
-  margin: -12px 0 0 -12px;
+  @extend %marker_base;
 }
 
-.marker > svg {
-  fill: #ee741b;
+.marker-rs1 {
+  @extend %marker_base;
+  & svg {
+    fill: #BA4A00;
+  }
 }
 
-.marker svg:hover {
-  cursor: pointer;
+.marker-rs2 {
+  @extend %marker_base;
+  & svg {
+    fill: #CA6F1E;
+  }
+}
+
+.marker-rs3 {
+  @extend %marker_base;
+  & svg {
+    fill: #D68910;
+  }
+}
+
+.marker-rs4 {
+  @extend %marker_base;
+  & svg {
+    fill: #D4AC0D;
+  }
+}
+
+.marker-u1 {
+  @extend %marker_base;
+  & svg {
+    fill: #0D47A1;
+  }
+}
+
+.marker-u2 {
+  @extend %marker_base;
+  & svg {
+    fill: #1976D2;
+  }
+}
+
+.marker-u3 {
+  @extend %marker_base;
+  & svg {
+    fill: #2196F3;
+  }
+}
+
+.marker-u4 {
+  @extend %marker_base;
+  & svg {
+    fill: #64B5F6;
+  }
 }

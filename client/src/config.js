@@ -6,5 +6,7 @@ export default {
   BUILDINGS_URL: `${HOST_URL}${PORT}/${API}/buildings`,
   PAGES_URL: `${HOST_URL}${PORT}/${API}/pages`,
   POSTS_URL: `${HOST_URL}${PORT}/${API}/posts`,
-  MAP_API_KEY: process.env.REACT_APP_API_KEY,
+  STATISTICS_URL: `${HOST_URL}${PORT}/${API}/statistics`,
+  MAP_API_KEY: process.env.REACT_APP_HERE_MAPS_API_KEY,
+  CAPTCHA_API_KEY: process.env.REACT_APP_CAPTCHA_API_KEY,
 };

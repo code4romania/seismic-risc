@@ -4,6 +4,9 @@ pytest-flake8
 pytest-cov
 pdbpp
 ipython
-black
+pip-tools
+black==21.5b1
+Faker
+tqdm
 
 -r requirements.in

@@ -5,8 +5,6 @@ services:
     image: postgres:11
     volumes:
       - pgdata:/var/lib/postgresql/data
-    ports:
-      - "5432:5432"
     environment:
       - POSTGRES_HOST_AUTH_METHOD=trust
 
@@ -17,12 +15,13 @@ services:
     volumes:
       - ./client:/code
     ports:
-      - "3000:3000"
+      - "3030:3000"
     depends_on:
       - api
     environment:
       NODE_ENV:
-      REACT_APP_API_KEY:
+      REACT_APP_CAPTCHA_API_KEY:
+      REACT_APP_HERE_MAPS_API_KEY:
       REACT_APP_DJANGO_SITE_URL:
       REACT_APP_DJANGO_PORT:
       REACT_APP_DJANGO_API_ENDPOINT:
@@ -35,17 +34,19 @@ services:
         DEVBUILD: 1
     command:
       [
-        "./wait_for_db.py && ./manage.py migrate --noinput && ./manage.py runserver 0.0.0.0:8000",
+        "./wait_for_db.py && ./manage.py migrate --noinput && ./manage.py runserver 0.0.0.0:8030",
       ]
     volumes:
       - ./api:/code
     ports:
-      - "8000:8000"
+      - "8030:8030"
     depends_on:
       - db
     environment:
       DJANGO_CONFIGURATION:
       DATABASE_URL:
+      DEVBUILD:
+      HERE_MAPS_API_KEY:
 
 volumes:
   pgdata:

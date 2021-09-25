@@ -1,50 +1,687 @@
 {
+  "404.contact_message": {
+    "translation": "If you encounter other issues, please send us an e-mail at ",
+    "origin": [
+      [
+        "containers/404/HeroFragment.js",
+        18
+      ]
+    ],
+    "extractedComments": []
+  },
+  "404.sorry_message": {
+    "translation": "We can not find the page you are looking for. Please go back to the main page and start your search again or navigate through the rest of our platform with the help of the top menu.",
+    "origin": [
+      [
+        "containers/404/HeroFragment.js",
+        15
+      ]
+    ],
+    "extractedComments": []
+  },
+  "404.title": {
+    "translation": "We are sorry",
+    "origin": [
+      [
+        "containers/404/HeroFragment.js",
+        13
+      ]
+    ],
+    "extractedComments": []
+  },
+  "A project by": {
+    "origin": [
+      [
+        "components/Footer/index.js",
+        28
+      ],
+      [
+        "containers/about/AuthorsFragment.js",
+        15
+      ]
+    ],
+    "extractedComments": []
+  },
   "About": {
     "origin": [
       [
-        "src/components/Header.js",
-        25
+        "components/Header/index.js",
+        78
       ]
-    ]
+    ],
+    "extractedComments": []
+  },
+  "About Vulnerable Romania": {
+    "origin": [
+      [
+        "containers/blog/HeroFragment.js",
+        13
+      ]
+    ],
+    "extractedComments": []
+  },
+  "About the project": {
+    "origin": [
+      [
+        "components/Footer/index.js",
+        62
+      ],
+      [
+        "containers/404/HeroFragment.js",
+        25
+      ],
+      [
+        "containers/about/HeroFragment.js",
+        15
+      ],
+      [
+        "containers/about/TitleFragment.js",
+        10
+      ],
+      [
+        "containers/home/HeroFragment.js",
+        24
+      ],
+      [
+        "containers/home/ParagraphFragment.js",
+        13
+      ],
+      [
+        "containers/thankyou/HeroFragment.js",
+        28
+      ]
+    ],
+    "extractedComments": []
   },
   "Add a building": {
     "origin": [
       [
-        "src/components/Header.js",
-        41
+        "components/Footer/index.js",
+        69
+      ],
+      [
+        "components/Header/index.js",
+        100
+      ],
+      [
+        "containers/add-building/FormFragment.js",
+        205
+      ],
+      [
+        "containers/add-building/HeroFragment.js",
+        13
+      ],
+      [
+        "containers/home/HeroFragment.js",
+        21
       ]
-    ]
+    ],
+    "extractedComments": []
+  },
+  "Add information": {
+    "translation": "Add information",
+    "origin": [
+      [
+        "components/BuildingDetails/BuildingDetailsFooter.js",
+        20
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Address": {
+    "origin": [
+      [
+        "components/BuildingDetails.js",
+        28
+      ]
+    ],
+    "extractedComments": []
+  },
+  "All seismic risk classes": {
+    "origin": [
+      [
+        "containers/home/MapFragment.js",
+        50
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Article not found": {
+    "origin": [
+      [
+        "containers/blog-post/BlogPostDetailsFragment/BlogPostDetailsFragment.js",
+        42
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Back to home page": {
+    "origin": [
+      [
+        "containers/404/HeroFragment.js",
+        22
+      ],
+      [
+        "containers/thankyou/HeroFragment.js",
+        25
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Blog": {
+    "origin": [
+      [
+        "containers/404/BlogPreviewFragment.js",
+        6
+      ],
+      [
+        "containers/home/BlogPreviewFragment.js",
+        6
+      ],
+      [
+        "containers/thankyou/BlogPreviewFragment.js",
+        6
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Building Info": {
+    "origin": [
+      [
+        "containers/add-building/FormFragment.js",
+        136
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Cannot be left empty!": {
+    "origin": [
+      [
+        "containers/add-building/FormFragment.js",
+        22
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Captcha": {
+    "translation": "Captcha",
+    "origin": [
+      [
+        "containers/add-building/FormFragment.js",
+        198
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Certified expert name": {
+    "origin": [
+      [
+        "components/BuildingDetails/index.js",
+        36
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Check here if a building is on the <0>seismic risk <1/></0> list": {
+    "origin": [
+      [
+        "containers/home/SearchFragment.js",
+        49
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Consolidated buildings": {
+    "origin": [
+      [
+        "containers/home/StatisticFragment.js",
+        81
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Construction Year": {
+    "origin": [
+      [
+        "components/BuildingDetails/index.js",
+        24
+      ]
+    ],
+    "extractedComments": []
   },
   "Contact us": {
     "origin": [
       [
-        "src/components/Header.js",
-        37
+        "components/Header/index.js",
+        93
       ]
-    ]
+    ],
+    "extractedComments": []
+  },
+  "County": {
+    "origin": [
+      [
+        "containers/add-building/FormFragment.js",
+        162
+      ]
+    ],
+    "extractedComments": []
+  },
+  "DONATE": {
+    "origin": [
+      [
+        "components/SocialBar/index.js",
+        87
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Designed by": {
+    "origin": [
+      [
+        "components/Footer/index.js",
+        36
+      ],
+      [
+        "containers/about/AuthorsFragment.js",
+        21
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Do you have more details about this building?": {
+    "translation": "Do you have more details about this building?",
+    "origin": [
+      [
+        "components/BuildingDetails/BuildingDetailsFooter.js",
+        8
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Donate": {
+    "origin": [
+      [
+        "components/Footer/index.js",
+        97
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Download": {
+    "origin": [
+      [
+        "containers/guide/index.js",
+        36
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Evaluated buildings": {
+    "origin": [
+      [
+        "containers/home/StatisticFragment.js",
+        73
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Examination year": {
+    "origin": [
+      [
+        "components/BuildingDetails/index.js",
+        33
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Field cannot exceed a maximum of {maxLen} characters!": {
+    "origin": [
+      [
+        "containers/add-building/FormFragment.js",
+        24
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Guide": {
+    "origin": [
+      [
+        "components/Header/index.js",
+        83
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Height regime": {
+    "origin": [
+      [
+        "components/BuildingDetails/index.js",
+        27
+      ],
+      [
+        "containers/add-building/FormFragment.js",
+        177
+      ]
+    ],
+    "extractedComments": []
   },
   "Homeowners associations guide": {
     "origin": [
       [
-        "src/components/Header.js",
-        28
+        "containers/guide/index.js",
+        22
       ]
-    ]
+    ],
+    "extractedComments": []
   },
-  "Legislation": {
+  "Implemented by": {
     "origin": [
       [
-        "src/components/Header.js",
-        31
+        "components/Footer/index.js",
+        44
       ]
-    ]
+    ],
+    "extractedComments": []
   },
-  "Vulnerable Bucharest": {
+  "In the meantime, keep being awesome!": {
     "origin": [
       [
-        "src/components/Header.js",
-        34
+        "containers/thankyou/HeroFragment.js",
+        22
       ]
-    ]
+    ],
+    "extractedComments": []
+  },
+  "Information being updated": {
+    "origin": [
+      [
+        "containers/home/StatisticFragment.js",
+        25
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Information missing": {
+    "origin": [
+      [
+        "components/BuildingDetails/index.js",
+        49
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Load more articles": {
+    "origin": [
+      [
+        "components/LoadMoreArticlesLink/index.js",
+        8
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Locality": {
+    "origin": [
+      [
+        "containers/add-building/FormFragment.js",
+        154
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Next page": {
+    "origin": [
+      [
+        "containers/guide/PdfViewer.js",
+        89
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Other": {
+    "origin": [
+      [
+        "containers/home/MapFragment.js",
+        59
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Other articles": {
+    "origin": [
+      [
+        "containers/blog-post/BlogPreviewFragment.js",
+        7
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Page {pageNumber} of {numPages}": {
+    "origin": [
+      [
+        "containers/guide/PdfViewer.js",
+        80
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Partners": {
+    "origin": [
+      [
+        "components/Footer/index.js",
+        55
+      ]
+    ],
+    "extractedComments": []
+  },
+  "People under risk": {
+    "origin": [
+      [
+        "containers/home/StatisticFragment.js",
+        65
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Previous page": {
+    "origin": [
+      [
+        "containers/guide/PdfViewer.js",
+        86
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Privacy policy": {
+    "origin": [
+      [
+        "components/Footer/index.js",
+        76
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Published by {authorFullName} • {0}": {
+    "origin": [
+      [
+        "components/BlogItem/index.js",
+        24
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Risk category": {
+    "origin": [
+      [
+        "components/BuildingDetails/index.js",
+        30
+      ],
+      [
+        "containers/add-building/FormFragment.js",
+        185
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Search Results": {
+    "origin": [
+      [
+        "components/SearchResults/index.js",
+        22
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Server unavailable": {
+    "origin": [
+      [
+        "components/BlogPreview/index.js",
+        77
+      ],
+      [
+        "containers/add-building/FormFragment.js",
+        122
+      ],
+      [
+        "containers/blog/Blog.js",
+        69
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Share:": {
+    "origin": [
+      [
+        "components/Sharing/index.js",
+        11
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Street": {
+    "origin": [
+      [
+        "containers/add-building/FormFragment.js",
+        138
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Street number": {
+    "origin": [
+      [
+        "containers/add-building/FormFragment.js",
+        146
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Terms & conditions": {
+    "origin": [
+      [
+        "components/Footer/index.js",
+        83
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Thank you": {
+    "translation": "Thank you",
+    "origin": [
+      [
+        "containers/thankyou/HeroFragment.js",
+        13
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Welcome!": {
+    "origin": [
+      [
+        "containers/home/HeroFragment.js",
+        13
+      ]
+    ],
+    "extractedComments": []
+  },
+  "about.first_paragraph": {
+    "translation": "In the research and design program developed by Code for Romania, we focused on the non-governmental sector to identify the hotspots of civil society and to intervene with digital solutions where we can bring about change for the better. We often design solutions that digitize processes and simplify procedures and mechanics that need to be streamlined, but in many cases we come up with solutions that address the need to build completely new tools that solve problems with the support of technology.",
+    "origin": [
+      [
+        "containers/about/FirstParagraphsFragment.js",
+        12
+      ]
+    ],
+    "extractedComments": []
+  },
+  "about.last_paragraph": {
+    "translation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque nec nam aliquam sem et tortor consequat id. Varius morbi enim nunc faucibus a pellentesque sit amet porttitor. Diam donec adipiscing tristique risus nec feugiat in. Purus in mollis nunc sed id semper. Adipiscing at in tellus integer feugiat scelerisque. Vitae nunc sed velit dignissim sodales ut eu sem. Lacus viverra vitae congue eu consequat. Lacus vestibulum sed arcu non odio euismod lacinia at. Tincidunt nunc pulvinar sapien et ligula ullamcorper. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. Fermentum et sollicitudin ac orci phasellus egestas tellus rutrum. Nam libero justo laoreet sit amet cursus. Augue ut lectus arcu bibendum at varius. Duis at tellus at urna condimentum. Ornare suspendisse sed nisi lacus sed viverra tellus in hac. Varius quam quisque id diam vel quam elementum. Malesuada bibendum arcu vitae elementum curabitur vitae nunc. Viverra maecenas accumsan lacus vel.",
+    "origin": [
+      [
+        "containers/about/ThirdParagraphFragment.js",
+        12
+      ]
+    ],
+    "extractedComments": []
+  },
+  "about.project_details": {
+    "translation": "Seismic Risk is designed by Code for Romania in Civic Labs and developed pro bono by our organization's volunteers. This project does not have any other source of funding and is being managed entirely from your donations.",
+    "origin": [
+      [
+        "containers/about/TextBoxFragment.js",
+        13
+      ]
+    ],
+    "extractedComments": []
+  },
+  "about.second_paragraph": {
+    "translation": "The solution you are using right now is a platform that responds to the need to increase the the representativeness of non-profit organizations, through clear and transparent selection mechanisms that carry out the sector's missions in decision-making forums. VotONG is, therefore, the necessary piece of infrastructure for the self-regulation of the NGO sector in Romania, which in time, through the active participation of organizations, will lead to an efficient communication and consultation between all actors in the field. That is why we invite you to join us in this endeavor because together we can trigger the positive changes we want for the Romanian society. Together we are invincible. Both us and our beneficiaries. Romania.",
+    "origin": [
+      [
+        "containers/about/FirstParagraphsFragment.js",
+        15
+      ]
+    ],
+    "extractedComments": []
+  },
+  "about.third_paragraph": {
+    "translation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque nec nam aliquam sem et tortor consequat id. Varius morbi enim nunc faucibus a pellentesque sit amet porttitor. Diam donec adipiscing tristique risus nec feugiat in. Purus in mollis nunc sed id semper. Adipiscing at in tellus integer feugiat scelerisque. Vitae nunc sed velit dignissim sodales ut eu sem. Lacus viverra vitae congue eu consequat.",
+    "origin": [
+      [
+        "containers/about/SecondParagraphFragment.js",
+        12
+      ]
+    ],
+    "extractedComments": []
+  },
+  "no.": {
+    "origin": [
+      [
+        "components/BuildingDetails/BuildingDetailsTitle.js",
+        16
+      ]
+    ],
+    "extractedComments": []
+  },
+  "see images": {
+    "translation": "see images",
+    "origin": [
+      [
+        "components/BuildingDetails/BuildingDetailsTitle.js",
+        20
+      ]
+    ],
+    "extractedComments": []
+  },
+  "thank-you-message": {
+    "translation": "Thank you for the information that you sent us. In the following days someone from our team will evaluate the information sent to us and, as soon as we will have all the necessary data to add the building on the map, we will notify you.",
+    "message": "Thank you for the information that you sent us. In the following days someone from our team will evaluate the information sent to us and, as soon as we will have all the necessary data to add the building on the map, we will notify you.",
+    "origin": [
+      [
+        "containers/thankyou/HeroFragment.js",
+        15
+      ]
+    ],
+    "extractedComments": []
   }
 }

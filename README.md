@@ -1,34 +1,57 @@
 # Seismic Risc
 
-[![Datree](https://s3.amazonaws.com/catalog.static.datree.io/datree-badge-20px.svg)](https://datree.io/?src=badge) 
-[![GitHub contributors](https://img.shields.io/github/contributors/code4romania/seismic-risc.svg)](https://github.com/code4romania/seismic-risc/graphs/contributors) 
-[![GitHub last commit](https://img.shields.io/github/last-commit/code4romania/seismic-risc.svg)](https://github.com/code4romania/seismic-risc/commits/develop) 
+[![Datree](https://s3.amazonaws.com/catalog.static.datree.io/datree-badge-20px.svg)](https://datree.io/?src=badge)
+[![GitHub contributors](https://img.shields.io/github/contributors/code4romania/seismic-risc.svg)](https://github.com/code4romania/seismic-risc/graphs/contributors)
+[![GitHub last commit](https://img.shields.io/github/last-commit/code4romania/seismic-risc.svg)](https://github.com/code4romania/seismic-risc/commits/develop)
 [![License: MPL 2.0](https://img.shields.io/badge/license-MPL%202.0-brightgreen.svg)](https://opensource.org/licenses/MPL-2.0)
 
-<!-- Please don't remove this: Grab your social icons from https://github.com/carlsednaoui/gitsocial -->
-
-<!-- display the social media buttons in your README -->
+<!-- Social icons from https://github.com/konsav/social-icons -->
 
 [![code for romania twitter][1.1]][1]
 [![code for romania facebook][2.1]][2]
+[![code for romania instagram][3.1]][3]
+[![code for romania linkedin][4.1]][4]
 
 <!-- links to social media icons -->
-<!-- no need to change these -->
 
-<!-- icons with padding -->
+[1.1]: https://raw.githubusercontent.com/code4romania/.github/main/social_icons/social_img_twitter.png
+[2.1]: https://raw.githubusercontent.com/code4romania/.github/main/social_icons/social_img_facebook.png
+[3.1]: https://raw.githubusercontent.com/code4romania/.github/main/social_icons/social_img_instagram.png
+[4.1]: https://raw.githubusercontent.com/code4romania/.github/main/social_icons/social_img_linkedin.png
 
-[1.1]: http://i.imgur.com/tXSoThF.png "twitter icon with padding"
-[2.1]: http://i.imgur.com/P3YfQoD.png "facebook icon with padding"
 [1]: https://twitter.com/Code4Romania
-[2]: https://www.facebook.com/code4romania/
+[2]: https://facebook.com/code4romania/
+[3]: https://instagram.com/code4romania/
+[4]: https://linkedin.com/in/code4romania/
 
-<!-- Please don't remove this: Grab your social icons from https://github.com/carlsednaoui/gitsocial -->
+<!-- social icons section end -->
 
-Un cutremur în București nu este o situație ipotetică. Este o certitudine că acest lucru se va întâmpla. În acest context, la mai bine de 40 de ani de la cutremurul din 1977, memoria colectivă a ascuns în profunzime amintirile acelui dezastru în încercarea de a-și înnăbuși teama. Dar realitatea este că, patru decenii mai târziu, Bucureștiul, la fel ca restul orașelor cu risc seismic ridicat, nu ar face față unui asemenea eveniment, iar pierderile de vieți omenești ar fi uriașe. [Exercițiul Seism 2018](https://www.news.ro/social/exercitiul-seism-2018-cel-mai-recent-bilant-al-cutremurului-simulat-indica-peste-3-900-de-morti-peste-7-000-de-raniti-si-peste-2-300-de-persoane-disparute-1922405315222018102018579831), derulat de DSU arată că cel puţin 4.587 persoane şi-ar pierde viaţa, iar 8.585 ar fost rănite, 6 spitale vor fi distruse, 23 de unităţi spitaliceşti distruse parţial, iar 9 avariate, dar funcţionale O estimare, am spune noi, destul de optimistă.
+:romania: Un cutremur în București nu este o situație ipotetică.
+Este o certitudine că acest lucru se va întâmpla.
+În acest context, la mai bine de 40 de ani de la cutremurul din 1977, memoria colectivă a ascuns în profunzime amintirile acelui dezastru în încercarea de a-și înăbuși teama.
+Dar realitatea este că, patru decenii mai târziu, Bucureștiul, la fel ca restul orașelor cu risc seismic ridicat, nu ar face față unui asemenea eveniment, iar pierderile de vieți omenești ar fi uriașe.
+[Exercițiul Seism 2018](https://www.news.ro/social/exercitiul-seism-2018-cel-mai-recent-bilant-al-cutremurului-simulat-indica-peste-3-900-de-morti-peste-7-000-de-raniti-si-peste-2-300-de-persoane-disparute-1922405315222018102018579831) derulat de DSU arată că cel puţin 4.587 persoane şi-ar pierde viaţa, iar 8.585 ar fost rănite, 6 spitale vor fi distruse, 23 de unităţi spitaliceşti distruse parţial, iar 9 avariate, dar funcţionale.
+O estimare, am spune noi, destul de optimistă.
 
-Ce putem face pentru a deveni mai puțin vulnerabili? Să știm totul despre oraș, despre clădirile în care locuim astfel încât să putem cere consolidarea lor. Seismic Risc nu este doar "un nou site de informare", ci o platformă care colectează și validează apoi cu experți date despre clădirile din România, la nivel national, ajută asociațiile de proprietari să își consolideze clădirile, te ține la curent cu legislația și ți-o explică și are grijă să ai la îndemână informații utile la orice moment.
+Ce putem face pentru a deveni mai puțin vulnerabili?
+Să știm totul despre oraș, despre clădirile în care locuim astfel încât să putem cere consolidarea lor.
+Seismic Risc nu este doar "un nou site de informare", ci o platformă care colectează și validează apoi cu experți date despre clădirile din România, la nivel național, ajută asociațiile de proprietari să își consolideze clădirile, te ține la curent cu legislația și ți-o explică și are grijă să ai la îndemână informații utile la orice moment.
+
+:gb: An earthquake in Bucharest is not a hypothetical situation.
+It is certain that this will happen.
+In this context, after more than 40 years from the 1977 earthquake, the collective memory has hidden deep the memories of that disaster in its attempt of stifling its fear.
+The reality is that, four decades later, Bucharest, as well as the rest of the cities with a high seismic risk, would not stand up tu such an event, and the loss of life would be tremendous.
+[The Earthquake 2018 Exercise](https://www.romania-insider.com/seism-2018-exercise-bucharest) conducted by the DSU shows that at least 4,587 people would have died and 8,585 would have been injured, 6 hospitals would be destroyed, 23 more would be partially destroyed, and 9 would be damaged, though still functional.
+An estimation that we would consider quite optimistic.
+
+What can we do to become less vulnerable?
+Find out everything about the city, about the buildings in which we live so that we can ask for their consolidation.
+Seismic Risc is not just "a new information site", but a platform that collects and then validates with the help of experts data about the buildings in Romania, at a national level, it helps owners associations to consolidate their buildings, it keeps you in touch with the current legislation and explains it to you, and it makes sure that you have useful information at your disposal at all times.
 
 **Let's save lives together.**
+
+<details>
+  <summary><b> TABLE OF CONTENTS </b></summary>
 
 - [Seismic Risc](#seismic-risc)
   - [Contributing](#contributing)
@@ -36,19 +59,26 @@ Ce putem face pentru a deveni mai puțin vulnerabili? Să știm totul despre ora
     - [Programming languages](#programming-languages)
     - [Frameworks](#frameworks)
     - [Package managers](#package-managers)
+    - [Code styling](#code-styling)
     - [Database technology & provider](#database-technology--provider)
   - [Getting started](#getting-started)
     - [Pre-requisites](#pre-requisites)
     - [Initial set-up](#initial-set-up)
+    - [External services API keys](#external-services-api-keys)
     - [Starting the project](#starting-the-project)
+    - [Starting the project without docker](#starting-the-project-without-docker)
     - [Development](#development)
     - [Known Issues](#known-issues)
+  - [Management Commands](#management-commands)
   - [Testing](#testing)
   - [Production](#production)
   - [Client Deployment](#client-deployment)
   - [Feedback](#feedback)
   - [License](#license)
   - [About Code4Ro](#about-code4ro)
+
+</details>
+
 
 ## Contributing
 
@@ -111,7 +141,7 @@ On other platforms please follow the instructions described here:
 - <https://docs.docker.com/install/>
 - <https://docs.docker.com/compose/install/>
 
-The versions the Makefile was tested with are:
+The Docker versions the Makefile was tested with are:
 
 ```shell script
 $ docker --version
@@ -126,6 +156,34 @@ Initialise the database and development fixtures:
 
 ```shell script
 make init-env
+```
+
+### External services API keys
+
+In order to have a fully functional project, you have to get two API keys: HERE Maps API Key and hCAPTCHA API Key.
+
+#### HERE Maps API Key 
+
+Tutorial: [https://developer.here.com/tutorials/getting-here-credentials/]()
+
+Keys added to the `.env` file:
+
+```shell
+# the same key can be used for both variables
+HERE_MAPS_API_KEY
+REACT_APP_HERE_MAPS_API_KEY
+```
+
+#### hCAPTCHA API Key
+
+1. [Create a hCAPTCHA account](https://dashboard.hcaptcha.com/signup)
+1. Go to [your settings page](https://dashboard.hcaptcha.com/settings)
+1. Add a new key and add it to the environment variables list
+
+Keys added to the `.env` file:
+
+```shell
+REACT_APP_CAPTCHA_API_KEY
 ```
 
 ### Starting the project
@@ -161,12 +219,86 @@ In order to see all available commands run:
 make
 ```
 
+### Starting the project without docker
+
+#### Windows platform
+##### Prerequisites
+1. [PostgreSQL](https://www.enterprisedb.com/postgresql-tutorial-resources-training?cid=55)
+2. [Python 3.7](https://www.python.org/ftp/python/3.7.9/python-3.7.9-amd64.exe)
+3. [Node.js](https://nodejs.org/dist/v14.16.0/node-v14.16.0-x64.msi)
+
+##### Steps to set your environment
+1. In project directory run: 
+
+```shell
+python -m venv .venv
+.venv\Scripts\activate.bat
+pip install -r ./api/requirements-dev.txt
+copy .env.dist .env
+```
+2. Check the .env file created by the copy command and see if there are any environment variables that you might need to provide or change. Double check database config line in .env. It has to follow this pattern: `postgres://USER:PASSWORD@HOST:PORT/NAME`
+
+3. Run following in order to set needed environment variables:
+```shell
+activate_dev_env.bat
+```
+
+4. Check database connection. If this fails double check database configuration.
+```shell
+python api/wait_for_db.py
+```
+
+5. Run migrations:
+```shell
+python api/manage.py migrate --noinput
+```
+
+6. Create admin user (user to login into admin pannel):
+```shell
+python api/manage.py createsuperuser
+```
+
+7. Load dummy data in database:
+```shell
+python api/manage.py loaddata buildings
+python api/manage.py loaddata pages
+```
+
+8. Install node modules.
+```shell
+cd client
+npm install
+```
+#### Steps needed to start development servers
+*1. Start API server.*
+
+Open terminal in project direcotry and run environment activation script, then
+start the server.
+```shell
+.venv\Scripts\activate.bat
+activate_dev_env.bat
+python api\manage.py runserver 0.0.0.0:8000
+```
+Check functionality at http://localhost:8000 you shoul get 404 page.
+
+
+*2. Start front-end server.*
+
+Open terminal in project direcotry and run environment activation script, then
+start the server.
+```shell
+activate_dev_env.bat
+cd client
+npm start
+```
+Check functionality at http://localhost:3000.
+
 ### Development
 
 When creating new models in Django, in order to make sure they are generated in a clean environment, it is recommended to generate the migration files using the `make` command:
 
 ```shell script
-make migrations
+make makemigrations && make migrate
 ```
 
 When you need to add/remove requirements or restrict the version of a requirement, edit the `requirements.in` (prod) and the `requirements-dev.in` (dev) files accordingly. After doing this run:
@@ -179,9 +311,10 @@ This will create a clean environment where it uses the [pip-tools](https://githu
 
 ### Known Issues
 
-**Client hot-reload on Windows Docker is not working**
+#### Client hot-reload on Windows Docker is not working
 
 Try following these steps:
+
 1. open up a terminal in **seismic-risc_client** container
 2. `cd ./node_modules/react-scripts/config/`
 3. `vi webpackDevServer.config.js`
@@ -196,7 +329,7 @@ Try following these steps:
 
 This way, webpack-dev-server should be watching files in polling mode, instead of listening for file change events.
 
-**In VS Code, ESLint fails to load the Prettier plugin**
+#### In VS Code, ESLint fails to load the Prettier plugin
 
 Add the following option to user settings in VS Code if ESLint fails to load the Prettier plugin.
 
@@ -208,6 +341,25 @@ Add the following option to user settings in VS Code if ESLint fails to load the
     }
   ]
 }
+```
+
+## Management Commands
+
+The new custom command can be called using
+`python manage.py buildings <number>`
+required arguments:
+
+- --delete
+- --create
+
+```shell script
+cd path/to/repo
+docker-compose exec api bash
+root@ba4fd81f9023:/code# python manage.py buildings 30 --create
+100% |███████████████████████████████████████████████████████████████████████████████████████████████████████████████| 30/30 [00:00<00:00, 37.89it/s]
+Successfully created 30 buildings.
+root@ba4fd81f9023:/code# python manage.py buildings 25 --delete
+Successfully deleted 25 buildings.
 ```
 
 ## Testing
@@ -231,19 +383,19 @@ make test
 In order to get the container ready for production use we need to first build it:
 
 ```shell script
-$ docker build -t seismic-risc:latest ./api
+docker build -t seismic-risc:latest ./api
 ```
 
 Use the `prod.env.dist` template file and create a `prod.env` file with the correct environment variables and run like so:
 
 ```shell script
-$ docker run --env-file prod.env -p HOST_PORT:GUNICORN_PORT seismic-risc:latest
+docker run --env-file prod.env -p HOST_PORT:GUNICORN_PORT seismic-risc:latest
 ```
 
 Or, you can provide all the environment variables at runtime:
 
 ```shell script
-$ docker run -e DJANGO_CONFIGURATION=Prod -e DJANGO_SECRET_KEY= -e DATABASE_URL=postgres://USER:PASSWORD@HOST:PORT/NAME -e GUNICORN_PORT=5000 -e GUNICORN_WORKERS=2 -p HOST_PORT:GUNICORN_PORT seismic-risc:latest
+docker run -e DJANGO_CONFIGURATION=Prod -e DJANGO_SECRET_KEY= -e DATABASE_URL=postgres://USER:PASSWORD@HOST:PORT/NAME -e GUNICORN_PORT=5000 -e GUNICORN_WORKERS=2 -p HOST_PORT:GUNICORN_PORT seismic-risc:latest
 ```
 
 After testing the container runs properly, tag and upload the image to Docker hub:

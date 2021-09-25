@@ -1,20 +1,61 @@
-.ant-drawer-wrapper-body {
-  background: #000;
-  color: #fff;
-}
-
-.ant-drawer-body {
-  font-size: 1rem;
+.building-details {
+  font-style: normal;
   text-align: left;
-}
-
-.anticon-close {
-  color: #fff;
-}
-
-.ant-drawer-content-wrapper {
-  width: 450px !important;
-  @media (max-width: 575px) {
-    width: 250px !important;
+  height: 422px;
+  overflow: hidden;
+  overflow-y: auto;
+  &.ant-card {
+    border: 1px solid rgba(228, 51, 40, 0.2);
+    border-radius: 10px;
+    font-size: 16px;
+    line-height: 24px;
   }
+  .ant-card-body {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.building-details {
+  .ant-descriptions-item-label,
+  .ant-descriptions-item-content {
+    font-size: 16px;
+    color: $text-color;
+  }
+}
+
+.buildingDetailsTitle {
+  color: $primary-color;
+  font-weight: 600;
+  margin-bottom: 18px;
+  &.ant-row-flex {
+    flex-wrap: nowrap;
+  }
+  .ant-btn-link {
+    color: #888;
+    text-decoration: underline;
+    padding: 0;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}
+
+.buildingDetailsTitle__text {
+  margin-right: 6px;
+  font-size: 20px;
+}
+
+.buildingDetails__contribute {
+  display: flex;
+  align-items: center;
+  .anticon {
+    color: $primary-color;
+    margin-right: 8px;
+  }
+}
+
+.buildingDetailsFooter {
+  margin-top: auto;
 }

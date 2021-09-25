@@ -21,6 +21,7 @@ class PostAdmin(admin.ModelAdmin):
                 )
             },
         ),
+        ("Preview", {"classes": ("full-width",), "fields": ("preview_text",)}),
         ("Text", {"classes": ("full-width",), "fields": ("text",)}),
     ]
 

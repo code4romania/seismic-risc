@@ -1,30 +1,59 @@
-.App-footer {
-    background-color: black;
-    min-height: 350px;
-    min-width: 100%;
-    position: static;
-    bottom: 0;
+.footer.ant-layout-footer {
+  background-color: #fff;
+  border-top: 14px solid $primary-color;
+  width: 100%;
+  position: static;
+  bottom: 0;
+  padding: 50px 0;
+  margin-top: auto;
+}
 
-  .bottom-right {
-    display: flex;
-    position: absolute;
-    text-align: end;
-    right: 50px;
+.footer__logos {
+  display: flex;
+  flex-direction: column;
+}
+
+.footerLogo {
+  margin: 0 0 40px;
+}
+
+.footerLogo__label {
+  margin-bottom: 24px;
+}
+
+.footerLogo__image {
+  max-width: 100%;
+}
+
+.footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 16px;
+
+  a {
+    margin: 6px 12px;
+    text-decoration: underline;
+    color: $footer-text-color;
+  }
+}
+
+a.footer__donate {
+  font-weight: 700;
+  text-decoration-color: $green-color;
+
+  span {
+    color: $green-color;
+  }
+}
+
+@media (min-width: $breakpoint-tablet) {
+  .footer__logos {
+    flex-direction: row;
+    justify-content: center;
   }
 
-  .footer-inside {
-    padding: 50px 75px 75px;
-    position: relative;
-    height: 100%;
-  }
-
-  .copyright {
-    position: absolute;
-    bottom: 50px;
-    right: 75px;
-  }
-
-  .ant-typography {
-    color: white !important;
+  .footerLogo {
+    margin: 0 30px;
   }
 }

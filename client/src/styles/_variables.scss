@@ -6,11 +6,28 @@ $breakpoint-tablet: 767px;
 $breakpoint-mobile: 575px;
 
 // =======================
+// layout
+// =======================
+$gutter: 1rem;
+$container-width: 1280px;
+
+// =======================
 // header
 // =======================
-$header-height: 64px;
+$header-height: 120px;
 
 // =======================
 // colors
 // =======================
-$primary-color: #ee741b;
+$primary-color: #EE4036;
+$primary-dark: #E43328;
+$primary-light: #F0A167;
+
+$secondary-dark: #BE3386;
+$secondary-main: #FF7648;
+$secondary-light: #FE6262;
+
+$text-color: #252525;
+$green-color: #229445;
+
+$footer-text-color: #000;

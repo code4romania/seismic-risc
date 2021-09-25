@@ -1,0 +1,39 @@
+.search-results-container {
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: left;
+  height: 422px;
+  padding: 18px;
+  overflow-y: scroll;
+}
+
+.search-results__title {
+  color: $primary-color;
+  margin-bottom: 10px;
+}
+
+.search-results__titleText {
+  font-size: 20px;
+}
+
+.search-results {
+  list-style-type: none;
+  padding: 0;
+}
+
+.search-results > li {
+  padding: 0.45rem 1rem;
+  padding-left: 0;
+  cursor: pointer;
+  display: flex;
+}
+
+.search-results > li > p {
+  margin: 0;
+}
+
+.search-results > li:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
