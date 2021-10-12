@@ -69,7 +69,7 @@ export default () => {
         <div className="container">
           <div className="App-logo">
             <Link to="/">
-              <img src={logo} alt="Seismic Risc logo" />
+              <img src={logo} alt="Bulina Roșie logo" />
             </Link>
           </div>
           <ul className={`App-menu ${showMenu ? 'show' : ''}`}>
