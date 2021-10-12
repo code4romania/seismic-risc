@@ -105,18 +105,18 @@ code {
 }
 
 .badge {
-  background-color: $primary-dark;
-  border-radius: 10px;
+  background-color: $primary-color;
+  border-radius: 8px;
   color: #fff;
   display: inline-flex;
-  height: 26px;
-  line-height: 23px;
-  padding: 0 5px;
-  white-space: nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+  padding: 0 9px;
 
   svg {
     margin-left: 5px;
-    width: 19px;
+    width: 16px;
   }
 }
 

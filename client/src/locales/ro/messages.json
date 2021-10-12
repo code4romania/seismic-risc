@@ -83,10 +83,6 @@
         10
       ],
       [
-        "containers/home/HeroFragment.js",
-        24
-      ],
-      [
         "containers/home/ParagraphFragment.js",
         13
       ],
@@ -106,7 +102,7 @@
       ],
       [
         "components/Header/index.js",
-        100
+        106
       ],
       [
         "containers/add-building/FormFragment.js",
@@ -115,10 +111,6 @@
       [
         "containers/add-building/HeroFragment.js",
         13
-      ],
-      [
-        "containers/home/HeroFragment.js",
-        21
       ]
     ],
     "extractedComments": []
@@ -225,8 +217,8 @@
     ],
     "extractedComments": []
   },
-  "Check here if a building is on the <0>seismic risk <1/></0> list": {
-    "translation": "Verifică aici dacă o clădire se află pe lista de <0>risc seismic<1/></0>",
+  "Check here if a building is on the <0><1>seismic risk</1><2/></0> list": {
+    "translation": "Verifică aici dacă o clădire se află pe lista de <0><1>risc seismic</1><2/></0>",
     "origin": [
       [
         "containers/home/SearchFragment.js",
