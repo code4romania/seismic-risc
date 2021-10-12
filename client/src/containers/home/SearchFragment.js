@@ -43,12 +43,12 @@ export default () => {
   useEffect(() => {
     switch (currentLanguage) {
       case 'ro':
-        setSearchPlaceholderText('Scrie adresa clădirii aici');
+        setSearchPlaceholderText('Caută o adresă aici');
         break;
 
       case 'hu':
       default:
-        setSearchPlaceholderText('Insert building address here');
+        setSearchPlaceholderText('Search an address here');
     }
   }, [currentLanguage]);
 
