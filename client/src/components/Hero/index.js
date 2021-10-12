@@ -1,9 +1,9 @@
 import React from 'react';
 import { Col, Row, Typography } from 'antd';
 
-const { Title } = Typography;
+const { Title, Text } = Typography;
 
-export default ({ heroImage, title, children, titleLevel = 2 }) => {
+export default ({ heroImage, title, subTitle = null, children, titleLevel = 2 }) => {
   return (
     <div className="hero-container">
       <Row
@@ -17,6 +17,7 @@ export default ({ heroImage, title, children, titleLevel = 2 }) => {
           <img src={heroImage} />
         </Col>
         <Col sm={24} md={11}>
+          {subTitle && <Text type="secondary">{subTitle}</Text>}
           <Title level={titleLevel} className="hero-title">
             {title}
           </Title>
