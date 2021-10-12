@@ -17,14 +17,12 @@ const BlogItem = ({ postDetails }) => {
           <img src={image} alt={title} />
         </Col>
         <Col className="blog-meta" sm={24} md={12} lg={14}>
-          <Title level={3} underline>
-            {title}
-          </Title>
           <Text type="secondary">
             <Trans>
-              Published by {authorFullName} • {new Date(published).toLocaleDateString()}
+              Written by {authorFullName} • {new Date(published).toLocaleDateString()}
             </Trans>
           </Text>
+          <Title level={3}>{title}</Title>
           <Paragraph>{previewText}</Paragraph>
         </Col>
       </Row>

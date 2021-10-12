@@ -475,15 +475,6 @@
     ],
     "extractedComments": []
   },
-  "Published by {authorFullName} • {0}": {
-    "origin": [
-      [
-        "components/BlogItem/index.js",
-        24
-      ]
-    ],
-    "extractedComments": []
-  },
   "Risk category": {
     "origin": [
       [
@@ -574,6 +565,15 @@
       [
         "containers/home/HeroFragment.js",
         13
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Written by {authorFullName} • {0}": {
+    "origin": [
+      [
+        "components/BlogItem/index.js",
+        21
       ]
     ],
     "extractedComments": []

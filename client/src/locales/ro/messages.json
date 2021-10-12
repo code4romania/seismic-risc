@@ -515,16 +515,6 @@
     ],
     "extractedComments": []
   },
-  "Published by {authorFullName} • {0}": {
-    "translation": "Publicat de {authorFullName} • {0}",
-    "origin": [
-      [
-        "components/BlogItem/index.js",
-        24
-      ]
-    ],
-    "extractedComments": []
-  },
   "Risk category": {
     "translation": "Clasa de risc",
     "origin": [
@@ -623,6 +613,16 @@
       [
         "containers/home/HeroFragment.js",
         13
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Written by {authorFullName} • {0}": {
+    "translation": "Scris de {authorFullName} • {0}",
+    "origin": [
+      [
+        "components/BlogItem/index.js",
+        21
       ]
     ],
     "extractedComments": []
