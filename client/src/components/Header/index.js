@@ -75,7 +75,7 @@ export default () => {
           <ul className={`App-menu ${showMenu ? 'show' : ''}`}>
             <li>
               <NavLink className="menu-item" to="/despre" exact activeClassName="active">
-                <Trans>About</Trans>
+                <Trans>About Project</Trans>
               </NavLink>
             </li>
             <li>

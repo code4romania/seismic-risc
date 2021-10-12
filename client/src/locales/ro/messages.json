@@ -43,8 +43,8 @@
     ],
     "extractedComments": []
   },
-  "About": {
-    "translation": "Despre",
+  "About Project": {
+    "translation": "Despre Proiect",
     "origin": [
       [
         "components/Header/index.js",
