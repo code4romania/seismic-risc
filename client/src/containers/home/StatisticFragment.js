@@ -16,12 +16,12 @@ const StatisticCard = ({ title, value, icon, type = '' }) => (
     {value > 0 ? (
       <>
         <h3 className="stats-heading">{value}</h3>
-        <h4>{title}</h4>
+        <h4 className="stats-sub-heading">{title}</h4>
       </>
     ) : (
       <>
-        <h3 className="stats-heading">{title}</h3>
-        <h4>
+        <h3 className="stats-heading no-data">{title}</h3>
+        <h4 className="stats-sub-heading">
           <Trans>Information being updated</Trans>
         </h4>
       </>

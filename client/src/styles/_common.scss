@@ -59,8 +59,17 @@ code {
   }
 
   & .stats-heading {
+    font-size: 48px;
+    font-weight: 700;
+  }
+
+  & .stats-heading.no-data {
     font-size: 30px;
-    text-decoration: underline;
+  }
+
+  & .stats-sub-heading {
+    font-size: 18px;
+    font-weight: 700;
   }
 
   &.people-under-risk {
