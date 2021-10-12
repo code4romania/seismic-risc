@@ -2,9 +2,9 @@ import React from 'react';
 import { Row, Col, Card } from 'antd';
 import { Trans } from '@lingui/macro';
 
-import { ReactComponent as PeopleRisk } from '../../images/user-solid.svg';
-import { ReactComponent as EvaluatedBuildings } from '../../images/house-damage-solid.svg';
-import { ReactComponent as ConsolidatedBuildings } from '../../images/wrench-solid.svg';
+import { ReactComponent as PeopleRisk } from '../../images/people_risk_icon.svg';
+import { ReactComponent as EvaluatedBuildings } from '../../images/evaluated_buildings_icon.svg';
+import { ReactComponent as ConsolidatedBuildings } from '../../images/consolidated_buildings_icon.svg';
 import { ReactComponent as StatsIconBackground } from '../../images/stats-icon-background.svg';
 
 import config from '../../config';
