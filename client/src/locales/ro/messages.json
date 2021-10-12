@@ -562,7 +562,7 @@
     "origin": [
       [
         "components/Sharing/index.js",
-        11
+        19
       ]
     ],
     "extractedComments": []
@@ -623,6 +623,10 @@
       [
         "components/BlogItem/index.js",
         21
+      ],
+      [
+        "containers/blog-post/HeroFragment.js",
+        23
       ]
     ],
     "extractedComments": []
