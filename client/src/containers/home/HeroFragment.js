@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button, Typography } from 'antd';
+import { Typography } from 'antd';
 import { Trans } from '@lingui/macro';
 
 import Hero from '../../components/Hero';
@@ -17,12 +17,6 @@ export default () => {
         infancy. Various versions have evolved over the years, sometimes by accident, sometimes on
         purpose (injected humour and the like).
       </Paragraph>
-      <Button className="hero-btn-primary" href="/adauga-cladire">
-        <Trans>Add a building</Trans>
-      </Button>
-      <Button className="hero-btn-secondary" href="/despre">
-        <Trans>About the project</Trans>
-      </Button>
     </Hero>
   );
 };
