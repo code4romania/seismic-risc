@@ -147,3 +147,10 @@ code {
     color: $secondary-main;
   }
 }
+
+h2.ant-typography,
+.ant-typography h2 {
+  color: #ee4036;
+  font-weight: 700;
+  font-size: 2rem;
+}
