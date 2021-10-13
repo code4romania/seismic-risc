@@ -24,7 +24,7 @@ exports[`BlogItem component should be translated correctly in English 1`] = `
           <span
             class="ant-typography ant-typography-secondary"
           >
-            Written by First Last • 01/01/1970
+            Written by First Last • 1/1/1970
           </span>
           <h3
             class="ant-typography"
@@ -67,7 +67,7 @@ exports[`BlogItem component should be translated correctly in Romanian 1`] = `
           <span
             class="ant-typography ant-typography-secondary"
           >
-            Scris de First Last • 01/01/1970
+            Scris de First Last • 1/1/1970
           </span>
           <h3
             class="ant-typography"
