@@ -2,8 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import { AppProvider } from './context';
 import App from './App';
-import '@fontsource/open-sans';
-import 'typeface-titillium-web';
+import '@fontsource/source-sans-pro';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(

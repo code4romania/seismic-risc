@@ -18,10 +18,10 @@ export default () => {
         <Trans id="404.contact_message" />
         <a href="mailto:contact@code4.ro"> contact@code4.ro</a>.
       </Paragraph>
-      <Button className="hero-btn-primary" href="/">
+      <Button type="primary" className="hero-btn-primary" href="/">
         <Trans>Back to home page</Trans>
       </Button>
-      <Button className="hero-btn-secondary" href="/despre">
+      <Button type="default" href="/despre">
         <Trans>About the project</Trans>
       </Button>
     </Hero>

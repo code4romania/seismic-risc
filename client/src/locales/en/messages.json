@@ -33,7 +33,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        28
+        24
       ],
       [
         "containers/about/AuthorsFragment.js",
@@ -42,7 +42,7 @@
     ],
     "extractedComments": []
   },
-  "About": {
+  "About Project": {
     "origin": [
       [
         "components/Header/index.js",
@@ -64,7 +64,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        62
+        45
       ],
       [
         "containers/404/HeroFragment.js",
@@ -77,10 +77,6 @@
       [
         "containers/about/TitleFragment.js",
         10
-      ],
-      [
-        "containers/home/HeroFragment.js",
-        24
       ],
       [
         "containers/home/ParagraphFragment.js",
@@ -97,11 +93,11 @@
     "origin": [
       [
         "components/Footer/index.js",
-        69
+        50
       ],
       [
         "components/Header/index.js",
-        100
+        106
       ],
       [
         "containers/add-building/FormFragment.js",
@@ -110,10 +106,6 @@
       [
         "containers/add-building/HeroFragment.js",
         13
-      ],
-      [
-        "containers/home/HeroFragment.js",
-        21
       ]
     ],
     "extractedComments": []
@@ -123,16 +115,7 @@
     "origin": [
       [
         "components/BuildingDetails/BuildingDetailsFooter.js",
-        20
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Address": {
-    "origin": [
-      [
-        "components/BuildingDetails.js",
-        28
+        25
       ]
     ],
     "extractedComments": []
@@ -217,16 +200,16 @@
     "origin": [
       [
         "components/BuildingDetails/index.js",
-        36
+        27
       ]
     ],
     "extractedComments": []
   },
-  "Check here if a building is on the <0>seismic risk <1/></0> list": {
+  "Check here if a building is on the <0><1>seismic risk</1><2/></0> list": {
     "origin": [
       [
         "containers/home/SearchFragment.js",
-        49
+        89
       ]
     ],
     "extractedComments": []
@@ -244,7 +227,7 @@
     "origin": [
       [
         "components/BuildingDetails/index.js",
-        24
+        11
       ]
     ],
     "extractedComments": []
@@ -294,7 +277,7 @@
     "origin": [
       [
         "components/BuildingDetails/BuildingDetailsFooter.js",
-        8
+        12
       ]
     ],
     "extractedComments": []
@@ -303,7 +286,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        97
+        60
       ]
     ],
     "extractedComments": []
@@ -330,7 +313,7 @@
     "origin": [
       [
         "components/BuildingDetails/index.js",
-        33
+        23
       ]
     ],
     "extractedComments": []
@@ -357,7 +340,7 @@
     "origin": [
       [
         "components/BuildingDetails/index.js",
-        27
+        15
       ],
       [
         "containers/add-building/FormFragment.js",
@@ -379,7 +362,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        44
+        30
       ]
     ],
     "extractedComments": []
@@ -406,7 +389,7 @@
     "origin": [
       [
         "components/BuildingDetails/index.js",
-        49
+        51
       ]
     ],
     "extractedComments": []
@@ -465,15 +448,6 @@
     ],
     "extractedComments": []
   },
-  "Partners": {
-    "origin": [
-      [
-        "components/Footer/index.js",
-        55
-      ]
-    ],
-    "extractedComments": []
-  },
   "People under risk": {
     "origin": [
       [
@@ -496,16 +470,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        76
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Published by {authorFullName} • {0}": {
-    "origin": [
-      [
-        "components/BlogItem/index.js",
-        24
+        67
       ]
     ],
     "extractedComments": []
@@ -514,7 +479,7 @@
     "origin": [
       [
         "components/BuildingDetails/index.js",
-        30
+        19
       ],
       [
         "containers/add-building/FormFragment.js",
@@ -527,7 +492,7 @@
     "origin": [
       [
         "components/SearchResults/index.js",
-        22
+        20
       ]
     ],
     "extractedComments": []
@@ -553,7 +518,7 @@
     "origin": [
       [
         "components/Sharing/index.js",
-        11
+        19
       ]
     ],
     "extractedComments": []
@@ -580,7 +545,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        83
+        72
       ]
     ],
     "extractedComments": []
@@ -600,6 +565,19 @@
       [
         "containers/home/HeroFragment.js",
         13
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Written by {authorFullName} • {0}": {
+    "origin": [
+      [
+        "components/BlogItem/index.js",
+        21
+      ],
+      [
+        "containers/blog-post/HeroFragment.js",
+        23
       ]
     ],
     "extractedComments": []
@@ -625,7 +603,7 @@
     "extractedComments": []
   },
   "about.project_details": {
-    "translation": "Seismic Risk is designed by Code for Romania in Civic Labs and developed pro bono by our organization's volunteers. This project does not have any other source of funding and is being managed entirely from your donations.",
+    "translation": "Red Dot is designed by Code for Romania in Civic Labs and developed pro bono by our organization's volunteers. This project does not have any other source of funding and is being managed entirely from your donations.",
     "origin": [
       [
         "containers/about/TextBoxFragment.js",
@@ -658,7 +636,7 @@
     "origin": [
       [
         "components/BuildingDetails/BuildingDetailsTitle.js",
-        16
+        18
       ]
     ],
     "extractedComments": []
@@ -668,7 +646,7 @@
     "origin": [
       [
         "components/BuildingDetails/BuildingDetailsTitle.js",
-        20
+        24
       ]
     ],
     "extractedComments": []

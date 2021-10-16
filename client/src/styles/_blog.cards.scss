@@ -1,43 +1,45 @@
-$card-colors: ("0": $secondary-main, "1": $secondary-dark, "2": $secondary-light);
-
 .blog-post-card {
-    &:hover {
-        background-color: #FAFAFA;
-        & .title-container {
-            border-top: 1rem solid #525F7F;
-        }
-    }
+  border-radius: $blog-card-radius;
 
-    .ant-card-body {
-        height: 450px;
-        padding: 0;
-        border-radius: 2px 2px 0 0;
+  &:hover {
+    background-color: #fafafa;
+    & .title-container {
+      border-top: 1rem solid #525f7f;
     }
+  }
 
-    @each $i, $color in $card-colors {
-        .card-#{$i} {
-            border-top: 1rem solid $color;
-        }
-    }
+  .ant-card-body {
+    height: 450px;
+    padding: 0;
+    border-radius: 2px 2px 0 0;
+  }
 
-    img {
-        position: absolute;
-        width: 100%;
-        height: auto;
-        top: 50%;
-        transform: translateY(-50%);
+  @each $i, $color in $card-colors {
+    .card-#{$i} {
+      border-top: 1rem solid $color;
     }
+  }
 
-    .img-container {
-        position: relative;
-        width: 100%;
-        height: 75%;
-        overflow: hidden;
-    }
+  img {
+    position: absolute;
+    width: 100%;
+    height: auto;
+    top: 50%;
+    transform: translateY(-50%);
+  }
 
-    .title-container{
-        height: 25%;
-        padding-right: 1rem;
-        padding-left: 1rem;
-    }
+  .img-container {
+    position: relative;
+    width: 100%;
+    height: 75%;
+    overflow: hidden;
+  }
+
+  .title-container {
+    height: 25%;
+    padding-right: 1rem;
+    padding-left: 1rem;
+    border-top-left-radius: $blog-card-radius;
+    border-top-right-radius: $blog-card-radius;
+  }
 }

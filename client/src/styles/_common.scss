@@ -1,8 +1,5 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -62,8 +59,17 @@ code {
   }
 
   & .stats-heading {
+    font-size: 48px;
+    font-weight: 700;
+  }
+
+  & .stats-heading.no-data {
     font-size: 30px;
-    text-decoration: underline;
+  }
+
+  & .stats-sub-heading {
+    font-size: 18px;
+    font-weight: 700;
   }
 
   &.people-under-risk {
@@ -104,22 +110,27 @@ code {
     width: 28px;
     right: 40px;
     top: 12px;
+
+    svg {
+      width: 32px;
+      height: 32px;
+    }
   }
 }
 
 .badge {
-  background-color: $primary-dark;
-  border-radius: 10px;
+  background-color: $primary-color;
+  border-radius: 8px;
   color: #fff;
   display: inline-flex;
-  height: 26px;
-  line-height: 23px;
-  padding: 0 5px;
-  white-space: nowrap;
+  justify-content: center;
+  align-items: center;
+  height: 34px;
+  padding: 0 9px;
 
   svg {
     margin-left: 5px;
-    width: 19px;
+    width: 16px;
   }
 }
 
@@ -144,4 +155,11 @@ code {
   i {
     color: $secondary-main;
   }
+}
+
+h2.ant-typography,
+.ant-typography h2 {
+  color: #ee4036;
+  font-weight: 700;
+  font-size: 2rem;
 }

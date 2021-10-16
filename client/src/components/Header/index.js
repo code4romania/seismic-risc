@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { NavLink, Link } from 'react-router-dom';
 import { Button, Dropdown, Layout, Menu } from 'antd';
-import { DownOutlined, GlobalOutlined, MenuOutlined, PlusCircleOutlined } from '@ant-design/icons';
+import { DownOutlined, GlobalOutlined, MenuOutlined, PlusCircleFilled } from '@ant-design/icons';
 import { Trans } from '@lingui/macro';
 import logo from '../../logo.svg';
 
@@ -69,13 +69,13 @@ export default () => {
         <div className="container">
           <div className="App-logo">
             <Link to="/">
-              <img src={logo} alt="Seismic Risc logo" />
+              <img src={logo} alt="Bulina Roșie logo" />
             </Link>
           </div>
           <ul className={`App-menu ${showMenu ? 'show' : ''}`}>
             <li>
               <NavLink className="menu-item" to="/despre" exact activeClassName="active">
-                <Trans>About</Trans>
+                <Trans>About Project</Trans>
               </NavLink>
             </li>
             <li>
@@ -94,8 +94,14 @@ export default () => {
               </NavLink>
             </li>
             <li>
-              <Button className="add-building" href="/adauga-cladire">
-                <PlusCircleOutlined />
+              <Button
+                className="add-building"
+                type="primary"
+                ghost
+                size="large"
+                href="/adauga-cladire"
+              >
+                <PlusCircleFilled />
                 <span>
                   <Trans>Add a building</Trans>
                 </span>

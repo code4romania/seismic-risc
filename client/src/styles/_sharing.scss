@@ -1,6 +1,21 @@
-.sharing{
-    align-items: center;
-    display: flex;
-    text-align: left;
-    margin: 1rem 0 ;
+.sharing {
+  align-items: center;
+  display: flex;
+  text-align: left;
+  margin: 1rem 0;
+}
+
+.sharing-icon {
+  background-color: #525f7f;
+  border-radius: 8px;
+  width: 40px;
+  height: 40px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 13px;
+
+  & img {
+    height: 18px;
+  }
 }
