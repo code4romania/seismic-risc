@@ -1,4 +1,4 @@
-# Seismic Risc
+# Bulina Roșie
 
 [![Datree](https://s3.amazonaws.com/catalog.static.datree.io/datree-badge-20px.svg)](https://datree.io/?src=badge)
 [![GitHub contributors](https://img.shields.io/github/contributors/code4romania/seismic-risc.svg)](https://github.com/code4romania/seismic-risc/graphs/contributors)
@@ -35,7 +35,7 @@ O estimare, am spune noi, destul de optimistă.
 
 Ce putem face pentru a deveni mai puțin vulnerabili?
 Să știm totul despre oraș, despre clădirile în care locuim astfel încât să putem cere consolidarea lor.
-Seismic Risc nu este doar "un nou site de informare", ci o platformă care colectează și validează apoi cu experți date despre clădirile din România, la nivel național, ajută asociațiile de proprietari să își consolideze clădirile, te ține la curent cu legislația și ți-o explică și are grijă să ai la îndemână informații utile la orice moment.
+Bulina Roșie nu este doar "un nou site de informare", ci o platformă care colectează și validează apoi cu experți date despre clădirile din România, la nivel național, ajută asociațiile de proprietari să își consolideze clădirile, te ține la curent cu legislația și ți-o explică și are grijă să ai la îndemână informații utile la orice moment.
 
 :gb: An earthquake in Bucharest is not a hypothetical situation.
 It is certain that this will happen.
@@ -46,14 +46,14 @@ An estimation that we would consider quite optimistic.
 
 What can we do to become less vulnerable?
 Find out everything about the city, about the buildings in which we live so that we can ask for their consolidation.
-Seismic Risc is not just "a new information site", but a platform that collects and then validates with the help of experts data about the buildings in Romania, at a national level, it helps owners associations to consolidate their buildings, it keeps you in touch with the current legislation and explains it to you, and it makes sure that you have useful information at your disposal at all times.
+Bulina Roșie is not just "a new information site", but a platform that collects and then validates with the help of experts data about the buildings in Romania, at a national level, it helps owners associations to consolidate their buildings, it keeps you in touch with the current legislation and explains it to you, and it makes sure that you have useful information at your disposal at all times.
 
 **Let's save lives together.**
 
 <details>
   <summary><b> TABLE OF CONTENTS </b></summary>
 
-- [Seismic Risc](#seismic-risc)
+- [Bulina Roșie](#bulina-roșie)
   - [Contributing](#contributing)
   - [Built With](#built-with)
     - [Programming languages](#programming-languages)

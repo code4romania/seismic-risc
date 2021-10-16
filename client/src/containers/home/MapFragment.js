@@ -15,7 +15,7 @@ export default () => {
     filteredPoints: null,
   });
   React.useEffect(() => {
-    fetch(BUILDINGS_URL)
+    fetch(`${BUILDINGS_URL}/`)
       .then((res) => res.json())
       .then((points) => {
         setState((prevState) => ({

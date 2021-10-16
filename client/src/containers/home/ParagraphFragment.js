@@ -8,7 +8,7 @@ export default () => {
   return (
     <div className="about-preview">
       <Row>
-        <Title level={3} type="secondary">
+        <Title level={2}>
           <Icon type="environment" />
           <Trans>About the project</Trans>
         </Title>

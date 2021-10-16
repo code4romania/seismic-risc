@@ -5,37 +5,23 @@
 .hero-body {
   text-align: left;
   background-color: #fff;
-  padding-bottom: 32px;
-  padding-top: 32px;
 
   img {
     width: 100%;
+  }
+
+  h3.hero-title {
+    margin-top: 0;
   }
 }
 
 h2.hero-title {
   color: $primary-color;
+  font-size: 48px;
+  font-weight: 700;
 }
 
 .hero-btn-primary {
-  background-color: $primary-dark;
-  color: #fff;
   margin-right: 16px;
   margin-top: 16px;
-
-  &:hover {
-    border: 1px solid $primary-dark;
-    color: $primary-dark;
-  }
-}
-
-a.hero-btn-secondary {
-  background-color: $primary-light;
-  color: #fff;
-  margin-top: 16px;
-
-  &:hover {
-    border: 1px solid $primary-light;
-    color: $primary-light;
-  }
 }

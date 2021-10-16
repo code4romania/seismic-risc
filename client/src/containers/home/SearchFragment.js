@@ -43,12 +43,12 @@ export default () => {
   useEffect(() => {
     switch (currentLanguage) {
       case 'ro':
-        setSearchPlaceholderText('Scrie adresa clădirii aici');
+        setSearchPlaceholderText('Caută o adresă aici');
         break;
 
       case 'hu':
       default:
-        setSearchPlaceholderText('Insert building address here');
+        setSearchPlaceholderText('Search an address here');
     }
   }, [currentLanguage]);
 
@@ -82,15 +82,16 @@ export default () => {
       type="flex"
       justify="center"
       align="top"
-      style={{ marginTop: '2rem', marginBottom: '2rem' }}
+      style={{ marginTop: '2rem', marginBottom: '2rem', textAlign: 'center' }}
     >
       <Col sm={26} md={16}>
         <Title level={3}>
           <Trans>
             Check here if a building is on the{' '}
-            <span className="badge">
-              seismic risk <InfoIcon />
-            </span>{' '}
+            <div className="badge">
+              <span>seismic risk</span>
+              <InfoIcon />
+            </div>{' '}
             list
           </Trans>
           :

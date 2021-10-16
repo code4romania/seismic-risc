@@ -4,7 +4,7 @@ import { Button } from 'antd';
 
 const LoadMoreArticlesLink = (props) => (
   <div className="load-more">
-    <Button onClick={(e) => e.preventDefault()} {...props}>
+    <Button onClick={(e) => e.preventDefault()} type="primary" ghost {...props}>
       <Trans>Load more articles</Trans>
     </Button>
   </div>

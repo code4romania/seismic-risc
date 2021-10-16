@@ -34,7 +34,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        28
+        24
       ],
       [
         "containers/about/AuthorsFragment.js",
@@ -43,8 +43,8 @@
     ],
     "extractedComments": []
   },
-  "About": {
-    "translation": "Despre",
+  "About Project": {
+    "translation": "Despre Proiect",
     "origin": [
       [
         "components/Header/index.js",
@@ -68,7 +68,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        62
+        45
       ],
       [
         "containers/404/HeroFragment.js",
@@ -81,10 +81,6 @@
       [
         "containers/about/TitleFragment.js",
         10
-      ],
-      [
-        "containers/home/HeroFragment.js",
-        24
       ],
       [
         "containers/home/ParagraphFragment.js",
@@ -102,11 +98,11 @@
     "origin": [
       [
         "components/Footer/index.js",
-        69
+        50
       ],
       [
         "components/Header/index.js",
-        100
+        106
       ],
       [
         "containers/add-building/FormFragment.js",
@@ -115,10 +111,6 @@
       [
         "containers/add-building/HeroFragment.js",
         13
-      ],
-      [
-        "containers/home/HeroFragment.js",
-        21
       ]
     ],
     "extractedComments": []
@@ -128,21 +120,10 @@
     "origin": [
       [
         "components/BuildingDetails/BuildingDetailsFooter.js",
-        20
+        25
       ]
     ],
     "extractedComments": []
-  },
-  "Address": {
-    "translation": "Adresă",
-    "origin": [
-      [
-        "components/BuildingDetails.js",
-        28
-      ]
-    ],
-    "extractedComments": [],
-    "obsolete": true
   },
   "All seismic risk classes": {
     "translation": "Toate clasele de risc seismic",
@@ -231,17 +212,17 @@
     "origin": [
       [
         "components/BuildingDetails/index.js",
-        36
+        27
       ]
     ],
     "extractedComments": []
   },
-  "Check here if a building is on the <0>seismic risk <1/></0> list": {
-    "translation": "Verifică aici dacă o clădire se află pe lista de <0>risc seismic<1/></0>",
+  "Check here if a building is on the <0><1>seismic risk</1><2/></0> list": {
+    "translation": "Verifică aici dacă o clădire se află pe lista de <0><1>risc seismic</1><2/></0>",
     "origin": [
       [
         "containers/home/SearchFragment.js",
-        49
+        89
       ]
     ],
     "extractedComments": []
@@ -261,7 +242,7 @@
     "origin": [
       [
         "components/BuildingDetails/index.js",
-        24
+        11
       ]
     ],
     "extractedComments": []
@@ -315,7 +296,7 @@
     "origin": [
       [
         "components/BuildingDetails/BuildingDetailsFooter.js",
-        8
+        12
       ]
     ],
     "extractedComments": []
@@ -325,7 +306,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        97
+        60
       ]
     ],
     "extractedComments": []
@@ -355,7 +336,7 @@
     "origin": [
       [
         "components/BuildingDetails/index.js",
-        33
+        23
       ]
     ],
     "extractedComments": []
@@ -385,7 +366,7 @@
     "origin": [
       [
         "components/BuildingDetails/index.js",
-        27
+        15
       ],
       [
         "containers/add-building/FormFragment.js",
@@ -409,7 +390,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        44
+        30
       ]
     ],
     "extractedComments": []
@@ -439,7 +420,7 @@
     "origin": [
       [
         "components/BuildingDetails/index.js",
-        49
+        51
       ]
     ],
     "extractedComments": []
@@ -504,16 +485,6 @@
     ],
     "extractedComments": []
   },
-  "Partners": {
-    "translation": "Parteneri",
-    "origin": [
-      [
-        "components/Footer/index.js",
-        55
-      ]
-    ],
-    "extractedComments": []
-  },
   "People under risk": {
     "translation": "Oameni sub risc",
     "origin": [
@@ -539,17 +510,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        76
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Published by {authorFullName} • {0}": {
-    "translation": "Publicat de {authorFullName} • {0}",
-    "origin": [
-      [
-        "components/BlogItem/index.js",
-        24
+        67
       ]
     ],
     "extractedComments": []
@@ -559,7 +520,7 @@
     "origin": [
       [
         "components/BuildingDetails/index.js",
-        30
+        19
       ],
       [
         "containers/add-building/FormFragment.js",
@@ -573,7 +534,7 @@
     "origin": [
       [
         "components/SearchResults/index.js",
-        22
+        20
       ]
     ],
     "extractedComments": []
@@ -601,7 +562,7 @@
     "origin": [
       [
         "components/Sharing/index.js",
-        11
+        19
       ]
     ],
     "extractedComments": []
@@ -631,7 +592,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        83
+        72
       ]
     ],
     "extractedComments": []
@@ -652,6 +613,20 @@
       [
         "containers/home/HeroFragment.js",
         13
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Written by {authorFullName} • {0}": {
+    "translation": "Scris de {authorFullName} • {0}",
+    "origin": [
+      [
+        "components/BlogItem/index.js",
+        21
+      ],
+      [
+        "containers/blog-post/HeroFragment.js",
+        23
       ]
     ],
     "extractedComments": []
@@ -677,7 +652,7 @@
     "extractedComments": []
   },
   "about.project_details": {
-    "translation": "Seismic Risc este proiectat de Code for Romania în Civic Labs și dezvoltat pro-bono de către voluntarii organizației noastre. Acest proiect nu are nicio altă sursă de finanțare și este administrat în întregime din donațiile voastre.",
+    "translation": "Bulina Roșie este proiectat de Code for Romania în Civic Labs și dezvoltat pro-bono de către voluntarii organizației noastre. Acest proiect nu are nicio altă sursă de finanțare și este administrat în întregime din donațiile voastre.",
     "origin": [
       [
         "containers/about/TextBoxFragment.js",
@@ -711,7 +686,7 @@
     "origin": [
       [
         "components/BuildingDetails/BuildingDetailsTitle.js",
-        16
+        18
       ]
     ],
     "extractedComments": []
@@ -721,7 +696,7 @@
     "origin": [
       [
         "components/BuildingDetails/BuildingDetailsTitle.js",
-        20
+        24
       ]
     ],
     "extractedComments": []

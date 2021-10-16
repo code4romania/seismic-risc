@@ -31,3 +31,13 @@ $text-color: #252525;
 $green-color: #229445;
 
 $footer-text-color: #000;
+
+// =======================
+// Cards
+// =======================
+$card-colors: (
+  '0': $secondary-main,
+  '1': $secondary-dark,
+  '2': $secondary-light,
+);
+$blog-card-radius: 0.5rem;
