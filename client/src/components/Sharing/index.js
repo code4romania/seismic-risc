@@ -7,9 +7,9 @@ import twitterLogo from '../../images/twitter.svg';
 import whatsappLogo from '../../images/whatsapp.svg';
 import telegramLogo from '../../images/telegram.svg';
 
-const URL = 'https://seismic-risc.now.sh';
-
 function Sharing() {
+  const URL = window.location.href;
+
   const copyToClipboard = useCallback(() => {
     navigator.clipboard.writeText(URL);
   }, []);
