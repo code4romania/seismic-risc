@@ -164,7 +164,7 @@ In order to have a fully functional project, you have to get two API keys: HERE 
 
 #### HERE Maps API Key 
 
-Tutorial: [https://developer.here.com/tutorials/getting-here-credentials/]()
+Tutorial: [https://developer.here.com/tutorials/getting-here-credentials/](https://developer.here.com/tutorials/getting-here-credentials/)
 
 Keys added to the `.env` file:
 
