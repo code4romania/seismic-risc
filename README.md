@@ -178,7 +178,7 @@ REACT_APP_HERE_MAPS_API_KEY
 
 1. [Create a hCAPTCHA account](https://dashboard.hcaptcha.com/signup)
 1. Go to [your settings page](https://dashboard.hcaptcha.com/settings)
-1. Add a new key and add it to the environment variables list
+1. Create a New Site, copy the Site Key and add it to the environment variables list
 
 Keys added to the `.env` file:
 
@@ -198,8 +198,8 @@ docker-compose up
 
 You should be able to access the local environment site and admin at the following URLs:
 
-- <http://localhost:8000/api/v1/>
-- <http://localhost:8000/admin/>
+- <http://localhost:8030/api/v1/>
+- <http://localhost:8030/admin/>
 
 If you have problems starting the project, first check out the [FAQ](https://github.com/code4romania/seismic-risc/wiki/FAQ) and if that doesn't work, ask someone from the project's channel.
 Maybe the issue you just had is worth adding to the [FAQ](https://github.com/code4romania/seismic-risc/wiki/FAQ), wouldn't it?
@@ -272,19 +272,19 @@ npm install
 #### Steps needed to start development servers
 *1. Start API server.*
 
-Open terminal in project direcotry and run environment activation script, then
+Open terminal in project directory and run environment activation script, then
 start the server.
 ```shell
 .venv\Scripts\activate.bat
 activate_dev_env.bat
-python api\manage.py runserver 0.0.0.0:8000
+python api\manage.py runserver 0.0.0.0:8030
 ```
-Check functionality at http://localhost:8000 you shoul get 404 page.
+Check functionality at http://localhost:8030 you should get 404 page.
 
 
 *2. Start front-end server.*
 
-Open terminal in project direcotry and run environment activation script, then
+Open terminal in project directory and run environment activation script, then
 start the server.
 ```shell
 activate_dev_env.bat
