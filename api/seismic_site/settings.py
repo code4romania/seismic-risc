@@ -178,7 +178,6 @@ class Test(Base):
 class Prod(Base):
     DEBUG = False
     ALLOWED_HOSTS = values.ListValue(default=[".code4.ro"])
-    CORS_ALLOWED_ORIGINS = values.ListValue(default=[".code4.ro"])
     CORS_ALLOWED_ORIGIN_REGEXES = values.ListValue(default=["*.code4.ro"])
 
     EMAIL_BACKEND = "django.core.mail.backends.smtp.EmailBackend"

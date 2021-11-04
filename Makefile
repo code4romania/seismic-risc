@@ -60,10 +60,10 @@ migrate:                          ## apply migrations in a clean container
 	docker-compose run --rm api "./manage.py migrate"
 
 makemessages:                     ## generate the strings marked for translation
-	docker-compose exec api python manage.py makemessages -a
+	docker-compose run --rm api "./manage.py makemessages -a"
 
 compilemessages:                  ## compile the translations
-	docker-compose exec api python manage.py compilemessages
+	docker-compose run --rm api "./manage.py compilemessages"
 
 pyshell:                          ## start a django shell
 	docker-compose run --rm api "./manage.py shell"

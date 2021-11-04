@@ -1,3 +1,4 @@
+from copy import deepcopy
 from zipfile import BadZipFile
 
 import tablib
@@ -99,6 +100,7 @@ class BuildingAdmin(admin.ModelAdmin):
                     "examination_year",
                     "certified_expert",
                     "observations",
+                    "has_warning_panels",
                     "year_built",
                     "surface",
                     "cadastre_number",
@@ -211,25 +213,22 @@ class BuildingResource(resources.ModelResource):
         verbose_name_plural = _("building resources")
 
 
-@admin.register(models.CsvFile)
-class CSVFileAdmin(admin.ModelAdmin):
+@admin.register(models.DataFile)
+class DataFileAdmin(admin.ModelAdmin):
     actions = ("import_files",)
     list_display = ("name", "status")
 
     def import_files(self, request, query_set):
         for q in query_set:
             try:
-                data = tablib.import_set(open(q.file.file.name, "rb").read(), format="xlsx")
-                changed_headers = []
-                for header in data.headers:
-                    changed_headers.append(header.lower().replace(":", "").replace(".", "").strip().replace(" ", "_"))
-                data.headers = changed_headers
+                data = self._read_file_data(q)
+                data = self._normalize_data_headers(data)
                 building_res = BuildingResource()
-                res = building_res.import_data(data, dry_run=False, raise_errors=False, collect_failed_rows=True)
-                csv_file = models.CsvFile.objects.get(name=q.__str__())
+                res = building_res.import_data(data, dry_run=False, raise_errors=True, collect_failed_rows=True)
+                data_file = models.DataFile.objects.get(name=str(q))
 
                 if res.has_errors() or res.has_validation_errors():
-                    csv_file.status = models.CsvFile.FAILURE
+                    data_file.status = models.DataFile.FAILURE
                     row_errors = [
                         f"error#{error[0]}: {error[1][0].error} FAILED ON ROW DATA {error[1][0].row} "
                         f"||| TRACEBACK: {error[1][0].traceback}"
@@ -237,26 +236,30 @@ class CSVFileAdmin(admin.ModelAdmin):
                     ]
                     message_str = _(
                         "File with name '{file_name}' wasn't imported. Errors: {row_errors}".format(
-                            file_name=q.__str__(), row_errors=row_errors
+                            file_name=str(q), row_errors=row_errors
                         )
                     )
                     message_level = messages.WARNING
                 else:
-                    csv_file.status = models.CsvFile.SUCCESS
-                    message_str = _("File with name '{file_name}' was imported.".format(file_name=q.__str__()))
+                    data_file.status = models.DataFile.SUCCESS
+                    message_str = _("File with name '{file_name}' was imported.".format(file_name=str(q)))
                     message_level = messages.SUCCESS
-                csv_file.save()
+                data_file.save()
             except BadZipFile:
                 self.save_file_as_failed(q)
 
-                message_str = _("File with name '{file_name}' wasn't an XLSX.".format(file_name=q.__str__()))
+                message_str = _(
+                    "File with name '{file_name}' wasn't a proper data file. Accepted formats are: CSV, XLSX.".format(
+                        file_name=str(q)
+                    )
+                )
                 message_level = messages.ERROR
             except ValueError as e:
                 self.save_file_as_failed(q)
 
                 message_str = _(
                     "File with name '{file_name}' couldn't be imported. The error received was: `{error_args}`".format(
-                        file_name=q.__str__(), error_args=e.args[0]
+                        file_name=str(q), error_args=e.args[0]
                     )
                 )
                 message_level = messages.ERROR
@@ -267,9 +270,32 @@ class CSVFileAdmin(admin.ModelAdmin):
             self.message_user(request, message_str, message_level)
 
     @staticmethod
+    def _normalize_data_headers(data):
+        normalized_data = deepcopy(data)
+        normalized_headers = [
+            header.lower().replace(":", "").replace(".", "").strip().replace(" ", "_")
+            for header in normalized_data.headers
+        ]
+        normalized_data.headers = normalized_headers
+
+        return normalized_data
+
+    @staticmethod
+    def _read_file_data(q):
+        file_name: str = q.file.file.name
+        file_extension: str = file_name.split(".")[-1].lower()
+        if file_extension == "xlsx":
+            data = tablib.import_set(open(file_name, "rb").read(), format="xlsx")
+        elif file_extension == "csv":
+            data = tablib.import_set(open(file_name, "r").read(), format="csv")
+        else:
+            raise BadZipFile
+        return data
+
+    @staticmethod
     def save_file_as_failed(q):
-        csv_file = models.CsvFile.objects.get(name=q.__str__())
-        csv_file.status = models.CsvFile.FAILURE
+        csv_file = models.DataFile.objects.get(name=str(q))
+        csv_file.status = models.DataFile.FAILURE
         csv_file.save()
 
     import_files.short_description = "Import selected files"
