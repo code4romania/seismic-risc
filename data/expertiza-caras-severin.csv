@@ -1,0 +1,15 @@
+Lat,Lng,Address,Street Number,Locality,County,Year Built,Height Regime,Apartment Count,Surface,Examination Year,Certified Expert,Has Warning Panels,Observations,Risk Category
+44.887385,22.425274,str. M. Eminescu,8,Băile Herculane,Caraș-Severin,1936,P+2E,4,327,1994,ing. Huszti Andraș,,,U3
+44.8863851,22.4237103,P-ța 1 Mai,2,Băile Herculane,Caraș-Severin,1920,S+P+2E,21,918.34,1994,ing. Huszti Andraș,,,U3
+44.8869818,22.4248408,str. M. Eminescu,1,Băile Herculane,Caraș-Severin,1870,P+2E,10,1540,1994,ing. Huszti Andraș,,,U3
+44.8796285,22.4125614,str. castanilor,10,Băile Herculane,Caraș-Severin,1910,S+P+1E,9,712,1994,ing. Huszti Andraș,,,U1
+44.885499,22.423222,str. Domogled,10,Băile Herculane,Caraș-Severin,1890,P+1E (2E),16,933,1994,ing. Huszti Andraș,,,U3
+44.88905731,22.42489146,str. Licuricilor,2,Băile Herculane,Caraș-Severin,1875,P+2E,8,730,1995,ing. Huszti Andraș,,,U3
+44.883222,22.412347,str. Zăvoiului,64,Băile Herculane,Caraș-Severin,1900,P+1E,7,347.4,1997,ing. Huszti Andraș,,,RS1
+44.8854422,22.4198545,str. Castanilor,33,Băile Herculane,Caraș-Severin,1870,P+1E,16,471,1997,ing. Huszti Andraș,,,RS2
+44.8805161,22.4127776,str. Castanilor,14,Băile Herculane,Caraș-Severin,1885,S+P+1E,5,528,1997,ing. Huszti Andraș,,,RS2
+44.8864807,22.4200408,str. Nicolae Stoica de Hațeg,3,Băile Herculane,Caraș-Severin,1870,S+P+1E,5,740,1997,ing. Huszti Andraș,,,RS2
+44.8863671,22.4193004,str. Izvorului,6,Băile Herculane,Caraș-Severin,1803,S+P+1E,18,914,2000,ing. Huszti Andraș,,,RS3
+44.73110379,21.6187179,str. G. Enescu,bl. B6,Moldova Nouă,Caraș-Severin,1963,S+P+4E,60,5803.2,2002,dr. ing. Anastasescu Decebal,,,RS1
+44.73053741,21.61726927,str. Dunărea,bl.B5,Moldova Nouă,Caraș-Severin,1962,S+P+4E,60,5083.2,2002,dr. ing. Anastasescu Decebal,,,RS1
+45.294862,21.8775039,str. Petru Maior,20,Reșița,Caraș-Severin,1960,P+3E,11,607.4,2004,ing. Huszti Andraș,,,RS2

@@ -1,0 +1,48 @@
+Lat,Lng,Address,Street Number,Locality,County,Year Built,Height Regime,Apartment Count,Surface,Examination Year,Certified Expert,Has Warning Panels,Observations,Risk Category
+43.970266,25.326094,str.I.CREANGA,"Bl. 407,NR55,sc.A,B",Alexandria,Teleorman,1972,Spartial+P+4,38,2934.5,2006,Ing.Al. Hristoforov,,,RS3
+43.973527,25.3373671,str.AI Ghica,"Bl. 100, nr.148",Alexandria,Teleorman,1970,P+4,40,1808,1999,Hotinceanu Mihail,,,RS3
+43.9785705,25.3298205,str.AI Ghica,"Bl. 101, nr.148",Alexandria,Teleorman,1970,P+4,40,2407,1999,Hotinceanu Mihail,,,RS3
+43.9735162,25.3373627,str.Al Ghica,"Bl. 102, nr.148",Alexandria,Teleorman,1970,P+4,40,2407,1999,Hotinceanu Mihail,,,RS3
+43.9785149,25.3299385,str.Al Ghica,"Bl. 103, nr.148",Alexandria,Teleorman,1970,P+4,40,1808,1999,Hotinceanu Mihail,,,RS3
+43.973261,25.3375893,str.Al Ghica,"Bl. 104, nr.148",Alexandria,Teleorman,1970,P+4,40,1808,1999,Hotinceanu Mihail,,,RS3
+43.9782317,25.3304202,str.Al Ghica,"Bl. 105, nr.148",Alexandria,Teleorman,1970,P+4,40,1808,1999,Hotinceanu Mihail,,,RS3
+43.973208,25.337841,str.Al Ghica,"Bl. 106, nr.148",Alexandria,Teleorman,1970,P+4,40,1774,1999,Hotinceanu Mihail,,,RS3
+43.9777967,25.3312685,str.Al Ghica,"Bl. 107, nr.148",Alexandria,Teleorman,1970,P+4,20,2161,1999,Hotinceanu Mihail,,,RS3
+43.973101,25.3379979,str.Al Ghica,"Bl. 108, nr.148",Alexandria,Teleorman,1970,P+5,20,2161,1999,Hotinceanu Mihail,,,RS3
+43.9759663,25.3339134,str.Al Ghica,"Bl. 109, nr.148",Alexandria,Teleorman,1970,P+6,40,895,1999,Hotinceanu Mihail,,,RS3
+43.9726546,25.3386023,str.Al Ghica,"Bl. 110, nr.148",Alexandria,Teleorman,1970,P+7,20,2161,1999,Hotinceanu Mihail,,,RS3
+43.9760009,25.333695,str.Al Ghica,"Bl. 111, nr.148",Alexandria,Teleorman,1970,P+8,40,1774,1999,Hotinceanu Mihail,,,RS3
+44.11505076,24.9803241,str. Izbiceanu,"nr. 28, Bl. C1",Rosiorii De Vede,Teleorman,1971,P+4,40,2140,1997,Hoticeanu N. Mihail Liviu,,,N/A
+44.11487426,24.9805037,str. Izbiceanu,"nr. 28, Bl. C2",Rosiorii De Vede,Teleorman,1971,P+4,40,2140,1997,Hoticeanu N. Mihail Liviu,,,N/A
+44.11464728,24.98059705,str. Izbiceanu,"nr. 28, Bl. C3",Rosiorii De Vede,Teleorman,1971,P+4,40,2140,1997,Hoticeanu N. Mihail Liviu,,,N/A
+44.1153688,24.9844413,str. Izbiceanu,Bl. H3,Rosiorii De Vede,Teleorman,1969,P+4,20,975,1997,Hoticeanu N. Mihail Liviu,,,N/A
+44.1153688,24.9844413,str. Izbiceanu,Bl. H4,Rosiorii De Vede,Teleorman,1969,P+4,20,975,1997,Hoticeanu N. Mihail Liviu,,,N/A
+44.1139961,24.9802065,str. Izbiceanu,Bl. HS,Rosiorii De Vede,Teleorman,1969,P+4,20,975,1997,Hoticeanu N. Mihail Liviu,,,N/A
+44.1153688,24.9844413,str. Izbiceanu,"Bl. El, E2",Rosiorii De Vede,Teleorman,1971,P+4,40,1808.2,2000,Hristoforov Al,,,N/A
+44.1153688,24.9844413,str. Izbiceanu,"Bl. H8, H9",Rosiorii De Vede,Teleorman,1970,P+4,40,1708.25,2000,Hristoforov Al,,,N/A
+44.1153688,24.9844413,str. Izbiceanu,"Bl. H6, H7",Rosiorii De Vede,Teleorman,1970,P+4,40,1708.25,2000,Hristoforov Al,,,N/A
+44.1186669,24.9878599,str. Sanatatii,Bl. 302,Rosiorii De Vede,Teleorman,1975,P+4,40,2394,2001,Hristoforov Al,,,N/A
+44.1085569,24.9949784,str. lzbiceanu,Bl. 40 Moara,Rosiorii De Vede,Teleorman,1973,P+4,40,2330,2006,Hristoforov Al,,,N/A
+43.7512521,24.8731211,str. Rahovei,Bl. A I,Turnu Magurele,Teleorman,1963,P+4E,32,1970,1995,ing L Hotinceanu,,,RS3
+43.7512521,24.8731211,str. Rahovei,Bl. A2,Turnu Magurele,Teleorman,1963,P+4E,32,1670,1995,ing L Hotinceanu,,,RS3
+43.7512521,24.8731211,str. Rahovei,Bl. A3,Turnu Magurele,Teleorman,1963,P+4E,32,2139,1995,ing L Hotinceanu,,,RS3
+43.7512521,24.8731211,str. Rahovei,Bl. A4,Turnu Magurele,Teleorman,1963,P+4E,32,2139,1995,ing L Hotinceanu,,,RS3
+43.74613,24.8740592,str. C. Voda,Bl. a2,Turnu Magurele,Teleorman,1966,P+4E,28,1916,1995,ing L Hotinceanu,,,RS3
+43.7500438,24.8726629,str. lndependentei,Bl. D 12,Turnu Magurele,Teleorman,1963,P+4E,60,4287,1995,ing L Hotinceanu,,,RS3
+43.7500438,24.8726629,str. Independentei,Bl. Dl4,Turnu Magurele,Teleorman,1964,P+4E,60,3450,1995,ing L Hotinceanu,,,RS3
+43.7501357,24.8703035,str. I Mai,Bl. Fl 9,Turnu Magurele,Teleorman,1966,S+P+4E,60,3855,1997,ing L Hotinceanu,,,RS3
+43.7501357,24.8703035,str. I Mai,Bl. F20,Turnu Magurele,Teleorman,1966,S+P+4E,60,2855,1997,ing L Hotinceanu,,,RS3
+43.7501357,24.8703035,str. I Mai,Bl. F2 I,Turnu Magurele,Teleorman,1966,S+P+4E,60,3855,1997,ing L Hotinceanu,,,RS3
+43.7557971,24.8674354,str. Taberei,Bl. F2,Turnu Magurele,Teleorman,1968,P+4E,80,3600,1997,ing L Hotinceanu,,,RS3
+43.7557971,24.8674354,str. Taberei,Bl. F3,Turnu Magurele,Teleorman,1968,P+4E,80,3600,1997,ing L Hotinceanu,,,RS3
+43.7457782,24.8644901,str. Pompierilor,Bl. M4,Turnu Magurele,Teleorman,1967,S+P+1,20,1278,2000,ing L Hotinceanu,,,RS3
+43.7517061,24.8773935,str. H.C.C.,Bl. E 1,Turnu Magurele,Teleorman,1967,S+PE0,24,1820,1997,ing L Hotinceanu,,,RS3
+43.7557971,24.8674354,str. Taberei,Bl. V2,Turnu Magurele,Teleorman,1968,S+P+4E,20,1290,1997,ing A Hristoforov,,,RS3
+43.7557971,24.8674354,str. Taberei,Bl. X1,Turnu Magurele,Teleorman,1968,S+P+4E,28,2017,2001,ing A Hristoforov,,,RS3
+43.7557971,24.8674354,str. Taberei,Bl. X1,Turnu Magurele,Teleorman,1968,S+P+4E,28,2017,2001,ing A Hristoforov,,,RS3
+43.6585268,25.3641776,str. Eroilor,"Bl. 4, sc A, B, C",Zimnicea,Teleorman,1974,S+P+4E,59,3605.25,2000,Ing Hristoforov Al,,,RS3
+43.656702,25.3447749,str. Calugareni,"Bl. 4D, sc.A, B",Zimnicea,Teleorman,1982,S+P+4E,40,2650,2000,Ing Hristoforov Al,,,RS3
+43.656702,25.3447749,str. Calugareni,"Bl. 4C, sc. A, B",Zimnicea,Teleorman,1982,S+P+4E,40,2650,2000,Ing Hristoforov Al,,,RS3
+43.6562992,25.3634834,str. Cuza Voda,"Bl. I IF, sc. A, B, C",Zimnicea,Teleorman,1982,S+P+4E,50,3763.35,2000,Ing Hristoforov Al,,,RS3
+43.6501044,25.3548307,str. Imparatul Traian,Bl. 6,Zimnicea,Teleorman,1977,S+P+4E,20,1187.22,2004,SC Coral Slatina,,,RS3
+43.6503095,25.3644329,str. Trandafirilor,Bl. 2,Zimnicea,Teleorman,1977,Spartial+P+E,20,1404,2006,Ing Hristoforov Al,,,RS3

@@ -5,15 +5,6 @@ from django.utils import timezone
 from django.utils.translation import get_language, gettext_lazy as _
 
 
-class SectorChoice(Enum):
-    s1 = _("Sector 1")
-    s2 = _("Sector 2")
-    s3 = _("Sector 3")
-    s4 = _("Sector 4")
-    s5 = _("Sector 5")
-    s6 = _("Sector 6")
-
-
 class SeismicCategoryChoice(Enum):
     NA = _("N/A")
     U1 = _("U1")
@@ -24,6 +15,29 @@ class SeismicCategoryChoice(Enum):
     RS2 = _("RS II")
     RS3 = _("RS III")
     RS4 = _("RS IV")
+    C = _("Consolidated")
+
+    @classmethod
+    def choices(cls):
+        return [(i.name, i.value) for i in cls]
+
+
+class ConsolidationChoice(Enum):
+    NO = _("no")
+    YES_PRIVATE = _("yes, with private funding")
+    YES_PUBLIC = _("yes, with public funding")
+    DEMOLISHED = _("demolished")
+
+    @classmethod
+    def choices(cls):
+        return [(i.name, i.value) for i in cls]
+
+
+class ContactChoice(Enum):
+    NONE = _("None")
+    OWNER = _("Owner")
+    TENANT = _("Tenant")
+    ADMIN = _("Head of the owners' association")
 
     @classmethod
     def choices(cls):
@@ -79,18 +93,10 @@ class Building(models.Model):
     PENDING = 0
     ACCEPTED = 1
     REJECTED = -1
-
     BUILDING_STATUS_CHOICES = [
         (PENDING, _("Pending")),
         (ACCEPTED, _("Accepted")),
         (REJECTED, _("Rejected")),
-    ]
-
-    CONSOLIDATION_CHOICES = [
-        (0, _("no")),
-        (1, _("yes, with private funding")),
-        (2, _("yes, with public funding")),
-        (-1, _("demolished")),
     ]
 
     general_id = models.AutoField(_("general id"), primary_key=True)
@@ -116,7 +122,14 @@ class Building(models.Model):
     height_regime = models.CharField(_("height regime"), max_length=50, null=True)
 
     is_still_present = models.BooleanField(_("is standing"), default=True, null=True, blank=True)
-    consolidation_status = models.SmallIntegerField(_("is consolidated"), default=0, choices=CONSOLIDATION_CHOICES)
+    consolidation_status = models.CharField(
+        _("is consolidated"),
+        max_length=32,
+        choices=ConsolidationChoice.choices(),
+        default=ConsolidationChoice.NO,
+        db_index=True,
+    )
+
     work_performed = models.ManyToManyField(
         BuildingWorkPerformed,
         verbose_name=_("work performed"),
@@ -153,13 +166,23 @@ class Building(models.Model):
         _("proximal utilities description"), null=False, default="", blank=True, max_length=200
     )
 
+    full_name = models.CharField(_("full name"), null=True, blank=True, max_length=75)
+    email_address = models.EmailField(_("email address"), null=True, blank=True)
+    phone_number = models.CharField(_("phone number"), null=True, blank=True, max_length=15)
+    type_of_contact = models.CharField(
+        _("status"), max_length=20, choices=ContactChoice.choices(), default=ContactChoice.NONE, db_index=True
+    )
+    necessary_support = models.CharField(_("support needed"), null=True, blank=True, max_length=1000)
+
     registration_number = models.IntegerField(_("registration number"), null=True, blank=True)
     examination_year = models.IntegerField(_("examination year"), null=True, blank=True)
     certified_expert = models.CharField(_("certified expert"), max_length=100, null=False, default="", blank=True)
     observations = models.CharField(_("observations"), max_length=1000, null=False, default="", blank=True)
+    has_warning_panels = models.BooleanField(_("has warning panels"), null=True, blank=True, default=None)
 
     year_built = models.IntegerField(_("year built"), null=True, blank=True)
-    surface = models.FloatField(_("surface"), null=True, blank=True)
+    surface = models.FloatField(_("residential surface"), null=True, blank=True)
+    other_spaces_surface = models.FloatField(_("other surface"), null=True, blank=True)
 
     cadastre_number = models.IntegerField(_("cadastre number"), null=True, blank=True)
     land_registry_number = models.CharField(
@@ -204,7 +227,7 @@ class Statistic(models.Model):
         return "Statistics"
 
 
-class CsvFile(models.Model):
+class DataFile(models.Model):
     NOT_TRIED = 0
     SUCCESS = 1
     FAILURE = -1
@@ -215,13 +238,13 @@ class CsvFile(models.Model):
         (FAILURE, _("Import failed")),
     ]
 
-    name = models.CharField(_("name"), max_length=255)
+    name = models.CharField(_("name"), unique=True, max_length=255)
     file = models.FileField(_("file"))
     status = models.SmallIntegerField(_("status"), default=0, editable=False, choices=DATA_FILE_STATUS_CHOICES)
 
     class Meta:
-        verbose_name = _("CSV file")
-        verbose_name_plural = _("CSV files")
+        verbose_name = _("Data file")
+        verbose_name_plural = _("Data files")
 
     def __str__(self):
         return self.name
