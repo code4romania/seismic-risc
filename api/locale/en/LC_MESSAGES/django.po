@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-04 11:57+0200\n"
+"POT-Creation-Date: 2021-11-05 16:45+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -134,12 +134,14 @@ msgstr ""
 msgid "File with name '{file_name}' was imported."
 msgstr ""
 
-#: buildings/admin.py:251
+#: buildings/admin.py:252
 #, python-brace-format
-msgid "File with name '{file_name}' wasn't an XLSX."
+msgid ""
+"File with name '{file_name}' wasn't a proper data file. Accepted formats "
+"are: CSV, XLSX."
 msgstr ""
 
-#: buildings/admin.py:257
+#: buildings/admin.py:261
 #, python-brace-format
 msgid ""
 "File with name '{file_name}' couldn't be imported. The error received was: "
