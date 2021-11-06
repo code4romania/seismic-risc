@@ -1,8 +1,16 @@
+import os
+from io import BytesIO
+
+import sys
+import PIL.Image
 from enum import Enum
 
+from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.db import models
 from django.utils import timezone
+from django.utils.safestring import mark_safe
 from django.utils.translation import get_language, gettext_lazy as _
+from django.conf import settings
 
 
 class SeismicCategoryChoice(Enum):
@@ -193,6 +201,8 @@ class Building(models.Model):
 
     created_on = models.DateTimeField(_("created on"), default=timezone.now, blank=True)
 
+    images_limit = models.IntegerField(_("images limit"), default=settings.ALLOWED_IMAGES_LIMIT)
+
     objects = models.Manager()
     approved = ApprovedBuilding()
 
@@ -248,3 +258,56 @@ class DataFile(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class ApprovedImage(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(status=ImageFile.ACCEPTED)
+
+
+class ImageFile(models.Model):
+    PENDING = 0
+    ACCEPTED = 1
+    REJECTED = -1
+
+    IMAGE_STATUS_CHOICES = [
+        (PENDING, _("Pending")),
+        (ACCEPTED, _("Accepted")),
+        (REJECTED, _("Rejected")),
+    ]
+
+    building = models.ForeignKey(Building, on_delete=models.CASCADE)
+    name = models.CharField(_("name"), max_length=255)
+    image_type = models.CharField(_("type"), max_length=255, choices=settings.ACCEPTED_IMAGE_TYPES)
+    image = models.ImageField(default="Add image file", upload_to='images/')
+    status = models.SmallIntegerField(_("status"), default=PENDING, choices=IMAGE_STATUS_CHOICES, db_index=True)
+
+    def image_thumb(self):
+        return mark_safe('<a href={0}><img src="{0}" url width="50" height="50" /></a>'.format(os.path.join(settings.MEDIA_URL, str(self.image))))
+
+    image_thumb.short_description = 'Thumbnail'
+
+    def __str__(self):
+        return self.name
+
+    def save(self):
+        # Opening the uploaded image
+        im = PIL.Image.open(self.image)
+
+        output = BytesIO()
+
+        #TODO: do we want to resize it in any way ?
+        # Resize/modify the image
+        im = im.resize((100, 100))
+
+        # after modifications, save it to the output
+        im.save(output, format=str(self.image_type).upper(), quality=settings.QUALITY_DEFINITIONS[str(self.image_type).lower()])
+        output.seek(0)
+
+        # change the imagefield value to be the newley modifed image value
+        self.image = InMemoryUploadedFile(output, "ImageField",
+                                          "%s.%s" % (self.image.name.split('.')[0], str(self.image_type).lower()),
+                                          "image/%s" % str(self.image_type).lower(),
+                                          sys.getsizeof(output), None)
+
+        super(ImageFile, self).save()

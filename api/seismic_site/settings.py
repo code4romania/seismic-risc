@@ -151,6 +151,13 @@ class Base(Configuration):
     HERE_MAPS_API_KEY = os.getenv("HERE_MAPS_API_KEY")
     HERE_MAPS = {"api_key": HERE_MAPS_API_KEY}
 
+    ACCEPTED_IMAGE_TYPES = (
+        ('jpeg','JPEG'),
+        ('png', 'PNG')
+    )
+    QUALITY_DEFINITIONS = {"jpeg": 85, "png": 80}
+    ALLOWED_IMAGES_LIMIT = 3
+
 
 class Dev(Base):
     DEBUG = True
