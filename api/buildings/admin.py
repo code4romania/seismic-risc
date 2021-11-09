@@ -18,6 +18,10 @@ class BuildingWorkPerformedInline(admin.TabularInline):
     model = models.BuildingWorkPerformedEvent
     extra = 1
 
+class ImageInline(admin.TabularInline):
+    model = models.ImageFile
+    extra = 1
+
 
 @admin.register(models.Statistic)
 class StatisticAdmin(admin.ModelAdmin):
@@ -146,7 +150,7 @@ class BuildingAdmin(admin.ModelAdmin):
             },
         ),
     )
-    inlines = (BuildingWorkPerformedInline,)
+    inlines = (BuildingWorkPerformedInline, ImageInline)
 
 
     @display(ordering="building__imagefile", description="Images")

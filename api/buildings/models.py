@@ -5,6 +5,7 @@ import sys
 import PIL.Image
 from enum import Enum
 
+from django.core.exceptions import ValidationError
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.db import models
 from django.utils import timezone
@@ -201,8 +202,6 @@ class Building(models.Model):
 
     created_on = models.DateTimeField(_("created on"), default=timezone.now, blank=True)
 
-    images_limit = models.IntegerField(_("images limit"), default=settings.ALLOWED_IMAGES_LIMIT)
-
     objects = models.Manager()
     approved = ApprovedBuilding()
 
@@ -276,16 +275,19 @@ class ImageFile(models.Model):
         (REJECTED, _("Rejected")),
     ]
 
-    building = models.ForeignKey(Building, on_delete=models.CASCADE)
+    def set_images_limit(building):
+        if ImageFile.objects.filter(building_id=building).count() >= settings.ALLOWED_IMAGES_LIMIT:
+            raise ValidationError('Image limit for building is reached (%s)' % settings.ALLOWED_IMAGES_LIMIT)
+
+    def image_thumb(self):
+        return mark_safe('<a href={0}><img src="{0}" url width="50" height="50" /></a>'.format(os.path.join(settings.MEDIA_URL, str(self.image))))
+    image_thumb.short_description = 'Thumbnail'
+
+    building = models.ForeignKey(Building, validators=(set_images_limit,), on_delete=models.CASCADE)
     name = models.CharField(_("name"), max_length=255)
     image_type = models.CharField(_("type"), max_length=255, choices=settings.ACCEPTED_IMAGE_TYPES)
     image = models.ImageField(default="Add image file", upload_to='images/')
     status = models.SmallIntegerField(_("status"), default=PENDING, choices=IMAGE_STATUS_CHOICES, db_index=True)
-
-    def image_thumb(self):
-        return mark_safe('<a href={0}><img src="{0}" url width="50" height="50" /></a>'.format(os.path.join(settings.MEDIA_URL, str(self.image))))
-
-    image_thumb.short_description = 'Thumbnail'
 
     def __str__(self):
         return self.name
@@ -298,7 +300,7 @@ class ImageFile(models.Model):
 
         #TODO: do we want to resize it in any way ?
         # Resize/modify the image
-        im = im.resize((100, 100))
+        # im = im.resize((500, 500))
 
         # after modifications, save it to the output
         im.save(output, format=str(self.image_type).upper(), quality=settings.QUALITY_DEFINITIONS[str(self.image_type).lower()])
