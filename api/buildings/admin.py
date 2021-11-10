@@ -18,6 +18,7 @@ class BuildingWorkPerformedInline(admin.TabularInline):
     model = models.BuildingWorkPerformedEvent
     extra = 1
 
+
 class ImageInline(admin.TabularInline):
     model = models.ImageFile
     extra = 1
@@ -32,6 +33,7 @@ class StatisticAdmin(admin.ModelAdmin):
             if not has_entry:
                 return True
         return False
+
 
 @admin.register(models.ImageFile)
 class Images(admin.ModelAdmin):
@@ -64,6 +66,7 @@ class Images(admin.ModelAdmin):
 
         self.message_user(request, message, messages.SUCCESS)
 
+
 @admin.register(models.BuildingProximalUtilities, models.BuildingWorkPerformed)
 class BuildingAttributes(admin.ModelAdmin):
     pass
@@ -79,7 +82,7 @@ class BuildingAdmin(admin.ModelAdmin):
         "certified_expert",
         "status",
         "general_id",
-        "get_images"
+        "get_images",
     )
     search_fields = ("address",)
     actions = (
@@ -151,7 +154,6 @@ class BuildingAdmin(admin.ModelAdmin):
         ),
     )
     inlines = (BuildingWorkPerformedInline, ImageInline)
-
 
     @display(ordering="building__imagefile", description="Images")
     def get_images(self, obj):

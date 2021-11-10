@@ -277,16 +277,21 @@ class ImageFile(models.Model):
 
     def set_images_limit(building):
         if ImageFile.objects.filter(building_id=building).count() >= settings.ALLOWED_IMAGES_LIMIT:
-            raise ValidationError('Image limit for building is reached (%s)' % settings.ALLOWED_IMAGES_LIMIT)
+            raise ValidationError("Image limit for building is reached (%s)" % settings.ALLOWED_IMAGES_LIMIT)
 
     def image_thumb(self):
-        return mark_safe('<a href={0}><img src="{0}" url width="50" height="50" /></a>'.format(os.path.join(settings.MEDIA_URL, str(self.image))))
-    image_thumb.short_description = 'Thumbnail'
+        return mark_safe(
+            '<a href={0}><img src="{0}" url width="50" height="50" /></a>'.format(
+                os.path.join(settings.MEDIA_URL, str(self.image))
+            )
+        )
+
+    image_thumb.short_description = "Thumbnail"
 
     building = models.ForeignKey(Building, validators=(set_images_limit,), on_delete=models.CASCADE)
     name = models.CharField(_("name"), max_length=255)
     image_type = models.CharField(_("type"), max_length=255, choices=settings.ACCEPTED_IMAGE_TYPES)
-    image = models.ImageField(default="Add image file", upload_to='images/')
+    image = models.ImageField(default="Add image file", upload_to="images/")
     status = models.SmallIntegerField(_("status"), default=PENDING, choices=IMAGE_STATUS_CHOICES, db_index=True)
 
     def __str__(self):
@@ -298,18 +303,26 @@ class ImageFile(models.Model):
 
         output = BytesIO()
 
-        #TODO: do we want to resize it in any way ?
+        # TODO: do we want to resize it in any way ?
         # Resize/modify the image
         # im = im.resize((500, 500))
 
         # after modifications, save it to the output
-        im.save(output, format=str(self.image_type).upper(), quality=settings.QUALITY_DEFINITIONS[str(self.image_type).lower()])
+        im.save(
+            output,
+            format=str(self.image_type).upper(),
+            quality=settings.QUALITY_DEFINITIONS[str(self.image_type).lower()],
+        )
         output.seek(0)
 
         # change the imagefield value to be the newley modifed image value
-        self.image = InMemoryUploadedFile(output, "ImageField",
-                                          "%s.%s" % (self.image.name.split('.')[0], str(self.image_type).lower()),
-                                          "image/%s" % str(self.image_type).lower(),
-                                          sys.getsizeof(output), None)
+        self.image = InMemoryUploadedFile(
+            output,
+            "ImageField",
+            "%s.%s" % (self.image.name.split(".")[0], str(self.image_type).lower()),
+            "image/%s" % str(self.image_type).lower(),
+            sys.getsizeof(output),
+            None,
+        )
 
         super(ImageFile, self).save()
