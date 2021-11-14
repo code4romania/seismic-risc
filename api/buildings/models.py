@@ -1,17 +1,16 @@
-import os
+from enum import Enum
 from io import BytesIO
 
-import sys
 import PIL.Image
-from enum import Enum
-
+import math
+import sys
+from django.conf import settings
 from django.core.exceptions import ValidationError
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.db import models
 from django.utils import timezone
 from django.utils.safestring import mark_safe
 from django.utils.translation import get_language, gettext_lazy as _
-from django.conf import settings
 
 
 class SeismicCategoryChoice(Enum):
@@ -275,27 +274,41 @@ class ImageFile(models.Model):
         (REJECTED, _("Rejected")),
     ]
 
-    def set_images_limit(building):
-        if ImageFile.objects.filter(building_id=building).count() >= settings.ALLOWED_IMAGES_LIMIT:
+    def check_image_limit(building):
+        if ImageFile.objects.filter(building=building).count() >= settings.ALLOWED_IMAGES_LIMIT:
             raise ValidationError("Image limit for building is reached (%s)" % settings.ALLOWED_IMAGES_LIMIT)
 
+    def check_extension(image):
+        name_parts = str(image.name).split('.')
+        if len(name_parts) < 2:
+            raise ValidationError("Image name does not contain an extension")
+        accepted_extensions = [extension for pair in settings.ACCEPTED_IMAGE_TYPES.values() for extension in pair]
+        if name_parts[-1] not in accepted_extensions:
+            raise ValidationError("Image extension is not accepted. Choose one of %s" % accepted_extensions)
+
     def image_thumb(self):
-        return mark_safe(
-            '<a href={0}><img src="{0}" url width="50" height="50" /></a>'.format(
-                os.path.join(settings.MEDIA_URL, str(self.image))
-            )
-        )
+        return mark_safe('<a href={0}><img src="{0}" url width="50" height="50" /></a>'.format(str(self.image.url)))
+
+    def image_name(self):
+        return mark_safe(self.image.name)
 
     image_thumb.short_description = "Thumbnail"
 
-    building = models.ForeignKey(Building, validators=(set_images_limit,), on_delete=models.CASCADE)
-    name = models.CharField(_("name"), max_length=255)
-    image_type = models.CharField(_("type"), max_length=255, choices=settings.ACCEPTED_IMAGE_TYPES)
-    image = models.ImageField(default="Add image file", upload_to="images/")
+    building = models.ForeignKey(Building, validators=(check_image_limit,), on_delete=models.CASCADE)
+    image = models.ImageField(default="Add image file", upload_to="images/",  validators=(check_extension, ))
     status = models.SmallIntegerField(_("status"), default=PENDING, choices=IMAGE_STATUS_CHOICES, db_index=True)
 
     def __str__(self):
-        return self.name
+        return self.image.name
+
+    @staticmethod
+    def image_resize_dimensions(im):
+        resize = settings.IMAGE_RESIZE
+        width, height = im.size
+        if width > height:
+            return resize, math.ceil(resize * (height/width))
+        else:
+            return math.ceil(resize * (height/width)), resize
 
     def save(self):
         # Opening the uploaded image
@@ -303,24 +316,29 @@ class ImageFile(models.Model):
 
         output = BytesIO()
 
-        # TODO: do we want to resize it in any way ?
-        # Resize/modify the image
-        # im = im.resize((500, 500))
+        # Resize/modify the image based on relative dimensions to 400px
+        # Do this only when the image is created
+        if self._state.adding:
+            im = im.resize(self.image_resize_dimensions(im))
+
+        extension = str(self.image.name).split('.')[-1]
+        # extract key from settings dictionary for accepted image types
+        accepted_extension = [pair for pair in settings.ACCEPTED_IMAGE_TYPES.items() if extension in pair[1]][0][0]
 
         # after modifications, save it to the output
         im.save(
             output,
-            format=str(self.image_type).upper(),
-            quality=settings.QUALITY_DEFINITIONS[str(self.image_type).lower()],
+            format=accepted_extension.upper(),
+            quality=settings.QUALITY_DEFINITIONS[accepted_extension.upper()],
         )
         output.seek(0)
 
-        # change the imagefield value to be the newley modifed image value
+        # change the imagefield value to be the newly modified image value
         self.image = InMemoryUploadedFile(
             output,
             "ImageField",
-            "%s.%s" % (self.image.name.split(".")[0], str(self.image_type).lower()),
-            "image/%s" % str(self.image_type).lower(),
+            "%s.%s" % (self.image.name.split(".")[0], accepted_extension.lower()),
+            "image/%s" % accepted_extension.lower(),
             sys.getsizeof(output),
             None,
         )

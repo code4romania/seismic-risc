@@ -36,8 +36,14 @@ class StatisticAdmin(admin.ModelAdmin):
 
 
 @admin.register(models.ImageFile)
-class Images(admin.ModelAdmin):
-    list_display = ("name", "image_type", "image_thumb")
+class ImageAdmin(admin.ModelAdmin):
+    list_display = ("image_name", "image_thumb", "status")
+
+    actions = (
+        "make_pending",
+        "make_accepted",
+        "make_rejected",
+    )
 
     def make_pending(self, request, queryset):
         self._perform_status_change(request, queryset, "0")
@@ -53,6 +59,17 @@ class Images(admin.ModelAdmin):
         self._perform_status_change(request, queryset, "-1")
 
     make_rejected.short_description = _("Mark selected images as rejected")
+
+    @staticmethod
+    def choice_to_string(status):
+        status = int(status)
+        for status_choice in models.Building.BUILDING_STATUS_CHOICES:
+            if status_choice[0] == status:
+                status_str = status_choice[1]
+                break
+        else:
+            status_str = ""
+        return status_str
 
     def _perform_status_change(self, request, queryset, status):
         updated = queryset.update(status=status)
@@ -242,7 +259,7 @@ class BuildingAdmin(admin.ModelAdmin):
     @staticmethod
     def choice_to_string(status):
         status = int(status)
-        for status_choice in models.Building.BUILDING_STATUS_CHOICES:
+        for status_choice in models.ImageFile.IMAGE_STATUS_CHOICES:
             if status_choice[0] == status:
                 status_str = status_choice[1]
                 break
