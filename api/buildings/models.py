@@ -279,7 +279,7 @@ class ImageFile(models.Model):
             raise ValidationError("Image limit for building is reached (%s)" % settings.ALLOWED_IMAGES_LIMIT)
 
     def check_extension(image):
-        name_parts = str(image.name).split('.')
+        name_parts = str(image.name).split(".")
         if len(name_parts) < 2:
             raise ValidationError("Image name does not contain an extension")
         accepted_extensions = [extension for pair in settings.ACCEPTED_IMAGE_TYPES.values() for extension in pair]
@@ -295,7 +295,7 @@ class ImageFile(models.Model):
     image_thumb.short_description = "Thumbnail"
 
     building = models.ForeignKey(Building, validators=(check_image_limit,), on_delete=models.CASCADE)
-    image = models.ImageField(default="Add image file", upload_to="images/",  validators=(check_extension, ))
+    image = models.ImageField(default="Add image file", upload_to="images/", validators=(check_extension,))
     status = models.SmallIntegerField(_("status"), default=PENDING, choices=IMAGE_STATUS_CHOICES, db_index=True)
 
     def __str__(self):
@@ -306,9 +306,9 @@ class ImageFile(models.Model):
         resize = settings.IMAGE_RESIZE
         width, height = im.size
         if width > height:
-            return resize, math.ceil(resize * (height/width))
+            return resize, math.ceil(resize * (height / width))
         else:
-            return math.ceil(resize * (height/width)), resize
+            return math.ceil(resize * (height / width)), resize
 
     def save(self):
         # Opening the uploaded image
@@ -321,9 +321,13 @@ class ImageFile(models.Model):
         if self._state.adding:
             im = im.resize(self.image_resize_dimensions(im))
 
-        extension = str(self.image.name).split('.')[-1]
+        extension = str(self.image.name).split(".")[-1]
         # extract key from settings dictionary for accepted image types
-        accepted_extension = [pair for pair in settings.ACCEPTED_IMAGE_TYPES.items() if extension in pair[1]][0][0]
+        accepted_extension = [
+            key_extension
+            for key_extension, all_extensions in settings.ACCEPTED_IMAGE_TYPES.items()
+            if extension in all_extensions
+        ][0]
 
         # after modifications, save it to the output
         im.save(

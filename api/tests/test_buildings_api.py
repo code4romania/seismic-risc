@@ -17,7 +17,7 @@ def test_image_resize():
     image = namedtuple("Image", "size")
     im = image((width, height))
     resized_w, resized_h = ImageFile.image_resize_dimensions(im)
-    assert (resized_h, resized_w) == (settings.IMAGE_RESIZE/2, settings.IMAGE_RESIZE)
+    assert (resized_h, resized_w) == (settings.IMAGE_RESIZE / 2, settings.IMAGE_RESIZE)
 
 
 @pytest.mark.django_db
