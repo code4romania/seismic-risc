@@ -305,21 +305,17 @@ class ImageFile(models.Model):
     def image_resize_dimensions(im):
         resize = settings.IMAGE_RESIZE
         width, height = im.size
-        if width > height:
-            return resize, math.ceil(resize * (height / width))
-        else:
-            return math.ceil(resize * (height / width)), resize
+        downscale = resize / max(height, width)
+        return math.ceil(width * downscale), math.ceil(height * downscale)
 
-    def save(self):
+    def handle_image(self):
         # Opening the uploaded image
         im = PIL.Image.open(self.image)
 
         output = BytesIO()
 
-        # Resize/modify the image based on relative dimensions to 400px
-        # Do this only when the image is created
-        if self._state.adding:
-            im = im.resize(self.image_resize_dimensions(im))
+        # Resize the image based on relative dimensions to settings.IMAGE_RESIZE
+        im = im.resize(self.image_resize_dimensions(im))
 
         extension = str(self.image.name).split(".")[-1]
         # extract key from settings dictionary for accepted image types
@@ -346,5 +342,13 @@ class ImageFile(models.Model):
             sys.getsizeof(output),
             None,
         )
+
+    def save(self):
+        # Check if image exists
+        previous = ImageFile.objects.get(pk=self.pk) if self.pk else None
+
+        # If there is no previous image or image has changed apply handling logic
+        if not previous or previous.image != self.image:
+            self.handle_image()
 
         super(ImageFile, self).save()
