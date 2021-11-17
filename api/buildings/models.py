@@ -283,7 +283,9 @@ class ImageFile(models.Model):
         if len(name_parts) < 2:
             raise ValidationError("Image name does not contain an extension")
         if name_parts[-1].lower() not in settings.ACCEPTED_IMAGE_TYPES.keys():
-            raise ValidationError("Image extension is not accepted. Choose one of %s" % str(settings.ACCEPTED_IMAGE_TYPES.keys()))
+            raise ValidationError(
+                "Image extension is not accepted. Choose one of %s" % list(settings.ACCEPTED_IMAGE_TYPES.keys())
+            )
 
     def image_thumb(self):
         return mark_safe('<a href={0}><img src="{0}" url width="50" height="50" /></a>'.format(str(self.image.url)))
