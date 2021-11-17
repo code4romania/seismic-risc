@@ -282,9 +282,8 @@ class ImageFile(models.Model):
         name_parts = str(image.name).split(".")
         if len(name_parts) < 2:
             raise ValidationError("Image name does not contain an extension")
-        accepted_extensions = [extension for pair in settings.ACCEPTED_IMAGE_TYPES.values() for extension in pair]
-        if name_parts[-1] not in accepted_extensions:
-            raise ValidationError("Image extension is not accepted. Choose one of %s" % accepted_extensions)
+        if name_parts[-1].lower() not in settings.ACCEPTED_IMAGE_TYPES.keys():
+            raise ValidationError("Image extension is not accepted. Choose one of %s" % str(settings.ACCEPTED_IMAGE_TYPES.keys()))
 
     def image_thumb(self):
         return mark_safe('<a href={0}><img src="{0}" url width="50" height="50" /></a>'.format(str(self.image.url)))
@@ -317,13 +316,9 @@ class ImageFile(models.Model):
         # Resize the image based on relative dimensions to settings.IMAGE_RESIZE
         im = im.resize(self.image_resize_dimensions(im))
 
-        extension = str(self.image.name).split(".")[-1]
         # extract key from settings dictionary for accepted image types
-        accepted_extension = [
-            key_extension
-            for key_extension, all_extensions in settings.ACCEPTED_IMAGE_TYPES.items()
-            if extension in all_extensions
-        ][0]
+        extension = str(self.image.name).split(".")[-1].lower()
+        accepted_extension = settings.ACCEPTED_IMAGE_TYPES[extension]
 
         # after modifications, save it to the output
         im.save(
