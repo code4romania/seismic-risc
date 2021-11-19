@@ -115,7 +115,7 @@ class Building(models.Model):
     street_number = models.CharField(_("street number"), max_length=100)
     address = models.CharField(_("address"), max_length=250, null=True)
     county = models.CharField(_("county"), max_length=60)
-    locality = models.CharField(_("locality"), max_length=20)
+    locality = models.CharField(_("locality"), max_length=60)
 
     lat = models.FloatField(_("latitude"), null=True)
     lng = models.FloatField(_("longitude"), null=True)
@@ -274,18 +274,20 @@ class ImageFile(models.Model):
         (REJECTED, _("Rejected")),
     ]
 
-    def check_image_limit(building):
-        if ImageFile.objects.filter(building=building).count() >= settings.ALLOWED_IMAGES_LIMIT:
-            raise ValidationError("Image limit for building is reached (%s)" % settings.ALLOWED_IMAGES_LIMIT)
-
     def check_extension(image):
         name_parts = str(image.name).split(".")
         if len(name_parts) < 2:
-            raise ValidationError("Image name does not contain an extension")
+            raise ValidationError(_("Image name does not contain an extension"))
         if name_parts[-1].lower() not in settings.ACCEPTED_IMAGE_TYPES.keys():
             raise ValidationError(
-                "Image extension is not accepted. Choose one of %s" % list(settings.ACCEPTED_IMAGE_TYPES.keys())
+                _("Image extension is not accepted. Choose one of {}").format(
+                    list(settings.ACCEPTED_IMAGE_TYPES.keys())
+                )
             )
+
+    def check_image_limit(building):
+        if ImageFile.objects.filter(building=building).count() >= settings.ALLOWED_IMAGES_LIMIT:
+            raise ValidationError(_("Image limit for building is reached ({})").format(settings.ALLOWED_IMAGES_LIMIT))
 
     def image_thumb(self):
         return mark_safe('<a href={0}><img src="{0}" url width="50" height="50" /></a>'.format(str(self.image.url)))
@@ -309,7 +311,7 @@ class ImageFile(models.Model):
         downscale = resize / max(height, width)
         return math.ceil(width * downscale), math.ceil(height * downscale)
 
-    def handle_image(self):
+    def _handle_image(self):
         # Opening the uploaded image
         im = PIL.Image.open(self.image)
 
@@ -334,8 +336,8 @@ class ImageFile(models.Model):
         self.image = InMemoryUploadedFile(
             output,
             "ImageField",
-            "%s.%s" % (self.image.name.split(".")[0], accepted_extension.lower()),
-            "image/%s" % accepted_extension.lower(),
+            "{}.{}".format(self.image.name.split(".")[0], accepted_extension.lower()),
+            "image/{}".format(accepted_extension.lower()),
             sys.getsizeof(output),
             None,
         )
@@ -346,6 +348,6 @@ class ImageFile(models.Model):
 
         # If there is no previous image or image has changed apply handling logic
         if not previous or previous.image != self.image:
-            self.handle_image()
+            self._handle_image()
 
         super(ImageFile, self).save()

@@ -1,0 +1,75 @@
+Lat,Lng,Address,Street Number,Locality,County,Year Built,Height Regime,Apartment Count,Surface,Examination Year,Certified Expert,Has Warning Panels,Observations,Risk Category
+44.928769,26.032101,str. Democratiei,bl. 108 - 110 D,Ploiești,Prahova,1963,P+4,40,2480,1995,Manu Gheorghe,NU,,U2
+44.930135,26.0316182,str. Democratiei,bl. 96 - 106 E,Ploiești,Prahova,1963,P+4,120,8665,1995,Manu Gheorghe,NU,,U2
+44.931037,26.031368,str. Democratiei,bl. 92 - 94 F,Ploiești,Prahova,1963,P+4,40,2480,1995,Manu Gheorghe,NU,,U2
+44.9561351,26.0025371,str. Crizantemei,bl. 8,Ploiești,Prahova,1964,S+P+9,76,5540,1995,Zoltan Sandor,NU,,U1
+44.9610267,26.0059144,str. Cameliei,bl. 112,Ploiești,Prahova,1962,S+P+9,40,3330,1995,Zoltan Sandor,NU,,U2
+44.9579735,26.0101418,str. Nordului,bl. 29,Ploiești,Prahova,1960,S+P+9,40,3330,1995,Zoltan Sandor,NU,,U2
+44.92756246,26.03085212,str. Jianu,bl. A,Ploiești,Prahova,1963,S+P+9,76,6873,1995,Utza Baiacoianu,DA,,U2
+44.92778654,26.03137783,str. Jianu,bl. B,Ploiești,Prahova,1963,S+P+9,76,6873,1995,Utza Baiacoianu,NU,,U2
+44.92778654,26.03187672,str. Jianu,bl. C,Ploiești,Prahova,1963,S+P+9,73,6645,1995,Utza Baiacoianu,DA,,U1
+44.9549481,25.995256,str. Cameliei,bl. 42,Ploiești,Prahova,1964,S+P+9,40,3152.8,1996,Zoltan Sandor,DA,,U1
+44.9547649,25.9951068,str. Cameliei,bl. 43,Ploiești,Prahova,1964,S+P+9,76,5865.10,1996,Zoltan Sandor,DA,,U1
+44.9547653,25.9950243,str. Cameliei,bl. 45,Ploiești,Prahova,1964,S+P+9,76,5865.10,1996,Zoltan Sandor,DA,,U1
+44.9572475,26.0040288,str. Scorusului,bl. 13,Ploiești,Prahova,1961,S+P+4,76,5865.10,1996,Zoltan Sandor,DA,,U1
+44.9572475,26.0040288,str. Scorusului,bl. 15,Ploiești,Prahova,1962,S+P+9,76,5865.10,1996,Zoltan Sandor,DA,,U1
+44.9550677,26.0010702,str. Brebenei,bl. 3,Ploiești,Prahova,1964,S+P+9,76,5865.10,1996,Zoltan Sandor,DA,,U1
+44.9620139,26.007905,str. Cameliei,bl. 33,Ploiești,Prahova,1965,S+P+9,40,3152.8,1996,Zoltan Sandor,DA,,U1
+44.9547653,25.9952763,str. Cameliei,bl. 39,Ploiești,Prahova,1965,S+P+9,40,3152.8,1996,Zoltan Sandor,DA,,U1
+44.9610267,26.0059144,str. Cameliei,bl. 113,Ploiești,Prahova,1968,S+P+9,40,3152.8,1996,Zoltan Sandor,DA,,U1
+44.9607461,26.007473,str. Cameliei,bl. 24,Ploiești,Prahova,1966,S+P+9,40,3152.8,1996,Zoltan Sandor,DA,,U1
+44.9547657,25.9949418,str. Cameliei,bl. 53,Ploiești,Prahova,1968,S+P+9,40,3152.8,1996,Zoltan Sandor,DA,,U1
+44.9547657,25.9949418,str. Cameliei,bl. 59,Ploiești,Prahova,1968,S+P+9,40,3152.8,1996,Zoltan Sandor,DA,,U1
+44.9433149,26.0213253,CENTRU CIVIC ,latura vest TR I,Ploiești,Prahova,1960,S+P+4,32,2028,1996,Ghitulescu Ad.,DA,,U1
+44.9433149,26.0213253,CENTRU CIVIC ,latura vest TR II,Ploiești,Prahova,1960,S+P+4,28,1653,1996,Ghitulescu Ad.,DA,,U1
+44.9433149,26.0213253,CENTRU CIVIC ,latura vest TR III,Ploiești,Prahova,1960,S+P+4,10,535.5,1996,Ghitulescu Ad.,DA,,U1
+44.9433149,26.0213253,CENTRU CIVIC ,latura vest TR IV,Ploiești,Prahova,1960,S+P+7,60,3267.90,1996,Ghitulescu Ad.,DA,,U1
+44.9404502,26.0269897,str. Teatrului,7,Ploiești,Prahova,1928,S+P+3,8,598.9,1997,Iliescu Elena,NU,,U2
+44.9404616,26.0271947,str. Teatrului,9,Ploiești,Prahova,1928,S+P+3,9,668.6,1997,Iliescu Elena,NU,,U2
+44.940325,26.0271633,str. Teatrului,11,Ploiești,Prahova,1928,S+P+3,8,617.1,1997,Iliescu Elena,NU,,U2
+44.941847,26.0224573,str. Erou Calin Catalin,3,Ploiești,Prahova,1940,S+P+5,40,4400,1997,Ghitulescu Ad.,DA,,U1
+44.9398423,26.0283278,Mihai Bravu,1,Ploiești,Prahova,1940,S+P+3,6,595,1997,Bogdan Dabija,NU,,U2
+44.94293616,26.02599369,Paris,1,Ploiești,Prahova,1940,S+P+3,6,687,1997,Manu Gheorghe,DA,,U2
+44.9326384,26.0266094,M. Eminescu,2,Ploiești,Prahova,1958,D+P+4,54,2713.43,1997,Aldea Stelian,DA,,U1
+44.9323631,26.0265624,M. Eminescu,4,Ploiești,Prahova,1958,D+P+4,66,3499.10,1997,Aldea Stelian,NU,,U1
+44.9420028,26.024545,Unirii,8,Ploiești,Prahova,1935,S+P+3,7,1200,1997,Zoltan Sandor,NU,,U2
+44.9510587,26.0014667,B-dul Republicii,bl. 201,Ploiești,Prahova,1963,S+P+9,40,3157,1998,Zoltan Sandor,NU,,U2
+44.9529145,25.9975968,B-dul Republicii,bl.2010,Ploiești,Prahova,1963,S+P+9,40,3157,1998,Zoltan Sandor,NU,,U2
+44.9510624,26.0014584,B-dul Republicii,bl. 209,Ploiești,Prahova,1963,S+P+9,40,3157,1998,Zoltan Sandor,NU,,U2
+44.9510614,26.0014605,B-dul Republicii,bl. 207,Ploiești,Prahova,1963,S+P+9,40,3157,1998,Zoltan Sandor,NU,,U2
+44.9325085,26.0266438,M. Eminescu,bl. 3,Ploiești,Prahova,1958,D+P+3,32,2570,1998,Aldea Stelian,NU,,U2
+44.9329889,26.0263151,M. Eminescu,bl. 1,Ploiești,Prahova,1958,D+P+4,36,2570,1999,Aldea Stelian,DA,,U1
+44.9546439,26.002693,sos. Nordului,bl. 4,Ploiești,Prahova,1962,P+4,60,4100.3,1999,Iliescu Elena,DA,,U1
+44.9526771,26.0003398,sos. Nordului,bl. 1,Ploiești,Prahova,1962,P+4,60,4100.3,1999,Iliescu Elena,DA,,U1
+44.9526771,26.0003398,Nordului,bl. 1,Ploiești,Prahova,1965,S+P+9,76,5865.10,1996,Zoltan Sandor,DA,,U1
+44.9526185,26.0099855,Tarnavei,3 bl. A2,Ploiești,Prahova,1962,P+4,60,4270.90,2000,Iliescu Elena,DA,,U1
+44.954687,26.0095439,Cibinului,2 bl. A7,Ploiești,Prahova,1962,P+4,60,4008,2000,Iliescu Elena,DA,,U1
+44.954569,26.0011999,Brebenei,bl. 2,Ploiești,Prahova,1962,P+4,30,2285.3,1998,Iliescu Elena,DA,,U1
+44.9552632,26.0005973,Brebenei,bl. 5,Ploiești,Prahova,1962,P+4,30,2285.3,1998,Iliescu Elena,DA,,U1
+44.9561074,26.002501,Crizantemei,bl. 9,Ploiești,Prahova,1962,P+4,30,2285.3,1998,Iliescu Elena,DA,,U1
+44.9561074,26.002501,Crizantemei,bl. 10,Ploiești,Prahova,1962,P+4,30,2285.3,1998,Iliescu Elena,DA,,U1
+45.1251216,25.734804,M. Eminescu,"6,8 TR II",Câmpina,Prahova,1960,P+3,32,1053.54,1995,Iliescu Elena,NU,,U2
+45.1251216,25.734804,M. Eminescu,"6,8 TR II",Câmpina,Prahova,1960,P+3,16,471.27,1995,Iliescu Elena,NU,,U2
+45.1256485,25.7343403,M. Eminescu,10,Câmpina,Prahova,1960,P+3,32,2124.76,1995,Iliescu Elena,NU,,RS1
+45.1196633,25.7387292,Schelelor,3 bl. A6,Câmpina,Prahova,1965,S+P+10,176,14.400,2006,Aron gheorghe,DA,,RS1
+45.1206986,25.7439642,Orizontului,bl. 38,Câmpina,Prahova,1973,S+P+9,40,3118.76,1997,Nicolae Aureliu,NU,,RS1
+45.1273929,25.7519907,Orizontului,39,Câmpina,Prahova,1973,S+P+9,40,3118.76,1997,Nicolae Aureliu,NU,,RS1
+45.1272678,25.7520775,Orizontului,40,Câmpina,Prahova,1973,S+P+9,40,3118.76,1997,Nicolae Aureliu,NU,,RS1
+45.1271836,25.752283,Orizontului,41,Câmpina,Prahova,1973,S+P+9,40,3118.76,1997,Nicolae Aureliu,NU,,RS1
+45.1268087,25.7524016,Orizontului,43,Câmpina,Prahova,1973,S+P+9,40,3118.76,1997,Nicolae Aureliu,NU,,RS1
+44.986242,26.233724,1 Mai,28,Urlați,Prahova,1967,P+3,30,2196.80,1999,S.C. Consproiect S.A. Ploiesti,NU,,U3
+45.0035644,26.4491479,N. Bălcescu,15,Mizil,Prahova,1982,P+4,8,865.96,1995,Aldea Stelian,NU,,U3
+45.0036471,26.448723,N. Bălcescu,16,Mizil,Prahova,1982,P+4,8,865.96,1995,Aldea Stelian,NU,,U3
+45.0034763,26.4490192,N. Bălcescu,17,Mizil,Prahova,1982,P+4,8,851.51,1995,Aldea Stelian,NU,,U3
+45.00261664,26.44717657,N. Bălcescu,bl. 43/A,Mizil,Prahova,1986,P+4,8,818.44,1995,Aldea Stelian,NU,,U3
+45.00248172,26.44695304,N. Bălcescu,bl. 43/B,Mizil,Prahova,1985,P+4,8,924.75,1995,Aldea Stelian,NU,,U3
+45.00238342,26.44663683,N. Bălcescu,bl. 43/C,Mizil,Prahova,1985,P+4,8,822.35,1995,Aldea Stelian,NU,,U3
+45.1824688,26.0361727,B. Delavrancea,1 bl. C,Vălenii de Munte,Prahova,1961,P+3,32,2121,2000,S.C. Consproiect S.A. Ploiesti,NU,,RS2
+45.18459808,26.03701971,Aleea Alunilor,3 bl. 5,Vălenii de Munte,Prahova,1971,P+4,20,923,2000,S.C. Consproiect S.A. Ploiesti,NU,,RS2
+45.1847358,26.03713136,Aleea Alunilor,3 bl. 6,Vălenii de Munte,Prahova,1971,P+4,20,923,2000,S.C. Consproiect S.A. Ploiesti,NU,,RS2
+45.0203382,26.0274723,Fagului,19 bl. 2B,Boldești Scăieni,Prahova,1972,P+4,20,1140.61,1994,Ghitulescu Ad.,NU,,U3
+45.0203382,26.0274723,Fagului,17 bl. 3A,Boldești Scăieni,Prahova,1972,P+4,25,1120.22,1994,Ghitulescu Ad.,NU,,U3
+45.029456,26.0336121,Podgoriei,9 bl. 2,Boldești Scăieni,Prahova,1961,P+2,18,1141.17,1994,Ghitulescu Ad.,NU,,U3
+45.0203382,26.0274723,Fagului,21 bl. 2A,Boldești Scăieni,Prahova,1973,S+P+4,20,1140.61,2001,Ghitulescu Ad.,NU,,U2
+45.0296051,26.0327697,Podgoriei,5 bl. 1,Boldești Scăieni,Prahova,1961,P+2,18,1141.17,2002,Sergiu Baicoianu Utza,NU,,U1
+45.0303079,26.0315282,Intrarea Pieții,12 bl.12B,Boldești Scăieni,Prahova,1983,S+P+3,32,243.4,2002,Sergiu Baicoianu Utza,NU,,U1

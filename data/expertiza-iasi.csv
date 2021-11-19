@@ -1,0 +1,265 @@
+Lat,Lng,Address,Street Number,Locality,County,Year Built,Height Regime,Apartment Count,Surface,Examination Year,Certified Expert,Has Warning Panels,Observations,Risk Category
+47.1539002,27.5802418,Soseaua Nationala,"184, bl.A1",Iasi,Iasi,1964,P+4E,90,6672,1993,M.V.Molocea,X,,U1
+47.1548322,27.5786375,Soseaua Nationala,"182, bl.A2",Iasi,Iasi,1964,P+4E,90,6672,1993,M.V.Molocea,X,,U1
+47.1529913,27.5818366,Soseaua Nationala,"186, bl.C1",Iasi,Iasi,1963,P+4E,40,2675,1993,M.V.Molocea,X,,U1
+47.152913,27.582038,Soseaua Nationala,"188, bl.C2",Iasi,Iasi,1963,P+4E,40,2675,1993,M.V.Molocea,X,,U1
+47.152401,27.583057,Soseaua Nationala,"190, bl.C3",Iasi,Iasi,1963,P+4E,40,2675,1993,M.V.Molocea,X,,U1
+47.152221,27.583591,Soseaua Nationala,"192, bl.C4",Iasi,Iasi,1963,P+4E,40,2675,1993,M.V.Molocea,X,,U1
+47.1557734,27.5770765,Soseaua Nationala,"180, bl.A3",Iasi,Iasi,1965,P+4E,90,6672,1993,M.V.Molocea,X,,U1
+47.1520472,27.5939861,Splai Bahlui,"20, bl.B15",Iasi,Iasi,1963,P+4E,20,1420,1993,M.V.Molocea,X,,U1
+47.1516339,27.5921784,Splai Bahlui,"8, bl.89",Iasi,Iasi,1962,P+4E,20,1420,1993,M.V.Molocea,X,,U1
+47.1487432,27.5811773,Bulevardul Nicolae lorga,"45, bl.P6",Iasi,Iasi,1963,P+4E,80,5350,1993,M.V.Molocea,X,,U1
+47.148115,27.5827933,Bulevardul Nicolae lorga,"47, bl.E1",Iasi,Iasi,1964,P+4E,30,2451,1993,M.V.Molocea,X,,U1
+47.1460631,27.5858784,Bulevardul Nicolae lorga,"49, bl.G1",Iasi,Iasi,1964,P+4E,60,4902,1993,M.V.Molocea,X,,U1
+47.14713,27.5855669,Bulevardul Nicolae lorga,"51, bl.G2",Iasi,Iasi,1964,P+4E,60,4902,1993,M.V.Molocea,X,,U1
+47.1465704,27.5866706,Bulevardul Nicolae lorga,"53, bl.E2",Iasi,Iasi,1964,P+4E,30,2451,1993,M.V.Molocea,X,,U1
+47.146485,27.58752,Bulevardul Nicolae lorga,"55, bl.E3",Iasi,Iasi,1964,P+4E,30,2451,1993,M.V.Molocea,X,,U1
+47.1462983,27.5888989,Bulevardul Nicolae lorga,"57, bl.E4",Iasi,Iasi,1964,P+4E,30,2451,1993,M.V.Molocea,X,,U1
+47.146362,27.589368,Bulevardul Nicolae lorga,"59, bl.E5",Iasi,Iasi,1964,P+4E,30,2451,1993,M.V.Molocea,X,,U1
+47.14699,27.590947,Bulevardul Nicolae lorga,"61, bl.F1",Iasi,Iasi,1964,P+4E,45,2451,1993,M.V.Molocea,X,,U1
+47.155465,27.622576,Str. Ciurchi,"127, bl.E1",Iasi,Iasi,1966,P+4E,60,4449,1993,Victor Mihalache,X,,U1
+47.1548561,27.62037,Str. Ciurchi,"123, bl.E3",Iasi,Iasi,1966,P+4E,60,4449,1993,Victor Mihalache,X,,U1
+47.1553873,27.62133,Str. Ciurchi,"125, bl.E2",Iasi,Iasi,1966,P+4E,60,4449,1993,Victor Mihalache,X,,U1
+47.158486,27.614841,Str. Vasile Lupu,"92, bl.D7",Iasi,Iasi,1966,P+4E,50,3886,1993,Victor Mihalache,X,,U1
+47.158332,27.616035,Str. Vasile Lupu,"98, bl.D6",Iasi,Iasi,1966,P+4E,50,3886,1933,Victor Mihalache,X,,U1
+47.157877,27.617016,Str. Vasile Lupu,"104, bl.D5",Iasi,Iasi,1966,P+4E,50,3886,1993,Victor Mihalache,X,,U1
+47.1589452,27.6012546,Str. Vasile Lupu,"110, bl.D4",Iasi,Iasi,1966,P+4E,50,3886,1993,Victor Mihalache,X,,U1
+47.1569009,27.6197536,Str. Vasile Lupu,"120, bl.D3",Iasi,Iasi,1966,P+4E,50,3886,1993,Victor Mihalache,X,,U1
+47.1565538,27.6203897,Str. Vasile Lupu,"126, bl.D2",Iasi,Iasi,1966,P+4E,50,3886,1993,Victor Mihalache,X,,U1
+47.155844,27.6217086,Str. Vasile Lupu,"132, bl.D1",Iasi,Iasi,1966,P+4E,50,3886,1933,Victor Mihalache,X,,U1
+47.147632,27.586348,Al. Rozelor,"20, bl.A6",Iasi,Iasi,1964,P+4E,20,2225,1993,Ctin Firtea,X,,U1
+47.1470585,27.5866124,Al. Rozelor,"24, bl.K2",Iasi,Iasi,1963,P+4E,60,3982,1993,Victor Mihalache,X,,U1
+47.146539,27.588438,Al. Rozelor,"32, bl.K3",Iasi,Iasi,1963,P+4E,60,3982,1993,Victor Mihalache,X,,U1
+47.1480528,27.5903077,Al. Rozelor,"42, bl.K4",Iasi,Iasi,1963,P+4E,60,3982,1993,Victor Mihalache,X,,U1
+47.1481881,27.5808979,Bulevardul Nicolae lorga,"41, bl.PS",Iasi,Iasi,1962,P+4E,60,3950,1993,M.V.Molocea,X,,U1
+47.149061,27.5814771,Bulevardul Nicolae lorga,"43, bl.B6",Iasi,Iasi,1963,P+4E,40,2720,1993,M.V.Molocea,X,,U1
+47.1513008,27.5842211,Al.Decebal,"2, bl.87",Iasi,Iasi,1963,P+4E,40,2605,1993,Victor Mihalache,X,,U1
+47.151507,27.5836663,Al.Decebal,"4, bl.86",Iasi,Iasi,1963,P+4E,40,2605,1993,Victor Mihalache,X,,U1
+47.1517964,27.5832658,Al.Decebal,"8, bl.85",Iasi,Iasi,1963,P+4E,40,2605,1933,Victor Mihalache,X,,U1
+47.1514015,27.5815449,D.Cantemir,"5, bl.84",Iasi,Iasi,1963,P+4E,40,2605,1993,Victor Mihalache,X,,U1
+47.1505927,27.5802284,D.Cantemir,"9, bl.83",Iasi,Iasi,1963,P+4E,40,2605,1993,Victor Mihalache,X,,U1
+47.150452,27.592534,Tutora,"7, bl.A1",Iasi,Iasi,1962,P+4E,40,2605,1993,Victor Mihalache,X,,U1
+47.1499724,27.5944374,Tutora,"9, bl.A2",Iasi,Iasi,1962,P+4E,40,2605,1993,Victor Mihalache,X,,U1
+47.1499724,27.5944374,Tutora,"13, bl.A3",Iasi,Iasi,1962,P+4E,40,2605,1993,Victor Mihalache,X,,U1
+47.151425,27.5913227,Splai Bahlui,"4, bl.85",Iasi,Iasi,1962,P+4E,20,1420,1993,Victor Mihalache,X,,U1
+47.1518198,27.5930437,Splai Bahlui,"12, bl.811",Iasi,Iasi,1962,P+4E,20,1420,1993,Victor Mihalache,X,,U1
+47.152067,27.593963,Splai Bahlui,"16, bl.813",Iasi,Iasi,1963,P+4E,20,1420,1993,Victor Mihalache,X,,U1
+47.1526578,27.5978779,Splai Bahlui,"26, bl.A6",Iasi,Iasi,1963,P+4E,40,2453,1993,Victor Mihalache,X,,U1
+47.1516652,27.5966361,Primaverii,"21, bl.A5",Iasi,Iasi,1962,P+4E,40,2453,1993,Victor Mihalache,X,,U1
+47.1476443,27.5846794,Nicolina,"15, bl.A1",Iasi,Iasi,1964,P+4E,60,3560,1993,Victor Mihalache,X,,U1
+47.1597928,27.5998604,T.Vladimirescu,34,Iasi,Iasi,1963,P+3E,32,1906,1993,Virgil Aur,X,,U1
+47.1631911,27.5809833,Splai Bahlui,"24, bl.C1",Iasi,Iasi,1962,P+4E,90,6666,1994,Virgil Aur,X,,U1
+47.157499,27.614327,Ciurchi,"101, bl.F7",Iasi,Iasi,1966,P+4E,90,6814,1994,Virgil Aur,X,,U1
+47.1570759,27.6141468,Ciurchi,"103, bl.F6",Iasi,Iasi,1966,P+4E,90,6814,1994,Virgil Aur,X,,U1
+47.156417,27.613683,Ciurchi,"105, bl.F5",Iasi,Iasi,1966,P+4E,90,6814,1994,Virgil Aur,X,,U1
+47.1563408,27.6153879,Ciurchi,"107, bl.F4",Iasi,Iasi,1966,P+4E,90,6814,1994,Virgil Aur,X,,U1
+47.1555349,27.6161429,Ciurchi,"111, bl.F3",Iasi,Iasi,1966,P+4E,90,6814,1994,Virgil Aur,X,,U1
+47.1553132,27.6177478,Ciurchi,"113, bl.F2",Iasi,Iasi,1966,P+4E,90,6814,1994,Virgil Aur,X,,U1
+47.1553599,27.6185174,Ciurchi,"115, bl.F1",Iasi,Iasi,1966,P+4E,90,6814,1994,Virgil Aur,X,,U1
+47.1552318,27.6190873,Ciurchi,"117, bl.Fa",Iasi,Iasi,1966,P+4E,90,6814,1994,Virgil Aur,X,,U1
+47.1596165,27.6145182,Vasile Lupu,"86, bl.K1",Iasi,Iasi,1965,P+4E,35,2894,1994,Virgil Aur,X,,U1
+47.152063,27.594519,Splai Bahlui,"18, bl. B14",Iasi,Iasi,1976,P+4E,40,2364,1994,Virgil Aur,X,,U1
+47.1654007,27.580626,Cuza Voda,2,Iasi,Iasi,1900,P+3E,12,1146,1995,Virgil Aur,X,,U1
+47.168492,27.5779977,Lapusneanu,24,Iasi,Iasi,1959,P+3E,21,922,1996,Iosif Cichi,X,,U1
+47.17948,27.5702019,Str.Oastei,"2, bl. A1",Iasi,Iasi,1961,P+4E,24,2131.5,2000,Virgil Aur,X,,RS1
+47.150412,27.587006,Str.Nicolina,"1, bl. F",Iasi,Iasi,1971,S+P+9E,192,18455,2001,Virgil Aur,X,,RS1
+47.147347,27.591456,Str.Socola,"18, bl. H1",Iasi,Iasi,1963,P+9E,140,5810,1993,Victor Mihalache,,,U2
+47.1733212,27.5591244,Str.Pacurari,107,Iasi,Iasi,1960,P+2E,9,478,1993,Victor Mihalache,,,U2
+47.158289,27.6013683,T. Vladimirescu,42,Iasi,Iasi,1961,P+3E,32,2141,1993,Victor Mihalache,,,U2
+47.1605134,27.5997318,T. Vladimirescu,83,Iasi,Iasi,1962,P+3E,24,1504,1993,Victor Mihalache,,,U2
+47.1601894,27.6000751,T. Vladimirescu,87,Iasi,Iasi,1962,P+3E,22,1273,1993,Victor Mihalache,,,U2
+47.1597909,27.6004753,T. Vladimirescu,91,Iasi,Iasi,1962,P+3E,24,1504,1993,Victor Mihalache,,,U2
+47.1608655,27.5993755,T. Vladimirescu,81,Iasi,Iasi,1962,P+3E,22,1273,1993,Victor Mihalache,,,U2
+47.1617295,27.6143673,Str. I.Creanga,"59A, bl. N2",Iasi,Iasi,1969,P+4E,29,1785,1993,Victor Mihalache,,,U2
+47.162023,27.614535,Str. I.Creanga,"59B, bl. N3",Iasi,Iasi,1969,P+4E,32,1364,1993,Victor Mihalache,,,U2
+47.1468471,27.5892394,Al.Rozelor,"34, bl. A11",Iasi,Iasi,1964,P+4E,30,2225,1993,Ctin Firtea,,,U2
+47.147137,27.589005,Al.Rozelor,"38, bl. A10",Iasi,Iasi,1964,P+4E,30,2225,1993,Ctin Firtea,,,U2
+47.1468758,27.5873928,Al.Rozelor,"26, bl. A9",Iasi,Iasi,1964,P+4E,30,2225,1993,Ctin Firtea,,,U2
+47.147246,27.587785,Al.Rozelor,"28, bl. AS",Iasi,Iasi,1964,P+4E,30,2225,1993,Ctin Firtea,,,U2
+47.1473656,27.5858283,Al.Rozelor,"16, bl. A7",Iasi,Iasi,1964,P+4E,30,2225,1993,Ctin Firtea,,,U2
+47.147317,27.5868832,Al.Rozelor,"22, bl. L 1",Iasi,Iasi,1963,P+4E,20,1336,1993,Victor Mihalache,,,U2
+47.1470205,27.5884158,Al.Rozelor,"30, bl. L2",Iasi,Iasi,1963,P+4E,20,1336,1993,Victor Mihalache,,,U2
+47.147395,27.589953,Al.Rozelor,"40, bl. L3",Iasi,Iasi,1963,P+4E,20,1336,1993,Victor Mihalache,,,U2
+47.1392648,27.5778321,Nicolina,"6, bl. 11",Iasi,Iasi,1962,P+4E,40,2606,1993,Ctin Firtea,,,U2
+47.1478089,27.5840474,Nicolina,"8, bl. J1",Iasi,Iasi,1964,P+4E,40,2606,1993,Ctin Firtea,,,U2
+47.149859,27.586598,Nicolina,"3, bl. A 1",Iasi,Iasi,1964,P+4E,40,2225,1993,Ctin Firiea,,,U2
+47.138874,27.578523,Nicolina,"5, bl. A2",Iasi,Iasi,1964,P+4E,30,2225,1993,Ctin Firtea,,,U2
+47.1491305,27.5862367,Nicolina,"7, bl. A3",Iasi,Iasi,1964,P+4E,30,2225,1993,Ctin Firtea,,,U2
+47.14885,27.585902,Nicolina,"9, bl. A4",Iasi,Iasi,1964,P+4E,30,2225,1993,Ctin Firtea,,,U2
+47.138218,27.5778549,Nicolina ,"11, bl. AS",Iasi,Iasi,1964,P+4E,30,2225,1993,Ctin Firtea,,,U2
+47.14347,27.603037,Bucium,17 B,Iasi,Iasi,1960,D+P+1E,8,755,1993,Ctin Firtea,,,U2
+47.142349,27.598603,Socola,104 B,Iasi,Iasi,1960,P+2E,9,478,1993,Victor Mihalache,,,U2
+47.14996728,27.58931908,Socola,"7, bl. D1",Iasi,Iasi,1963,P+4E,16,1609,1993,M.V.Molocea,,,U2
+47.1463234,27.5851459,Bulevardul Nicolae lorga,"35, bl. N1",Iasi,Iasi,1965,P+4E,32,2650,1993,M.V.Molocea,,,U2
+47.1478705,27.5825729,Bulevardul Nicolae lorga,"37, bl. N2",Iasi,Iasi,1965,P+4E,32,2650,1993,M.V.Molocea,,,U2
+47.152191,27.58228,Bulevardul D.Cantemir,"1, bl. B2",Iasi,Iasi,1963,P+4E,40,2666,1993,Victor Mihalache,,,U2
+47.1787735,27.5729969,Codrescu,"7 A, bl. D3",Iasi,Iasi,1960,P+4E,40,2602,1994,Virgil Aur,,,U2
+47.1791441,27.5732711,Codrescu,"9A, bl. D2",Iasi,Iasi,1960,P+4E,40,2602,1994,Virgil Aur,,,U2
+47.1579244,27.6036349,Codrescu,"11A, bl. D1",Iasi,Iasi,1960,P+4E,40,2602,1994,Virgil Aur,,,U2
+47.148621,27.5929291,Primaverii,"9, bl. P4",Iasi,Iasi,1962,P+4E,20,1339,1994,Virgil Aur,,,U2
+47.1502857,27.5954581,Primaverii,"15, bl. A4",Iasi,Iasi,1962,P+4E,40,2652,1994,Virgil Aur,,,U2
+47.159737,27.617454,Vasile Lupu,"93, bl. V1",Iasi,Iasi,1962,P+4E,50,4524,1994,Virgil Aur,,,U2
+47.159918,27.616139,Vasile Lupu,"89, bl. V2",Iasi,Iasi,1962,P+4E,50,4524,1994,Virgil Aur,,,U2
+47.1601273,27.6150676,Vasile Lupu,"85, bl. V3",Iasi,Iasi,1962,P+4E,50,4524,1994,Virgil Aur,,,U2
+47.158126,27.62049,Vasile Lupu,"122, bl. B6",Iasi,Iasi,1966,P+4E,60,4008,1994,Virgil Aur,,,U2
+47.1570974,27.6219508,Vasile Lupu,"134, bl. B4",Iasi,Iasi,1966,P+4E,60,4008,1994,Virgil Aur,,,U2
+47.1563408,27.6153879,Ciurchi,"107A, bl. B7",Iasi,Iasi,1966,P+4E,60,4008,1994,Virgil Am,,,U2
+47.155535,27.616143,Ciurchi,"109, bl. B2",Iasi,Iasi,1966,P+4E,60,4008,1994,Virgil Aur,,,U2
+47.1552318,27.6190873,Ciurchi,"117, bl. B1",Iasi,Iasi,1966,P+4E,60,4008,1994,Virgil Aur,,,U2
+47.1562278,27.6226817,Vasile Lupu,"136, bl. B3",Iasi,Iasi,1966,P+4E,60,4008,1994,Virgil Aur,,,U2
+47.1687703,27.5699757,Soseaua Arcu,25,Iasi,Iasi,1960,P+4E,62,3429,1994,Virgil Aur,,,U2
+47.1653803,27.5842587,Th.Burada,3,Iasi,Iasi,1930,P+2E,3,424,1995,Virgil Aur,,,U2
+47.1494165,27.5817441,Al.Rozelor,"4, bl. B9",Iasi,Iasi,1963,P+4E,40,2675,1995,Virgil Aur,,,U2
+47.1553599,27.6185174,Ciurchi,"115 A, bl. B8",Iasi,Iasi,1966,P+4E,60,4136,1995,Virgil Aur,,,U2
+47.17663262,27.56985801,Titu Maiorescu,"2, sc.B1",Iasi,Iasi,1976,P+10E,88,7060,1995,Victor Mihalache,,,U2
+47.165363,27.579035,Piata Unirii,11 bl. 4,Iasi,Iasi,1961,P+8E,52,2376,1995,Victor Mihalache,,,U2
+47.1652049,27.5794822,Piata Unirii,9 bl. 5,Iasi,Iasi,1961,P+8E,52,2392,1995,Victor Mihalache,,,U2
+47.1650908,27.5799995,Piata Unirii,7 bl. 6,Iasi,Iasi,1961,P+8E,52,2252,1995,Victor Mihalache,,,U2
+47.1668371,27.5799685,Piata Unirii,2 bl. 10,Iasi,Iasi,1961,P+6E,172,8808,1995,Victor Mihalache,,,U2
+47.167464,27.580886,Piata Unirii,3 bl. 11,Iasi,Iasi,1961,P+6E,68,5091,1995,Victor Mihalache,,,U2
+47.1667523,27.5821795,V.Alecsandri,"8, bl. E",Iasi,Iasi,1958,P+3E,22,1450,1996,Virgil Aur,,,U2
+47.1670527,27.5817868,V.Alecsandri,"4, bl. O",Iasi,Iasi,1958,P+3E,33,2100,1996,Virgil Aur,,,U2
+47.1533657,27.5990532,Splai Bahlui,"29, bl. B5",Iasi,Iasi,1962,S+P+10E,44,3418.5,1997,Virgil Aur,,,RS2
+47.1751751,27.5457922,Pacurari,"22, bl. 2",Iasi,Iasi,1956,S+P+3E,48,5308,1997,Iosif Cichi,,,RS2
+47.1583906,27.6007428,Smardan,"1, bl. P3",Iasi,Iasi,1961,P+3E,32,2200,1997,Iosif Cichi,,,RS2
+47.1602937,27.6133959,Vasile Lupu,"83, bl. D1",Iasi,Iasi,1973,S+P+10E,200,17950,1997,Petru Chiriac,,,RS2
+47.1511478,27.5860716,Sos. Nationala,"198, bl. B",Iasi,Iasi,1974,S+P+8E,64,7075,1997,Virgil Aur,,,RS2
+47.1575885,27.6208065,Str.Vasile Lupu,"124, bl. B5",Iasi,Iasi,1967,S+P+4E,60,4136,1997,Adrian Mihalache,,,RS2
+47.1782442,27.5715164,Str.Codrescu,"7C, bl. B2",Iasi,Iasi,1966,S+P+4E,20,1904,1997,Iosif Cichi,,,RS2
+47.1623285,27.6066444,Str.I.Creanga,"7, bl. K2",Iasi,Iasi,1972,S+P+4E,32,3522.6,1997,Virgil Aur,,,RS2
+47.1538871,27.6031205,Splai Bahlui,"35, bl. B2",Iasi,Iasi,1962,S+P+10E,44,3418.5,1998,Virgil Aur,,,RS2
+47.120771,27.6178079,Str.Socola,"17, bl. D7",Iasi,Iasi,1961,S+P+4E,60,3869.5,1998,Adrian Mihalache,,,RS2
+47.1776211,27.5710649,Bulevardul Carol,"32, bl. B4",Iasi,Iasi,1961,P+8E,53,3497.7,2000,Iosif Cichi,,,RS2
+47.1529304,27.5836497,Sos.Nationala,"47, bl. C4",Iasi,Iasi,1973,P+10E,88,5310,1993,M.V.Molocea,,,U3
+47.1504713,27.5827083,Decebal,"18, bl. C2",Iasi,Iasi,1964,P+4E,60,4902,1993,M.V.Molocea,,,U3
+47.1479331,27.5887019,Al.Rozelor,"17, bl. X13",Iasi,Iasi,1967,P+4E,20,1345,1993,Ctin Firtea,,,U3
+47.1490567,27.5814676,Bulevardul Nicolae lorga,"43A, bl. X1",Iasi,Iasi,1967,P+4E,20,1650,1993,M.V.Molocea,,,U3
+47.1640626,27.5816024,Str. Decembrie,"18, bl. C2",Iasi,Iasi,1964,P+4E,60,1310,1993,Victor Mihalache,,,U3
+47.1601598,27.5652529,Musatini,"19, bl. R4-II",Iasi,Iasi,1972,P+4E,40,2000,1993,M.V.Molocea,,,U3
+47.1674589,27.5527233,Buridava,"4, bl. 07",Iasi,Iasi,1977,P+4E,40,2367,1993,M .V. Molocea,,,U3
+47.167797,27.5498089,Buridava,"13-15, bl. B 1-3",Iasi,Iasi,1977,P+4E,60,3557,1993,M.V.Molocea,,,U3
+47.1692832,27.5479242,Taibacului,"19-21, bl. J 8-9",Iasi,Iasi,1978,P+4E,38,2323,1993,M.V.Molocea,,,U3
+47.1547413,27.5705506,Mircea cel Batran,"15, bl. Q9",Iasi,Iasi,1976,P+4E,60,5605,1993,M.V.Molocea,,,U3
+47.158632,27.6196089,Vasile Lupu,"114-116, bl. A3",Iasi,Iasi,1965,P+9E,320,7933,1993,Victor Mihalache,,,U3
+47.1628125,27.6056043,P.lspirescu,"3, bl. A3",Iasi,Iasi,1972,P+10E,176,7420,1993,Victor Mihalache,,,U3
+47.1604583,27.5860704,C.Negri,"43, bl. T1",Iasi,Iasi,1975,P+10E,61,5709,1993,M.V.Molocea,,,U3
+47.1654548,27.5804104,Strapungerea Stefan cel Mare,1,Iasi,Iasi,1959,P+5E,17,1861,1993,Victor Mihalache,,,U3
+47.1662919,27.5857707,Bulevardul Independentei,"22, bl. Y2",Iasi,Iasi,1975,P+10E,66,5348,1993,M.V.Molocea,,,U3
+47.173571,27.5592709,Pacurari,118,Iasi,Iasi,1960,P+2E,9,478,1993,Victor Mihalache,,,U3
+47.173462,27.5600561,Pacurari,116,Iasi,Iasi,1960,P+2E,9,478,1993,Victor Mihalache,,,U3
+47.1733517,27.5589219,Pacurari,109,Iasi,Iasi,1960,P+2E,9,478,1993,Victor Mihalache,,,U3
+47.1737139,27.556776,Pacurari,125,Iasi,Iasi,1960,P+2E,18,940,1993,Victor Mihalache,,,U3
+47.173781,27.55631,Pacurari,127,Iasi,Iasi,1960,P+2E,9,478,1993,Victor Mihalache,,,U3
+47.1704782,27.5731043,Pacurari,"14, bl. G1",Iasi,Iasi,1974,P+4E,40,1266,1993,Victor Mihalache,,,U3
+47.1593098,27.6002928,T.Vladimirescu,36,Iasi,Iasi,1961,P+3E,32,2141,1993,Victor Mihalache,,,U3
+47.1589601,27.6005297,T.Vladimirescu,38,Iasi,Iasi,1964,P+4E,16,1282,1993,Victor Mihalache,,,U3
+47.1578383,27.6018346,T.Vladimirescu,44,Iasi,Iasi,1961,P+3E,32,2141,1993,Victor Mihalache,,,U3
+47.157385,27.602243,T.Vladimirescu,46,Iasi,Iasi,1961,P+3E,32,2141,1993,Victor Mihalache,,,U3
+47.1569046,27.6027333,T.Vladimirescu,48,Iasi,Iasi,1961,P+3E,32,2141,1993,Victor Mihalache,,,U3
+47.1611005,27.5994207,T.Vladimirescu,79,Iasi,Iasi,1961,P+3E,16,2141,1993,Victor Mihalache,,,U3
+47.1605073,27.6000395,T.Vladimirescu,85,Iasi,Iasi,1961,P+3E,16,1118,1993,Victor Mihalache,,,U3
+47.1600198,27.6005679,T.Vladimirescu,89,Iasi,Iasi,1961,P+3E,16,1088,1993,Victor Mihalache,,,U3
+47.1580095,27.6022824,T.Vladimirescu,101,Iasi,Iasi,1961,P+3E,48,3312,1993,Victor Mihalache,,,U3
+47.1579231,27.6029295,T.Vladimirescu,103,Iasi,Iasi,1961,P+3E,16,1104,1993,Victor Mihalache,,,U3
+47.1574531,27.6028389,T.Vladimirescu,105,Iasi,Iasi,1961,P+3E,32,2208,1993,Victor Mihalache,,,U3
+47.1572879,27.6032358,T.Vladimirescu,107,Iasi,Iasi,1961,P+3E,16,1112,1993,Victor Mihalache,,,U3
+47.1623748,27.6145748,Stejar,"64, bl. N4",Iasi,Iasi,1969,P+3E,19,1364,1993,Ctin Firtea,,,U3
+47.135584,27.6095981,Bucium,17A,Iasi,Iasi,1960,D+P+1E,9,595,1993,Ctin Firtea,,,U3
+47.1452931,27.5931907,Duca Voda,"1 A,B,C",Iasi,Iasi,1925,P+1E,9,1161,1993,Ctin Firtea,,,U3
+47.142349,27.598603,Socola,104 A,Iasi,Iasi,1960,P+2E,9,478,1993,Victor Mihalache,,,U3
+47.142349,27.598603,Socola,104 C,Iasi,Iasi,1960,P+2E,9,478,1993,Victor Mihalache,,,U3
+47.1438952,27.5969371,Socola,29,Iasi,Iasi,1960,P+2E,9,478,1993,Victor Mihalache,,,U3
+47.1232308,27.616522,Socola,30,Iasi,Iasi,1960,P+2E,9,478,1993,Victor Mihalache,,,U3
+47.14196,27.5997254,Socola,53,Iasi,Iasi,1960,P+2E,7,478,1993,Victor Mihalache,,,U3
+47.1432162,27.5976658,Socola,55,Iasi,Iasi,1960,P+2E,6,478,1993,Victor Mihalache,,,U3
+47.1606481,27.5989465,T.Vladimirescu,30,Iasi,Iasi,1961,P+3E,32,2141,1993,Victor Mihalache,,,U3
+47.1787735,27.5729969,Codrescu,"7, bl. C4",Iasi,Iasi,1960,P+4E,20,1305,1994,Virgil Aur,,,U3
+47.1593939,27.6009174,T.Vladimirescu,93,Iasi,Iasi,1962,P+3E,32,2210,1994,Virgil Aur,,,U3
+47.1585907,27.6016061,T.Vladimirescu,95,Iasi,Iasi,1962,P+3E,32,2210,1994,Virgil Aur,,,U3
+47.1585257,27.6023542,T.Vladimirescu,97,Iasi,Iasi,1962,P+3E,16,1105,1994,Virgil Aur,,,U3
+47.1582454,27.6027979,T.Vladimirescu,99,Iasi,Iasi,1962,P+3E,16,1105,1994,Virgil Aur,,,U3
+47.1526543,27.5746807,Bulevardul Nicolae Iorga,"7D, bl. F5",Iasi,Iasi,1969,P+4E,20,1110,1994,Virgil Aur,,,U3
+47.1584549,27.6014418,Bulevardul Nicolae Iorga,"7C, bl. F6",Iasi,Iasi,1969,P+4E,20,1110,1994,Virgil Aur,,,U3
+47.1537551,27.5745603,Bulevardul Nicolae Iorga,"7G,H, bl. K1",Iasi,Iasi,1969,P+4E,40,2332,1994,Virgil Aur,,,U3
+47.1479921,27.5822835,Bulevardul Nicolae Iorga,"7E,F, bl. K2",Iasi,Iasi,1969,P+4E,40,2332,1994,Virgil Aur,,,U3
+47.150543,27.5847549,Al.Decebal,"1A, bl. O2",Iasi,Iasi,1968,P+4E,39,1505,1994,Virgil Aur,,,U3
+47.1527951,27.580458,Str.Decebal,"6A, bl. Q2-1",Iasi,Iasi,1970,P+4E,39,1477,1994,Virgil AILlf,,,U3
+47.1487085,27.5919612,Primaverii,"7A, bl. C1",Iasi,Iasi,1970,P+4E,54,2250,1994,Virgil Aur,,,U3
+47.16312,27.6124129,Stejar,"55, bl. M1",Iasi,Iasi,1970,P+4E,130,1715,1994,Virgil Aur,,,U3
+47.158726,27.6175217,Vasile Lupu,"106 B, bl. G5",Iasi,Iasi,1968,P+10E,66,3386,1994,Virgil Aur,,,U3
+47.1482389,27.5843351,Nicolina,"6, bl. G6",Iasi,Iasi,1968,P+10E,66,3298,1994,Virgil Aur,,,U3
+47.1675773,27.5814313,Independentei,2(bl. Carmen),Iasi,Iasi,1976,P+10E,50,4067,1995,Virgil Aur,,,U3
+47.1657162,27.584564,Th.Burada,6,Iasi,Iasi,1920,P+2E,3,487,1995,Virgil Aur,,,U3
+47.1635623,27.6082067,Stejar,"21A, bl. A2",Iasi,Iasi,1970,S+P+10E,88,6851,1997,Iosif Ciehi,,,RS3
+47.1523799,27.5848156,Sos. Nationala,"51, bl. C2",Iasi,Iasi,1971,S+P+10E,88,6817,1997,Adrian Mihalache,,,RS3
+47.17650783,27.569695,Titu Maiorescu,"4, bl. X1",Iasi,Iasi,1973,S+P+10E,44,3666,1997,Adrian Mihalache,,,RS3
+47.1567463,27.6017625,Str.Tepes Voda,"3, bl. V3",Iasi,Iasi,1977,S+P+4E,20,1465,2000,Nicolae Balan,,,RS3
+47.14639431,27.58790787,Bulevardul Nicolae Iorga,"55B, bl. R2",Iasi,Iasi,1968,S+P+10E,88,6817,2001,Adrian Mihalache,,,RS3
+47.1494112,27.5933682,Str.Tutora,"8, bl. P2",Iasi,Iasi,1961,S+P+4E,80,3678.2,2001,Virgil Aur,,,RS3
+47.164128,27.5584123,Plaiesilor,"6, bl. U2 bis",Iasi,Iasi,1975,P+4E,60,5605,1993,M.V.Molocea,,,N/A
+47.1480003,27.5877333,Al.Rozelor,"11, bl. X14A",Iasi,Iasi,1967,P+4E,20,1345,1993,Ctin Firltea,,,N/A
+47.1526498,27.5985401,Primaverii,"25, bl. T3",Iasi,Iasi,1967,P+10E,44,2802,1993,M.V.Molocea,,,N/A
+47.1559242,27.5664335,Mircea cel Batran,"9, bl. R3",Iasi,Iasi,1973,P+4E,40,2650,1993,M.V.Molocea,,,N/A
+47.1516002,27.5865456,Sos. Nationala,"57, bl. A1",Iasi,Iasi,1975,P+M+10E,50,4920,1993,M.V.Molocea,,,N/A
+47.1574109,27.6190932,Vasile Lupu,"118, bl. C1",Iasi,Iasi,1966,P+4E,60,5605,1993,M.V.Molocea,,,N/A
+47.16623,27.58869,Bulevardul Independentei,"25-33, bl. C1-5",Iasi,Iasi,1982,P+M+8E,152,7202,1993,M.V.Molocea,,,N/A
+47.160563,27.5893685,A.Panu ,"50-54, bl. H1-3",Iasi,Iasi,1979,P+10E,120,6855,1993,Victor Mihalache,,,N/A
+47.1669382,27.581386,Piata Unirii,"5, bl. 12",Iasi,Iasi,1961,P+M+6E,60,5302,1993,Victor Mihalache,,,N/A
+47.1781271,27.5706226,Copou,"36, bl. B3",Iasi,Iasi,1961,P+8E,53,4933,1993,M.V.Molocea,,,N/A
+47.1790658,27.5698621,Copou,"44, bl. B1",Iasi,Iasi,1961,P+8E,53,4933,1993,M.V.Molocea,,,N/A
+47.174873,27.547325,Pacurari ,"16-18, bl. 556",Iasi,Iasi,1983,P+4E,32,2651,1993,M.V.Molocea,,,N/A
+47.1751638,27.5460346,Pacurari,"24, bl. T6",Iasi,Iasi,1976,P+10E,55,4723,1993,M.V.Molocea,,,N/A
+47.1714203,27.5687885,Pacurari,"44, bl. T5",Iasi,Iasi,1976,P+10E,43,4243,1993,M.V.Molocea,,,N/A
+47.13603,27.573835,Nicolina,"38, bl. 965",Iasi,Iasi,1988,P+4-7E,24,2320,1993,Victor Mihalache,,,N/A
+47.1118761,27.5604214,Nicolina,"bl. 977 A,B,C",Iasi,Iasi,1985,P+8(9)E,78,6820,1993,Victor Mihalache,,,N/A
+47.1737925,27.550833,Canta,"2, bl. 455",Iasi,Iasi,1983,P+4E,38,1255,1993,Victor Mihalache,,,N/A
+47.1509133,27.593602,Tutora,"7A, bl. E3",Iasi,Iasi,1968,P+4E,80,5720,1993,Ctin Firtea,,,N/A
+47.150488,27.593745,Tutora,"11, bl. E2",Iasi,Iasi,1968,P+4E,50,4530,1993,Ctin Firtea,,,N/A
+47.150233,27.5944421,Tutora,"13A, bl. E1",Iasi,Iasi,1968,P+4E,50,4530,1993,Ctin Firtea,,,N/A
+47.1758896,27.5754544,Codrescu,"7B, bl. B1",Iasi,Iasi,1967,S+P+4E,20,1399,1994,Virgil Aur,,,N/A
+47.1518292,27.5835347,Al.Decebal,"8A, bl. A13",Iasi,Iasi,1969,P+4E,20,1255,1994,Virgil Aur,,,N/A
+47.14993,27.584741,Al.Decebal,"13A, bl. A 7",Iasi,Iasi,1969,P+4E,20,1255,1994,Virgil Aur,,,N/A
+47.1499107,27.5847419,Al.Decebal,"15A, bl. A9",Iasi,Iasi,1969,P+4E,20,1255,1994,Virgil Aur,,,N/A
+47.1559126,27.5752784,Al.Decebal,"38, bl. A 17",Iasi,Iasi,1969,P+4E,20,1255,1994,Virgil Aur,,,N/A
+47.1487019,27.5811922,Bulevardul Nicolae Iorga,"45A, bl. 12",Iasi,Iasi,1970,P+4E,40,2350,1994,Virgil Aur,,,N/A
+47.1514204,27.5963124,Primaverii,"19A, bl. A 1",Iasi,Iasi,1970,P+4E,20,1402,1994,Virgil Aur,,,N/A
+47.1509896,27.5946583,Tutora,"11C, bl. E1",Iasi,Iasi,1970,P+4E,58,2320,1994,Virgil Aur,,,N/A
+47.1470413,27.5872311,Al.Rozelor,"26A, bl. A6",Iasi,Iasi,1970,P+4E,20,1230,1994,Virgil Aur,,,N/A
+47.147074,27.588003,Al.Rozelor,"28A, bl. AS",Iasi,Iasi,1970,P+4E,20,1230,1994,Virgil Aur,,,N/A
+47.1466703,27.5890023,Al.Rozelor,"34A, bl. A3",Iasi,Iasi,1970,P+4E,20,1230,1994,Virgil Aur,,,N/A
+47.1471321,27.5889349,Al.Rozelor,"38A, bl. A4",Iasi,Iasi,1970,P+4E,20,1230,1994,Virgil Aur,,,N/A
+47.1570708,27.6207901,Vasile Lupu,"124A, bl. A1",Iasi,Iasi,1969,P+4E,60,4150,1994,Virgil Aur,,,N/A
+47.15161,27.5821656,Al.Decebal,"14, bl. X6",Iasi,Iasi,1966,S+P+4E,20,1333,1994,Virgil Aur,,,N/A
+47.17453677,27.56789303,Titu Maiorescu,"24C, bl. H3",Iasi,Iasi,1968,S+P+4E,20,1340,1994,Virgil Aur,,,N/A
+47.1792377,27.5705452,Castei,2A,Iasi,Iasi,1967,S+P+4E,40,2205,1994,Virgil Aur,,,N/A
+47.1472761,27.5848296,Bulevardul Nicolae Iorga,"51A, bl. F3",Iasi,Iasi,1968,P+4E,20,1225,1994,Virgil Aur,,,N/A
+47.160607,27.5662164,Roman Voda,bl. H8,Iasi,Iasi,1971,P+4E,80,4520,1994,Virg· Aur,,,N/A
+47.1558871,27.5664891,Mircea cel Batran,bl. H1,Iasi,Iasi,1973,P+4E,60,4230,1994,Virgil Aur,,,N/A
+47.160708,27.611356,Pictorului,"4A, bl. K1",Iasi,Iasi,1967,S+P+4E,60,4366,1994,Virgil Aur,,,N/A
+47.1751022,27.5450751,Pacurari,"28, bl. T7",Iasi,Iasi,1967,S+P+10E,65,4520,1994,Virgil Aur,,,N/A
+47.16795191,27.54303404,Simionescu,"35-39, bl. S1-3",Iasi,Iasi,1977,S+P+4E,55,3966,1994,Virgil Aur,,,N/A
+47.1644423,27.5805939,Stefan cel Mare,4(Guliver),Iasi,Iasi,1960,S+P+6(7)E,115,6902,1994,Virgil Aur,,,N/A
+47.1636395,27.5619007,Basarabi,"7, bl. 23",Iasi,Iasi,1975,S+P+10E,43,2530,1994,Virgil Aur,,,N/A
+47.16395785,27.61339385,Ciric,"38 A,B, bl. V1",Iasi,Iasi,1970,P+4E,80,5340,1994,Virgil Aur,,,N/A
+47.1630687,27.5627991,Basarabi,"8, bl. U1",Iasi,Iasi,1971,P+4E,80,2530,1994,Virgil Aur,,,N/A
+47.1643048,27.5548297,Procopiu,"4, bl. R10",Iasi,Iasi,1976,P+4E,80,2562,1994,Virgil Aur,,,N/A
+47.1495444,27.5811743,Al.Rozelor,"2A, bl. X2",Iasi,Iasi,1967,P+4E,20,1366,1995,Victor Mihalache,,,N/A
+47.1569009,27.6197536,Vasile Lupu,"120a, bl. S5",Iasi,Iasi,1967,P+4E,30,1876,1995,Victor Mihalache,,,N/A
+47.1786154,27.5639387,Aurora,"3, bl. B5",Iasi,Iasi,1969,P+4E,50,3210,1995,Victor Mihalache,,,N/A
+47.1653301,27.5821611,Cuza Voda,"1, bl. 8",Iasi,Iasi,1961,P+6E,61,4966,1995,Victor Mihalache,,,N/A
+47.1660075,27.5806872,Piata Unirii,"6, bl. 9",Iasi,Iasi,1961,P+6E,102,3212,1995,Victor Mihalache,,,N/A
+47.163209,27.610766,Stejar,"37 A, bl. A 1",Iasi,Iasi,1969,P+10E,176,6955,1995,Victor Mihalache,,,N/A
+47.155842,27.6233801,Vasile Lupu ,"138-140, bl. A 1",Iasi,Iasi,1968,P+9E,320,7995,1995,Victor Mihalache,,,N/A
+47.157223,27.621485,Vasile Lupu,"128-130, bl. A2",Iasi,Iasi,1968,P+9E,320,7995,1995,Victor Mihalache,,,N/A
+47.155138,27.575151,Decebal,"32, bl. B7",Iasi,Iasi,1965,P+4E,40,2335,1995,Victor Mihalache,,,N/A
+47.16191,27.6156479,Dr. Savini,"3A, bl. J4",Iasi,Iasi,1968,P+4E,40,2336,1995,Victor Mihalache,,,N/A
+47.1819617,27.5683012,Codrescu,19,Iasi,Iasi,1930,P,1,122,1996,Victor Mihalache,,,N/A
+47.1533657,27.5990532,Splai Bahlui,"31, bl.B4",Iasi,Iasi,1963,P+10E,44,2740,1996,Victor Mihalache,,,N/A
+47.1548642,27.5740128,Bulevardul Nicolae Iorga,"1A 39, bl.H2",Iasi,Iasi,1965,P+9E,126,4102,1996,Victor Mihalache,,,N/A
+47.160598,27.618247,I.Creanga,"85A, bl.C3",Iasi,Iasi,1969,S+P+10E,66,4566,1996,Virgil Aur,,,N/A
+47.249776,26.721893,Str.Nicolae lorga,bl.V6-7,Pașcani,Iasi,1962,P+2E,36,2418,1992,M.V.Molocea,,,U2
+47.2476351,26.719011,Str. Closca,"nr.1, bi. P4-6",Pașcani,Iasi,1970,P+4E,60,3864,1994,M.V.Molocea,,,N/A
+47.2475031,26.7178272,Str. Crisan,"3, bl. P1 -3",Pașcani,Iasi,1970,P+4E,60,3864,1994,M.V.Molocea,,,N/A
+47.4285072,26.9018997,Bloc B3,,Hârlău,Iasi,1971,P+3E,32,1673,1993,Victor Mihalache,,,U3
+47.42809358,26.90211317,Republicii,"4, bl.11",Hârlău,Iasi,1976,P+4E,54,3215,1994,Victor Mihalache,,,N/A
+47.213431,27.00945,Petru Rares,"23, bi. A 1",Târgu Frumos,Iasi,1972,S+P+4E,30,2268,1994,Victor Mihalache,,,N/A

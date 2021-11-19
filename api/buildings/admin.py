@@ -93,7 +93,7 @@ class BuildingAttributes(admin.ModelAdmin):
 class BuildingAdmin(admin.ModelAdmin):
     list_filter = ("status", "risk_category", "county", "locality")
     list_display = (
-        "address",
+        "get_building_address",
         "risk_category",
         "examination_year",
         "certified_expert",
@@ -172,7 +172,12 @@ class BuildingAdmin(admin.ModelAdmin):
     )
     inlines = (BuildingWorkPerformedInline, ImageInline)
 
-    @display(ordering="building__imagefile", description="Images")
+    @display(ordering="building__address", description=_("Address"))
+    def get_building_address(self, obj):
+        county = settings.COUNTIES_MAPPING[obj.county]
+        return mark_safe("{} {} ({}, {})".format(obj.address, obj.street_number, obj.locality, county))
+
+    @display(ordering="building__imagefile", description=_("Images"))
     def get_images(self, obj):
         """
         Iterate on images and produce proper html rendering
@@ -184,7 +189,7 @@ class BuildingAdmin(admin.ModelAdmin):
                 final_html.append(image_html.format(os.path.join(settings.MEDIA_URL, str(img.image))))
             return mark_safe("".join(final_html))
         else:
-            return "No associated images"
+            return _("No associated images")
 
     def make_pending(self, request, queryset):
         self._perform_status_change(request, queryset, "0")
