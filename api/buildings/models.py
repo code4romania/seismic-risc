@@ -301,6 +301,9 @@ class ImageFile(models.Model):
     image = models.ImageField(default="Add image file", upload_to="images/", validators=(check_extension,))
     status = models.SmallIntegerField(_("status"), default=PENDING, choices=IMAGE_STATUS_CHOICES, db_index=True)
 
+    objects = models.Manager()
+    approved = ApprovedImage()
+
     def __str__(self):
         return self.image.name
 
