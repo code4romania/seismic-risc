@@ -1,0 +1,70 @@
+Lat,Lng,Address,Street Number,Locality,County,Year Built,Height Regime,Apartment Count,Surface,Examination Year,Certified Expert,Has Warning Panels,Observations,Risk Category
+44.6901208,27.9414525,Plantelor,33,Hîrșova,Constanța,1968,S+P+4,60,4443.6,2007,Gramescu Ana Maria,x,,RS1
+44.3326143,28.0362328,Panait Cerna,"17, bl. E2 Sc A+B",Cernavodă,Constanța,1984,P+4E,20,915,2006,Conf. dr. ing. Paul Ioan,x,,RS1
+44.332541,28.036351,Panait Cerna,"15, bl. E4 Sc A+B",Cernavodă,Constanța,1984,P+4E,20,915,2006,Conf. dr. ing. Paul Ioan,X,,RS1
+43.81064164,28.58245673,Oituz,20 (Scoala Nr. 5),Mangalia,Constanța,1900,P,0,,,,,,RS2
+43.8125723,28.581808,Mihai Viteazu ,11,Mangalia,Constanța,1970,P+2,0,,2006,,,,RS2
+43.8120483,28.58055066,Oituz,20 (Colegiul Economic),Mangalia,Constanța,1958,S+P+2,0,,,,,,RS2
+43.8193697,28.5689345,Matei Basarab,"58 (SC. Gen. nr.1 , Corp B)",Mangalia,Constanța,1962,P,,,2004,,,,RS2
+43.8092319,28.5799803,Delfinului,1,Mangalia,Constanța,1938,P+1+M,0,,2006,,,,RS2
+43.8190144,28.5723851,Matei Basarab,"52 (SC. Gen. nr.1 , Corp C)",Mangalia,Constanța,1957,P,,,,Ing. Ionescu Dumitrel,,,RS2
+44.2454688,28.258691,Podgorilor,15 Bl L,Medgidia,Constanța,1951,S+P+2,12,1224,1999,Ing. Ionescu Dumitrel,,,RS2
+44.243965,28.2555157,Vinatorilor,Bl. 13,Medgidia,Constanța,1952,S+P+2,68,3324,2000,Ing. Ionescu Dumitrel,,,RS2
+44.26035578,28.26241458,Independentei,"73, Camin C1",Medgidia,Constanța,1976,P+3,200,3290,2004,Ing. Ionescu Dumitrel,,,RS3
+44.26058945,28.26235276,Independentei,"73, Camin C2",Medgidia,Constanța,1976,P+3,200,3290,2004,Ing. Ionescu Dumitrel,,,RS3
+44.26084525,28.26234589,Independentei,"73, Camin C3",Medgidia,Constanța,1975,P+4E,200,3793,2004,Ing. Ionescu Dumitrel,,,RS4
+44.26105186,28.26231842,Independentei,"73, Camin C4",Medgidia,Constanța,1977,P+4E,200,3115,2004,Ing. Ionescu Dumitrel,,,RS4
+44.1789664,28.6483322,Stefan cel Mare,26,Constanța,Constanța,1931,S+P+2E+M,7,292,1999,Ing. Ionescu Dumitrel,x,,RS1
+44.1810562,28.6465992,Gen. Manu,32,Constanța,Constanța,1938,D+P+2E+M,6,702,2003,Ing. Ionescu Dumitrel,x,,RS1
+44.176115,28.656826,Calatis,31,Constanța,Constanța,1922,D+P+1E,2,270,1999,Ing. Virgil Breaban,x,,RS1
+44.176682,28.643745,Mercur,10,Constanța,Constanța,1900,P+2E,10,1096,2000,Ing. Ionescu Dumitrel,x,,RS1
+44.175176,28.654876,Traian,25,Constanța,Constanța,1932,S+P+2E+M,12,921,1998,In. Anton Cotofana,x,,RS1
+44.1725342,28.6602197,Arhiepiscopiei,13,Constanța,Constanța,1917,P,2,111,1995,Ing. Ionescu Dumitrel,,,N/A
+44.1723635,28.6600191,Arhiepiscopiei,14,Constanța,Constanța,1896,D+P,5,766,1995,Ing. Ionescu Dumitrel,,,N/A
+44.1770894,28.6566392,Aristide Karatzali,12,Constanța,Constanța,1905,P+E,8,1100,1995,Ing. Ionescu Dumitrel,,,N/A
+44.1826137,28.6459354,C-tin Bratescu,14,Constanța,Constanța,1910,P+E,6,956,1995,Ing. Ionescu Dumitrel,,,N/A
+44.1765441,28.6582601,Calatis,12,Constanța,Constanța,1930,S+P+1E,4,579,1990,IPJ C-ta,,,N/A
+44.1739148,28.6569072,Vasile Canarache,4,Constanța,Constanța,1930,D+P+1E,4,1398,1990,IPJ C-ta,,,N/A
+44.1776709,28.644706,Cpt. Petre Romulus,13,Constanța,Constanța,1924,P,1,72,1990,IPJ C-ta,,,N/A
+44.1930295,28.6469852,Chiliei,26,Constanța,Constanța,1930,P,3,225,1995,Ing. Ionescu Dumitrel,,,N/A
+44.1772869,28.6474061,Cuza-Voda,37,Constanța,Constanța,1930,D+P+1E,4,498,1995,IPJ C-ta,,,RS2
+44.1779712,28.6485577,Cuza-Voda,31,Constanța,Constanța,1935,P+1E+M,5,267,2001,Ing. Virgil Breaban,,,RS3
+44.1754037,28.657746,Dimitrie Cantemir,4,Constanța,Constanța,1896,P+2E,8,1692,1995,Ing. Ionescu Dumitrel,,,N/A
+44.201851,28.6457214,Dragoslavelor,44,Constanța,Constanța,1902,P,3,26,2000,Ing. Ionescu Dumitrel,,Autodemolat,N/A
+44.1745724,28.6430943,Ferdinand ,68,Constanța,Constanța,1925,S+P+E,,,1995,Ing. Ionescu Dumitrel,,,N/A
+44.1808409,28.6465189,Gen. Manu,49,Constanța,Constanța,1916,D+P,2,115,1998,Ing. Virgil Breaban,,,RS4
+44.1766623,28.6466369,George Enescu,3,Constanța,Constanța,1918,P,3,137,1996,Ing. Ionescu Dumitrel,,,N/A
+44.1779646,28.6453937,George Enescu,16,Constanța,Constanța,1916,P+1E,1,56,1995,Ing. Ionescu Dumitrel,,,N/A
+44.1767321,28.6428468,Grivitei ,9,Constanța,Constanța,1890,P+1E,2,316,1995,Ing. Ionescu Dumitrel,,,N/A
+44.1768095,28.643883,Grivitei ,36,Constanța,Constanța,1935,P+2E,4,798,1990,IPJ C-ta,,,N/A
+44.1782267,28.640425,I.G. Duca,26,Constanța,Constanța,1910,(partial beci),9,380,1999,Ing. Virgil Breaban,,,RS2
+44.1789192,28.6394821,I.G. Duca,32,Constanța,Constanța,1914,P+1E (partial),7,407,1999,Ing. Virgil Breaban,,,RS2
+44.1771741,28.6468271,Ilarie Voronca,1,Constanța,Constanța,1922,P+1E,1,224,1995,Ing. Ionescu Dumitrel,,,N/A
+44.178862,28.6331379,Ion Corvin ,59,Constanța,Constanța,1920,P+2E (partial),4,167,1997,Ing. Virgil Breaban,,,N/A
+44.1754525,28.6443405,Jupiter,3,Constanța,Constanța,1914,P+1E,4,229,1998,Ing. Virgil Breaban,,,N/A
+44.1598013,28.6348138,Jupiter,7A,Constanța,Constanța,1948,P,5,85,1991,IPJ C-ta,,,N/A
+43.8579973,28.6026645,Jupiter,16,Constanța,Constanța,1910,S+P,3,300,1995,Ing. Ionescu Dumitrel,,,N/A
+44.176859,28.6581079,Kricor Zambaccian,1,Constanța,Constanța,1899,D+P+1E+M,,,2005,Ing. Virgil Breaban,,Monument arhitectura,RS2
+44.1765455,28.6439707,Mercur,8,Constanța,Constanța,1905,P+1E,4,141,2000,Ing. Ionescu Dumitrel,,,RS2
+44.181443,28.6428191,Mihai Viteazu ,58,Constanța,Constanța,1898,P+1E (partial),4,438,1996,Ing. Ionescu Dumitrel,,,N/A
+44.1783489,28.6535037,Mihail Kogalniceanu,7,Constanța,Constanța,1896,P+1E,6,506,1990,IPJ C-ta,,,N/A
+44.1798838,28.6516278,Mihail Kogalniceanu,28,Constanța,Constanța,1930,D+P+1E+M,5,1511,2000,Ing. Virgil Breaban,,,N/A
+44.1799681,28.651648,Mihail Kogalniceanu,30,Constanța,Constanța,1930,D+P+1E,4,702,1990,IPJ C-ta,,,N/A
+44.1800836,28.6516159,Mihail Kogalniceanu,32,Constanța,Constanța,1931,S+D+P+1E+M,2,800,1990,IPJ C-ta,,,N/A
+44.1750468,28.6574238,Mircea cel Batran,1,Constanța,Constanța,1925,P+1E,1,142,1995,IPJ C-ta,,Dezafctat in 1995,N/A
+44.1732068,28.6592412,Nicolae Titulescu,3,Constanța,Constanța,1925,P+3E,4,1228,1990,IPJ C-ta,,,N/A
+44.171891,28.6598123,Nicolae Titulescu,13,Constanța,Constanța,1915,S+P+5E,20,1705,2000,Ing. Virgil Breaban,,,RS2
+44.1806741,28.6477565,Rascoalei,31,Constanța,Constanța,1931,P,2,144,1996,Ing. Ionescu Dumitrel,,,N/A
+44.1737348,28.660134,Revolutiei,7,Constanța,Constanța,1893,S+P+2E,8,2504,1996,Ing. Ionescu Dumitrel,,,N/A
+44.1598013,28.6348138,Revolutiei,39,Constanța,Constanța,1925,S+P+2E,4,1244,1990,IPJ C-ta,,,N/A
+44.1762814,28.6589392,Sulmona,2,Constanța,Constanța,1910,D+P+1E,6,978,1995,Ing. Ionescu Dumitrel,,,N/A
+44.1903373,28.6458263,Tomis,2,Constanța,Constanța,1924,S+P+1E,2,152,1990,IPJ C-ta,,,N/A
+44.1749657,28.6572609,Tomis,2A,Constanța,Constanța,1921,P+2E+M,2,684,1990,IPJ C-ta,,,N/A
+44.1749728,28.6569517,Tomis,13,Constanța,Constanța,1924,S+P+2E,1,103,1999,Ing. Ionescu Dumitrel,,,RS2
+44.1771207,28.6532936,Tomis,48,Constanța,Constanța,1895,S+P+2E,14,4538,1995,Ing. Ionescu Dumitrel,,,N/A
+44.1777371,28.6527321,Tomis,56,Constanța,Constanța,1925,S+P+2E+M,17,4301,1991,Ing. Ionescu Dumitrel,,,N/A
+44.1780626,28.6524532,Tomis,64,Constanța,Constanța,1902,S+P+1E+M,6,994,1995,Ing. Ionescu Dumitrel,,,N/A
+44.1746484,28.6567975,Traian,7,Constanța,Constanța,1926,S+P+1E,4,849,1990,IPJ C-ta,,,N/A
+44.1746444,28.6475323,Traian,16,Constanța,Constanța,1923,S+P+1E,2,477,1990,IPJ C-ta,,,N/A
+44.1766644,28.6570926,Vantului,7,Constanța,Constanța,1925,D+P,2,270,2001,Ing. Virgil Breaban,,(Calatis nr. 28),N/A
+44.3218153,28.6096968,Scolii,50,Năvodari,Constanța,1961,P+3E,32,1632,1996,Ing. L. Iliescu,,,N/A
