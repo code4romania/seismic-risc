@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from .models import Building, Statistic
+from .models import Building, ImageFile, Statistic
 
 
 class BuildingSerializer(serializers.ModelSerializer):
@@ -24,6 +24,10 @@ class BuildingSerializer(serializers.ModelSerializer):
 
 
 class PublicBuildingCreateSerializer(serializers.ModelSerializer):
+    images = serializers.HyperlinkedRelatedField(
+        many=True, view_name="image-detail", allow_null=True, queryset=ImageFile.objects.all()
+    )
+
     class Meta:
         model = Building
         fields = (
@@ -60,6 +64,7 @@ class PublicBuildingCreateSerializer(serializers.ModelSerializer):
             "self_owned_commercial_space_count",
             "proximal_utilities",
             "proximal_utilities_description",
+            "images",
         )
 
 

@@ -1,9 +1,12 @@
 from copy import deepcopy
+import os
 from zipfile import BadZipFile
 
 import tablib
 from django.conf import settings
 from django.contrib import admin, messages
+from django.contrib.admin import display
+from django.utils.safestring import mark_safe
 from django.utils.translation import gettext_lazy as _
 from django.utils.translation import ngettext
 from import_export import resources
@@ -16,6 +19,11 @@ class BuildingWorkPerformedInline(admin.TabularInline):
     extra = 1
 
 
+class ImageInline(admin.TabularInline):
+    model = models.ImageFile
+    extra = 1
+
+
 @admin.register(models.Statistic)
 class StatisticAdmin(admin.ModelAdmin):
     def has_add_permission(self, request):
@@ -25,6 +33,55 @@ class StatisticAdmin(admin.ModelAdmin):
             if not has_entry:
                 return True
         return False
+
+
+@admin.register(models.ImageFile)
+class ImageAdmin(admin.ModelAdmin):
+    list_display = ("image_name", "image_thumb", "status")
+
+    actions = (
+        "make_pending",
+        "make_accepted",
+        "make_rejected",
+    )
+
+    def make_pending(self, request, queryset):
+        self._perform_status_change(request, queryset, "0")
+
+    make_pending.short_description = _("Mark selected images as pending")
+
+    def make_accepted(self, request, queryset):
+        self._perform_status_change(request, queryset, "1")
+
+    make_accepted.short_description = _("Mark selected images as accepted")
+
+    def make_rejected(self, request, queryset):
+        self._perform_status_change(request, queryset, "-1")
+
+    make_rejected.short_description = _("Mark selected images as rejected")
+
+    @staticmethod
+    def choice_to_string(status):
+        status = int(status)
+        for status_choice in models.Building.BUILDING_STATUS_CHOICES:
+            if status_choice[0] == status:
+                status_str = status_choice[1]
+                break
+        else:
+            status_str = ""
+        return status_str
+
+    def _perform_status_change(self, request, queryset, status):
+        updated = queryset.update(status=status)
+
+        status_str = self.choice_to_string(status)
+        message = ngettext(
+            "{updated} image was successfully marked as {status}.",
+            "{updated} images were successfully marked as {status}.",
+            updated,
+        ).format(updated=updated, status=status_str)
+
+        self.message_user(request, message, messages.SUCCESS)
 
 
 @admin.register(models.BuildingProximalUtilities, models.BuildingWorkPerformed)
@@ -42,6 +99,7 @@ class BuildingAdmin(admin.ModelAdmin):
         "certified_expert",
         "status",
         "general_id",
+        "get_images",
     )
     search_fields = ("address",)
     actions = (
@@ -112,7 +170,21 @@ class BuildingAdmin(admin.ModelAdmin):
             },
         ),
     )
-    inlines = (BuildingWorkPerformedInline,)
+    inlines = (BuildingWorkPerformedInline, ImageInline)
+
+    @display(ordering="building__imagefile", description="Images")
+    def get_images(self, obj):
+        """
+        Iterate on images and produce proper html rendering
+        """
+        if obj.imagefile_set.count() > 0:
+            image_html = '<a href={0}><img src="{0}" url width="50" height="50" /></a>'
+            final_html = []
+            for img in obj.imagefile_set.all():
+                final_html.append(image_html.format(os.path.join(settings.MEDIA_URL, str(img.image))))
+            return mark_safe("".join(final_html))
+        else:
+            return "No associated images"
 
     def make_pending(self, request, queryset):
         self._perform_status_change(request, queryset, "0")
@@ -187,7 +259,7 @@ class BuildingAdmin(admin.ModelAdmin):
     @staticmethod
     def choice_to_string(status):
         status = int(status)
-        for status_choice in models.Building.BUILDING_STATUS_CHOICES:
+        for status_choice in models.ImageFile.IMAGE_STATUS_CHOICES:
             if status_choice[0] == status:
                 status_str = status_choice[1]
                 break

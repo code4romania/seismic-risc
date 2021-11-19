@@ -1,12 +1,23 @@
 import random
 import string
+from collections import namedtuple
 
 import pytest
 
-from buildings.models import Building
+from buildings.models import Building, ImageFile
 from buildings.serializers import BuildingListSerializer
+from seismic_site import settings
 
 base_url = "/api/v1/buildings"
+
+
+@pytest.mark.django_db
+def test_image_resize():
+    height, width = (800, 1600)
+    image = namedtuple("Image", "size")
+    im = image((width, height))
+    resized_w, resized_h = ImageFile.image_resize_dimensions(im)
+    assert (resized_h, resized_w) == (settings.IMAGE_RESIZE / 2, settings.IMAGE_RESIZE)
 
 
 @pytest.mark.django_db

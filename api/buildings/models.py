@@ -1,7 +1,15 @@
 from enum import Enum
+from io import BytesIO
 
+import PIL.Image
+import math
+import sys
+from django.conf import settings
+from django.core.exceptions import ValidationError
+from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.db import models
 from django.utils import timezone
+from django.utils.safestring import mark_safe
 from django.utils.translation import get_language, gettext_lazy as _
 
 
@@ -248,3 +256,96 @@ class DataFile(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class ApprovedImage(models.Manager):
+    def get_queryset(self):
+        return super().get_queryset().filter(status=ImageFile.ACCEPTED)
+
+
+class ImageFile(models.Model):
+    PENDING = 0
+    ACCEPTED = 1
+    REJECTED = -1
+
+    IMAGE_STATUS_CHOICES = [
+        (PENDING, _("Pending")),
+        (ACCEPTED, _("Accepted")),
+        (REJECTED, _("Rejected")),
+    ]
+
+    def check_image_limit(building):
+        if ImageFile.objects.filter(building=building).count() >= settings.ALLOWED_IMAGES_LIMIT:
+            raise ValidationError("Image limit for building is reached (%s)" % settings.ALLOWED_IMAGES_LIMIT)
+
+    def check_extension(image):
+        name_parts = str(image.name).split(".")
+        if len(name_parts) < 2:
+            raise ValidationError("Image name does not contain an extension")
+        if name_parts[-1].lower() not in settings.ACCEPTED_IMAGE_TYPES.keys():
+            raise ValidationError(
+                "Image extension is not accepted. Choose one of %s" % list(settings.ACCEPTED_IMAGE_TYPES.keys())
+            )
+
+    def image_thumb(self):
+        return mark_safe('<a href={0}><img src="{0}" url width="50" height="50" /></a>'.format(str(self.image.url)))
+
+    def image_name(self):
+        return mark_safe(self.image.name)
+
+    image_thumb.short_description = "Thumbnail"
+
+    building = models.ForeignKey(Building, validators=(check_image_limit,), on_delete=models.CASCADE)
+    image = models.ImageField(default="Add image file", upload_to="images/", validators=(check_extension,))
+    status = models.SmallIntegerField(_("status"), default=PENDING, choices=IMAGE_STATUS_CHOICES, db_index=True)
+
+    def __str__(self):
+        return self.image.name
+
+    @staticmethod
+    def image_resize_dimensions(im):
+        resize = settings.IMAGE_RESIZE
+        width, height = im.size
+        downscale = resize / max(height, width)
+        return math.ceil(width * downscale), math.ceil(height * downscale)
+
+    def handle_image(self):
+        # Opening the uploaded image
+        im = PIL.Image.open(self.image)
+
+        output = BytesIO()
+
+        # Resize the image based on relative dimensions to settings.IMAGE_RESIZE
+        im = im.resize(self.image_resize_dimensions(im))
+
+        # extract key from settings dictionary for accepted image types
+        extension = str(self.image.name).split(".")[-1].lower()
+        accepted_extension = settings.ACCEPTED_IMAGE_TYPES[extension]
+
+        # after modifications, save it to the output
+        im.save(
+            output,
+            format=accepted_extension.upper(),
+            quality=settings.QUALITY_DEFINITIONS[accepted_extension.upper()],
+        )
+        output.seek(0)
+
+        # change the imagefield value to be the newly modified image value
+        self.image = InMemoryUploadedFile(
+            output,
+            "ImageField",
+            "%s.%s" % (self.image.name.split(".")[0], accepted_extension.lower()),
+            "image/%s" % accepted_extension.lower(),
+            sys.getsizeof(output),
+            None,
+        )
+
+    def save(self):
+        # Check if image exists
+        previous = ImageFile.objects.get(pk=self.pk) if self.pk else None
+
+        # If there is no previous image or image has changed apply handling logic
+        if not previous or previous.image != self.image:
+            self.handle_image()
+
+        super(ImageFile, self).save()
