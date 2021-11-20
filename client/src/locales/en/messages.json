@@ -124,7 +124,7 @@
     "origin": [
       [
         "containers/home/MapFragment.js",
-        50
+        51
       ]
     ],
     "extractedComments": []
@@ -412,6 +412,15 @@
     ],
     "extractedComments": []
   },
+  "Map loading…": {
+    "origin": [
+      [
+        "components/MapPlaceholder/index.js",
+        13
+      ]
+    ],
+    "extractedComments": []
+  },
   "Next page": {
     "origin": [
       [
@@ -425,7 +434,7 @@
     "origin": [
       [
         "containers/home/MapFragment.js",
-        59
+        60
       ]
     ],
     "extractedComments": []
