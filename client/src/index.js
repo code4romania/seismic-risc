@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom';
 import { AppProvider } from './context';
 import App from './App';
 import '@fontsource/source-sans-pro';
+import '@here/maps-api-for-javascript/bin/mapsjs-ui.css';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(

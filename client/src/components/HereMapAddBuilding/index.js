@@ -1,7 +1,6 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from 'react';
+import H from '@here/maps-api-for-javascript';
 import HereMapDomIconFactory from '../HereMapDomIconFactory';
-
-const { H } = window;
 
 const HereMapAddBuilding = (props) => {
   const { apiKey, searchText, onCoordinatesChange } = props;

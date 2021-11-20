@@ -1,6 +1,5 @@
+import H from '@here/maps-api-for-javascript';
 import HereMapDomIconFactory from '../../components/HereMapDomIconFactory';
-
-const { H } = window;
 
 export default {
   buildClusterLayer: (data, onClusterClick, onNoiseClick) => {

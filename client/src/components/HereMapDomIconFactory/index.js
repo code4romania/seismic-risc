@@ -1,4 +1,4 @@
-const { H } = window;
+import H from '@here/maps-api-for-javascript';
 
 const HereMapDomIconFactory = {
   makeMarkerIcon: (category) => {

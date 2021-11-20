@@ -2,10 +2,9 @@ import React from 'react';
 import { cleanup, render } from '@testing-library/react';
 import { i18n } from '@lingui/core';
 import { act } from 'react-dom/test-utils';
+import H from '@here/maps-api-for-javascript';
 import HereMapInteractive from '.';
 import { LinguiWrapper } from '../TestUtils';
-
-const { H } = window;
 
 jest.mock('../../context', () => ({
   __esModule: true,
