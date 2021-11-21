@@ -38,6 +38,11 @@ window.H.Map = class {
   });
 
   removeLayer = jest.fn();
+
+  getEngine = jest.fn().mockReturnValue({
+    addEventListener: jest.fn(),
+    removeEventListener: jest.fn(),
+  });
 };
 
 window.H.mapevents = class {};

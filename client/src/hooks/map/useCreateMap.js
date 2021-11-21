@@ -1,6 +1,7 @@
 import { useLayoutEffect, useState } from 'react';
-import H from '@here/maps-api-for-javascript';
 import config from '../../config';
+
+const { H } = window;
 
 const { MAP_API_KEY } = config;
 

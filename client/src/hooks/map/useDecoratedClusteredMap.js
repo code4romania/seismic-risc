@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
-import H from '@here/maps-api-for-javascript';
 import ClusterLayerBuilder from './ClusterLayerBuilder';
+
+const { H } = window;
 
 export default function useDecoratedClusteredMap(currentMap, points) {
   const [buildingDetails, setBuildingDetails] = useState(undefined);
