@@ -5,7 +5,7 @@ const { H } = window;
 
 const { MAP_API_KEY } = config;
 
-const useCreateMap = (mapRef) => {
+export function useCreateMap(mapRef) {
   const [map, setMap] = useState(null);
   const [isMapLoading, setIsMapLoading] = useState(true);
 
@@ -54,6 +54,6 @@ const useCreateMap = (mapRef) => {
   }, [mapRef, setMap]);
 
   return { map, isMapLoading };
-};
+}
 
 export default useCreateMap;

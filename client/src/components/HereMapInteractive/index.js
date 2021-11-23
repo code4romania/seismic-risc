@@ -6,7 +6,7 @@ import MapPlaceholder from '../MapPlaceholder';
 
 import { useGlobalContext } from '../../context';
 import useDecoratedClusteredMap from '../../hooks/map/useDecoratedClusteredMap';
-import useCreateMap from '../../hooks/map/useCreateMap';
+import { useCreateMap } from '../../hooks/map/useCreateMap';
 
 const HereMapInteractive = (props) => {
   const { points } = props;
