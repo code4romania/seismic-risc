@@ -130,7 +130,7 @@
     "origin": [
       [
         "containers/home/MapFragment.js",
-        50
+        51
       ]
     ],
     "extractedComments": []
@@ -445,6 +445,16 @@
     ],
     "extractedComments": []
   },
+  "Map loading…": {
+    "translation": "Harta se încarcă…",
+    "origin": [
+      [
+        "components/MapPlaceholder/index.js",
+        13
+      ]
+    ],
+    "extractedComments": []
+  },
   "Next page": {
     "translation": "Pagina următoare",
     "origin": [
@@ -460,7 +470,7 @@
     "origin": [
       [
         "containers/home/MapFragment.js",
-        59
+        60
       ]
     ],
     "extractedComments": []

@@ -7,13 +7,14 @@ import config from '../../config';
 
 const { TabPane } = Tabs;
 
-const { BUILDINGS_URL, MAP_API_KEY } = config;
+const { BUILDINGS_URL } = config;
 
 export default () => {
   const [state, setState] = React.useState({
     initialPoints: [],
     filteredPoints: null,
   });
+
   React.useEffect(() => {
     fetch(`${BUILDINGS_URL}/`)
       .then((res) => res.json())
@@ -58,10 +59,7 @@ export default () => {
         <TabPane tab="RS4" key="RS4" />
         <TabPane tab={<Trans>Other</Trans>} key="n/a" />
       </Tabs>
-      <HereMapInteractive
-        apikey={MAP_API_KEY}
-        points={state.filteredPoints || state.initialPoints}
-      />
+      <HereMapInteractive points={state.filteredPoints || state.initialPoints} />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import { i18n } from '@lingui/core';
 import { act } from 'react-dom/test-utils';
 import HereMapInteractive from '.';
 import { LinguiWrapper } from '../TestUtils';
+import * as mapHooks from '../../hooks/map/useCreateMap';
 
 const { H } = window;
 
@@ -29,7 +30,6 @@ describe('HereMapInteractive component', () => {
 
   it('renders correctly without points', () => {
     render(<HereMapInteractive apikey="api-key" points={[]} />, { wrapper: LinguiWrapper });
-    expect(H.geo.Rect).toHaveBeenCalledTimes(0);
     expect(H.clustering.DataPoint).toHaveBeenCalledTimes(0);
   });
 
@@ -44,8 +44,22 @@ describe('HereMapInteractive component', () => {
         lng: 26.101978,
       },
     ];
-    render(<HereMapInteractive apikey="api-key" points={points} />, { wrapper: LinguiWrapper });
-    expect(H.geo.Rect).toHaveBeenCalled();
+
+    const currentMap = {
+      getLayers: jest
+        .fn()
+        .mockReturnValue({ asArray: jest.fn().mockReturnValue({ forEach: jest.fn() }) }),
+      addLayer: jest.fn(),
+    };
+
+    jest.spyOn(mapHooks, 'useCreateMap').mockReturnValue({
+      map: currentMap,
+      isMapLoading: false,
+    });
+
+    render(<HereMapInteractive apikey="api-key" points={points} />, {
+      wrapper: LinguiWrapper,
+    });
     expect(H.clustering.DataPoint).toHaveBeenNthCalledWith(
       1,
       points[0].lat,
@@ -60,5 +74,18 @@ describe('HereMapInteractive component', () => {
       1,
       points[1],
     );
+  });
+
+  it('renders correctly while loading', () => {
+    jest.spyOn(mapHooks, 'useCreateMap').mockReturnValue({
+      map: null,
+      isMapLoading: true,
+    });
+
+    const container = render(<HereMapInteractive apikey="api-key" points={[]} />, {
+      wrapper: LinguiWrapper,
+    });
+
+    expect(container.getByText('Harta se încarcă…')).toBeDefined();
   });
 });

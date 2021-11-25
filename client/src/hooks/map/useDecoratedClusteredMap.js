@@ -106,8 +106,6 @@ export default function useDecoratedClusteredMap(currentMap, points) {
     if (currentMap) {
       setBuildingDetails(undefined);
       clearMap();
-      const bounds = calculateBounds();
-      currentMap.getViewModel().setLookAtData({ bounds, zoom: 10 }, true);
       currentMap.addLayer(
         ClusterLayerBuilder.buildClusterLayer(points, onClusterClick, onNoiseClick),
       );
