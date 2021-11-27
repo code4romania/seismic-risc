@@ -290,15 +290,17 @@ class ImageFile(models.Model):
             raise ValidationError(_("Image limit for building is reached ({})").format(settings.ALLOWED_IMAGES_LIMIT))
 
     def image_thumb(self):
-        return mark_safe('<a href={0}><img src="{0}" url width="50" height="50" /></a>'.format(str(self.image.url)))
+        return mark_safe('<a href={0}><img src="{0}" url width="50" height="50" /></a>'.format(str(self.url)))
 
     def image_name(self):
         return mark_safe(self.image.name)
 
     image_thumb.short_description = "Thumbnail"
 
-    building = models.ForeignKey(Building, validators=(check_image_limit,), on_delete=models.CASCADE)
-    image = models.ImageField(default="Add image file", upload_to="images/", validators=(check_extension,))
+    building = models.ForeignKey(
+        Building, validators=(check_image_limit,), on_delete=models.CASCADE, related_name="images"
+    )
+    image = models.ImageField(default=_("Add image file"), upload_to="images/", validators=(check_extension,))
     status = models.SmallIntegerField(_("status"), default=PENDING, choices=IMAGE_STATUS_CHOICES, db_index=True)
 
     objects = models.Manager()
@@ -345,7 +347,7 @@ class ImageFile(models.Model):
             None,
         )
 
-    def save(self):
+    def save(self, **kwargs):
         # Check if image exists
         previous = ImageFile.objects.get(pk=self.pk) if self.pk else None
 
@@ -354,3 +356,7 @@ class ImageFile(models.Model):
             self._handle_image()
 
         super(ImageFile, self).save()
+
+    @property
+    def url(self):
+        return self.image.url

@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-19 14:25+0200\n"
+"POT-Creation-Date: 2021-11-23 21:10+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -69,110 +69,110 @@ msgstr ""
 msgid "posts"
 msgstr ""
 
-#: buildings/admin.py:51
+#: buildings/admin.py:53
 msgid "Mark selected images as pending"
 msgstr ""
 
-#: buildings/admin.py:56
+#: buildings/admin.py:58
 msgid "Mark selected images as accepted"
 msgstr ""
 
-#: buildings/admin.py:61
+#: buildings/admin.py:63
 msgid "Mark selected images as rejected"
 msgstr ""
 
-#: buildings/admin.py:79
+#: buildings/admin.py:81
 #, python-brace-format
 msgid "{updated} image was successfully marked as {status}."
 msgid_plural "{updated} images were successfully marked as {status}."
 msgstr[0] ""
 msgstr[1] ""
 
-#: buildings/admin.py:111
+#: buildings/admin.py:113
 msgid "Operational Data"
 msgstr ""
 
-#: buildings/admin.py:112
+#: buildings/admin.py:114
 msgid "Seismic Data"
 msgstr ""
 
-#: buildings/admin.py:113
+#: buildings/admin.py:115
 msgid "Geo Data"
 msgstr ""
 
-#: buildings/admin.py:115
+#: buildings/admin.py:117
 msgid "General Data"
 msgstr ""
 
-#: buildings/admin.py:131
+#: buildings/admin.py:133
 msgid "Building Functioning"
 msgstr ""
 
-#: buildings/admin.py:142
+#: buildings/admin.py:144
 msgid "Structure and Occupancy Type"
 msgstr ""
 
-#: buildings/admin.py:154
+#: buildings/admin.py:156
 msgid "Other info"
 msgstr ""
 
-#: buildings/admin.py:175
+#: buildings/admin.py:177
 msgid "Address"
 msgstr ""
 
-#: buildings/admin.py:180
+#: buildings/admin.py:182
 msgid "Images"
 msgstr ""
 
-#: buildings/admin.py:192
+#: buildings/admin.py:194
 msgid "No associated images"
 msgstr ""
 
-#: buildings/admin.py:197
+#: buildings/admin.py:199
 msgid "Mark selected buildings as pending"
 msgstr ""
 
-#: buildings/admin.py:202
+#: buildings/admin.py:204
 msgid "Mark selected buildings as accepted"
 msgstr ""
 
-#: buildings/admin.py:207
+#: buildings/admin.py:209
 msgid "Mark selected buildings as rejected"
 msgstr ""
 
-#: buildings/admin.py:214
+#: buildings/admin.py:216
 #, python-brace-format
 msgid "{updated} building was successfully marked as {status}."
 msgid_plural "{updated} buildings were successfully marked as {status}."
 msgstr[0] ""
 msgstr[1] ""
 
-#: buildings/admin.py:289
+#: buildings/admin.py:291
 msgid "building resource"
 msgstr ""
 
-#: buildings/admin.py:290
+#: buildings/admin.py:292
 msgid "building resources"
 msgstr ""
 
-#: buildings/admin.py:315
+#: buildings/admin.py:317
 #, python-brace-format
 msgid "File with name '{file_name}' wasn't imported. Errors: {row_errors}"
 msgstr ""
 
-#: buildings/admin.py:322
+#: buildings/admin.py:324
 #, python-brace-format
 msgid "File with name '{file_name}' was imported."
 msgstr ""
 
-#: buildings/admin.py:329
+#: buildings/admin.py:331
 #, python-brace-format
 msgid ""
 "File with name '{file_name}' wasn't a proper data file. Accepted formats "
 "are: CSV, XLSX."
 msgstr ""
 
-#: buildings/admin.py:338
+#: buildings/admin.py:340
 #, python-brace-format
 msgid ""
 "File with name '{file_name}' couldn't be imported. The error received was: "
@@ -292,7 +292,7 @@ msgid "parent id"
 msgstr "original building"
 
 #: buildings/models.py:113 buildings/models.py:181 buildings/models.py:251
-#: buildings/models.py:302
+#: buildings/models.py:304
 msgid "status"
 msgstr ""
 
@@ -538,6 +538,10 @@ msgstr ""
 
 #: buildings/models.py:290
 msgid "Image limit for building is reached ({})"
+msgstr ""
+
+#: buildings/models.py:303
+msgid "Add image file"
 msgstr ""
 
 #: pages/apps.py:7
