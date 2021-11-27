@@ -57,7 +57,9 @@ export default () => {
     ? searchResults.map((item) => {
         return {
           value: item.general_id,
-          text: item.street_number ? `${item.address}, ${item.street_number}` : item.address,
+          text: item.street_number
+            ? `${item.address}, ${item.street_number} (${item.locality}, ${item.county_code})`
+            : `${item.address} (${item.locality}, ${item.county_code})`,
         };
       })
     : [];

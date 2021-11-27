@@ -1,9 +1,25 @@
+from django.conf import settings
 from rest_framework import serializers
 
-from .models import Building, ImageFile, Statistic
+from .models import Building, Statistic
 
 
-class BuildingSerializer(serializers.ModelSerializer):
+class ImageUrlRelatedField(serializers.StringRelatedField):
+    def to_representation(self, value):
+        return value.url
+
+
+class BaseBuildingSerializer(serializers.ModelSerializer):
+    county_code = serializers.SerializerMethodField("get_county_code")
+
+    @staticmethod
+    def get_county_code(obj: Building):
+        return settings.COUNTIES_MAPPING[obj.county]
+
+
+class BuildingSerializer(BaseBuildingSerializer):
+    images = ImageUrlRelatedField(many=True, read_only=True)
+
     class Meta:
         model = Building
         fields = (
@@ -16,18 +32,15 @@ class BuildingSerializer(serializers.ModelSerializer):
             "address",
             "street_number",
             "locality",
-            "county",
+            "county_code",
             "year_built",
             "height_regime",
             "status",
+            "images",
         )
 
 
 class PublicBuildingCreateSerializer(serializers.ModelSerializer):
-    images = serializers.HyperlinkedRelatedField(
-        many=True, view_name="image-detail", allow_null=True, queryset=ImageFile.objects.all()
-    )
-
     class Meta:
         model = Building
         fields = (
@@ -78,10 +91,10 @@ class SearchQuerySerializer(serializers.Serializer):
     query = serializers.CharField(max_length=100)
 
 
-class BuildingSearchSerializer(serializers.ModelSerializer):
+class BuildingSearchSerializer(BaseBuildingSerializer):
     class Meta:
         model = Building
-        fields = ("general_id", "lat", "lng", "address", "street_number")
+        fields = ("general_id", "lat", "lng", "address", "street_number", "locality", "county_code")
 
 
 class StatisticSerializer(serializers.ModelSerializer):

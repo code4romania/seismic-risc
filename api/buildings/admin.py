@@ -184,10 +184,10 @@ class BuildingAdmin(admin.ModelAdmin):
         """
         Iterate on images and produce proper html rendering
         """
-        if obj.imagefile_set.count() > 0 and len(ImageFile.approved.all()) > 0:
+        if obj.images.count() > 0 and len(ImageFile.approved.all()) > 0:
             image_html = '<a href={0}><img src="{0}" url width="50" height="50" /></a>'
             final_html = []
-            for img in ImageFile.approved.all():
+            for img in obj.images.all():
                 final_html.append(image_html.format(os.path.join(settings.MEDIA_URL, str(img.image))))
             return mark_safe("".join(final_html))
         else:

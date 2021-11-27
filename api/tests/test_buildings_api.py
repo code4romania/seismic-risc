@@ -35,15 +35,15 @@ def test_building_list_get_if_status_is_approved(approved_building_data, api_cli
 
 
 @pytest.mark.django_db
-def test_building_details_get_if_status_is_approved(approved_building_data, api_client):
+def test_building_details_get_if_status_is_approved(approved_building_data, approved_building_return_data, api_client):
     building_obj = Building.objects.create(**approved_building_data)
 
     url = f"{base_url}/{building_obj.general_id}/"
     response = api_client.get(url)
 
     assert response.status_code == 200
-    for key in approved_building_data.keys():
-        assert response.data[key] == approved_building_data[key]
+    for key in approved_building_return_data.keys():
+        assert response.data[key] == approved_building_return_data[key]
 
 
 @pytest.mark.django_db
@@ -110,7 +110,7 @@ def basic_building_data():
         "risk_category": "U1",
         "county": "Bucuresti",
         "street_number": "12",
-        "locality": "2",
+        "locality": "Sector 2",
         "status": 1,
     }
 
@@ -119,6 +119,14 @@ def basic_building_data():
 def approved_building_data():
     basic_data = basic_building_data()
     basic_data["status"] = 1
+    return basic_data
+
+
+@pytest.fixture
+def approved_building_return_data():
+    basic_data = basic_building_data()
+    basic_data["status"] = 1
+    basic_data["county_code"] = settings.COUNTIES_MAPPING[basic_data.pop("county")]
     return basic_data
 
 

@@ -1,25 +1,23 @@
-from django.contrib.postgres.search import TrigramSimilarity
 from django.conf import settings
+from django.contrib.postgres.search import TrigramSimilarity
 from drf_spectacular.utils import (
     extend_schema,
     OpenApiParameter,
 )
-
-from rest_framework import status, viewsets
-from rest_framework.decorators import api_view, permission_classes, action
-from rest_framework import permissions
+from rest_framework import permissions, status, viewsets
+from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework.throttling import AnonRateThrottle
 
+from .models import Building, Statistic
 from .serializers import (
-    BuildingSerializer,
-    PublicBuildingCreateSerializer,
     BuildingListSerializer,
     BuildingSearchSerializer,
+    BuildingSerializer,
+    PublicBuildingCreateSerializer,
     SearchQuerySerializer,
     StatisticSerializer,
 )
-from .models import Building, Statistic
 
 
 class PublicCreateAnonRateThrottle(AnonRateThrottle):

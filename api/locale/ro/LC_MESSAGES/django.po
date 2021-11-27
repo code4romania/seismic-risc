@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-19 14:25+0200\n"
+"POT-Creation-Date: 2021-11-23 21:10+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -70,19 +70,19 @@ msgstr "actualizat"
 msgid "posts"
 msgstr "articole"
 
-#: buildings/admin.py:51
+#: buildings/admin.py:53
 msgid "Mark selected images as pending"
 msgstr "Marchează imaginile selectate ca în așteptare"
 
-#: buildings/admin.py:56
+#: buildings/admin.py:58
 msgid "Mark selected images as accepted"
 msgstr "Marchează imaginile selectate ca acceptate"
 
-#: buildings/admin.py:61
+#: buildings/admin.py:63
 msgid "Mark selected images as rejected"
 msgstr "Marchează imaginile selectate ca respinse"
 
-#: buildings/admin.py:79
+#: buildings/admin.py:81
 #, python-brace-format
 msgid "{updated} image was successfully marked as {status}."
 msgid_plural "{updated} images were successfully marked as {status}."
@@ -90,59 +90,59 @@ msgstr[0] "{updated} imagine a fost marcată ca {status}"
 msgstr[1] "{updated} imagini au fost marcate ca {status}"
 msgstr[2] "{updated} de imagini au fost marcate ca {status}"
 
-#: buildings/admin.py:111
+#: buildings/admin.py:113
 msgid "Operational Data"
 msgstr "Date operaționale"
 
-#: buildings/admin.py:112
+#: buildings/admin.py:114
 msgid "Seismic Data"
 msgstr "Date seismice"
 
-#: buildings/admin.py:113
+#: buildings/admin.py:115
 msgid "Geo Data"
 msgstr "Date geografice"
 
-#: buildings/admin.py:115
+#: buildings/admin.py:117
 msgid "General Data"
 msgstr "Date generale"
 
-#: buildings/admin.py:131
+#: buildings/admin.py:133
 msgid "Building Functioning"
 msgstr "Funcționarea imobilului"
 
-#: buildings/admin.py:142
+#: buildings/admin.py:144
 msgid "Structure and Occupancy Type"
 msgstr "Structura și tipul ocupării clădirii"
 
-#: buildings/admin.py:154
+#: buildings/admin.py:156
 msgid "Other info"
 msgstr "Alte informații"
 
-#: buildings/admin.py:175
+#: buildings/admin.py:177
 msgid "Address"
 msgstr "Adresă"
 
-#: buildings/admin.py:180
+#: buildings/admin.py:182
 msgid "Images"
 msgstr "Imagini"
 
-#: buildings/admin.py:192
+#: buildings/admin.py:194
 msgid "No associated images"
 msgstr "Nicio imagine asociată"
 
-#: buildings/admin.py:197
+#: buildings/admin.py:199
 msgid "Mark selected buildings as pending"
 msgstr "Marchează clădirile selectate ca în așteptare"
 
-#: buildings/admin.py:202
+#: buildings/admin.py:204
 msgid "Mark selected buildings as accepted"
 msgstr "Marchează clădirile selectate ca acceptate"
 
-#: buildings/admin.py:207
+#: buildings/admin.py:209
 msgid "Mark selected buildings as rejected"
 msgstr "Marchează clădirile selectate ca respinse"
 
-#: buildings/admin.py:214
+#: buildings/admin.py:216
 #, python-brace-format
 msgid "{updated} building was successfully marked as {status}."
 msgid_plural "{updated} buildings were successfully marked as {status}."
@@ -150,26 +150,26 @@ msgstr[0] "{updated} clădire a fost marcată ca {status}"
 msgstr[1] "{updated} clădiri au fost marcate ca {status}"
 msgstr[2] "{updated} de clădiri au fost marcate ca {status}"
 
-#: buildings/admin.py:289
+#: buildings/admin.py:291
 msgid "building resource"
 msgstr "resursă clădire"
 
-#: buildings/admin.py:290
+#: buildings/admin.py:292
 msgid "building resources"
 msgstr "resurse clădire"
 
-#: buildings/admin.py:315
+#: buildings/admin.py:317
 #, python-brace-format
 msgid "File with name '{file_name}' wasn't imported. Errors: {row_errors}"
 msgstr ""
 "Fișierul cu numele '{file_name}' nu a fost importat. Erori: {row_errors}"
 
-#: buildings/admin.py:322
+#: buildings/admin.py:324
 #, python-brace-format
 msgid "File with name '{file_name}' was imported."
 msgstr "Fișierul cu numele '{file_name}' a fost importat."
 
-#: buildings/admin.py:329
+#: buildings/admin.py:331
 #, python-brace-format
 msgid ""
 "File with name '{file_name}' wasn't a proper data file. Accepted formats "
@@ -178,7 +178,7 @@ msgstr ""
 "Fișierul cu numele '{file_name}' un fișier de date corect. Formatele "
 "acceptate sunt: CSV, XLSX."
 
-#: buildings/admin.py:338
+#: buildings/admin.py:340
 #, python-brace-format
 msgid ""
 "File with name '{file_name}' couldn't be imported. The error received was: "
@@ -300,7 +300,7 @@ msgid "parent id"
 msgstr "clădire originală"
 
 #: buildings/models.py:113 buildings/models.py:181 buildings/models.py:251
-#: buildings/models.py:302
+#: buildings/models.py:304
 msgid "status"
 msgstr "stare"
 
@@ -547,6 +547,10 @@ msgstr "Extensia imaginii nu e corectă. Trebuie să fie una din {}"
 #: buildings/models.py:290
 msgid "Image limit for building is reached ({})"
 msgstr "Limita de imagini pentru clădire a fost atinsă ({})"
+
+#: buildings/models.py:303
+msgid "Add image file"
+msgstr "Adaugă o imagine"
 
 #: pages/apps.py:7
 msgid "Pages"

@@ -1,0 +1,50 @@
+Lat,Lng,Address,Street Number,Locality,County,Year Built,Height Regime,Apartment Count,Surface,Examination Year,Certified Expert,Has Warning Panels,Observations,Risk Category
+45.64294,25.5921078,Republicii,24,Brașov,Brașov,1400,P+M+E,6,1859.00,1993,,,,U3
+45.642087,25.5907307,Republicii,4,Brașov,Brașov,1600,P+E,7,663,1993,,,,U2
+45.6422886,25.5900532,Piața Stafului,9,Brașov,Brașov,1885,P+2E+M,6,1048.00,1993,,,,U2
+45.6434653,25.5953478,Postăvarului,64,Brașov,Brașov,1870,P+E,11,1260.00,1993,,,,U3
+45.641008,25.5929098,Castelului,92,Brașov,Brașov,1889,P+M,6,732.6,1993,,,,U3
+45.6437222,25.5880993,Mureșenilor,7,Brașov,Brașov,1775,P+M,15,2730.00,1993,,,,U2
+45.6418948,25.5930819,N. Bălcescu,20,Brașov,Brașov,1753,P+2E,5,532.2,1993,,,,U3
+45.6517799,25.6015437,T. Grozăvescu,9,Brașov,Brașov,1924,P+E,8,512.7,1993,,,,U3
+45.6510698,25.5865203,Lungă,77,Brașov,Brașov,1820,P+E,5,544.1,1993,,,,U3
+45.6410135,25.5911235,A. Russo,6,Brașov,Brașov,1910,P+E,6,880,1993,,,,U2
+45.645891,25.6000363,15 Noiembrie,12,Brașov,Brașov,1930,P+E,5,280,1993,,,,U3
+45.6404687,25.5912326,Castelului,47,Brașov,Brașov,1892,P+E,6,1078.00,1993,,,,U3
+45.6459865,25.6006255,15 Noiembrie,18,Brașov,Brașov,1920,P,3,456.8,1993,,,,U3
+45.657293,25.580879,Lungă,48,Brașov,Brașov,1890,P+E,3,534,1993,,,,U3
+45.6452539,25.5992391,Pieții,1,Brașov,Brașov,1924,P+E,8,619,1993,,,,U3
+45.6558063,25.5817608,Lungă,169,Brașov,Brașov,1920,P,10,698,1994,,,,U3
+45.6423635,25.5910578,Republicii,12,Brașov,Brașov,1900,P+E,8,813,1994,,,,U3
+45.6423869,25.5900541,Piața Sfatului,8,Brașov,Brașov,1797,P+E+M,8,803.6,1994,,Notific.,,U1
+45.63912,25.589889,Castelului,34,Brașov,Brașov,1843,P+E,9,858.9,1994,,Notific.,,U1
+45.6413665,25.5906935,J. Gott,7,Brașov,Brașov,1800,P+E,4,810,1994,,Notific.,,U1
+45.647516,25.5837553,Șirul Livezii,7,Brașov,Brașov,1910,P+E+M,2,268,1994,,Notific.,,U1
+45.6428674,25.5952103,N. Bălcescu,51,Brașov,Brașov,1696,P+E,8,485,1994,,Notific.,,U1
+45.6412809,25.5894953,A. Hircher,9,Brașov,Brașov,1723,P+E+M,22,2912.00,1994,,Notific.,,U1
+45.6399392,25.5882799,Poarta Schei,17,Brașov,Brașov,1703,P+E,9,899,1994,,Notific.,,U1
+45.6506577,25.5967816,Cuza Vodă,"35, corp 1",Brașov,Brașov,1910,P+E,9,670,1997,Andronache Gheorghe,Notific.,,RS1
+45.6447636,25.6020168,Neagoe Basarab,17,Brașov,Brașov,1925,S+P+M,3,295,1997,Andronache Gheorghe,Notific.,,RS1
+45.6451889,25.5898776,Mureșenilor,28,Brașov,Brașov,1900,S+P+2E,21,1910.00,1997,Andronache Gheorghe,Notific.,,RS1
+45.6428759,25.5920463,Republicii,22,Brașov,Brașov,1600,P+E,6,424,1997,Andronache Gheorghe,Notific.,,RS1
+45.64065733,25.59263885,Castelului,84 corp 2,Brașov,Brașov,1902,P+E+M,11,875,1997,Andronache Gheorghe,Notific.,,RS1
+45.6419594,25.5948916,Castelului,81,Brașov,Brașov,1900,S+P+E,2,115,1997,Andronache Gheorghe,Notific.,,RS1
+45.6403245,25.5709163,După Iniște,64,Brașov,Brașov,1900,P+E,1,338,1997,Pop Horațiu,Notific.,,RS1
+45.6402396,25.5899893,A. Hircher,20,Brașov,Brașov,1930,S+P+2E+M,8,1297.00,1999,Andronache Gheorghe,Notific.,,RS1
+45.642946,25.603426,Ecaterina Varga,24,Brașov,Brașov,1940,P,2,331.3,1999,Andronache Gheorghe,Notific.,,RS1
+45.6527867,25.6006877,Dealul Morii,6,Brașov,Brașov,1930,S+D+P,2,160,1999,Andronache Gheorghe,,,RS3
+45.6357981,25.5838704,Luca Arbore,13,Brașov,Brașov,1940,S+P,2,112.5,1999,Andronache Gheorghe,,,RS3
+45.6518712,25.637964,Cuza Vodă,13,Brașov,Brașov,1940,S+P+M,3,726,1999,Andronache Gheorghe,,,RS3
+45.6426441,25.5949017,N. Bălcescu,45,Brașov,Brașov,1900,S+P+2E,13,1417.00,2000,Andronache Gheorghe,Notific.,,RS1
+45.64115,25.59293,Castelului,69,Brașov,Brașov,1800,S+P+E,4,456.9,2000,Andronache Gheorghe,,,RS2
+45.6432372,25.5920193,Republicii,21,Brașov,Brașov,1900,S+P+E,13,2779.00,2000,Andronache Gheorghe,,,RS2
+45.6423403,25.5939342,N. Bălcescu,31,Brașov,Brașov,1928,S+P+3E,9,1141.00,2000,Andronache Gheorghe,,,RS2
+45.6358515,25.6354239,Saturn,50,Brașov,Brașov,1968,S+P+10E,352,24626.00,2000,Andronache Gheorghe,,,RS2
+45.64022954,25.58802318,Hans Beckner,4,Brașov,Brașov,1700,S+P+E+M,8,735,2001,Andronache Gheorghe,,,RS2
+45.6440617,25.5936801,Republicii,51,Brașov,Brașov,1900,S+P+2E+M,10,1149.00,2001,Andronache Gheorghe,,,RS2
+45.6440912,25.6290182,Aurora,25,Brașov,Brașov,1977,P+10,43,3366.00,2002,Andronache Gheorghe,,,RS2
+45.642312,25.5963671,Castelului,140,Brașov,Brașov,1890,P+E,3,394,2002,Andronache Gheorghe,,,RS2
+45.6365536,25.5773524,C. Brâncoveanu,65,Brașov,Brașov,1910,P+E,3,241.7,2002,Andronache Gheorghe,Notific.,,RS1
+45.6363524,25.6336643,Soarelui,13,Brașov,Brașov,1964,S+P4E,40,2875.00,2006,Andronache Gheorghe,,,RS3
+45.64076929,25.59252919,Castelului,84 corp 1,Brașov,Brașov,1902,P+E+M,11,875,1997,Andronache Gheorghe,Notific.,Demolare,RS1
+45.63731375,25.58677218,Strada Doctor Gheorghe Baiulescu,15,Brașov,Brașov,1930,P+E,5,645,1994,,,,U2
