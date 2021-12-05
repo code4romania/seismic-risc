@@ -225,7 +225,6 @@ class BuildingWorkPerformedEvent(models.Model):
 
 class Statistic(models.Model):
     people_under_risk = models.IntegerField(_("people under risk"), null=True)
-    consolidated_buildings = models.IntegerField(_("consolidated buildings"), null=True)
 
     class Meta:
         verbose_name = _("statistic")

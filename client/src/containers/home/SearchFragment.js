@@ -48,7 +48,7 @@ export default () => {
 
       case 'hu':
       default:
-        setSearchPlaceholderText('Search an address here');
+        setSearchPlaceholderText('Search for an address here');
     }
   }, [currentLanguage]);
 

@@ -325,7 +325,7 @@ class DataFileAdmin(admin.ModelAdmin):
                     message_level = messages.SUCCESS
                 data_file.save()
             except BadZipFile:
-                self.save_file_as_failed(q)
+                self._save_file_as_failed(q)
 
                 message_str = _(
                     "File with name '{file_name}' wasn't a proper data file. Accepted formats are: CSV, XLSX.".format(
@@ -334,7 +334,7 @@ class DataFileAdmin(admin.ModelAdmin):
                 )
                 message_level = messages.ERROR
             except ValueError as e:
-                self.save_file_as_failed(q)
+                self._save_file_as_failed(q)
 
                 message_str = _(
                     "File with name '{file_name}' couldn't be imported. The error received was: `{error_args}`".format(
@@ -343,7 +343,7 @@ class DataFileAdmin(admin.ModelAdmin):
                 )
                 message_level = messages.ERROR
             except Exception as e:
-                self.save_file_as_failed(q)
+                self._save_file_as_failed(q)
                 raise e
 
             self.message_user(request, message_str, message_level)
@@ -372,7 +372,7 @@ class DataFileAdmin(admin.ModelAdmin):
         return data
 
     @staticmethod
-    def save_file_as_failed(q):
+    def _save_file_as_failed(q):
         csv_file = models.DataFile.objects.get(name=str(q))
         csv_file.status = models.DataFile.FAILURE
         csv_file.save()

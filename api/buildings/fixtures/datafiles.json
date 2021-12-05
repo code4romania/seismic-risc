@@ -1,0 +1,170 @@
+[
+  {
+    "model": "buildings.datafile",
+    "fields": {
+      "name": "bucharest-nov-2021",
+      "file": "LISTA.imobile.PMB.completa_2018_XRZpK9w.xlsx",
+      "status": 0
+    }
+  },
+  {
+    "model": "buildings.datafile",
+    "fields": {
+      "name": "mehedinti-nov-2021",
+      "file": "expertiza-mehedinti_gE777De.csv",
+      "status": 0
+    }
+  },
+  {
+    "model": "buildings.datafile",
+    "fields": {
+      "name": "braila-nov-2021",
+      "file": "expertiza-braila.csv",
+      "status": 0
+    }
+  },
+  {
+    "model": "buildings.datafile",
+    "fields": {
+      "name": "bacau-nov-2021",
+      "file": "expertiza-bacau_9w0EYRB.csv",
+      "status": 0
+    }
+  },
+  {
+    "model": "buildings.datafile",
+    "fields": {
+      "name": "botosani-nov-2021",
+      "file": "expertiza-botosani.csv",
+      "status": 0
+    }
+  },
+  {
+    "model": "buildings.datafile",
+    "fields": {
+      "name": "brasov-nov-2021",
+      "file": "expertiza-brasov_GwVdP4f.csv",
+      "status": 0
+    }
+  },
+  {
+    "model": "buildings.datafile",
+    "fields": {
+      "name": "buzau-nov-2021",
+      "file": "expertiza-buzau.csv",
+      "status": 0
+    }
+  },
+  {
+    "model": "buildings.datafile",
+    "fields": {
+      "name": "calarasi-nov-2021",
+      "file": "expertiza-calarasi.csv",
+      "status": 0
+    }
+  },
+  {
+    "model": "buildings.datafile",
+    "fields": {
+      "name": "caras-severin-nov-2021",
+      "file": "expertiza-caras-severin.csv",
+      "status": 0
+    }
+  },
+  {
+    "model": "buildings.datafile",
+    "fields": {
+      "name": "constanta-nov-2021",
+      "file": "expertiza-constanta_CZeMBNu.csv",
+      "status": 0
+    }
+  },
+  {
+    "model": "buildings.datafile",
+    "fields": {
+      "name": "covasna-nov-2021",
+      "file": "expertiza-covasna.csv",
+      "status": 0
+    }
+  },
+  {
+    "model": "buildings.datafile",
+    "fields": {
+      "name": "dambovita-nov-2021",
+      "file": "expertiza-dambovita.csv",
+      "status": 0
+    }
+  },
+  {
+    "model": "buildings.datafile",
+    "fields": {
+      "name": "galati-nov-2021",
+      "file": "expertiza-galati_JPneJ0r.csv",
+      "status": 0
+    }
+  },
+  {
+    "model": "buildings.datafile",
+    "fields": {
+      "name": "ialomita-nov-2021",
+      "file": "expertiza-ialomita.csv",
+      "status": 0
+    }
+  },
+  {
+    "model": "buildings.datafile",
+    "fields": {
+      "name": "iasi-nov-2021",
+      "file": "expertiza-iasi_XiDgfAn.csv",
+      "status": 0
+    }
+  },
+  {
+    "model": "buildings.datafile",
+    "fields": {
+      "name": "olt-nov-2021",
+      "file": "expertiza-olt.csv",
+      "status": 0
+    }
+  },
+  {
+    "model": "buildings.datafile",
+    "fields": {
+      "name": "prahova-nov-2021",
+      "file": "expertiza-prahova_1pOwlVI.csv",
+      "status": 0
+    }
+  },
+  {
+    "model": "buildings.datafile",
+    "fields": {
+      "name": "teleorman-nov-2021",
+      "file": "expertiza-teleorman.csv",
+      "status": 0
+    }
+  },
+  {
+    "model": "buildings.datafile",
+    "fields": {
+      "name": "tulcea-nov-2021",
+      "file": "expertiza-tulcea.csv",
+      "status": 0
+    }
+  },
+  {
+    "model": "buildings.datafile",
+    "fields": {
+      "name": "valcea-nov-2021",
+      "file": "expertiza-valcea.csv",
+      "status": 0
+    }
+  },
+  {
+    "model": "buildings.datafile",
+    "fields": {
+      "name": "vrancea-nov-2021",
+      "file": "expertiza-vrancea_sZomedC.csv",
+      "status": 0
+    }
+  }
+]

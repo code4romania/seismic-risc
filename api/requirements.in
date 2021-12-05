@@ -1,5 +1,5 @@
 # django and related apps
-django~=3.2.4
+django~=3.2.9
 django-configurations
 django-import-export
 djangorestframework
@@ -29,4 +29,3 @@ gunicorn
 
 # doc-generation
 drf-spectacular
-

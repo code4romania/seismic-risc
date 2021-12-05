@@ -10,7 +10,7 @@
     {{ block.super }}
         {{ HERE_MAPS|json_script:"here-maps-config" }}
         <script>
-            var here_map_config = JSON.parse(
+            let here_map_config = JSON.parse(
                document.getElementById("here-maps-config").textContent
             );
         </script>

@@ -13,9 +13,10 @@ from drf_spectacular.views import (
     SpectacularSwaggerView,
 )
 
-admin.site.site_title = "Seismic Risk Admin"
-admin.site.site_header = "Seismic Risk Admin"
-admin.site.index_title = "Seismic Risk Admin"
+admin_site_string = "Bulina Roșie Admin"
+admin.site.site_title = admin_site_string
+admin.site.site_header = admin_site_string
+admin.site.index_title = admin_site_string
 admin.site.site_url = settings.SITE_URL
 
 router = routers.DefaultRouter()

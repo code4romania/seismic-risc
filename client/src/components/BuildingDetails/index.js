@@ -36,6 +36,8 @@ const BuildingDetails = ({ onClose, isLoading, details }) => {
         <BuildingDetailsTitle
           address={details?.address}
           streetNumber={details?.street_number}
+          locality={details?.locality}
+          countyCode={details?.county_code}
           onClose={onClose}
         />
         {detailsItems.length > 0 ? (

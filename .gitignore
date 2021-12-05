@@ -109,7 +109,10 @@ prod.env
 .mypy_cache/
 
 # IDEs
+# IJ-based
 .idea
+.run
+# vscode-based
 .vscode
 
 # Mac stuff

@@ -2,7 +2,7 @@ import React from 'react';
 import { Trans } from '@lingui/macro';
 import { Row, Col, Button, Icon } from 'antd';
 
-const BuildingDetailsTitle = ({ address, streetNumber, images, onClose }) => (
+const BuildingDetailsTitle = ({ address, streetNumber, locality, countyCode, images, onClose }) => (
   <Row type="flex" gutter={8} className="buildingDetailsTitle">
     {address && (
       <Col>
@@ -12,12 +12,12 @@ const BuildingDetailsTitle = ({ address, streetNumber, images, onClose }) => (
     <Col>
       <span className="buildingDetailsTitle__text">
         {address}
-        {streetNumber && (
-          <>
-            {' '}
-            <Trans>no.</Trans> {streetNumber}
-          </>
-        )}
+        {streetNumber && <> {streetNumber}</>}
+        {
+          <span className="buildingDetailsTitle__subtext">
+            <br /> {locality && countyCode ? `${locality}, ${countyCode}` : locality ?? countyCode}
+          </span>
+        }
       </span>
       {images && (
         <Button type="link">
