@@ -1,5 +1,5 @@
 Lat,Lng,Address,Street Number,Locality,County,Year Built,Height Regime,Apartment Count,Surface,Examination Year,Certified Expert,Has Warning Panels,Observations,Risk Category
-45.2794393,27.9720875,Calea Galați,43,Brăila,Brăila,1965,P+9,36,2719.6,1992,Dr. Ing. Cosovliu Octavian,,Consolidat,RS1
+45.2794393,27.9720875,Calea Galați,43,Brăila,Brăila,1965,P+9,36,2719.6,1992,Dr. Ing. Cosovliu Octavian,,,C
 45.28118785,27.97149411,Calea Galați,Bloc A,Brăila,Brăila,1964,S+P+4E,106,7519.7,1995,Dr. Ing. Beche Vasile,x,,RS3
 45.26362544,27.9573998,Hipodrom,Bloc C10,Brăila,Brăila,1969,S+P+4E,45,4252,1997,Ing. Cruceanu Dan,,,RS2
 45.2709419,27.96521278,Hristo Botev,Bloc D2,Brăila,Brăila,1964,S+P+4E,40,3420,1997,Dr. Ing. Beche Vasile,x,,RS1

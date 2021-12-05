@@ -1,0 +1,9 @@
+[
+  {
+    "model": "buildings.statistic",
+    "pk": 1,
+    "fields": {
+      "people_under_risk": 14245
+    }
+  }
+]

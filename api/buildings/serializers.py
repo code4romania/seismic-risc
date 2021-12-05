@@ -99,11 +99,17 @@ class BuildingSearchSerializer(BaseBuildingSerializer):
 
 class StatisticSerializer(serializers.ModelSerializer):
     evaluated_buildings = serializers.SerializerMethodField("get_total_buildings")
+    consolidated_buildings = serializers.SerializerMethodField("get_consolidated_buildings")
 
     @staticmethod
     def get_total_buildings(_):
         total_buildings = Building.approved.count()
         return int(total_buildings)
+
+    @staticmethod
+    def get_consolidated_buildings(_):
+        consolidated_buildings = Building.approved.filter(risk_category="C").count()
+        return int(consolidated_buildings)
 
     class Meta:
         model = Statistic

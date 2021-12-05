@@ -28,23 +28,21 @@
 .buildingDetailsTitle {
   color: $primary-color;
   font-weight: 600;
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   &.ant-row-flex {
     flex-wrap: nowrap;
-  }
-  .ant-btn-link {
-    color: #888;
-    text-decoration: underline;
-    padding: 0;
-    &:hover {
-      text-decoration: none;
-    }
   }
 }
 
 .buildingDetailsTitle__text {
   margin-right: 6px;
   font-size: 20px;
+}
+
+.buildingDetailsTitle__subtext {
+  font-weight: 500;
+  margin-right: 6px;
+  font-size: 16px;
 }
 
 .buildingDetails__contribute {
