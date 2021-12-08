@@ -62,7 +62,7 @@
     "@storybook/addon-actions": "^6.3.12",
     "@storybook/addon-essentials": "^6.4.3",
     "@storybook/addon-links": "^6.2.9",
-    "@storybook/node-logger": "^6.2.9",
+    "@storybook/node-logger": "^6.4.8",
     "@storybook/preset-create-react-app": "^3.2.0",
     "@storybook/react": "^6.3.7",
     "@testing-library/jest-dom": "^5.14.1",
