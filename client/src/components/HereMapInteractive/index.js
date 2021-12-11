@@ -30,6 +30,8 @@ const HereMapInteractive = (props) => {
 
   const showSearchResults = buildingDetails;
   const showRightPanel = showSearchResults || buildingDetails;
+  
+  mapRef?.current?.addEventListener('wheel', (e) => e.preventDefault());
 
   return (
     <div style={{ height: '422px', position: 'relative' }}>
