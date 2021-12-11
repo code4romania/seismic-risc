@@ -26,7 +26,7 @@ const App = () => {
   }, []);
 
   return (
-    <I18nProvider i18n={i18n} forceRenderOnLocaleChange={false}>
+    <I18nProvider i18n={i18n}>
       <Router>
         <ScrollToTop />
         <Switch>
