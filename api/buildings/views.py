@@ -90,7 +90,7 @@ class BuildingViewSet(viewsets.ModelViewSet):
             searchCategory = ("", serializer.data["riskCategory"])[bool(serializer.data["riskCategory"])]
             buildings = (
                 Building.approved.annotate(similarity=TrigramSimilarity("address", query))
-                .filter(similarity__gt=settings.TRIGRAM_SIMILARITY_THRESHOLD, risk_category__icontains = searchCategory)
+                .filter(similarity__gt=settings.TRIGRAM_SIMILARITY_THRESHOLD, risk_category__icontains=searchCategory)
                 .order_by("-similarity")
             )
         else:
