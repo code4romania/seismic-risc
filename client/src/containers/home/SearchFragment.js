@@ -30,6 +30,7 @@ export default () => {
     onSearchLoading,
     onSearchSelectBuilding,
     searchInput,
+    riskCategory,
   } = useGlobalContext();
 
   const [searchPlaceholderText, setSearchPlaceholderText] = useState('');
@@ -68,7 +69,7 @@ export default () => {
   const onSearch = (value) => {
     if (value.length > 2) {
       onSearchLoading(true);
-      debounceSearch(value);
+      debounceSearch(value, riskCategory);
     }
   };
 
