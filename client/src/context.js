@@ -17,6 +17,7 @@ const initialState = {
   showSearchResults: false,
   searchError: null,
   currentLanguage: 'ro',
+  riskCategory: '',
 };
 
 const AppProvider = ({ children }) => {
@@ -37,9 +38,11 @@ const AppProvider = ({ children }) => {
     dispatch({ type: 'SEARCH_LOADING', payload: isLoading });
   };
 
-  const searchBuildings = async (searchInput) => {
+  const searchBuildings = async (searchInput, riskCategory) => {
     try {
-      const res = await fetch(`${BUILDINGS_URL}/search/?query=${searchInput}`);
+      const res = await fetch(
+        `${BUILDINGS_URL}/search/?query=${searchInput}&riskCategory=${riskCategory}`,
+      );
       const searchResults = await res.json();
       onSearchLoading(false);
       if (searchResults.length > 0) {
@@ -64,6 +67,10 @@ const AppProvider = ({ children }) => {
     dispatch({ type: 'MAP_LOADED', payload: map });
   };
 
+  const onCategoryChange = (riskCategory) => {
+    dispatch({ type: 'RISK_CATEGORY_CHANGED', payload: riskCategory });
+  };
+
   return (
     <AppContext.Provider
       value={{
@@ -75,6 +82,7 @@ const AppProvider = ({ children }) => {
         onHereMapLoaded,
         onSearchInputChange,
         languageChange,
+        onCategoryChange,
       }}
     >
       {children}
