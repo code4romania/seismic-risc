@@ -7,6 +7,7 @@ import PinDrop from '../../images/pin_drop.svg';
 
 import config from '../../config';
 import HereMapAddBuilding from '../../components/HereMapAddBuilding';
+import { useGlobalContext } from '../../context';
 
 const { Title } = Typography;
 
@@ -33,8 +34,10 @@ const FormFragment = ({ form }) => {
   });
   const [mapSearchText, setMapSearchText] = useState(undefined);
   const [coordinates, setCoordinates] = useState(undefined);
+  const [language, setLanguage] = useState(undefined);
   const { getFieldDecorator } = form;
   const fields = form.getFieldsValue();
+  const { currentLanguage } = useGlobalContext();
 
   const onFinish = (e) => {
     e.preventDefault();
@@ -106,6 +109,10 @@ const FormFragment = ({ form }) => {
 
     getRiskCategories();
   }, []);
+
+  useEffect(() => {
+    setLanguage(currentLanguage);
+  }, [currentLanguage]);
 
   if (state.loading) {
     return (
@@ -198,7 +205,14 @@ const FormFragment = ({ form }) => {
       <Form.Item label={<Trans>Captcha</Trans>}>
         {getFieldDecorator('captcha', {
           rules: [{ required: true, message: <EmptyFieldMessage /> }],
-        })(<HCaptcha sitekey={CAPTCHA_API_KEY} onVerify={handleVerifyCaptcha} />)}
+        })(
+          <HCaptcha
+            sitekey={CAPTCHA_API_KEY}
+            onVerify={handleVerifyCaptcha}
+            hl={language}
+            languageOverride={language}
+          />,
+        )}
       </Form.Item>
       <Form.Item>
         <Button type="primary" htmlType="submit" disabled={state.requestError}>
