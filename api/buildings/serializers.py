@@ -89,7 +89,7 @@ class BuildingListSerializer(serializers.ModelSerializer):
 
 class SearchQuerySerializer(serializers.Serializer):
     query = serializers.CharField(max_length=100)
-    riskCategory = serializers.CharField(required=False,default='')
+    riskCategory = serializers.CharField(required=False, default="")
 
 
 class BuildingSearchSerializer(BaseBuildingSerializer):
