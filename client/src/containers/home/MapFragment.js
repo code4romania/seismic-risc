@@ -2,6 +2,7 @@ import React from 'react';
 import { Tabs } from 'antd';
 import { Trans } from '@lingui/macro';
 import HereMapInteractive from '../../components/HereMapInteractive';
+import { useGlobalContext } from '../../context';
 
 import config from '../../config';
 
@@ -14,6 +15,8 @@ export default () => {
     initialPoints: [],
     filteredPoints: null,
   });
+
+  const { onCategoryChange } = useGlobalContext();
 
   React.useEffect(() => {
     fetch(`${BUILDINGS_URL}/`)
@@ -43,6 +46,11 @@ export default () => {
               return poi.risk_category === e;
             }),
     });
+    if (e === 'all') {
+      onCategoryChange('');
+    } else {
+      onCategoryChange(e);
+    }
   };
 
   return (
