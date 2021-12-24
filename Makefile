@@ -22,24 +22,21 @@ install-docker-osx:               ## installs homebrew (you can skip this at run
 	brew cask install docker
 	brew install docker-compose gettext
 
-init-env:                         ## builds the container, sets up the database and fixtures
-	cp .env.dist .env
-	make build-dev
-	make init-db
-
 build:                            ## builds the container
 	docker-compose build --pull
+	docker-compose up -d
 
-build-dev:                        ## builds the container with the DEVBUILD flag
-	docker-compose build --build-arg DEVBUILD=1 --pull
+build-dev:                        ## builds the container with the development flag
+	docker-compose build --build-arg ENVIRONMENT=development --pull
+	docker-compose up -d
 
-init-db:                          ## sets up the database and fixtures
-	docker-compose down -t 60
-	docker-compose run --rm api "./wait_for_db.py && ./manage.py migrate --no-input"
-	docker-compose run --rm api "./manage.py createsuperuser"
-	docker-compose run --rm api "./manage.py loaddata datafiles statistics"
-	docker-compose run --rm api "./manage.py loaddata buildings"
-	docker-compose run --rm api "./manage.py loaddata pages"
+superuser:                        ## creates a superuser for the API
+	docker-compose exec api ./manage.py createsuperuser
+
+init-db: superuser                ## sets up the database and fixtures
+	docker-compose exec api ./manage.py loaddata statistics
+	docker-compose exec api ./manage.py loaddata buildings
+	docker-compose exec api ./manage.py loaddata pages
 
 drop-db:                          ## drops the database
 	docker-compose down -t 60
@@ -55,22 +52,25 @@ requirements-update:              ## run pip compile and rebuild the requirement
 	docker-compose run --rm --no-deps --entrypoint "bash -c" api "cd /code && pip-compile -r -U -o requirements-dev.txt requirements-dev.in requirements.in && pip-compile -r -U -o requirements.txt requirements.in && chmod a+r requirements.txt && chmod a+r requirements-dev.txt"
 
 migrations:                       ## generate migrations in a clean container
-	docker-compose run --rm api "./wait_for_db.py && ./manage.py makemigrations"
+	docker-compose exec api ./manage.py makemigrations
 
 migrate:                          ## apply migrations in a clean container
-	docker-compose run --rm api "./manage.py migrate"
+	docker-compose exec api ./manage.py migrate
 
 makemessages:                     ## generate the strings marked for translation
-	docker-compose run --rm api "./manage.py makemessages -a"
+	docker-compose exec api ./manage.py makemessages -a
 
 compilemessages:                  ## compile the translations
-	docker-compose run --rm api "./manage.py compilemessages"
+	docker-compose exec api ./manage.py compilemessages
+
+collectstatic:
+	docker-compose exec api ./manage.py collectstatic --no-input
 
 pyshell:                          ## start a django shell
-	docker-compose run --rm api "./manage.py shell"
+	docker-compose exec api ./manage.py shell
 
 black:                            ## run the Black formatter on the Python code
-	docker-compose run --rm api "black --line-length 120 --target-version py37 --exclude migrations ."
+	black --line-length 120 --target-version py39 --exclude migrations ./api
 
 ## [TEST]
 test:                             ## run all tests

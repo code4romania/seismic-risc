@@ -2,51 +2,43 @@ version: "3.8"
 
 services:
   db:
-    image: postgres:11
+    container_name: seismic-risc-db
+    build:
+      context: ./db
+    env_file:
+      - .env
+    ports:
+      - "5444:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
-    environment:
-      - POSTGRES_HOST_AUTH_METHOD=trust
-
-  client:
-    container_name: seismic-risc-client
-    build:
-      context: ./client
-    volumes:
-      - ./client:/code
-    ports:
-      - "3030:3000"
-    depends_on:
-      - api
-    environment:
-      NODE_ENV:
-      REACT_APP_CAPTCHA_API_KEY:
-      REACT_APP_HERE_MAPS_API_KEY:
-      REACT_APP_DJANGO_SITE_URL:
-      REACT_APP_DJANGO_PORT:
-      REACT_APP_DJANGO_API_ENDPOINT:
 
   api:
     container_name: seismic-risc-api
     build:
       context: ./api
-      args:
-        DEVBUILD: 1
-    command:
-      [
-        "./wait_for_db.py && ./manage.py migrate --noinput && ./manage.py runserver 0.0.0.0:8030",
-      ]
+    command: dockerize -wait tcp://db:5444 -timeout 90s
+    env_file:
+      - .env
     volumes:
       - ./api:/code
     ports:
       - "8030:8030"
     depends_on:
       - db
-    environment:
-      DJANGO_CONFIGURATION:
-      DATABASE_URL:
-      DEVBUILD:
-      HERE_MAPS_API_KEY:
+
+  client:
+    container_name: seismic-risc-client
+    build:
+      context: ./client
+    env_file:
+      - .env
+    volumes:
+      - ./client:/code
+    ports:
+      - "3030:3000"
+    depends_on:
+      - api
 
 volumes:
   pgdata:
+    name: seismic-risc_pgdata

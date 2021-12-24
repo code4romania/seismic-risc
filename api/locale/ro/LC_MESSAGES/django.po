@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2021-11-23 21:10+0200\n"
+"POT-Creation-Date: 2021-12-09 18:55+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -279,15 +279,15 @@ msgstr "utilitate din vecinătate"
 msgid "proximal utilities"
 msgstr "utilități din vecinătate"
 
-#: buildings/models.py:105 buildings/models.py:272
+#: buildings/models.py:105 buildings/models.py:271
 msgid "Pending"
 msgstr "În așteptare"
 
-#: buildings/models.py:106 buildings/models.py:273
+#: buildings/models.py:106 buildings/models.py:272
 msgid "Accepted"
 msgstr "Acceptat"
 
-#: buildings/models.py:107 buildings/models.py:274
+#: buildings/models.py:107 buildings/models.py:273
 msgid "Rejected"
 msgstr "Respins"
 
@@ -299,8 +299,8 @@ msgstr "id general"
 msgid "parent id"
 msgstr "clădire originală"
 
-#: buildings/models.py:113 buildings/models.py:181 buildings/models.py:251
-#: buildings/models.py:304
+#: buildings/models.py:113 buildings/models.py:181 buildings/models.py:250
+#: buildings/models.py:303
 msgid "status"
 msgstr "stare"
 
@@ -496,59 +496,55 @@ msgstr "evenimente de efectuare lucrări"
 msgid "people under risk"
 msgstr "persoane aflate sub risc"
 
-#: buildings/models.py:228
-msgid "consolidated buildings"
-msgstr "clădiri consolidate"
-
-#: buildings/models.py:231
+#: buildings/models.py:230
 msgid "statistic"
 msgstr "statistică"
 
-#: buildings/models.py:232
+#: buildings/models.py:231
 msgid "statistics"
 msgstr "statistici"
 
-#: buildings/models.py:244
+#: buildings/models.py:243
 msgid "Not tried"
 msgstr "Neîncercat"
 
-#: buildings/models.py:245
+#: buildings/models.py:244
 msgid "Imported successfully"
 msgstr "Importat cu succes"
 
-#: buildings/models.py:246
+#: buildings/models.py:245
 msgid "Import failed"
 msgstr "Importare eșuată"
 
-#: buildings/models.py:249 pages/models.py:9 pages/models.py:95
+#: buildings/models.py:248 pages/models.py:9 pages/models.py:95
 msgid "name"
 msgstr "nume"
 
-#: buildings/models.py:250
+#: buildings/models.py:249
 msgid "file"
 msgstr "fișier"
 
-#: buildings/models.py:254
+#: buildings/models.py:253
 msgid "Data file"
 msgstr "Fișier de date"
 
-#: buildings/models.py:255
+#: buildings/models.py:254
 msgid "Data files"
 msgstr "Fișiere de date"
 
-#: buildings/models.py:280
+#: buildings/models.py:279
 msgid "Image name does not contain an extension"
 msgstr "Numele imaginii nu conține o extensie"
 
-#: buildings/models.py:283
+#: buildings/models.py:282
 msgid "Image extension is not accepted. Choose one of {}"
 msgstr "Extensia imaginii nu e corectă. Trebuie să fie una din {}"
 
-#: buildings/models.py:290
+#: buildings/models.py:289
 msgid "Image limit for building is reached ({})"
 msgstr "Limita de imagini pentru clădire a fost atinsă ({})"
 
-#: buildings/models.py:303
+#: buildings/models.py:302
 msgid "Add image file"
 msgstr "Adaugă o imagine"
 
@@ -640,13 +636,16 @@ msgstr "fișier încărcat"
 msgid "attachments"
 msgstr "atașamente"
 
-#: seismic_site/settings.py:122
+#: seismic_site/settings/base.py:128
 msgid "English"
 msgstr "Engleză"
 
-#: seismic_site/settings.py:122
+#: seismic_site/settings/base.py:129
 msgid "Romanian"
 msgstr "Română"
+
+#~ msgid "consolidated buildings"
+#~ msgstr "clădiri consolidate"
 
 #~ msgid "Sector 1"
 #~ msgstr "Sector 1"

@@ -1,12 +1,22 @@
+# django
+django-debug-toolbar
+django-extensions
+werkzeug
+
+# tests
 pytest
-pytest-django
 pytest-flake8
 pytest-cov
-pdbpp
-ipython
-pip-tools
-black==21.5b1
+pytest-django
 Faker
 tqdm
 
--r requirements.in
+# utils
+pdbpp
+ipython
+
+# style checker
+black==21.12b0
+
+# dependency management
+pip-tools
