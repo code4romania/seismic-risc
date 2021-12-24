@@ -3,10 +3,10 @@ import string
 from collections import namedtuple
 
 import pytest
+from django.conf import settings
 
 from buildings.models import Building, ImageFile
 from buildings.serializers import BuildingListSerializer
-from seismic_site import settings
 
 base_url = "/api/v1/buildings"
 

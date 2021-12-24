@@ -1,23 +1,23 @@
-from blog.views import PostViewSet, TagViewSet
-from buildings.views import BuildingViewSet, statistics
 from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import include, path
-from pages.views import PagesViewSet
-from rest_framework import routers
 from drf_spectacular.views import (
     SpectacularAPIView,
     SpectacularSwaggerView,
 )
+from rest_framework import routers
+
+from blog.views import PostViewSet, TagViewSet
+from buildings.views import BuildingViewSet, statistics
+from pages.views import PagesViewSet
 
 admin_site_string = "Bulina Roșie Admin"
 admin.site.site_title = admin_site_string
 admin.site.site_header = admin_site_string
 admin.site.index_title = admin_site_string
-admin.site.site_url = settings.SITE_URL
 
 router = routers.DefaultRouter()
 router.register(r"buildings", BuildingViewSet, basename="buildings")
@@ -66,3 +66,10 @@ urlpatterns = (
     ]
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 )
+
+if settings.DEBUG and settings.ENABLE_DEBUG_TOOLBAR:
+    import debug_toolbar
+
+    urlpatterns = [path("__debug__/", include(debug_toolbar.urls))] + urlpatterns
+
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

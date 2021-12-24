@@ -8,9 +8,9 @@ asgiref==3.4.1
     # via django
 attrs==21.2.0
     # via jsonschema
-boto3==1.18.46
+boto3==1.20.22
     # via -r requirements.in
-botocore==1.21.46
+botocore==1.23.22
     # via
     #   boto3
     #   s3transfer
@@ -24,7 +24,7 @@ diff-match-patch==20200713
     # via django-import-export
 dj-database-url==0.5.0
     # via -r requirements.in
-django==3.2.9
+django==3.2.10
     # via
     #   -r requirements.in
     #   django-cors-headers
@@ -36,17 +36,17 @@ django==3.2.9
     #   drf-spectacular
 django-ckeditor==6.2.0
     # via -r requirements.in
-django-configurations==2.2
+django-cors-headers==3.10.1
     # via -r requirements.in
-django-cors-headers==3.8.0
+django-environ==0.8.1
     # via -r requirements.in
-django-import-export==2.6.0
+django-import-export==2.7.0
     # via -r requirements.in
 django-jquery==3.1.0
     # via -r requirements.in
 django-js-asset==1.2.2
     # via django-ckeditor
-django-storages==1.11.1
+django-storages==1.12.3
     # via -r requirements.in
 django-taggit==1.5.1
     # via
@@ -62,6 +62,10 @@ drf-spectacular==0.19.0
     # via -r requirements.in
 et-xmlfile==1.1.0
     # via openpyxl
+gevent==21.8.0
+    # via -r requirements.in
+greenlet==1.1.2
+    # via gevent
 gunicorn==20.1.0
     # via -r requirements.in
 inflection==0.5.1
@@ -80,7 +84,7 @@ openpyxl==3.0.9
     # via tablib
 pillow==8.3.2
     # via -r requirements.in
-psycopg2==2.9.1
+psycopg2==2.9.2
     # via -r requirements.in
 pycparser==2.20
     # via cffi
@@ -89,9 +93,7 @@ pyrsistent==0.18.0
 python-dateutil==2.8.2
     # via botocore
 pytz==2021.1
-    # via
-    #   -r requirements.in
-    #   django
+    # via django
 pyyaml==5.4.1
     # via
     #   drf-spectacular
@@ -100,13 +102,12 @@ s3transfer==0.5.0
     # via boto3
 six==1.16.0
     # via
-    #   django-configurations
     #   django-taggit-serializer
     #   jsonschema
     #   python-dateutil
 sqlparse==0.4.2
     # via django
-tablib[html,ods,xls,xlsx,yaml]==3.0.0
+tablib[html,ods,xls,xlsx,yaml]==3.1.0
     # via
     #   -r requirements.in
     #   django-import-export
@@ -120,6 +121,10 @@ xlrd==2.0.1
     # via tablib
 xlwt==1.3.0
     # via tablib
+zope.event==4.5.0
+    # via gevent
+zope.interface==5.4.0
+    # via gevent
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools

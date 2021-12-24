@@ -56,7 +56,11 @@ coverage.xml
 local_settings.py
 db.sqlite3
 .pgdata
-api/static/
+
+api/static/*
+api/public/*
+api/seismic_site/static/*
+api/seismic_site/public/*
 
 # Flask stuff:
 instance/
@@ -87,6 +91,7 @@ celerybeat-schedule
 .env
 .venv
 .env.bak
+.env.*.bak
 .venv.bak
 env/
 venv/
@@ -120,5 +125,9 @@ prod.env
 
 # files
 ~*.xlsx
+
+# custom (database) back-ups
+backup-data/
+db/docker-entrypoint-initdb.d/b*.sql
 
 client/storybook-static/

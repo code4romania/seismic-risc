@@ -1,6 +1,6 @@
 # django and related apps
 django~=3.2.9
-django-configurations
+django-environ
 django-import-export
 djangorestframework
 django-cors-headers
@@ -11,7 +11,7 @@ django-taggit-serializer
 django-jquery
 
 # database
-psycopg2
+psycopg2<2.10
 dj-database-url
 
 # file handling
@@ -21,11 +21,11 @@ whitenoise
 brotlipy
 
 # misc libraries
-pytz
 tablib
 
 # wsgi server
 gunicorn
+gevent
 
 # doc-generation
 drf-spectacular
