@@ -126,7 +126,8 @@ def approved_building_data():
 def approved_building_return_data():
     basic_data = basic_building_data()
     basic_data["status"] = 1
-    basic_data["county_code"] = settings.COUNTIES_MAPPING[basic_data.pop("county")]
+    county = basic_data.pop("county")
+    basic_data["county_code"] = settings.COUNTIES_SHORTNAME.get(county, county)
     return basic_data
 
 
