@@ -176,7 +176,8 @@ class BuildingAdmin(admin.ModelAdmin):
 
     @display(ordering="building__address", description=_("Address"))
     def get_building_address(self, obj):
-        county = settings.COUNTIES_MAPPING[obj.county]
+        county_name = obj.county
+        county = settings.COUNTIES_SHORTNAME.get(county_name, county_name)
         return mark_safe("{} {} ({}, {})".format(obj.address, obj.street_number, obj.locality, county))
 
     @display(ordering="building__imagefile", description=_("Images"))

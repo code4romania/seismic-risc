@@ -13,8 +13,9 @@ class BaseBuildingSerializer(serializers.ModelSerializer):
     county_code = serializers.SerializerMethodField("get_county_code")
 
     @staticmethod
-    def get_county_code(obj: Building):
-        return settings.COUNTIES_MAPPING[obj.county]
+    def get_county_code(obj: Building) -> str:
+        county = obj.county
+        return settings.COUNTIES_SHORTNAME.get(county, county[0:2].upper())
 
 
 class BuildingSerializer(BaseBuildingSerializer):
