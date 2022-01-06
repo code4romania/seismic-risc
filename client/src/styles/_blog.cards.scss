@@ -1,45 +1,53 @@
 .blog-post-card {
   border-radius: $blog-card-radius;
+  height: 365px;
+  display: flex;
+  flex-direction: column;
 
   &:hover {
     background-color: #fafafa;
-    & .title-container {
-      border-top: 1rem solid #525f7f;
+  }
+
+  .ant-card-head {
+    border-top-left-radius: inherit;
+    border-top-right-radius: inherit;
+    font-size: 20px;
+    flex: 0 1 100px;
+  }
+
+  .ant-card-cover {
+    flex-grow: 1;
+
+    &,
+    div {
+      border-bottom-left-radius: inherit;
+      border-bottom-right-radius: inherit;
+    }
+
+    div {
+      background-repeat: no-repeat;
+      background-size: cover;
+      height: 100%;
     }
   }
 
   .ant-card-body {
-    height: 450px;
     padding: 0;
-    border-radius: 2px 2px 0 0;
-  }
-
-  @each $i, $color in $card-colors {
-    .card-#{$i} {
-      border-top: 1rem solid $color;
-    }
   }
 
   img {
-    position: absolute;
-    width: 100%;
-    height: auto;
-    top: 50%;
-    transform: translateY(-50%);
+    height: 100%;
   }
+}
 
-  .img-container {
-    position: relative;
-    width: 100%;
-    height: 75%;
-    overflow: hidden;
-  }
+@each $i, $color in $card-colors {
+  .card-#{$i} {
+    .ant-card-head {
+      border-top: 1rem solid $color;
+    }
 
-  .title-container {
-    height: 25%;
-    padding-right: 1rem;
-    padding-left: 1rem;
-    border-top-left-radius: $blog-card-radius;
-    border-top-right-radius: $blog-card-radius;
+    &:hover .ant-card-head {
+      border-color: #525f7f;
+    }
   }
 }

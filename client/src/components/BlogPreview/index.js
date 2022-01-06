@@ -94,7 +94,7 @@ export default ({ title, postSlug = null }) => {
       </Row>
       <Row gutter={[20, 8]} type="flex" justify="start">
         {state.posts.map((post, i) => (
-          <Col key={post.slug} lg={8} span={24}>
+          <Col key={post.slug} xs={24} md={12} lg={8}>
             <BlogCard cardIndex={i} title={post.title} imageUrl={post.image} slug={post.slug} />
           </Col>
         ))}
