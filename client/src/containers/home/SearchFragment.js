@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Row, Col, Typography, message, AutoComplete, Input, Icon, Spin } from 'antd';
+import { Row, Col, Typography, message, AutoComplete, Input, Icon, Spin, Tooltip } from 'antd';
 import { Trans } from '@lingui/macro';
 import { debounce, groupBy } from 'lodash';
 
@@ -91,10 +91,21 @@ export default () => {
         <Title level={3}>
           <Trans>
             Check here if a building is on the{' '}
-            <div className="badge">
-              <span>seismic risk</span>
-              <InfoIcon />
-            </div>{' '}
+            {/* @TODO replace lorem text with actual text + translations */}
+            <Tooltip
+              title="
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam nemo, cum ratione
+                  explicabo architecto ex dolore incidunt nisi quisquam dolores? Facere ipsa quam
+                  modi laborum possimus, accusantium dolor a adipisci.
+                "
+              placement="top"
+              trigger={['hover', 'click']}
+            >
+              <div className="badge">
+                <span>seismic risk</span>
+                <InfoIcon />
+              </div>
+            </Tooltip>{' '}
             list
           </Trans>
           :
