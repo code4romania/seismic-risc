@@ -12,7 +12,7 @@ exports[`BlogPostDetailsFragment component should render correctly 1`] = `
       >
         <div
           class="ant-typography"
-          style="text-align: justify;"
+          style="text-align: justify; word-break: break-all;"
         >
           <div>
             <p>
