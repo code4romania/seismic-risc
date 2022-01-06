@@ -218,7 +218,7 @@
     "extractedComments": []
   },
   "Check here if a building is on the <0><1><2>seismic risk</2><3/></1></0> list": {
-    "translation": "",
+    "translation": "Verifică aici dacă o clădire se află pe lista de <0><1><2>risc seismic</2><3/></1></0>",
     "origin": [
       [
         "containers/home/SearchFragment.js",
