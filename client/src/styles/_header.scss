@@ -15,12 +15,19 @@
 }
 
 .App-logo {
+  display: flex;
   margin-right: auto;
 
   a {
     display: inline-flex;
     height: $header-height;
     align-items: center;
+    flex-basis: 110px;
+    flex-grow: 0;
+
+    img {
+      width: 100%;
+    }
   }
 }
 
@@ -31,6 +38,7 @@
   margin-bottom: 0;
   margin-right: 1rem;
   padding-left: 0;
+  white-space: nowrap;
 
   @media (max-width: $breakpoint-desktop) {
     margin-right: 0.8rem;
