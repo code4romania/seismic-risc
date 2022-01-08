@@ -32,7 +32,7 @@ export const FormInputType = {
   form: shape().isRequired,
   rulesOptions: arrayOf(
     shape({
-      ruleName: oneOf(['email', 'required', 'max', 'integer']),
+      ruleName: oneOf(['email', 'required', 'max', 'integer', 'gdpr', 'captcha']),
       value: oneOfType([number]),
     }),
   ),

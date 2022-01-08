@@ -6,25 +6,41 @@ import FormSection from '../../components/FormSection';
 import FormSubSection from '../../components/FormSubSection';
 import { formFields } from './utils';
 import FormRadio from '../../components/FormRadio';
+import FormCheckbox from '../../components/FormCheckbox';
+import FormTextArea from '../../components/FormTextArea';
 
 const { generalInfoFields, buildingAdministrationFields, spaceUsageFields } =
   formFields.extraInfoFields;
 
-const [isStillPresentField, ...remainingGeneralInfoFields] = generalInfoFields;
+const [
+  isStillPresentField,
+  consolidationStatusField,
+  workPerformedField,
+  ...remainingGeneralInfoFields
+] = generalInfoFields;
 
 const ThirdFormSection = ({ disabledFields, form }) => {
   const [showAddMoreInfoBtn, setShowAddMoreInfoBtn] = useState(true);
   const [isDemolished, setIsDemolished] = useState(false);
+  const [showOtherWorkPerformedField, setShowOtherWorkPerformedField] = useState(false);
 
   const onAddMoreInfoBtnClick = useCallback(() => {
     setShowAddMoreInfoBtn(false);
   }, []);
 
-  const onIsStillPresentFieldChange = useCallback((checkedValue) => {
-    if (checkedValue.target.value === 'NO') {
+  const onIsStillPresentFieldChange = useCallback(({ target }) => {
+    if (target.value === 'NO') {
       setIsDemolished(true);
     } else {
       setIsDemolished(false);
+    }
+  }, []);
+
+  const onOtherWorkPerformedSelected = useCallback((checkedValues) => {
+    if (checkedValues.includes('5')) {
+      setShowOtherWorkPerformedField(true);
+    } else {
+      setShowOtherWorkPerformedField(false);
     }
   }, []);
 
@@ -48,14 +64,39 @@ const ThirdFormSection = ({ disabledFields, form }) => {
                 disabled={disabledFields}
                 fieldName={isStillPresentField.fieldName}
                 form={form}
-                {...isStillPresentField}
+                label={isStillPresentField.label}
                 onChange={onIsStillPresentFieldChange}
+                options={isStillPresentField.options}
               />
               {isDemolished && (
                 <Alert type="info" message={<Trans id="form.is_still_present.info" />} showIcon />
               )}
 
-              {/* @TODO user can see a new field and fill in other work performed when option 5 is selected */}
+              <FormRadio
+                disabled={disabledFields || isDemolished}
+                fieldName={consolidationStatusField.fieldName}
+                form={form}
+                label={consolidationStatusField.label}
+                options={consolidationStatusField.options}
+              />
+
+              <FormCheckbox
+                disabled={disabledFields || isDemolished}
+                fieldName={workPerformedField.fieldName}
+                form={form}
+                label={workPerformedField.label}
+                options={workPerformedField.options}
+                onChange={onOtherWorkPerformedSelected}
+              />
+              {showOtherWorkPerformedField && (
+                <FormTextArea
+                  fieldName="work_performed_other"
+                  form={form}
+                  rows={2}
+                  rulesOptions={[{ ruleName: 'max', value: 250 }]}
+                />
+              )}
+
               {remainingGeneralInfoFields.map(({ component: FormField, fieldName, ...rest }) => (
                 <FormField
                   key={fieldName}

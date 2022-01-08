@@ -63,7 +63,6 @@ export const formFields = {
             text: <Trans id="form.work_performed.5" />,
           },
         ],
-        // @TODO user can see a new field and fill in other work performed when option 5 is selected
         component: FormCheckbox,
       },
       {
