@@ -30,16 +30,18 @@ export const FormInputType = {
   disabled: bool,
   fieldName: string.isRequired,
   form: shape().isRequired,
-  ruleOptions: shape({
-    ruleName: oneOf(['email', 'required', 'max']),
-    value: oneOfType([number]),
-  }),
+  rulesOptions: arrayOf(
+    shape({
+      ruleName: oneOf(['email', 'required', 'max']),
+      value: oneOfType([number]),
+    }),
+  ),
 };
 
 export const defaultFormInputTypeProps = {
   ...defaultFormFieldTypeProps,
   disabled: false,
-  ruleOptions: null,
+  rulesOptions: null,
 };
 
 export const FormCheckboxType = {

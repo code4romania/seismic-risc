@@ -11,7 +11,7 @@ const FormInput = ({ disabled, fieldName, form, rulesOptions, ...rest }) => {
   return (
     <FormField {...rest}>
       {getFieldDecorator(fieldName, {
-        ...createFormValidationRules(rulesOptions),
+        rules: createFormValidationRules(rulesOptions),
       })(<Input disabled={disabled} />)}
     </FormField>
   );

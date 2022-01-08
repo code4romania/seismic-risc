@@ -13,7 +13,7 @@ const FormSelect = ({ disabled, fieldName, form, options, rulesOptions, ...rest 
   return (
     <FormField {...rest}>
       {getFieldDecorator(fieldName, {
-        ...createFormValidationRules(rulesOptions),
+        rules: createFormValidationRules(rulesOptions),
       })(
         <Select disabled={disabled}>
           {options.map(({ value, text }) => (
