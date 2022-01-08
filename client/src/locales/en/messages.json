@@ -739,7 +739,7 @@
     "extractedComments": []
   },
   "form.first_section.extra": {
-    "translation": "",
+    "translation": "TODO Text despre punerea pin-ului pe harta si descrierea procesului si informatiile aditionale de mai jos & stuff.",
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
