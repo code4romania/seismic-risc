@@ -9,11 +9,17 @@ const MaxLengthMessage = ({ maxLen }) => (
   <Trans>Field cannot exceed a maximum of {maxLen} characters!</Trans>
 );
 
-const FormInput = ({ disabled, fieldName, form, label, maxLen, required }) => {
+const EmailTypeMessage = () => <Trans>Email address is not valid!</Trans>;
+
+const FormInput = ({ disabled, fieldName, form, label, maxLen, required, type }) => {
   const { getFieldDecorator } = form;
 
   const rules = useMemo(() => {
     const newRules = [];
+
+    if (type && type === 'email') {
+      newRules.push({ type, message: <EmailTypeMessage /> });
+    }
 
     if (required) {
       newRules.push({ required: true, message: <EmptyFieldMessage /> });
@@ -39,6 +45,7 @@ FormInput.defaultProps = {
   label: null,
   maxLen: null,
   required: null,
+  type: null,
 };
 
 FormInput.propTypes = {
@@ -48,6 +55,7 @@ FormInput.propTypes = {
   label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   maxLen: PropTypes.number,
   required: PropTypes.bool,
+  type: PropTypes.oneOf(['email']),
 };
 
 export default FormInput;
