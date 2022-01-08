@@ -30,9 +30,9 @@ const SecondFormSection = ({ disabledFields, form }) => {
       title={<Trans id="form.second_section.title" />}
       description={<Trans id="form.second_section.description" />}
     >
-      <Col span={14}>
+      <Col xs={24} lg={18}>
         <Row type="flex" gutter={20}>
-          <Col span={12}>
+          <Col xs={24} md={12} lg={10} xl={9}>
             <FormInput
               disabled={disabledFields}
               fieldName="full_name"
@@ -41,7 +41,7 @@ const SecondFormSection = ({ disabledFields, form }) => {
               rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 100 }]}
             />
           </Col>
-          <Col span={12}>
+          <Col xs={24} md={12} lg={10} xl={9}>
             <FormInput
               disabled={disabledFields}
               fieldName="email_address"
@@ -56,7 +56,7 @@ const SecondFormSection = ({ disabledFields, form }) => {
           </Col>
         </Row>
         <Row type="flex" gutter={20}>
-          <Col span={12}>
+          <Col xs={24} md={12} lg={10} xl={9}>
             <FormInput
               disabled={disabledFields}
               fieldName="phone_number"
@@ -69,7 +69,7 @@ const SecondFormSection = ({ disabledFields, form }) => {
         <Row>
           <FormRadio
             disabled={disabledFields}
-            fieldName="type_of_contract"
+            fieldName="type_of_contact"
             form={form}
             label={<Trans id="form.type_of_contract.label" />}
             options={TYPE_OF_CONTRACTS}

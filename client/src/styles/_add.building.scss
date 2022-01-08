@@ -18,11 +18,16 @@ div.add-building {
   .ant-form-item-label {
     font-size: 1rem;
     font-weight: 600;
+    padding-bottom: 0;
   }
 
   .form-loading {
     text-align: center;
     height: 300px;
+  }
+
+  label.ant-radio-wrapper {
+    white-space: normal;
   }
 }
 

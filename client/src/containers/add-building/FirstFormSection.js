@@ -54,9 +54,9 @@ const FirstFormSection = ({
 
   return (
     <FormSection label={1} title={<Trans id="form.first_section.title" />}>
-      <Col span={14}>
+      <Col xs={24} lg={14}>
         <Row type="flex" gutter={20}>
-          <Col span={18}>
+          <Col xs={24} md={18}>
             <FormInput
               colon
               disabled={disabledFields}
@@ -66,7 +66,7 @@ const FirstFormSection = ({
               rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 100 }]}
             />
           </Col>
-          <Col span={6}>
+          <Col xs={24} md={6}>
             <FormInput
               colon
               disabled={disabledFields}
@@ -78,7 +78,7 @@ const FirstFormSection = ({
           </Col>
         </Row>
         <Row type="flex" gutter={20}>
-          <Col span={12}>
+          <Col xs={24} md={12}>
             <FormInput
               disabled={disabledFields}
               fieldName="county"
@@ -87,7 +87,7 @@ const FirstFormSection = ({
               rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 50 }]}
             />
           </Col>
-          <Col span={12}>
+          <Col xs={24} md={12}>
             <FormInput
               disabled={disabledFields}
               fieldName="locality"
@@ -98,17 +98,17 @@ const FirstFormSection = ({
           </Col>
         </Row>
         <Row type="flex" gutter={20}>
-          <Col span={12}>
+          <Col xs={24} md={12}>
             <FormSelect
               disabled={disabledFields}
-              fieldName="risk_class"
+              fieldName="risk_category"
               form={form}
               label={<Trans id="form.risk_class.label" />}
               options={riskCategoryOptions}
               rulesOptions={[{ ruleName: 'required' }]}
             />
           </Col>
-          <Col span={12}>
+          <Col xs={24} md={12}>
             <FormInput
               disabled={disabledFields}
               fieldName="height_regime"
@@ -124,14 +124,14 @@ const FirstFormSection = ({
           </Paragraph>
         </Row>
       </Col>
-      <Col span={10}>
+      <Col xs={24} lg={10}>
         <HereMapAddBuilding
           apiKey={MAP_API_KEY}
           searchText={mapSearchText}
           onCoordinatesChange={onCoordinatesChange}
         />
       </Col>
-      <Col span={14}>
+      <Col xs={24} lg={18}>
         <Paragraph strong>
           <Trans id="form.images.label" />
         </Paragraph>

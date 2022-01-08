@@ -144,7 +144,7 @@ const FormFragment = ({ form }) => {
       <ThirdFormSection disabledFields={state.requestError} form={form} />
 
       <Row type="flex" gutter={16}>
-        <Col offset={1} span={16}>
+        <Col xs={24} lg={16}>
           <FormCheckbox
             disabled={state.requestError}
             form={form}

@@ -46,7 +46,7 @@ const ThirdFormSection = ({ disabledFields, form }) => {
 
   return (
     <FormSection label={3} title={<Trans id="form.third_section.title" />}>
-      <Col span={18}>
+      <Col xs={24} lg={18}>
         {showAddMoreInfoBtn ? (
           <Row>
             <Button type="primary" ghost size="large" onClick={onAddMoreInfoBtnClick}>
