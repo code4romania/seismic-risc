@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Checkbox, Col, Form, Row, Spin, Typography } from 'antd';
+import { Button, Col, Form, Row, Spin, Typography } from 'antd';
 import { Trans } from '@lingui/macro';
 import { Link, Redirect } from 'react-router-dom';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
@@ -10,6 +10,7 @@ import FirstFormSection from './FirstFormSection';
 import SecondFormSection from './SecondFormSection';
 import ThirdFormSection from './ThirdFormSection';
 import useCreateFormValidationRules from '../../hooks/form/useFormValidationRules';
+import FormCheckbox from '../../components/FormCheckbox';
 
 const { Title } = Typography;
 
@@ -144,23 +145,27 @@ const FormFragment = ({ form }) => {
 
       <Row type="flex" gutter={16}>
         <Col offset={1} span={16}>
-          <Form.Item required>
-            {getFieldDecorator('gdpr', {
-              rules: createFormValidationRules([{ ruleName: 'gdpr' }]),
-            })(
-              <Checkbox disabled={state.requestError}>
-                <Trans id="form.gdpr_agreement">
-                  By this check, you agree that the data provided by you through this form will be
-                  processed exclusively to upload this document on the platform and that the MKBT
-                  team will contact you only in connection with this submission. Here you can find{' '}
-                  <Link to="/termeni-si-conditii" target="_blank">
-                    our regulations on the processing of personal data
-                  </Link>
-                  .
-                </Trans>
-              </Checkbox>,
-            )}
-          </Form.Item>
+          <FormCheckbox
+            disabled={state.requestError}
+            form={form}
+            fieldName="gdpr"
+            options={[
+              {
+                value: 'gdpr',
+                text: (
+                  <Trans id="form.gdpr_agreement">
+                    By this check, you agree that the data provided by you through this form will be
+                    processed exclusively to upload this document on the platform and that the MKBT
+                    team will contact you only in connection with this submission. Here you can find{' '}
+                    <Link to="/termeni-si-conditii" target="_blank">
+                      our regulations on the processing of personal data
+                    </Link>
+                    .
+                  </Trans>
+                ),
+              },
+            ]}
+          />
           <br />
           <Row type="flex" align="middle" justify="space-between">
             <Col>

@@ -6,7 +6,7 @@ const ColType = {
 
 const OptionType = {
   value: string,
-  text: oneOfType(string, element),
+  text: oneOfType([string, element]),
 };
 
 export const FormFieldType = {
