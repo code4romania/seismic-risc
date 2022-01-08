@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import PropTypes from 'prop-types';
 import { Trans } from '@lingui/macro';
-import { Col, Row, Select, Typography, Upload } from 'antd';
+import { Col, Row, Typography, Upload } from 'antd';
 import config from '../../config';
 import FormInput from '../../components/FormInput';
 import FormSection from '../../components/FormSection';
@@ -10,7 +10,6 @@ import UploadButton from '../../components/UploadButton';
 import FormSelect from '../../components/FormSelect';
 
 const { Paragraph } = Typography;
-const { Option } = Select;
 
 const { MAP_API_KEY } = config;
 
@@ -23,11 +22,7 @@ const FirstFormSection = ({
 }) => {
   const riskCategoryOptions = useMemo(
     () =>
-      riskCategories.map((category) => (
-        <Option key={category.value} value={category.value}>
-          {category.display_name}
-        </Option>
-      )),
+      riskCategories.map((category) => ({ value: category.value, text: category.display_name })),
     [riskCategories],
   );
 
@@ -39,24 +34,24 @@ const FirstFormSection = ({
     >
       <Col span={14}>
         <Row type="flex" gutter={20}>
-          <Col span={20}>
+          <Col span={18}>
             <FormInput
+              colon
               disabled={disabledFields}
               fieldName="address"
               form={form}
-              label={<Trans>Street</Trans>}
-              maxLen={250}
-              required
+              label={<Trans>Street:</Trans>}
+              rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 100 }]}
             />
           </Col>
-          <Col span={4}>
+          <Col span={6}>
             <FormInput
+              colon
               disabled={disabledFields}
               fieldName="street_number"
               form={form}
-              label={<Trans>Number</Trans>}
-              maxLen={100}
-              required
+              label={<Trans>Building number:</Trans>}
+              rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 50 }]}
             />
           </Col>
         </Row>
@@ -66,9 +61,8 @@ const FirstFormSection = ({
               disabled={disabledFields}
               fieldName="county"
               form={form}
-              label={<Trans>County</Trans>}
-              maxLen={60}
-              required
+              label={<Trans>County:</Trans>}
+              rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 50 }]}
             />
           </Col>
           <Col span={12}>
@@ -76,9 +70,8 @@ const FirstFormSection = ({
               disabled={disabledFields}
               fieldName="locality"
               form={form}
-              label={<Trans>Locality</Trans>}
-              maxLen={20}
-              required
+              label={<Trans>City:</Trans>}
+              rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 50 }]}
             />
           </Col>
         </Row>
@@ -86,11 +79,11 @@ const FirstFormSection = ({
           <Col span={12}>
             <FormSelect
               disabled={disabledFields}
-              fieldName="risk_category"
+              fieldName="risk_class"
               form={form}
-              label={<Trans>Risk category</Trans>}
+              label={<Trans>Risk class:</Trans>}
               options={riskCategoryOptions}
-              required
+              rulesOptions={[{ ruleName: 'required' }]}
             />
           </Col>
           <Col span={12}>
@@ -98,9 +91,8 @@ const FirstFormSection = ({
               disabled={disabledFields}
               fieldName="height_regime"
               form={form}
-              label={<Trans>Height regime</Trans>}
-              maxLen={50}
-              required
+              label={<Trans>Height regime:</Trans>}
+              rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 50 }]}
             />
           </Col>
         </Row>
