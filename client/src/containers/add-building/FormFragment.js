@@ -1,29 +1,20 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Form, Input, Select, Spin, Typography } from 'antd';
+import { Button, Checkbox, Col, Form, Row, Spin, Typography } from 'antd';
 import { Trans } from '@lingui/macro';
-import { Redirect } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
-import PinDrop from '../../images/pin_drop.svg';
 
 import config from '../../config';
-import HereMapAddBuilding from '../../components/HereMapAddBuilding';
 import { useGlobalContext } from '../../context';
+import FirstFormSection from './FirstFormSection';
+import SecondFormSection from './SecondFormSection';
+import ThirdFormSection from './ThirdFormSection';
 
 const { Title } = Typography;
 
-const { BUILDINGS_URL, MAP_API_KEY, CAPTCHA_API_KEY } = config;
-
-const layout = {
-  labelCol: { sm: { span: 24 }, md: { span: 6 }, lg: { span: 4 } },
-  wrapperCol: { sm: { span: 24 }, md: { span: 10 }, lg: { span: 10 } },
-};
-
-const { Option } = Select;
+const { BUILDINGS_URL, CAPTCHA_API_KEY } = config;
 
 const EmptyFieldMessage = () => <Trans>Cannot be left empty!</Trans>;
-const MaxLengthMessage = ({ maxLen }) => (
-  <Trans>Field cannot exceed a maximum of {maxLen} characters!</Trans>
-);
 
 const FormFragment = ({ form }) => {
   const [state, setState] = useState({
@@ -137,88 +128,62 @@ const FormFragment = ({ form }) => {
   }
 
   return (
-    <Form labelAlign="left" {...layout} onSubmit={onFinish}>
-      <Title level={3}>
-        <img src={PinDrop} alt="" height="20px" />
-        <Trans>Building Info</Trans>
-      </Title>
-      <Form.Item label={<Trans>Street</Trans>}>
-        {getFieldDecorator('address', {
-          rules: [
-            { required: true, message: <EmptyFieldMessage /> },
-            { max: 250, message: <MaxLengthMessage maxLen={250} /> },
-          ],
-        })(<Input disabled={state.requestError} />)}
-      </Form.Item>
-      <Form.Item label={<Trans>Street number</Trans>}>
-        {getFieldDecorator('street_number', {
-          rules: [
-            { required: true, message: <EmptyFieldMessage /> },
-            { max: 100, message: <MaxLengthMessage maxLen={100} /> },
-          ],
-        })(<Input disabled={state.requestError} />)}
-      </Form.Item>
-      <Form.Item label={<Trans>Locality</Trans>}>
-        {getFieldDecorator('locality', {
-          rules: [
-            { required: true, message: <EmptyFieldMessage /> },
-            { max: 20, message: <MaxLengthMessage maxLen={20} /> },
-          ],
-        })(<Input disabled={state.requestError} />)}
-      </Form.Item>
-      <Form.Item label={<Trans>County</Trans>}>
-        {getFieldDecorator('county', {
-          rules: [
-            { required: true, message: <EmptyFieldMessage /> },
-            { max: 60, message: <MaxLengthMessage maxLen={60} /> },
-          ],
-        })(<Input disabled={state.requestError} />)}
-      </Form.Item>
-      <Form.Item wrapperCol={{ sm: { span: 48 }, md: { span: 16 }, lg: { span: 14 } }}>
-        <HereMapAddBuilding
-          apiKey={MAP_API_KEY}
-          searchText={mapSearchText}
-          onCoordinatesChange={onCoordinatesChange}
-        />
-      </Form.Item>
-      <Form.Item label={<Trans>Height regime</Trans>}>
-        {getFieldDecorator('height_regime', {
-          rules: [
-            { required: true, message: <EmptyFieldMessage /> },
-            { max: 50, message: <MaxLengthMessage maxLen={50} /> },
-          ],
-        })(<Input disabled={state.requestError} />)}
-      </Form.Item>
-      <Form.Item label={<Trans>Risk category</Trans>}>
-        {getFieldDecorator('risk_category', {
-          rules: [{ required: true, message: <EmptyFieldMessage /> }],
-        })(
-          <Select disabled={state.requestError}>
-            {state.riskCategories.map((category) => (
-              <Option key={category.value} value={category.value}>
-                {category.display_name}
-              </Option>
-            ))}
-          </Select>,
-        )}
-      </Form.Item>
-      <Form.Item label={<Trans>Captcha</Trans>}>
-        {getFieldDecorator('captcha', {
-          rules: [{ required: true, message: <EmptyFieldMessage /> }],
-        })(
-          <HCaptcha
-            sitekey={CAPTCHA_API_KEY}
-            onVerify={handleVerifyCaptcha}
-            hl={language}
-            languageOverride={language}
-          />,
-        )}
-      </Form.Item>
-      <Form.Item>
-        <Button type="primary" htmlType="submit" disabled={state.requestError}>
-          <Trans>Add a building</Trans>
-        </Button>
-      </Form.Item>
+    <Form labelAlign="left" onSubmit={onFinish}>
+      <FirstFormSection
+        disabledFields={state.requestError}
+        form={form}
+        onCoordinatesChange={onCoordinatesChange}
+        mapSearchText={mapSearchText}
+        riskCategories={state.riskCategories}
+      />
+
+      <SecondFormSection disabledFields={state.requestError} form={form} />
+
+      <ThirdFormSection disabledFields={state.requestError} form={form} />
+
+      <Row type="flex" gutter={16}>
+        <Col offset={1} span={16}>
+          <Row>
+            <Checkbox disabled={state.requestError}>
+              <Trans>
+                Prin această bifă îți exprimi acordul ca datele furnizate de tine prin acest
+                formular să fie procesate exclusiv in scopul de a încărca în platformă acest
+                document și ca echipa MKBT să te contacteze doar în legătură cu această submisie.
+                Aici puteți găsi
+              </Trans>{' '}
+              <Link to="/termeni-si-conditii" target="_blank">
+                <Trans>
+                  regulamentul nostru cu privire la prelucrarea datelor cu caracter personal.
+                </Trans>
+              </Link>
+            </Checkbox>
+          </Row>
+          <br />
+          <Row type="flex" align="middle" justify="space-between">
+            <Col>
+              <Form.Item>
+                {getFieldDecorator('captcha', {
+                  rules: [{ required: true, message: <EmptyFieldMessage /> }],
+                })(
+                  <HCaptcha
+                    sitekey={CAPTCHA_API_KEY}
+                    onVerify={handleVerifyCaptcha}
+                    hl={language}
+                    languageOverride={language}
+                  />,
+                )}
+              </Form.Item>
+            </Col>
+            <Col>
+              <Form.Item colon>
+                <Button type="primary" htmlType="submit" disabled={state.requestError}>
+                  <Trans>Add a building</Trans>
+                </Button>
+              </Form.Item>
+            </Col>
+          </Row>
+        </Col>
+      </Row>
     </Form>
   );
 };
