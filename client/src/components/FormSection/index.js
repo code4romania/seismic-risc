@@ -11,14 +11,16 @@ const FormSection = ({ label, title, description, children }) => {
         <Col style={{ paddingTop: '8px' }}>
           <Chip label={label} />
         </Col>
-        <Col>
+        <Col style={{ width: '100%' }}>
           <Row style={{ marginBottom: '32px' }}>
-            <Title level={1} style={{ fontSize: '48px', color: '#EE4036', marginBottom: '0px' }}>
+            <Title level={2} style={{ fontSize: '48px', color: '#EE4036', marginBottom: '0px' }}>
               {title}
             </Title>
-            <Text>{description}</Text>
+            <Text style={{ fontSize: '16px' }}>{description}</Text>
           </Row>
-          <Row>{children}</Row>
+          <Row type="flex" gutter={16}>
+            {children}
+          </Row>
         </Col>
       </Row>
     </>
