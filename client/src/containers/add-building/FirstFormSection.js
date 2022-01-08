@@ -147,6 +147,7 @@ const FirstFormSection = ({
             multiple
             onChange={onImageUploadChangeHandler}
             onRemove={onRemoveImageHandler}
+            disabled={disabledFields}
           >
             {fileList.length < 5 && <UploadButton name={<Trans id="form.upload_button.label" />} />}
           </Upload>,

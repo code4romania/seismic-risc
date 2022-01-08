@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Col, Form, Row, Spin, Typography } from 'antd';
+import { Button, Col, Form, Row, Spin } from 'antd';
 import { Trans } from '@lingui/macro';
 import { Link, Redirect } from 'react-router-dom';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
@@ -11,14 +11,12 @@ import SecondFormSection from './SecondFormSection';
 import ThirdFormSection from './ThirdFormSection';
 import useCreateFormValidationRules from '../../hooks/form/useFormValidationRules';
 import FormCheckbox from '../../components/FormCheckbox';
-
-const { Title } = Typography;
+import { useRiskCategoriesQuery } from '../../queries';
 
 const { BUILDINGS_URL, CAPTCHA_API_KEY } = config;
 
 const FormFragment = ({ form }) => {
   const [state, setState] = useState({
-    riskCategories: [],
     requestError: false,
     loading: true,
     finished: false,
@@ -31,6 +29,12 @@ const FormFragment = ({ form }) => {
   const { currentLanguage } = useGlobalContext();
 
   const createFormValidationRules = useCreateFormValidationRules();
+
+  const {
+    riskCategories,
+    isError: isErrorLoadingRiskCategories,
+    isLoading: isLoadingRiskCategories,
+  } = useRiskCategoriesQuery();
 
   const onFinish = (e) => {
     e.preventDefault();
@@ -80,119 +84,90 @@ const FormFragment = ({ form }) => {
   }, [fields]);
 
   useEffect(() => {
-    const getRiskCategories = async () => {
-      try {
-        const res = await fetch(`${BUILDINGS_URL}/public_create/`, { method: 'OPTIONS' });
-        if (res.ok) {
-          const posts = await res.json();
-          const { choices } = posts.actions.POST.risk_category;
-          setState((prevState) => ({
-            ...prevState,
-            requestError: false,
-            riskCategories: choices,
-            loading: false,
-          }));
-        } else {
-          throw new Error(res.statusText);
-        }
-      } catch (err) {
-        setState((prevState) => ({ ...prevState, loading: false, requestError: true }));
-      }
-    };
-
-    getRiskCategories();
-  }, []);
-
-  useEffect(() => {
     setLanguage(currentLanguage);
   }, [currentLanguage]);
-
-  if (state.loading) {
-    return (
-      <div className="form-loading">
-        <Spin size="large" />
-      </div>
-    );
-  }
-
-  if (state.requestError) {
-    return (
-      <div className="form-loading">
-        <Title level={3}>
-          <Trans>Server unavailable</Trans>
-        </Title>
-      </div>
-    );
-  }
 
   if (state.finished) {
     return <Redirect push to="/multumim" />;
   }
 
   return (
-    <Form labelAlign="left" onSubmit={onFinish}>
-      <FirstFormSection
-        disabledFields={state.requestError}
-        form={form}
-        onCoordinatesChange={onCoordinatesChange}
-        mapSearchText={mapSearchText}
-        riskCategories={state.riskCategories}
-      />
-
-      <SecondFormSection disabledFields={state.requestError} form={form} />
-
-      <ThirdFormSection disabledFields={state.requestError} form={form} />
-
-      <Row type="flex" gutter={16}>
-        <Col xs={24} lg={16}>
-          <FormCheckbox
-            disabled={state.requestError}
+    <>
+      {isLoadingRiskCategories ? (
+        <div className="form-loading">
+          <Spin size="large" />
+        </div>
+      ) : (
+        <Form labelAlign="left" onSubmit={onFinish}>
+          <FirstFormSection
+            disabledFields={isErrorLoadingRiskCategories}
             form={form}
-            fieldName="gdpr"
-            options={[
-              {
-                value: 'gdpr',
-                text: (
-                  <Trans id="form.gdpr_agreement">
-                    By this check, you agree that the data provided by you through this form will be
-                    processed exclusively to upload this document on the platform and that the MKBT
-                    team will contact you only in connection with this submission. Here you can find{' '}
-                    <Link to="/termeni-si-conditii" target="_blank">
-                      our regulations on the processing of personal data
-                    </Link>
-                    .
-                  </Trans>
-                ),
-              },
-            ]}
+            onCoordinatesChange={onCoordinatesChange}
+            mapSearchText={mapSearchText}
+            riskCategories={riskCategories}
           />
-          <br />
-          <Row type="flex" align="middle" justify="space-between">
-            <Col>
-              <Form.Item>
-                {getFieldDecorator('captcha', {
-                  rules: createFormValidationRules([{ ruleName: 'captcha' }]),
-                })(
-                  <HCaptcha
-                    sitekey={CAPTCHA_API_KEY}
-                    onVerify={handleVerifyCaptcha}
-                    hl={language}
-                    languageOverride={language}
-                  />,
-                )}
-              </Form.Item>
-            </Col>
-            <Col>
-              <Form.Item colon>
-                <Button type="primary" htmlType="submit" disabled={state.requestError}>
-                  <Trans>Add a building</Trans>
-                </Button>
-              </Form.Item>
+
+          <SecondFormSection disabledFields={isErrorLoadingRiskCategories} form={form} />
+
+          <ThirdFormSection disabledFields={isErrorLoadingRiskCategories} form={form} />
+
+          <Row type="flex" gutter={16}>
+            <Col xs={24} lg={16}>
+              <FormCheckbox
+                disabled={isErrorLoadingRiskCategories}
+                form={form}
+                fieldName="gdpr"
+                options={[
+                  {
+                    value: 'gdpr',
+                    text: (
+                      <Trans id="form.gdpr_agreement">
+                        By this check, you agree that the data provided by you through this form
+                        will be processed exclusively to upload this document on the platform and
+                        that the MKBT team will contact you only in connection with this submission.
+                        Here you can find{' '}
+                        <Link to="/termeni-si-conditii" target="_blank">
+                          our regulations on the processing of personal data
+                        </Link>
+                        .
+                      </Trans>
+                    ),
+                  },
+                ]}
+              />
+              <br />
+              <Row type="flex" align="middle" justify="space-between">
+                <Col>
+                  <Form.Item>
+                    {getFieldDecorator('captcha', {
+                      rules: createFormValidationRules([{ ruleName: 'captcha' }]),
+                    })(
+                      <HCaptcha
+                        sitekey={CAPTCHA_API_KEY}
+                        onVerify={handleVerifyCaptcha}
+                        hl={language}
+                        languageOverride={language}
+                      />,
+                    )}
+                  </Form.Item>
+                </Col>
+                <Col>
+                  <Form.Item colon>
+                    <Button
+                      type="primary"
+                      htmlType="submit"
+                      disabled={isErrorLoadingRiskCategories}
+                    >
+                      <Trans>Add a building</Trans>
+                    </Button>
+                  </Form.Item>
+                </Col>
+              </Row>
             </Col>
           </Row>
-        </Col>
-      </Row>
-    </Form>
+        </Form>
+      )}
+    </>
   );
 };
 

@@ -106,7 +106,7 @@
       ],
       [
         "containers/add-building/FormFragment.js",
-        183
+        161
       ],
       [
         "containers/add-building/HeroFragment.js",
@@ -489,10 +489,6 @@
         77
       ],
       [
-        "containers/add-building/FormFragment.js",
-        121
-      ],
-      [
         "containers/blog/Blog.js",
         69
       ]
@@ -608,7 +604,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        39
+        65
       ]
     ],
     "extractedComments": []
@@ -618,7 +614,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        72
+        70
       ]
     ],
     "extractedComments": []
@@ -628,7 +624,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        137
+        134
       ]
     ],
     "extractedComments": []
@@ -638,7 +634,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        152
+        148
       ]
     ],
     "extractedComments": []
@@ -648,7 +644,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        153
+        149
       ]
     ],
     "extractedComments": []
@@ -658,7 +654,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        169
+        164
       ]
     ],
     "extractedComments": []
@@ -668,7 +664,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        170
+        165
       ]
     ],
     "extractedComments": []
@@ -718,7 +714,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        60
+        86
       ]
     ],
     "extractedComments": []
@@ -728,7 +724,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        144
+        141
       ]
     ],
     "extractedComments": []
@@ -738,7 +734,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        145
+        142
       ]
     ],
     "extractedComments": []
@@ -748,7 +744,17 @@
     "origin": [
       [
         "containers/add-building/SecondFormSection.js",
-        48
+        49
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.error.fetch_risk_categories": {
+    "translation": "Server indisponibil, vă rugăm încercați din nou mai târziu.",
+    "origin": [
+      [
+        "queries/index.js",
+        28
       ]
     ],
     "extractedComments": []
@@ -758,7 +764,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        97
+        123
       ]
     ],
     "extractedComments": []
@@ -768,7 +774,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        30
+        56
       ]
     ],
     "extractedComments": []
@@ -778,7 +784,7 @@
     "origin": [
       [
         "containers/add-building/SecondFormSection.js",
-        39
+        40
       ]
     ],
     "extractedComments": []
@@ -789,7 +795,7 @@
     "origin": [
       [
         "containers/add-building/FormFragment.js",
-        152
+        124
       ]
     ],
     "extractedComments": []
@@ -799,7 +805,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        124
+        121
       ]
     ],
     "extractedComments": []
@@ -809,7 +815,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        125
+        122
       ]
     ],
     "extractedComments": []
@@ -819,7 +825,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        90
+        116
       ]
     ],
     "extractedComments": []
@@ -829,7 +835,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        110
+        136
       ]
     ],
     "extractedComments": []
@@ -839,7 +845,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        113
+        139
       ]
     ],
     "extractedComments": []
@@ -849,7 +855,7 @@
     "origin": [
       [
         "containers/add-building/ThirdFormSection.js",
-        55
+        72
       ]
     ],
     "extractedComments": []
@@ -869,7 +875,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        69
+        95
       ]
     ],
     "extractedComments": []
@@ -879,7 +885,7 @@
     "origin": [
       [
         "containers/add-building/SecondFormSection.js",
-        83
+        84
       ]
     ],
     "extractedComments": []
@@ -889,7 +895,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        162
+        157
       ]
     ],
     "extractedComments": []
@@ -899,7 +905,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        93
+        91
       ]
     ],
     "extractedComments": []
@@ -909,7 +915,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        79
+        77
       ]
     ],
     "extractedComments": []
@@ -919,7 +925,7 @@
     "origin": [
       [
         "containers/add-building/SecondFormSection.js",
-        63
+        64
       ]
     ],
     "extractedComments": []
@@ -929,7 +935,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        190
+        185
       ]
     ],
     "extractedComments": []
@@ -939,7 +945,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        194
+        189
       ]
     ],
     "extractedComments": []
@@ -949,7 +955,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        198
+        193
       ]
     ],
     "extractedComments": []
@@ -959,7 +965,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        202
+        197
       ]
     ],
     "extractedComments": []
@@ -969,7 +975,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        206
+        201
       ]
     ],
     "extractedComments": []
@@ -979,7 +985,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        210
+        205
       ]
     ],
     "extractedComments": []
@@ -989,7 +995,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        184
+        179
       ]
     ],
     "extractedComments": []
@@ -999,7 +1005,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        185
+        180
       ]
     ],
     "extractedComments": []
@@ -1009,7 +1015,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        217
+        212
       ]
     ],
     "extractedComments": []
@@ -1019,7 +1025,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        100
+        98
       ]
     ],
     "extractedComments": []
@@ -1029,7 +1035,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        107
+        105
       ]
     ],
     "extractedComments": []
@@ -1039,7 +1045,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        108
+        106
       ]
     ],
     "extractedComments": []
@@ -1049,7 +1055,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        115
+        112
       ]
     ],
     "extractedComments": []
@@ -1059,7 +1065,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        86
+        84
       ]
     ],
     "extractedComments": []
@@ -1069,7 +1075,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        80
+        106
       ]
     ],
     "extractedComments": []
@@ -1079,7 +1085,7 @@
     "origin": [
       [
         "containers/add-building/SecondFormSection.js",
-        30
+        31
       ]
     ],
     "extractedComments": []
@@ -1089,7 +1095,7 @@
     "origin": [
       [
         "containers/add-building/SecondFormSection.js",
-        29
+        30
       ]
     ],
     "extractedComments": []
@@ -1099,7 +1105,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        177
+        172
       ]
     ],
     "extractedComments": []
@@ -1109,7 +1115,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        49
+        75
       ]
     ],
     "extractedComments": []
@@ -1119,7 +1125,7 @@
     "origin": [
       [
         "containers/add-building/ThirdFormSection.js",
-        37
+        53
       ]
     ],
     "extractedComments": []
@@ -1129,7 +1135,7 @@
     "origin": [
       [
         "containers/add-building/ThirdFormSection.js",
-        45
+        61
       ]
     ],
     "extractedComments": []
@@ -1139,7 +1145,7 @@
     "origin": [
       [
         "containers/add-building/ThirdFormSection.js",
-        44
+        60
       ]
     ],
     "extractedComments": []
@@ -1149,7 +1155,7 @@
     "origin": [
       [
         "containers/add-building/ThirdFormSection.js",
-        84
+        125
       ]
     ],
     "extractedComments": []
@@ -1159,7 +1165,7 @@
     "origin": [
       [
         "containers/add-building/ThirdFormSection.js",
-        72
+        113
       ]
     ],
     "extractedComments": []
@@ -1169,7 +1175,7 @@
     "origin": [
       [
         "containers/add-building/ThirdFormSection.js",
-        71
+        112
       ]
     ],
     "extractedComments": []
@@ -1179,7 +1185,7 @@
     "origin": [
       [
         "containers/add-building/ThirdFormSection.js",
-        32
+        48
       ]
     ],
     "extractedComments": []
@@ -1189,7 +1195,7 @@
     "origin": [
       [
         "containers/add-building/SecondFormSection.js",
-        21
+        22
       ]
     ],
     "extractedComments": []
@@ -1199,7 +1205,7 @@
     "origin": [
       [
         "containers/add-building/SecondFormSection.js",
-        73
+        74
       ]
     ],
     "extractedComments": []
@@ -1209,7 +1215,7 @@
     "origin": [
       [
         "containers/add-building/SecondFormSection.js",
-        13
+        14
       ]
     ],
     "extractedComments": []
@@ -1219,7 +1225,7 @@
     "origin": [
       [
         "containers/add-building/SecondFormSection.js",
-        17
+        18
       ]
     ],
     "extractedComments": []
@@ -1229,7 +1235,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        117
+        153
       ]
     ],
     "extractedComments": []
@@ -1260,6 +1266,16 @@
       [
         "hooks/form/useFormValidationRules.js",
         31
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.validation.image_size": {
+    "translation": "Fișierele sunt limitate la 20Mb, vă rugăm alegeți un alt fișier.",
+    "origin": [
+      [
+        "containers/add-building/FirstFormSection.js",
+        37
       ]
     ],
     "extractedComments": []
@@ -1300,7 +1316,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        47
+        46
       ]
     ],
     "extractedComments": []
@@ -1310,7 +1326,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        49
+        48
       ]
     ],
     "extractedComments": []
@@ -1320,7 +1336,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        52
+        51
       ]
     ],
     "extractedComments": []
@@ -1330,7 +1346,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        56
+        55
       ]
     ],
     "extractedComments": []
@@ -1340,7 +1356,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        60
+        59
       ]
     ],
     "extractedComments": []
@@ -1350,7 +1366,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        64
+        63
       ]
     ],
     "extractedComments": []
@@ -1360,7 +1376,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        43
+        42
       ]
     ],
     "extractedComments": []
@@ -1378,7 +1394,7 @@
       ],
       [
         "containers/add-building/utils/index.js",
-        131
+        128
       ]
     ],
     "extractedComments": []
@@ -1392,7 +1408,7 @@
       ],
       [
         "containers/add-building/utils/index.js",
-        129
+        126
       ]
     ],
     "extractedComments": []
