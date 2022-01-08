@@ -38,9 +38,8 @@ const SecondFormSection = ({ disabledFields, form }) => {
               disabled={disabledFields}
               fieldName="full_name"
               form={form}
-              label={<Trans>Full name</Trans>}
-              maxLen={250}
-              required
+              label={<Trans>Full name:</Trans>}
+              rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 100 }]}
             />
           </Col>
           <Col span={12}>
@@ -48,10 +47,12 @@ const SecondFormSection = ({ disabledFields, form }) => {
               disabled={disabledFields}
               fieldName="email_address"
               form={form}
-              label={<Trans>Email address</Trans>}
-              maxLen={100}
-              required
-              type="email"
+              label={<Trans>Email address:</Trans>}
+              rulesOptions={[
+                { ruleName: 'required' },
+                { ruleName: 'email' },
+                { ruleName: 'max', value: 100 },
+              ]}
             />
           </Col>
         </Row>
@@ -61,9 +62,8 @@ const SecondFormSection = ({ disabledFields, form }) => {
               disabled={disabledFields}
               fieldName="phone_number"
               form={form}
-              label={<Trans>Phone number</Trans>}
-              maxLen={60}
-              required
+              label={<Trans>Phone number:</Trans>}
+              rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 100 }]}
             />
           </Col>
         </Row>
@@ -72,8 +72,9 @@ const SecondFormSection = ({ disabledFields, form }) => {
             disabled={disabledFields}
             fieldName="type_of_contract"
             form={form}
-            label={<Trans>Type of contract</Trans>}
+            label={<Trans>Type of contract:</Trans>}
             options={TYPE_OF_CONTRACTS}
+            rulesOptions={[{ ruleName: 'required' }]}
           />
         </Row>
         <Row>
@@ -84,7 +85,12 @@ const SecondFormSection = ({ disabledFields, form }) => {
               locuiți?
             </Trans>
           </Paragraph>
-          <FormTextArea disabled={disabledFields} fieldName="necessary_support" form={form} />
+          <FormTextArea
+            disabled={disabledFields}
+            fieldName="necessary_support"
+            form={form}
+            rulesOptions={[{ ruleName: 'max', value: 400 }]}
+          />
         </Row>
       </Col>
     </FormSection>
