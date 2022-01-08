@@ -106,7 +106,7 @@
       ],
       [
         "containers/add-building/FormFragment.js",
-        161
+        155
       ],
       [
         "containers/add-building/HeroFragment.js",
@@ -749,12 +749,32 @@
     ],
     "extractedComments": []
   },
+  "form.error.add_building": {
+    "translation": "Clădirea nu a putut fi adăugată, vă rugăm încercați mai târziu.",
+    "origin": [
+      [
+        "containers/add-building/FormFragment.js",
+        50
+      ]
+    ],
+    "extractedComments": []
+  },
   "form.error.fetch_risk_categories": {
     "translation": "Server indisponibil, vă rugăm încercați din nou mai târziu.",
     "origin": [
       [
         "queries/index.js",
         28
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.error.validate_fields": {
+    "translation": "Nu sunt valide toate câmpurile. Vă rugăm verificați formularul și încercați din nou.",
+    "origin": [
+      [
+        "containers/add-building/FormFragment.js",
+        43
       ]
     ],
     "extractedComments": []
@@ -795,7 +815,7 @@
     "origin": [
       [
         "containers/add-building/FormFragment.js",
-        124
+        117
       ]
     ],
     "extractedComments": []
@@ -1235,7 +1255,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        153
+        152
       ]
     ],
     "extractedComments": []

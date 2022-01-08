@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import { Button, Col, Form, Row, Spin } from 'antd';
+import React, { useState, useEffect, useCallback } from 'react';
+import { Button, Col, Form, message, Row, Spin } from 'antd';
 import { Trans } from '@lingui/macro';
 import { Link, Redirect } from 'react-router-dom';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
@@ -12,15 +12,12 @@ import ThirdFormSection from './ThirdFormSection';
 import useCreateFormValidationRules from '../../hooks/form/useFormValidationRules';
 import FormCheckbox from '../../components/FormCheckbox';
 import { useRiskCategoriesQuery } from '../../queries';
+import { useAddBuilding } from '../../hooks/form/useAddBuilding';
 
-const { BUILDINGS_URL, CAPTCHA_API_KEY } = config;
+const { CAPTCHA_API_KEY } = config;
 
 const FormFragment = ({ form }) => {
-  const [state, setState] = useState({
-    requestError: false,
-    loading: true,
-    finished: false,
-  });
+  const [isFinished, setIsFinished] = useState(false);
   const [mapSearchText, setMapSearchText] = useState(undefined);
   const [coordinates, setCoordinates] = useState(undefined);
   const [language, setLanguage] = useState(undefined);
@@ -29,6 +26,7 @@ const FormFragment = ({ form }) => {
   const { currentLanguage } = useGlobalContext();
 
   const createFormValidationRules = useCreateFormValidationRules();
+  const addBuilding = useAddBuilding();
 
   const {
     riskCategories,
@@ -36,33 +34,28 @@ const FormFragment = ({ form }) => {
     isLoading: isLoadingRiskCategories,
   } = useRiskCategoriesQuery();
 
-  const onFinish = (e) => {
-    e.preventDefault();
-    form.validateFields(async (err, values) => {
-      if (!err) {
-        try {
-          const valuesToSend = { ...values, ...coordinates };
-          const res = await fetch(`${BUILDINGS_URL}/public_create/`, {
-            method: 'POST',
-            headers: { 'Content-type': 'application/json' },
-            body: JSON.stringify(valuesToSend),
-          });
-          if (res.ok) {
-            if (res.status === 201) {
-              setState((prevState) => ({
-                ...prevState,
-                finished: true,
-              }));
-            }
-          } else {
-            throw new Error(res.statusText);
-          }
-        } catch (error) {
-          setState((prevState) => ({ ...prevState, loading: false, requestError: true }));
+  const onFinish = useCallback(
+    (e) => {
+      e.preventDefault();
+
+      form.validateFields(async (err, { gdpr, ...values }) => {
+        if (err) {
+          message.warning(<Trans id="form.error.validate_fields" />);
+          return;
         }
-      }
-    });
-  };
+
+        const isBuildingAdded = await addBuilding({ ...values, ...coordinates });
+
+        if (!isBuildingAdded) {
+          message.error(<Trans id="form.error.add_building" />);
+          return;
+        }
+
+        setIsFinished(true);
+      });
+    },
+    [form, coordinates, addBuilding],
+  );
 
   const onCoordinatesChange = (newCoordinates) => {
     setCoordinates(newCoordinates);
@@ -87,7 +80,7 @@ const FormFragment = ({ form }) => {
     setLanguage(currentLanguage);
   }, [currentLanguage]);
 
-  if (state.finished) {
+  if (isFinished) {
     return <Redirect push to="/multumim" />;
   }
 
@@ -134,6 +127,7 @@ const FormFragment = ({ form }) => {
                     ),
                   },
                 ]}
+                rulesOptions={[{ ruleName: 'gdpr' }]}
               />
               <br />
               <Row type="flex" align="middle" justify="space-between">

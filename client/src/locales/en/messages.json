@@ -101,7 +101,7 @@
       ],
       [
         "containers/add-building/FormFragment.js",
-        161
+        155
       ],
       [
         "containers/add-building/HeroFragment.js",
@@ -708,12 +708,32 @@
     ],
     "extractedComments": []
   },
+  "form.error.add_building": {
+    "translation": "There was an error adding the building, please try again later.",
+    "origin": [
+      [
+        "containers/add-building/FormFragment.js",
+        50
+      ]
+    ],
+    "extractedComments": []
+  },
   "form.error.fetch_risk_categories": {
     "translation": "Server unavailable, please try again later.",
     "origin": [
       [
         "queries/index.js",
         28
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.error.validate_fields": {
+    "translation": "Not all fields are valid. Please check the form and try again.",
+    "origin": [
+      [
+        "containers/add-building/FormFragment.js",
+        43
       ]
     ],
     "extractedComments": []
@@ -754,7 +774,7 @@
     "origin": [
       [
         "containers/add-building/FormFragment.js",
-        124
+        117
       ]
     ],
     "extractedComments": []
@@ -1194,7 +1214,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        153
+        152
       ]
     ],
     "extractedComments": []
