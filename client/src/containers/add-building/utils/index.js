@@ -35,8 +35,7 @@ export const formFields = {
             text: <Trans id="form.consolidation_status.demolished" />,
           },
         ],
-        // @TODO if the user chooses the option for demolished building, a message will be show indicating that there is no need to fill the rest of the form
-        component: FormCheckbox,
+        component: FormRadio,
       },
       {
         fieldName: 'work_performed',
@@ -130,7 +129,7 @@ export const formFields = {
           },
           { value: 'NO', text: <Trans id="general.no" /> },
         ],
-        component: FormCheckbox,
+        component: FormRadio,
       },
       {
         fieldName: 'apartments_with_6_months_debt',

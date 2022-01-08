@@ -4,9 +4,10 @@ import { Trans } from '@lingui/macro';
 import { Col, Row } from 'antd';
 import FormInput from '../../components/FormInput';
 import FormSection from '../../components/FormSection';
-import FormCheckbox from '../../components/FormCheckbox';
 import FormTextArea from '../../components/FormTextArea';
+import FormRadio from '../../components/FormRadio';
 
+// @TODO types of contracts must be fetched from API? (not available yet)
 const TYPE_OF_CONTRACTS = [
   {
     value: 'OWNER',
@@ -66,7 +67,7 @@ const SecondFormSection = ({ disabledFields, form }) => {
           </Col>
         </Row>
         <Row>
-          <FormCheckbox
+          <FormRadio
             disabled={disabledFields}
             fieldName="type_of_contract"
             form={form}
