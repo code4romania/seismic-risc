@@ -29,3 +29,23 @@ div.add-building {
     height: 300px;
   }
 }
+
+.upload-btn {
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border: 1px solid #cad1d7;
+  border-radius: 4px;
+  color: $primary-color;
+  cursor: pointer;
+  display: flex;
+  font-size: 14px;
+  gap: 14px;
+  height: 130px;
+  width: 480px;
+  min-width: 100px;
+
+  &:hover {
+    border: 1px dashed $primary-color;
+  }
+}
