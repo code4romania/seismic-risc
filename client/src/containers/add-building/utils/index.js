@@ -2,6 +2,7 @@ import { Trans } from '@lingui/macro';
 import React from 'react';
 import FormCheckbox from '../../../components/FormCheckbox';
 import FormInput from '../../../components/FormInput';
+import FormRadio from '../../../components/FormRadio';
 import FormTextArea from '../../../components/FormTextArea';
 
 export const formFields = {
@@ -17,7 +18,7 @@ export const formFields = {
           },
           { value: 'NO', text: <Trans id="general.no" /> },
         ],
-        component: FormCheckbox,
+        component: FormRadio,
       },
       {
         fieldName: 'consolidation_status',
@@ -34,6 +35,7 @@ export const formFields = {
             text: <Trans id="form.consolidation_status.demolished" />,
           },
         ],
+        // @TODO if the user chooses the option for demolished building, a message will be show indicating that there is no need to fill the rest of the form
         component: FormCheckbox,
       },
       {
@@ -181,6 +183,7 @@ export const formFields = {
         fieldName: 'proximal_utilities',
         label: <Trans id="form.proximal_utilities.label" />,
         note: <Trans id="form.proximal_utilities.note" />,
+        // @TODO get options from API endpoint? (not available yet)
         options: [
           {
             value: '0',

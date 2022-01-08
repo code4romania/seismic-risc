@@ -53,6 +53,15 @@ export const defaultFormCheckboxTypeProps = {
   ...defaultFormInputTypeProps,
 };
 
+export const FormRadioType = {
+  ...FormInputType,
+  options: arrayOf(shape(OptionType)).isRequired,
+};
+
+export const defaultFormRadioTypeProps = {
+  ...defaultFormInputTypeProps,
+};
+
 export const FormSelectType = {
   ...FormInputType,
   options: arrayOf(shape(OptionType)).isRequired,

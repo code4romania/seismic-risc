@@ -1,19 +1,31 @@
 import React, { useCallback, useState } from 'react';
-import { Button, Col, Row } from 'antd';
+import { Alert, Button, Col, Row } from 'antd';
 import PropTypes from 'prop-types';
 import { Trans } from '@lingui/macro';
 import FormSection from '../../components/FormSection';
 import FormSubSection from '../../components/FormSubSection';
 import { formFields } from './utils';
+import FormRadio from '../../components/FormRadio';
 
 const { generalInfoFields, buildingAdministrationFields, spaceUsageFields } =
   formFields.extraInfoFields;
 
+const [isStillPresentField, ...remainingGeneralInfoFields] = generalInfoFields;
+
 const ThirdFormSection = ({ disabledFields, form }) => {
   const [showAddMoreInfoBtn, setShowAddMoreInfoBtn] = useState(true);
+  const [isDemolished, setIsDemolished] = useState(false);
 
   const onAddMoreInfoBtnClick = useCallback(() => {
     setShowAddMoreInfoBtn(false);
+  }, []);
+
+  const onIsStillPresentFieldChange = useCallback((checkedValue) => {
+    if (checkedValue.target.value === 'NO') {
+      setIsDemolished(true);
+    } else {
+      setIsDemolished(false);
+    }
   }, []);
 
   return (
@@ -32,12 +44,22 @@ const ThirdFormSection = ({ disabledFields, form }) => {
               title={<Trans id="form.third_section.sub_one.title" />}
               description={<Trans id="form.third_section.sub_one.description" />}
             >
-              {/* @TODO user can see a new field and fill in other work performed when option 5 is
-              selected */}
-              {generalInfoFields.map(({ component: FormField, fieldName, ...rest }) => (
+              <FormRadio
+                disabled={disabledFields}
+                fieldName={isStillPresentField.fieldName}
+                form={form}
+                {...isStillPresentField}
+                onChange={onIsStillPresentFieldChange}
+              />
+              {isDemolished && (
+                <Alert type="info" message={<Trans id="form.is_still_present.info" />} showIcon />
+              )}
+
+              {/* @TODO user can see a new field and fill in other work performed when option 5 is selected */}
+              {remainingGeneralInfoFields.map(({ component: FormField, fieldName, ...rest }) => (
                 <FormField
                   key={fieldName}
-                  disabled={disabledFields}
+                  disabled={disabledFields || isDemolished}
                   fieldName={fieldName}
                   form={form}
                   {...rest}
@@ -52,7 +74,7 @@ const ThirdFormSection = ({ disabledFields, form }) => {
               {buildingAdministrationFields.map(({ component: FormField, fieldName, ...rest }) => (
                 <FormField
                   key={fieldName}
-                  disabled={disabledFields}
+                  disabled={disabledFields || isDemolished}
                   fieldName={fieldName}
                   form={form}
                   {...rest}
@@ -63,7 +85,7 @@ const ThirdFormSection = ({ disabledFields, form }) => {
               {spaceUsageFields.map(({ component: FormField, fieldName, ...rest }) => (
                 <FormField
                   key={fieldName}
-                  disabled={disabledFields}
+                  disabled={disabledFields || isDemolished}
                   fieldName={fieldName}
                   form={form}
                   {...rest}
