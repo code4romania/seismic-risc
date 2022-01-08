@@ -29,19 +29,14 @@ div.add-building {
 .upload-btn {
   align-items: center;
   justify-content: center;
-  background-color: #fff;
-  border: 1px solid #cad1d7;
-  border-radius: 4px;
   color: $primary-color;
   cursor: pointer;
   display: flex;
+  flex-direction: column;
   font-size: 14px;
-  gap: 14px;
-  height: 130px;
-  width: 480px;
-  min-width: 100px;
+  white-space: nowrap;
 
-  &:hover {
-    border: 1px dashed $primary-color;
+  & .anticon {
+    font-size: 28px;
   }
 }

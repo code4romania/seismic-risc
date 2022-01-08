@@ -1,7 +1,7 @@
-import React, { useMemo } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Trans } from '@lingui/macro';
-import { Col, Row, Typography, Upload } from 'antd';
+import { Col, message, Row, Typography, Upload } from 'antd';
 import config from '../../config';
 import FormInput from '../../components/FormInput';
 import FormSection from '../../components/FormSection';
@@ -20,11 +20,37 @@ const FirstFormSection = ({
   mapSearchText,
   riskCategories,
 }) => {
+  const [fileList, setFileList] = useState([]);
+
+  const { getFieldDecorator } = form;
+
   const riskCategoryOptions = useMemo(
     () =>
       riskCategories.map((category) => ({ value: category.value, text: category.display_name })),
     [riskCategories],
   );
+
+  const onBeforeUploadHandler = useCallback(
+    (file) => {
+      const isLt2M = file.size / 1024 / 1024 < 20;
+      if (!isLt2M) {
+        message.error(<Trans id="form.validation.image_size" />);
+        return isLt2M;
+      }
+
+      setFileList((prevFileList) => [...prevFileList, file]);
+      return false;
+    },
+    [fileList],
+  );
+
+  const onImageUploadChangeHandler = useCallback((info) => {
+    setFileList(info.fileList.slice(-5));
+  }, []);
+
+  const onRemoveImageHandler = useCallback((removedFile) => {
+    setFileList((prevFileList) => prevFileList.filter((file) => file !== removedFile));
+  }, []);
 
   return (
     <FormSection label={1} title={<Trans id="form.first_section.title" />}>
@@ -112,10 +138,19 @@ const FirstFormSection = ({
         <Paragraph>
           <Trans id="form.images.note" />
         </Paragraph>
-        {/* @TODO test the behavior */}
-        <Upload>
-          <UploadButton name={<Trans id="form.upload_button.label" />} />
-        </Upload>
+        {getFieldDecorator('images')(
+          <Upload
+            accept=".jpg,.png"
+            beforeUpload={onBeforeUploadHandler}
+            fileList={fileList}
+            listType="picture-card"
+            multiple
+            onChange={onImageUploadChangeHandler}
+            onRemove={onRemoveImageHandler}
+          >
+            {fileList.length < 5 && <UploadButton name={<Trans id="form.upload_button.label" />} />}
+          </Upload>,
+        )}
       </Col>
     </FormSection>
   );

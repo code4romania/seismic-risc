@@ -169,7 +169,7 @@ const FormFragment = ({ form }) => {
           <br />
           <Row type="flex" align="middle" justify="space-between">
             <Col>
-              <Form.Item required>
+              <Form.Item>
                 {getFieldDecorator('captcha', {
                   rules: createFormValidationRules([{ ruleName: 'captcha' }]),
                 })(
