@@ -13,7 +13,7 @@ export const FormFieldType = {
   colon: bool,
   label: oneOfType([string, element]),
   labelCol: shape(ColType),
-  note: string,
+  note: oneOfType([string, element]),
   wrapperCol: shape(ColType),
 };
 
@@ -32,7 +32,7 @@ export const FormInputType = {
   form: shape().isRequired,
   rulesOptions: arrayOf(
     shape({
-      ruleName: oneOf(['email', 'required', 'max']),
+      ruleName: oneOf(['email', 'required', 'max', 'integer']),
       value: oneOfType([number]),
     }),
   ),

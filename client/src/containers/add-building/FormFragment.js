@@ -143,25 +143,31 @@ const FormFragment = ({ form }) => {
 
       <Row type="flex" gutter={16}>
         <Col offset={1} span={16}>
-          <Row>
-            <Checkbox disabled={state.requestError}>
-              <Trans>
-                Prin această bifă îți exprimi acordul ca datele furnizate de tine prin acest
-                formular să fie procesate exclusiv in scopul de a încărca în platformă acest
-                document și ca echipa MKBT să te contacteze doar în legătură cu această submisie.
-                Aici puteți găsi
-              </Trans>{' '}
-              <Link to="/termeni-si-conditii" target="_blank">
+          {/* @TODO change validation message */}
+          <Form.Item required>
+            {getFieldDecorator('gdpr', {
+              rules: [{ required: true, message: <EmptyFieldMessage /> }],
+            })(
+              <Checkbox disabled={state.requestError}>
                 <Trans>
-                  regulamentul nostru cu privire la prelucrarea datelor cu caracter personal.
-                </Trans>
-              </Link>
-            </Checkbox>
-          </Row>
+                  Prin această bifă îți exprimi acordul ca datele furnizate de tine prin acest
+                  formular să fie procesate exclusiv in scopul de a încărca în platformă acest
+                  document și ca echipa MKBT să te contacteze doar în legătură cu această submisie.
+                  Aici puteți găsi
+                </Trans>{' '}
+                <Link to="/termeni-si-conditii" target="_blank">
+                  <Trans>
+                    regulamentul nostru cu privire la prelucrarea datelor cu caracter personal.
+                  </Trans>
+                </Link>
+              </Checkbox>,
+            )}
+          </Form.Item>
           <br />
           <Row type="flex" align="middle" justify="space-between">
             <Col>
-              <Form.Item>
+              {/* @TODO change validation message */}
+              <Form.Item required>
                 {getFieldDecorator('captcha', {
                   rules: [{ required: true, message: <EmptyFieldMessage /> }],
                 })(

@@ -45,9 +45,9 @@ FormSubSection.defaultProps = {
 };
 
 FormSubSection.propTypes = {
-  description: PropTypes.string,
+  description: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
   label: PropTypes.string.isRequired,
-  title: PropTypes.string.isRequired,
+  title: PropTypes.oneOfType([PropTypes.string, PropTypes.element]).isRequired,
 };
 
 export default FormSubSection;

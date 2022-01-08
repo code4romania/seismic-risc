@@ -121,6 +121,7 @@ const FirstFormSection = ({
             seismic risk symbol, the general view of the building and its suroundings.
           </Trans>
         </Paragraph>
+        {/* @TODO test the behavior */}
         <Upload>
           <UploadButton name={<Trans>Upload one or more photographs</Trans>} />
         </Upload>
