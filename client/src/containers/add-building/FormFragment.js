@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Button, Col, Form, message, Row, Spin } from 'antd';
+import { Button, Checkbox, Col, Form, message, Row, Spin } from 'antd';
 import { Trans } from '@lingui/macro';
 import { Link, Redirect } from 'react-router-dom';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
@@ -10,7 +10,6 @@ import FirstFormSection from './FirstFormSection';
 import SecondFormSection from './SecondFormSection';
 import ThirdFormSection from './ThirdFormSection';
 import useCreateFormValidationRules from '../../hooks/form/useFormValidationRules';
-import FormCheckbox from '../../components/FormCheckbox';
 import { useRiskCategoriesQuery } from '../../queries';
 import { useAddBuilding } from '../../hooks/form/useAddBuilding';
 
@@ -106,29 +105,24 @@ const FormFragment = ({ form }) => {
 
           <Row type="flex" gutter={16}>
             <Col xs={24} lg={16}>
-              <FormCheckbox
-                disabled={isErrorLoadingRiskCategories}
-                form={form}
-                fieldName="gdpr"
-                options={[
-                  {
-                    value: 'gdpr',
-                    text: (
-                      <Trans id="form.gdpr_agreement">
-                        By this check, you agree that the data provided by you through this form
-                        will be processed exclusively to upload this document on the platform and
-                        that the MKBT team will contact you only in connection with this submission.
-                        Here you can find{' '}
-                        <Link to="/termeni-si-conditii" target="_blank">
-                          our regulations on the processing of personal data
-                        </Link>
-                        .
-                      </Trans>
-                    ),
-                  },
-                ]}
-                rulesOptions={[{ ruleName: 'gdpr' }]}
-              />
+              <Form.Item style={{ lineHeight: 1 }}>
+                {getFieldDecorator('gdpr', {
+                  rules: createFormValidationRules([{ ruleName: 'gdpr' }]),
+                })(
+                  <Checkbox disabled={isErrorLoadingRiskCategories} style={{ lineHeight: 1.5 }}>
+                    <Trans id="form.gdpr_agreement">
+                      By this check, you agree that the data provided by you through this form will
+                      be processed exclusively to upload this document on the platform and that the
+                      MKBT team will contact you only in connection with this submission. Here you
+                      can find{' '}
+                      <Link to="/termeni-si-conditii" target="_blank">
+                        our regulations on the processing of personal data
+                      </Link>
+                      .
+                    </Trans>
+                  </Checkbox>,
+                )}
+              </Form.Item>
               <br />
               <Row type="flex" align="middle" justify="space-between">
                 <Col>
