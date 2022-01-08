@@ -7,7 +7,12 @@ const { Title, Text } = Typography;
 const FormSection = ({ label, title, description, children }) => {
   return (
     <>
-      <Row type="flex" gutter={16} align="top" style={{ flexWrap: 'nowrap' }}>
+      <Row
+        type="flex"
+        gutter={16}
+        align="top"
+        style={{ flexWrap: 'nowrap', paddingBottom: '48px' }}
+      >
         <Col style={{ paddingTop: '8px' }}>
           <Chip label={label} />
         </Col>

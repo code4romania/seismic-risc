@@ -37,9 +37,9 @@ const FirstFormSection = ({
       title={<Trans>About building</Trans>}
       description="Notă: Întrebările din secțiunea A se referă la numărul de locuințe și persoane care locuiesc în clădirea care face obiectul prezentului formular."
     >
-      <Col span={12}>
+      <Col span={14}>
         <Row type="flex" gutter={20}>
-          <Col span={16}>
+          <Col span={20}>
             <FormInput
               disabled={disabledFields}
               fieldName="address"
@@ -49,7 +49,7 @@ const FirstFormSection = ({
               required
             />
           </Col>
-          <Col span={8}>
+          <Col span={4}>
             <FormInput
               disabled={disabledFields}
               fieldName="street_number"
@@ -104,7 +104,7 @@ const FirstFormSection = ({
             />
           </Col>
         </Row>
-        <Row gutter={16}>
+        <Row>
           <Paragraph>
             Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, deserunt ea adipisci
             culpa vitae officiis libero. Quas voluptate, id quasi placeat aut dolorum hic architecto
@@ -112,14 +112,14 @@ const FirstFormSection = ({
           </Paragraph>
         </Row>
       </Col>
-      <Col span={12}>
+      <Col span={10}>
         <HereMapAddBuilding
           apiKey={MAP_API_KEY}
           searchText={mapSearchText}
           onCoordinatesChange={onCoordinatesChange}
         />
       </Col>
-      <Row>
+      <Col span={14}>
         <Paragraph strong>
           <Trans>Please upload a few pictures with the building</Trans>
         </Paragraph>
@@ -132,7 +132,7 @@ const FirstFormSection = ({
         <Upload>
           <UploadButton name={<Trans>Upload one or more photographs</Trans>} />
         </Upload>
-      </Row>
+      </Col>
     </FormSection>
   );
 };
