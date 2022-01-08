@@ -1,0 +1,54 @@
+$form-subsection-color: #525f7f;
+
+.form-section-header,
+.form-subsection-header {
+  flex-wrap: nowrap;
+
+  .form-chip-container {
+    padding-top: 8px;
+  }
+
+  .form-title-container {
+    width: 100%;
+
+    .ant-row {
+      margin-bottom: 32px;
+    }
+
+    .form-section-title {
+      font-size: 48px;
+      color: $primary-color;
+      margin-bottom: 0;
+    }
+
+    .form-subsection-title {
+      color: $form-subsection-color;
+      font-size: 32px;
+      margin-bottom: 8px;
+    }
+
+    .form-section-description,
+    .form-subsection-description {
+      font-size: 16px;
+    }
+  }
+}
+
+.form-section-container {
+  padding-bottom: 48px;
+}
+
+.form-subsection-header {
+  .form-subsection-expand-btn {
+    padding-top: 8px;
+
+    .expanded {
+      border: none;
+      background-color: $form-subsection-color;
+    }
+  }
+}
+
+.form-label-note {
+  font-weight: normal;
+}

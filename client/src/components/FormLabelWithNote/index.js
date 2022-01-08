@@ -3,7 +3,7 @@ import React from 'react';
 const FormLabelWithNote = ({ label, note }) => (
   <>
     <span>{label}</span>
-    {note && <div style={{ fontWeight: 'normal' }}>{note}</div>}
+    {note && <div className="label-note">{note}</div>}
   </>
 );
 

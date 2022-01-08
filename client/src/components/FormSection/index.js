@@ -7,20 +7,20 @@ const { Title, Text } = Typography;
 const FormSection = ({ label, title, description, children }) => {
   return (
     <>
-      <Row type="flex" gutter={16} align="top" style={{ flexWrap: 'nowrap' }}>
-        <Col style={{ paddingTop: '8px' }}>
+      <Row type="flex" gutter={16} align="top" className="form-section-header">
+        <Col className="form-chip-container">
           <Chip label={label} />
         </Col>
-        <Col style={{ width: '100%' }}>
-          <Row style={{ marginBottom: '32px' }}>
-            <Title level={2} style={{ fontSize: '48px', color: '#EE4036', marginBottom: '0px' }}>
+        <Col className="form-title-container">
+          <Row>
+            <Title level={2} className="form-section-title">
               {title}
             </Title>
-            <Text style={{ fontSize: '16px' }}>{description}</Text>
+            <Text className="form-section-description">{description}</Text>
           </Row>
         </Col>
       </Row>
-      <Row type="flex" gutter={[16, 16]} style={{ paddingBottom: '48px' }}>
+      <Row type="flex" gutter={[16, 16]} className="form-section-container">
         {children}
       </Row>
     </>

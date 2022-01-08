@@ -1,6 +1,7 @@
 import { Button, Col, Row, Typography } from 'antd';
-import React, { useCallback, useState } from 'react';
+import React, { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
+import classNames from 'classnames';
 
 const { Title, Text } = Typography;
 
@@ -11,26 +12,28 @@ const FormSubSection = ({ children, description, label, title }) => {
     setExpanded(!expanded);
   }, [expanded]);
 
+  const expandBtnClass = useMemo(() => classNames({ expanded }), [expanded]);
+
   return (
     <>
-      <Row type="flex" gutter={16} align="top" style={{ flexWrap: 'nowrap' }}>
-        <Col style={{ width: '100%' }}>
-          <Row style={{ marginBottom: '32px' }}>
-            <Title level={3} style={{ color: '#525F7F', fontSize: '32px', marginBottom: '8px' }}>
+      <Row type="flex" gutter={16} align="top" className="form-subsection-header">
+        <Col className="form-title-container">
+          <Row>
+            <Title level={3} className="form-subsection-title">
               {label}. {title}
             </Title>
-            <Text style={{ fontSize: '16px' }}>{description}</Text>
+            <Text className="form-subsection-description">{description}</Text>
           </Row>
           {expanded && children}
         </Col>
-        <Col style={{ paddingTop: '8px' }}>
+        <Col className="form-subsection-expand-btn">
           {!expanded ? (
             <Button icon="plus" type="primary" onClick={toggleExpanded} />
           ) : (
             <Button
               icon="minus"
               type="primary"
-              style={{ border: 'none', backgroundColor: '#525F7F' }}
+              className={expandBtnClass}
               onClick={toggleExpanded}
             />
           )}
