@@ -1,45 +1,34 @@
-import React, { useMemo } from 'react';
-import { Form, Select } from 'antd';
-import { Trans } from '@lingui/macro';
-import PropTypes from 'prop-types';
+import React from 'react';
+import { Select } from 'antd';
+import FormField from '../FormField';
+import useCreateFormValidationRules from '../../hooks/form/useFormValidationRules';
+import { defaultFormSelectTypeProps, FormSelectType } from '../../types';
 
-const EmptyFieldMessage = () => <Trans>Cannot be left empty!</Trans>;
+const { Option } = Select;
 
-const FormSelect = ({ disabled, fieldName, form, label, options, required }) => {
+const FormSelect = ({ disabled, fieldName, form, options, rulesOptions, ...rest }) => {
   const { getFieldDecorator } = form;
-
-  const rules = useMemo(() => {
-    const newRules = [];
-
-    if (required) {
-      newRules.push({ required: true, message: <EmptyFieldMessage /> });
-    }
-
-    return newRules;
-  }, [required]);
+  const createFormValidationRules = useCreateFormValidationRules();
 
   return (
-    <Form.Item colon label={label}>
+    <FormField {...rest}>
       {getFieldDecorator(fieldName, {
-        rules,
-      })(<Select disabled={disabled}>{options}</Select>)}
-    </Form.Item>
+        ...createFormValidationRules(rulesOptions),
+      })(
+        <Select disabled={disabled}>
+          {options.map(({ value, text }) => (
+            <Option key={`${fieldName}-${value}`} value={value}>
+              {text}
+            </Option>
+          ))}
+        </Select>,
+      )}
+    </FormField>
   );
 };
 
-FormSelect.defaultProps = {
-  disabled: null,
-  label: null,
-  required: null,
-};
+FormSelect.defaultProps = defaultFormSelectTypeProps;
 
-FormSelect.propTypes = {
-  disabled: PropTypes.bool,
-  fieldName: PropTypes.string.isRequired,
-  form: PropTypes.shape().isRequired,
-  label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-  options: PropTypes.arrayOf(PropTypes.element).isRequired,
-  required: PropTypes.bool,
-};
+FormSelect.propTypes = FormSelectType;
 
 export default FormSelect;

@@ -1,31 +1,22 @@
 import React from 'react';
-import { Form, Input } from 'antd';
-import PropTypes from 'prop-types';
+import { Input } from 'antd';
+import FormField from '../FormField';
+import { defaultFormTextAreaTypeProps, FormTextAreaType } from '../../types';
 
 const { TextArea } = Input;
 
-const FormTextArea = ({ disabled, fieldName, form, label, rows }) => {
+const FormTextArea = ({ disabled, fieldName, form, rows, ...rest }) => {
   const { getFieldDecorator } = form;
 
   return (
-    <Form.Item colon label={label}>
+    <FormField {...rest}>
       {getFieldDecorator(fieldName)(<TextArea disabled={disabled} rows={rows} />)}
-    </Form.Item>
+    </FormField>
   );
 };
 
-FormTextArea.defaultProps = {
-  disabled: null,
-  label: null,
-  rows: 4,
-};
+FormTextArea.defaultProps = defaultFormTextAreaTypeProps;
 
-FormTextArea.propTypes = {
-  disabled: PropTypes.bool,
-  fieldName: PropTypes.string.isRequired,
-  form: PropTypes.shape().isRequired,
-  label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-  rows: PropTypes.number,
-};
+FormTextArea.propTypes = FormTextAreaType;
 
 export default FormTextArea;

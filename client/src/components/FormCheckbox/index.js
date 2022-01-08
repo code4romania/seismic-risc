@@ -1,42 +1,29 @@
 import React from 'react';
-import { Checkbox, Form } from 'antd';
-import PropTypes from 'prop-types';
+import { Checkbox } from 'antd';
+import FormField from '../FormField';
+import { defaultFormCheckboxTypeProps, FormCheckboxType } from '../../types';
 
-const FormCheckbox = ({ disabled, fieldName, form, label, options }) => {
+const FormCheckbox = ({ disabled, fieldName, form, options, ...rest }) => {
   const { getFieldDecorator } = form;
 
   return (
-    <Form.Item colon label={label}>
+    <FormField {...rest}>
       {getFieldDecorator(fieldName)(
         <Checkbox.Group disabled={disabled}>
           {options.map(({ value, text }) => (
-            <>
+            <React.Fragment key={`${fieldName}-${value}`}>
               <Checkbox value={value}>{text}</Checkbox>
               <br />
-            </>
+            </React.Fragment>
           ))}
         </Checkbox.Group>,
       )}
-    </Form.Item>
+    </FormField>
   );
 };
 
-FormCheckbox.defaultProps = {
-  disabled: null,
-  label: null,
-};
+FormCheckbox.defaultProps = defaultFormCheckboxTypeProps;
 
-FormCheckbox.propTypes = {
-  disabled: PropTypes.bool,
-  fieldName: PropTypes.string.isRequired,
-  form: PropTypes.shape().isRequired,
-  label: PropTypes.oneOfType([PropTypes.string, PropTypes.element]),
-  options: PropTypes.arrayOf(
-    PropTypes.shape({
-      value: PropTypes.string,
-      text: PropTypes.oneOfType(PropTypes.string, PropTypes.element),
-    }),
-  ).isRequired,
-};
+FormCheckbox.propTypes = FormCheckboxType;
 
 export default FormCheckbox;
