@@ -101,7 +101,7 @@
       ],
       [
         "containers/add-building/FormFragment.js",
-        205
+        219
       ],
       [
         "containers/add-building/HeroFragment.js",
@@ -124,7 +124,7 @@
     "origin": [
       [
         "containers/home/MapFragment.js",
-        51
+        59
       ]
     ],
     "extractedComments": []
@@ -172,7 +172,7 @@
     "origin": [
       [
         "containers/add-building/FormFragment.js",
-        136
+        143
       ]
     ],
     "extractedComments": []
@@ -181,7 +181,7 @@
     "origin": [
       [
         "containers/add-building/FormFragment.js",
-        22
+        23
       ]
     ],
     "extractedComments": []
@@ -191,7 +191,7 @@
     "origin": [
       [
         "containers/add-building/FormFragment.js",
-        198
+        205
       ]
     ],
     "extractedComments": []
@@ -205,11 +205,12 @@
     ],
     "extractedComments": []
   },
-  "Check here if a building is on the <0><1>seismic risk</1><2/></0> list": {
+  "Check here if a building is on the <0><1><2>seismic risk</2><3/></1></0> list": {
+    "translation": "Check here if a building is on the <0><1><2>seismic risk</2><3/></1></0> list",
     "origin": [
       [
         "containers/home/SearchFragment.js",
-        89
+        92
       ]
     ],
     "extractedComments": []
@@ -245,7 +246,7 @@
     "origin": [
       [
         "containers/add-building/FormFragment.js",
-        162
+        169
       ]
     ],
     "extractedComments": []
@@ -322,7 +323,7 @@
     "origin": [
       [
         "containers/add-building/FormFragment.js",
-        24
+        25
       ]
     ],
     "extractedComments": []
@@ -344,7 +345,7 @@
       ],
       [
         "containers/add-building/FormFragment.js",
-        177
+        184
       ]
     ],
     "extractedComments": []
@@ -389,7 +390,7 @@
     "origin": [
       [
         "components/BuildingDetails/index.js",
-        51
+        53
       ]
     ],
     "extractedComments": []
@@ -407,7 +408,7 @@
     "origin": [
       [
         "containers/add-building/FormFragment.js",
-        154
+        161
       ]
     ],
     "extractedComments": []
@@ -434,7 +435,7 @@
     "origin": [
       [
         "containers/home/MapFragment.js",
-        60
+        68
       ]
     ],
     "extractedComments": []
@@ -492,7 +493,7 @@
       ],
       [
         "containers/add-building/FormFragment.js",
-        185
+        192
       ]
     ],
     "extractedComments": []
@@ -514,7 +515,7 @@
       ],
       [
         "containers/add-building/FormFragment.js",
-        122
+        129
       ],
       [
         "containers/blog/Blog.js",
@@ -536,7 +537,7 @@
     "origin": [
       [
         "containers/add-building/FormFragment.js",
-        138
+        145
       ]
     ],
     "extractedComments": []
@@ -545,7 +546,7 @@
     "origin": [
       [
         "containers/add-building/FormFragment.js",
-        146
+        153
       ]
     ],
     "extractedComments": []
@@ -637,15 +638,6 @@
       [
         "containers/about/SecondParagraphFragment.js",
         12
-      ]
-    ],
-    "extractedComments": []
-  },
-  "no.": {
-    "origin": [
-      [
-        "components/BuildingDetails/BuildingDetailsTitle.js",
-        18
       ]
     ],
     "extractedComments": []
