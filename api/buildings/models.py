@@ -53,16 +53,16 @@ class ContactChoice(Enum):
 
 
 class BuildingWorkPerformed(models.Model):
-    work_name_en = models.CharField("work name", max_length=200, unique=True, blank=False, default="")
-    work_name_ro = models.CharField("denumire lucrare", max_length=200, unique=True, blank=False, default="")
+    name_en = models.CharField("work name", max_length=200, unique=True, blank=False, default="")
+    name_ro = models.CharField("denumire lucrare", max_length=200, unique=True, blank=False, default="")
 
     @property
     def work_name(self):
         current_language = get_language()
         if "ro" in current_language:
-            return self.work_name_ro
+            return self.name_ro
         else:
-            return self.work_name_en
+            return self.name_en
 
     def __str__(self):
         return self.work_name
@@ -73,16 +73,16 @@ class BuildingWorkPerformed(models.Model):
 
 
 class BuildingProximalUtilities(models.Model):
-    utility_name_en = models.CharField("utility name", max_length=200, unique=True, blank=False, default="")
-    utility_name_ro = models.CharField("denumire utilitate", max_length=200, unique=True, blank=False, default="")
+    name_en = models.CharField("utility name", max_length=200, unique=True, blank=False, default="")
+    name_ro = models.CharField("denumire utilitate", max_length=200, unique=True, blank=False, default="")
 
     @property
     def utility_name(self):
         current_language = get_language()
         if "ro" in current_language:
-            return self.utility_name_ro
+            return self.name_ro
         else:
-            return self.utility_name_en
+            return self.name_en
 
     def __str__(self):
         return self.utility_name
