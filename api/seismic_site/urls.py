@@ -11,7 +11,7 @@ from drf_spectacular.views import (
 from rest_framework import routers
 
 from blog.views import PostViewSet, TagViewSet
-from buildings.views import BuildingViewSet, statistics
+from buildings.views import BuildingViewSet, ProximalUtilitiesViewSet, WorkPerformedViewSet, statistics
 from pages.views import PagesViewSet
 
 admin_site_string = "Bulina Roșie Admin"
@@ -24,6 +24,8 @@ router.register(r"buildings", BuildingViewSet, basename="buildings")
 router.register(r"pages", PagesViewSet, basename="pages")
 router.register(r"posts", PostViewSet, basename="posts")
 router.register(r"tags", TagViewSet, basename="tags")
+router.register(r"proximal_utilities", ProximalUtilitiesViewSet, basename="building_proximal_utilities")
+router.register(r"work_performed", WorkPerformedViewSet, basename="building_work_performed")
 
 
 urlpatterns = (
