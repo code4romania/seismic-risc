@@ -9,14 +9,16 @@ from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework.throttling import AnonRateThrottle
 
-from .models import Building, Statistic
+from .models import Building, BuildingProximalUtilities, BuildingWorkPerformed, Statistic
 from .serializers import (
     BuildingListSerializer,
     BuildingSearchSerializer,
     BuildingSerializer,
+    ProximalUtilitiesSerializer,
     PublicBuildingCreateSerializer,
     SearchQuerySerializer,
     StatisticSerializer,
+    WorkPerformedSerializer,
 )
 
 
@@ -101,6 +103,16 @@ class BuildingViewSet(viewsets.ModelViewSet):
 
         result_serializer = BuildingSearchSerializer(buildings, many=True)
         return Response(result_serializer.data)
+
+
+class ProximalUtilitiesViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = BuildingProximalUtilities.objects.all()
+    serializer_class = ProximalUtilitiesSerializer
+
+
+class WorkPerformedViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = BuildingWorkPerformed.objects.all()
+    serializer_class = WorkPerformedSerializer
 
 
 @api_view(["GET"])

@@ -1,7 +1,7 @@
 from django.conf import settings
 from rest_framework import serializers
 
-from .models import Building, Statistic
+from .models import Building, BuildingProximalUtilities, BuildingWorkPerformed, Statistic
 
 
 class ImageUrlRelatedField(serializers.StringRelatedField):
@@ -115,8 +115,20 @@ class StatisticSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Statistic
-        fields = [
+        fields = (
             "people_under_risk",
             "consolidated_buildings",
             "evaluated_buildings",
-        ]
+        )
+
+
+class ProximalUtilitiesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BuildingProximalUtilities
+        fields = "__all__"
+
+
+class WorkPerformedSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BuildingWorkPerformed
+        fields = "__all__"
