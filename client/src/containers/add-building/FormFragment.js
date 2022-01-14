@@ -9,12 +9,11 @@ import { useGlobalContext } from '../../context';
 import FirstFormSection from './FirstFormSection';
 import SecondFormSection from './SecondFormSection';
 import ThirdFormSection from './ThirdFormSection';
+import useCreateFormValidationRules from '../../hooks/form/useFormValidationRules';
 
 const { Title } = Typography;
 
 const { BUILDINGS_URL, CAPTCHA_API_KEY } = config;
-
-const EmptyFieldMessage = () => <Trans>Cannot be left empty!</Trans>;
 
 const FormFragment = ({ form }) => {
   const [state, setState] = useState({
@@ -29,6 +28,8 @@ const FormFragment = ({ form }) => {
   const { getFieldDecorator } = form;
   const fields = form.getFieldsValue();
   const { currentLanguage } = useGlobalContext();
+
+  const createFormValidationRules = useCreateFormValidationRules();
 
   const onFinish = (e) => {
     e.preventDefault();
@@ -143,10 +144,9 @@ const FormFragment = ({ form }) => {
 
       <Row type="flex" gutter={16}>
         <Col offset={1} span={16}>
-          {/* @TODO change validation message */}
           <Form.Item required>
             {getFieldDecorator('gdpr', {
-              rules: [{ required: true, message: <EmptyFieldMessage /> }],
+              rules: createFormValidationRules([{ ruleName: 'gdpr' }]),
             })(
               <Checkbox disabled={state.requestError}>
                 <Trans id="form.gdpr_agreement">
@@ -164,10 +164,9 @@ const FormFragment = ({ form }) => {
           <br />
           <Row type="flex" align="middle" justify="space-between">
             <Col>
-              {/* @TODO change validation message */}
               <Form.Item required>
                 {getFieldDecorator('captcha', {
-                  rules: [{ required: true, message: <EmptyFieldMessage /> }],
+                  rules: createFormValidationRules([{ ruleName: 'captcha' }]),
                 })(
                   <HCaptcha
                     sitekey={CAPTCHA_API_KEY}

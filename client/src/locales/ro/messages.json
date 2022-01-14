@@ -106,7 +106,7 @@
       ],
       [
         "containers/add-building/FormFragment.js",
-        184
+        183
       ],
       [
         "containers/add-building/HeroFragment.js",
@@ -173,16 +173,6 @@
       [
         "containers/thankyou/BlogPreviewFragment.js",
         6
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Cannot be left empty!": {
-    "translation": "Câmpul nu poate fi lăsat gol!",
-    "origin": [
-      [
-        "containers/add-building/FormFragment.js",
-        17
       ]
     ],
     "extractedComments": []
@@ -500,7 +490,7 @@
       ],
       [
         "containers/add-building/FormFragment.js",
-        120
+        121
       ],
       [
         "containers/blog/Blog.js",
@@ -1234,12 +1224,32 @@
     ],
     "extractedComments": []
   },
+  "form.validation.captcha": {
+    "translation": "Captcha necesită verificare!",
+    "origin": [
+      [
+        "hooks/form/useFormValidationRules.js",
+        29
+      ]
+    ],
+    "extractedComments": []
+  },
   "form.validation.email": {
     "translation": "Adresa de e-mail nu este validă!",
     "origin": [
       [
         "hooks/form/useFormValidationRules.js",
         11
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.validation.gdpr": {
+    "translation": "Vă rugăm confirmați că ați citit și sunteți de acord cu regulamentul nostru cu privire la prelucrarea datelor cu caracter personal.",
+    "origin": [
+      [
+        "hooks/form/useFormValidationRules.js",
+        31
       ]
     ],
     "extractedComments": []

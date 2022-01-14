@@ -101,7 +101,7 @@
       ],
       [
         "containers/add-building/FormFragment.js",
-        184
+        183
       ],
       [
         "containers/add-building/HeroFragment.js",
@@ -164,15 +164,6 @@
       [
         "containers/thankyou/BlogPreviewFragment.js",
         6
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Cannot be left empty!": {
-    "origin": [
-      [
-        "containers/add-building/FormFragment.js",
-        17
       ]
     ],
     "extractedComments": []
@@ -462,7 +453,7 @@
       ],
       [
         "containers/add-building/FormFragment.js",
-        120
+        121
       ],
       [
         "containers/blog/Blog.js",
@@ -1192,12 +1183,32 @@
     ],
     "extractedComments": []
   },
+  "form.validation.captcha": {
+    "translation": "Captcha requires verification!",
+    "origin": [
+      [
+        "hooks/form/useFormValidationRules.js",
+        29
+      ]
+    ],
+    "extractedComments": []
+  },
   "form.validation.email": {
     "translation": "Email address is not valid!",
     "origin": [
       [
         "hooks/form/useFormValidationRules.js",
         11
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.validation.gdpr": {
+    "translation": "Please confirm that you have read and you agree with our regulations on the processing of personal data.",
+    "origin": [
+      [
+        "hooks/form/useFormValidationRules.js",
+        31
       ]
     ],
     "extractedComments": []

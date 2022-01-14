@@ -25,6 +25,10 @@ const useCreateFormValidationRules = () => {
               </Trans>
             ),
           };
+        case 'captcha':
+          return { required: true, message: <Trans id="form.validation.captcha" /> };
+        case 'gdpr':
+          return { required: true, message: <Trans id="form.validation.gdpr" /> };
         default:
           return null;
       }
