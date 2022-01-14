@@ -101,7 +101,7 @@
       ],
       [
         "containers/add-building/FormFragment.js",
-        186
+        184
       ],
       [
         "containers/add-building/HeroFragment.js",
@@ -582,7 +582,7 @@
     "extractedComments": []
   },
   "form.apartment_count.label": {
-    "translation": "How many apartments are in the building?",
+    "translation": "How many residences there are in the building?",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -592,7 +592,7 @@
     "extractedComments": []
   },
   "form.apartments_with_6_months_debt.label": {
-    "translation": "How many of the apartments in the build have maitenance debts of more than 6 months?",
+    "translation": "How many of these appartments register more than 6 months of upkeep debt?",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -602,7 +602,7 @@
     "extractedComments": []
   },
   "form.broken_utilities.label": {
-    "translation": "Does the building register non-functional technical elements?",
+    "translation": "Does the building register any brokent technical elements?",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -612,7 +612,7 @@
     "extractedComments": []
   },
   "form.broken_utilities.note": {
-    "translation": "For example: pipes, heating network, etc.",
+    "translation": "Example: pipes, heating network etc.",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -622,7 +622,7 @@
     "extractedComments": []
   },
   "form.commercial_space_count.label": {
-    "translation": "How many commercial and service spaces are there in the building?",
+    "translation": "How many commercial and services spaces and there in the building?",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -632,7 +632,7 @@
     "extractedComments": []
   },
   "form.commercial_space_count.note": {
-    "translation": "Note: By commercial and service spaces we refer to shops, workshops, restaurants, cinemas, theaters, etc., whose activity was suspended following the adoption of Law 282/2015 for amending and supplementing Government Ordinance 20/1994 on measures to reduce the seismic risk of existing buildings.",
+    "translation": "Note: Through commercial and services spaces we reffer to shops, workshops, restuarants, cinemas, theatres etc., who's activity has been suspended after the adoption of Law 282/2015 for the modification and completion of the OG 20/1994 on measures for the reduction of seismic risc on existing buildings.",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -642,7 +642,7 @@
     "extractedComments": []
   },
   "form.consolidation_status.demolished": {
-    "translation": "the seismic risk building was demolished and a new building was built in its place",
+    "translation": "The seismic risk building was demolished and a new building was built in its place",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -652,7 +652,7 @@
     "extractedComments": []
   },
   "form.consolidation_status.label": {
-    "translation": "Has the building been consolidated/rehabilitated since the date of the expertise?",
+    "translation": "Has the building been consolidate/rehabilitated from the date of the expertise?",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -662,7 +662,7 @@
     "extractedComments": []
   },
   "form.consolidation_status.yes_private": {
-    "translation": "yes, private funds",
+    "translation": "Yes, private funds",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -672,7 +672,7 @@
     "extractedComments": []
   },
   "form.consolidation_status.yes_public": {
-    "translation": "yes, public funds",
+    "translation": "Yes, public funds",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -702,7 +702,7 @@
     "extractedComments": []
   },
   "form.disconnected_utilities.note": {
-    "translation": "If yes, indicate which service(s) it is disconnected from. (Public utility service: water, sewerage, electricity, district heating)",
+    "translation": "If so, indicate from what service(s) it is disconnected. (Public utility services: water, sewerage, electricity, district heating)",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -752,8 +752,8 @@
     "extractedComments": []
   },
   "form.gdpr_agreement": {
-    "translation": "By this check you agree that the data provided by you through this form will be processed exclusively for the purpose of uploading this document on the platform and that the MKBT team will contact you only in connection with this submission. Here you can find <0>our regulations regarding the processing of personal data.</0>",
-    "message": "By this check you agree that the data provided by you through this form will be processed exclusively for the purpose of uploading this document on the platform and that the MKBT team will contact you only in connection with this submission. Here you can find <0>our regulations regarding the processing of personal data.</0>",
+    "translation": "By this check, you agree that the data provided by you through this form will be processed exclusively to upload this document on the platform and that the MKBT team will contact you only in connection with this submission. Here you can find <0>our regulations on the processing of personal data</0>.",
+    "message": "By this check, you agree that the data provided by you through this form will be processed exclusively to upload this document on the platform and that the MKBT team will contact you only in connection with this submission. Here you can find <0>our regulations on the processing of personal data</0>.",
     "origin": [
       [
         "containers/add-building/FormFragment.js",
@@ -763,7 +763,7 @@
     "extractedComments": []
   },
   "form.has_owners_association.label": {
-    "translation": "Is there a homeowners association?",
+    "translation": "Is there an owners' association?",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -773,7 +773,7 @@
     "extractedComments": []
   },
   "form.has_owners_association.note": {
-    "translation": "According to the law, the homeowners' associations are set up for condominiums with a minimum of 3 housing units.",
+    "translation": "According to the law, owners' associations are established for condomiums with a minimum of 3 living units.",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -793,7 +793,7 @@
     "extractedComments": []
   },
   "form.images.label": {
-    "translation": "Please upload some photos of the building",
+    "translation": "Please add some photos of the building",
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
@@ -803,7 +803,7 @@
     "extractedComments": []
   },
   "form.images.note": {
-    "translation": "Note: we suggest uploading an average of 3 photos illustrating whether the building shows the red dot, the building as a whole and its proximity.",
+    "translation": "Note: we suggest uploading 3 photos on average, showing if the building has the red dot warning indicator, the building in its whole, and its proximity.",
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
@@ -833,7 +833,7 @@
     "extractedComments": []
   },
   "form.necessary_support.label": {
-    "translation": "In your opinion, as an inhabitant of the building, what support do you need and what difficulties have you faced in the process of increasing the safety of the building in which you live?",
+    "translation": "In your opinion, as tenant in this building, what kind of support would you need and what issues have you been confronted with, in any attemt of increasing the safety of the building you are living in?",
     "origin": [
       [
         "containers/add-building/SecondFormSection.js",
@@ -843,7 +843,7 @@
     "extractedComments": []
   },
   "form.office_count.label": {
-    "translation": "How many apartments are used as a company office?",
+    "translation": "How many apartments are used as an office headquarter?",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -853,7 +853,7 @@
     "extractedComments": []
   },
   "form.owners_count.label": {
-    "translation": "How many owners own apartments in this building?",
+    "translation": "How many people own apartments in this building?",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -863,7 +863,7 @@
     "extractedComments": []
   },
   "form.permanently_occupied_apartment_count.label": {
-    "translation": "Number of permanently occupied apartments:",
+    "translation": "Number of residences permanently occupied:",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -943,7 +943,7 @@
     "extractedComments": []
   },
   "form.proximal_utilities.label": {
-    "translation": "What's in the immediate vicinity of the building?",
+    "translation": "What exists in the proximity of the building?",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -953,7 +953,7 @@
     "extractedComments": []
   },
   "form.proximal_utilities.note": {
-    "translation": "Note: By vicinity we refer to buildings and functions at a distance of up to 10m from the targeted building.",
+    "translation": "Note: Through proximity we reffer to buildings and functions at a distance of up to 10m from the building in question",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -963,7 +963,7 @@
     "extractedComments": []
   },
   "form.proximal_utilities_description.label": {
-    "translation": "Comments on the functions in the vicinity of the building",
+    "translation": "Comments regarding the utilities from the building's proximity",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -973,7 +973,7 @@
     "extractedComments": []
   },
   "form.public_apartment_count.label": {
-    "translation": "Of which, how many publicly owned apartments",
+    "translation": "Of which, how many apartments are public property?",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -983,7 +983,7 @@
     "extractedComments": []
   },
   "form.public_owners.label": {
-    "translation": "Please mention public owners:",
+    "translation": "Please mention the public owners:",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -993,7 +993,7 @@
     "extractedComments": []
   },
   "form.public_owners.note": {
-    "translation": "Note: By public property we mean apartments owned by the Real Estate Fund Administration - AFI (former ICRAL), RAPPS, City Hall Offices, ANAF, etc.",
+    "translation": "Note: Through \"public property\" we understand residences owned by the Real Estate Fund Administration - AFI (formerly known as ICRAL), RAPPS, City Hall offices, ANAF (NAFA) etc.",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -1003,7 +1003,7 @@
     "extractedComments": []
   },
   "form.rented_apartment_count.label": {
-    "translation": "How many apartments are rented?",
+    "translation": "How many apartments are in a rental regime?",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -1013,7 +1013,7 @@
     "extractedComments": []
   },
   "form.residents_count.label": {
-    "translation": "How many people live in these apartments?",
+    "translation": "How many people live in these residences?",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -1033,7 +1033,7 @@
     "extractedComments": []
   },
   "form.second_section.description": {
-    "translation": "Contact details of the person filling out this form",
+    "translation": "Contact info for the person filling out the form",
     "origin": [
       [
         "containers/add-building/SecondFormSection.js",
@@ -1053,7 +1053,7 @@
     "extractedComments": []
   },
   "form.self_owned_commercial_space_count.label": {
-    "translation": "Of these spaces/apartments with a function other than housing, how many are owned by the companies that use them?",
+    "translation": "Out of these spaces/apartments with a function other than housing, how many are owned by the companies using them?",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -1073,7 +1073,7 @@
     "extractedComments": []
   },
   "form.third_section.other_info_btn": {
-    "translation": "Fill in with more information",
+    "translation": "Add other information",
     "origin": [
       [
         "containers/add-building/ThirdFormSection.js",
@@ -1083,7 +1083,7 @@
     "extractedComments": []
   },
   "form.third_section.sub_one.description": {
-    "translation": "Note: The questions in section A refer to the number of apartments and persons living in the building covered by this form.",
+    "translation": "Note: The questions from section A reffer to the number of apartments and the people that live in the building added in this form.",
     "origin": [
       [
         "containers/add-building/ThirdFormSection.js",
@@ -1093,7 +1093,7 @@
     "extractedComments": []
   },
   "form.third_section.sub_one.title": {
-    "translation": "General information",
+    "translation": "General data",
     "origin": [
       [
         "containers/add-building/ThirdFormSection.js",
@@ -1103,7 +1103,7 @@
     "extractedComments": []
   },
   "form.third_section.sub_three.title": {
-    "translation": "Structure and type of building occupancy",
+    "translation": "Structure and occupancy type",
     "origin": [
       [
         "containers/add-building/ThirdFormSection.js",
@@ -1113,7 +1113,7 @@
     "extractedComments": []
   },
   "form.third_section.sub_two.description": {
-    "translation": "Note: Questions in sections B-C relate to the overall problems and needs of the building and its occupants.",
+    "translation": "Note: The questions from section B reffer to the general problems and needs of the building and of its residents",
     "origin": [
       [
         "containers/add-building/ThirdFormSection.js",
@@ -1123,7 +1123,7 @@
     "extractedComments": []
   },
   "form.third_section.sub_two.title": {
-    "translation": "The operation of the building",
+    "translation": "Building administration",
     "origin": [
       [
         "containers/add-building/ThirdFormSection.js",
@@ -1133,7 +1133,7 @@
     "extractedComments": []
   },
   "form.third_section.title": {
-    "translation": "Do you have any other information about this building?",
+    "translation": "Do you have other information about this building?",
     "origin": [
       [
         "containers/add-building/ThirdFormSection.js",
@@ -1143,7 +1143,7 @@
     "extractedComments": []
   },
   "form.type_of_contract.admin": {
-    "translation": "representative with a management position in the homeowners' association",
+    "translation": "Representative with a management position in the homeowners' association",
     "origin": [
       [
         "containers/add-building/SecondFormSection.js",
@@ -1153,7 +1153,7 @@
     "extractedComments": []
   },
   "form.type_of_contract.label": {
-    "translation": "Type of contract:",
+    "translation": "Role:",
     "origin": [
       [
         "containers/add-building/SecondFormSection.js",
@@ -1163,7 +1163,7 @@
     "extractedComments": []
   },
   "form.type_of_contract.owner": {
-    "translation": "owner",
+    "translation": "Owner",
     "origin": [
       [
         "containers/add-building/SecondFormSection.js",
@@ -1173,7 +1173,7 @@
     "extractedComments": []
   },
   "form.type_of_contract.tenant": {
-    "translation": "tenant",
+    "translation": "Tenant",
     "origin": [
       [
         "containers/add-building/SecondFormSection.js",
@@ -1234,7 +1234,7 @@
     "extractedComments": []
   },
   "form.work_performed.0": {
-    "translation": "structure consolidation",
+    "translation": "Structure consolidation",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -1244,7 +1244,7 @@
     "extractedComments": []
   },
   "form.work_performed.1": {
-    "translation": "foundation consolidation",
+    "translation": "Foundation consolidation",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -1254,7 +1254,7 @@
     "extractedComments": []
   },
   "form.work_performed.2": {
-    "translation": "rehabilitation of common facilities",
+    "translation": "Rehabilitation of common facilities",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -1264,7 +1264,7 @@
     "extractedComments": []
   },
   "form.work_performed.3": {
-    "translation": "thermal insulation",
+    "translation": "Thermal insulation",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -1274,7 +1274,7 @@
     "extractedComments": []
   },
   "form.work_performed.4": {
-    "translation": "exterior plaster and roof/terrace repairs",
+    "translation": "Exterior plaster and roof/terrace repairs",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -1284,7 +1284,7 @@
     "extractedComments": []
   },
   "form.work_performed.5": {
-    "translation": "other",
+    "translation": "Other",
     "origin": [
       [
         "containers/add-building/utils/index.js",
@@ -1294,7 +1294,7 @@
     "extractedComments": []
   },
   "form.work_performed.label": {
-    "translation": "What work has been performed?",
+    "translation": "What construction has been performed?",
     "origin": [
       [
         "containers/add-building/utils/index.js",
