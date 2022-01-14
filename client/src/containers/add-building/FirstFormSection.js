@@ -27,11 +27,7 @@ const FirstFormSection = ({
   );
 
   return (
-    <FormSection
-      label={1}
-      title={<Trans>About building</Trans>}
-      description="Notă: Întrebările din secțiunea A se referă la numărul de locuințe și persoane care locuiesc în clădirea care face obiectul prezentului formular."
-    >
+    <FormSection label={1} title={<Trans id="form.first_section.title" />}>
       <Col span={14}>
         <Row type="flex" gutter={20}>
           <Col span={18}>
@@ -40,7 +36,7 @@ const FirstFormSection = ({
               disabled={disabledFields}
               fieldName="address"
               form={form}
-              label={<Trans>Street:</Trans>}
+              label={<Trans id="form.adress.label" />}
               rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 100 }]}
             />
           </Col>
@@ -50,7 +46,7 @@ const FirstFormSection = ({
               disabled={disabledFields}
               fieldName="street_number"
               form={form}
-              label={<Trans>Building number:</Trans>}
+              label={<Trans id="form.street_number.label" />}
               rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 50 }]}
             />
           </Col>
@@ -61,7 +57,7 @@ const FirstFormSection = ({
               disabled={disabledFields}
               fieldName="county"
               form={form}
-              label={<Trans>County:</Trans>}
+              label={<Trans id="form.county.label" />}
               rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 50 }]}
             />
           </Col>
@@ -70,7 +66,7 @@ const FirstFormSection = ({
               disabled={disabledFields}
               fieldName="locality"
               form={form}
-              label={<Trans>City:</Trans>}
+              label={<Trans id="form.locality.label" />}
               rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 50 }]}
             />
           </Col>
@@ -81,7 +77,7 @@ const FirstFormSection = ({
               disabled={disabledFields}
               fieldName="risk_class"
               form={form}
-              label={<Trans>Risk class:</Trans>}
+              label={<Trans id="form.risk_class.label" />}
               options={riskCategoryOptions}
               rulesOptions={[{ ruleName: 'required' }]}
             />
@@ -91,16 +87,14 @@ const FirstFormSection = ({
               disabled={disabledFields}
               fieldName="height_regime"
               form={form}
-              label={<Trans>Height regime:</Trans>}
+              label={<Trans id="form.height_regime.label" />}
               rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 50 }]}
             />
           </Col>
         </Row>
         <Row>
           <Paragraph>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eos, deserunt ea adipisci
-            culpa vitae officiis libero. Quas voluptate, id quasi placeat aut dolorum hic architecto
-            sed, nulla possimus voluptatibus blanditiis!
+            <Trans id="form.first_section.extra" />
           </Paragraph>
         </Row>
       </Col>
@@ -113,17 +107,14 @@ const FirstFormSection = ({
       </Col>
       <Col span={14}>
         <Paragraph strong>
-          <Trans>Please upload a few pictures with the building</Trans>
+          <Trans id="form.images.label" />
         </Paragraph>
         <Paragraph>
-          <Trans>
-            Note: We suggest loading three pictures on averrage showing if the building has the
-            seismic risk symbol, the general view of the building and its suroundings.
-          </Trans>
+          <Trans id="form.images.note" />
         </Paragraph>
         {/* @TODO test the behavior */}
         <Upload>
-          <UploadButton name={<Trans>Upload one or more photographs</Trans>} />
+          <UploadButton name={<Trans id="form.upload_button.label" />} />
         </Upload>
       </Col>
     </FormSection>

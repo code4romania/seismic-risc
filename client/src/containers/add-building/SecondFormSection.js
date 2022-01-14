@@ -1,26 +1,24 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { Trans } from '@lingui/macro';
-import { Col, Row, Typography } from 'antd';
+import { Col, Row } from 'antd';
 import FormInput from '../../components/FormInput';
 import FormSection from '../../components/FormSection';
 import FormCheckbox from '../../components/FormCheckbox';
 import FormTextArea from '../../components/FormTextArea';
 
-const { Paragraph } = Typography;
-
 const TYPE_OF_CONTRACTS = [
   {
     value: 'OWNER',
-    text: <Trans>Owner</Trans>,
+    text: <Trans id="form.type_of_contract.owner" />,
   },
   {
     value: 'TENANT',
-    text: <Trans>Tennant</Trans>,
+    text: <Trans id="form.type_of_contract.tenant" />,
   },
   {
     value: 'ADMIN',
-    text: <Trans>Reprezentant cu funcție de conducere din asociația de proprietari</Trans>,
+    text: <Trans id="form.type_of_contract.admin" />,
   },
 ];
 
@@ -28,8 +26,8 @@ const SecondFormSection = ({ disabledFields, form }) => {
   return (
     <FormSection
       label={2}
-      title={<Trans>About you</Trans>}
-      description="Datele de contact ale persoanei care completează prezentul formular"
+      title={<Trans id="form.second_section.title" />}
+      description={<Trans id="form.second_section.description" />}
     >
       <Col span={14}>
         <Row type="flex" gutter={20}>
@@ -38,7 +36,7 @@ const SecondFormSection = ({ disabledFields, form }) => {
               disabled={disabledFields}
               fieldName="full_name"
               form={form}
-              label={<Trans>Full name:</Trans>}
+              label={<Trans id="form.full_name.label" />}
               rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 100 }]}
             />
           </Col>
@@ -47,7 +45,7 @@ const SecondFormSection = ({ disabledFields, form }) => {
               disabled={disabledFields}
               fieldName="email_address"
               form={form}
-              label={<Trans>Email address:</Trans>}
+              label={<Trans id="form.email_address.label" />}
               rulesOptions={[
                 { ruleName: 'required' },
                 { ruleName: 'email' },
@@ -62,7 +60,7 @@ const SecondFormSection = ({ disabledFields, form }) => {
               disabled={disabledFields}
               fieldName="phone_number"
               form={form}
-              label={<Trans>Phone number:</Trans>}
+              label={<Trans id="form.phone_number.label" />}
               rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 100 }]}
             />
           </Col>
@@ -72,23 +70,17 @@ const SecondFormSection = ({ disabledFields, form }) => {
             disabled={disabledFields}
             fieldName="type_of_contract"
             form={form}
-            label={<Trans>Type of contract:</Trans>}
+            label={<Trans id="form.type_of_contract.label" />}
             options={TYPE_OF_CONTRACTS}
             rulesOptions={[{ ruleName: 'required' }]}
           />
         </Row>
         <Row>
-          <Paragraph strong>
-            <Trans>
-              În opinia dumneavoastră, ca locatar al imobilului, de ce sprijin aveți nevoie și cu ce
-              dificultăți v-ați confruntat, în demersul de a crește siguranța imobilului în care
-              locuiți?
-            </Trans>
-          </Paragraph>
           <FormTextArea
             disabled={disabledFields}
             fieldName="necessary_support"
             form={form}
+            label={<Trans id="form.necessary_support.label" />}
             rulesOptions={[{ ruleName: 'max', value: 400 }]}
           />
         </Row>

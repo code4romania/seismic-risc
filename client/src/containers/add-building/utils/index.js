@@ -4,65 +4,62 @@ import FormCheckbox from '../../../components/FormCheckbox';
 import FormInput from '../../../components/FormInput';
 import FormTextArea from '../../../components/FormTextArea';
 
-// @TODO add translation
-
 export const formFields = {
   extraInfoFields: {
     generalInfoFields: [
       {
         fieldName: 'is_still_present',
-        label: <Trans>Mai există clădirea la adresa indicată?</Trans>,
+        label: <Trans id="form.is_still_present.label" />,
         options: [
           {
             value: 'YES',
-            text: <Trans>Yes</Trans>,
+            text: <Trans id="general.yes" />,
           },
-          { value: 'NO', text: <Trans>No</Trans> },
+          { value: 'NO', text: <Trans id="general.no" /> },
         ],
         component: FormCheckbox,
       },
       {
         fieldName: 'consolidation_status',
-        label: <Trans>Clădirea a fost consolidată/reabilitată de la data expertizării?</Trans>,
+        label: <Trans id="form.consolidation_status.label" />,
         options: [
           {
             value: 'NO',
-            text: <Trans>No</Trans>,
+            text: <Trans id="general.no" />,
           },
-          { value: 'YES_PRIVATE', text: <Trans>da, fonduri proprii</Trans> },
-          { value: 'YES_PUBLIC', text: <Trans>da, fonduri publice</Trans> },
+          { value: 'YES_PRIVATE', text: <Trans id="form.consolidation_status.yes_private" /> },
+          { value: 'YES_PUBLIC', text: <Trans id="form.consolidation_status.yes_public" /> },
           {
             value: 'DEMOLISHED',
-            text: (
-              <Trans>
-                clădirea cu risc seismic a fost demolată și s-a construit clădire nouă în locul ei
-              </Trans>
-            ),
+            text: <Trans id="form.consolidation_status.demolished" />,
           },
         ],
         component: FormCheckbox,
       },
       {
         fieldName: 'work_performed',
-        label: <Trans>Ce lucrări au fost efectuate?</Trans>,
+        label: <Trans id="form.work_performed.label" />,
         options: [
           {
             value: '0',
-            text: <Trans>consolidate structură</Trans>,
+            text: <Trans id="form.work_performed.0" />,
           },
-          { value: '1', text: <Trans>consolidare fundație</Trans> },
-          { value: '2', text: <Trans>reabilitare instalații comune</Trans> },
+          { value: '1', text: <Trans id="form.work_performed.1" /> },
+          {
+            value: '2',
+            text: <Trans id="form.work_performed.2" />,
+          },
           {
             value: '3',
-            text: <Trans>izolare termică</Trans>,
+            text: <Trans id="form.work_performed.3" />,
           },
           {
             value: '4',
-            text: <Trans>reparații tencuială exterioară și acoperiș/terasă</Trans>,
+            text: <Trans id="form.work_performed.4" />,
           },
           {
             value: '5',
-            text: <Trans>altele</Trans>,
+            text: <Trans id="form.work_performed.5" />,
           },
         ],
         // @TODO user can see a new field and fill in other work performed when option 5 is selected
@@ -70,55 +67,50 @@ export const formFields = {
       },
       {
         fieldName: 'apartment_count',
-        label: <Trans>Câte locuințe sunt în clădire?</Trans>,
+        label: <Trans id="form.apartment_count.label" />,
         component: FormInput,
         wrapperCol: { span: 6 },
         rulesOptions: [{ ruleName: 'integer' }],
       },
       {
         fieldName: 'permanently_occupied_apartment_count',
-        label: <Trans>Număr de locuințe ocupate permanent?</Trans>,
+        label: <Trans id="form.permanently_occupied_apartment_count.label" />,
         component: FormInput,
         wrapperCol: { span: 6 },
         rulesOptions: [{ ruleName: 'integer' }],
       },
       {
         fieldName: 'residents_count',
-        label: <Trans>Câte persoane locuiesc în aceste locuințe?</Trans>,
+        label: <Trans id="form.residents_count.label" />,
         component: FormInput,
         wrapperCol: { span: 6 },
         rulesOptions: [{ ruleName: 'integer' }],
       },
       {
         fieldName: 'owners_count',
-        label: <Trans>Câți proprietari dețin apartamente în acest imobil?</Trans>,
+        label: <Trans id="form.owners_count.label" />,
         component: FormInput,
         wrapperCol: { span: 6 },
         rulesOptions: [{ ruleName: 'integer' }],
       },
       {
         fieldName: 'public_apartment_count',
-        label: <Trans>Din care, câte apartamente în proprietate publică?</Trans>,
+        label: <Trans id="form.public_apartment_count.label" />,
         component: FormInput,
         wrapperCol: { span: 6 },
         rulesOptions: [{ ruleName: 'integer' }],
       },
       {
         fieldName: 'public_owners',
-        label: <Trans>Vă rugăm menționați proprietarii publici</Trans>,
-        note: (
-          <Trans>
-            Notă: prin proprietate publică înțelegem locuințe deținute de Administrația Fondului
-            Imobiliar – AFI (fostul ICRAL), RAPPS, Birouri de primarie, ANAF ș.a.
-          </Trans>
-        ),
+        label: <Trans id="form.public_owners.label" />,
+        note: <Trans id="form.public_owners.note" />,
         component: FormInput,
         wrapperCol: { span: 18 },
         rulesOptions: [{ ruleName: 'max', value: 100 }],
       },
       {
         fieldName: 'rented_apartment_count',
-        label: <Trans>Câte apartamente sunt locuite în regim de chirie?</Trans>,
+        label: <Trans id="form.rented_apartment_count.label" />,
         component: FormInput,
         wrapperCol: { span: 6 },
         rulesOptions: [{ ruleName: 'integer' }],
@@ -127,56 +119,36 @@ export const formFields = {
     buildingAdministrationFields: [
       {
         fieldName: 'has_owners_association',
-        label: <Trans>Există asociație de proprietari?</Trans>,
-        note: (
-          <Trans>
-            Conform legii, asociațiile de proprietari se înființează pentru condominii cu minim 3
-            unități de locuit.
-          </Trans>
-        ),
+        label: <Trans id="form.has_owners_association.label" />,
+        note: <Trans id="form.has_owners_association.note" />,
         options: [
           {
             value: 'YES',
-            text: <Trans>Yes</Trans>,
+            text: <Trans id="general.yes" />,
           },
-          { value: 'NO', text: <Trans>No</Trans> },
+          { value: 'NO', text: <Trans id="general.no" /> },
         ],
         component: FormCheckbox,
       },
       {
         fieldName: 'apartments_with_6_months_debt',
-        label: (
-          <Trans>
-            Câte dintre apartamentele din clădire înregistrează datorii la întreținere mai mari de 6
-            luni?
-          </Trans>
-        ),
+        label: <Trans id="form.apartments_with_6_months_debt.label" />,
         component: FormInput,
         wrapperCol: { span: 6 },
         rulesOptions: [{ ruleName: 'integer' }],
       },
       {
         fieldName: 'disconnected_utilities',
-        label: <Trans>Imobilul este deconectat de la vreun servicu de utilitate publică?</Trans>,
-        note: (
-          <Trans>
-            Dacă da, indicați de la ce serviciu/servicii este deconectat. (Serviciu de utilitate
-            publică: apă, canalizare, electricitate, termoficare)
-          </Trans>
-        ),
+        label: <Trans id="form.disconnected_utilities.label" />,
+        note: <Trans id="form.disconnected_utilities.note" />,
         component: FormTextArea,
         wrapperCol: { span: 18 },
         rulesOptions: [{ ruleName: 'max', value: 250 }],
       },
       {
         fieldName: 'broken_utilities',
-        label: <Trans>Imobilul înregistrează elemente tehnice nefuncționale?</Trans>,
-        note: (
-          <Trans>
-            Spre exemplu: conductele, rețeaua de încălzire etc. Dacă da, indicati ce elemente nu
-            funcționează.
-          </Trans>
-        ),
+        label: <Trans id="form.broken_utilities.label" />,
+        note: <Trans id="form.broken_utilities.note" />,
         component: FormTextArea,
         wrapperCol: { span: 18 },
         rulesOptions: [{ ruleName: 'max', value: 250 }],
@@ -185,83 +157,61 @@ export const formFields = {
     spaceUsageFields: [
       {
         fieldName: 'office_count',
-        label: <Trans>Câte apartamente sunt folosite ca birou de firmă? </Trans>,
+        label: <Trans id="form.office_count.label" />,
         component: FormInput,
         wrapperCol: { span: 6 },
         rulesOptions: [{ ruleName: 'integer' }],
       },
       {
         fieldName: 'commercial_space_count',
-        label: <Trans>Câte spații comerciale și de servicii există în clădire?</Trans>,
-        note: (
-          <Trans>
-            Notă: Prin spații comerciale și de servicii ne referim la magazine, ateliere,
-            restaurante, cinema-uri, teatre ș.a., a căror activitate a fost suspendată în urma
-            adoptării Legii 282/2015 pentru modificarea si completarea OG 20/1994 privind masuri
-            pentru reducerea riscului seismic al constructiilor existente.
-          </Trans>
-        ),
+        label: <Trans id="form.commercial_space_count.label" />,
+        note: <Trans id="form.commercial_space_count.note" />,
         component: FormInput,
         wrapperCol: { span: 6 },
         rulesOptions: [{ ruleName: 'integer' }],
       },
       {
         fieldName: 'self_owned_commercial_space_count',
-        label: (
-          <Trans>
-            Din aceste spații/apartamente cu altă funcțiune decât locuire, câte sunt proprietate a
-            firmelor care le utilizează?
-          </Trans>
-        ),
+        label: <Trans id="form.self_owned_commercial_space_count.label" />,
         component: FormInput,
         wrapperCol: { span: 6 },
         rulesOptions: [{ ruleName: 'integer' }],
       },
       {
         fieldName: 'proximal_utilities',
-        label: <Trans>Ce există în imediata vecinătate a clădirii?</Trans>,
-        note: (
-          <Trans>
-            Notă: Prin vecinătate ne referim la clădiri și funcțiuni la o distanță de până la 10 m
-            de clădirea vizată.
-          </Trans>
-        ),
+        label: <Trans id="form.proximal_utilities.label" />,
+        note: <Trans id="form.proximal_utilities.note" />,
         options: [
           {
             value: '0',
-            text: <Trans>Alte clădiri rezidențiale</Trans>,
+            text: <Trans id="form.proximal_utilities.0" />,
           },
           {
             value: '1',
-            text: (
-              <Trans>
-                Clădiri cu funcții comerciale sau culturale (eg. restaurant, magazin, galerie,
-                cinema, teatru ș.a.)
-              </Trans>
-            ),
+            text: <Trans id="form.proximal_utilities.1" />,
           },
           {
             value: '2',
-            text: <Trans>Clădiri cu funcție publică (eg. grădiniță, școală ș.a.)</Trans>,
+            text: <Trans id="form.proximal_utilities.2" />,
           },
           {
             value: '3',
-            text: <Trans>Spațiu public: parc, parcare ș.a.</Trans>,
+            text: <Trans id="form.proximal_utilities.3" />,
           },
           {
             value: '4',
-            text: <Trans>Curtea aferentă imobilului</Trans>,
+            text: <Trans id="form.proximal_utilities.4" />,
           },
           {
             value: '5',
-            text: <Trans>Teren neutilizat fără construcții sau anexe</Trans>,
+            text: <Trans id="form.proximal_utilities.5" />,
           },
         ],
         component: FormCheckbox,
       },
       {
         fieldName: 'proximal_utilities_description',
-        label: <Trans>Comentarii privind funcțiunile din proximitatea imobilului</Trans>,
+        label: <Trans id="form.proximal_utilities_description.label" />,
         component: FormTextArea,
         wrapperCol: { span: 18 },
         rulesOptions: [{ ruleName: 'max', value: 250 }],

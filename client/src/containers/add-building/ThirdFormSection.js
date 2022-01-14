@@ -16,28 +16,21 @@ const ThirdFormSection = ({ disabledFields, form }) => {
     setShowAddMoreInfoBtn(false);
   }, []);
 
-  // @TODO add translations
-
   return (
-    <FormSection label={3} title={<Trans>Ai și alte informații despre această clădire?</Trans>}>
+    <FormSection label={3} title={<Trans id="form.third_section.title" />}>
       <Col span={18}>
         {showAddMoreInfoBtn ? (
           <Row>
             <Button type="primary" ghost size="large" onClick={onAddMoreInfoBtnClick}>
-              Completeaza cu alte informații
+              <Trans id="form.third_section.other_info_btn" />
             </Button>
           </Row>
         ) : (
           <>
             <FormSubSection
               label="A"
-              title={<Trans>Date generale</Trans>}
-              description={
-                <Trans>
-                  Notă: Întrebările din secțiunea A se referă la numărul de locuințe și persoane
-                  care locuiesc în clădirea care face obiectul prezentului formular.
-                </Trans>
-              }
+              title={<Trans id="form.third_section.sub_one.title" />}
+              description={<Trans id="form.third_section.sub_one.description" />}
             >
               {/* @TODO user can see a new field and fill in other work performed when option 5 is
               selected */}
@@ -53,13 +46,8 @@ const ThirdFormSection = ({ disabledFields, form }) => {
             </FormSubSection>
             <FormSubSection
               label="B"
-              title={<Trans>Funcționarea imobilului</Trans>}
-              description={
-                <Trans>
-                  Nota: Întrebări din secțiunile B-F se referă la problemele și nevoile de ansamblu
-                  ale clădirii și ale celor ce locuiesc în aceasta.
-                </Trans>
-              }
+              title={<Trans id="form.third_section.sub_two.title" />}
+              description={<Trans id="form.third_section.sub_two.description" />}
             >
               {buildingAdministrationFields.map(({ component: FormField, fieldName, ...rest }) => (
                 <FormField
@@ -71,7 +59,7 @@ const ThirdFormSection = ({ disabledFields, form }) => {
                 />
               ))}
             </FormSubSection>
-            <FormSubSection label="C" title={<Trans>Structura și tipul ocupării clădirii</Trans>}>
+            <FormSubSection label="C" title={<Trans id="form.third_section.sub_three.title" />}>
               {spaceUsageFields.map(({ component: FormField, fieldName, ...rest }) => (
                 <FormField
                   key={fieldName}

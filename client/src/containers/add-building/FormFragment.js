@@ -149,17 +149,17 @@ const FormFragment = ({ form }) => {
               rules: [{ required: true, message: <EmptyFieldMessage /> }],
             })(
               <Checkbox disabled={state.requestError}>
-                <Trans>
-                  Prin această bifă îți exprimi acordul ca datele furnizate de tine prin acest
-                  formular să fie procesate exclusiv in scopul de a încărca în platformă acest
-                  document și ca echipa MKBT să te contacteze doar în legătură cu această submisie.
-                  Aici puteți găsi
-                </Trans>{' '}
-                <Link to="/termeni-si-conditii" target="_blank">
-                  <Trans>
-                    regulamentul nostru cu privire la prelucrarea datelor cu caracter personal.
-                  </Trans>
-                </Link>
+                <Trans id="form.gdpr_agreement">
+                  By this check you agree that the data provided by you through this form will be
+                  processed exclusively for the purpose of uploading this document on the platform
+                  and that the MKBT team will contact you only in connection with this submission.
+                  Here you can find{' '}
+                  {
+                    <Link to="/termeni-si-conditii" target="_blank">
+                      our regulations regarding the processing of personal data.
+                    </Link>
+                  }
+                </Trans>
               </Checkbox>,
             )}
           </Form.Item>

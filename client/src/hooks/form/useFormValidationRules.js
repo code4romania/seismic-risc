@@ -8,18 +8,22 @@ const useCreateFormValidationRules = () => {
     return rulesOptions.map(({ ruleName, value }) => {
       switch (ruleName) {
         case 'email':
-          return { type: ruleName, message: <Trans>Email address is not valid!</Trans> };
+          return { type: ruleName, message: <Trans id="form.validation.email" /> };
         case 'integer':
           return {
             pattern: /^[1-9]\d*$/,
-            message: <Trans>Value must be a number greater than zero!</Trans>,
+            message: <Trans id="form.validation.integer" />,
           };
         case 'required':
-          return { required: true, message: <Trans>Cannot be left empty!</Trans> };
+          return { required: true, message: <Trans id="form.validation.required" /> };
         case 'max':
           return {
             max: value,
-            message: <Trans>Field cannot exceed a maximum of {value} characters!</Trans>,
+            message: (
+              <Trans id="form.validation.max">
+                Field cannot exceed a maximum of {value} characters!
+              </Trans>
+            ),
           };
         default:
           return null;
