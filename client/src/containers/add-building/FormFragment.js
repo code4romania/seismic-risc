@@ -12,6 +12,7 @@ import ThirdFormSection from './ThirdFormSection';
 import useCreateFormValidationRules from '../../hooks/form/useFormValidationRules';
 import { useRiskCategoriesQuery } from '../../queries';
 import { useAddBuilding } from '../../hooks/form/useAddBuilding';
+import { useIsSmallDevice } from '../../hooks/useIsSmallDevice';
 
 const { CAPTCHA_API_KEY } = config;
 
@@ -23,6 +24,8 @@ const FormFragment = ({ form }) => {
   const { getFieldDecorator } = form;
   const fields = form.getFieldsValue();
   const { currentLanguage } = useGlobalContext();
+
+  const isSmallDevice = useIsSmallDevice();
 
   const createFormValidationRules = useCreateFormValidationRules();
   const addBuilding = useAddBuilding();
@@ -142,6 +145,7 @@ const FormFragment = ({ form }) => {
                         onVerify={handleVerifyCaptcha}
                         hl={language}
                         languageOverride={language}
+                        size={isSmallDevice ? 'compact' : 'normal'}
                       />,
                     )}
                   </Form.Item>
