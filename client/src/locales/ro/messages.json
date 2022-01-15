@@ -106,7 +106,7 @@
       ],
       [
         "containers/add-building/FormFragment.js",
-        155
+        156
       ],
       [
         "containers/add-building/HeroFragment.js",
@@ -604,7 +604,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        65
+        64
       ]
     ],
     "extractedComments": []
@@ -614,7 +614,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        70
+        74
       ]
     ],
     "extractedComments": []
@@ -624,7 +624,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        134
+        138
       ]
     ],
     "extractedComments": []
@@ -634,7 +634,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        148
+        152
       ]
     ],
     "extractedComments": []
@@ -644,7 +644,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        149
+        153
       ]
     ],
     "extractedComments": []
@@ -654,7 +654,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        164
+        168
       ]
     ],
     "extractedComments": []
@@ -664,7 +664,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        165
+        169
       ]
     ],
     "extractedComments": []
@@ -674,7 +674,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        35
+        61
       ]
     ],
     "extractedComments": []
@@ -684,7 +684,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        25
+        51
       ]
     ],
     "extractedComments": []
@@ -694,7 +694,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        31
+        57
       ]
     ],
     "extractedComments": []
@@ -704,7 +704,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        32
+        58
       ]
     ],
     "extractedComments": []
@@ -714,7 +714,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        86
+        85
       ]
     ],
     "extractedComments": []
@@ -724,7 +724,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        141
+        145
       ]
     ],
     "extractedComments": []
@@ -734,7 +734,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        142
+        146
       ]
     ],
     "extractedComments": []
@@ -754,7 +754,7 @@
     "origin": [
       [
         "containers/add-building/FormFragment.js",
-        50
+        49
       ]
     ],
     "extractedComments": []
@@ -763,8 +763,8 @@
     "translation": "Server indisponibil, vă rugăm încercați din nou mai târziu.",
     "origin": [
       [
-        "queries/index.js",
-        28
+        "containers/add-building/FormFragment.js",
+        85
       ]
     ],
     "extractedComments": []
@@ -774,7 +774,7 @@
     "origin": [
       [
         "containers/add-building/FormFragment.js",
-        43
+        42
       ]
     ],
     "extractedComments": []
@@ -784,7 +784,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        123
+        122
       ]
     ],
     "extractedComments": []
@@ -794,7 +794,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        56
+        55
       ]
     ],
     "extractedComments": []
@@ -815,7 +815,7 @@
     "origin": [
       [
         "containers/add-building/FormFragment.js",
-        117
+        120
       ]
     ],
     "extractedComments": []
@@ -825,7 +825,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        121
+        125
       ]
     ],
     "extractedComments": []
@@ -835,7 +835,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        122
+        126
       ]
     ],
     "extractedComments": []
@@ -845,7 +845,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        116
+        115
       ]
     ],
     "extractedComments": []
@@ -855,7 +855,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        136
+        135
       ]
     ],
     "extractedComments": []
@@ -865,7 +865,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        139
+        138
       ]
     ],
     "extractedComments": []
@@ -885,7 +885,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        13
+        39
       ]
     ],
     "extractedComments": []
@@ -895,7 +895,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        95
+        94
       ]
     ],
     "extractedComments": []
@@ -915,7 +915,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        157
+        161
       ]
     ],
     "extractedComments": []
@@ -925,7 +925,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        91
+        95
       ]
     ],
     "extractedComments": []
@@ -935,7 +935,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        77
+        81
       ]
     ],
     "extractedComments": []
@@ -950,72 +950,12 @@
     ],
     "extractedComments": []
   },
-  "form.proximal_utilities.0": {
-    "translation": "Alte clădiri rezidențiale",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        185
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.proximal_utilities.1": {
-    "translation": "Clădiri cu funcții comerciale sau culturale (eg. restaurant, magazin, galerie, cinema, teatru ș.a.)",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        189
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.proximal_utilities.2": {
-    "translation": "Clădiri cu funcție publică (eg. grădiniță, școală ș.a.)",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        193
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.proximal_utilities.3": {
-    "translation": "Spațiu public: parc, parcare ș.a.",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        197
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.proximal_utilities.4": {
-    "translation": "Curtea aferentă imobilului",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        201
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.proximal_utilities.5": {
-    "translation": "Teren neutilizat fără construcții sau anexe",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        205
-      ]
-    ],
-    "extractedComments": []
-  },
   "form.proximal_utilities.label": {
     "translation": "Ce există în imediata vecinătate a clădirii?",
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        179
+        183
       ]
     ],
     "extractedComments": []
@@ -1025,7 +965,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        180
+        184
       ]
     ],
     "extractedComments": []
@@ -1035,7 +975,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        212
+        190
       ]
     ],
     "extractedComments": []
@@ -1045,7 +985,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        98
+        102
       ]
     ],
     "extractedComments": []
@@ -1055,7 +995,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        105
+        109
       ]
     ],
     "extractedComments": []
@@ -1065,7 +1005,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        106
+        110
       ]
     ],
     "extractedComments": []
@@ -1075,7 +1015,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        112
+        116
       ]
     ],
     "extractedComments": []
@@ -1085,7 +1025,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        84
+        88
       ]
     ],
     "extractedComments": []
@@ -1095,7 +1035,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        106
+        105
       ]
     ],
     "extractedComments": []
@@ -1125,7 +1065,7 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        172
+        176
       ]
     ],
     "extractedComments": []
@@ -1135,7 +1075,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        75
+        74
       ]
     ],
     "extractedComments": []
@@ -1255,7 +1195,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        152
+        151
       ]
     ],
     "extractedComments": []
@@ -1295,7 +1235,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        37
+        36
       ]
     ],
     "extractedComments": []
@@ -1331,72 +1271,12 @@
     ],
     "extractedComments": []
   },
-  "form.work_performed.0": {
-    "translation": "Consolidare structură",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        46
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.work_performed.1": {
-    "translation": "Consolidare fundație",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        48
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.work_performed.2": {
-    "translation": "Reabilitare instalații comune",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        51
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.work_performed.3": {
-    "translation": "Izolare termică",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        55
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.work_performed.4": {
-    "translation": "Reparații tencuială exterioară și acoperiș/terasă",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        59
-      ]
-    ],
-    "extractedComments": []
-  },
-  "form.work_performed.5": {
-    "translation": "Altele",
-    "origin": [
-      [
-        "containers/add-building/utils/index.js",
-        63
-      ]
-    ],
-    "extractedComments": []
-  },
   "form.work_performed.label": {
     "translation": "Ce lucrări au fost efectuate?",
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        42
+        68
       ]
     ],
     "extractedComments": []
@@ -1406,15 +1286,15 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        19
+        45
       ],
       [
         "containers/add-building/utils/index.js",
-        29
+        55
       ],
       [
         "containers/add-building/utils/index.js",
-        128
+        132
       ]
     ],
     "extractedComments": []
@@ -1424,25 +1304,14 @@
     "origin": [
       [
         "containers/add-building/utils/index.js",
-        17
+        43
       ],
       [
         "containers/add-building/utils/index.js",
-        126
+        130
       ]
     ],
     "extractedComments": []
-  },
-  "no.": {
-    "translation": "nr.",
-    "origin": [
-      [
-        "components/BuildingDetails/BuildingDetailsTitle.js",
-        18
-      ]
-    ],
-    "extractedComments": [],
-    "obsolete": true
   },
   "see images": {
     "translation": "vezi imagini",
