@@ -25,8 +25,7 @@ const FirstFormSection = ({
   const { getFieldDecorator } = form;
 
   const riskCategoryOptions = useMemo(
-    () =>
-      riskCategories.map((category) => ({ value: category.value, text: category.display_name })),
+    () => riskCategories.map((category) => ({ value: category.value, text: category.displayName })),
     [riskCategories],
   );
 
@@ -70,7 +69,7 @@ const FirstFormSection = ({
             <FormInput
               colon
               disabled={disabledFields}
-              fieldName="street_number"
+              fieldName="streetNumber"
               form={form}
               label={<Trans id="form.street_number.label" />}
               rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 50 }]}
@@ -101,7 +100,7 @@ const FirstFormSection = ({
           <Col xs={24} md={12}>
             <FormSelect
               disabled={disabledFields}
-              fieldName="risk_category"
+              fieldName="riskCategory"
               form={form}
               label={<Trans id="form.risk_class.label" />}
               options={riskCategoryOptions}
@@ -111,7 +110,7 @@ const FirstFormSection = ({
           <Col xs={24} md={12}>
             <FormInput
               disabled={disabledFields}
-              fieldName="height_regime"
+              fieldName="heightRegime"
               form={form}
               label={<Trans id="form.height_regime.label" />}
               rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 50 }]}

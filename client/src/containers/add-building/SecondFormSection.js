@@ -35,7 +35,7 @@ const SecondFormSection = ({ disabledFields, form }) => {
           <Col xs={24} md={12} lg={10} xl={9}>
             <FormInput
               disabled={disabledFields}
-              fieldName="full_name"
+              fieldName="fullName"
               form={form}
               label={<Trans id="form.full_name.label" />}
               rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 100 }]}
@@ -44,7 +44,7 @@ const SecondFormSection = ({ disabledFields, form }) => {
           <Col xs={24} md={12} lg={10} xl={9}>
             <FormInput
               disabled={disabledFields}
-              fieldName="email_address"
+              fieldName="emailAddress"
               form={form}
               label={<Trans id="form.email_address.label" />}
               rulesOptions={[
@@ -59,7 +59,7 @@ const SecondFormSection = ({ disabledFields, form }) => {
           <Col xs={24} md={12} lg={10} xl={9}>
             <FormInput
               disabled={disabledFields}
-              fieldName="phone_number"
+              fieldName="phoneNumber"
               form={form}
               label={<Trans id="form.phone_number.label" />}
               rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 100 }]}
@@ -69,7 +69,7 @@ const SecondFormSection = ({ disabledFields, form }) => {
         <Row>
           <FormRadio
             disabled={disabledFields}
-            fieldName="type_of_contact"
+            fieldName="typeOfContact"
             form={form}
             label={<Trans id="form.type_of_contract.label" />}
             options={TYPE_OF_CONTRACTS}
@@ -79,7 +79,7 @@ const SecondFormSection = ({ disabledFields, form }) => {
         <Row>
           <FormTextArea
             disabled={disabledFields}
-            fieldName="necessary_support"
+            fieldName="necessarySupport"
             form={form}
             label={<Trans id="form.necessary_support.label" />}
             rulesOptions={[{ ruleName: 'max', value: 400 }]}

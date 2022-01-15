@@ -4,25 +4,25 @@ import PropTypes from 'prop-types';
 import { Trans } from '@lingui/macro';
 import FormSection from '../../components/FormSection';
 import FormSubSection from '../../components/FormSubSection';
-import { formFields } from './utils';
+import { useExtraInfoFormFields } from './utils';
 import FormRadio from '../../components/FormRadio';
 import FormCheckbox from '../../components/FormCheckbox';
 import FormTextArea from '../../components/FormTextArea';
-
-const { generalInfoFields, buildingAdministrationFields, spaceUsageFields } =
-  formFields.extraInfoFields;
-
-const [
-  isStillPresentField,
-  consolidationStatusField,
-  workPerformedField,
-  ...remainingGeneralInfoFields
-] = generalInfoFields;
 
 const ThirdFormSection = ({ disabledFields, form }) => {
   const [showAddMoreInfoBtn, setShowAddMoreInfoBtn] = useState(true);
   const [isDemolished, setIsDemolished] = useState(false);
   const [showOtherWorkPerformedField, setShowOtherWorkPerformedField] = useState(false);
+
+  const { generalInfoFields, buildingAdministrationFields, spaceUsageFields } =
+    useExtraInfoFormFields();
+
+  const [
+    isStillPresentField,
+    consolidationStatusField,
+    workPerformedField,
+    ...remainingGeneralInfoFields
+  ] = generalInfoFields;
 
   const onAddMoreInfoBtnClick = useCallback(() => {
     setShowAddMoreInfoBtn(false);

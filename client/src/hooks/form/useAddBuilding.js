@@ -1,5 +1,6 @@
 import { useCallback } from 'react';
 import config from '../../config';
+import { mapKeysToSnakeCase } from '../../utils';
 
 const { BUILDINGS_URL } = config;
 
@@ -8,45 +9,46 @@ export const useAddBuilding = () => {
     try {
       const valuesToSend = {
         address: formValues.address,
-        street_number: formValues.street_number,
+        streetNumber: formValues.streetNumber,
         county: formValues.county,
         locality: formValues.locality,
         lat: formValues.lat ?? null,
         lng: formValues.lng ?? null,
-        risk_category: formValues.risk_category,
-        height_regime: formValues.height_regime,
+        riskCategory: formValues.riskCategory,
+        heightRegime: formValues.heightRegime,
         images: [], // @TODO add images from form after API is fixed
-        full_name: formValues.full_name,
-        email_address: formValues.email_address,
-        phone_number: formValues.phone_number,
-        type_of_contact: formValues.type_of_contact,
-        necessary_support: formValues.necessary_support ?? '',
-        is_still_present: formValues.is_still_present ?? false,
-        consolidation_status: formValues.consolidation_status ?? 'NO',
-        work_performed: formValues.work_performed ?? [],
-        apartment_count: formValues.apartment_count ?? null,
-        permanently_occupied_apartment_count:
-          formValues.permanently_occupied_apartment_count ?? null,
-        residents_count: formValues.residents_count ?? null,
-        owners_count: formValues.owners_count ?? null,
-        public_apartment_count: formValues.public_apartment_count ?? null,
-        public_owners: formValues.public_owners ?? '',
-        rented_apartment_count: formValues.rented_apartment_count ?? null,
-        has_owners_association: formValues.has_owners_association ?? false,
-        apartments_with_6_months_debt: formValues.apartments_with_6_months_debt ?? null,
-        disconnected_utilities: formValues.disconnected_utilities ?? '',
-        broken_utilities: formValues.broken_utilities ?? '',
-        office_count: formValues.office_count ?? null,
-        commercial_space_count: formValues.commercial_space_count ?? null,
-        self_owned_commercial_space_count: formValues.self_owned_commercial_space_count ?? null,
-        proximal_utilities: formValues.proximal_utilities ?? [],
-        proximal_utilities_description: formValues.proximal_utilities_description ?? '',
+        fullName: formValues.fullName,
+        emailAddress: formValues.emailAddress,
+        phoneNumber: formValues.phoneNumber,
+        typeOfContact: formValues.typeOfContact,
+        necessarySupport: formValues.necessarySupport ?? '',
+        isStillPresent: formValues.isStillPresent ?? false,
+        consolidationStatus: formValues.consolidationStatus ?? 'NO',
+        workPerformed: formValues.workPerformed ?? [],
+        apartmentCount: formValues.apartmentCount ?? null,
+        permanentlyOccupiedApartmentCount: formValues.permanentlyOccupiedApartmentCount ?? null,
+        residentsCount: formValues.residentsCount ?? null,
+        ownersCount: formValues.ownersCount ?? null,
+        publicApartmentCount: formValues.publicApartmentCount ?? null,
+        publicOwners: formValues.publicOwners ?? '',
+        rentedApartmentCount: formValues.rentedApartmentCount ?? null,
+        hasOwnersAssociation: formValues.hasOwnersAssociation ?? false,
+        apartmentsWith6MonthsDebt: formValues.apartmentsWith6MonthsDebt ?? null,
+        disconnectedUtilities: formValues.disconnectedUtilities ?? '',
+        brokenUtilities: formValues.brokenUtilities ?? '',
+        officeCount: formValues.officeCount ?? null,
+        commercialSpaceCount: formValues.commercialSpaceCount ?? null,
+        selfOwnedCommercialSpaceCount: formValues.selfOwnedCommercialSpaceCount ?? null,
+        proximalUtilities: formValues.proximalUtilities ?? [],
+        proximalUtilitiesDescription: formValues.proximalUtilitiesDescription ?? '',
       };
+
+      const valuestoSendSnakeCase = mapKeysToSnakeCase(valuesToSend);
 
       const res = await fetch(`${BUILDINGS_URL}/public_create/`, {
         method: 'POST',
         headers: { 'Content-type': 'application/json' },
-        body: JSON.stringify(valuesToSend),
+        body: JSON.stringify(valuestoSendSnakeCase),
       });
 
       if (!res.ok) {

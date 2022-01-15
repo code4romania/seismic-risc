@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Button, Checkbox, Col, Form, message, Row, Spin } from 'antd';
-import { Trans } from '@lingui/macro';
+import { Trans, t } from '@lingui/macro';
 import { Link, Redirect } from 'react-router-dom';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 
@@ -68,9 +68,9 @@ const FormFragment = ({ form }) => {
   };
 
   useEffect(() => {
-    if (fields.address && fields.street_number && fields.locality && fields.county) {
+    if (fields.address && fields.streetNumber && fields.locality && fields.county) {
       setMapSearchText(
-        `${fields.address} ${fields.street_number} ${fields.locality} ${fields.county}`,
+        `${fields.address} ${fields.streetNumber} ${fields.locality} ${fields.county}`,
       );
     }
   }, [fields]);
@@ -78,6 +78,12 @@ const FormFragment = ({ form }) => {
   useEffect(() => {
     setLanguage(currentLanguage);
   }, [currentLanguage]);
+
+  useEffect(() => {
+    if (!isErrorLoadingRiskCategories) return;
+
+    message.error(t({ id: 'form.error.fetch_risk_categories' }));
+  }, [isErrorLoadingRiskCategories]);
 
   if (isFinished) {
     return <Redirect push to="/multumim" />;
@@ -96,7 +102,7 @@ const FormFragment = ({ form }) => {
             form={form}
             onCoordinatesChange={onCoordinatesChange}
             mapSearchText={mapSearchText}
-            riskCategories={riskCategories}
+            riskCategories={riskCategories ?? []}
           />
 
           <SecondFormSection disabledFields={isErrorLoadingRiskCategories} form={form} />
@@ -107,6 +113,7 @@ const FormFragment = ({ form }) => {
             <Col xs={24} lg={16}>
               <Form.Item style={{ lineHeight: 1 }}>
                 {getFieldDecorator('gdpr', {
+                  valuePropName: 'checked',
                   rules: createFormValidationRules([{ ruleName: 'gdpr' }]),
                 })(
                   <Checkbox disabled={isErrorLoadingRiskCategories} style={{ lineHeight: 1.5 }}>
