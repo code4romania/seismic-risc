@@ -1,0 +1,39 @@
+.chip {
+  align-items: center;
+  background-color: transparent;
+  border: 4px solid $primary-color;
+  border-radius: 25px;
+  box-sizing: border-box;
+  color: $primary-color;
+  cursor: default;
+  display: inline-flex;
+  font-size: 2rem;
+  font-weight: 700;
+  height: 50px;
+  justify-content: center;
+  outline: 0px;
+  padding: 0px;
+  text-decoration: none;
+  vertical-align: middle;
+  white-space: nowrap;
+
+  & span {
+    overflow: hidden;
+    padding-left: 12px;
+    padding-right: 12px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  &.small {
+    font-size: 1rem;
+    border: 2px solid;
+    height: 32px;
+    border-radius: 16px;
+
+    & span {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+}

@@ -106,7 +106,7 @@
       ],
       [
         "containers/add-building/FormFragment.js",
-        219
+        156
       ],
       [
         "containers/add-building/HeroFragment.js",
@@ -160,7 +160,7 @@
     "extractedComments": []
   },
   "Blog": {
-    "translation": "",
+    "translation": "Blog",
     "origin": [
       [
         "containers/404/BlogPreviewFragment.js",
@@ -173,36 +173,6 @@
       [
         "containers/thankyou/BlogPreviewFragment.js",
         6
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Building Info": {
-    "translation": "Informații despre clădire",
-    "origin": [
-      [
-        "containers/add-building/FormFragment.js",
-        143
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Cannot be left empty!": {
-    "translation": "Câmpul nu poate fi lăsat gol!",
-    "origin": [
-      [
-        "containers/add-building/FormFragment.js",
-        23
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Captcha": {
-    "translation": "",
-    "origin": [
-      [
-        "containers/add-building/FormFragment.js",
-        205
       ]
     ],
     "extractedComments": []
@@ -253,16 +223,6 @@
       [
         "components/Header/index.js",
         93
-      ]
-    ],
-    "extractedComments": []
-  },
-  "County": {
-    "translation": "Județ",
-    "origin": [
-      [
-        "containers/add-building/FormFragment.js",
-        169
       ]
     ],
     "extractedComments": []
@@ -341,16 +301,6 @@
     ],
     "extractedComments": []
   },
-  "Field cannot exceed a maximum of {maxLen} characters!": {
-    "translation": "Câmpul nu poate depăși {maxLen} de caractere!",
-    "origin": [
-      [
-        "containers/add-building/FormFragment.js",
-        25
-      ]
-    ],
-    "extractedComments": []
-  },
   "Guide": {
     "translation": "Ghid",
     "origin": [
@@ -367,10 +317,6 @@
       [
         "components/BuildingDetails/index.js",
         15
-      ],
-      [
-        "containers/add-building/FormFragment.js",
-        184
       ]
     ],
     "extractedComments": []
@@ -431,16 +377,6 @@
       [
         "components/LoadMoreArticlesLink/index.js",
         8
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Locality": {
-    "translation": "Localitate/Sector",
-    "origin": [
-      [
-        "containers/add-building/FormFragment.js",
-        161
       ]
     ],
     "extractedComments": []
@@ -531,10 +467,6 @@
       [
         "components/BuildingDetails/index.js",
         19
-      ],
-      [
-        "containers/add-building/FormFragment.js",
-        192
       ]
     ],
     "extractedComments": []
@@ -557,10 +489,6 @@
         77
       ],
       [
-        "containers/add-building/FormFragment.js",
-        129
-      ],
-      [
         "containers/blog/Blog.js",
         69
       ]
@@ -573,26 +501,6 @@
       [
         "components/Sharing/index.js",
         19
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Street": {
-    "translation": "Strada",
-    "origin": [
-      [
-        "containers/add-building/FormFragment.js",
-        145
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Street number": {
-    "translation": "Număr stradă",
-    "origin": [
-      [
-        "containers/add-building/FormFragment.js",
-        153
       ]
     ],
     "extractedComments": []
@@ -687,6 +595,720 @@
       [
         "containers/about/SecondParagraphFragment.js",
         12
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.adress.label": {
+    "translation": "Stradă:",
+    "origin": [
+      [
+        "containers/add-building/FirstFormSection.js",
+        64
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.apartment_count.label": {
+    "translation": "Câte locuințe sunt în clădire?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        74
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.apartments_with_6_months_debt.label": {
+    "translation": "Câte dintre apartamentele din clădire înregistrează datorii la întreținere mai mari de 6 luni?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        138
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.broken_utilities.label": {
+    "translation": "Imobilul înregistrează elemente tehnice nefuncționale?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        152
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.broken_utilities.note": {
+    "translation": "Spre exemplu: conductele, rețeaua de încălzire etc.",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        153
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.commercial_space_count.label": {
+    "translation": "Câte spații comerciale și de servicii există în clădire?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        168
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.commercial_space_count.note": {
+    "translation": "Notă: Prin spații comerciale și de servicii ne referim la magazine, ateliere, restaurante, cinema-uri, teatre ș.a., a căror activitate a fost suspendată în urma adoptării Legii 282/2015 pentru modificarea si completarea OG 20/1994 privind masuri pentru reducerea riscului seismic al constructiilor existente.",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        169
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.consolidation_status.demolished": {
+    "translation": "Clădirea cu risc seismic a fost demolată și s-a construit clădire nouă în locul ei",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        61
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.consolidation_status.label": {
+    "translation": "Clădirea a fost consolidată/reabilitată de la data expertizării?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        51
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.consolidation_status.yes_private": {
+    "translation": "Da, fonduri proprii",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        57
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.consolidation_status.yes_public": {
+    "translation": "Da, fonduri publice",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        58
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.county.label": {
+    "translation": "Județ:",
+    "origin": [
+      [
+        "containers/add-building/FirstFormSection.js",
+        85
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.disconnected_utilities.label": {
+    "translation": "Imobilul este deconectat de la vreun serviciu de utilitate publică?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        145
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.disconnected_utilities.note": {
+    "translation": "Dacă da, indicați de la ce serviciu/servicii este deconectat. (Serviciu de utilitate publică: apă, canalizare, electricitate, termoficare)",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        146
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.email_address.label": {
+    "translation": "Adesă de e-mail:",
+    "origin": [
+      [
+        "containers/add-building/SecondFormSection.js",
+        49
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.error.add_building": {
+    "translation": "Clădirea nu a putut fi adăugată, vă rugăm încercați mai târziu.",
+    "origin": [
+      [
+        "containers/add-building/FormFragment.js",
+        49
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.error.fetch_risk_categories": {
+    "translation": "Server indisponibil, vă rugăm încercați din nou mai târziu.",
+    "origin": [
+      [
+        "containers/add-building/FormFragment.js",
+        85
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.error.validate_fields": {
+    "translation": "Nu sunt valide toate câmpurile. Vă rugăm verificați formularul și încercați din nou.",
+    "origin": [
+      [
+        "containers/add-building/FormFragment.js",
+        42
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.first_section.extra": {
+    "translation": "Text despre punerea pin-ului pe harta si descrierea procesului si informatiile aditionale de mai jos & stuff.",
+    "origin": [
+      [
+        "containers/add-building/FirstFormSection.js",
+        122
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.first_section.title": {
+    "translation": "Despre clădire",
+    "origin": [
+      [
+        "containers/add-building/FirstFormSection.js",
+        55
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.full_name.label": {
+    "translation": "Nume complet:",
+    "origin": [
+      [
+        "containers/add-building/SecondFormSection.js",
+        40
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.gdpr_agreement": {
+    "translation": "Prin această bifă îți exprimi acordul ca datele furnizate de tine prin acest formular să fie procesate exclusiv in scopul de a încărca în platformă acest document și ca echipa MKBT să te contacteze doar în legătură cu această submisie. Aici puteți găsi <0>regulamentul nostru cu privire la prelucrarea datelor cu caracter personal</0>.",
+    "message": "By this check, you agree that the data provided by you through this form will be processed exclusively to upload this document on the platform and that the MKBT team will contact you only in connection with this submission. Here you can find <0>our regulations on the processing of personal data</0>.",
+    "origin": [
+      [
+        "containers/add-building/FormFragment.js",
+        120
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.has_owners_association.label": {
+    "translation": "Există asociație de proprietari?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        125
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.has_owners_association.note": {
+    "translation": "Conform legii, asociațiile de proprietari se înființează pentru condominii cu minim 3 unități de locuit.",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        126
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.height_regime.label": {
+    "translation": "Regim de înălțime:",
+    "origin": [
+      [
+        "containers/add-building/FirstFormSection.js",
+        115
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.images.label": {
+    "translation": "Vă rugăm să încărcați câteva fotografii ale clădirii",
+    "origin": [
+      [
+        "containers/add-building/FirstFormSection.js",
+        135
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.images.note": {
+    "translation": "Notă: sugerăm încărcarea în medie a 3 fotografii ilustrând dacă imobilul arată semnul bulină roșie, clădirea în ansamblul său și proximitatea acesteia.",
+    "origin": [
+      [
+        "containers/add-building/FirstFormSection.js",
+        138
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.is_still_present.info": {
+    "translation": "Unele clădiri au fost demolate de la data expertizării lor, iar dacă aceasta este situația în cazul clădirii dumneavoastră, nu mai trebuie să continuați completarea chestionarului după bifarea opțiunii. Vă mulțumim!",
+    "origin": [
+      [
+        "containers/add-building/ThirdFormSection.js",
+        72
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.is_still_present.label": {
+    "translation": "Mai există clădirea la adresa indicată?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        39
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.locality.label": {
+    "translation": "Localitate:",
+    "origin": [
+      [
+        "containers/add-building/FirstFormSection.js",
+        94
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.necessary_support.label": {
+    "translation": "În opinia dumneavoastră, ca locatar al imobilului, de ce sprijin aveți nevoie și cu ce dificultăți v-ați confruntat, în demersul de a crește siguranța imobilului în care locuiți?",
+    "origin": [
+      [
+        "containers/add-building/SecondFormSection.js",
+        84
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.office_count.label": {
+    "translation": "Câte apartamente sunt folosite ca birou de firmă?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        161
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.owners_count.label": {
+    "translation": "Câți proprietari dețin apartamente în acest imobil?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        95
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.permanently_occupied_apartment_count.label": {
+    "translation": "Număr de locuințe ocupate permanent:",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        81
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.phone_number.label": {
+    "translation": "Telefon:",
+    "origin": [
+      [
+        "containers/add-building/SecondFormSection.js",
+        64
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.proximal_utilities.label": {
+    "translation": "Ce există în imediata vecinătate a clădirii?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        183
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.proximal_utilities.note": {
+    "translation": "Notă: Prin vecinătate ne referim la clădiri și funcțiuni la o distanță de până la 10m de clădirea vizată.",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        184
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.proximal_utilities_description.label": {
+    "translation": "Comentarii privind funcțiunile din proximitatea imobilului",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        190
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.public_apartment_count.label": {
+    "translation": "Din care, câte apartamente în proprietate publică?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        102
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.public_owners.label": {
+    "translation": "Vă rugăm menționați proprietarii publici:",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        109
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.public_owners.note": {
+    "translation": "Notă: Prin proprietate publică înțelegem locuințe deținute de Administrația Fondului Imobiliar – AFI (fostul ICRAL), RAPPS, Birouri de primarie, ANAF ș.a.",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        110
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.rented_apartment_count.label": {
+    "translation": "Câte apartamente sunt locuite în regim de chirie?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        116
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.residents_count.label": {
+    "translation": "Câte persoane locuiesc în aceste locuințe?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        88
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.risk_class.label": {
+    "translation": "Clasă de risc:",
+    "origin": [
+      [
+        "containers/add-building/FirstFormSection.js",
+        105
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.second_section.description": {
+    "translation": "Datele de contact ale persoanei care completează prezentul formular",
+    "origin": [
+      [
+        "containers/add-building/SecondFormSection.js",
+        31
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.second_section.title": {
+    "translation": "Despre tine",
+    "origin": [
+      [
+        "containers/add-building/SecondFormSection.js",
+        30
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.self_owned_commercial_space_count.label": {
+    "translation": "Din aceste spații/apartamente cu altă funcțiune decât locuire, câte sunt proprietate a firmelor care le utilizează?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        176
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.street_number.label": {
+    "translation": "Număr clădire:",
+    "origin": [
+      [
+        "containers/add-building/FirstFormSection.js",
+        74
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.third_section.other_info_btn": {
+    "translation": "Completează cu alte informații",
+    "origin": [
+      [
+        "containers/add-building/ThirdFormSection.js",
+        53
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.third_section.sub_one.description": {
+    "translation": "Notă: Întrebările din secțiunea A se referă la numărul de locuințe și persoane care locuiesc în clădirea care face obiectul prezentului formular.",
+    "origin": [
+      [
+        "containers/add-building/ThirdFormSection.js",
+        61
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.third_section.sub_one.title": {
+    "translation": "Date generale",
+    "origin": [
+      [
+        "containers/add-building/ThirdFormSection.js",
+        60
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.third_section.sub_three.title": {
+    "translation": "Structura și tipul ocupării clădirii",
+    "origin": [
+      [
+        "containers/add-building/ThirdFormSection.js",
+        125
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.third_section.sub_two.description": {
+    "translation": "Notă: Întrebările din secțiunea B se referă la problemele și nevoile de ansamblu ale clădirii și ale celor ce locuiesc în aceasta.",
+    "origin": [
+      [
+        "containers/add-building/ThirdFormSection.js",
+        113
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.third_section.sub_two.title": {
+    "translation": "Funcționarea imobilului",
+    "origin": [
+      [
+        "containers/add-building/ThirdFormSection.js",
+        112
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.third_section.title": {
+    "translation": "Ai și alte informații despre această clădire?",
+    "origin": [
+      [
+        "containers/add-building/ThirdFormSection.js",
+        48
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.type_of_contract.admin": {
+    "translation": "Reprezentant cu funcție de conducere din asociația de proprietari",
+    "origin": [
+      [
+        "containers/add-building/SecondFormSection.js",
+        22
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.type_of_contract.label": {
+    "translation": "Calitate:",
+    "origin": [
+      [
+        "containers/add-building/SecondFormSection.js",
+        74
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.type_of_contract.owner": {
+    "translation": "Proprietar",
+    "origin": [
+      [
+        "containers/add-building/SecondFormSection.js",
+        14
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.type_of_contract.tenant": {
+    "translation": "Chiriaș",
+    "origin": [
+      [
+        "containers/add-building/SecondFormSection.js",
+        18
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.upload_button.label": {
+    "translation": "Adaugă una sau mai multe fotografii",
+    "origin": [
+      [
+        "containers/add-building/FirstFormSection.js",
+        151
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.validation.captcha": {
+    "translation": "Captcha necesită verificare!",
+    "origin": [
+      [
+        "hooks/form/useFormValidationRules.js",
+        29
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.validation.email": {
+    "translation": "Adresa de e-mail nu este validă!",
+    "origin": [
+      [
+        "hooks/form/useFormValidationRules.js",
+        11
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.validation.gdpr": {
+    "translation": "Vă rugăm confirmați că ați citit și sunteți de acord cu regulamentul nostru cu privire la prelucrarea datelor cu caracter personal.",
+    "origin": [
+      [
+        "hooks/form/useFormValidationRules.js",
+        31
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.validation.image_size": {
+    "translation": "Fișierele sunt limitate la 20Mb, vă rugăm alegeți un alt fișier.",
+    "origin": [
+      [
+        "containers/add-building/FirstFormSection.js",
+        36
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.validation.integer": {
+    "translation": "Valoarea introdusă trebuie să fie un număr mai mare ca zero!",
+    "origin": [
+      [
+        "hooks/form/useFormValidationRules.js",
+        15
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.validation.max": {
+    "translation": "Câmpul nu poate depăși {value} de caractere!",
+    "message": "Field cannot exceed a maximum of {value} characters!",
+    "origin": [
+      [
+        "hooks/form/useFormValidationRules.js",
+        23
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.validation.required": {
+    "translation": "Câmpul nu poate fi lăsat gol!",
+    "origin": [
+      [
+        "hooks/form/useFormValidationRules.js",
+        18
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.work_performed.label": {
+    "translation": "Ce lucrări au fost efectuate?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        68
+      ]
+    ],
+    "extractedComments": []
+  },
+  "general.no": {
+    "translation": "Nu",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        45
+      ],
+      [
+        "containers/add-building/utils/index.js",
+        55
+      ],
+      [
+        "containers/add-building/utils/index.js",
+        132
+      ]
+    ],
+    "extractedComments": []
+  },
+  "general.yes": {
+    "translation": "Da",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        43
+      ],
+      [
+        "containers/add-building/utils/index.js",
+        130
       ]
     ],
     "extractedComments": []
