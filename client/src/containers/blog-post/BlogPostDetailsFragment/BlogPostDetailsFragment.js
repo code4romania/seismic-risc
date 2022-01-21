@@ -54,7 +54,7 @@ const BlogPostDetailsFragment = ({ handlePostLoaded }) => {
       style={{ marginTop: '2rem', marginBottom: '2rem' }}
     >
       <Col>
-        <Paragraph style={{ textAlign: 'justify' }}>
+        <Paragraph style={{ textAlign: 'justify', wordBreak: 'break-all' }}>
           {/* eslint-disable-next-line react/no-danger */}
           <div dangerouslySetInnerHTML={{ __html: state.postDetails.text }} />
         </Paragraph>
