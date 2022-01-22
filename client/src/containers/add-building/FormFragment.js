@@ -20,7 +20,6 @@ const FormFragment = ({ form }) => {
   const [isFinished, setIsFinished] = useState(false);
   const [mapSearchText, setMapSearchText] = useState(undefined);
   const [coordinates, setCoordinates] = useState(undefined);
-  const [language, setLanguage] = useState(undefined);
   const { getFieldDecorator } = form;
   const fields = form.getFieldsValue();
   const { currentLanguage } = useGlobalContext();
@@ -77,10 +76,6 @@ const FormFragment = ({ form }) => {
       );
     }
   }, [fields]);
-
-  useEffect(() => {
-    setLanguage(currentLanguage);
-  }, [currentLanguage]);
 
   useEffect(() => {
     if (!isErrorLoadingRiskCategories) return;
@@ -143,8 +138,8 @@ const FormFragment = ({ form }) => {
                       <HCaptcha
                         sitekey={CAPTCHA_API_KEY}
                         onVerify={handleVerifyCaptcha}
-                        hl={language}
-                        languageOverride={language}
+                        hl={currentLanguage}
+                        languageOverride={currentLanguage}
                         size={isSmallDevice ? 'compact' : 'normal'}
                       />,
                     )}
