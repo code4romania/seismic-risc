@@ -24,8 +24,9 @@ export function useCreateMap(mapRef) {
     });
 
     const events = new H.mapevents.MapEvents(hMap);
-    // eslint-disable-next-line no-unused-vars
     const behavior = new H.mapevents.Behavior(events);
+    behavior.disable(H.mapevents.Behavior.Feature.WHEEL_ZOOM);
+
     // eslint-disable-next-line no-unused-vars, new-cap
     const ui = new H.ui.UI.createDefault(hMap, layer);
 
@@ -41,8 +42,24 @@ export function useCreateMap(mapRef) {
       }
     };
 
+    const onMapDragStartHandler = (event) => {
+      if (event.originalEvent.pointerType === 'mouse') return;
+
+      if (event.targetPointers.length === 1) {
+        behavior.disable(H.mapevents.Behavior.Feature.PANNING);
+      }
+    };
+
+    const onMapDragEndHandler = (event) => {
+      if (event.originalEvent.pointerType === 'mouse') return;
+
+      behavior.enable(H.mapevents.Behavior.Feature.PANNING);
+    };
+
     mapEngine.addEventListener('render', onMapRendered);
     window.addEventListener('resize', onResizeWindow);
+    hMap.addEventListener('dragstart', onMapDragStartHandler);
+    hMap.addEventListener('dragend', onMapDragEndHandler);
 
     setMap(hMap);
 
