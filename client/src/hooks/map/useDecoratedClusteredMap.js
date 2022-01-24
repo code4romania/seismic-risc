@@ -90,7 +90,7 @@ export default function useDecoratedClusteredMap(currentMap, points) {
       const position = { ...selectedMarker.getData().getPosition() };
       currentMap.getViewModel().setLookAtData({ position, zoom }, true);
     }
-  }, [detailsOpen]);
+  }, [detailsOpen, selectedMarker]);
 
   useEffect(() => {
     if (prevSelectedMarker.current) {
