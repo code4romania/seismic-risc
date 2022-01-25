@@ -1,8 +1,7 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { I18nProvider } from '@lingui/react';
 import { i18n } from '@lingui/core';
-import { useGlobalContext } from './context';
 
 import Home from './containers/home';
 import About from './containers/about';
@@ -18,15 +17,16 @@ import ScrollToTop from './components/ScrollToTop';
 
 import './styles/theme.scss';
 
+import { messages as messagesRo } from './locales/ro/messages';
+
+i18n.load({
+  ro: messagesRo,
+});
+i18n.activate('ro');
+
 const App = () => {
-  const { currentLanguage, languageChange } = useGlobalContext();
-
-  useEffect(() => {
-    languageChange(currentLanguage);
-  }, []);
-
   return (
-    <I18nProvider i18n={i18n}>
+    <I18nProvider i18n={i18n} forceRenderOnLocaleChange={false}>
       <Router>
         <ScrollToTop />
         <Switch>

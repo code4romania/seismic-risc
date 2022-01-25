@@ -193,7 +193,7 @@ export const useExtraInfoFormFields = () => {
         },
       ],
     }),
-    [proximalUtilities],
+    [proximalUtilitiesOptions, workPerformedOptions],
   );
 };
 
