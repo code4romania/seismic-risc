@@ -16,15 +16,15 @@ backcall==0.2.0
     # via ipython
 black==21.12b0
     # via -r requirements-dev.in
-boto3==1.20.22
+boto3==1.20.46
     # via -r requirements.in
-botocore==1.23.22
+botocore==1.23.46
     # via
     #   boto3
     #   s3transfer
 brotlipy==0.7.0
     # via -r requirements.in
-cffi==1.14.6
+cffi==1.15.0
     # via brotlipy
 click==8.0.1
     # via
@@ -40,7 +40,7 @@ diff-match-patch==20200713
     # via django-import-export
 dj-database-url==0.5.0
     # via -r requirements.in
-django==3.2.10
+django==3.2.11
     # via
     #   -r requirements.in
     #   django-cors-headers
@@ -54,7 +54,7 @@ django==3.2.10
     #   drf-spectacular
 django-ckeditor==6.2.0
     # via -r requirements.in
-django-cors-headers==3.10.1
+django-cors-headers==3.11.0
     # via -r requirements.in
 django-debug-toolbar==3.2.2
     # via -r requirements-dev.in
@@ -62,7 +62,7 @@ django-environ==0.8.1
     # via -r requirements.in
 django-extensions==3.1.5
     # via -r requirements-dev.in
-django-import-export==2.7.0
+django-import-export==2.7.1
     # via -r requirements.in
 django-jquery==3.1.0
     # via -r requirements.in
@@ -70,17 +70,17 @@ django-js-asset==1.2.2
     # via django-ckeditor
 django-storages==1.12.3
     # via -r requirements.in
-django-taggit==1.5.1
+django-taggit==2.1.0
     # via
     #   -r requirements.in
     #   django-taggit-serializer
 django-taggit-serializer==0.1.7
     # via -r requirements.in
-djangorestframework==3.12.4
+djangorestframework==3.13.1
     # via
     #   -r requirements.in
     #   drf-spectacular
-drf-spectacular==0.19.0
+drf-spectacular==0.21.1
     # via -r requirements.in
 et-xmlfile==1.1.0
     # via openpyxl
@@ -90,7 +90,7 @@ fancycompleter==0.9.1
     # via pdbpp
 flake8==3.9.2
     # via pytest-flake8
-gevent==21.8.0
+gevent==21.12.0
     # via -r requirements.in
 greenlet==1.1.2
     # via gevent
@@ -100,7 +100,7 @@ inflection==0.5.1
     # via drf-spectacular
 iniconfig==1.1.1
     # via pytest
-ipython==7.27.0
+ipython==7.31.1
     # via -r requirements-dev.in
 jedi==0.18.0
     # via ipython
@@ -108,7 +108,7 @@ jmespath==0.10.0
     # via
     #   boto3
     #   botocore
-jsonschema==3.2.0
+jsonschema==4.4.0
     # via drf-spectacular
 markuppy==1.14
     # via tablib
@@ -136,7 +136,7 @@ pexpect==4.8.0
     # via ipython
 pickleshare==0.7.5
     # via ipython
-pillow==8.3.2
+pillow==9.0.0
     # via -r requirements.in
 pip-tools==6.3.0
     # via -r requirements-dev.in
@@ -146,7 +146,7 @@ pluggy==1.0.0
     # via pytest
 prompt-toolkit==3.0.20
     # via ipython
-psycopg2==2.9.2
+psycopg2==2.9.3
     # via -r requirements.in
 ptyprocess==0.7.0
     # via pexpect
@@ -154,7 +154,7 @@ py==1.10.0
     # via pytest
 pycodestyle==2.7.0
     # via flake8
-pycparser==2.20
+pycparser==2.21
     # via cffi
 pyflakes==2.3.1
     # via flake8
@@ -166,7 +166,7 @@ pyparsing==2.4.7
     # via packaging
 pyrepl==0.9.0
     # via fancycompleter
-pyrsistent==0.18.0
+pyrsistent==0.18.1
     # via jsonschema
 pytest==6.2.5
     # via
@@ -185,8 +185,10 @@ python-dateutil==2.8.2
     #   botocore
     #   faker
 pytz==2021.1
-    # via django
-pyyaml==5.4.1
+    # via
+    #   django
+    #   djangorestframework
+pyyaml==6.0
     # via
     #   drf-spectacular
     #   tablib
@@ -195,13 +197,12 @@ s3transfer==0.5.0
 six==1.16.0
     # via
     #   django-taggit-serializer
-    #   jsonschema
     #   python-dateutil
 sqlparse==0.4.2
     # via
     #   django
     #   django-debug-toolbar
-tablib[html,ods,xls,xlsx,yaml]==3.1.0
+tablib[html,ods,xls,xlsx,yaml]==3.2.0
     # via
     #   -r requirements.in
     #   django-import-export
@@ -223,9 +224,9 @@ traitlets==5.1.0
     #   matplotlib-inline
 typing-extensions==4.0.1
     # via black
-uritemplate==3.0.1
+uritemplate==4.1.1
     # via drf-spectacular
-urllib3==1.26.7
+urllib3==1.26.8
     # via botocore
 wcwidth==0.2.5
     # via prompt-toolkit
