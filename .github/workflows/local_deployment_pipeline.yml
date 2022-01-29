@@ -23,6 +23,9 @@ jobs:
     - name: Set-up Docker
       run: |
         make install-docker-ubuntu
+    - name: Create envirnoment file
+      run: |
+        cp .env.dist .env
     - name: Initialize environment
       run: |
         make build
