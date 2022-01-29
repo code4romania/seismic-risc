@@ -79,7 +79,7 @@
       "model": "buildings.building",
       "pk": 73,
       "fields": {
-        "risk_category": "N/A",
+        "risk_category": "NA",
         "registration_number": 11,
         "lat": 44.39556,
         "lng": 26.156,
