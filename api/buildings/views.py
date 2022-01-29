@@ -1,5 +1,7 @@
 from django.conf import settings
-from django.contrib.postgres.search import TrigramSimilarity
+from django.contrib.postgres.search import SearchQuery, SearchRank, SearchVector, TrigramSimilarity
+from django.db.models import Q
+from django.db.models.functions import Greatest
 from drf_spectacular.utils import (
     extend_schema,
     OpenApiParameter,
@@ -90,10 +92,23 @@ class BuildingViewSet(viewsets.ModelViewSet):
         if serializer.is_valid():
             query = serializer.data["query"]
             search_category = ("", serializer.data["riskCategory"])[bool(serializer.data["riskCategory"])]
+
+            search_query = SearchQuery(query, config="romanian_unaccent")
+
+            vector = SearchVector("address", "locality", "county", weight="A", config="romanian_unaccent")
+
             buildings = (
-                Building.approved.annotate(similarity=TrigramSimilarity("address", query))
+                Building.approved.annotate(
+                    rank=SearchRank(vector, search_query),
+                    similarity=Greatest(
+                        TrigramSimilarity("address", query),
+                        TrigramSimilarity("locality", query),
+                        TrigramSimilarity("county", query),
+                    ),
+                )
                 .filter(
-                    similarity__gt=settings.TRIGRAM_SIMILARITY_THRESHOLD,
+                    Q(rank__gte=settings.SEARCH_RANKING_THRESHOLD)
+                    | Q(similarity__gt=settings.TRIGRAM_SIMILARITY_THRESHOLD),
                     risk_category__icontains=search_category,
                 )
                 .order_by("-similarity")
