@@ -3,7 +3,7 @@ const { H } = window;
 const HereMapDomIconFactory = {
   makeMarkerIcon: (category) => {
     let className = 'marker selected';
-    if (category) className = `marker-${category.toLowerCase()}`;
+    if (category) className = `marker-${category.toLowerCase().split('/').join('')}`;
 
     const markerSvg =
       `<div class="${className}">` +

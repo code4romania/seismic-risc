@@ -43,7 +43,7 @@ export default () => {
         e === 'all'
           ? initialPoints
           : initialPoints.filter((poi) => {
-              return poi.risk_category === e;
+              return poi.risk_category.toLowerCase() === e.toLowerCase();
             }),
     });
     if (e === 'all') {

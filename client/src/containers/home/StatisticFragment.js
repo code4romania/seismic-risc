@@ -47,7 +47,8 @@ export default () => {
           ...prevState,
           statistics,
         }));
-      });
+      })
+      .catch(() => {});
   }, []);
 
   return (

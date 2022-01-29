@@ -51,7 +51,7 @@ const FooterFragment = () => {
             </Text>
           </Link>
           <a
-            href="https://code4.ro/en/donate"
+            href={`https://code4.ro/${currentLanguage === 'ro' ? 'ro/doneaza' : 'en/donate'}`}
             target="_blank"
             rel="noreferrer"
             className="footer__donate"

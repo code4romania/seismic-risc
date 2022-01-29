@@ -15,12 +15,16 @@ export default (props) => {
     if (completeDetails?.general_id !== incompleteDetails?.general_id) {
       const buildingURL = `${BUILDINGS_URL}/${incompleteDetails.general_id}/`;
       const fetchData = async () => {
-        setIsLoading(true);
-        setCompleteDetails(null);
-        const res = await fetch(buildingURL);
-        const data = await res.json();
-        setCompleteDetails(data);
-        setIsLoading(false);
+        try {
+          setIsLoading(true);
+          setCompleteDetails(null);
+          const res = await fetch(buildingURL);
+          const data = await res.json();
+          setCompleteDetails(data);
+          setIsLoading(false);
+        } catch {
+          setIsLoading(false);
+        }
       };
       fetchData();
     }
