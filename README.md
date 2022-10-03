@@ -171,7 +171,7 @@ Make sure to check the [Environment variables](#environment-variables)
 section for info on how to set up the keys before you run the following commands:
 
 ```shell
-cp .env.dist .env
+cp .env.dev .env
 # build the development container
 make build-dev
 ```
@@ -193,28 +193,28 @@ docker-compose exec api ./manage.py createsuperuser
 1. Create a back-up of the data
    (the `build` folder is ignored by git)
 
-```shell
-docker-compose exec db pg_dumpall -U postgres > ./build/backup.sql
-```
+    ```shell
+    docker-compose exec db pg_dumpall -U postgres > ./build/backup.sql
+    ```
 
 2. Run the database upgrade or just get the latest version of the code from git if it upgrades the database
 
-```shell
-git pull upstream develop
-```
+    ```shell
+    git pull upstream develop
+    ```
 
 3. Remove the current database and start-up the environment
    (remove the `-dev` part if you don't want the development mode)
 
-```shell
-make drop-db && make build-dev
-```
+    ```shell
+    make drop-db && make build-dev
+    ```
 
 4. Restore the backed-up data to the new database
 
-```shell
-docker-compose exec db psql -U postgres < ./build/backup.sql
-```
+    ```shell
+    docker-compose exec db psql -U postgres < ./build/backup.sql
+    ```
 
 5. Check the API endpoints and that you can log in the admin interface with the same users as before
 
@@ -255,8 +255,8 @@ REACT_APP_HERE_MAPS_API_KEY
 ##### hCAPTCHA API Key
 
 1. [Create a hCAPTCHA account](https://dashboard.hcaptcha.com/signup)
-1. Go to [your settings page](https://dashboard.hcaptcha.com/settings)
-1. Create a New Site, copy the Site Key and add it to the environment variables list
+2. Go to [your settings page](https://dashboard.hcaptcha.com/settings)
+3. Create a New Site, copy the Site Key and add it to the environment variables list
 
 Keys added to the `.env` file:
 
@@ -295,7 +295,7 @@ docker-compose exec api some_container_command
 docker-compose exec client some_container_command
 ```
 
-In order to see all available commands run:
+In order to see all available commands, run:
 
 ```shell
 make help
@@ -315,61 +315,61 @@ make help
 
 1. In project directory run:
 
-```shell
-python -m venv .venv
-.venv\Scripts\activate.bat
-pip install -r ./api/requirements-dev.txt
-copy .env.dist .env
-```
+    ```shell
+    python -m venv .venv
+    .venv\Scripts\activate.bat
+    pip install -r ./api/requirements-dev.txt
+    copy .env.dev .env
+    ```
 
 2. Check the .env file created by the copy command and see if there are any environment variables that you might need to
    provide or change. Double check database config line in .env. It has to follow this
    pattern: `postgres://USER:PASSWORD@HOST:PORT/NAME`
 
-3. Run following in order to set needed environment variables:
+3. Run following in order to set the needed environment variables:
 
-```shell
-activate_dev_env.bat
-```
+    ```shell
+    activate_dev_env.bat
+    ```
 
 4. Check database connection. If this fails double check database configuration.
 
-```shell
-python api/wait_for_db.py
-```
+    ```shell
+    python api/wait_for_db.py
+    ```
 
 5. Run migrations:
 
-```shell
-python api/manage.py migrate --no-input
-```
+    ```shell
+    python api/manage.py migrate --no-input
+    ```
 
 6. Create admin user (user to login into admin pannel):
 
-```shell
-python api/manage.py createsuperuser
-```
+    ```shell
+    python api/manage.py createsuperuser
+    ```
 
 7. Load dummy data in database:
 
-```shell
-python api/manage.py loaddata statistics
-python api/manage.py loaddata buildings
-python api/manage.py loaddata pages
-```
+    ```shell
+    python api/manage.py loaddata statistics
+    python api/manage.py loaddata buildings
+    python api/manage.py loaddata pages
+    ```
 
 8. Install node modules.
 
-```shell
-cd client
-npm install
-```
+    ```shell
+    cd client
+    npm install
+    ```
 
 #### Steps needed to start development servers
 
 *1. Start API server.*
 
-Open terminal in project directory and run environment activation script, then start the server.
+Open terminal in the project directory and run environment activation script, then start the server.
 
 ```shell
 .venv\Scripts\activate.bat
@@ -377,11 +377,11 @@ activate_dev_env.bat
 python api\manage.py runserver 0.0.0.0:8030
 ```
 
-Check functionality at http://localhost:8030 you should get 404 page.
+Check functionality at http://localhost:8030 you should get a 404 page.
 
 *2. Start front-end server.*
 
-Open terminal in project directory and run environment activation script, then start the server.
+Open terminal in the project directory and run environment activation script, then start the server.
 
 ```shell
 activate_dev_env.bat
@@ -483,7 +483,7 @@ make test
 
 ## Production
 
-In order to get the container ready for production use we need to first build it:
+In order to get the container ready for production use, we need to first build it:
 
 ```shell
 docker build -t seismic-risc:latest ./api
@@ -502,7 +502,7 @@ Or, you can provide all the environment variables at runtime:
 docker run -e DJANGO_CONFIGURATION=Prod -e DJANGO_SECRET_KEY= -e DATABASE_URL=postgres://USER:PASSWORD@HOST:PORT/NAME -e GUNICORN_PORT=5000 -e GUNICORN_WORKERS=2 -p HOST_PORT:GUNICORN_PORT seismic-risc:latest
 ```
 
-After testing the container runs properly, tag and upload the image to Docker hub:
+After testing the container runs properly, tag and upload the self to Docker hub:
 
 ```shell
 docker tag seismic-risc:latest code4romania/seismic-risc:latest
@@ -526,7 +526,7 @@ docker push code4romania/seismic-risc:latest
 
 ## License
 
-This project is licensed under the MPL 2.0 License - see the [LICENSE](LICENSE) file for details
+This project is licensed under the MPL 2.0 License — see the [LICENSE](LICENSE) file for details
 
 ## About Code4Ro
 

@@ -28,6 +28,8 @@ if [[ ${RUN_LOAD_DUMMY_DATA} = "yes" ]] ; then
   ./manage.py loaddata pages
 fi
 
+./manage.py seed_superuser
+
 if [[ ${RUN_COLLECT_STATIC} = "yes" ]] ; then
   echo "Collect static files (this will take a while)"
   ./manage.py collectstatic --no-input
@@ -37,5 +39,5 @@ if [[ ${RUN_DEV_SERVER} = "yes" ]] ; then
   echo "Start web server on ${API_PORT}"
   ./manage.py runserver_plus "0.0.0.0:${API_PORT}"
 else
-   gunicorn seismic_site.wsgi --bind "0.0.0.0:${API_PORT}" --log-level info -k gevent -w "${GUNICORN_WORKERS}" --timeout 300
+  gunicorn seismic_site.wsgi --bind "0.0.0.0:${API_PORT}" --log-level info -k gevent -w "${GUNICORN_WORKERS}" --timeout 300
 fi

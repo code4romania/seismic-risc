@@ -1,4 +1,4 @@
-FROM python:3.9-slim
+FROM python:3.10.7-slim
 
 ARG ENVIRONMENT
 
@@ -8,11 +8,11 @@ ENV DOCKERIZE_VERSION v0.6.1
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends \
-                    build-essential \
-                    postgresql-client \
-                    libpq-dev \
-                    gettext \
-                    wget
+        build-essential \
+        postgresql-client \
+        libpq-dev \
+        gettext \
+        wget
 
 # install dockerize and update pip
 RUN wget https://github.com/jwilder/dockerize/releases/download/${DOCKERIZE_VERSION}/dockerize-linux-amd64-${DOCKERIZE_VERSION}.tar.gz && \

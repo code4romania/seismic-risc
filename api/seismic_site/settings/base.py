@@ -1,5 +1,5 @@
 """
-Django settings for seismic_site project.
+Django settings for the project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/3.2/topics/settings/
@@ -9,6 +9,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
+from typing import Any, Dict
 
 import environ
 from django.utils.translation import gettext_lazy as _
@@ -22,10 +23,12 @@ env = environ.Env(
     NO_REPLY_EMAIL=(str, "noreply@code4.ro"),
     DEFAULT_FROM_EMAIL=(str, "noreply@code4.ro"),
     HERE_MAPS_API_KEY=(str, ""),
+    # aws settings
     USE_S3=(bool, False),
     AWS_ACCESS_KEY_ID=(str, ""),
     AWS_SECRET_ACCESS_KEY=(str, ""),
     AWS_STORAGE_BUCKET_NAME=(str, ""),
+    AWS_SUBDOMAIN=(str, "s3.amazonaws.com"),
     AWS_S3_REGION_NAME=(str, ""),
 )
 
@@ -38,6 +41,7 @@ ALLOWED_HOSTS = []
 CORS_ORIGIN_ALLOW_ALL = False
 
 INSTALLED_APPS = [
+    "jazzmin",
     # django apps
     "django.contrib.admin",
     "django.contrib.auth",
@@ -61,6 +65,7 @@ INSTALLED_APPS = [
     "buildings",
     "pages",
     "blog",
+    "static_custom",
     # api documentation
     "drf_spectacular",
 ]
@@ -109,7 +114,7 @@ if env("ENVIRONMENT") == "test":
     DATABASES = {
         "default": {
             "ENGINE": "django.db.backends.sqlite3",
-            "NAME": "/tmp/test.db",
+            "NAME": "/tmp/test.db",  # noqa
         }
     }
 else:
@@ -146,24 +151,33 @@ LANGUAGES = [
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-USE_S3 = env("USE_S3")
+USE_S3 = (
+    env.bool("USE_S3")
+    and env("AWS_ACCESS_KEY_ID")
+    and env("AWS_SECRET_ACCESS_KEY")
+    and env("AWS_STORAGE_BUCKET_NAME")
+)
+
 if USE_S3:
     # aws settings
     AWS_ACCESS_KEY_ID = env("AWS_ACCESS_KEY_ID")
     AWS_SECRET_ACCESS_KEY = env("AWS_SECRET_ACCESS_KEY")
     AWS_STORAGE_BUCKET_NAME = env("AWS_STORAGE_BUCKET_NAME")
-    AWS_DEFAULT_ACL = "public-read"
-    AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com"
+
+    AWS_DEFAULT_ACL = None
+    AWS_S3_REGION_NAME = env("AWS_S3_REGION_NAME")
+    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.{env("AWS_SUBDOMAIN")}'
     AWS_S3_OBJECT_PARAMETERS = {"CacheControl": "max-age=86400"}
+    AWS_S3_FILE_OVERWRITE = True
+
+    DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+
     # s3 public media settings
     PUBLIC_MEDIA_LOCATION = "media"
     MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/"
-    DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
+
     # s3 private media settings
     PRIVATE_MEDIA_LOCATION = "private"
-    PRIVATE_FILE_STORAGE = "hub.storage_backends.PrivateMediaStorage"
-    AWS_S3_REGION_NAME = env("AWS_S3_REGION_NAME")
-    AWS_S3_SIGNATURE_VERSION = "s3v4"
 else:
     PRIVATE_FILE_STORAGE = "django.core.files.storage.FileSystemStorage"
     MEDIA_URL = "/media/"
@@ -178,7 +192,7 @@ LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
 REST_FRAMEWORK = {
-    # Use Django's standard `django.contrib.auth` permissions,
+    # Use Django's standard `django.contrib.auth` permissions
     # or allow read-only access for unauthenticated users.
     "DEFAULT_PERMISSION_CLASSES": ["rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly"],
     "DEFAULT_SCHEMA_CLASS": "drf_spectacular.openapi.AutoSchema",
@@ -212,7 +226,7 @@ COUNTIES_SHORTNAME = {
     "Botoșani": "BT",
     "Brasov": "BV",
     "Brașov": "BV",
-    "Brsila": "BR",
+    "Braila": "BR",
     "Brăila": "BR",
     "Bucharest": "B",
     "Bucuresti": "B",
@@ -266,6 +280,176 @@ COUNTIES_SHORTNAME = {
     "Vâlcea": "VL",
 }
 
+SUPER_ADMIN_PASS = env("SUPER_ADMIN_PASS")
+SUPER_ADMIN_EMAIL = env("SUPER_ADMIN_EMAIL")
+SUPER_ADMIN_FIRST_NAME = env("SUPER_ADMIN_FIRST_NAME")
+SUPER_ADMIN_LAST_NAME = env("SUPER_ADMIN_LAST_NAME")
+
 QUALITY_DEFINITIONS = {"JPEG": 85, "PNG": 80}
 ALLOWED_IMAGES_LIMIT = 3
 IMAGE_RESIZE = 400
+
+# django-jazzmin
+# -------------------------------------------------------------------------------
+# django-jazzmin - https://django-jazzmin.readthedocs.io/configuration/
+
+JAZZMIN_SETTINGS: Dict[str, Any] = {
+    # title of the window
+    "site_title": _("Bulina Roșie Admin"),
+    # Title on the brand, and the login screen (19 chars max)
+    "site_header": _("Bulina Roșie"),
+    # square logo to use for your site, must be present in static files, used for favicon and brand on top left
+    "site_logo": "jazzmin/img/logomark-app.svg",
+    "site_logo_short": "jazzmin/img/logomark-app.svg",
+    "site_icon": "jazzmin/img/logomark-app.svg",
+    # "site_logo_classes": "site-logo",
+    # Welcome text on the login screen
+    "welcome_sign": "",
+    # Copyright on the footer
+    "copyright": "Commit Global",
+    # The model admin to search from the search bar, search bar omitted if excluded
+    # "search_model": "donors.Donor",
+    # The field name on the user model that contains avatar image
+    "user_avatar": None,
+    ############
+    # Top Menu #
+    ############
+    # Links to put along the top menu
+    "topmenu_links": [
+        # Url that gets reversed (Permissions can be added)
+        {"name": "Home", "url": "admin:index", "permissions": ["auth.view_user"]},
+    ],
+    #############
+    # User Menu #
+    #############
+    # Additional links to include in the user menu on the top right (the "app" url type is not allowed)
+    "usermenu_links": [
+        {"model": "auth.user", "new_window": False},
+    ],
+    #############
+    # Side Menu #
+    #############
+    # Whether to display the side menu
+    "show_sidebar": True,
+    # Whether to auto expand the menu
+    "navigation_expanded": True,
+    # Hide these apps when generating the side menu e.g (auth)
+    "hide_apps": ["pages", "sites"],
+    # Hide these models when generating side menu (e.g auth.user)
+    "hide_models": [],
+    # List of apps (and/or models) to the base side menu ordering off of (does not need to contain all apps/models)
+    "order_with_respect_to": [
+        "buildings",
+        "buildings.building",
+        "buildings.buildingworkperformed",
+        "buildings.buildingproximalutilities",
+        "buildings.imagefile",
+        "buildings.datafile",
+        "buildings.statistic",
+        "blog",
+        "blog.post",
+        "taggit",
+        "taggit.tag",
+        "auth",
+        "auth.user",
+        "auth.group",
+    ],
+    # Custom icons for side menu apps/models
+    # See https://fontawesome.com/v5/search?m=free
+    # for a list of icon classes
+    "icons": {
+        "buildings.building": "fas fa-house-damage",
+        "buildings.buildingworkperformed": "fas fa-tools",
+        "buildings.buildingproximalutilities": "fas fa-city",
+        "buildings.imagefile": "fas fa-images",
+        "buildings.datafile": "fas fa-database",
+        "buildings.statistic": "fas fa-table",
+        "blog.post": "fas fa-newspaper",
+        "taggit.tag": "fas fa-tag",
+        "auth.group": "fas fa-users",
+        "auth.user": "fas fa-user",
+    },
+    # Icons that are used when one is not manually specified
+    "default_icon_parents": "fas fa-chevron-circle-right",
+    "default_icon_children": "fas fa-circle",
+    #################
+    # Related Modal #
+    #################
+    # Use modals instead of popups
+    "related_modal_active": False,
+    #############
+    # UI Tweaks #
+    #############
+    # Relative paths to custom CSS/JS scripts (must be present in static files)
+    "custom_css": "jazzmin/css/admin.css",
+    "custom_js": "",
+    # Whether to show the UI customizer on the sidebar
+    "show_ui_builder": DEBUG,
+    ###############
+    # Change view #
+    ###############
+    # Render out the change view as a single form, or in tabs, current options are
+    # - single
+    # - horizontal_tabs (default)
+    # - vertical_tabs
+    # - collapsible
+    # - carousel
+    "changeform_format": "single",
+    # override change forms on a per modeladmin basis
+    "changeform_format_overrides": {
+        "auth.user": "collapsible",
+        "auth.group": "vertical_tabs",
+    },
+    # Add a language dropdown into the admin
+    "language_chooser": True,
+}
+
+if DEBUG:
+    JAZZMIN_SETTINGS["usermenu_links"].extend(
+        [
+            {
+                "name": "Configuration",
+                "url": "https://django-jazzmin.readthedocs.io/configuration/",
+                "new_window": True,
+                "icon": "fas fa-wrench",
+            },
+            {
+                "name": "Support",
+                "url": "https://github.com/farridav/django-jazzmin/issues",
+                "new_window": True,
+                "icon": "fas fa-question",
+            },
+        ]
+    )
+
+JAZZMIN_UI_TWEAKS = {
+    "navbar_small_text": False,
+    "footer_small_text": False,
+    "body_small_text": False,
+    "brand_small_text": False,
+    "brand_colour": False,
+    "accent": "accent-danger",
+    "navbar": "navbar-white navbar-light",
+    "no_navbar_border": False,
+    "navbar_fixed": True,
+    "layout_boxed": False,
+    "footer_fixed": False,
+    "sidebar_fixed": True,
+    "sidebar": "sidebar-dark-danger",
+    "sidebar_nav_small_text": False,
+    "sidebar_disable_expand": False,
+    "sidebar_nav_child_indent": False,
+    "sidebar_nav_compact_style": False,
+    "sidebar_nav_legacy_style": False,
+    "sidebar_nav_flat_style": False,
+    "theme": "default",
+    "dark_mode_theme": None,
+    "button_classes": {
+        "primary": "btn-outline-primary",
+        "secondary": "btn-outline-secondary",
+        "info": "btn-outline-info",
+        "warning": "btn-outline-warning",
+        "danger": "btn-outline-danger",
+        "success": "btn-outline-success"
+    }
+}

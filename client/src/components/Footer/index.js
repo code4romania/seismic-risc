@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import FooterLogo from './FooterLogo';
 
 import Mkbt from '../../images/MKBT-logo-black.png';
-import CfR from '../../images/footer_CfR.svg';
+import Commitglobal from '../../images/Commitglobal.svg';
 import Tfsg from '../../images/footer_tfsg.svg';
 
 import { useGlobalContext } from '../../context';
@@ -35,7 +35,7 @@ const FooterFragment = () => {
           <FooterLogo
             label={<Trans>Designed by </Trans>}
             href={`https://code4.ro/${currentLanguage}`}
-            src={CfR}
+            src={Commitglobal}
             height="50px"
           />
         </div>

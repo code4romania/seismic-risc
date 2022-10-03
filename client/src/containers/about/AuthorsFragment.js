@@ -3,7 +3,7 @@ import { Row, Col, Typography } from 'antd';
 import { Trans } from '@lingui/macro';
 
 import MAME1 from '../../images/MAME1.png';
-import CfR from '../../images/CfR.svg';
+import Commitglobal from '../../images/Commitglobal.svg';
 
 const { Paragraph } = Typography;
 
@@ -20,7 +20,7 @@ export default () => {
         <Paragraph style={{ padding: '1.5rem' }}>
           <Trans>Designed by</Trans>
         </Paragraph>
-        <img src={CfR} alt="Code for Romania" width="186.36" height="80" />
+        <img src={Commitglobal} alt="Commit Global" width="186.36" height="80" />
       </Col>
     </Row>
   );

@@ -273,8 +273,8 @@ class ImageFile(models.Model):
         (REJECTED, _("Rejected")),
     ]
 
-    def check_extension(image):
-        name_parts = str(image.name).split(".")
+    def check_extension(self):
+        name_parts = str(self.name).split(".")
         if len(name_parts) < 2:
             raise ValidationError(_("Image name does not contain an extension"))
         if name_parts[-1].lower() not in settings.ACCEPTED_IMAGE_TYPES.keys():
