@@ -118,7 +118,7 @@ class WorkPerformedViewSet(viewsets.ReadOnlyModelViewSet):
 @api_view(["GET"])
 @permission_classes((permissions.AllowAny,))
 def statistics(self):
-    stats = Statistic.objects.first()
+    stats = Statistic.get_statistic()
     serializer = StatisticSerializer(stats, many=False)
 
     return Response(serializer.data)

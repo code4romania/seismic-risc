@@ -1,5 +1,6 @@
 from enum import Enum
 from io import BytesIO
+from typing import List
 
 import PIL.Image
 import math
@@ -204,6 +205,10 @@ class Building(models.Model):
     objects = models.Manager()
     approved = ApprovedBuilding()
 
+    def save(self, *args, **kwargs):
+        super(Building, self).save(*args, **kwargs)
+        Statistic.update_statistics()
+
     class Meta:
         verbose_name = _("building")
         verbose_name_plural = _("buildings")
@@ -225,6 +230,52 @@ class BuildingWorkPerformedEvent(models.Model):
 
 class Statistic(models.Model):
     people_under_risk = models.IntegerField(_("people under risk"), null=True)
+    evaluated_buildings = models.IntegerField(_("evaluated buildings"), null=True)
+    consolidated_buildings = models.IntegerField(_("consolidated buildings"), null=True)
+
+    @classmethod
+    def get_statistic(cls):
+        if statistic := Statistic.objects.first():
+            return statistic
+
+        return cls.update_statistics()
+
+    @classmethod
+    def update_statistics(cls):
+        people_under_risk: int = cls._get_people_under_risk()
+        evaluated_buildings: int = cls._get_evaluated_buildings()
+        consolidated_buildings: int = cls._get_consolidated_buildings()
+
+        statistic: List[Statistic] = Statistic.objects.update_or_create(
+            pk=1,
+            defaults={
+                "people_under_risk": people_under_risk,
+                "evaluated_buildings": evaluated_buildings,
+                "consolidated_buildings": consolidated_buildings,
+            },
+        )
+
+        statistic[0].save()
+
+        return statistic[0]
+
+    @staticmethod
+    def _get_people_under_risk() -> int:
+        people_under_risk: int = 0
+        for building in Building.approved.filter(risk_category=SeismicCategoryChoice.RS1.name):
+            people_under_risk += building.residents_count
+
+        return people_under_risk
+
+    @staticmethod
+    def _get_evaluated_buildings() -> int:
+        total_buildings = Building.approved.count()
+        return int(total_buildings)
+
+    @staticmethod
+    def _get_consolidated_buildings() -> int:
+        consolidated_buildings = Building.approved.filter(risk_category="C").count()
+        return int(consolidated_buildings)
 
     class Meta:
         verbose_name = _("statistic")

@@ -28,6 +28,8 @@ class ImageInline(admin.TabularInline):
 
 @admin.register(models.Statistic)
 class StatisticAdmin(admin.ModelAdmin):
+    readonly_fields = ("people_under_risk", "evaluated_buildings", "consolidated_buildings")
+
     def has_add_permission(self, request):
         base_add_permission = super(StatisticAdmin, self).has_add_permission(request)
         if base_add_permission:
