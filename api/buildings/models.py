@@ -263,7 +263,8 @@ class Statistic(models.Model):
     def _get_people_under_risk() -> int:
         people_under_risk: int = 0
         for building in Building.approved.filter(risk_category=SeismicCategoryChoice.RS1.name):
-            people_under_risk += building.residents_count
+            if building.residents_count:
+                people_under_risk += int(building.residents_count)
 
         return people_under_risk
 
