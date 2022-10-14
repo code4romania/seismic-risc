@@ -229,9 +229,21 @@ class BuildingWorkPerformedEvent(models.Model):
 
 
 class Statistic(models.Model):
-    people_under_risk = models.IntegerField(_("people under risk"), null=True)
-    evaluated_buildings = models.IntegerField(_("evaluated buildings"), null=True)
-    consolidated_buildings = models.IntegerField(_("consolidated buildings"), null=True)
+    people_under_risk = models.IntegerField(
+        _("people under risk"),
+        help_text=_("The number of people (residents count) living in RS1 risk buildings"),
+        null=True,
+    )
+    evaluated_buildings = models.IntegerField(
+        _("evaluated buildings"),
+        help_text=_("All the approved buildings in the database"),
+        null=True,
+    )
+    consolidated_buildings = models.IntegerField(
+        _("consolidated buildings"),
+        help_text=_("All the buildings that have been consolidated (risk category is 'consolidated')"),
+        null=True,
+    )
 
     @classmethod
     def get_statistic(cls):

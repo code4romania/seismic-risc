@@ -63,6 +63,8 @@ makemessages:                     ## generate the strings marked for translation
 compilemessages:                  ## compile the translations
 	docker-compose exec api ./manage.py compilemessages
 
+messages: makemessages compilemessages
+
 collectstatic:
 	docker-compose exec api ./manage.py collectstatic --no-input
 
