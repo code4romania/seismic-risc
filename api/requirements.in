@@ -20,7 +20,7 @@ dj-database-url==1.0.0
 
 # file handling
 boto3==1.24.84
-Pillow==9.2.0
+Pillow==9.3.0
 whitenoise==6.2.0
 
 # misc libraries
