@@ -1,5 +1,5 @@
 # django and related apps
-django~=3.2.15
+django~=3.2.18
 django-ckeditor==6.5.1
 django-cors-headers==3.13.0
 django-environ==0.9.0
