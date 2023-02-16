@@ -1,7 +1,7 @@
 # django
 django-debug-toolbar==3.7.0
 django-extensions==3.2.1
-werkzeug==2.2.2
+werkzeug==2.2.3
 
 # tests
 pytest==7.1.3
