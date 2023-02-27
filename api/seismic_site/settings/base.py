@@ -152,10 +152,7 @@ LANGUAGES = [
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 USE_S3 = (
-    env.bool("USE_S3")
-    and env("AWS_ACCESS_KEY_ID")
-    and env("AWS_SECRET_ACCESS_KEY")
-    and env("AWS_STORAGE_BUCKET_NAME")
+    env.bool("USE_S3") and env("AWS_ACCESS_KEY_ID") and env("AWS_SECRET_ACCESS_KEY") and env("AWS_STORAGE_BUCKET_NAME")
 )
 
 if USE_S3:
@@ -164,9 +161,11 @@ if USE_S3:
     AWS_SECRET_ACCESS_KEY = env("AWS_SECRET_ACCESS_KEY")
     AWS_STORAGE_BUCKET_NAME = env("AWS_STORAGE_BUCKET_NAME")
 
+    AWS_SUBDOMAIN = env("AWS_SUBDOMAIN")
+
     AWS_DEFAULT_ACL = None
     AWS_S3_REGION_NAME = env("AWS_S3_REGION_NAME")
-    AWS_S3_CUSTOM_DOMAIN = f'{AWS_STORAGE_BUCKET_NAME}.{env("AWS_SUBDOMAIN")}'
+    AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.{AWS_SUBDOMAIN}"
     AWS_S3_OBJECT_PARAMETERS = {"CacheControl": "max-age=86400"}
     AWS_S3_FILE_OVERWRITE = True
 
@@ -450,6 +449,6 @@ JAZZMIN_UI_TWEAKS = {
         "info": "btn-outline-info",
         "warning": "btn-outline-warning",
         "danger": "btn-outline-danger",
-        "success": "btn-outline-success"
-    }
+        "success": "btn-outline-success",
+    },
 }

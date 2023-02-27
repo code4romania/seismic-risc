@@ -46,10 +46,10 @@ redo-db: drop-db init-db          ## drops the database, then sets up the databa
 
 ## [UTILS]
 requirements-build:               ## run pip compile and add requirements from the *.in files
-	docker-compose run --rm --no-deps --entrypoint "bash -c" api "cd /code && pip-compile -o requirements-dev.txt requirements-dev.in requirements.in && pip-compile -o requirements.txt requirements.in"
+	docker compose run --rm --no-deps --entrypoint "bash -c" api "cd /code && pip-compile --resolver=backtracking -o requirements.txt requirements.in && pip-compile --resolver=backtracking -o requirements-dev.txt requirements-dev.in"
 
 requirements-update:              ## run pip compile and rebuild the requirements files
-	docker-compose run --rm --no-deps --entrypoint "bash -c" api "cd /code && pip-compile -r -U -o requirements-dev.txt requirements-dev.in requirements.in && pip-compile -r -U -o requirements.txt requirements.in && chmod a+r requirements.txt && chmod a+r requirements-dev.txt"
+	docker compose run --rm --no-deps --entrypoint "bash -c" api "cd /code && pip-compile --resolver=backtracking -r -U -o requirements.txt requirements.in && pip-compile --resolver=backtracking -r -U -o requirements-dev.txt requirements-dev.in && chmod a+r requirements.txt && chmod a+r requirements-dev.txt"
 
 migrations:                       ## generate migrations in a clean container
 	docker-compose exec api ./manage.py makemigrations

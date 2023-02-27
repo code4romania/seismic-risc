@@ -2,9 +2,8 @@ version: "3.8"
 
 services:
   db:
-    container_name: seismic-risc-db
-    build:
-      context: ./db
+    container_name: seismic-db
+    image: postgres:15.2-alpine3.17
     env_file:
       - .env
     ports:
@@ -13,7 +12,7 @@ services:
       - pgdata:/var/lib/postgresql/data
 
   api:
-    container_name: seismic-risc-api
+    container_name: seismic-api
     build:
       context: ./api
     command: dockerize -wait tcp://db:5444 -timeout 90s
@@ -27,7 +26,7 @@ services:
       - db
 
   client:
-    container_name: seismic-risc-client
+    container_name: seismic-client
     build:
       context: ./client
     env_file:
