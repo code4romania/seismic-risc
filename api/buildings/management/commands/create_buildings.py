@@ -9,7 +9,6 @@ fake = Faker("ro_RO")
 
 
 class Command(BaseCommand):
-
     help = "generate X number of Fake Buildings"
 
     def add_arguments(self, parser):
@@ -33,6 +32,7 @@ class Command(BaseCommand):
             ).delete()
             self.stdout.write(self.style.SUCCESS("Successfully deleted %s building(s)." % (int(buildings_count))))
         elif options["create"]:
+            building_id: int = 0
             for building_id in trange(int(options["total_buildings"])):
                 address = fake.address()
                 risk_category = random.choice(["NA", "U1", "U2", "U3", "U4", "RS1", "RS2", "RS3", "RS4"])
