@@ -1,31 +1,33 @@
 # django and related apps
-django~=3.2.15
-django-ckeditor==6.5.1
-django-cors-headers==3.13.0
-django-environ==0.9.0
-django-import-export==2.9.0
-django-jazzmin==2.5.0
-django-jquery==3.1.0
-django-storages==1.13.1
-django-taggit==2.1.0
+django==4.1.7
+django-environ==0.10.0
+django-cors-headers==3.14.0
+django-storages==1.13.2
+django-taggit==3.1.0
 django-taggit-serializer==0.1.7
 
+# django admin
+django-jquery==3.1.0
+django-ckeditor==6.5.1
+django-import-export==3.1.0
+django-jazzmin==2.6.0
+
 # REST framework
-djangorestframework>=3.14.0
-drf-spectacular==0.24.2
+djangorestframework==3.14.0
+drf-spectacular==0.26.1
 
 # database
 psycopg2<2.10
-dj-database-url==1.0.0
+dj-database-url==1.3.0
 
 # file handling
-boto3==1.24.84
-Pillow==9.2.0
-whitenoise==6.2.0
+boto3==1.26.104
+pillow==9.4.0
+whitenoise==6.4.0
 
 # misc libraries
-tablib==3.2.1
+tablib==3.4.0
 
 # wsgi server
 gunicorn==20.1.0
-gevent==21.12.0
+gevent==22.10.2

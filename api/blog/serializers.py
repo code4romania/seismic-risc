@@ -1,8 +1,4 @@
 from rest_framework import serializers
-from taggit_serializer.serializers import (
-    TagListSerializerField,
-    TaggitSerializer,
-)
 from taggit.models import Tag
 from .models import Post
 
@@ -13,8 +9,7 @@ class TagSerializer(serializers.HyperlinkedModelSerializer):
         fields = ("name", "slug")
 
 
-class PostSerializer(TaggitSerializer, serializers.ModelSerializer):
-    tags = TagListSerializerField()
+class PostSerializer(serializers.ModelSerializer):
     author_first_name = serializers.ReadOnlyField(source="author.first_name")
     author_last_name = serializers.ReadOnlyField(source="author.last_name")
 
