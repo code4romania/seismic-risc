@@ -72,7 +72,7 @@ pyshell:                          ## start a django shell
 	docker-compose exec api ./manage.py shell
 
 black:                            ## run the Black formatter on the Python code
-	black --line-length 120 --target-version py39 --exclude migrations ./api
+	black --line-length 120 --target-version py311 --exclude migrations ./api
 
 ## [TEST]
 test:                             ## run all tests
