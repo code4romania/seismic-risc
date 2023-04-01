@@ -4,6 +4,12 @@ DEBUG = True
 ALLOWED_HOSTS = ["*"]
 CORS_ORIGIN_ALLOW_ALL = True
 SECRET_KEY = "secret"
+
+SUPER_ADMIN_PASS = env("SUPER_ADMIN_PASS", default="pass")
+SUPER_ADMIN_EMAIL = env("SUPER_ADMIN_EMAIL", default="a@a.co")
+SUPER_ADMIN_FIRST_NAME = env("SUPER_ADMIN_FIRST_NAME", default="First")
+SUPER_ADMIN_LAST_NAME = env("SUPER_ADMIN_LAST_NAME", default="Last")
+
 EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
 
 INSTALLED_APPS = ["whitenoise.runserver_nostatic"] + INSTALLED_APPS
