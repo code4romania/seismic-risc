@@ -15,15 +15,15 @@ on:
 jobs:
   static_analysis:
     name: Run black formatting check
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
     - name: Check out Git repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
-    - name: Set up Python 3.9
+    - name: Set up Python 3.11
       uses: actions/setup-python@v1
       with:
-        python-version: 3.9
+        python-version: 3.11
 
     - name: Install Black with latest pip
       run: |
@@ -32,19 +32,19 @@ jobs:
 
     - name: Check formatting with black
       run: |
-        black --line-length 120 --target-version py39 --exclude migrations --check ./api
+        black --line-length 120 --target-version py311 --exclude migrations --check ./api
 
   tests:
     name: Run api tests
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
     - name: Check out Git repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v3
 
-    - name: Set up Python 3.9
+    - name: Set up Python 3.11
       uses: actions/setup-python@v1
       with:
-        python-version: 3.9
+        python-version: 3.11
 
     - name: Install dependencies
       run: |
