@@ -14,7 +14,7 @@ from blog.views import PostViewSet, TagViewSet
 from buildings.views import BuildingViewSet, ProximalUtilitiesViewSet, WorkPerformedViewSet, statistics
 from pages.views import PagesViewSet
 
-admin_site_string = "Bulina Roșie Admin"
+admin_site_string = "Acasă în Siguranță"
 admin.site.site_title = admin_site_string
 admin.site.site_header = admin_site_string
 admin.site.index_title = admin_site_string

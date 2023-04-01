@@ -43,7 +43,7 @@ distruse, 23 de unităţi spitaliceşti distruse parţial, iar 9 avariate, dar f
 de optimistă.
 
 Ce putem face pentru a deveni mai puțin vulnerabili? Să știm totul despre oraș, despre clădirile în care locuim astfel
-încât să putem cere consolidarea lor. Bulina Roșie nu este doar "un nou site de informare", ci o platformă care
+încât să putem cere consolidarea lor. Acasă în Siguranță nu este doar "un nou site de informare", ci o platformă care
 colectează și validează apoi cu experți date despre clădirile din România, la nivel național, ajută asociațiile de
 proprietari să își consolideze clădirile, te ține la curent cu legislația și ți-o explică și are grijă să ai la îndemână
 informații utile la orice moment.
@@ -58,7 +58,7 @@ would be partially destroyed, and 9 would be damaged, though still functional. A
 quite optimistic.
 
 What can we do to become less vulnerable? Find out everything about the city, about the buildings in which we live so
-that we can ask for their consolidation. Bulina Roșie is not just "a new information site", but a platform that collects
+that we can ask for their consolidation. Home Safe is not just "a new information site", but a platform that collects
 and then validates with the help of experts data about the buildings in Romania, at a national level, it helps owners
 associations to consolidate their buildings, it keeps you in touch with the current legislation and explains it to you,
 and it makes sure that you have useful information at your disposal at all times.
