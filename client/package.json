@@ -58,7 +58,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/core": "^7.15.8",
+    "@babel/core": "^7.21.4",
     "@lingui/babel-preset-react": "^2.9.2",
     "@lingui/cli": "^3.12.1",
     "@storybook/addon-actions": "^6.4.9",
