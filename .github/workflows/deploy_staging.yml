@@ -4,6 +4,12 @@ on:
   push:
     branches:
       - 'develop'
+    paths:
+      - 'api/**'
+      - '.github/workflows/*'
+      - './docker-compose.yml'
+      - './deploy/**'
+      - './.env*'
 
 jobs:
   deploy:
