@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 import os
-from typing import Any, Dict
+from typing import Any, Dict, List
 
 import environ
 from django.utils.translation import gettext_lazy as _
@@ -39,6 +39,8 @@ DEBUG = env("DEBUG")
 
 ALLOWED_HOSTS = []
 CORS_ORIGIN_ALLOW_ALL = False
+
+CSRF_TRUSTED_ORIGINS: List[str] = env.list("CSRF_TRUSTED_ORIGINS", default=[])
 
 INSTALLED_APPS = [
     "jazzmin",
