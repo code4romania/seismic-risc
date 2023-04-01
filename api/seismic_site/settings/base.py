@@ -56,15 +56,9 @@ INSTALLED_APPS = [
     # third-party apps
     "rest_framework",
     "storages",
-    "taggit",
-    "taggit_serializer",
     "corsheaders",
-    "ckeditor",
-    "ckeditor_uploader",
     # project apps
     "buildings",
-    "pages",
-    "blog",
     "static_custom",
     # api documentation
     "drf_spectacular",
@@ -187,8 +181,6 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static")
 STATICFILES_STORAGE = "whitenoise.storage.CompressedManifestStaticFilesStorage"
 
 LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)
-
-CKEDITOR_UPLOAD_PATH = "uploads/"
 
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions
@@ -340,10 +332,6 @@ JAZZMIN_SETTINGS: Dict[str, Any] = {
         "buildings.imagefile",
         "buildings.datafile",
         "buildings.statistic",
-        "blog",
-        "blog.post",
-        "taggit",
-        "taggit.tag",
         "auth",
         "auth.user",
         "auth.group",
@@ -358,8 +346,6 @@ JAZZMIN_SETTINGS: Dict[str, Any] = {
         "buildings.imagefile": "fas fa-images",
         "buildings.datafile": "fas fa-database",
         "buildings.statistic": "fas fa-table",
-        "blog.post": "fas fa-newspaper",
-        "taggit.tag": "fas fa-tag",
         "auth.group": "fas fa-users",
         "auth.user": "fas fa-user",
     },

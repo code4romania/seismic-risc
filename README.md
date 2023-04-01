@@ -228,7 +228,7 @@ The following variables change the way the API is deployed.
 Run the initial migrations (sets up the data models from the database).
 
 `RUN_LOAD_DUMMY_DATA`
-Adds real & dummy data to the database (adds buildings, blog posts, pages, datafiles, and statistics).
+Adds real & dummy data to the database (adds buildings, datafiles, and statistics).
 
 `RUN_COLLECT_STATIC`
 Collects static files so that they can be easily served to production.

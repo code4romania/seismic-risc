@@ -36,7 +36,6 @@ superuser:                        ## creates a superuser for the API
 init-db: superuser                ## sets up the database and fixtures
 	docker-compose exec api ./manage.py loaddata statistics
 	docker-compose exec api ./manage.py loaddata buildings
-	docker-compose exec api ./manage.py loaddata pages
 
 drop-db:                          ## drops the database
 	docker-compose down -t 60
