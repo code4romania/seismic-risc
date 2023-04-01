@@ -294,7 +294,7 @@ IMAGE_RESIZE = 400
 
 JAZZMIN_SETTINGS: Dict[str, Any] = {
     # title of the window
-    "site_title": _("Bulina Roșie Admin"),
+    "site_title": _("Acasă în Siguranță"),
     # Title on the brand, and the login screen (19 chars max)
     "site_header": _("Bulina Roșie"),
     # square logo to use for your site, must be present in static files, used for favicon and brand on top left

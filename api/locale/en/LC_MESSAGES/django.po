@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2022-10-14 13:52+0300\n"
+"POT-Creation-Date: 2023-04-01 10:54+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -658,10 +658,10 @@ msgstr ""
 msgid "English"
 msgstr ""
 
-#: seismic_site/settings/base.py:298
-msgid "Bulina Roșie Admin"
+#: seismic_site/settings/base.py:297
+msgid "Acasă în Siguranță"
 msgstr ""
 
-#: seismic_site/settings/base.py:300
+#: seismic_site/settings/base.py:299
 msgid "Bulina Roșie"
 msgstr ""
