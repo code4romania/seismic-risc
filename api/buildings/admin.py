@@ -1,5 +1,5 @@
-from copy import deepcopy
 import os
+from copy import deepcopy
 from zipfile import BadZipFile
 
 import tablib

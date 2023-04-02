@@ -10,9 +10,7 @@ from drf_spectacular.views import (
 )
 from rest_framework import routers
 
-from blog.views import PostViewSet, TagViewSet
 from buildings.views import BuildingViewSet, ProximalUtilitiesViewSet, WorkPerformedViewSet, statistics
-from pages.views import PagesViewSet
 
 admin_site_string = "Acasă în Siguranță"
 admin.site.site_title = admin_site_string
@@ -21,9 +19,6 @@ admin.site.index_title = admin_site_string
 
 router = routers.DefaultRouter()
 router.register(r"buildings", BuildingViewSet, basename="buildings")
-router.register(r"pages", PagesViewSet, basename="pages")
-router.register(r"posts", PostViewSet, basename="posts")
-router.register(r"tags", TagViewSet, basename="tags")
 router.register(r"proximal_utilities", ProximalUtilitiesViewSet, basename="building_proximal_utilities")
 router.register(r"work_performed", WorkPerformedViewSet, basename="building_work_performed")
 
@@ -52,7 +47,6 @@ urlpatterns = (
             name="password_reset_complete",
         ),
         path("admin/", admin.site.urls),
-        path("ckeditor/", include("ckeditor_uploader.urls")),
     )
     + [
         # URL patterns which do not use a language prefix

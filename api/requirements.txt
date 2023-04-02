@@ -24,7 +24,6 @@ django==4.1.7
     # via
     #   -r requirements.in
     #   dj-database-url
-    #   django-ckeditor
     #   django-cors-headers
     #   django-import-export
     #   django-jazzmin
@@ -34,8 +33,6 @@ django==4.1.7
     #   django-taggit
     #   djangorestframework
     #   drf-spectacular
-django-ckeditor==6.5.1
-    # via -r requirements.in
 django-cors-headers==3.14.0
     # via -r requirements.in
 django-environ==0.10.0
