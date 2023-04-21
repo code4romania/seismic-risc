@@ -56,7 +56,6 @@ django==4.1.7
     #   django-import-export
     #   django-jazzmin
     #   django-jquery
-    #   django-js-asset
     #   django-storages
     #   djangorestframework
     #   drf-spectacular
@@ -74,9 +73,6 @@ django-jazzmin==2.6.0
     # via -r requirements.txt
 django-jquery==3.1.0
     # via -r requirements.txt
-django-js-asset==2.0.0
-    # via
-    #   -r requirements.txt
 django-storages==1.13.2
     # via -r requirements.txt
 djangorestframework==3.14.0
@@ -219,7 +215,7 @@ six==1.16.0
     #   asttokens
     #   jsonschema
     #   python-dateutil
-sqlparse==0.4.2
+sqlparse==0.4.4
     # via
     #   -r requirements.txt
     #   django
