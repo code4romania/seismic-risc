@@ -1,5 +1,5 @@
 # django and related apps
-django==4.1.7
+django==4.1.9
 django-environ==0.10.0
 django-cors-headers==3.14.0
 django-storages==1.13.2
