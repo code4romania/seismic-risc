@@ -74,22 +74,22 @@ export default () => {
           </div>
           <ul className={`App-menu ${showMenu ? 'show' : ''}`}>
             <li>
-              <NavLink className="menu-item" to="/despre" exact activeClassName="active">
+              <NavLink className="menu-item" to="/despre" exact="true" activeclassname="active">
                 <Trans>About Project</Trans>
               </NavLink>
             </li>
             <li>
-              <NavLink className="menu-item" to="/ghid" activeClassName="active">
+              <NavLink className="menu-item" to="/ghid" activeclassname="active">
                 <Trans>Guide</Trans>
               </NavLink>
             </li>
             <li>
-              <NavLink className="menu-item" to="/blog" activeClassName="active">
+              <NavLink className="menu-item" to="/blog" activeclassname="active">
                 Blog
               </NavLink>
             </li>
             <li>
-              <NavLink className="menu-item" to="/contact" activeClassName="active">
+              <NavLink className="menu-item" to="/contact" activeclassname="active">
                 <Trans>Contact us</Trans>
               </NavLink>
             </li>
@@ -111,7 +111,7 @@ export default () => {
           </ul>
           <Dropdown
             className="language-btn-desktop"
-            overlay={() => languageMenu(langText, handleLanguageBtnClick)}
+            menu={() => languageMenu(langText, handleLanguageBtnClick)}
             trigger={['click']}
           >
             <Button>

@@ -1,5 +1,6 @@
 import React from 'react';
-import { Row, Col, Icon, Typography } from 'antd';
+import { Row, Col, Typography } from 'antd';
+import { EnvironmentOutlined } from '@ant-design/icons';
 import { Trans } from '@lingui/macro';
 
 const { Paragraph, Title } = Typography;
@@ -9,7 +10,7 @@ export default () => {
     <div className="about-preview">
       <Row>
         <Title level={2}>
-          <Icon type="environment" />
+          <EnvironmentOutlined />
           <Trans>About the project</Trans>
         </Title>
       </Row>

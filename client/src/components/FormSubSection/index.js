@@ -15,31 +15,24 @@ const FormSubSection = ({ children, description, label, title }) => {
   const expandBtnClass = useMemo(() => classNames({ expanded }), [expanded]);
 
   return (
-    <>
-      <Row type="flex" gutter={16} align="top" className="form-subsection-header">
-        <Col className="form-title-container">
-          <Row>
-            <Title level={3} className="form-subsection-title">
-              {label}. {title}
-            </Title>
-            <Text className="form-subsection-description">{description}</Text>
-          </Row>
-          {expanded && children}
-        </Col>
-        <Col className="form-subsection-expand-btn">
-          {!expanded ? (
-            <Button icon="plus" type="primary" onClick={toggleExpanded} />
-          ) : (
-            <Button
-              icon="minus"
-              type="primary"
-              className={expandBtnClass}
-              onClick={toggleExpanded}
-            />
-          )}
-        </Col>
-      </Row>
-    </>
+    <Row type="flex" gutter={16} align="top" className="form-subsection-header">
+      <Col className="form-title-container">
+        <Row>
+          <Title level={3} className="form-subsection-title">
+            {label}. {title}
+          </Title>
+          <Text className="form-subsection-description">{description}</Text>
+        </Row>
+        {expanded && children}
+      </Col>
+      <Col className="form-subsection-expand-btn">
+        {!expanded ? (
+          <Button icon="plus" type="primary" onClick={toggleExpanded} />
+        ) : (
+          <Button icon="minus" type="primary" className={expandBtnClass} onClick={toggleExpanded} />
+        )}
+      </Col>
+    </Row>
   );
 };
 

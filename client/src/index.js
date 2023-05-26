@@ -1,15 +1,16 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { createRoot } from 'react-dom/client';
 import { AppProvider } from './context';
 import App from './App';
 import '@fontsource/source-sans-pro';
 import * as serviceWorker from './serviceWorker';
 
-ReactDOM.render(
+const root = createRoot(document.getElementById('root'));
+
+root.render(
   <AppProvider>
     <App />
   </AppProvider>,
-  document.getElementById('root'),
 );
 
 // If you want your app to work offline and load faster, you can change

@@ -1,4 +1,4 @@
-import 'antd/dist/antd.css';
+import 'antd/dist/reset.css';
 import '../src/styles/theme.scss';
 import React from 'react';
 import { RouterWrapper } from '../src/components/TestUtils';

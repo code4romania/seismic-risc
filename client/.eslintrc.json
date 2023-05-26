@@ -5,9 +5,10 @@
   },
   "plugins": ["prettier"],
   "extends": ["airbnb-base", "airbnb/rules/react", "plugin:prettier/recommended", "prettier"],
-  "parser": "babel-eslint",
+  "parser": "@babel/eslint-parser",
   "ignorePatterns": ["serviceWorker.js", "node_modules/", "src/locales/"],
   "rules": {
+    "react/function-component-definition":"off",
     "react/jsx-props-no-spreading": 0,
     "react/no-unescaped-entities": ["error", { "forbid": [">", "}"] }],
     "react/sort-comp": 0,
@@ -19,5 +20,15 @@
     "no-return-assign": 0,
     "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
     "no-useless-escape": "off"
-  }
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.stories.*"
+      ],
+      "rules": {
+        "import/no-anonymous-default-export": "off"
+      }
+    }
+  ]
 }

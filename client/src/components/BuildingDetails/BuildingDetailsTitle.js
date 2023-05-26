@@ -1,23 +1,22 @@
 import React from 'react';
 import { Trans } from '@lingui/macro';
-import { Row, Col, Button, Icon } from 'antd';
+import { Row, Col, Button } from 'antd';
+import { EnvironmentOutlined, CloseOutlined } from '@ant-design/icons';
 
 const BuildingDetailsTitle = ({ address, streetNumber, locality, countyCode, images, onClose }) => (
   <Row type="flex" gutter={8} className="buildingDetailsTitle">
     {address && (
       <Col>
-        <Icon type="environment" />
+        <EnvironmentOutlined />
       </Col>
     )}
     <Col>
       <span className="buildingDetailsTitle__text">
         {address}
         {streetNumber && <> {streetNumber}</>}
-        {
-          <span className="buildingDetailsTitle__subtext">
-            <br /> {locality && countyCode ? `${locality}, ${countyCode}` : locality ?? countyCode}
-          </span>
-        }
+        <span className="buildingDetailsTitle__subtext">
+          <br /> {locality && countyCode ? `${locality}, ${countyCode}` : locality ?? countyCode}
+        </span>
       </span>
       {images && (
         <Button type="link">
@@ -26,7 +25,7 @@ const BuildingDetailsTitle = ({ address, streetNumber, locality, countyCode, ima
       )}
     </Col>
     <Col style={{ marginLeft: 'auto' }}>
-      <Icon type="close" onClick={onClose} />
+      <CloseOutlined onClick={onClose} />
     </Col>
   </Row>
 );

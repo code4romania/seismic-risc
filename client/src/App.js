@@ -1,7 +1,8 @@
 import React from 'react';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { I18nProvider } from '@lingui/react';
 import { i18n } from '@lingui/core';
+import { ConfigProvider } from 'antd';
 
 import Home from './containers/home';
 import About from './containers/about';
@@ -24,44 +25,37 @@ i18n.load({
 });
 i18n.activate('ro');
 
-const App = () => {
+function App() {
   return (
-    <I18nProvider i18n={i18n} forceRenderOnLocaleChange={false}>
-      <Router>
-        <ScrollToTop />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/despre">
-            <About />
-          </Route>
-          <Route path="/ghid">
-            <Guide />
-          </Route>
-          <Route exact path="/blog">
-            <Blog />
-          </Route>
-          <Route path="/blog/:slug">
-            <BlogPost />
-          </Route>
-          <Route path="/termeni-si-conditii">
-            <Terms />
-          </Route>
-          <Route path="/politica-de-confidentialitate">
-            <Policy />
-          </Route>
-          <Route path="/adauga-cladire">
-            <AddBuilding />
-          </Route>
-          <Route path="/multumim">
-            <ThankYou />
-          </Route>
-          <Route component={NotFound} />
-        </Switch>
-      </Router>
-    </I18nProvider>
+    <ConfigProvider
+      theme={{
+        token: {
+          colorPrimary: '#EE4036',
+          '@font-family': '"Source Sans Pro", sans-serif',
+        },
+      }}
+    >
+      <I18nProvider i18n={i18n} forceRenderOnLocaleChange={false}>
+        <Router>
+          <>
+            <ScrollToTop />
+            <Routes>
+              <Route exact="true" path="/" element={<Home />} />
+              <Route path="/despre" element={<About />} />
+              <Route path="/ghid" element={<Guide />} />
+              <Route exact="true" path="/blog" element={<Blog />} />
+              <Route path="/blog/:slug" element={<BlogPost />} />
+              <Route path="/termeni-si-conditii" element={<Terms />} />
+              <Route path="/politica-de-confidentialitate" element={<Policy />} />
+              <Route path="/adauga-cladire" element={<AddBuilding />} />
+              <Route path="/multumim" element={<ThankYou />} />
+              <Route component={NotFound} />
+            </Routes>
+          </>
+        </Router>
+      </I18nProvider>
+    </ConfigProvider>
   );
-};
+}
 
 export default App;

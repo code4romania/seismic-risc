@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Row, Col, Typography, message, AutoComplete, Input, Icon, Spin, Tooltip } from 'antd';
+import { Row, Col, Typography, message, Input, Spin, Tooltip, AutoComplete } from 'antd';
+import { SearchOutlined } from '@ant-design/icons';
 import { Trans } from '@lingui/macro';
 import { debounce, groupBy } from 'lodash';
 
@@ -14,7 +15,7 @@ const Suffix = ({ input, loading }) => {
     return <Spin />;
   }
   if (!input) {
-    return <Icon type="search" />;
+    return <SearchOutlined />;
   }
   return <span />;
 };
@@ -114,7 +115,7 @@ export default () => {
         <AutoComplete
           allowClear={!searchLoading}
           value={searchInput}
-          dataSource={dataSource}
+          options={dataSource}
           onChange={onSearchInputChange}
           onSearch={onSearch}
           onSelect={onSelect}

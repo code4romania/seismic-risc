@@ -73,6 +73,7 @@ const AppProvider = ({ children }) => {
 
   return (
     <AppContext.Provider
+      // eslint-disable-next-line react/jsx-no-constructed-context-values
       value={{
         ...state,
         searchBuildings,

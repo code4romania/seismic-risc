@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Row, Col, Icon, Typography, Spin } from 'antd';
+import { Row, Col, Typography, Spin } from 'antd';
+import { EnvironmentOutlined } from '@ant-design/icons';
 import { Trans } from '@lingui/macro';
 import config from '../../config';
 import BlogCard from '../BlogCard';
@@ -66,7 +67,7 @@ export default ({ title, postSlug = null }) => {
         <Row>
           <Col span={24}>
             <Title level={2}>
-              <Icon type="environment" />
+              <EnvironmentOutlined />
               {title}
             </Title>
           </Col>
@@ -87,7 +88,7 @@ export default ({ title, postSlug = null }) => {
       <Row type="flex" justify="space-around">
         <Col span={24}>
           <Title level={2}>
-            <Icon type="environment" />
+            <EnvironmentOutlined />
             {title}
           </Title>
         </Col>
