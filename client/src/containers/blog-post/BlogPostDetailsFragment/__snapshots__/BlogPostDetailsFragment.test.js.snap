@@ -4,14 +4,15 @@ exports[`BlogPostDetailsFragment component should render correctly 1`] = `
 <body>
   <div>
     <div
-      class="ant-row-flex ant-row-flex-center ant-row-flex-top"
+      class="ant-row ant-row-center ant-row-top css-dev-only-do-not-override-w8mnev"
       style="margin-top: 2rem; margin-bottom: 2rem;"
+      type="flex"
     >
       <div
-        class="ant-col"
+        class="ant-col css-dev-only-do-not-override-w8mnev"
       >
         <div
-          class="ant-typography"
+          class="ant-typography css-dev-only-do-not-override-w8mnev"
           style="text-align: justify; word-break: break-all;"
         >
           <div>
@@ -21,7 +22,7 @@ exports[`BlogPostDetailsFragment component should render correctly 1`] = `
           </div>
         </div>
         <div
-          class="ant-typography"
+          class="ant-typography css-dev-only-do-not-override-w8mnev"
         >
           <img
             src="image-url"

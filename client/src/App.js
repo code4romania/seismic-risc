@@ -23,6 +23,10 @@ import { messages as messagesRo } from './locales/ro/messages';
 i18n.load({
   ro: messagesRo,
 });
+i18n.loadLocaleData({
+  en: { plurals: {} },
+  ro: { plurals: {} },
+});
 i18n.activate('ro');
 
 function App() {
