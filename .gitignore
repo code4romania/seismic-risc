@@ -354,3 +354,4 @@ dmypy.json
 cython_debug/
 
 .DS_Store
+client/storybook-static/*
