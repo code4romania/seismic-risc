@@ -1,5 +1,5 @@
 # base image
-FROM node:12-alpine
+FROM node:18-alpine
 
 ARG ENVIRONMENT
 
