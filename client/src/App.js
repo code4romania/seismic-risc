@@ -49,7 +49,7 @@ function App() {
               <Route path="/politica-de-confidentialitate" element={<Policy />} />
               <Route path="/adauga-cladire" element={<AddBuilding />} />
               <Route path="/multumim" element={<ThankYou />} />
-              <Route component={NotFound} />
+              <Route path="*" element={<NotFound />} />
             </Routes>
           </>
         </Router>

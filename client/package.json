@@ -4,7 +4,6 @@
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^5.1.2",
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.0",
     "@fontsource/source-sans-pro": "^5.0.1",
     "@hcaptcha/react-hcaptcha": "^1.8.1",
     "@lingui/core": "^4.2.0",
@@ -64,6 +63,7 @@
     "@babel/core": "^7.21.8",
     "@babel/eslint-parser": "^7.21.8",
     "@babel/plugin-transform-private-property-in-object": "^7.22.0",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.0",
     "@babel/preset-env": "^7.22.0",
     "@babel/preset-react": "^7.22.0",
     "@lingui/babel-preset-react": "^2.9.2",
