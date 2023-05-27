@@ -5,14 +5,11 @@ import useCreateFormValidationRules from '../../hooks/form/useFormValidationRule
 import { defaultFormInputTypeProps, FormInputType } from '../../types';
 
 const FormInput = ({ disabled, fieldName, form, rulesOptions, ...rest }) => {
-  const { getFieldDecorator } = form;
   const createFormValidationRules = useCreateFormValidationRules();
 
   return (
-    <FormField {...rest}>
-      {getFieldDecorator(fieldName, {
-        rules: createFormValidationRules(rulesOptions),
-      })(<Input disabled={disabled} />)}
+    <FormField {...rest} name={fieldName} rules={createFormValidationRules(rulesOptions)}>
+      <Input disabled={disabled} />
     </FormField>
   );
 };

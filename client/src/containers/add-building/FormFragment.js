@@ -21,7 +21,6 @@ const FormFragment = () => {
   const [isFinished, setIsFinished] = useState(false);
   const [mapSearchText, setMapSearchText] = useState(undefined);
   const [coordinates, setCoordinates] = useState(undefined);
-  const { getFieldDecorator } = form;
   const fields = form.getFieldsValue();
   const { currentLanguage } = useGlobalContext();
 
@@ -93,7 +92,7 @@ const FormFragment = () => {
       <Spin size="large" />
     </div>
   ) : (
-    <Form labelAlign="left" onSubmit={onFinish}>
+    <Form labelAlign="left" onSubmit={onFinish} form={form}>
       <FirstFormSection
         disabledFields={isErrorLoadingRiskCategories}
         form={form}
@@ -108,40 +107,39 @@ const FormFragment = () => {
 
       <Row type="flex" gutter={16}>
         <Col xs={24} lg={16}>
-          <Form.Item style={{ lineHeight: 1 }}>
-            {getFieldDecorator('gdpr', {
-              valuePropName: 'checked',
-              rules: createFormValidationRules([{ ruleName: 'gdpr' }]),
-            })(
-              <Checkbox disabled={isErrorLoadingRiskCategories} style={{ lineHeight: 1.5 }}>
-                <Trans id="form.gdpr_agreement">
-                  {`By this check, you agree that the data provided by you through this form will
+          <Form.Item
+            name="gdpr"
+            valuePropName="checked"
+            rules={createFormValidationRules([{ ruleName: 'gdpr' }])}
+            style={{ lineHeight: 1 }}
+          >
+            <Checkbox disabled={isErrorLoadingRiskCategories} style={{ lineHeight: 1.5 }}>
+              <Trans id="form.gdpr_agreement">
+                {`By this check, you agree that the data provided by you through this form will
                   be processed exclusively to upload this document on the platform and that the
                   MKBT team will contact you only in connection with this submission. Here you
                   can find`}{' '}
-                  <Link to="/termeni-si-conditii" target="_blank">
-                    our regulations on the processing of personal data
-                  </Link>
-                  .
-                </Trans>
-              </Checkbox>,
-            )}
+                <Link to="/termeni-si-conditii" target="_blank">
+                  our regulations on the processing of personal data
+                </Link>
+                .
+              </Trans>
+            </Checkbox>
           </Form.Item>
           <br />
           <Row type="flex" align="middle" justify="space-between">
             <Col>
-              <Form.Item>
-                {getFieldDecorator('captcha', {
-                  rules: createFormValidationRules([{ ruleName: 'captcha' }]),
-                })(
-                  <HCaptcha
-                    sitekey={CAPTCHA_API_KEY}
-                    onVerify={handleVerifyCaptcha}
-                    hl={currentLanguage}
-                    languageOverride={currentLanguage}
-                    size={isSmallDevice ? 'compact' : 'normal'}
-                  />,
-                )}
+              <Form.Item
+                name="captcha"
+                rules={createFormValidationRules([{ ruleName: 'captcha' }])}
+              >
+                <HCaptcha
+                  sitekey={CAPTCHA_API_KEY}
+                  onVerify={handleVerifyCaptcha}
+                  hl={currentLanguage}
+                  languageOverride={currentLanguage}
+                  size={isSmallDevice ? 'compact' : 'normal'}
+                />
               </Form.Item>
             </Col>
             <Col>

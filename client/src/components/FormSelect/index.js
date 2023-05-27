@@ -7,22 +7,17 @@ import { defaultFormSelectTypeProps, FormSelectType } from '../../types';
 const { Option } = Select;
 
 const FormSelect = ({ disabled, fieldName, form, options, rulesOptions, ...rest }) => {
-  const { getFieldDecorator } = form;
   const createFormValidationRules = useCreateFormValidationRules();
 
   return (
-    <FormField {...rest}>
-      {getFieldDecorator(fieldName, {
-        rules: createFormValidationRules(rulesOptions),
-      })(
-        <Select disabled={disabled}>
-          {options.map(({ value, text }) => (
-            <Option key={`${fieldName}-${value}`} value={value}>
-              {text}
-            </Option>
-          ))}
-        </Select>,
-      )}
+    <FormField {...rest} name={fieldName} rules={createFormValidationRules(rulesOptions)}>
+      <Select disabled={disabled}>
+        {options.map(({ value, text }) => (
+          <Option key={`${fieldName}-${value}`} value={value}>
+            {text}
+          </Option>
+        ))}
+      </Select>
     </FormField>
   );
 };

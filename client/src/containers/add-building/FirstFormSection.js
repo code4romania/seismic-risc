@@ -22,8 +22,6 @@ const FirstFormSection = ({
 }) => {
   const [fileList, setFileList] = useState([]);
 
-  const { getFieldDecorator } = form;
-
   const riskCategoryOptions = useMemo(
     () => riskCategories.map((category) => ({ value: category.value, text: category.displayName })),
     [riskCategories],
@@ -137,20 +135,19 @@ const FirstFormSection = ({
         <Paragraph>
           <Trans id="form.images.note" />
         </Paragraph>
-        {getFieldDecorator('images')(
-          <Upload
-            accept=".jpg,.png"
-            beforeUpload={onBeforeUploadHandler}
-            fileList={fileList}
-            listType="picture-card"
-            multiple
-            onChange={onImageUploadChangeHandler}
-            onRemove={onRemoveImageHandler}
-            disabled={disabledFields}
-          >
-            {fileList.length < 5 && <UploadButton name={<Trans id="form.upload_button.label" />} />}
-          </Upload>,
-        )}
+
+        <Upload
+          accept=".jpg,.png"
+          beforeUpload={onBeforeUploadHandler}
+          fileList={fileList}
+          listType="picture-card"
+          multiple
+          onChange={onImageUploadChangeHandler}
+          onRemove={onRemoveImageHandler}
+          disabled={disabledFields}
+        >
+          {fileList.length < 5 && <UploadButton name={<Trans id="form.upload_button.label" />} />}
+        </Upload>
       </Col>
     </FormSection>
   );

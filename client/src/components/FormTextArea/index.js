@@ -7,14 +7,11 @@ import { defaultFormTextAreaTypeProps, FormTextAreaType } from '../../types';
 const { TextArea } = Input;
 
 const FormTextArea = ({ disabled, fieldName, form, rows, rulesOptions, ...rest }) => {
-  const { getFieldDecorator } = form;
   const createFormValidationRules = useCreateFormValidationRules();
 
   return (
-    <FormField {...rest}>
-      {getFieldDecorator(fieldName, { rules: createFormValidationRules(rulesOptions) })(
-        <TextArea disabled={disabled} rows={rows} />,
-      )}
+    <FormField {...rest} name={fieldName} rules={createFormValidationRules(rulesOptions)}>
+      <TextArea disabled={disabled} rows={rows} />
     </FormField>
   );
 };
