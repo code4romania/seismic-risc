@@ -15,7 +15,6 @@ const { MAP_API_KEY } = config;
 
 const FirstFormSection = ({
   disabledFields,
-  form,
   onCoordinatesChange,
   mapSearchText,
   riskCategories,
@@ -58,7 +57,6 @@ const FirstFormSection = ({
               colon
               disabled={disabledFields}
               fieldName="address"
-              form={form}
               label={<Trans id="form.adress.label" />}
               rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 100 }]}
             />
@@ -68,7 +66,6 @@ const FirstFormSection = ({
               colon
               disabled={disabledFields}
               fieldName="streetNumber"
-              form={form}
               label={<Trans id="form.street_number.label" />}
               rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 50 }]}
             />
@@ -79,7 +76,6 @@ const FirstFormSection = ({
             <FormInput
               disabled={disabledFields}
               fieldName="county"
-              form={form}
               label={<Trans id="form.county.label" />}
               rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 50 }]}
             />
@@ -88,7 +84,6 @@ const FirstFormSection = ({
             <FormInput
               disabled={disabledFields}
               fieldName="locality"
-              form={form}
               label={<Trans id="form.locality.label" />}
               rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 50 }]}
             />
@@ -99,7 +94,6 @@ const FirstFormSection = ({
             <FormSelect
               disabled={disabledFields}
               fieldName="riskCategory"
-              form={form}
               label={<Trans id="form.risk_class.label" />}
               options={riskCategoryOptions}
               rulesOptions={[{ ruleName: 'required' }]}
@@ -109,7 +103,6 @@ const FirstFormSection = ({
             <FormInput
               disabled={disabledFields}
               fieldName="heightRegime"
-              form={form}
               label={<Trans id="form.height_regime.label" />}
               rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 50 }]}
             />
@@ -159,7 +152,6 @@ FirstFormSection.defaultProps = {
 };
 
 FirstFormSection.propTypes = {
-  form: PropTypes.shape().isRequired,
   onCoordinatesChange: PropTypes.func.isRequired,
   mapSearchText: PropTypes.string,
   riskCategories: PropTypes.arrayOf(PropTypes.shape()).isRequired,

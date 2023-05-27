@@ -22,7 +22,10 @@ const FormFragment = () => {
   const [isFinished, setIsFinished] = useState(false);
   const [mapSearchText, setMapSearchText] = useState(undefined);
   const [coordinates, setCoordinates] = useState(undefined);
-  const fields = form.getFieldsValue();
+  const address = Form.useWatch('address', form);
+  const streetNumber = Form.useWatch('streetNumber', form);
+  const locality = Form.useWatch('locality', form);
+  const county = Form.useWatch('county', form);
   const { currentLanguage } = useGlobalContext();
 
   const isSmallDevice = useIsSmallDevice();
@@ -71,12 +74,10 @@ const FormFragment = () => {
   };
 
   useEffect(() => {
-    if (fields.address && fields.streetNumber && fields.locality && fields.county) {
-      setMapSearchText(
-        `${fields.address} ${fields.streetNumber} ${fields.locality} ${fields.county}`,
-      );
+    if (address && streetNumber && locality && county) {
+      setMapSearchText(`${address} ${streetNumber} ${locality} ${county}`);
     }
-  }, [fields]);
+  }, [address, streetNumber, locality, county]);
 
   useEffect(() => {
     if (!isErrorLoadingRiskCategories) return;
@@ -96,7 +97,6 @@ const FormFragment = () => {
     <Form labelAlign="left" onSubmit={onFinish} form={form}>
       <FirstFormSection
         disabledFields={isErrorLoadingRiskCategories}
-        form={form}
         onCoordinatesChange={onCoordinatesChange}
         mapSearchText={mapSearchText}
         riskCategories={riskCategories ?? []}

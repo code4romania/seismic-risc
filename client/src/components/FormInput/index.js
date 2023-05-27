@@ -4,7 +4,7 @@ import FormField from '../FormField';
 import useCreateFormValidationRules from '../../hooks/form/useFormValidationRules';
 import { defaultFormInputTypeProps, FormInputType } from '../../types';
 
-const FormInput = ({ disabled, fieldName, form, rulesOptions, ...rest }) => {
+const FormInput = ({ disabled, fieldName, rulesOptions, ...rest }) => {
   const createFormValidationRules = useCreateFormValidationRules();
 
   return (
