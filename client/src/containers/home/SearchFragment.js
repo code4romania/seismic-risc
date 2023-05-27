@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Row, Col, Typography, message, Input, Spin, Tooltip, AutoComplete } from 'antd';
+import { Row, Col, Typography, App, Input, Spin, Tooltip, AutoComplete } from 'antd';
 import { SearchOutlined } from '@ant-design/icons';
 import { Trans } from '@lingui/macro';
 import { debounce, groupBy } from 'lodash';
@@ -33,7 +33,7 @@ export default () => {
     searchInput,
     riskCategory,
   } = useGlobalContext();
-
+  const { message } = App.useApp();
   const [searchPlaceholderText, setSearchPlaceholderText] = useState('');
 
   useEffect(() => {

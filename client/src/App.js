@@ -2,7 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { I18nProvider } from '@lingui/react';
 import { i18n } from '@lingui/core';
-import { ConfigProvider } from 'antd';
+import { ConfigProvider, App as AntdApp } from 'antd';
 
 import Home from './containers/home';
 import About from './containers/about';
@@ -39,23 +39,25 @@ function App() {
           },
         }}
       >
-        <Router>
-          <>
-            <ScrollToTop />
-            <Routes>
-              <Route exact="true" path="/" element={<Home />} />
-              <Route path="/despre" element={<About />} />
-              <Route path="/ghid" element={<Guide />} />
-              <Route exact="true" path="/blog" element={<Blog />} />
-              <Route path="/blog/:slug" element={<BlogPost />} />
-              <Route path="/termeni-si-conditii" element={<Terms />} />
-              <Route path="/politica-de-confidentialitate" element={<Policy />} />
-              <Route path="/adauga-cladire" element={<AddBuilding />} />
-              <Route path="/multumim" element={<ThankYou />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </>
-        </Router>
+        <AntdApp>
+          <Router>
+            <>
+              <ScrollToTop />
+              <Routes>
+                <Route exact="true" path="/" element={<Home />} />
+                <Route path="/despre" element={<About />} />
+                <Route path="/ghid" element={<Guide />} />
+                <Route exact="true" path="/blog" element={<Blog />} />
+                <Route path="/blog/:slug" element={<BlogPost />} />
+                <Route path="/termeni-si-conditii" element={<Terms />} />
+                <Route path="/politica-de-confidentialitate" element={<Policy />} />
+                <Route path="/adauga-cladire" element={<AddBuilding />} />
+                <Route path="/multumim" element={<ThankYou />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </>
+          </Router>
+        </AntdApp>
       </ConfigProvider>
     </I18nProvider>
   );

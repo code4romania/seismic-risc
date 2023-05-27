@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Trans } from '@lingui/macro';
-import { Col, message, Row, Typography, Upload } from 'antd';
+import { Col, App, Row, Typography, Upload } from 'antd';
 import config from '../../config';
 import FormInput from '../../components/FormInput';
 import FormSection from '../../components/FormSection';
@@ -21,7 +21,7 @@ const FirstFormSection = ({
   riskCategories,
 }) => {
   const [fileList, setFileList] = useState([]);
-
+  const { message } = App.useApp();
   const riskCategoryOptions = useMemo(
     () => riskCategories.map((category) => ({ value: category.value, text: category.displayName })),
     [riskCategories],

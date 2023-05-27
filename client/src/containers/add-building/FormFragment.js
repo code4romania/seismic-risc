@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Button, Checkbox, Col, Form, message, Row, Spin } from 'antd';
+import { Button, Checkbox, Col, Form, App, Row, Spin } from 'antd';
 import { Trans, t } from '@lingui/macro';
 import { Link, Navigate } from 'react-router-dom';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
@@ -18,6 +18,7 @@ const { CAPTCHA_API_KEY } = config;
 
 const FormFragment = () => {
   const [form] = Form.useForm();
+  const { message } = App.useApp();
   const [isFinished, setIsFinished] = useState(false);
   const [mapSearchText, setMapSearchText] = useState(undefined);
   const [coordinates, setCoordinates] = useState(undefined);
