@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { I18nProvider } from '@lingui/react';
 import { i18n } from '@lingui/core';
 import { ConfigProvider, App as AntdApp } from 'antd';
@@ -47,18 +47,36 @@ function App() {
           <Router>
             <>
               <ScrollToTop />
-              <Routes>
-                <Route exact="true" path="/" element={<Home />} />
-                <Route path="/despre" element={<About />} />
-                <Route path="/ghid" element={<Guide />} />
-                <Route exact="true" path="/blog" element={<Blog />} />
-                <Route path="/blog/:slug" element={<BlogPost />} />
-                <Route path="/termeni-si-conditii" element={<Terms />} />
-                <Route path="/politica-de-confidentialitate" element={<Policy />} />
-                <Route path="/adauga-cladire" element={<AddBuilding />} />
-                <Route path="/multumim" element={<ThankYou />} />
-                <Route path="*" element={<NotFound />} />
-              </Routes>
+              <Switch>
+                <Route exact path="/">
+                  <Home />
+                </Route>
+                <Route path="/despre">
+                  <About />
+                </Route>
+                <Route path="/ghid">
+                  <Guide />
+                </Route>
+                <Route exact path="/blog">
+                  <Blog />
+                </Route>
+                <Route path="/blog/:slug">
+                  <BlogPost />
+                </Route>
+                <Route path="/termeni-si-conditii">
+                  <Terms />
+                </Route>
+                <Route path="/politica-de-confidentialitate">
+                  <Policy />
+                </Route>
+                <Route path="/adauga-cladire">
+                  <AddBuilding />
+                </Route>
+                <Route path="/multumim">
+                  <ThankYou />
+                </Route>
+                <Route component={NotFound} />
+              </Switch>
             </>
           </Router>
         </AntdApp>

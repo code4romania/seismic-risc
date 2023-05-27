@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback } from 'react';
 import { Button, Checkbox, Col, Form, App, Row, Spin } from 'antd';
 import { Trans, t } from '@lingui/macro';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
 import HCaptcha from '@hcaptcha/react-hcaptcha';
 
 import config from '../../config';
@@ -86,7 +86,7 @@ const FormFragment = () => {
   }, [isErrorLoadingRiskCategories]);
 
   if (isFinished) {
-    return <Navigate push to="/multumim" />;
+    return <Redirect push to="/multumim" />;
   }
 
   return isLoadingRiskCategories ? (
