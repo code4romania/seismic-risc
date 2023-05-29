@@ -113,16 +113,19 @@ export default () => {
         </Title>
 
         <AutoComplete
-          allowClear={!searchLoading}
           value={searchInput}
           options={dataSource}
           onChange={onSearchInputChange}
           onSearch={onSearch}
           onSelect={onSelect}
-          placeholder={searchPlaceholderText}
           style={{ width: '80%' }}
         >
-          <Input minLength={3} suffix={<Suffix input={searchInput} loading={searchLoading} />} />
+          <Input
+            minLength={3}
+            placeholder={searchPlaceholderText}
+            allowClear={!searchLoading}
+            suffix={<Suffix input={searchInput} loading={searchLoading} />}
+          />
         </AutoComplete>
       </Col>
     </Row>
