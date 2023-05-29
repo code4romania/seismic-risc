@@ -5,21 +5,18 @@ import useCreateFormValidationRules from '../../hooks/form/useFormValidationRule
 import { defaultFormCheckboxTypeProps, FormCheckboxType } from '../../types';
 
 const FormCheckbox = ({ disabled, fieldName, form, onChange, options, rulesOptions, ...rest }) => {
-  const { getFieldDecorator } = form;
   const createFormValidationRules = useCreateFormValidationRules();
 
   return (
-    <FormField {...rest}>
-      {getFieldDecorator(fieldName, { rules: createFormValidationRules(rulesOptions) })(
-        <Checkbox.Group disabled={disabled} onChange={onChange}>
-          {options.map(({ value, text }) => (
-            <React.Fragment key={`${fieldName}-${value}`}>
-              <Checkbox value={value}>{text}</Checkbox>
-              <br />
-            </React.Fragment>
-          ))}
-        </Checkbox.Group>,
-      )}
+    <FormField {...rest} name={fieldName} rules={createFormValidationRules(rulesOptions)}>
+      <Checkbox.Group disabled={disabled} onChange={onChange}>
+        {options.map(({ value, text }) => (
+          <React.Fragment key={`${fieldName}-${value}`}>
+            <Checkbox value={value}>{text}</Checkbox>
+            <br />
+          </React.Fragment>
+        ))}
+      </Checkbox.Group>
     </FormField>
   );
 };

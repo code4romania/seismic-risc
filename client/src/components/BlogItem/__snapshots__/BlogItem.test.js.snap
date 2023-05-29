@@ -8,10 +8,10 @@ exports[`BlogItem component should be translated correctly in English 1`] = `
       href="//undefined"
     >
       <div
-        class="ant-row blog-item"
+        class="ant-row blog-item css-dev-only-do-not-override-w8mnev"
       >
         <div
-          class="ant-col blog-image ant-col-sm-24 ant-col-md-12 ant-col-lg-10"
+          class="ant-col blog-image ant-col-sm-24 ant-col-md-12 ant-col-lg-10 css-dev-only-do-not-override-w8mnev"
         >
           <img
             alt="Title"
@@ -19,20 +19,20 @@ exports[`BlogItem component should be translated correctly in English 1`] = `
           />
         </div>
         <div
-          class="ant-col blog-meta ant-col-sm-24 ant-col-md-12 ant-col-lg-14"
+          class="ant-col blog-meta ant-col-sm-24 ant-col-md-12 ant-col-lg-14 css-dev-only-do-not-override-w8mnev"
         >
           <span
-            class="ant-typography ant-typography-secondary"
+            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-w8mnev"
           >
             Written by First Last • 1/1/1970
           </span>
           <h3
-            class="ant-typography"
+            class="ant-typography css-dev-only-do-not-override-w8mnev"
           >
             Title
           </h3>
           <div
-            class="ant-typography"
+            class="ant-typography css-dev-only-do-not-override-w8mnev"
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit
           </div>
@@ -51,10 +51,10 @@ exports[`BlogItem component should be translated correctly in Romanian 1`] = `
       href="//undefined"
     >
       <div
-        class="ant-row blog-item"
+        class="ant-row blog-item css-dev-only-do-not-override-w8mnev"
       >
         <div
-          class="ant-col blog-image ant-col-sm-24 ant-col-md-12 ant-col-lg-10"
+          class="ant-col blog-image ant-col-sm-24 ant-col-md-12 ant-col-lg-10 css-dev-only-do-not-override-w8mnev"
         >
           <img
             alt="Title"
@@ -62,20 +62,20 @@ exports[`BlogItem component should be translated correctly in Romanian 1`] = `
           />
         </div>
         <div
-          class="ant-col blog-meta ant-col-sm-24 ant-col-md-12 ant-col-lg-14"
+          class="ant-col blog-meta ant-col-sm-24 ant-col-md-12 ant-col-lg-14 css-dev-only-do-not-override-w8mnev"
         >
           <span
-            class="ant-typography ant-typography-secondary"
+            class="ant-typography ant-typography-secondary css-dev-only-do-not-override-w8mnev"
           >
             Scris de First Last • 1/1/1970
           </span>
           <h3
-            class="ant-typography"
+            class="ant-typography css-dev-only-do-not-override-w8mnev"
           >
             Title
           </h3>
           <div
-            class="ant-typography"
+            class="ant-typography css-dev-only-do-not-override-w8mnev"
           >
             Lorem ipsum dolor sit amet consectetur adipisicing elit
           </div>

@@ -6,8 +6,6 @@ import { useGlobalContext } from '../../context';
 
 import config from '../../config';
 
-const { TabPane } = Tabs;
-
 const { BUILDINGS_URL } = config;
 
 export default () => {
@@ -53,20 +51,58 @@ export default () => {
     }
   };
 
+  const tabItems = [
+    {
+      key: 'all',
+      label: <Trans>All seismic risk classes</Trans>,
+    },
+    {
+      key: 'U1',
+      label: 'U1',
+    },
+    {
+      key: 'U2',
+      label: 'U2',
+    },
+    {
+      key: 'U3',
+      label: 'U3',
+    },
+    {
+      key: 'U4',
+      label: 'U4',
+    },
+    {
+      key: 'RS1',
+      label: 'RS1',
+    },
+    {
+      key: 'RS2',
+      label: 'RS2',
+    },
+    {
+      key: 'RS3',
+      label: 'RS3',
+    },
+    {
+      key: 'RS4',
+      label: 'RS4',
+    },
+    {
+      key: 'n/a',
+      label: <Trans>Other</Trans>,
+    },
+  ];
+
   return (
     <div>
-      <Tabs size="large" animated={false} defaultActiveKey="1" onChange={onChange}>
-        <TabPane tab={<Trans>All seismic risk classes</Trans>} key="all" />
-        <TabPane tab="U1" key="U1" />
-        <TabPane tab="U2" key="U2" />
-        <TabPane tab="U3" key="U3" />
-        <TabPane tab="U4" key="U4" />
-        <TabPane tab="RS1" key="RS1" />
-        <TabPane tab="RS2" key="RS2" />
-        <TabPane tab="RS3" key="RS3" />
-        <TabPane tab="RS4" key="RS4" />
-        <TabPane tab={<Trans>Other</Trans>} key="n/a" />
-      </Tabs>
+      <Tabs
+        size="large"
+        animated={false}
+        defaultActiveKey="1"
+        onChange={onChange}
+        items={tabItems}
+      />
       <HereMapInteractive points={state.filteredPoints || state.initialPoints} />
     </div>
   );

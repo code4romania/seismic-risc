@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { I18nProvider } from '@lingui/react';
 import { i18n } from '@lingui/core';
+import { ConfigProvider, App as AntdApp } from 'antd';
 
 import Home from './containers/home';
 import About from './containers/about';
@@ -22,46 +23,66 @@ import { messages as messagesRo } from './locales/ro/messages';
 i18n.load({
   ro: messagesRo,
 });
+i18n.loadLocaleData({
+  en: { plurals: {} },
+  ro: { plurals: {} },
+});
 i18n.activate('ro');
 
-const App = () => {
+function App() {
   return (
     <I18nProvider i18n={i18n} forceRenderOnLocaleChange={false}>
-      <Router>
-        <ScrollToTop />
-        <Switch>
-          <Route exact path="/">
-            <Home />
-          </Route>
-          <Route path="/despre">
-            <About />
-          </Route>
-          <Route path="/ghid">
-            <Guide />
-          </Route>
-          <Route exact path="/blog">
-            <Blog />
-          </Route>
-          <Route path="/blog/:slug">
-            <BlogPost />
-          </Route>
-          <Route path="/termeni-si-conditii">
-            <Terms />
-          </Route>
-          <Route path="/politica-de-confidentialitate">
-            <Policy />
-          </Route>
-          <Route path="/adauga-cladire">
-            <AddBuilding />
-          </Route>
-          <Route path="/multumim">
-            <ThankYou />
-          </Route>
-          <Route component={NotFound} />
-        </Switch>
-      </Router>
+      <ConfigProvider
+        theme={{
+          token: {
+            colorPrimary: '#EE4036',
+            fontFamily: '"Source Sans Pro", sans-serif',
+            colorLink: '#EE4036',
+            colorLinkHover: '#FA6E61',
+            colorText: '#000000A6',
+          },
+        }}
+      >
+        <AntdApp>
+          <Router>
+            <>
+              <ScrollToTop />
+              <Switch>
+                <Route exact path="/">
+                  <Home />
+                </Route>
+                <Route path="/despre">
+                  <About />
+                </Route>
+                <Route path="/ghid">
+                  <Guide />
+                </Route>
+                <Route exact path="/blog">
+                  <Blog />
+                </Route>
+                <Route path="/blog/:slug">
+                  <BlogPost />
+                </Route>
+                <Route path="/termeni-si-conditii">
+                  <Terms />
+                </Route>
+                <Route path="/politica-de-confidentialitate">
+                  <Policy />
+                </Route>
+                <Route path="/adauga-cladire">
+                  <AddBuilding />
+                </Route>
+                <Route path="/multumim">
+                  <ThankYou />
+                </Route>
+                <Route component={NotFound} />
+              </Switch>
+            </>
+          </Router>
+        </AntdApp>
+      </ConfigProvider>
     </I18nProvider>
   );
-};
+}
 
 export default App;

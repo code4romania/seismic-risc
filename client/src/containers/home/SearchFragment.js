@@ -1,5 +1,6 @@
 import React, { useEffect, useState, useRef } from 'react';
-import { Row, Col, Typography, message, AutoComplete, Input, Icon, Spin, Tooltip } from 'antd';
+import { Row, Col, Typography, App, Input, Spin, Tooltip, AutoComplete } from 'antd';
+import { SearchOutlined } from '@ant-design/icons';
 import { Trans } from '@lingui/macro';
 import { debounce, groupBy } from 'lodash';
 
@@ -14,7 +15,7 @@ const Suffix = ({ input, loading }) => {
     return <Spin />;
   }
   if (!input) {
-    return <Icon type="search" />;
+    return <SearchOutlined />;
   }
   return <span />;
 };
@@ -32,7 +33,7 @@ export default () => {
     searchInput,
     riskCategory,
   } = useGlobalContext();
-
+  const { message } = App.useApp();
   const [searchPlaceholderText, setSearchPlaceholderText] = useState('');
 
   useEffect(() => {
@@ -112,16 +113,19 @@ export default () => {
         </Title>
 
         <AutoComplete
-          allowClear={!searchLoading}
           value={searchInput}
-          dataSource={dataSource}
+          options={dataSource}
           onChange={onSearchInputChange}
           onSearch={onSearch}
           onSelect={onSelect}
-          placeholder={searchPlaceholderText}
           style={{ width: '80%' }}
         >
-          <Input minLength={3} suffix={<Suffix input={searchInput} loading={searchLoading} />} />
+          <Input
+            minLength={3}
+            placeholder={searchPlaceholderText}
+            allowClear={!searchLoading}
+            suffix={<Suffix input={searchInput} loading={searchLoading} />}
+          />
         </AutoComplete>
       </Col>
     </Row>

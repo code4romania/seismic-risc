@@ -7,7 +7,7 @@ const { Title, Text } = Typography;
 const FormSection = ({ label, title, description, children }) => {
   return (
     <>
-      <Row type="flex" gutter={16} align="top" className="form-section-header">
+      <Row type="flex" gutter={16} align="middle" className="form-section-header">
         <Col className="form-chip-container">
           <Chip label={label} />
         </Col>

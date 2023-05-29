@@ -72,3 +72,14 @@ window.H.clustering.Provider = class {
 window.H.clustering.DataPoint = jest.fn().mockReturnValue(jest.fn());
 
 window.H.geo.Rect = jest.fn().mockReturnValue(jest.fn());
+
+// https://github.com/afc163/typeError-cannot-read-property-addListener-of-undefined/commit/873ce9b730a1c21b40c9264e5f29fc2df436136b
+global.matchMedia =
+  global.matchMedia ||
+  function () {
+    return {
+      matches: false,
+      addListener: jest.fn(),
+      removeListener: jest.fn(),
+    };
+  };

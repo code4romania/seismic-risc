@@ -29,7 +29,6 @@ export const FormInputType = {
   ...FormFieldType,
   disabled: bool,
   fieldName: string.isRequired,
-  form: shape().isRequired,
   rulesOptions: arrayOf(
     shape({
       ruleName: oneOf(['email', 'required', 'max', 'integer', 'gdpr', 'captcha']),

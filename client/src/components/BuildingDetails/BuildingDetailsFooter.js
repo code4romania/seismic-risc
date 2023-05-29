@@ -1,7 +1,7 @@
 import React from 'react';
 import { Button, Col, Row } from 'antd';
 import { Trans } from '@lingui/macro';
-import { InfoCircleFilled } from '@ant-design/icons';
+import { InfoCircleFilled, PlusCircleOutlined } from '@ant-design/icons';
 
 const BuildingDetailsFooter = () => (
   <div className="buildingDetailsFooter">
@@ -16,7 +16,7 @@ const BuildingDetailsFooter = () => (
         <Button
           className="add-building"
           href="/adauga-cladire"
-          icon="plus-circle"
+          icon={<PlusCircleOutlined />}
           size="large"
           type="primary"
           ghost

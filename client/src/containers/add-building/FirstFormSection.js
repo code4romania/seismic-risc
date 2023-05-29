@@ -1,7 +1,7 @@
 import React, { useCallback, useMemo, useState } from 'react';
 import PropTypes from 'prop-types';
 import { Trans } from '@lingui/macro';
-import { Col, message, Row, Typography, Upload } from 'antd';
+import { Col, App, Row, Typography, Upload } from 'antd';
 import config from '../../config';
 import FormInput from '../../components/FormInput';
 import FormSection from '../../components/FormSection';
@@ -15,15 +15,12 @@ const { MAP_API_KEY } = config;
 
 const FirstFormSection = ({
   disabledFields,
-  form,
   onCoordinatesChange,
   mapSearchText,
   riskCategories,
 }) => {
   const [fileList, setFileList] = useState([]);
-
-  const { getFieldDecorator } = form;
-
+  const { message } = App.useApp();
   const riskCategoryOptions = useMemo(
     () => riskCategories.map((category) => ({ value: category.value, text: category.displayName })),
     [riskCategories],
@@ -60,7 +57,6 @@ const FirstFormSection = ({
               colon
               disabled={disabledFields}
               fieldName="address"
-              form={form}
               label={<Trans id="form.adress.label" />}
               rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 100 }]}
             />
@@ -70,7 +66,6 @@ const FirstFormSection = ({
               colon
               disabled={disabledFields}
               fieldName="streetNumber"
-              form={form}
               label={<Trans id="form.street_number.label" />}
               rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 50 }]}
             />
@@ -81,7 +76,6 @@ const FirstFormSection = ({
             <FormInput
               disabled={disabledFields}
               fieldName="county"
-              form={form}
               label={<Trans id="form.county.label" />}
               rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 50 }]}
             />
@@ -90,7 +84,6 @@ const FirstFormSection = ({
             <FormInput
               disabled={disabledFields}
               fieldName="locality"
-              form={form}
               label={<Trans id="form.locality.label" />}
               rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 50 }]}
             />
@@ -101,7 +94,6 @@ const FirstFormSection = ({
             <FormSelect
               disabled={disabledFields}
               fieldName="riskCategory"
-              form={form}
               label={<Trans id="form.risk_class.label" />}
               options={riskCategoryOptions}
               rulesOptions={[{ ruleName: 'required' }]}
@@ -111,7 +103,6 @@ const FirstFormSection = ({
             <FormInput
               disabled={disabledFields}
               fieldName="heightRegime"
-              form={form}
               label={<Trans id="form.height_regime.label" />}
               rulesOptions={[{ ruleName: 'required' }, { ruleName: 'max', value: 50 }]}
             />
@@ -137,20 +128,19 @@ const FirstFormSection = ({
         <Paragraph>
           <Trans id="form.images.note" />
         </Paragraph>
-        {getFieldDecorator('images')(
-          <Upload
-            accept=".jpg,.png"
-            beforeUpload={onBeforeUploadHandler}
-            fileList={fileList}
-            listType="picture-card"
-            multiple
-            onChange={onImageUploadChangeHandler}
-            onRemove={onRemoveImageHandler}
-            disabled={disabledFields}
-          >
-            {fileList.length < 5 && <UploadButton name={<Trans id="form.upload_button.label" />} />}
-          </Upload>,
-        )}
+
+        <Upload
+          accept=".jpg,.png"
+          beforeUpload={onBeforeUploadHandler}
+          fileList={fileList}
+          listType="picture-card"
+          multiple
+          onChange={onImageUploadChangeHandler}
+          onRemove={onRemoveImageHandler}
+          disabled={disabledFields}
+        >
+          {fileList.length < 5 && <UploadButton name={<Trans id="form.upload_button.label" />} />}
+        </Upload>
       </Col>
     </FormSection>
   );
@@ -162,7 +152,6 @@ FirstFormSection.defaultProps = {
 };
 
 FirstFormSection.propTypes = {
-  form: PropTypes.shape().isRequired,
   onCoordinatesChange: PropTypes.func.isRequired,
   mapSearchText: PropTypes.string,
   riskCategories: PropTypes.arrayOf(PropTypes.shape()).isRequired,

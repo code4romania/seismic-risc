@@ -2,7 +2,7 @@ div.add-building {
   margin-top: 3rem;
   text-align: left;
 
-  & > h2.ant-typography {
+  &>h2.ant-typography {
     color: $primary-color;
     font-size: 1.5rem;
   }
@@ -39,7 +39,6 @@ div.add-building {
   display: flex;
   flex-direction: column;
   font-size: 14px;
-  white-space: nowrap;
 
   & .anticon {
     font-size: 28px;
