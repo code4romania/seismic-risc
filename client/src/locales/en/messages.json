@@ -151,23 +151,6 @@
     ],
     "extractedComments": []
   },
-  "Blog": {
-    "origin": [
-      [
-        "containers/404/BlogPreviewFragment.js",
-        6
-      ],
-      [
-        "containers/home/BlogPreviewFragment.js",
-        6
-      ],
-      [
-        "containers/thankyou/BlogPreviewFragment.js",
-        6
-      ]
-    ],
-    "extractedComments": []
-  },
   "Certified expert name": {
     "origin": [
       [
@@ -378,15 +361,6 @@
       [
         "containers/home/MapFragment.js",
         68
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Other articles": {
-    "origin": [
-      [
-        "containers/blog-post/BlogPreviewFragment.js",
-        7
       ]
     ],
     "extractedComments": []
