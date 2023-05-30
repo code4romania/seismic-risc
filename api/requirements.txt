@@ -91,7 +91,7 @@ six==1.16.0
     # via
     #   jsonschema
     #   python-dateutil
-sqlparse==0.4.2
+sqlparse==0.4.4
     # via django
 tablib[html,ods,xls,xlsx,yaml]==3.4.0
     # via
