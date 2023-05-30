@@ -69,8 +69,8 @@ class BuildingWorkPerformed(models.Model):
         return self.work_name
 
     class Meta:
-        verbose_name = _("work performed")
-        verbose_name_plural = _("works performed")
+        verbose_name = _("type of work performed")
+        verbose_name_plural = _("types of work performed")
 
 
 class BuildingProximalUtilities(models.Model):
@@ -219,7 +219,7 @@ class Building(models.Model):
 
 class BuildingWorkPerformedEvent(models.Model):
     building = models.ForeignKey(Building, on_delete=models.CASCADE)
-    work_performed = models.ForeignKey(BuildingWorkPerformed, on_delete=models.CASCADE)
+    work_performed = models.ForeignKey(BuildingWorkPerformed, verbose_name=_("work performed"), on_delete=models.CASCADE)
 
     date_performed = models.DateField(_("date work performed"), blank=True)
 

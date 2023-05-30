@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-01 10:54+0300\n"
+"POT-Creation-Date: 2023-05-30 11:37+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -203,12 +203,12 @@ msgstr ""
 msgid "Head of the owners' association"
 msgstr ""
 
-#: buildings/models.py:72 buildings/models.py:144
-msgid "work performed"
+#: buildings/models.py:72
+msgid "type of work performed"
 msgstr ""
 
 #: buildings/models.py:73
-msgid "works performed"
+msgid "types of work performed"
 msgstr ""
 
 #: buildings/models.py:92
@@ -282,6 +282,10 @@ msgstr ""
 
 #: buildings/models.py:135
 msgid "is consolidated"
+msgstr ""
+
+#: buildings/models.py:144 buildings/models.py:222
+msgid "work performed"
 msgstr ""
 
 #: buildings/models.py:149
@@ -478,7 +482,7 @@ msgstr ""
 msgid "Import failed"
 msgstr ""
 
-#: buildings/models.py:312 pages/models.py:9 pages/models.py:95
+#: buildings/models.py:312
 msgid "name"
 msgstr ""
 
@@ -510,18 +514,18 @@ msgstr ""
 msgid "Add image file"
 msgstr ""
 
-#: seismic_site/settings/base.py:147
+#: seismic_site/settings/base.py:143
 msgid "Romanian"
 msgstr ""
 
-#: seismic_site/settings/base.py:148
+#: seismic_site/settings/base.py:144
 msgid "English"
 msgstr ""
 
-#: seismic_site/settings/base.py:297
+#: seismic_site/settings/base.py:286
 msgid "Acasă în Siguranță"
 msgstr ""
 
-#: seismic_site/settings/base.py:299
+#: seismic_site/settings/base.py:288
 msgid "Bulina Roșie"
 msgstr ""
