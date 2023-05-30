@@ -19,7 +19,7 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/${DOCKERIZE_VERS
     tar -C /usr/local/bin -xzvf dockerize-linux-amd64-${DOCKERIZE_VERSION}.tar.gz && \
     rm dockerize-linux-amd64-${DOCKERIZE_VERSION}.tar.gz && \
     chown root:root /usr/local/bin/dockerize && \
-    pip install pip -U
+    pip install "pip==23.*" -U
 
 # install and cache app dependencies
 WORKDIR /opt/
