@@ -1,25 +1,25 @@
 # django and related apps
-django==4.1.7
+django==4.2.1
 django-environ==0.10.0
-django-cors-headers==3.14.0
+django-cors-headers==4.0.0
 django-storages==1.13.2
 
 # django admin
 django-jquery==3.1.0
-django-import-export==3.1.0
+django-import-export==3.2.0
 django-jazzmin==2.6.0
 
 # REST framework
 djangorestframework==3.14.0
-drf-spectacular==0.26.1
+drf-spectacular==0.26.2
 
 # database
 psycopg2<2.10
-dj-database-url==1.3.0
+dj-database-url==2.0.0
 
 # file handling
-boto3==1.26.104
-pillow==9.4.0
+boto3==1.26.142
+pillow==9.5.0
 whitenoise==6.4.0
 
 # misc libraries
