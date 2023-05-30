@@ -287,7 +287,7 @@ JAZZMIN_SETTINGS: Dict[str, Any] = {
     # title of the window
     "site_title": _("Acasă în Siguranță"),
     # Title on the brand, and the login screen (19 chars max)
-    "site_header": _("Bulina Roșie"),
+    "site_header": _("Acasă în Siguranță"),
     # square logo to use for your site, must be present in static files, used for favicon and brand on top left
     "site_logo": "jazzmin/img/logomark-app.svg",
     "site_logo_short": "jazzmin/img/logomark-app.svg",

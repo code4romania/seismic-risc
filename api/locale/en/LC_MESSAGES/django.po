@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-05-30 11:37+0300\n"
+"POT-Creation-Date: 2023-05-30 12:40+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -219,15 +219,15 @@ msgstr ""
 msgid "proximal utilities"
 msgstr ""
 
-#: buildings/models.py:106 buildings/models.py:335
+#: buildings/models.py:106 buildings/models.py:342
 msgid "Pending"
 msgstr ""
 
-#: buildings/models.py:107 buildings/models.py:336
+#: buildings/models.py:107 buildings/models.py:343
 msgid "Accepted"
 msgstr ""
 
-#: buildings/models.py:108 buildings/models.py:337
+#: buildings/models.py:108 buildings/models.py:344
 msgid "Rejected"
 msgstr ""
 
@@ -239,8 +239,8 @@ msgstr ""
 msgid "parent id"
 msgstr "original building"
 
-#: buildings/models.py:114 buildings/models.py:182 buildings/models.py:314
-#: buildings/models.py:367
+#: buildings/models.py:114 buildings/models.py:182 buildings/models.py:321
+#: buildings/models.py:374
 msgid "status"
 msgstr ""
 
@@ -284,7 +284,7 @@ msgstr ""
 msgid "is consolidated"
 msgstr ""
 
-#: buildings/models.py:144 buildings/models.py:222
+#: buildings/models.py:144 buildings/models.py:223
 msgid "work performed"
 msgstr ""
 
@@ -424,93 +424,93 @@ msgstr ""
 msgid "buildings"
 msgstr ""
 
-#: buildings/models.py:224
+#: buildings/models.py:226
 msgid "date work performed"
 msgstr ""
 
-#: buildings/models.py:227
+#: buildings/models.py:229
 msgid "work performed event"
 msgstr ""
 
-#: buildings/models.py:228
+#: buildings/models.py:230
 msgid "work performed events"
 msgstr ""
 
-#: buildings/models.py:233
+#: buildings/models.py:235
 msgid "people under risk"
 msgstr ""
 
-#: buildings/models.py:234
+#: buildings/models.py:236
 msgid "The number of people (residents count) living in RS1 risk buildings"
 msgstr ""
 
-#: buildings/models.py:238
+#: buildings/models.py:240
 msgid "evaluated buildings"
 msgstr ""
 
-#: buildings/models.py:239
+#: buildings/models.py:241
 msgid "All the approved buildings in the database"
 msgstr ""
 
-#: buildings/models.py:243
+#: buildings/models.py:245
 msgid "consolidated buildings"
 msgstr ""
 
-#: buildings/models.py:244
+#: buildings/models.py:246
 msgid ""
 "All the buildings that have been consolidated (risk category is "
 "'consolidated')"
 msgstr ""
 
-#: buildings/models.py:294
+#: buildings/models.py:301
 msgid "statistic"
 msgstr ""
 
-#: buildings/models.py:295
+#: buildings/models.py:302
 msgid "statistics"
 msgstr ""
 
-#: buildings/models.py:307
+#: buildings/models.py:314
 msgid "Not tried"
 msgstr ""
 
-#: buildings/models.py:308
+#: buildings/models.py:315
 msgid "Imported successfully"
 msgstr ""
 
-#: buildings/models.py:309
+#: buildings/models.py:316
 msgid "Import failed"
 msgstr ""
 
-#: buildings/models.py:312
+#: buildings/models.py:319
 msgid "name"
 msgstr ""
 
-#: buildings/models.py:313
+#: buildings/models.py:320
 msgid "file"
 msgstr ""
 
-#: buildings/models.py:317
+#: buildings/models.py:324
 msgid "Data file"
 msgstr ""
 
-#: buildings/models.py:318
+#: buildings/models.py:325
 msgid "Data files"
 msgstr ""
 
-#: buildings/models.py:343
+#: buildings/models.py:350
 msgid "Image name does not contain an extension"
 msgstr ""
 
-#: buildings/models.py:346
+#: buildings/models.py:353
 msgid "Image extension is not accepted. Choose one of {}"
 msgstr ""
 
-#: buildings/models.py:353
+#: buildings/models.py:360
 msgid "Image limit for building is reached ({})"
 msgstr ""
 
-#: buildings/models.py:366
+#: buildings/models.py:373
 msgid "Add image file"
 msgstr ""
 
@@ -522,10 +522,6 @@ msgstr ""
 msgid "English"
 msgstr ""
 
-#: seismic_site/settings/base.py:286
+#: seismic_site/settings/base.py:288 seismic_site/settings/base.py:290
 msgid "Acasă în Siguranță"
-msgstr ""
-
-#: seismic_site/settings/base.py:288
-msgid "Bulina Roșie"
 msgstr ""
