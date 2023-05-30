@@ -58,8 +58,8 @@ export default () => {
   const dataSource = searchResults
     ? searchResults.map((item) => {
         return {
-          value: item.general_id,
-          label: item.street_number
+          id: item.general_id,
+          value: item.street_number
             ? `${item.address}, ${item.street_number} (${item.locality}, ${item.county_code})`
             : `${item.address} (${item.locality}, ${item.county_code})`,
         };
@@ -74,10 +74,10 @@ export default () => {
     }
   };
 
-  const onSelect = (value) => {
-    const selectedBuilding = dataByGeneralId[value] && dataByGeneralId[value][0];
+  const onSelect = (_, { id }) => {
+    const selectedBuilding = dataByGeneralId[id] && dataByGeneralId[id][0];
     if (selectedBuilding) {
-      onSearchSelectBuilding(dataByGeneralId[value][0]);
+      onSearchSelectBuilding(dataByGeneralId[id][0]);
     }
   };
 
