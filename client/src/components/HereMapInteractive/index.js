@@ -25,6 +25,8 @@ const HereMapInteractive = (props) => {
   useEffect(() => {
     if (searchSelectedBuilding) {
       onSelectBuilding(searchSelectedBuilding);
+    } else {
+      onHideBuilding();
     }
   }, [searchSelectedBuilding]);
 

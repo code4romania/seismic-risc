@@ -31,7 +31,11 @@ const AppProvider = ({ children }) => {
   };
 
   const onSearchInputChange = (searchInput) => {
-    dispatch({ type: 'SEARCH_INPUT', payload: searchInput });
+    if (!searchInput) {
+      dispatch({ type: 'CLEAR_SEARCH', payload: searchInput });
+    } else {
+      dispatch({ type: 'SEARCH_INPUT', payload: searchInput });
+    }
   };
 
   const onSearchLoading = (isLoading) => {
