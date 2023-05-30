@@ -278,6 +278,11 @@ class Statistic(models.Model):
             if building.residents_count:
                 people_under_risk += int(building.residents_count)
 
+        # If there are no people under risk in the DB, return the default value
+        # This is done until we have proper values in the DB
+        if people_under_risk == 0:
+            return settings.DEFAULT_PEOPLE_UNDER_RISK
+
         return people_under_risk
 
     @staticmethod
