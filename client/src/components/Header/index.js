@@ -68,11 +68,6 @@ export default () => {
               </NavLink>
             </li>
             <li>
-              <NavLink className="menu-item" to="/blog" activeClassName="active">
-                Blog
-              </NavLink>
-            </li>
-            <li>
               <NavLink className="menu-item" to="/contact" activeClassName="active">
                 <Trans>Contact us</Trans>
               </NavLink>

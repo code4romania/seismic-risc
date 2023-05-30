@@ -7,8 +7,6 @@ import { ConfigProvider, App as AntdApp } from 'antd';
 import Home from './containers/home';
 import About from './containers/about';
 import Guide from './containers/guide';
-import Blog from './containers/blog';
-import BlogPost from './containers/blog-post';
 import Terms from './containers/Terms';
 import Policy from './containers/Policy';
 import NotFound from './containers/404/404';
@@ -56,12 +54,6 @@ function App() {
                 </Route>
                 <Route path="/ghid">
                   <Guide />
-                </Route>
-                <Route exact path="/blog">
-                  <Blog />
-                </Route>
-                <Route path="/blog/:slug">
-                  <BlogPost />
                 </Route>
                 <Route path="/termeni-si-conditii">
                   <Terms />
