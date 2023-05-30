@@ -14,6 +14,7 @@ import Policy from './containers/Policy';
 import NotFound from './containers/404/404';
 import AddBuilding from './containers/add-building';
 import ThankYou from './containers/thankyou';
+import BuildingMap from './containers/building-map';
 import ScrollToTop from './components/ScrollToTop';
 
 import './styles/theme.scss';
@@ -74,6 +75,9 @@ function App() {
                 </Route>
                 <Route path="/multumim">
                   <ThankYou />
+                </Route>
+                <Route path="/harta">
+                  <BuildingMap showTitle={false} />
                 </Route>
                 <Route component={NotFound} />
               </Switch>
