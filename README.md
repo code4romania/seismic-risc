@@ -1,4 +1,4 @@
-# Bulina Roșie
+# Acasă în Siguranță
 
 [![GitHub contributors](https://img.shields.io/github/contributors/code4romania/seismic-risc.svg)](https://github.com/code4romania/seismic-risc/graphs/contributors)
 [![GitHub last commit](https://img.shields.io/github/last-commit/code4romania/seismic-risc.svg)](https://github.com/code4romania/seismic-risc/commits/develop)
@@ -66,31 +66,45 @@ and it makes sure that you have useful information at your disposal at all times
 **Let's save lives together.**
 
 <details>
-  <summary><b> TABLE OF CONTENTS </b></summary>
+  <summary> <b> TABLE OF CONTENTS</b> <i>(click to expand)</i> </summary>
 
-- [Bulina Roșie](#bulina-roșie)
-    - [Contributing](#contributing)
-    - [Built With](#built-with)
-        - [Programming languages](#programming-languages)
-        - [Frameworks](#frameworks)
-        - [Package managers](#package-managers)
-        - [Code styling](#code-styling)
-        - [Database technology & provider](#database-technology--provider)
-    - [Getting started](#getting-started)
-        - [Pre-requisites](#pre-requisites)
-        - [Initial set-up](#initial-set-up)
-        - [External services API keys](#external-services-api-keys)
-        - [Starting the project](#starting-the-project)
-        - [Starting the project without docker](#starting-the-project-without-docker)
-        - [Development](#development)
-        - [Known Issues](#known-issues)
-    - [Management Commands](#management-commands)
-    - [Testing](#testing)
-    - [Production](#production)
-    - [Client Deployment](#client-deployment)
-    - [Feedback](#feedback)
-    - [License](#license)
-    - [About Code4Ro](#about-code4ro)
+<!-- TOC -->
+* [Acasă în Siguranță](#acasă-în-siguranță)
+  * [Contributing](#contributing)
+  * [Built With](#built-with)
+    * [Programming languages](#programming-languages)
+    * [Frameworks](#frameworks)
+    * [Package managers](#package-managers)
+    * [Code styling](#code-styling)
+    * [Database technology & provider](#database-technology--provider)
+  * [Getting started](#getting-started)
+    * [Pre-requisites](#pre-requisites)
+    * [Initial set-up](#initial-set-up)
+      * [Initialising all the services](#initialising-all-the-services)
+      * [Backing up and restoring the database in case of an upgrade](#backing-up-and-restoring-the-database-in-case-of-an-upgrade)
+    * [Environment variables](#environment-variables)
+      * [Deployment variables](#deployment-variables)
+      * [External services API keys](#external-services-api-keys)
+        * [HERE Maps API Key](#here-maps-api-key)
+        * [hCAPTCHA API Key](#hcaptcha-api-key)
+    * [Starting the project](#starting-the-project)
+    * [Starting the project without docker](#starting-the-project-without-docker)
+      * [Windows platform](#windows-platform)
+        * [Prerequisites](#prerequisites)
+        * [Steps to set your environment](#steps-to-set-your-environment)
+      * [Steps needed to start development servers](#steps-needed-to-start-development-servers)
+    * [Development](#development)
+    * [Known Issues](#known-issues)
+      * [Client hot-reload on Windows Docker is not working](#client-hot-reload-on-windows-docker-is-not-working)
+      * [In VS Code, ESLint fails to load the Prettier plugin](#in-vs-code-eslint-fails-to-load-the-prettier-plugin)
+  * [Management Commands](#management-commands)
+  * [Testing](#testing)
+  * [Production](#production)
+  * [Client Deployment](#client-deployment)
+  * [Feedback](#feedback)
+  * [License](#license)
+  * [About Code4Ro](#about-code4ro)
+<!-- TOC -->
 
 </details>
 
