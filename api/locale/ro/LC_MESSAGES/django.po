@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2023-04-01 10:54+0300\n"
+"POT-Creation-Date: 2023-05-30 11:37+0300\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -211,13 +211,13 @@ msgstr "Chiriaș"
 msgid "Head of the owners' association"
 msgstr "Reprezentant cu funcție de conducere din asociația de proprietari"
 
-#: buildings/models.py:72 buildings/models.py:144
-msgid "work performed"
-msgstr "lucrare efectuată"
+#: buildings/models.py:72
+msgid "type of work performed"
+msgstr "tip de lucrare"
 
 #: buildings/models.py:73
-msgid "works performed"
-msgstr "lucrări efectuate"
+msgid "types of work performed"
+msgstr "tipuri de lucrări"
 
 #: buildings/models.py:92
 msgid "proximal utility"
@@ -291,6 +291,10 @@ msgstr "clădirea există"
 #: buildings/models.py:135
 msgid "is consolidated"
 msgstr "clădire consolidată"
+
+#: buildings/models.py:144 buildings/models.py:222
+msgid "work performed"
+msgstr "lucrare efectuată"
 
 #: buildings/models.py:149
 msgid "apartment count"
@@ -490,7 +494,7 @@ msgstr "Importat cu succes"
 msgid "Import failed"
 msgstr "Importare eșuată"
 
-#: buildings/models.py:312 pages/models.py:9 pages/models.py:95
+#: buildings/models.py:312
 msgid "name"
 msgstr "nume"
 
@@ -522,21 +526,24 @@ msgstr "Limita de imagini pentru clădire a fost atinsă ({})"
 msgid "Add image file"
 msgstr "Adaugă o imagine"
 
-#: seismic_site/settings/base.py:147
+#: seismic_site/settings/base.py:143
 msgid "Romanian"
 msgstr "Română"
 
-#: seismic_site/settings/base.py:148
+#: seismic_site/settings/base.py:144
 msgid "English"
 msgstr "Engleză"
 
-#: seismic_site/settings/base.py:297
+#: seismic_site/settings/base.py:286
 msgid "Acasă în Siguranță"
 msgstr "Acasă în Siguranță"
 
-#: seismic_site/settings/base.py:299
+#: seismic_site/settings/base.py:288
 msgid "Bulina Roșie"
 msgstr "Bulina Roșie"
+
+#~ msgid "works performed"
+#~ msgstr "tipuri de lucrări"
 
 #~ msgid "Sector 1"
 #~ msgstr "Sector 1"
