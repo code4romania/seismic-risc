@@ -277,6 +277,8 @@ QUALITY_DEFINITIONS = {"JPEG": 85, "PNG": 80}
 ALLOWED_IMAGES_LIMIT = 3
 IMAGE_RESIZE = 400
 
+DEFAULT_PEOPLE_UNDER_RISK: int = 14245
+
 # django-jazzmin
 # -------------------------------------------------------------------------------
 # django-jazzmin - https://django-jazzmin.readthedocs.io/configuration/
