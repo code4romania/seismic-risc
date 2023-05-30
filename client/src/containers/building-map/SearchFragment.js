@@ -20,7 +20,7 @@ const Suffix = ({ input, loading }) => {
   return <span />;
 };
 
-export default () => {
+export default ({ showTitle = true }) => {
   const {
     currentLanguage,
     searchBuildings,
@@ -89,28 +89,30 @@ export default () => {
       style={{ marginTop: '2rem', marginBottom: '2rem', textAlign: 'center' }}
     >
       <Col sm={26} md={16}>
-        <Title level={3}>
-          <Trans>
-            Check here if a building is on the{' '}
-            {/* @TODO replace lorem text with actual text + translations */}
-            <Tooltip
-              title="
+        {showTitle && (
+          <Title level={3}>
+            <Trans>
+              Check here if a building is on the{' '}
+              {/* @TODO replace lorem text with actual text + translations */}
+              <Tooltip
+                title="
                   Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsam nemo, cum ratione
                   explicabo architecto ex dolore incidunt nisi quisquam dolores? Facere ipsa quam
                   modi laborum possimus, accusantium dolor a adipisci.
                 "
-              placement="top"
-              trigger={['hover', 'click']}
-            >
-              <div className="badge">
-                <span>seismic risk</span>
-                <InfoIcon />
-              </div>
-            </Tooltip>{' '}
-            list
-          </Trans>
-          :
-        </Title>
+                placement="top"
+                trigger={['hover', 'click']}
+              >
+                <div className="badge">
+                  <span>seismic risk</span>
+                  <InfoIcon />
+                </div>
+              </Tooltip>{' '}
+              list
+            </Trans>
+            :
+          </Title>
+        )}
 
         <AutoComplete
           value={searchInput}
