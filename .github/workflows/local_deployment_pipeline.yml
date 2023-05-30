@@ -17,13 +17,13 @@ on:
 
 jobs:
   ubuntu-set-up:
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
     steps:
-    - uses: actions/checkout@v2
+    - uses: actions/checkout@v3
     - name: Set-up Docker
       run: |
         make install-docker-ubuntu
-    - name: Create envirnoment file
+    - name: Create environment file
       run: |
         cp .env.dev .env
     - name: Initialize environment
