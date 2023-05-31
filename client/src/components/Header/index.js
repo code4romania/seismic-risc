@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Button, Dropdown, Layout } from 'antd';
 import { DownOutlined, GlobalOutlined, MenuOutlined, PlusCircleFilled } from '@ant-design/icons';
 import { Trans } from '@lingui/macro';
