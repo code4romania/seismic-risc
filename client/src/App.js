@@ -5,13 +5,13 @@ import { i18n } from '@lingui/core';
 import { ConfigProvider, App as AntdApp } from 'antd';
 
 import Home from './containers/home';
-import About from './containers/about';
 import Terms from './containers/Terms';
 import Policy from './containers/Policy';
 import NotFound from './containers/404/404';
 import AddBuilding from './containers/add-building';
 import ThankYou from './containers/thankyou';
 import ScrollToTop from './components/ScrollToTop';
+import BuildingMap from './containers/building-map';
 
 import './styles/theme.scss';
 
@@ -48,9 +48,6 @@ function App() {
                 <Route exact path="/">
                   <Home />
                 </Route>
-                <Route path="/despre">
-                  <About />
-                </Route>
                 <Route path="/termeni-si-conditii">
                   <Terms />
                 </Route>
@@ -62,6 +59,9 @@ function App() {
                 </Route>
                 <Route path="/multumim">
                   <ThankYou />
+                </Route>
+                <Route path="/harta">
+                  <BuildingMap showTitle={false} />
                 </Route>
                 <Route component={NotFound} />
               </Switch>
