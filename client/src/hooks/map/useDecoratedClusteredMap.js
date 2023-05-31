@@ -85,7 +85,6 @@ export default function useDecoratedClusteredMap(currentMap, points) {
     if (!currentMap || !zoom) {
       return;
     }
-    currentMap.getViewPort().resize();
     if (selectedMarker) {
       const position = { ...selectedMarker.getData().getPosition() };
       currentMap.getViewModel().setLookAtData({ position, zoom }, true);
