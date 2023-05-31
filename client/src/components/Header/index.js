@@ -1,5 +1,5 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { Button, Dropdown, Layout } from 'antd';
 import { DownOutlined, GlobalOutlined, MenuOutlined, PlusCircleFilled } from '@ant-design/icons';
 import { Trans } from '@lingui/macro';
@@ -57,26 +57,6 @@ export default () => {
             </Link>
           </div>
           <ul className={`App-menu ${showMenu ? 'show' : ''}`}>
-            <li>
-              <NavLink className="menu-item" to="/despre" exact activeClassName="active">
-                <Trans>About Project</Trans>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className="menu-item" to="/ghid" activeClassName="active">
-                <Trans>Guide</Trans>
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className="menu-item" to="/blog" activeClassName="active">
-                Blog
-              </NavLink>
-            </li>
-            <li>
-              <NavLink className="menu-item" to="/contact" activeClassName="active">
-                <Trans>Contact us</Trans>
-              </NavLink>
-            </li>
             <li>
               <Button
                 className="add-building"

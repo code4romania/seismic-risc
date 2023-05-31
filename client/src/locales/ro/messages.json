@@ -159,24 +159,6 @@
     ],
     "extractedComments": []
   },
-  "Blog": {
-    "translation": "Blog",
-    "origin": [
-      [
-        "containers/404/BlogPreviewFragment.js",
-        6
-      ],
-      [
-        "containers/home/BlogPreviewFragment.js",
-        6
-      ],
-      [
-        "containers/thankyou/BlogPreviewFragment.js",
-        6
-      ]
-    ],
-    "extractedComments": []
-  },
   "Certified expert name": {
     "translation": "Numele expertului evaluator",
     "origin": [
@@ -407,16 +389,6 @@
       [
         "containers/home/MapFragment.js",
         68
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Other articles": {
-    "translation": "Alte articole",
-    "origin": [
-      [
-        "containers/blog-post/BlogPreviewFragment.js",
-        7
       ]
     ],
     "extractedComments": []
