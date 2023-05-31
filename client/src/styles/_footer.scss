@@ -8,11 +8,6 @@
   margin-top: auto;
 }
 
-.footer__logos {
-  display: flex;
-  flex-direction: column;
-}
-
 .footerLogo {
   margin: 0 0 40px;
 }
@@ -48,11 +43,6 @@ a.footer__donate {
 }
 
 @media (min-width: $breakpoint-tablet) {
-  .footer__logos {
-    flex-direction: row;
-    justify-content: center;
-  }
-
   .footerLogo {
     margin: 0 30px;
   }
