@@ -12,7 +12,6 @@ import AddBuilding from './containers/add-building';
 import ThankYou from './containers/thankyou';
 import BuildingMap from './containers/building-map';
 import ScrollToTop from './components/ScrollToTop';
-import BuildingMap from './containers/building-map';
 
 import './styles/theme.scss';
 
