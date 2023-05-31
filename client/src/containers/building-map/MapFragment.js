@@ -89,7 +89,7 @@ export default () => {
       label: 'RS4',
     },
     {
-      key: 'n/a',
+      key: 'NA',
       label: <Trans>Other</Trans>,
     },
   ];
