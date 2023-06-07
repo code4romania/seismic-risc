@@ -41,7 +41,8 @@
         15
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "About Project": {
     "translation": "Despre Proiect",
@@ -51,7 +52,8 @@
         78
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "About Vulnerable Romania": {
     "translation": "Despre Romania Vulnerabilă",
@@ -67,28 +69,8 @@
     "translation": "Despre proiect",
     "origin": [
       [
-        "components/Footer/index.js",
-        45
-      ],
-      [
-        "containers/404/HeroFragment.js",
-        25
-      ],
-      [
-        "containers/about/HeroFragment.js",
-        15
-      ],
-      [
-        "containers/about/TitleFragment.js",
-        10
-      ],
-      [
         "containers/home/ParagraphFragment.js",
-        13
-      ],
-      [
-        "containers/thankyou/HeroFragment.js",
-        28
+        14
       ]
     ],
     "extractedComments": []
@@ -98,15 +80,15 @@
     "origin": [
       [
         "components/Footer/index.js",
-        50
+        20
       ],
       [
         "components/Header/index.js",
-        106
+        70
       ],
       [
         "containers/add-building/FormFragment.js",
-        156
+        149
       ],
       [
         "containers/add-building/HeroFragment.js",
@@ -129,8 +111,8 @@
     "translation": "Toate clasele de risc seismic",
     "origin": [
       [
-        "containers/home/MapFragment.js",
-        59
+        "containers/building-map/MapFragment.js",
+        57
       ]
     ],
     "extractedComments": []
@@ -143,7 +125,8 @@
         42
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "Back to home page": {
     "translation": "Înapoi la prima pagină",
@@ -155,6 +138,24 @@
       [
         "containers/thankyou/HeroFragment.js",
         25
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Blog": {
+    "translation": "",
+    "origin": [
+      [
+        "containers/404/BlogPreviewFragment.js",
+        6
+      ],
+      [
+        "containers/home/BlogPreviewFragment.js",
+        6
+      ],
+      [
+        "containers/thankyou/BlogPreviewFragment.js",
+        6
       ]
     ],
     "extractedComments": []
@@ -173,8 +174,8 @@
     "translation": "Verifică aici dacă o clădire se află pe lista de <0><1><2>risc seismic</2><3/></1></0>",
     "origin": [
       [
-        "containers/home/SearchFragment.js",
-        92
+        "containers/building-map/SearchFragment.js",
+        94
       ]
     ],
     "extractedComments": []
@@ -183,8 +184,8 @@
     "translation": "Clădiri consolidate",
     "origin": [
       [
-        "containers/home/StatisticFragment.js",
-        81
+        "containers/building-map/StatisticFragment.js",
+        82
       ]
     ],
     "extractedComments": []
@@ -207,7 +208,8 @@
         93
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "DONATE": {
     "translation": "DONEAZĂ",
@@ -231,7 +233,8 @@
         21
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "Do you have more details about this building?": {
     "translation": "Ai alte informații despre această clădire?",
@@ -248,7 +251,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        60
+        30
       ]
     ],
     "extractedComments": []
@@ -261,14 +264,15 @@
         36
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "Evaluated buildings": {
     "translation": "Clădiri evaluate",
     "origin": [
       [
-        "containers/home/StatisticFragment.js",
-        73
+        "containers/building-map/StatisticFragment.js",
+        74
       ]
     ],
     "extractedComments": []
@@ -291,7 +295,8 @@
         83
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "Height regime": {
     "translation": "Regimul de înălțime",
@@ -311,7 +316,8 @@
         22
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "Implemented by": {
     "translation": "Implementat de",
@@ -321,7 +327,8 @@
         30
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "In the meantime, keep being awesome!": {
     "translation": "Între timp, continuă să fii minunat!",
@@ -337,7 +344,7 @@
     "translation": "Informații în curs de actualizare",
     "origin": [
       [
-        "containers/home/StatisticFragment.js",
+        "containers/building-map/StatisticFragment.js",
         25
       ]
     ],
@@ -387,8 +394,8 @@
     "translation": "Altele",
     "origin": [
       [
-        "containers/home/MapFragment.js",
-        68
+        "containers/building-map/MapFragment.js",
+        93
       ]
     ],
     "extractedComments": []
@@ -407,8 +414,8 @@
     "translation": "Oameni sub risc",
     "origin": [
       [
-        "containers/home/StatisticFragment.js",
-        65
+        "containers/building-map/StatisticFragment.js",
+        66
       ]
     ],
     "extractedComments": []
@@ -428,7 +435,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        67
+        37
       ]
     ],
     "extractedComments": []
@@ -448,7 +455,7 @@
     "origin": [
       [
         "components/SearchResults/index.js",
-        20
+        21
       ]
     ],
     "extractedComments": []
@@ -458,11 +465,7 @@
     "origin": [
       [
         "components/BlogPreview/index.js",
-        77
-      ],
-      [
-        "containers/blog/Blog.js",
-        69
+        78
       ]
     ],
     "extractedComments": []
@@ -472,7 +475,7 @@
     "origin": [
       [
         "components/Sharing/index.js",
-        19
+        21
       ]
     ],
     "extractedComments": []
@@ -482,7 +485,7 @@
     "origin": [
       [
         "components/Footer/index.js",
-        72
+        42
       ]
     ],
     "extractedComments": []
@@ -513,10 +516,6 @@
       [
         "components/BlogItem/index.js",
         21
-      ],
-      [
-        "containers/blog-post/HeroFragment.js",
-        23
       ]
     ],
     "extractedComments": []
@@ -529,7 +528,8 @@
         12
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "about.last_paragraph": {
     "translation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque nec nam aliquam sem et tortor consequat id. Varius morbi enim nunc faucibus a pellentesque sit amet porttitor. Diam donec adipiscing tristique risus nec feugiat in. Purus in mollis nunc sed id semper. Adipiscing at in tellus integer feugiat scelerisque. Vitae nunc sed velit dignissim sodales ut eu sem. Lacus viverra vitae congue eu consequat. Lacus vestibulum sed arcu non odio euismod lacinia at. Tincidunt nunc pulvinar sapien et ligula ullamcorper. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. Fermentum et sollicitudin ac orci phasellus egestas tellus rutrum. Nam libero justo laoreet sit amet cursus. Augue ut lectus arcu bibendum at varius. Duis at tellus at urna condimentum. Ornare suspendisse sed nisi lacus sed viverra tellus in hac. Varius quam quisque id diam vel quam elementum. Malesuada bibendum arcu vitae elementum curabitur vitae nunc. Viverra maecenas accumsan lacus vel.",
@@ -539,7 +539,8 @@
         12
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "about.project_details": {
     "translation": "Bulina Roșie este proiectat de Code for Romania în Civic Labs și dezvoltat pro-bono de către voluntarii organizației noastre. Acest proiect nu are nicio altă sursă de finanțare și este administrat în întregime din donațiile voastre.",
@@ -549,7 +550,8 @@
         13
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "about.second_paragraph": {
     "translation": "The solution you are using right now is a platform that responds to the need to increase the the representativeness of non-profit organizations, through clear and transparent selection mechanisms that carry out the sector's missions in decision-making forums. VotONG is, therefore, the necessary piece of infrastructure for the self-regulation of the NGO sector in Romania, which in time, through the active participation of organizations, will lead to an efficient communication and consultation between all actors in the field. That is why we invite you to join us in this endeavor because together we can trigger the positive changes we want for the Romanian society. Together we are invincible. Both us and our beneficiaries. Romania.",
@@ -559,7 +561,8 @@
         15
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "about.third_paragraph": {
     "translation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque nec nam aliquam sem et tortor consequat id. Varius morbi enim nunc faucibus a pellentesque sit amet porttitor. Diam donec adipiscing tristique risus nec feugiat in. Purus in mollis nunc sed id semper. Adipiscing at in tellus integer feugiat scelerisque. Vitae nunc sed velit dignissim sodales ut eu sem. Lacus viverra vitae congue eu consequat.",
@@ -569,14 +572,15 @@
         12
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "form.adress.label": {
     "translation": "Stradă:",
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        64
+        60
       ]
     ],
     "extractedComments": []
@@ -686,7 +690,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        85
+        79
       ]
     ],
     "extractedComments": []
@@ -726,7 +730,7 @@
     "origin": [
       [
         "containers/add-building/FormFragment.js",
-        49
+        55
       ]
     ],
     "extractedComments": []
@@ -746,7 +750,7 @@
     "origin": [
       [
         "containers/add-building/FormFragment.js",
-        42
+        48
       ]
     ],
     "extractedComments": []
@@ -756,7 +760,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        122
+        113
       ]
     ],
     "extractedComments": []
@@ -766,7 +770,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        55
+        52
       ]
     ],
     "extractedComments": []
@@ -787,7 +791,7 @@
     "origin": [
       [
         "containers/add-building/FormFragment.js",
-        120
+        118
       ]
     ],
     "extractedComments": []
@@ -817,7 +821,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        115
+        106
       ]
     ],
     "extractedComments": []
@@ -827,7 +831,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        135
+        126
       ]
     ],
     "extractedComments": []
@@ -837,7 +841,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        138
+        129
       ]
     ],
     "extractedComments": []
@@ -867,7 +871,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        94
+        87
       ]
     ],
     "extractedComments": []
@@ -1007,7 +1011,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        105
+        97
       ]
     ],
     "extractedComments": []
@@ -1047,7 +1051,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        74
+        69
       ]
     ],
     "extractedComments": []
@@ -1167,7 +1171,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        151
+        142
       ]
     ],
     "extractedComments": []
@@ -1207,7 +1211,7 @@
     "origin": [
       [
         "containers/add-building/FirstFormSection.js",
-        36
+        33
       ]
     ],
     "extractedComments": []
@@ -1290,7 +1294,7 @@
     "origin": [
       [
         "components/BuildingDetails/BuildingDetailsTitle.js",
-        24
+        23
       ]
     ],
     "extractedComments": []

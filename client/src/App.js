@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import { I18nProvider } from '@lingui/react';
 import { i18n } from '@lingui/core';
@@ -12,23 +12,15 @@ import AddBuilding from './containers/add-building';
 import ThankYou from './containers/thankyou';
 import BuildingMap from './containers/building-map';
 import ScrollToTop from './components/ScrollToTop';
-
+import { dynamicActivate, getCurrentLanguage } from './utils/i18n';
 import './styles/theme.scss';
 
-import { messages as messagesRo } from './locales/ro/messages';
-
-i18n.load({
-  ro: messagesRo,
-});
-i18n.loadLocaleData({
-  en: { plurals: {} },
-  ro: { plurals: {} },
-});
-i18n.activate('ro');
-
 function App() {
+  useEffect(() => {
+    dynamicActivate(getCurrentLanguage());
+  }, []);
   return (
-    <I18nProvider i18n={i18n} forceRenderOnLocaleChange={false}>
+    <I18nProvider i18n={i18n}>
       <ConfigProvider
         theme={{
           token: {
