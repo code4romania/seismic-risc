@@ -108,11 +108,11 @@ const FirstFormSection = ({
             />
           </Col>
         </Row>
-        <Row>
+        {/* TODO add text for this translation id <Row>
           <Paragraph>
             <Trans id="form.first_section.extra" />
           </Paragraph>
-        </Row>
+        </Row> */}
       </Col>
       <Col xs={24} lg={10}>
         <HereMapAddBuilding
