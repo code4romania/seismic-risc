@@ -1,8 +1,8 @@
 import React, { createContext, useReducer, useContext } from 'react';
-import { i18n } from '@lingui/core';
 
 import reducer from './reducer';
 import config from './config';
+import { dynamicActivate, getCurrentLanguage } from './utils/i18n';
 
 const { BUILDINGS_URL } = config;
 
@@ -16,7 +16,7 @@ const initialState = {
   searchSelectedBuilding: null,
   showSearchResults: false,
   searchError: null,
-  currentLanguage: 'ro',
+  currentLanguage: getCurrentLanguage(),
   riskCategory: '',
 };
 
@@ -24,10 +24,8 @@ const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const languageChange = async (locale) => {
-    const { messages } = await import(`./locales/${locale}/messages`);
-    i18n.load(locale, messages);
-    i18n.activate(locale);
     dispatch({ type: 'LANGUAGE_CHANGE', payload: locale });
+    dynamicActivate(locale, true);
   };
 
   const onSearchInputChange = (searchInput) => {
