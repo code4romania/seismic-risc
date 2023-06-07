@@ -23,13 +23,18 @@
 .footer__links {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
   margin-top: 16px;
 
   a {
     margin: 6px 12px;
     text-decoration: underline;
     color: $footer-text-color;
+  }
+}
+
+@media screen and (min-width: 820px) {
+  .footer__links {
+    justify-content: center;
   }
 }
 
