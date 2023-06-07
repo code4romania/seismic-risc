@@ -20,7 +20,7 @@ function App() {
     dynamicActivate(getCurrentLanguage());
   }, []);
   return (
-    <I18nProvider i18n={i18n} forceRenderOnLocaleChange={false}>
+    <I18nProvider i18n={i18n}>
       <ConfigProvider
         theme={{
           token: {
