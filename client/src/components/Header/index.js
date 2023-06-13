@@ -52,7 +52,10 @@ export default () => {
       <Header className={showMenu ? 'overlay' : ''}>
         <div className="container">
           <div className="App-logo">
-            <Link to="/">
+            <Link
+              to={{ pathname: 'https://acasa.website-factory.heroesof.tech/ro' }}
+              target="_blank"
+            >
               <img src={logo} alt="Bulina Roșie logo" />
             </Link>
           </div>
