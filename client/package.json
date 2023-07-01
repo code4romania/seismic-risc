@@ -4,7 +4,7 @@
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^5.1.2",
-    "@fontsource/source-sans-pro": "^5.0.1",
+    "@fontsource/source-sans-pro": "^5.0.3",
     "@hcaptcha/react-hcaptcha": "^1.8.1",
     "@lingui/core": "^3.13.0",
     "@lingui/macro": "^3.14.0",
