@@ -65,7 +65,7 @@
     "@babel/eslint-parser": "^7.21.8",
     "@babel/plugin-proposal-private-property-in-object": "^7.21.0",
     "@babel/plugin-transform-private-property-in-object": "^7.22.0",
-    "@babel/preset-env": "^7.22.0",
+    "@babel/preset-env": "^7.22.9",
     "@babel/preset-react": "^7.22.0",
     "@lingui/babel-preset-react": "^2.9.2",
     "@lingui/cli": "^3.12.1",
