@@ -1,6 +1,5 @@
 import React from 'react';
 import SearchFragment from './SearchFragment';
-import StatisticFragment from './StatisticFragment';
 import MapFragment from './MapFragment';
 
 export default ({ showTitle = true }) => {
@@ -8,7 +7,6 @@ export default ({ showTitle = true }) => {
     <div className="container">
       <SearchFragment showTitle={showTitle} />
       <MapFragment />
-      <StatisticFragment />
     </div>
   );
 };
