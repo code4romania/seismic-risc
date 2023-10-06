@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, Skeleton, Row, Descriptions, Empty } from 'antd';
 import { Trans } from '@lingui/macro';
 import BuildingDetailsTitle from './BuildingDetailsTitle';
-import BuildingDetailsFooter from './BuildingDetailsFooter';
+// import BuildingDetailsFooter from './BuildingDetailsFooter';
 
 const BuildingDetails = ({ onClose, isLoading, details }) => {
   const detailsItems = details
@@ -53,7 +53,7 @@ const BuildingDetails = ({ onClose, isLoading, details }) => {
             <Empty description={<Trans>Information missing</Trans>} />
           </Row>
         )}
-        <BuildingDetailsFooter />
+        {/* <BuildingDetailsFooter /> */}
       </Skeleton>
     </Card>
   );
