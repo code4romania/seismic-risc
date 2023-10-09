@@ -75,7 +75,7 @@ django-jazzmin==2.6.0
     # via -r requirements.txt
 django-jquery==3.1.0
     # via -r requirements.txt
-django-storages==1.14.1
+django-storages==1.14.2
     # via -r requirements.txt
 djangorestframework==3.14.0
     # via
@@ -89,7 +89,7 @@ et-xmlfile==1.1.0
     #   openpyxl
 executing==2.0.0
     # via stack-data
-faker==19.6.2
+faker==19.8.0
     # via -r requirements-dev.in
 flake8==6.1.0
     # via pytest-flake8

@@ -43,7 +43,7 @@ django-jazzmin==2.6.0
     # via -r requirements.in
 django-jquery==3.1.0
     # via -r requirements.in
-django-storages==1.14.1
+django-storages==1.14.2
     # via -r requirements.in
 djangorestframework==3.14.0
     # via

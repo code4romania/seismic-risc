@@ -1,4 +1,4 @@
-FROM python:3.11.2-slim-bullseye
+FROM python:3.11.6-slim-bookworm
 
 ARG ENVIRONMENT
 

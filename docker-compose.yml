@@ -3,7 +3,7 @@ version: "3.8"
 services:
   db:
     container_name: seismic-db
-    image: postgres:15.2-alpine3.17
+    image: postgres:15.4-bookworm
     env_file:
       - .env
     ports:
