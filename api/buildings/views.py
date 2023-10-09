@@ -1,15 +1,22 @@
+from typing import List
+
 from django.conf import settings
 from django.contrib.postgres.search import TrigramSimilarity
-from drf_spectacular.utils import (
-    extend_schema,
-    OpenApiParameter,
-)
+from django.core.cache import cache
+from drf_spectacular.utils import OpenApiParameter, extend_schema
 from rest_framework import permissions, status, viewsets
 from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework.throttling import AnonRateThrottle
 
-from .models import Building, BuildingProximalUtilities, BuildingWorkPerformed, Statistic
+from .models import (
+    BUILDINGS_LISTING_CACHE_KEY,
+    BUILDINGS_LISTING_CACHE_TIMEOUT,
+    Building,
+    BuildingProximalUtilities,
+    BuildingWorkPerformed,
+    Statistic,
+)
 from .serializers import (
     BuildingListSerializer,
     BuildingSearchSerializer,
@@ -35,6 +42,22 @@ class BuildingViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         return Building.approved.all().order_by("general_id")
+
+    def list(self, request, *args, **kwargs):
+        """
+        List all buildings
+        """
+        nonexistent = object()  # sentinel
+
+        cached_data: List = cache.get(BUILDINGS_LISTING_CACHE_KEY, nonexistent)
+
+        if cached_data is nonexistent:
+            response: Response = super().list(request, *args, **kwargs)
+            cache.set(BUILDINGS_LISTING_CACHE_KEY, response.data, timeout=BUILDINGS_LISTING_CACHE_TIMEOUT)
+
+            return response
+
+        return Response(cached_data)
 
     def get_serializer_class(self):
         if self.action == "list":
