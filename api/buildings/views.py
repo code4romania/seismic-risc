@@ -52,10 +52,17 @@ class BuildingViewSet(viewsets.ModelViewSet):
         cached_data: List = cache.get(BUILDINGS_LISTING_CACHE_KEY, nonexistent)
 
         if cached_data is nonexistent:
-            response: Response = super().list(request, *args, **kwargs)
-            cache.set(BUILDINGS_LISTING_CACHE_KEY, response.data, timeout=BUILDINGS_LISTING_CACHE_TIMEOUT)
+            queryset = self.filter_queryset(self.get_queryset())
 
-            return response
+            page = self.paginate_queryset(queryset)
+            if page is not None:
+                serializer = self.get_serializer(page, many=True)
+                return self.get_paginated_response(serializer.data)
+
+            serializer = self.get_serializer(queryset, many=True)
+            cached_data = serializer.data
+
+            cache.set(BUILDINGS_LISTING_CACHE_KEY, cached_data, timeout=BUILDINGS_LISTING_CACHE_TIMEOUT)
 
         return Response(cached_data)
 
