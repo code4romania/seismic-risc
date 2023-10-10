@@ -2,7 +2,7 @@ import math
 import sys
 from enum import Enum
 from io import BytesIO
-from typing import List
+from typing import Dict, List
 
 import PIL.Image
 from django.conf import settings
@@ -10,6 +10,7 @@ from django.core.cache import cache
 from django.core.exceptions import ValidationError
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.db import models
+from django.db.models import Count, QuerySet
 from django.utils import timezone
 from django.utils.safestring import mark_safe
 from django.utils.translation import get_language, gettext_lazy as _
@@ -257,6 +258,16 @@ class Statistic(models.Model):
         help_text=_("All the buildings that have been consolidated (risk category is 'consolidated')"),
         null=True,
     )
+    buildings_per_county = models.JSONField(
+        _("buildings per county"),
+        help_text=_("The number of buildings per county"),
+        null=True,
+    )
+    buildings_per_city = models.JSONField(
+        _("buildings per city"),
+        help_text=_("The number of buildings per city"),
+        null=True,
+    )
 
     @classmethod
     def get_statistic(cls):
@@ -270,6 +281,8 @@ class Statistic(models.Model):
         people_under_risk: int = cls._get_people_under_risk()
         evaluated_buildings: int = cls._get_evaluated_buildings()
         consolidated_buildings: int = cls._get_consolidated_buildings()
+        buildings_per_county: dict = cls._get_buildings_per_county()
+        buildings_per_city: dict = cls._get_buildings_per_city()
 
         statistic: List[Statistic] = Statistic.objects.update_or_create(
             pk=1,
@@ -277,6 +290,8 @@ class Statistic(models.Model):
                 "people_under_risk": people_under_risk,
                 "evaluated_buildings": evaluated_buildings,
                 "consolidated_buildings": consolidated_buildings,
+                "buildings_per_county": buildings_per_county,
+                "buildings_per_city": buildings_per_city,
             },
         )
 
@@ -308,9 +323,33 @@ class Statistic(models.Model):
         consolidated_buildings = Building.approved.filter(risk_category="C").count()
         return int(consolidated_buildings)
 
+    @staticmethod
+    def _get_buildings_per_county() -> dict:
+        building_counties: QuerySet[Dict] = (
+            Building.approved.all().order_by("county").values("county").annotate(count=Count("county"))
+        )
+
+        buildings_per_county: Dict[str, int] = {building["county"]: building["count"] for building in building_counties}
+        return buildings_per_county
+
     class Meta:
         verbose_name = _("statistic")
         verbose_name_plural = _("statistics")
+
+    @staticmethod
+    def _get_buildings_per_city() -> dict:
+        building_cities: QuerySet[Dict] = (
+            Building.approved.all().order_by("county").values("locality", "county").annotate(count=Count("locality"))
+        )
+
+        buildings_per_city: Dict[str, Dict[str, int]] = {}
+        for city in building_cities:
+            if city["county"] not in buildings_per_city:
+                buildings_per_city[city["county"]] = {}
+
+            buildings_per_city[city["county"]][city["locality"]] = city["count"]
+
+        return buildings_per_city
 
     def __str__(self):
         return "Statistics"

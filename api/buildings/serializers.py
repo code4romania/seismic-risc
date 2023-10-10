@@ -102,7 +102,13 @@ class BuildingSearchSerializer(BaseBuildingSerializer):
 class StatisticSerializer(serializers.ModelSerializer):
     class Meta:
         model = Statistic
-        fields = ("people_under_risk", "consolidated_buildings", "evaluated_buildings")
+        fields = (
+            "people_under_risk",
+            "evaluated_buildings",
+            "consolidated_buildings",
+            "buildings_per_county",
+            "buildings_per_city",
+        )
 
 
 class ProximalUtilitiesSerializer(serializers.ModelSerializer):
