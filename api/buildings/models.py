@@ -1,17 +1,21 @@
+import math
+import sys
 from enum import Enum
 from io import BytesIO
 from typing import List
 
 import PIL.Image
-import math
-import sys
 from django.conf import settings
+from django.core.cache import cache
 from django.core.exceptions import ValidationError
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.db import models
 from django.utils import timezone
 from django.utils.safestring import mark_safe
 from django.utils.translation import get_language, gettext_lazy as _
+
+BUILDINGS_LISTING_CACHE_KEY = "all_buildings_listing"
+BUILDINGS_LISTING_CACHE_TIMEOUT = 60 * 60 * 24 * 7
 
 
 class SeismicCategoryChoice(Enum):
@@ -91,6 +95,14 @@ class BuildingProximalUtilities(models.Model):
     class Meta:
         verbose_name = _("proximal utility")
         verbose_name_plural = _("proximal utilities")
+
+
+class BuildingManager(models.Manager):
+    def bulk_create(self, *args, **kwargs):
+        super().bulk_create(self, *args, **kwargs)
+
+        Statistic.update_statistics()
+        cache.delete(BUILDINGS_LISTING_CACHE_KEY)
 
 
 class ApprovedBuilding(models.Manager):
@@ -202,12 +214,11 @@ class Building(models.Model):
 
     created_on = models.DateTimeField(_("created on"), default=timezone.now, blank=True)
 
-    objects = models.Manager()
+    objects = BuildingManager()
     approved = ApprovedBuilding()
 
     def save(self, *args, **kwargs):
         super(Building, self).save(*args, **kwargs)
-        Statistic.update_statistics()
 
     class Meta:
         verbose_name = _("building")
