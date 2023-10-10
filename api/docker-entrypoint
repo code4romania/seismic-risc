@@ -17,6 +17,8 @@ if [[ ${RUN_MIGRATION} = "yes" ]] ; then
   ./manage.py createcachetable
 fi
 
+./manage.py seed_superuser
+
 if [[ ${RUN_COMPILEMESSAGES} = "yes" ]] ; then
   echo "Compile i18n messages"
   ./manage.py compilemessages
@@ -24,12 +26,10 @@ fi
 
 if [[ ${RUN_LOAD_DUMMY_DATA} = "yes" ]] ; then
   echo "Load dummy data in the database"
-  ./manage.py loaddata buildings
   ./manage.py loaddata proximal_utilities
   ./manage.py loaddata work_performed
+  ./manage.py loaddata buildings
 fi
-
-./manage.py seed_superuser
 
 if [[ ${RUN_COLLECT_STATIC} = "yes" ]] ; then
   echo "Collect static files (this will take a while)"
