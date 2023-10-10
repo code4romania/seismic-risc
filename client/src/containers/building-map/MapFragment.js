@@ -57,22 +57,6 @@ export default () => {
       label: <Trans>All seismic risk classes</Trans>,
     },
     {
-      key: 'U1',
-      label: 'U1',
-    },
-    {
-      key: 'U2',
-      label: 'U2',
-    },
-    {
-      key: 'U3',
-      label: 'U3',
-    },
-    {
-      key: 'U4',
-      label: 'U4',
-    },
-    {
       key: 'RS1',
       label: 'RS1',
     },
@@ -91,6 +75,22 @@ export default () => {
     {
       key: 'NA',
       label: <Trans>Other</Trans>,
+    },
+    {
+      key: 'U1',
+      label: 'U1',
+    },
+    {
+      key: 'U2',
+      label: 'U2',
+    },
+    {
+      key: 'U3',
+      label: 'U3',
+    },
+    {
+      key: 'U4',
+      label: 'U4',
     },
   ];
 
