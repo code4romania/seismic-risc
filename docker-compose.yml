@@ -14,14 +14,14 @@ services:
   api:
     container_name: seismic-api
     build:
-      context: ./api
-    command: dockerize -wait tcp://db:5444 -timeout 90s
+      context: .
+      dockerfile: ./api/Dockerfile
     env_file:
       - .env
     volumes:
       - ./api:/code
     ports:
-      - "8030:8030"
+      - "8030:80"
     depends_on:
       - db
 
