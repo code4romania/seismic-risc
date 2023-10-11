@@ -23,6 +23,11 @@ env = environ.Env(
     NO_REPLY_EMAIL=(str, "noreply@code4.ro"),
     DEFAULT_FROM_EMAIL=(str, "noreply@code4.ro"),
     HERE_MAPS_API_KEY=(str, ""),
+    # hosts and origins
+    ALLOWED_HOSTS=(list, []),
+    CSRF_TRUSTED_ORIGINS=(list, []),
+    CORS_ALLOWED_ORIGINS=(list, []),
+    CORS_ALLOWED_ORIGIN_REGEXES=(list, []),
     # aws settings
     USE_S3=(bool, False),
     AWS_ACCESS_KEY_ID=(str, ""),
@@ -30,6 +35,11 @@ env = environ.Env(
     AWS_STORAGE_BUCKET_NAME=(str, ""),
     AWS_SUBDOMAIN=(str, "s3.amazonaws.com"),
     AWS_S3_REGION_NAME=(str, ""),
+    # django admin
+    SUPER_ADMIN_PASS=(str, ""),
+    SUPER_ADMIN_EMAIL=(str, ""),
+    SUPER_ADMIN_FIRST_NAME=(str, ""),
+    SUPER_ADMIN_LAST_NAME=(str, ""),
 )
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -37,10 +47,10 @@ BASE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../..")
 
 DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS: List[str] = env.list("ALLOWED_HOSTS")
 CORS_ORIGIN_ALLOW_ALL = False
 
-CSRF_TRUSTED_ORIGINS: List[str] = env.list("CSRF_TRUSTED_ORIGINS", default=[])
+CSRF_TRUSTED_ORIGINS: List[str] = env.list("CSRF_TRUSTED_ORIGINS")
 
 INSTALLED_APPS = [
     "jazzmin",
