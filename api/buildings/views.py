@@ -145,9 +145,13 @@ class WorkPerformedViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = WorkPerformedSerializer
 
 
+@extend_schema(
+    request=StatisticSerializer,
+    responses=None  # TODO: is it really None?
+)
 @api_view(["GET"])
 @permission_classes((permissions.AllowAny,))
-def statistics(self):
+def statistics(request):
     stats = Statistic.get_statistic()
     serializer = StatisticSerializer(stats, many=False)
 
