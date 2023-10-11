@@ -4022,7 +4022,7 @@ COPY public.buildings_building (general_id, risk_category, registration_number, 
 -- Name: buildings_building_general_id_seq; Type: SEQUENCE SET; Schema: public; Owner: postgres
 --
 
-SELECT pg_catalog.setval('public.buildings_building_general_id_seq', 3916, true);
+SELECT pg_catalog.setval('public.buildings_building_general_id_seq', 3990, true);
 
 
 --
