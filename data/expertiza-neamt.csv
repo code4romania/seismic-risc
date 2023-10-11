@@ -1,0 +1,75 @@
+lat,lng,county,locality,address,street_number,height_regime,observations,year_built,risk_category,residents_count
+46.9476877,26.3879914,Neamț,Piatra-Neamț,Str. 1 Decembrie 1918,nr. 68,P+2E,Complex servicii Ion Creanga,,RS3,
+46.9474838,26.3854811,Neamț,Piatra-Neamț,Str. 1 Decembrie 1918,nr. 68,P+2E,Complex servici de zi,,RS3,
+46.9477739,26.3868026,Neamț,Piatra-Neamț,Str. 1 Decembrie 1918,nr. 68,P+2E,Complex servici Elena Doamna,,RS3,
+46.9533604,26.3838813,Neamț,Piatra-Neamț,Str. 1 Decembrie 1918,nr. 118,"H max=10,20m",Biserica „Buna Vestire”,1790,RS2,150
+46.9439845,26.3847741,Neamț,Piatra-Neamț,Str. 1 Decembrie 1918,nr. 7,S+P+1E,cinematograf,1979,RS3,850
+46.9206296,26.38378787,Neamț,Piatra-Neamț,Aleea Paltinilor,bl. C1,P+4E,locuinţe,1967,RS3,42
+46.92085,26.382858,Neamț,Piatra-Neamț,Aleea Paltinilor,bl. B5,P+4E,locuinţe,1969,RS3,61
+46.9205509,26.3835944,Neamț,Piatra-Neamț,Aleea Paltinilor,bl. C4,P+4E,locuinţe,1969,RS3,
+46.9205013,26.3831617,Neamț,Piatra-Neamț,Aleea Paltinilor,nr. 6,P+4E,locuinţe,1969,RS3,109
+46.9402449,26.3880214,Neamț,Piatra-Neamț,Str. Ulmilor,bl. A2,P+9E,locuinţe,1970,RS3,264
+46.93448,26.37874,Neamț,Piatra-Neamț,Aleea Viforului,bl. A3,P+4E,locuinţe,1969,RS3,63
+46.93457,26.37931,Neamț,Piatra-Neamț,Aleea Viforului,bl. C1,P+4E,locuinţe,1969,RS3,109
+46.93485,26.3788,Neamț,Piatra-Neamț,Aleea Viforului ,bl. A2,P+4E,locuinţe,1969,RS3,89
+46.9327248,26.3669719,Neamț,Piatra-Neamț,Str. Alexandru cel Bun,nr. 27,S+P+4E,Clădire administrativă - Corp A,,RS2,
+46.9342575,26.3640627,Neamț,Piatra-Neamț,Str. Alexandru cel Bun,nr. 11,P+1E,Sediul DGASPC Neamț,,RS3,
+46.9263669,26.3644688,Neamț,Piatra-Neamț,Str. Anton Vorel,bl. B6,P+4E,locuinţe,1980,RS3,100
+46.931951,26.367486,Neamț,Piatra-Neamț,B-dul Republicii,nr. 6,Dp+P+1E,Casa Judeteana de Pensii 2 corpuri de clădire sediu+anexa 684 mp,1930,RS1,
+46.918201,26.9241188,Neamț,Roman,B-dul. Roman Musat,"bl. 17, sc. A si B",P+3Е,locuinţe,1962,RS1,
+46.9274484,26.3750694,Neamț,Piatra-Neamț,B-dul. Traian,nr. 1-3,S+P+1E,Spital judetean - Pavilion dermato-venerice si oncologie - 2 tronsoane,1938,RS1,60
+46.9277544,26.3739472,Neamț,Piatra-Neamț,B-dul. Traian,nr. 1-3,S+P+4E,Spitalul Judetean de Urgente - Pavilion interne,1935,RS2,400
+46.93798,26.38109,Neamț,Piatra-Neamț,Str. Dărmăneşti,bl. K0,P+10E,locuinţe,1976,RS3,87
+46.93817,26.38116,Neamț,Piatra-Neamț,Str. Dărmăneşti,bl. K1,P+10E,Locuință,1976,RS3,100
+46.9443033,26.3915237,Neamț,Piatra-Neamț,Decebal,G6,P+4E,Locuință,1986,RS3,86
+46.941944,26.273056,Neamț,Alexandru cel Bun,DJ 157C,-,P,"Biserica ""Buna Vestire"", Manastirea Bisericani",,RS1,
+46.93129,26.3637325,Neamț,Piatra-Neamț,Durăului,nr. 9,P,Centrul Militar Judetean - corp C5,,RS2,
+46.9438526,26.3871906,Neamț,Piatra-Neamț,Str. Gavril Galinescu,nr. 11,P+1E,Clādire administrativa corp C1,,RS2,
+46.9280451,26.3636423,Neamț,Piatra-Neamț,Str. George Coşbuc,bl. A10,S+P+4E,locuinţe,1985,RS3,21
+46.922189,26.3789193,Neamț,Piatra-Neamț,Str. Mărăţei,bl. F3,P+4E,locuinţe,1969,RS3,
+46.9222594,26.3787561,Neamț,Piatra-Neamț,Str. Mărăţei,bl. F2,P+4E,locuinţe,1969,RS3,
+46.9222155,26.3790782,Neamț,Piatra-Neamț,Str. Mărăţei,bl. F1,P+4E,locuinţe,1969,RS3,
+46.9238229,26.3772873,Neamț,Piatra-Neamț,Str. Mărăţei,bl. A2,P+4E,locuinţe,1969,RS3,
+46.9232451,26.3784426,Neamț,Piatra-Neamț,Str. Mărăţei,bl. C2,P+4E,locuinţe,1969,RS3,
+46.923512,26.3778456,Neamț,Piatra-Neamț,Str. Mărăţei,bl. B2,P+4E,locuinţe,1969,RS3,
+46.9235795,26.378099,Neamț,Piatra-Neamț,Str. Mărăţei,bl. B1,P+4E,locuinţe,1969,RS3,
+46.9219041,26.3798114,Neamț,Piatra-Neamț,Str. Mărăţei,bl. E2,P+4E,locuinţe,1969,RS3,
+46.9220987,26.3793532,Neamț,Piatra-Neamț,Str. Mărăţei,bl. C1,P+4E,locuinţe,1969,RS3,
+46.919607,26.385513,Neamț,Piatra-Neamț,Str. Mărăţei,nr. 144,P+4E,locuinţe,1969,RS4,52
+46.9190995,26.3858869,Neamț,Piatra-Neamț,Str. Mărăţei,nr. 158,P+4E,locuinţă,1969,RS4,66
+46.9195505,26.3848038,Neamț,Piatra-Neamț,Str. Mărăţei,nr. 142,P+4E,locuinţe,1969,RS4,45
+46.919494,26.385293,Neamț,Piatra-Neamț,Str. Mărăţei,nr. 146,P+4E,locuinţe,1969,RS4,55
+46.9192807,26.3851547,Neamț,Piatra-Neamț,Str. Mărăţei,nr. 148,P+4E,locuinţe,1969,RS4,47
+46.9191761,26.3849203,Neamț,Piatra-Neamț,Str. Mărăţei,nr. 150,P+4E,locuinţe,1969,RS4,47
+46.9193988,26.3856632,Neamț,Piatra-Neamț,Str. Mărăţei,nr. 152,P+4E,locuinţe,1969,RS4,50
+46.934708,26.362574,Neamț,Piatra-Neamț,Str. Mihail Sadoveanu,nr. 16,P,Sediul 2 I.S.U. Neamț - Corp A,,RS2,
+46.9345691,26.3779311,Neamț,Piatra-Neamț,Str. Orhei,bl. V3,P+4E,locuinţe,1983,RS3,171
+46.93281,26.3755342,Neamț,Piatra-Neamț,Str. Orhei,bl. V1,P+4E,locuinţe,1977,RS3,90
+46.9302553,26.3674358,Neamț,Piatra-Neamț,P-ta 22 Decembrie,bl. B2,P+4E,locuinţe,1962,RS3,100
+46.9296635,26.3656526,Neamț,Piatra-Neamț,P-ta 22 Decembrie,bl. 18,P+4E,locuinţe,1960,RS2,66
+46.9413426,26.3906658,Neamț,Piatra-Neamț,Str. Progresului,bl. G4,P+4E,locuinţe,1978,RS3,118
+46.9758685,26.3818764,Neamț,Stefan cel Mare,Str Stanjenelului,nr. 27,P+1E,"Atelier ""Casa Canatacuzino"" - Centrul de Educatie Incluziva",1650,RS2,
+46.9363867,26.9407698,Neamț,Razboieni,Str. 13 Septembrie,nr. 8,P si P+1E,Centrul de recuperare si reabilitrare neuropsihiatrica,,RS3,
+46.922081,26.928056,Neamț,Roman,Str. Cuza Vodă,nr.6,P+1E,Locuinte si spatiu comercialla parter locuinta,1923,RS2,
+47.2094785,26.3660199,Neamț,Targu-Neamt,Str. Izvor,nr. 6,D+P+1E,"Complex de servici ""Ozana""",,RS3,
+46.9344698,26.3736011,Neamț,Piatra-Neamț,Str. Petru Rareş,nr. 26,P+1F,Muzeul de științe Naturale corp C1,,RS2,
+46.9345035,26.373158,Neamț,Piatra-Neamț,Str. Petru Rares,nr. 27 C,P,Cladire administrativa,1913,RS2,
+46.9290301,26.9224411,Neamț,Roman,Str. Ştefan cel Mare,nr. 236,P,locuinţe,1915,RS2,
+46.929208,26.9222339,Neamț,Roman,Str. Ştefan cel Mare,nr. 238,P,locuinţe,1891,RS2,
+46.9279845,26.9217286,Neamț,Roman,Str. Ştefan cel Mare,nr. 235,P,locuinţe,1917,RS1,
+46.9280605,26.9216913,Neamț,Roman,Str. Ştefan cel Mare,nr. 237,P,locuinţe,1908,RS1,
+46.9290623,26.9215056,Neamț,Roman,Str. Ştefan cel Mare,nr. 249,P+1E,locuinţe,1926,RS2,
+46.9390108,26.9194547,Neamț,Roman,Str. Ştefan cel Mare,nr. 218,P+1E,locuinţe,1898,RS2,
+46.9390333,26.9194477,Neamț,Roman,Str. Ştefan cel Mare,nr. 220,P,locuinţe,1880,RS2,
+46.9391796,26.9194025,Neamț,Roman,Str. Ştefan cel Mare,nr. 233,P,locuinţe,1915,RS1,
+46.9348109,26.3656483,Neamț,Piatra-Neamț,Str. Ştefan cel Mare,nr. 23 corp A,S+P,„Casa medicului”,1866,RS2,
+46.9350851,26.3655258,Neamț,Piatra-Neamț,Str. Ştefan cel Mare,nr. 23 corp B,P,„Casa medicului”,1866,RS2,
+46.9330217,26.3694905,Neamț,Piatra-Neamț,Str. Ştefan cel Mare,nr. 4,D,Beciul I Curtea Domnească,1450,RS3,
+46.9230499,26.9335775,Neamț,Roman,Str. Tineretului,bl. 2,P+4E,locuinţe,1969,RS3,
+46.9343129,26.3905537,Neamț,Piatra-Neamț,Str. Valea Albă,nr. 35,P+1E,Centrul Rezidential pentru Copii cu Dizabilitati,,RS3,
+46.9339159,26.3897399,Neamț,Piatra-Neamț,Str. Valea Albă,nr. 36,P+1E,Centrul de Recuperare de zi pentru Copilul cu Dizabilitati,,RS3,
+46.9275382,26.3613199,Neamț,Piatra-Neamț,Piaţa Gării,nr. 1,S+P+1E,Staţie cale ferată,1913,RS3,130
+46.9332228,26.3681612,Neamț,Piatra-Neamț,Piaţa Libertăţii,Muzeu de etnografie,P,,1450,RS3,
+46.9329684,26.3680827,Neamț,Piatra-Neamț,Piaţa Libertăţii,Muzeul de artă,S+P+1E,,1931,RS3,
+46.9331258,26.3684357,Neamț,Piatra-Neamț,Piaţa Libertăţii,Turn clopotniţă,P+4E,,1499,RS3,
+46.9323391,26.3682085,Neamț,Piatra-Neamț,Piaţa Ştefan cel Mare,nr. 1,P+2E,Teatrul Tineretului,1935,RS3,
