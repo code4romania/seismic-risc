@@ -39,5 +39,5 @@ if [[ ${RUN_DEV_SERVER} = "yes" ]] ; then
   echo "Start web server on ${API_PORT}"
   ./manage.py runserver "0.0.0.0:${API_PORT}"
 else
-  gunicorn seismic_site.wsgi --bind "0.0.0.0:${API_PORT}" --log-level info -k gevent -w "${GUNICORN_WORKERS}" --timeout 300
+  gunicorn seismic_site.wsgi --bind "0.0.0.0:${API_PORT}" --log-level debug -k gevent -w "${GUNICORN_WORKERS}" --timeout 300
 fi
