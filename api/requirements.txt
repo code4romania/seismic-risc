@@ -10,12 +10,16 @@ attrs==23.1.0
     # via
     #   jsonschema
     #   referencing
+blessed==1.20.0
+    # via -r requirements.in
 boto3==1.28.61
     # via -r requirements.in
 botocore==1.31.61
     # via
     #   boto3
     #   s3transfer
+croniter==1.4.1
+    # via -r requirements.in
 defusedxml==0.7.1
     # via odfpy
 diff-match-patch==20230430
@@ -30,6 +34,8 @@ django==4.2.6
     #   django-import-export
     #   django-jazzmin
     #   django-jquery
+    #   django-picklefield
+    #   django-q2
     #   django-storages
     #   djangorestframework
     #   drf-spectacular
@@ -42,6 +48,10 @@ django-import-export==3.3.1
 django-jazzmin==2.6.0
     # via -r requirements.in
 django-jquery==3.1.0
+    # via -r requirements.in
+django-picklefield==3.1
+    # via django-q2
+django-q2==1.5.5
     # via -r requirements.in
 django-storages==1.14.2
     # via -r requirements.in
@@ -79,10 +89,14 @@ packaging==23.2
     # via gunicorn
 pillow==10.0.1
     # via -r requirements.in
+psutil==5.9.5
+    # via -r requirements.in
 psycopg2==2.9.9
     # via -r requirements.in
 python-dateutil==2.8.2
-    # via botocore
+    # via
+    #   botocore
+    #   croniter
 pytz==2023.3.post1
     # via djangorestframework
 pyyaml==6.0.1
@@ -100,7 +114,9 @@ rpds-py==0.10.4
 s3transfer==0.7.0
     # via boto3
 six==1.16.0
-    # via python-dateutil
+    # via
+    #   blessed
+    #   python-dateutil
 sqlparse==0.4.4
     # via django
 tablib[html,ods,xls,xlsx,yaml]==3.5.0
@@ -113,6 +129,8 @@ uritemplate==4.1.1
     # via drf-spectacular
 urllib3==1.26.17
     # via botocore
+wcwidth==0.2.8
+    # via blessed
 whitenoise==6.5.0
     # via -r requirements.in
 xlrd==2.0.1
