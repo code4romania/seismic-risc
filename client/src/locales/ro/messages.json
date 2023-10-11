@@ -84,7 +84,7 @@
       ],
       [
         "components/Header/index.js",
-        70
+        73
       ],
       [
         "containers/add-building/FormFragment.js",
@@ -267,6 +267,16 @@
     "extractedComments": [],
     "obsolete": true
   },
+  "Emergency categories": {
+    "translation": "Categorii de urgență",
+    "origin": [
+      [
+        "containers/building-map/MapFragment.js",
+        112
+      ]
+    ],
+    "extractedComments": []
+  },
   "Evaluated buildings": {
     "translation": "Clădiri evaluate",
     "origin": [
@@ -398,7 +408,8 @@
         93
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "Page {pageNumber} of {numPages}": {
     "translation": "Pagina {pageNumber} din {numPages}",
@@ -496,6 +507,16 @@
       [
         "containers/thankyou/HeroFragment.js",
         13
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Unassigned": {
+    "translation": "Nealocate",
+    "origin": [
+      [
+        "containers/building-map/MapFragment.js",
+        77
       ]
     ],
     "extractedComments": []
@@ -763,7 +784,8 @@
         113
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "form.first_section.title": {
     "translation": "Despre clădire",

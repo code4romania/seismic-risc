@@ -12,13 +12,10 @@ export default function useDecoratedClusteredMap(currentMap, points) {
   const prevSelectedMarker = useRef();
 
   const onClusterClick = (marker) => {
-    currentMap.getViewModel().setLookAtData(
-      {
-        position: marker.getData().getPosition(),
-        zoom: currentMap.getZoom() + 2,
-      },
-      true,
-    );
+    currentMap.getViewModel().setLookAtData({
+      position: marker.getData().getPosition(),
+      zoom: currentMap.getZoom() + 2,
+    });
   };
 
   const onNoiseClick = (marker, zoomToSet = 15) => {
@@ -87,7 +84,7 @@ export default function useDecoratedClusteredMap(currentMap, points) {
     }
     if (selectedMarker) {
       const position = { ...selectedMarker.getData().getPosition() };
-      currentMap.getViewModel().setLookAtData({ position, zoom }, true);
+      currentMap.getViewModel().setLookAtData({ position, zoom });
     }
   }, [detailsOpen, selectedMarker]);
 
