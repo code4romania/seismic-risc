@@ -108,6 +108,7 @@ class StatisticSerializer(serializers.ModelSerializer):
             "consolidated_buildings",
             "buildings_per_county",
             "buildings_per_city",
+            "buildings_per_category",
         )
 
 

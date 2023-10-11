@@ -268,6 +268,11 @@ class Statistic(models.Model):
         help_text=_("The number of buildings per city"),
         null=True,
     )
+    buildings_per_category = models.JSONField(
+        _("buildings per category"),
+        help_text=_("The number of buildings per category"),
+        null=True,
+    )
 
     @classmethod
     def get_statistic(cls):
@@ -283,6 +288,7 @@ class Statistic(models.Model):
         consolidated_buildings: int = cls._get_consolidated_buildings()
         buildings_per_county: dict = cls._get_buildings_per_county()
         buildings_per_city: dict = cls._get_buildings_per_city()
+        buildings_per_category: dict = cls._get_buildings_per_category()
 
         statistic: List[Statistic] = Statistic.objects.update_or_create(
             pk=1,
@@ -292,6 +298,7 @@ class Statistic(models.Model):
                 "consolidated_buildings": consolidated_buildings,
                 "buildings_per_county": buildings_per_county,
                 "buildings_per_city": buildings_per_city,
+                "buildings_per_category": buildings_per_category,
             },
         )
 
@@ -350,6 +357,20 @@ class Statistic(models.Model):
             buildings_per_city[city["county"]][city["locality"]] = city["count"]
 
         return buildings_per_city
+
+    @staticmethod
+    def _get_buildings_per_category() -> dict:
+        building_categories: QuerySet[Dict] = (
+            Building.approved.all()
+            .order_by("risk_category")
+            .values("risk_category")
+            .annotate(count=Count("risk_category"))
+        )
+
+        buildings_per_category: Dict[str, int] = {
+            building["risk_category"]: building["count"] for building in building_categories
+        }
+        return buildings_per_category
 
     def __str__(self):
         return "Statistics"
