@@ -74,8 +74,11 @@ export default () => {
     },
     {
       key: 'NA',
-      label: <Trans>Other</Trans>,
+      label: <Trans>Unassigned</Trans>,
     },
+  ];
+
+  const categoryItems = [
     {
       key: 'U1',
       label: 'U1',
@@ -96,13 +99,21 @@ export default () => {
 
   return (
     <div>
-      <Tabs
-        size="large"
-        animated={false}
-        defaultActiveKey="1"
-        onChange={onChange}
-        items={tabItems}
-      />
+      <div style={{ display: 'flex', alignItems: 'center' }}>
+        <Tabs
+          size="large"
+          animated={false}
+          defaultActiveKey="1"
+          onChange={onChange}
+          items={tabItems}
+        />
+        <div style={{ borderLeft: '1px solid rgba(0, 0, 0, 0.6)', margin: '0 12px', height: 40 }} />
+        <div style={{ fontSize: 16, fontWeight: 700, marginBottom: 16, paddingRight: 16 }}>
+          <Trans>Emergency categories</Trans>
+        </div>
+
+        <Tabs size="large" animated={false} onChange={onchange} items={categoryItems} />
+      </div>
       <HereMapInteractive points={state.filteredPoints || state.initialPoints} />
     </div>
   );

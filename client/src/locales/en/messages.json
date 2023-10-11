@@ -82,7 +82,7 @@
       ],
       [
         "components/Header/index.js",
-        70
+        73
       ],
       [
         "containers/add-building/FormFragment.js",
@@ -261,6 +261,16 @@
     "extractedComments": [],
     "obsolete": true
   },
+  "Emergency categories": {
+    "translation": "Emergency categories",
+    "origin": [
+      [
+        "containers/building-map/MapFragment.js",
+        112
+      ]
+    ],
+    "extractedComments": []
+  },
   "Evaluated buildings": {
     "translation": "Evaluated buildings",
     "origin": [
@@ -389,7 +399,8 @@
         93
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "Page {pageNumber} of {numPages}": {
     "translation": "Page {pageNumber} of {numPages}",
@@ -487,6 +498,16 @@
       [
         "containers/thankyou/HeroFragment.js",
         13
+      ]
+    ],
+    "extractedComments": []
+  },
+  "Unassigned": {
+    "translation": "Unassigned",
+    "origin": [
+      [
+        "containers/building-map/MapFragment.js",
+        77
       ]
     ],
     "extractedComments": []
@@ -754,7 +775,8 @@
         113
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "form.first_section.title": {
     "translation": "About the building",
