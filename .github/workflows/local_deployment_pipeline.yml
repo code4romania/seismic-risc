@@ -25,7 +25,7 @@ jobs:
         make install-docker-ubuntu
     - name: Create environment file
       run: |
-        cp .env.dev .env
+        cp .env.example.dev .env
     - name: Initialize environment
       run: |
         make build

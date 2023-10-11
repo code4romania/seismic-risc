@@ -185,7 +185,7 @@ Make sure to check the [Environment variables](#environment-variables)
 section for info on how to set up the keys before you run the following commands:
 
 ```shell
-cp .env.dev .env
+cp .env.example.dev .env
 # build the development container
 make build-dev
 ```
