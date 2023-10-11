@@ -1,5 +1,5 @@
 # base image
-FROM node:18-alpine
+FROM node:18.18-bookworm-slim
 
 ARG ENVIRONMENT
 

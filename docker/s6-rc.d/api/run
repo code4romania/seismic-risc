@@ -1,0 +1,12 @@
+#!/command/with-contenv sh
+cd /var/www/seismic/api/
+
+# https://docs.gunicorn.org/en/latest/design.html#how-many-workers
+WORKERS=$(((2 * $(nproc)) + 1))
+
+python3 -m gunicorn seismic_site.wsgi \
+    --bind "unix:///run/gunicorn.sock" \
+    --log-level info \
+    --worker-class gevent \
+    --workers $WORKERS \
+    --timeout 60

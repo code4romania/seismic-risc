@@ -41,6 +41,7 @@ env = environ.Env(
     SUPER_ADMIN_EMAIL=(str, ""),
     SUPER_ADMIN_FIRST_NAME=(str, ""),
     SUPER_ADMIN_LAST_NAME=(str, ""),
+    BACKGROUND_WORKERS=(int, 1),
 )
 
 DATA_UPLOAD_MAX_NUMBER_FIELDS = env.int("DATA_UPLOAD_MAX_NUMBER_FIELDS")
@@ -72,6 +73,7 @@ INSTALLED_APPS = [
     "rest_framework",
     "storages",
     "corsheaders",
+    "django_q",
     # project apps
     "buildings",
     "static_custom",
@@ -462,4 +464,27 @@ JAZZMIN_UI_TWEAKS = {
         "danger": "btn-outline-danger",
         "success": "btn-outline-success",
     },
+}
+
+
+# Django Q2
+# https://django-q2.readthedocs.io/en/stable/brokers.html
+
+Q_CLUSTER = {
+    "name": "seismic",
+    "workers": env.int("BACKGROUND_WORKERS"),
+    "recycle": 100,
+    "timeout": 900,  # A task must finish in less than 15 minutes
+    "retry": 1200,  # Retry an unfinished tasks after 20 minutes
+    "ack_failures": True,
+    "max_attempts": 2,
+    "compress": True,
+    "save_limit": 200,
+    "queue_limit": 4,
+    "cpu_affinity": 1,
+    "label": "Django Q2",
+    "orm": "default",
+    "poll": 2,
+    "guard_cycle": 3,
+    "catch_up": False,
 }
