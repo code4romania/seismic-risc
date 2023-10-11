@@ -16,7 +16,7 @@ from django.utils.translation import gettext_lazy as _
 
 env = environ.Env(
     # set casting, default value
-    DEBUG=(bool, True),
+    DEBUG=(bool, False),
     ENVIRONMENT=(str, "dev"),
     ENABLE_DEBUG_TOOLBAR=(bool, True),
     LANGUAGE_CODE=(str, "en"),
@@ -45,7 +45,7 @@ env = environ.Env(
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../..")
 
-DEBUG = env("DEBUG")
+DEBUG = TEMPLATE_DEBUG = env("DEBUG")
 
 ALLOWED_HOSTS: List[str] = env.list("ALLOWED_HOSTS")
 CORS_ORIGIN_ALLOW_ALL = False
