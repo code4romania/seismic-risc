@@ -6,7 +6,6 @@ from typing import Dict, List
 
 import PIL.Image
 from django.conf import settings
-from django.core.cache import cache
 from django.core.exceptions import ValidationError
 from django.core.files.uploadedfile import InMemoryUploadedFile
 from django.db import models
@@ -15,8 +14,9 @@ from django.utils import timezone
 from django.utils.safestring import mark_safe
 from django.utils.translation import get_language, gettext_lazy as _
 
+from seismic_site.caching import delete_from_cache
+
 BUILDINGS_LISTING_CACHE_KEY = "all_buildings_listing"
-BUILDINGS_LISTING_CACHE_TIMEOUT = 60 * 60 * 24  # 24 hours
 
 
 class SeismicCategoryChoice(Enum):
@@ -103,7 +103,7 @@ class BuildingManager(models.Manager):
         super().bulk_create(self, *args, **kwargs)
 
         Statistic.update_statistics()
-        cache.delete(BUILDINGS_LISTING_CACHE_KEY)
+        delete_from_cache(BUILDINGS_LISTING_CACHE_KEY)
 
 
 class ApprovedBuilding(models.Manager):

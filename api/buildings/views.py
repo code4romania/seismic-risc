@@ -2,16 +2,15 @@ from typing import List
 
 from django.conf import settings
 from django.contrib.postgres.search import TrigramSimilarity
-from django.core.cache import cache
 from drf_spectacular.utils import OpenApiParameter, extend_schema
 from rest_framework import permissions, status, viewsets
 from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework.throttling import AnonRateThrottle
 
+from seismic_site.caching import get_from_cache, set_to_cache
 from .models import (
     BUILDINGS_LISTING_CACHE_KEY,
-    BUILDINGS_LISTING_CACHE_TIMEOUT,
     Building,
     BuildingProximalUtilities,
     BuildingWorkPerformed,
@@ -49,7 +48,7 @@ class BuildingViewSet(viewsets.ModelViewSet):
         """
         nonexistent = object()  # sentinel
 
-        cached_data: List = cache.get(BUILDINGS_LISTING_CACHE_KEY, nonexistent)
+        cached_data: List = get_from_cache(BUILDINGS_LISTING_CACHE_KEY, nonexistent)
 
         if cached_data is nonexistent:
             queryset = self.filter_queryset(self.get_queryset())
@@ -62,7 +61,7 @@ class BuildingViewSet(viewsets.ModelViewSet):
             serializer = self.get_serializer(queryset, many=True)
             cached_data = serializer.data
 
-            cache.set(BUILDINGS_LISTING_CACHE_KEY, cached_data, timeout=BUILDINGS_LISTING_CACHE_TIMEOUT)
+            set_to_cache(BUILDINGS_LISTING_CACHE_KEY, cached_data)
 
         return Response(cached_data)
 
@@ -145,10 +144,7 @@ class WorkPerformedViewSet(viewsets.ReadOnlyModelViewSet):
     serializer_class = WorkPerformedSerializer
 
 
-@extend_schema(
-    request=StatisticSerializer,
-    responses=None  # TODO: is it really None?
-)
+@extend_schema(request=StatisticSerializer, responses=None)  # TODO: is it really None?
 @api_view(["GET"])
 @permission_classes((permissions.AllowAny,))
 def statistics(request):
