@@ -142,9 +142,15 @@ AUTH_PASSWORD_VALIDATORS = [
 
 CACHES = {
     "default": {
+        "BACKEND": "django.core.cache.backends.db.DatabaseCache",
+        "LOCATION": "seismic_cache_table",
+        "TIMEOUT": 60 * 60 * 24,  # 24 hours
+    },
+    "memory": {
         "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
         "LOCATION": "unique-snowflake",
-    }
+        "TIMEOUT": 60 * 5,  # 5 minutes
+    },
 }
 
 # Internationalization
