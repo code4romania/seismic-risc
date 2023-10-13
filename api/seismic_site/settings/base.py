@@ -23,6 +23,7 @@ env = environ.Env(
     NO_REPLY_EMAIL=(str, "noreply@code4.ro"),
     DEFAULT_FROM_EMAIL=(str, "noreply@code4.ro"),
     HERE_MAPS_API_KEY=(str, ""),
+    DATA_UPLOAD_MAX_NUMBER_FIELDS=(int, 1000),
     # hosts and origins
     ALLOWED_HOSTS=(list, []),
     CSRF_TRUSTED_ORIGINS=(list, []),
@@ -41,6 +42,8 @@ env = environ.Env(
     SUPER_ADMIN_FIRST_NAME=(str, ""),
     SUPER_ADMIN_LAST_NAME=(str, ""),
 )
+
+DATA_UPLOAD_MAX_NUMBER_FIELDS = env.int("DATA_UPLOAD_MAX_NUMBER_FIELDS")
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../..")
