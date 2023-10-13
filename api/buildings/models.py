@@ -16,7 +16,7 @@ from django.utils.safestring import mark_safe
 from django.utils.translation import get_language, gettext_lazy as _
 
 BUILDINGS_LISTING_CACHE_KEY = "all_buildings_listing"
-BUILDINGS_LISTING_CACHE_TIMEOUT = 60 * 60 * 24 * 7
+BUILDINGS_LISTING_CACHE_TIMEOUT = 60 * 60 * 24  # 24 hours
 
 
 class SeismicCategoryChoice(Enum):
