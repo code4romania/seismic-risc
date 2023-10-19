@@ -1,25 +1,35 @@
-# base image
-FROM node:18.18-bookworm-slim
+FROM node:18.18-bookworm-slim as frontend
 
-ARG ENVIRONMENT
+ARG REACT_APP_DJANGO_SITE_URL
+ARG REACT_APP_DJANGO_PORT
+ARG REACT_APP_DJANGO_API_ENDPOINT
 
-ENV ENVIRONMENT ${ENVIRONMENT:-production}
-ENV NODE_ENV ${ENVIRONMENT}
+ENV ENVIRONMENT="development"
+ENV NODE_ENV="development"
 
-# set working directory
-WORKDIR /code
+ENV REACT_APP_DJANGO_SITE_URL ${REACT_APP_DJANGO_SITE_URL}
+ENV REACT_APP_DJANGO_PORT ${REACT_APP_DJANGO_PORT}
+ENV REACT_APP_DJANGO_API_ENDPOINT ${REACT_APP_DJANGO_API_ENDPOINT}
 
-# add `/code/node_modules/.bin` to $PATH
-ENV PATH /code/node_modules/.bin:${PATH}
+WORKDIR /var/www/seismic/frontend
 
-# install and cache app dependencies
-COPY ./package*.json ./
-RUN if [ "${ENVIRONMENT}" = "production" ]; then npm install --production; else npm install; fi
+COPY ./ .
 
-COPY ./docker-entrypoint /
-COPY ./ /code/
+# install the frontend libraries:
+RUN npm ci && \
+    npm run build
 
-ENTRYPOINT ["/docker-entrypoint"]
+
+FROM nginx:1.25.2-bookworm
+
+ENV ENVIRONMENT="production"
+ENV NODE_ENV="production"
+
+COPY --from=frontend /var/www/seismic/frontend/build/ /usr/share/nginx/html/
+
+WORKDIR /usr/share/nginx/html/
+
+EXPOSE 80
 
 # start app
-CMD ["npm", "start"]
+CMD [ "nginx", "-g", "daemon off;" ]

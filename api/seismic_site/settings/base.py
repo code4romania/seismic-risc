@@ -17,8 +17,8 @@ from django.utils.translation import gettext_lazy as _
 env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False),
-    ENVIRONMENT=(str, "dev"),
-    ENABLE_DEBUG_TOOLBAR=(bool, True),
+    ENVIRONMENT=(str, "production"),
+    ENABLE_DEBUG_TOOLBAR=(bool, False),
     LANGUAGE_CODE=(str, "en"),
     NO_REPLY_EMAIL=(str, "noreply@code4.ro"),
     DEFAULT_FROM_EMAIL=(str, "noreply@code4.ro"),
@@ -35,11 +35,6 @@ env = environ.Env(
     AWS_STORAGE_BUCKET_NAME=(str, ""),
     AWS_SUBDOMAIN=(str, "s3.amazonaws.com"),
     AWS_S3_REGION_NAME=(str, ""),
-    # django admin
-    SUPER_ADMIN_PASS=(str, ""),
-    SUPER_ADMIN_EMAIL=(str, ""),
-    SUPER_ADMIN_FIRST_NAME=(str, ""),
-    SUPER_ADMIN_LAST_NAME=(str, ""),
     BACKGROUND_WORKERS=(int, 1),
 )
 
@@ -72,6 +67,7 @@ INSTALLED_APPS = [
     "corsheaders",
     "django_q",
     # project apps
+    "utils",
     "buildings",
     "static_custom",
     # api documentation
@@ -93,7 +89,7 @@ MIDDLEWARE = [
 
 SITE_ID = 1
 
-ENABLE_DEBUG_TOOLBAR = env("ENABLE_DEBUG_TOOLBAR")
+ENABLE_DEBUG_TOOLBAR = env.bool("ENABLE_DEBUG_TOOLBAR")
 
 ROOT_URLCONF = "seismic_site.urls"
 

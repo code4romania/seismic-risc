@@ -185,18 +185,18 @@ Make sure to check the [Environment variables](#environment-variables)
 section for info on how to set up the keys before you run the following commands:
 
 ```shell
-cp .env.example.dev .env
+cp .env.example.dev .env.dev
 # build the development container
 make build-dev
 ```
 
-If you didn't set up the `RUN_LOAD_DUMMY_DATA` variable, you can add dummy data to the database with the following command:
+If you didn't set up the `RUN_LOAD_INITIAL_DATA` variable, you can add dummy data to the database with the following command:
 
 ```shell
-make init-db
+make build-dev
 ```
 
-If the `RUN_LOAD_DUMMY_DATA` was `yes`, then you should have dummy data but will have to create a superuser:
+If the `RUN_LOAD_INITIAL_DATA` was `yes`, then you should have dummy data but will have to create a superuser:
 
 ```shell
 docker-compose exec api ./manage.py createsuperuser
@@ -241,7 +241,7 @@ The following variables change the way the API is deployed.
 `RUN_MIGRATION`
 Run the initial migrations (sets up the data models from the database).
 
-`RUN_LOAD_DUMMY_DATA`
+`RUN_LOAD_INITIAL_DATA`
 Adds real & dummy data to the database (adds buildings, datafiles, and statistics).
 
 `RUN_COLLECT_STATIC`
@@ -252,7 +252,7 @@ Runs the application in the development mode.
 
 #### External services API keys
 
-In order to have a fully functional project, you have to get two API keys: HERE Maps API Key and hCAPTCHA API Key.
+To have a fully functional project, you have to get two API keys: HERE Maps API Key and hCAPTCHA API Key.
 
 ##### HERE Maps API Key
 
@@ -309,13 +309,13 @@ docker-compose exec api some_container_command
 docker-compose exec client some_container_command
 ```
 
-In order to see all available commands, run:
+To see all available commands, run:
 
 ```shell
 make help
 ```
 
-### Starting the project without docker
+### Starting the project without Docker
 
 #### Windows platform
 
@@ -340,7 +340,7 @@ make help
    provide or change. Double check database config line in .env. It has to follow this
    pattern: `postgres://USER:PASSWORD@HOST:PORT/NAME`
 
-3. Run following in order to set the needed environment variables:
+3. Run following to set the needed environment variables:
 
     ```shell
     activate_dev_env.bat
@@ -358,7 +358,7 @@ make help
     python api/manage.py migrate --no-input
     ```
 
-6. Create admin user (user to login into admin pannel):
+6. Create admin user (user to login into admin panel):
 
     ```shell
     python api/manage.py createsuperuser
@@ -407,7 +407,7 @@ Check functionality at http://localhost:3000.
 
 ### Development
 
-When creating new models in Django, in order to make sure they are generated in a clean environment, it is recommended
+When creating new models in Django, to make sure they are generated in a clean environment, it is recommended
 to generate the migration files using the `make` command:
 
 ```shell
@@ -497,7 +497,7 @@ make test
 
 ## Production
 
-In order to get the container ready for production use, we need to first build it:
+To get the container ready for production use, we need to first build it:
 
 ```shell
 docker build -t seismic-risc:latest ./api

@@ -1,0 +1,41 @@
+version: "3.8"
+name: seismic-test
+
+services:
+
+  db:
+    container_name: seismic_db-test
+    extends:
+      file: docker-compose.dev.yml
+      service: db_base
+
+  api:
+    container_name: seismic_api-test
+    extends:
+      file: docker-compose.dev.yml
+      service: api_base
+    build:
+      context: .
+      dockerfile: ./api/Dockerfile.dev
+      args:
+        - ENVIRONMENT=test
+    env_file:
+      - .env
+      - .env.test
+    environment:
+      ENVIRONMENT: "test"
+
+  client:
+    container_name: seismic_client-test
+    extends:
+      file: docker-compose.dev.yml
+      service: client_base
+    env_file:
+      - .env
+      - .env.test
+    environment:
+      ENVIRONMENT: "test"
+
+volumes:
+    pgdata:
+        name: seismic_pgdata-test
