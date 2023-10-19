@@ -1,25 +1,22 @@
 #!/command/with-contenv bash
 
-
 # Convert one parameter to uppercase
 to_uppercase() {
-  echo $(echo $1 | tr '[:lower:]' '[:upper:]')
+    echo "${1}" | tr '[:lower:]' '[:upper:]'
 }
 
 # Check if the parameter is string True/False and return it as success/failure
 is_enabled() {
-    if test "$(to_uppercase $1)" = "TRUE"; then
+    _UPPER_VALUE=$(to_uppercase "$1")
+    if [ "${_UPPER_VALUE}" = "TRUE" ]; then
         return 0
+    elif [ "${_UPPER_VALUE}" = "FALSE" ]; then
+        return 1
     else
-        if test "$(to_uppercase $1)" = "FALSE"; then
-            return 1
-        else
-            echo "WARNING: init.sh interpreting \"$1\" as False" >/dev/stderr
-            return 1
-        fi    
+        echo "WARNING: init.sh interpreting \"$1\" as False" >/dev/stderr
+        return 1
     fi
 }
-
 
 cd "${BACKEND_ROOT:-/var/www/seismic/api}" || exit 1
 
@@ -34,38 +31,32 @@ if is_enabled "${RUN_MIGRATION:-False}"; then
 fi
 
 # Compile the translation messages
-if is_enabled ${RUN_COMPILE_MESSAGES:-False}; then
+if is_enabled "${RUN_COMPILE_MESSAGES:-False}"; then
     echo "Compiling translation messages"
     python3 manage.py compilemessages
 fi
 
 # Collect the static files
-if is_enabled ${RUN_COLLECT_STATIC:-False}; then
+if is_enabled "${RUN_COLLECT_STATIC:-False}"; then
     echo "Collecting static files"
     mkdir static
     python3 manage.py collectstatic --noinput
 fi
 
 # Create the Django Admin super user
-if is_enabled ${RUN_CREATE_SUPER_USER:-False}; then
-    echo "Checking superuser presence"
-    SUPERUSERS=$(python3 manage.py shell -c "from django.contrib.auth import get_user_model; User = get_user_model(); print(User.objects.filter(username=\"${DJANGO_ADMIN_EMAIL}\").count())")
+if is_enabled "${RUN_CREATE_SUPER_USER:-False}"; then
+    echo "Running the superuser seed script"
 
-    if test "${SUPERUSERS}" = "0"; then
-        echo "Creating first superuser"
-        python3 manage.py createsuperuser --noinput --username "${DJANGO_ADMIN_EMAIL}"
-
-        echo "Setting superuser password"
-        python3 manage.py shell -c "from django.contrib.auth import get_user_model; User = get_user_model(); u = User.objects.get(username=\"${DJANGO_ADMIN_EMAIL}\"); u.set_password(\"${DJANGO_ADMIN_PASSWORD}\"); u.save()"
-    else
-        echo "A superuser already exists; nothing created"
-    fi
+    python3 manage.py seed_superuser \
+        --email "${DJANGO_ADMIN_EMAIL}" \
+        --first_name "${DJANGO_ADMIN_FIRST_NAME}" \
+        --last_name "${DJANGO_ADMIN_LAST_NAME}"
 fi
 
 # Load the dummy data
-if is_enabled ${RUN_LOAD_DUMMY_DATA:-False}; then
-  echo "Loading dummy data into the database"
+if is_enabled "${RUN_LOAD_INITIAL_DATA:-False}"; then
+  echo "Loading initial building data into the database"
+
   ./manage.py loaddata proximal_utilities
   ./manage.py loaddata work_performed
 fi
-

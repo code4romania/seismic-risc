@@ -1,0 +1,46 @@
+version: "3.8"
+name: seismic-prod
+
+services:
+
+  db:
+    container_name: seismic_db-prod
+    extends:
+      file: dk-cp.base.yml
+      service: db_base
+
+  api:
+    container_name: seismic_api-prod
+    extends:
+      file: dk-cp.base.yml
+      service: api_base
+    build:
+      context: .
+      dockerfile: ./api/Dockerfile
+      args:
+        - ENVIRONMENT=production
+    env_file:
+      - .env.prod
+    environment:
+      ENVIRONMENT: "production"
+
+  client:
+    container_name: seismic_client-prod
+    extends:
+      file: dk-cp.base.yml
+      service: client_base
+    build:
+      context: ./client
+      dockerfile: ./Dockerfile
+      args:
+        - ENVIRONMENT=production
+    env_file:
+      - .env.prod
+    environment:
+      ENVIRONMENT: "production"
+    ports:
+      - "${CLIENT_PORT:-3030}:80"
+
+volumes:
+    pgdata:
+        name: seismic_pgdata-prod

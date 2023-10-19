@@ -10,10 +10,10 @@ django-import-export==3.3.1
 django-jazzmin==2.6.0
 
 # job scheduler
-django-q2~=1.5.5
+django-q2~=1.6.1
 blessed~=1.20.0  # optional requirement for django-q2
-psutil~=5.9.5  # optional requirement for django-q2
-croniter~=1.4.1  # optional requirement for django-q2
+psutil~=5.9.6  # optional requirement for django-q2
+croniter~=2.0.1  # optional requirement for django-q2
 
 # REST framework
 djangorestframework==3.14.0
