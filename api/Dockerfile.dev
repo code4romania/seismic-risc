@@ -2,15 +2,15 @@ FROM python:3.11.6-slim-bookworm
 
 ENV PYTHONUNBUFFERED=1
 
-ENV ENVIRONMENT=production
-ENV DEBUG ${DEBUG:-False}
+ENV ENVIRONMENT ${ENVIRONMENT:-development}
+ENV DEBUG ${DEBUG:-True}
 
 ENV RUN_MIGRATION=True
-ENV RUN_COMPILE_MESSAGES=True
-ENV RUN_COLLECT_STATIC=True
+ENV RUN_COMPILE_MESSAGES=False
+ENV RUN_COLLECT_STATIC=False
 ENV RUN_CREATE_SUPER_USER=True
 
-ENV ENABLE_DEBUG_TOOLBAR=False
+ENV ENABLE_DEBUG_TOOLBAR=True
 
 ENV IS_CONTAINERIZED=True
 
@@ -43,10 +43,10 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 
 # install the backend libraries:
-COPY ./api/setup.cfg ./api/requirements.txt /var/www/seismic/api/
+COPY ./api/setup.cfg ./api/requirements-dev.txt /var/www/seismic/api/
 WORKDIR /var/www/seismic/api/
 RUN python3 -m pip install --upgrade pip setuptools && \
-    python3 -m pip install -r ./requirements.txt
+    python3 -m pip install -r ./requirements-dev.txt
 
 
 # copy the backend source code:

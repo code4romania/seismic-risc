@@ -18,7 +18,7 @@ botocore==1.31.61
     # via
     #   boto3
     #   s3transfer
-croniter==1.4.1
+croniter==2.0.1
     # via -r requirements.in
 defusedxml==0.7.1
     # via odfpy
@@ -51,7 +51,7 @@ django-jquery==3.1.0
     # via -r requirements.in
 django-picklefield==3.1
     # via django-q2
-django-q2==1.5.5
+django-q2==1.6.1
     # via -r requirements.in
 django-storages==1.14.2
     # via -r requirements.in
@@ -89,7 +89,7 @@ packaging==23.2
     # via gunicorn
 pillow==10.0.1
     # via -r requirements.in
-psutil==5.9.5
+psutil==5.9.6
     # via -r requirements.in
 psycopg2==2.9.9
     # via -r requirements.in
@@ -98,7 +98,9 @@ python-dateutil==2.8.2
     #   botocore
     #   croniter
 pytz==2023.3.post1
-    # via djangorestframework
+    # via
+    #   croniter
+    #   djangorestframework
 pyyaml==6.0.1
     # via
     #   drf-spectacular
