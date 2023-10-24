@@ -1,5 +1,5 @@
 version: "3.8"
-name: seismic-prod
+name: seismic-dev
 
 services:
 
@@ -17,8 +17,8 @@ services:
       file: dk-cp.base.yml
       service: api_base
     build:
-      context: .
-      dockerfile: ./api/Dockerfile.dev
+      context: ./
+      dockerfile: ./docker/dockerfiles/Dockerfile.backend.dev
       args:
         - ENVIRONMENT=development
     env_file:
@@ -35,8 +35,8 @@ services:
       file: dk-cp.base.yml
       service: client_base
     build:
-      context: ./client
-      dockerfile: ./Dockerfile.dev
+      context: ./
+      dockerfile: ./docker/dockerfiles/Dockerfile.frontend.dev
       args:
         - ENVIRONMENT=development
     env_file:

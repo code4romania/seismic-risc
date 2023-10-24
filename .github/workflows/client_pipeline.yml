@@ -8,7 +8,7 @@ on:
     paths:
       - 'client/**.js'
       - 'client/package*.json'
-      - 'client/Dockerfile'
+      - 'docker/dockerfiles/Dockerfile.frontend*'
       - 'docker-compose.yml'
       - '.github/workflows/client_pipeline.yml'
 
