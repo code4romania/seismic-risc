@@ -8,7 +8,7 @@ on:
     paths:
       - 'api/**.py'
       - 'api/requirements*.*'
-      - 'api/Dockerfile'
+      - 'docker/dockerfiles/Dockerfile.backend*'
       - 'docker-compose.yml'
       - '.github/workflows/api_pipeline.yml'
       - '.github/workflows/code-analysis-py.yml'

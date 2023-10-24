@@ -15,8 +15,8 @@ services:
       file: dk-cp.base.yml
       service: api_base
     build:
-      context: .
-      dockerfile: ./api/Dockerfile
+      context: ./
+      dockerfile: ./docker/dockerfiles/Dockerfile.backend
       args:
         - ENVIRONMENT=production
     env_file:
@@ -31,7 +31,7 @@ services:
       service: client_base
     build:
       context: ./client
-      dockerfile: ./Dockerfile
+      dockerfile: ../docker/dockerfiles/Dockerfile.frontend
       args:
         - ENVIRONMENT=production
     env_file:

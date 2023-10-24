@@ -20,7 +20,7 @@ djangorestframework==3.14.0
 drf-spectacular==0.26.5
 
 # database
-psycopg2==2.9.9
+psycopg2-binary==2.9.9
 dj-database-url==2.1.0
 
 # file handling

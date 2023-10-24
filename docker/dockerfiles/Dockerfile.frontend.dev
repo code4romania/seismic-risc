@@ -13,11 +13,11 @@ WORKDIR /code
 ENV PATH /code/node_modules/.bin:${PATH}
 
 # install and cache app dependencies
-COPY ./package*.json ./
+COPY ./client/package*.json ./
 RUN npm i
 
-COPY ./docker-entrypoint /
-COPY ./ /code/
+COPY ./client/docker-entrypoint /
+COPY ./client/ /code/
 
 EXPOSE 3000
 

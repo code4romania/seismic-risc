@@ -55,8 +55,8 @@ fi
 
 # Load the dummy data
 if is_enabled "${RUN_LOAD_INITIAL_DATA:-False}"; then
-  echo "Loading initial building data into the database"
+    echo "Loading initial building data into the database"
 
-  ./manage.py loaddata proximal_utilities
-  ./manage.py loaddata work_performed
+    ./manage.py loaddata proximal_utilities
+    ./manage.py loaddata work_performed
 fi

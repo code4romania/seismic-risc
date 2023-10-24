@@ -126,7 +126,12 @@ if env("ENVIRONMENT") == "test":
     }
 else:
     DATABASES = {
-        "default": env.db(),  # looks for the DATABASE_URL env var
+        "ENGINE": "django.db.backends.postgresql",
+        "USER": env("POSTGRES_USER"),
+        "PASSWORD": env("POSTGRES_PASSWORD"),
+        "NAME": env("POSTGRES_DB"),
+        "HOST": env("POSTGRES_HOST"),
+        "PORT": env("POSTGRES_PORT"),
     }
 
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
