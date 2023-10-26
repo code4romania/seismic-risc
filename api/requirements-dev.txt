@@ -35,9 +35,7 @@ click==8.1.7
     #   black
     #   pip-tools
 coverage==7.3.2
-    # via
-    #   coverage
-    #   pytest-cov
+    # via pytest-cov
 croniter==2.0.1
     # via -r requirements.txt
 decorator==5.1.1
@@ -270,7 +268,7 @@ uritemplate==4.1.1
     # via
     #   -r requirements.txt
     #   drf-spectacular
-urllib3==1.26.17
+urllib3==1.26.18
     # via
     #   -r requirements.txt
     #   botocore
