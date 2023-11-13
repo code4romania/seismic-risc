@@ -279,7 +279,7 @@ wcwidth==0.2.8
     #   -r requirements.txt
     #   blessed
     #   prompt-toolkit
-werkzeug==3.0.0
+werkzeug==3.0.1
     # via -r requirements-dev.in
 wheel==0.41.2
     # via pip-tools
