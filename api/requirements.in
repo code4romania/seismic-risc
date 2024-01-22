@@ -25,7 +25,7 @@ dj-database-url==2.1.0
 
 # file handling
 boto3==1.28.61
-pillow==10.0.1
+pillow==10.2.0
 whitenoise==6.5.0
 
 # misc libraries
