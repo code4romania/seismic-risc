@@ -1,25 +1,31 @@
-from django.contrib.postgres.search import TrigramSimilarity
-from django.conf import settings
-from drf_spectacular.utils import (
-    extend_schema,
-    OpenApiParameter,
-)
+from typing import List
 
-from rest_framework import status, viewsets
-from rest_framework.decorators import api_view, permission_classes, action
-from rest_framework import permissions
+from django.conf import settings
+from django.contrib.postgres.search import TrigramSimilarity
+from drf_spectacular.utils import OpenApiParameter, extend_schema
+from rest_framework import permissions, status, viewsets
+from rest_framework.decorators import action, api_view, permission_classes
 from rest_framework.response import Response
 from rest_framework.throttling import AnonRateThrottle
 
+from seismic_site.caching import get_from_cache, set_to_cache
+from .models import (
+    BUILDINGS_LISTING_CACHE_KEY,
+    Building,
+    BuildingProximalUtilities,
+    BuildingWorkPerformed,
+    Statistic,
+)
 from .serializers import (
-    BuildingSerializer,
-    PublicBuildingCreateSerializer,
     BuildingListSerializer,
     BuildingSearchSerializer,
+    BuildingSerializer,
+    ProximalUtilitiesSerializer,
+    PublicBuildingCreateSerializer,
     SearchQuerySerializer,
     StatisticSerializer,
+    WorkPerformedSerializer,
 )
-from .models import Building, Statistic
 
 
 class PublicCreateAnonRateThrottle(AnonRateThrottle):
@@ -35,6 +41,29 @@ class BuildingViewSet(viewsets.ModelViewSet):
 
     def get_queryset(self):
         return Building.approved.all().order_by("general_id")
+
+    def list(self, request, *args, **kwargs):
+        """
+        List all buildings
+        """
+        nonexistent = object()  # sentinel
+
+        cached_data: List = get_from_cache(BUILDINGS_LISTING_CACHE_KEY, nonexistent)
+
+        if cached_data is nonexistent:
+            queryset = self.filter_queryset(self.get_queryset())
+
+            page = self.paginate_queryset(queryset)
+            if page is not None:
+                serializer = self.get_serializer(page, many=True)
+                return self.get_paginated_response(serializer.data)
+
+            serializer = self.get_serializer(queryset, many=True)
+            cached_data = serializer.data
+
+            set_to_cache(BUILDINGS_LISTING_CACHE_KEY, cached_data)
+
+        return Response(cached_data)
 
     def get_serializer_class(self):
         if self.action == "list":
@@ -89,9 +118,13 @@ class BuildingViewSet(viewsets.ModelViewSet):
 
         if serializer.is_valid():
             query = serializer.data["query"]
+            search_category = ("", serializer.data["riskCategory"])[bool(serializer.data["riskCategory"])]
             buildings = (
                 Building.approved.annotate(similarity=TrigramSimilarity("address", query))
-                .filter(similarity__gt=settings.TRIGRAM_SIMILARITY_THRESHOLD)
+                .filter(
+                    similarity__gt=settings.TRIGRAM_SIMILARITY_THRESHOLD,
+                    risk_category__icontains=search_category,
+                )
                 .order_by("-similarity")
             )
         else:
@@ -101,10 +134,21 @@ class BuildingViewSet(viewsets.ModelViewSet):
         return Response(result_serializer.data)
 
 
+class ProximalUtilitiesViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = BuildingProximalUtilities.objects.all()
+    serializer_class = ProximalUtilitiesSerializer
+
+
+class WorkPerformedViewSet(viewsets.ReadOnlyModelViewSet):
+    queryset = BuildingWorkPerformed.objects.all()
+    serializer_class = WorkPerformedSerializer
+
+
+@extend_schema(request=StatisticSerializer, responses=None)  # TODO: is it really None?
 @api_view(["GET"])
 @permission_classes((permissions.AllowAny,))
-def statistics(self):
-    stats = Statistic.objects.first()
+def statistics(request):
+    stats = Statistic.get_statistic()
     serializer = StatisticSerializer(stats, many=False)
 
     return Response(serializer.data)

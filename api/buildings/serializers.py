@@ -1,9 +1,26 @@
+from django.conf import settings
 from rest_framework import serializers
 
-from .models import Building, Statistic
+from .models import Building, BuildingProximalUtilities, BuildingWorkPerformed, Statistic
 
 
-class BuildingSerializer(serializers.ModelSerializer):
+class ImageUrlRelatedField(serializers.StringRelatedField):
+    def to_representation(self, value):
+        return value.url
+
+
+class BaseBuildingSerializer(serializers.ModelSerializer):
+    county_code = serializers.SerializerMethodField("get_county_code")
+
+    @staticmethod
+    def get_county_code(obj: Building) -> str:
+        county = obj.county
+        return settings.COUNTIES_SHORTNAME.get(county, county[0:2].upper())
+
+
+class BuildingSerializer(BaseBuildingSerializer):
+    images = ImageUrlRelatedField(many=True, read_only=True)
+
     class Meta:
         model = Building
         fields = (
@@ -16,10 +33,11 @@ class BuildingSerializer(serializers.ModelSerializer):
             "address",
             "street_number",
             "locality",
-            "county",
+            "county_code",
             "year_built",
             "height_regime",
             "status",
+            "images",
         )
 
 
@@ -36,6 +54,11 @@ class PublicBuildingCreateSerializer(serializers.ModelSerializer):
             "lng",
             "risk_category",
             "height_regime",
+            "full_name",
+            "email_address",
+            "phone_number",
+            "type_of_contact",
+            "necessary_support",
             "is_still_present",
             "consolidation_status",
             "work_performed",
@@ -55,6 +78,7 @@ class PublicBuildingCreateSerializer(serializers.ModelSerializer):
             "self_owned_commercial_space_count",
             "proximal_utilities",
             "proximal_utilities_description",
+            "images",
         )
 
 
@@ -66,26 +90,35 @@ class BuildingListSerializer(serializers.ModelSerializer):
 
 class SearchQuerySerializer(serializers.Serializer):
     query = serializers.CharField(max_length=100)
+    riskCategory = serializers.CharField(required=False, default="")
 
 
-class BuildingSearchSerializer(serializers.ModelSerializer):
+class BuildingSearchSerializer(BaseBuildingSerializer):
     class Meta:
         model = Building
-        fields = ("general_id", "lat", "lng", "address", "street_number")
+        fields = ("general_id", "lat", "lng", "address", "street_number", "locality", "county_code")
 
 
 class StatisticSerializer(serializers.ModelSerializer):
-    evaluated_buildings = serializers.SerializerMethodField("get_total_buildings")
-
-    @staticmethod
-    def get_total_buildings(_):
-        total_buildings = Building.approved.count()
-        return int(total_buildings)
-
     class Meta:
         model = Statistic
-        fields = [
+        fields = (
             "people_under_risk",
-            "consolidated_buildings",
             "evaluated_buildings",
-        ]
+            "consolidated_buildings",
+            "buildings_per_county",
+            "buildings_per_city",
+            "buildings_per_category",
+        )
+
+
+class ProximalUtilitiesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BuildingProximalUtilities
+        fields = "__all__"
+
+
+class WorkPerformedSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = BuildingWorkPerformed
+        fields = "__all__"

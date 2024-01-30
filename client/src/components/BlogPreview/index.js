@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { Row, Col, Icon, Typography, Spin } from 'antd';
+import { Row, Col, Typography, Spin } from 'antd';
+import { EnvironmentOutlined } from '@ant-design/icons';
 import { Trans } from '@lingui/macro';
 import config from '../../config';
 import BlogCard from '../BlogCard';
@@ -66,7 +67,7 @@ export default ({ title, postSlug = null }) => {
         <Row>
           <Col span={24}>
             <Title level={2}>
-              <Icon type="environment" />
+              <EnvironmentOutlined />
               {title}
             </Title>
           </Col>
@@ -87,14 +88,14 @@ export default ({ title, postSlug = null }) => {
       <Row type="flex" justify="space-around">
         <Col span={24}>
           <Title level={2}>
-            <Icon type="environment" />
+            <EnvironmentOutlined />
             {title}
           </Title>
         </Col>
       </Row>
-      <Row gutter={[20, 8]} type="flex" justify="start">
+      <Row gutter={[20, 20]} type="flex" justify="center">
         {state.posts.map((post, i) => (
-          <Col key={post.slug} lg={8} span={24}>
+          <Col key={post.slug} xs={24} md={12} lg={8}>
             <BlogCard cardIndex={i} title={post.title} imageUrl={post.image} slug={post.slug} />
           </Col>
         ))}

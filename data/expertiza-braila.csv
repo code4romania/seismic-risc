@@ -1,0 +1,55 @@
+Lat,Lng,Address,Street Number,Locality,County,Year Built,Height Regime,Apartment Count,Surface,Examination Year,Certified Expert,Has Warning Panels,Observations,Risk Category
+45.2794393,27.9720875,Calea Galați,43,Brăila,Brăila,1965,P+9,36,2719.6,1992,Dr. Ing. Cosovliu Octavian,,,C
+45.28118785,27.97149411,Calea Galați,Bloc A,Brăila,Brăila,1964,S+P+4E,106,7519.7,1995,Dr. Ing. Beche Vasile,x,,RS3
+45.26362544,27.9573998,Hipodrom,Bloc C10,Brăila,Brăila,1969,S+P+4E,45,4252,1997,Ing. Cruceanu Dan,,,RS2
+45.2709419,27.96521278,Hristo Botev,Bloc D2,Brăila,Brăila,1964,S+P+4E,40,3420,1997,Dr. Ing. Beche Vasile,x,,RS1
+45.2713204,27.9716376,Mihai Eminescu,13,Brăila,Brăila,1916,P+2E,4,691.4,1996,Dr. Ing. Beche Vasile,,,U1
+45.2713204,27.9716376,Mihai Eminescu,15,Brăila,Brăila,1880,P+1E,8,170.65,1996,Dr. Ing. Gramescu A.M.,,,U1
+45.2713204,27.9716376,Mihai Eminescu,21,Brăila,Brăila,1900,P+2E,4,722.7,1995,Dr. Ing. Beche Vasile,,,U1
+45.2714793,27.9703546,Mihai Eminescu,29,Brăila,Brăila,1890,P+2E,6,1070.7,1994,Dr. Ing. Beche Vasile,,,U1
+45.271499,27.9711491,Mihai Eminescu,32,Brăila,Brăila,1871,P+2E,2,289.2,1997,Ing. Cruceanu Dan,,,RS1
+45.2713188,27.9693656,Mihai Eminescu,33,Brăila,Brăila,1902,S+P+1E,5,289.3,1994,Dr. Ing. Beche Vasile,,,U1
+45.271499,27.9711491,Mihai Eminescu,34,Brăila,Brăila,1871,P+1E,1,144.4,1997,Ing. Cruceanu Dan,,,RS1
+45.2713188,27.9693656,Mihai Eminescu,35,Brăila,Brăila,1890,P+1E,2,321.5,1994,Dr. Ing. Beche Vasile,,,U1
+45.2713675,27.9691642,Mihai Eminescu,37,Brăila,Brăila,1892,P+1E,4,344.4,1994,Dr. Ing. Beche Vasile,,,U1
+45.2712709,27.9691123,Mihai Eminescu,39,Brăila,Brăila,1901,P+1E,4,330.35,1994,Dr. Ing. Beche Vasile,,,U1
+45.271499,27.9711491,Mihai Eminescu,42,Brăila,Brăila,1910,P+1E,6,632.25,1996,Dr. Ing. Beche Vasile,,,U1
+45.2712651,27.9684451,Mihai Eminescu,51,Brăila,Brăila,1890,S+P+1E,4,1463.8,1994,Dr. Ing. Beche Vasile,,,U1
+45.2713992,27.9681626,Mihai Eminescu,55,Brăila,Brăila,1890,P+2E,8,1074.27,1994,Dr. Ing. Beche Vasile,,,U1
+45.2716481,27.968561,Mihai Eminescu,62,Brăila,Brăila,1915,S+P+1E,5,889,1997,Dr. Ing. Beche Vasile,,,RS1
+45.2715077,27.9679604,Mihai Eminescu,64,Brăila,Brăila,1915,S+P+1E,10,957,1997,Dr. Ing. Gramescu A.M.,,,RS1
+45.2712308,27.9664909,Mihai Eminescu,67,Brăila,Brăila,1898,S+P+E,6,339,2000,Dr. Ing. Cosovliu Octavian,,,RS1
+45.2715784,27.9684435,Mihai Eminescu,70,Brăila,Brăila,1900,P+1E,2,224.4,1995,Dr. Ing. Beche Vasile,,,U1
+45.2720071,27.9679465,Mihai Eminescu,72,Brăila,Brăila,1920,P+1E,3,223.45,1994,Ing. Andrei Gheorghe,,,U1
+45.2716469,27.9684199,Mihai Eminescu,74,Brăila,Brăila,1925,P+1E,2,227.9,1994,Ing. Andrei Gheorghe,,,U1
+45.271508,27.9684111,Mihai Eminescu,76,Brăila,Brăila,1915,P+1E,3,339.35,1994,Ing. Andrei Gheorghe,,,U1
+45.2716172,27.96646,Mihai Eminescu,82,Brăila,Brăila,1919,P+1E,5,1020,1996,Dr. Ing. Gramescu A.M.,,,U1
+45.2688116,27.9770399,Vapoarelor,15,Brăila,Brăila,1910,P+2E,7,652,1995,Dr. Ing. Beche Vasile,,,U1
+45.271888,27.967515,B-dul Al.I.Cuza,119,Brăila,Brăila,1910,S+P+E,6,506.4,2000,Dr. Ing. Gramescu A.M.,,,RS1
+45.2721493,27.9675601,B-dul Al.I.Cuza,125,Brăila,Brăila,1910,S+P+E,7,770.8,2000,Dr. Ing. Gramescu A.M.,,,RS1
+45.2707897,27.9678341,B-dul Al.I.Cuza,130,Brăila,Brăila,1917,P+2E,6,1048.9,1995,Dr. Ing. Beche Vasile,,,U1
+45.2716813,27.967797,B-dul Al.I.Cuza,136,Brăila,Brăila,1903,P+1E,7,1062,1996,Dr. Ing. Beche Vasile,,,U1
+45.273501,27.968327,B-dul Al.I.Cuza,161,Brăila,Brăila,1910,S+P+E,6,598,1997,Dr. Ing. Beche Vasile,,,RS1
+45.273638,27.968396,B-dul Al.I.Cuza,163,Brăila,Brăila,1909,S+P+1E,6,948.4,1997,Dr. Ing. Beche Vasile,,,RS1
+45.275265,27.9693968,B-dul Al.I.Cuza,195,Brăila,Brăila,1890,S+P+E,2,679,2000,Dr. Ing. Cosovliu Octavian,,,RS1
+45.2709653,27.974709,P-ta Traian,10,Brăila,Brăila,1898,P+2E,6,943.33,1996,Dr. Ing. Beche Vasile,,,U1
+45.2708719,27.9744382,P-ta Traian,14,Brăila,Brăila,1904,S+P+E+M,7,1216.4,1997,Dr. Ing. Beche Vasile,,,RS1
+45.268378,27.9737131,Calea Calarasilor,18,Brăila,Brăila,1921,S+P+E,3,780,2000,Dr. Ing. Gramescu A.M.,,,RS1
+45.2679777,27.9734483,Calea Calarasilor,23,Brăila,Brăila,1912,P+1E,6,481.1,1996,Dr. Ing. Beche Vasile,,,U1
+45.267314,27.97267,Calea Calarasilor,27,Brăila,Brăila,1915,P+2E,4,1409.6,1996,Dr. Ing. Gramescu A.M.,,,U1
+45.2706073,27.9614322,Rosie,5,Brăila,Brăila,1905,S+P+2E+M,10,1456,1997,Dr. Ing. Beche Vasile,,,RS1
+45.269456,27.973893,Rosie,7,Brăila,Brăila,1910,S+P+E,3,490.2,1998,Dr. Ing. Gramescu A.M.,,,RS1
+45.2714554,27.9631591,1 Decembrie 1918,96,Brăila,Brăila,1915,S+P+E,3,487.75,1999,Dr. Ing. Gramescu A.M.,,,RS1
+45.2714554,27.9631591,1 Decembrie 1918,100,Brăila,Brăila,1890,S+P+E,2,463.5,1999,Dr. Ing. Gramescu A.M.,,,RS1
+45.2714554,27.9631591,1 Decembrie 1918,107,Brăila,Brăila,1919,S+P+1E,7,816,1998,Dr. Ing. Gramescu A.M.,,,RS1
+45.2699058,27.9737796,Brasoveni,21,Brăila,Brăila,1905,S+P+E,7,816,1998,Dr. Ing. Gramescu A.M.,,,RS1
+45.2676602,27.9731386,Justitiei,1,Brăila,Brăila,1905,S+P+E,6,1102,1998,Dr. Ing. Gramescu A.M.,,,RS1
+45.277028,27.9788961,Cetatii,62,Brăila,Brăila,1867,S+P+E+M,7,307.78,1999,Dr. Ing. Gramescu A.M.,,,RS1
+45.2732203,27.9779683,Gradinii Publice,5,Brăila,Brăila,1890,S+P+E+M,2,657.5,1998,Dr. Ing. Beche Vasile,,,RS1
+45.273046,27.966141,B-dul Independentei,148,Brăila,Brăila,1925,S+P+E+M,8,450,2000,Dr. Ing. Gramescu A.M.,,,RS1
+45.2740795,27.9761605,Bolintineanu,15,Brăila,Brăila,1925,S+P+M,5,652.6,1999,Dr. Ing. Gramescu A.M.,,,RS1
+45.277104,27.975564,Panait Istrati,19,Brăila,Brăila,1902,D+P+E+M,8,771,2000,Dr. Ing. Gramescu A.M.,,,RS1
+45.273289,27.975868,C.A. Rosetti,13,Brăila,Brăila,1915,D+P+E+M,7,823.6,2000,Dr. Ing. Gramescu A.M.,,,RS1
+45.2709099,27.96947,Petru Maior,19,Brăila,Brăila,1860,S+P+E,11,876,2000,Ing. Cruceanu Dan,,,RS1
+45.2710931,27.969459,Petru Maior,21,Brăila,Brăila,1865,S+P+E+M,4,472,2000,Dr. Ing. Gramescu A.M.,,,RS1
+45.27502,27.9714169,Marasesti,25,Brăila,Brăila,1868,S+D+P,2,609.64,2000,Dr. Ing. Gramescu A.M.,,,RS1

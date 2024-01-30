@@ -8,22 +8,22 @@ on:
     paths:
       - 'api/**.py'
       - 'api/requirements*.*'
-      - 'api/Dockerfile'
+      - 'docker/dockerfiles/Dockerfile.backend*'
       - 'docker-compose.yml'
       - '.github/workflows/api_pipeline.yml'
 
 jobs:
   static_analysis:
     name: Run black formatting check
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     steps:
     - name: Check out Git repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
-    - name: Set up Python 3.7
-      uses: actions/setup-python@v1
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v4
       with:
-        python-version: 3.7
+        python-version: 3.11
 
     - name: Install Black with latest pip
       run: |
@@ -32,19 +32,19 @@ jobs:
 
     - name: Check formatting with black
       run: |
-        black --line-length 120 --target-version py37 --exclude migrations --check ./api
+        black --line-length 120 --target-version py311 --exclude migrations --check ./api
 
   tests:
     name: Run api tests
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-22.04
     steps:
     - name: Check out Git repository
-      uses: actions/checkout@v2
+      uses: actions/checkout@v4
 
-    - name: Set up Python 3.7
-      uses: actions/setup-python@v1
+    - name: Set up Python 3.11
+      uses: actions/setup-python@v4
       with:
-        python-version: 3.7
+        python-version: 3.11
 
     - name: Install dependencies
       run: |
@@ -53,4 +53,4 @@ jobs:
 
     - name: Run tests
       run: |
-        cd ./api && pytest
+        ENVIRONMENT=test DJANGO_SETTINGS_MODULE=seismic_site.settings.test ./api/manage.py test

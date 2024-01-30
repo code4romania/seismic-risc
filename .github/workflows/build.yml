@@ -1,0 +1,35 @@
+on:
+  push:
+    branches:
+      - 'main'
+    tags:
+      - 'v*'
+
+name: Build Docker image
+
+jobs:
+
+  build-backend-amd64:
+    name: backend/amd64
+    uses: code4romania/.github/.github/workflows/build-push-image.yml@main
+    with:
+      images: ghcr.io/code4romania/seismic-risc-backend
+      context: ./
+      dockerfile: ./docker/dockerfiles/Dockerfile.backend
+      registry: ghcr.io
+    secrets:
+      username: ${{ github.actor }}
+      token: ${{ secrets.GITHUB_TOKEN }}
+
+#  disable frontend build for now since we're using Vercel
+#  build-frontend-amd64:
+#    name: frontend/amd64
+#    uses: code4romania/.github/.github/workflows/build-push-image.yml@main
+#    with:
+#      images: ghcr.io/code4romania/seismic-risc-frontend
+#      context: ./client
+#      dockerfile: ./docker/dockerfiles/Dockerfile.frontend
+#      registry: ghcr.io
+#    secrets:
+#      username: ${{ github.actor }}
+#      token: ${{ secrets.GITHUB_TOKEN }}

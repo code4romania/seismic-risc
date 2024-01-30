@@ -1,6 +1,7 @@
 import React from 'react';
-import { Col, Icon, Row } from 'antd';
+import { Col, Row } from 'antd';
 import { Trans } from '@lingui/macro';
+import { CloseOutlined } from '@ant-design/icons';
 
 import { useGlobalContext } from '../../context';
 
@@ -20,7 +21,7 @@ export default function SearchResults(props) {
           <Trans>Search Results</Trans>
         </Col>
         <Col span={1}>
-          <Icon type="close" onClick={onCloseSearchResults} />
+          <CloseOutlined type="close" onClick={onCloseSearchResults} />
         </Col>
       </Row>
       <ul className="search-results">

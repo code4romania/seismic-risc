@@ -1,98 +1,144 @@
 help:                             ## Display a help message detailing commands and their purpose
 	@echo "Commands:"
-	@grep -E '^[a-zA-Z_-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
+	@grep -E '^([a-zA-Z_-]+:.*?## .*|#+ (.*))$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-30s\033[0m %s\n", $$1, $$2}'
 	@echo ""
 
-## [DEV ENV SETUP]
-install-docker-ubuntu:            ## installs docker and docker-compose on Ubuntu
-	sudo apt-get remove docker docker-engine docker.io containerd runc
-	sudo apt-get update
-	sudo apt-get -y install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
-	curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
-	sudo apt-key fingerprint 0EBFCD88
-	sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(shell lsb_release -cs) stable" || { echo "$(shell lsb_release -cs) is not yet supported by docker.com."; exit 1; }
-	sudo apt-get update
-	sudo apt-get install -y docker-ce gettext
-	sudo curl -L "https://github.com/docker/compose/releases/download/1.25.0/docker-compose-$(shell uname -s)-$(shell uname -m)" -o /usr/local/bin/docker-compose
-	sudo chmod +x /usr/local/bin/docker-compose
 
-install-docker-osx:               ## installs homebrew (you can skip this at runtime), docker and docker-compose on OSX
-	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-	brew update
-	brew cask install docker
-	brew install docker-compose gettext
+## [Managing the project]
+### Stopping the containers and dropping the databases
+stop-dev:                         ## stops the dev project
+	docker compose down -t 60
 
-init-env:                         ## builds the container, sets up the database and fixtures
-	cp .env.dist .env
-	make build-dev
-	make init-db
+drop-dev:                         ## stops the dev project
+	docker compose down -v -t 60
 
-build:                            ## builds the container
-	docker-compose build --pull
+stop-prod:                        ## stops the dev project
+	docker compose -f docker-compose.prod.yml down -t 60
 
-build-dev:                        ## builds the container with the DEVBUILD flag
-	docker-compose build --build-arg DEVBUILD=1 --pull
+drop-prod:                        ## stops the dev project
+	docker compose -f docker-compose.prod.yml down -v -t 60
 
-init-db:                          ## sets up the database and fixtures
-	docker-compose down -t 60
-	docker-compose run --rm api "./wait_for_db.py && ./manage.py migrate --no-input"
-	docker-compose run --rm api "./manage.py createsuperuser"
-	docker-compose run --rm api "./manage.py loaddata buildings"
-	docker-compose run --rm api "./manage.py loaddata pages"
+### Building & starting the containers
+up-dev:                           ## run the project
+	docker compose up --build
 
-drop-db:                          ## drops the database
-	docker-compose down -t 60
-	docker volume rm seismic-risc_pgdata
+upd-dev:                          ## run the project in detached mode
+	docker compose up -d --build
 
-redo-db: drop-db init-db          ## drops the database, then sets up the database and fixtures
+build-prod:
+	docker compose -f docker-compose.prod.yml build \
+		--build-arg $$(cat .env.prod | grep ENVIRONMENT) \
+		--build-arg $$(cat .env.prod | grep REACT_APP_CAPTCHA_API_KEY) \
+		--build-arg $$(cat .env.prod | grep REACT_APP_HERE_MAPS_API_KEY) \
+		--build-arg $$(cat .env.prod | grep REACT_APP_DJANGO_SITE_URL) \
+		--build-arg $$(cat .env.prod | grep REACT_APP_DJANGO_PORT) \
+		--build-arg $$(cat .env.prod | grep REACT_APP_DJANGO_API_ENDPOINT)
 
-## [UTILS]
-requirements-build:               ## run pip compile and add requirements from the *.in files
-	docker-compose run --rm --no-deps --entrypoint "bash -c" api "cd /code && pip-compile -o requirements-dev.txt requirements-dev.in requirements.in && pip-compile -o requirements.txt requirements.in"
 
-requirements-update:              ## run pip compile and rebuild the requirements files
-	docker-compose run --rm --no-deps --entrypoint "bash -c" api "cd /code && pip-compile -r -U -o requirements-dev.txt requirements-dev.in requirements.in && pip-compile -r -U -o requirements.txt requirements.in && chmod a+r requirements.txt && chmod a+r requirements-dev.txt"
+up-prod:                          ## run the project
+	docker compose -f docker-compose.prod.yml up
 
-migrations:                       ## generate migrations in a clean container
-	docker-compose run --rm api "./wait_for_db.py && ./manage.py makemigrations"
+upd-prod:                       ## builds the container with the production flag
+	docker compose -f docker-compose.prod.yml up -d
+
+### Using the dev setup
+run-dev: up-dev                   ## run the project
+rund-dev: upd-dev                 ## run the project in detached mode
+redo-dev: drop-dev up-dev         ## delete the db and rerun the project
+redod-dev: drop-dev upd-dev       ## delete the db and rerun the project in detached mode
+
+### With an image built for production
+run-prod: build-prod up-prod               ## run the project with production settings
+rund-prod: build-prod upd-prod             ## run the project with production settings in detached mode
+redo-prod: drop-prod build-prod up-prod    ## delete the db and rerun the project
+redod-prod: drop-prod build-prod upd-prod  ## delete the db and rerun the project in detached mode
+
+### Other run options
+run: run-dev                      ## set the default run command to dev
+redo: redo-dev                    ## set the default redo command to dev
+rund: rund-dev                    ## set the default run command to dev
+redod: redod-dev                  ## set the default redo command to dev
+
+stop: stop-dev stop-prod ## stop all running projects
+
+drop: drop-dev drop-prod ## drop all databases
+
+
+## [Monitoring the containers]
+logs-dev:                         ## show the logs of the containers
+	docker compose logs -f api
+
+logs: logs-dev                    ## set the default logs command to dev
+
+logs-prod:                        ## show the logs of the containers
+	docker compose -f docker-compose.prod.yml logs -f api
+
+
+## [Django operations]
+makemigrations:                   ## generate migrations in a clean container
+	docker compose exec api sh -c "python3 -Wd ./manage.py makemigrations $(apps)"
 
 migrate:                          ## apply migrations in a clean container
-	docker-compose run --rm api "./manage.py migrate"
+	docker compose exec api sh -c "python3 -Wd ./manage.py migrate $(apps)"
+
+migrations: makemigrations migrate ## generate and apply migrations
+
 
 makemessages:                     ## generate the strings marked for translation
-	docker-compose exec api python manage.py makemessages -a
+	docker compose exec api sh -c "python3 -Wd ./manage.py makemessages -a"
 
 compilemessages:                  ## compile the translations
-	docker-compose exec api python manage.py compilemessages
+	docker compose exec api sh -c "python3 -Wd ./manage.py compilemessages"
+
+messages: makemessages compilemessages ## generate and compile the translations
+
+
+collectstatic:                    ## collect the static files
+	docker compose exec api sh -c "python3 -Wd ./manage.py collectstatic --no-input"
+
+format:                           ## format the code with black & ruff
+	docker compose exec api sh -c "black ./api && ruff check --fix ./api"
 
 pyshell:                          ## start a django shell
-	docker-compose run --rm api "./manage.py shell"
+	docker compose exec -it api sh -c "python3 -Wd ./manage.py shell"
 
-black:                            ## run the Black formatter on the Python code
-	docker-compose run --rm api "black --line-length 120 --target-version py37 --exclude migrations ."
+sh:                               ## start a sh shell
+	docker compose exec -it api sh -c "sh"
 
-## [TEST]
-test:                             ## run all tests
-	docker-compose run --rm api "pytest"
+bash:                             ## start a bash shell
+	docker compose exec -it api sh -c "bash"
 
-test-pdb:                         ## run tests and enter debugger on failed assert or error
-	docker-compose run --rm api "pytest --pdb"
 
-test-lf:                          ## rerun tests that failed last time
-	docker-compose run --rm api "pytest --lf"
+## [Requirements management]
+requirements-build:               ## run pip compile and add requirements from the *.in files
+	docker compose exec api sh -c " \
+		pip-compile --strip-extras --resolver=backtracking -o requirements.txt requirements.in && \
+		pip-compile --strip-extras --resolver=backtracking -o requirements-dev.txt requirements-dev.in \
+	"
 
-## [CLEAN]
-clean: clean-docker clean-py      ## remove all build, test, coverage and Python artifacts
+requirements-update:              ## run pip compile and rebuild the requirements files
+	docker compose exec api sh -c " \
+		pip-compile --strip-extras --resolver=backtracking -r -U -o requirements.txt requirements.in && \
+		pip-compile --strip-extras --resolver=backtracking -r -U -o requirements-dev.txt requirements-dev.in && \
+		chmod a+r requirements.txt && \
+		chmod a+r requirements-dev.txt \
+	"
 
+
+## [Clean-up]
 clean-docker:                     ## stop docker containers and remove orphaned images and volumes
-	docker-compose down -t 60
+	docker compose down -v -t 60
+	docker compose -f docker-compose.prod.yml down -v -t 60
 	docker system prune -f
 
 clean-py:                         ## remove Python test, coverage, file artifacts, and compiled message files
-	find ./api -name '.coverage' -delete
-	find ./api -name '.pytest_cache' -delete
-	find ./api -name '__pycache__' -delete
-	find ./api -name 'htmlcov' -delete
-	find ./api -name '*.pyc' -delete
-	find ./api -name '*.pyo' -delete
-	find ./api -name '*.mo' -delete
+	find ./backend -name '*.mo' -delete
+	find ./backend -name '*.pyc' -delete
+	find ./backend -name '*.pyo' -delete
+	find ./backend -name '.coverage' -delete
+	find ./backend -name '.pytest_cache' -delete
+	find ./backend -name '.ruff_cache' -delete
+	find ./backend -name '__pycache__' -delete
+	find ./backend -name 'htmlcov' -delete
+
+clean: clean-docker clean-py      ## remove all build, test, coverage and Python artifacts

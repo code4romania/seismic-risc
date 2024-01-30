@@ -1,0 +1,16 @@
+Lat,Lng,Address,Street Number,Locality,County,Year Built,Height Regime,Apartment Count,Surface,Examination Year,Certified Expert,Has Warning Panels,Observations,Risk Category
+45.178649,28.799849,Str. Isaccei,Bloc 13,Tulcea,Tulcea,1962,S+P+4E,30,2905,2007,Ruse Dumitru,Da,Locuinte,RS1
+45.1789841,28.7986474,Str. Isaccei,Bloc 14,Tulcea,Tulcea,1962,S+P+4E,30,2905,2007,Ruse Dumitru,Da,Locuinte,RS1
+45.1649344,28.8026646,Str. Eternității,Bloc E1,Tulcea,Tulcea,1970,S+P+4E,20,2333,1992,Ruse Dumitru,Nu este cazul,Locuinte,U3
+45.1773501,28.7838033,Str. Alunișului,Bloc F3,Tulcea,Tulcea,1971,P+4E,25,1284,1992,Ruse Dumitru,Nu este cazul,Locuinte,U3
+45.1766697,28.7842343,Str. Spitalului,Bloc A1,Tulcea,Tulcea,1971,P+4E,20,1149,1992,Ruse Dumitru,Nu este cazul,Locuinte,U3
+45.1679751,28.8007065,Str. I.L. Caragiale,Bloc C1A,Tulcea,Tulcea,1969,S+P+4E,24,1995,1992,Ruse Dumitru,Nu este cazul,Locuinte,U3
+45.154666,29.661304,Str. Tudor Vladimirescu nr 1,,Sulina,Tulcea,1910,P+2E,3,57.8,1994,Ruse Dumitru,Nu este cazul,Locuinte,U3
+45.1550406,29.6605235,Str. C.A. Rosetti,nr. 2,Sulina,Tulcea,1902,P+1E,4,383.6,1994,Ruse Dumitru,Nu este cazul,Locuinte,U3
+45.1562143,29.6523714,Str II,nr 258,Sulina,Tulcea,1910,P+1E,4,571,1994,Ruse Dumitru,Nu este cazul,Locuinte,U3
+45.156462,29.652219,Str I,nr 162A,Sulina,Tulcea,1910,P+1E,4,207.2,1994,Ruse Dumitru,Nu este cazul,Locuinte,U3
+45.1563623,29.6578862,Str I,nr 183,Sulina,Tulcea,1910,P+1E,1,258.3,1994,Ruse Dumitru,Nu este cazul,Locuinte,U3
+45.1565315,29.6522229,Str. I,nr 159,Sulina,Tulcea,1910,P+1E,1,194.68,1994,Ruse Dumitru,Nu este cazul,Locuinte,U3
+45.1550406,29.6605235,Str. C.A. Rosetti,nr.4,Sulina,Tulcea,1910,P+1E,4,191.86,1994,Ruse Dumitru,Nu este cazul,Locuinte,U3
+45.2404736,28.1487835,Str. 1 Decembrie,"nr 141, corp B",Macin,Tulcea,1973,P+2,8,357.12,2006,Rusu N. Aneta,???,Locuinte,RS1
+45.2430257,28.1393206,Str. 1 Decembrie,"nr 141, corp A",Macin,Tulcea,1973,P+3,8,357.12,2006,Rusu N. Aneta,,Locuinte,RS3

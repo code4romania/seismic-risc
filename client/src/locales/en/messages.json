@@ -40,7 +40,8 @@
         15
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "About Project": {
     "origin": [
@@ -49,9 +50,11 @@
         78
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "About Vulnerable Romania": {
+    "translation": "About Vulnerable Romania",
     "origin": [
       [
         "containers/blog/HeroFragment.js",
@@ -61,47 +64,29 @@
     "extractedComments": []
   },
   "About the project": {
+    "translation": "About the project",
     "origin": [
       [
-        "components/Footer/index.js",
-        45
-      ],
-      [
-        "containers/404/HeroFragment.js",
-        25
-      ],
-      [
-        "containers/about/HeroFragment.js",
-        15
-      ],
-      [
-        "containers/about/TitleFragment.js",
-        10
-      ],
-      [
         "containers/home/ParagraphFragment.js",
-        13
-      ],
-      [
-        "containers/thankyou/HeroFragment.js",
-        28
+        14
       ]
     ],
     "extractedComments": []
   },
   "Add a building": {
+    "translation": "Add a building",
     "origin": [
       [
         "components/Footer/index.js",
-        50
+        20
       ],
       [
         "components/Header/index.js",
-        106
+        73
       ],
       [
         "containers/add-building/FormFragment.js",
-        205
+        149
       ],
       [
         "containers/add-building/HeroFragment.js",
@@ -121,10 +106,11 @@
     "extractedComments": []
   },
   "All seismic risk classes": {
+    "translation": "All seismic risk classes",
     "origin": [
       [
-        "containers/home/MapFragment.js",
-        50
+        "containers/building-map/MapFragment.js",
+        57
       ]
     ],
     "extractedComments": []
@@ -136,9 +122,11 @@
         42
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "Back to home page": {
+    "translation": "Back to home page",
     "origin": [
       [
         "containers/404/HeroFragment.js",
@@ -152,6 +140,7 @@
     "extractedComments": []
   },
   "Blog": {
+    "translation": "Blog",
     "origin": [
       [
         "containers/404/BlogPreviewFragment.js",
@@ -168,35 +157,8 @@
     ],
     "extractedComments": []
   },
-  "Building Info": {
-    "origin": [
-      [
-        "containers/add-building/FormFragment.js",
-        136
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Cannot be left empty!": {
-    "origin": [
-      [
-        "containers/add-building/FormFragment.js",
-        22
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Captcha": {
-    "translation": "Captcha",
-    "origin": [
-      [
-        "containers/add-building/FormFragment.js",
-        198
-      ]
-    ],
-    "extractedComments": []
-  },
   "Certified expert name": {
+    "translation": "Certified expert name",
     "origin": [
       [
         "components/BuildingDetails/index.js",
@@ -205,25 +167,28 @@
     ],
     "extractedComments": []
   },
-  "Check here if a building is on the <0><1>seismic risk</1><2/></0> list": {
+  "Check here if a building is on the <0><1><2>seismic risk</2><3/></1></0> list": {
+    "translation": "Check here if a building is on the <0><1><2>seismic risk</2><3/></1></0> list",
     "origin": [
       [
-        "containers/home/SearchFragment.js",
-        89
+        "containers/building-map/SearchFragment.js",
+        94
       ]
     ],
     "extractedComments": []
   },
   "Consolidated buildings": {
+    "translation": "Consolidated buildings",
     "origin": [
       [
-        "containers/home/StatisticFragment.js",
-        81
+        "containers/building-map/StatisticFragment.js",
+        82
       ]
     ],
     "extractedComments": []
   },
   "Construction Year": {
+    "translation": "Construction Year",
     "origin": [
       [
         "components/BuildingDetails/index.js",
@@ -239,18 +204,11 @@
         93
       ]
     ],
-    "extractedComments": []
-  },
-  "County": {
-    "origin": [
-      [
-        "containers/add-building/FormFragment.js",
-        162
-      ]
-    ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "DONATE": {
+    "translation": "DONATE",
     "origin": [
       [
         "components/SocialBar/index.js",
@@ -270,7 +228,8 @@
         21
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "Do you have more details about this building?": {
     "translation": "Do you have more details about this building?",
@@ -283,10 +242,11 @@
     "extractedComments": []
   },
   "Donate": {
+    "translation": "Donate",
     "origin": [
       [
         "components/Footer/index.js",
-        60
+        30
       ]
     ],
     "extractedComments": []
@@ -298,31 +258,35 @@
         36
       ]
     ],
+    "extractedComments": [],
+    "obsolete": true
+  },
+  "Emergency categories": {
+    "translation": "Emergency categories",
+    "origin": [
+      [
+        "containers/building-map/MapFragment.js",
+        112
+      ]
+    ],
     "extractedComments": []
   },
   "Evaluated buildings": {
+    "translation": "Evaluated buildings",
     "origin": [
       [
-        "containers/home/StatisticFragment.js",
-        73
+        "containers/building-map/StatisticFragment.js",
+        74
       ]
     ],
     "extractedComments": []
   },
   "Examination year": {
+    "translation": "Examination year",
     "origin": [
       [
         "components/BuildingDetails/index.js",
         23
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Field cannot exceed a maximum of {maxLen} characters!": {
-    "origin": [
-      [
-        "containers/add-building/FormFragment.js",
-        24
       ]
     ],
     "extractedComments": []
@@ -334,17 +298,15 @@
         83
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "Height regime": {
+    "translation": "Height regime",
     "origin": [
       [
         "components/BuildingDetails/index.js",
         15
-      ],
-      [
-        "containers/add-building/FormFragment.js",
-        177
       ]
     ],
     "extractedComments": []
@@ -356,7 +318,8 @@
         22
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "Implemented by": {
     "origin": [
@@ -365,9 +328,11 @@
         30
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "In the meantime, keep being awesome!": {
+    "translation": "In the meantime, keep being awesome!",
     "origin": [
       [
         "containers/thankyou/HeroFragment.js",
@@ -377,24 +342,27 @@
     "extractedComments": []
   },
   "Information being updated": {
+    "translation": "Information being updated",
     "origin": [
       [
-        "containers/home/StatisticFragment.js",
+        "containers/building-map/StatisticFragment.js",
         25
       ]
     ],
     "extractedComments": []
   },
   "Information missing": {
+    "translation": "Information missing",
     "origin": [
       [
         "components/BuildingDetails/index.js",
-        51
+        53
       ]
     ],
     "extractedComments": []
   },
   "Load more articles": {
+    "translation": "Load more articles",
     "origin": [
       [
         "components/LoadMoreArticlesLink/index.js",
@@ -403,16 +371,18 @@
     ],
     "extractedComments": []
   },
-  "Locality": {
+  "Map loading…": {
+    "translation": "Map loading…",
     "origin": [
       [
-        "containers/add-building/FormFragment.js",
-        154
+        "components/MapPlaceholder/index.js",
+        13
       ]
     ],
     "extractedComments": []
   },
   "Next page": {
+    "translation": "Next page",
     "origin": [
       [
         "containers/guide/PdfViewer.js",
@@ -422,24 +392,18 @@
     "extractedComments": []
   },
   "Other": {
+    "translation": "Other",
     "origin": [
       [
-        "containers/home/MapFragment.js",
-        59
+        "containers/building-map/MapFragment.js",
+        93
       ]
     ],
-    "extractedComments": []
-  },
-  "Other articles": {
-    "origin": [
-      [
-        "containers/blog-post/BlogPreviewFragment.js",
-        7
-      ]
-    ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "Page {pageNumber} of {numPages}": {
+    "translation": "Page {pageNumber} of {numPages}",
     "origin": [
       [
         "containers/guide/PdfViewer.js",
@@ -449,15 +413,17 @@
     "extractedComments": []
   },
   "People under risk": {
+    "translation": "People under risk",
     "origin": [
       [
-        "containers/home/StatisticFragment.js",
-        65
+        "containers/building-map/StatisticFragment.js",
+        66
       ]
     ],
     "extractedComments": []
   },
   "Previous page": {
+    "translation": "Previous page",
     "origin": [
       [
         "containers/guide/PdfViewer.js",
@@ -467,85 +433,61 @@
     "extractedComments": []
   },
   "Privacy policy": {
+    "translation": "Privacy policy",
     "origin": [
       [
         "components/Footer/index.js",
-        67
+        37
       ]
     ],
     "extractedComments": []
   },
   "Risk category": {
+    "translation": "Risk category",
     "origin": [
       [
         "components/BuildingDetails/index.js",
         19
-      ],
-      [
-        "containers/add-building/FormFragment.js",
-        185
       ]
     ],
     "extractedComments": []
   },
   "Search Results": {
+    "translation": "Search Results",
     "origin": [
       [
         "components/SearchResults/index.js",
-        20
+        21
       ]
     ],
     "extractedComments": []
   },
   "Server unavailable": {
+    "translation": "Server unavailable",
     "origin": [
       [
         "components/BlogPreview/index.js",
-        77
-      ],
-      [
-        "containers/add-building/FormFragment.js",
-        122
-      ],
-      [
-        "containers/blog/Blog.js",
-        69
+        78
       ]
     ],
     "extractedComments": []
   },
   "Share:": {
+    "translation": "Share:",
     "origin": [
       [
         "components/Sharing/index.js",
-        19
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Street": {
-    "origin": [
-      [
-        "containers/add-building/FormFragment.js",
-        138
-      ]
-    ],
-    "extractedComments": []
-  },
-  "Street number": {
-    "origin": [
-      [
-        "containers/add-building/FormFragment.js",
-        146
+        21
       ]
     ],
     "extractedComments": []
   },
   "Terms & conditions": {
+    "translation": "Terms & conditions",
     "origin": [
       [
         "components/Footer/index.js",
-        72
+        42
       ]
     ],
     "extractedComments": []
@@ -560,7 +502,18 @@
     ],
     "extractedComments": []
   },
+  "Unassigned": {
+    "translation": "Unassigned",
+    "origin": [
+      [
+        "containers/building-map/MapFragment.js",
+        77
+      ]
+    ],
+    "extractedComments": []
+  },
   "Welcome!": {
+    "translation": "Welcome!",
     "origin": [
       [
         "containers/home/HeroFragment.js",
@@ -570,14 +523,11 @@
     "extractedComments": []
   },
   "Written by {authorFullName} • {0}": {
+    "translation": "Written by {authorFullName} • {0}",
     "origin": [
       [
         "components/BlogItem/index.js",
         21
-      ],
-      [
-        "containers/blog-post/HeroFragment.js",
-        23
       ]
     ],
     "extractedComments": []
@@ -590,7 +540,8 @@
         12
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "about.last_paragraph": {
     "translation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque nec nam aliquam sem et tortor consequat id. Varius morbi enim nunc faucibus a pellentesque sit amet porttitor. Diam donec adipiscing tristique risus nec feugiat in. Purus in mollis nunc sed id semper. Adipiscing at in tellus integer feugiat scelerisque. Vitae nunc sed velit dignissim sodales ut eu sem. Lacus viverra vitae congue eu consequat. Lacus vestibulum sed arcu non odio euismod lacinia at. Tincidunt nunc pulvinar sapien et ligula ullamcorper. Egestas fringilla phasellus faucibus scelerisque eleifend donec pretium. Fermentum et sollicitudin ac orci phasellus egestas tellus rutrum. Nam libero justo laoreet sit amet cursus. Augue ut lectus arcu bibendum at varius. Duis at tellus at urna condimentum. Ornare suspendisse sed nisi lacus sed viverra tellus in hac. Varius quam quisque id diam vel quam elementum. Malesuada bibendum arcu vitae elementum curabitur vitae nunc. Viverra maecenas accumsan lacus vel.",
@@ -600,7 +551,8 @@
         12
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "about.project_details": {
     "translation": "Red Dot is designed by Code for Romania in Civic Labs and developed pro bono by our organization's volunteers. This project does not have any other source of funding and is being managed entirely from your donations.",
@@ -610,7 +562,8 @@
         13
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "about.second_paragraph": {
     "translation": "The solution you are using right now is a platform that responds to the need to increase the the representativeness of non-profit organizations, through clear and transparent selection mechanisms that carry out the sector's missions in decision-making forums. VotONG is, therefore, the necessary piece of infrastructure for the self-regulation of the NGO sector in Romania, which in time, through the active participation of organizations, will lead to an efficient communication and consultation between all actors in the field. That is why we invite you to join us in this endeavor because together we can trigger the positive changes we want for the Romanian society. Together we are invincible. Both us and our beneficiaries. Romania.",
@@ -620,7 +573,8 @@
         15
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
   "about.third_paragraph": {
     "translation": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque nec nam aliquam sem et tortor consequat id. Varius morbi enim nunc faucibus a pellentesque sit amet porttitor. Diam donec adipiscing tristique risus nec feugiat in. Purus in mollis nunc sed id semper. Adipiscing at in tellus integer feugiat scelerisque. Vitae nunc sed velit dignissim sodales ut eu sem. Lacus viverra vitae congue eu consequat.",
@@ -630,13 +584,720 @@
         12
       ]
     ],
-    "extractedComments": []
+    "extractedComments": [],
+    "obsolete": true
   },
-  "no.": {
+  "form.adress.label": {
+    "translation": "Street:",
     "origin": [
       [
-        "components/BuildingDetails/BuildingDetailsTitle.js",
+        "containers/add-building/FirstFormSection.js",
+        60
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.apartment_count.label": {
+    "translation": "How many residences there are in the building?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        74
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.apartments_with_6_months_debt.label": {
+    "translation": "How many of these appartments register more than 6 months of upkeep debt?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        138
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.broken_utilities.label": {
+    "translation": "Does the building register any brokent technical elements?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        152
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.broken_utilities.note": {
+    "translation": "Example: pipes, heating network etc.",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        153
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.commercial_space_count.label": {
+    "translation": "How many commercial and services spaces and there in the building?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        168
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.commercial_space_count.note": {
+    "translation": "Note: Through commercial and services spaces we reffer to shops, workshops, restuarants, cinemas, theatres etc., who's activity has been suspended after the adoption of Law 282/2015 for the modification and completion of the OG 20/1994 on measures for the reduction of seismic risc on existing buildings.",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        169
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.consolidation_status.demolished": {
+    "translation": "The seismic risk building was demolished and a new building was built in its place",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        61
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.consolidation_status.label": {
+    "translation": "Has the building been consolidate/rehabilitated from the date of the expertise?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        51
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.consolidation_status.yes_private": {
+    "translation": "Yes, private funds",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        57
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.consolidation_status.yes_public": {
+    "translation": "Yes, public funds",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        58
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.county.label": {
+    "translation": "County:",
+    "origin": [
+      [
+        "containers/add-building/FirstFormSection.js",
+        79
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.disconnected_utilities.label": {
+    "translation": "Is the building disconnected from any public utility service?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        145
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.disconnected_utilities.note": {
+    "translation": "If so, indicate from what service(s) it is disconnected. (Public utility services: water, sewerage, electricity, district heating)",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        146
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.email_address.label": {
+    "translation": "Email address:",
+    "origin": [
+      [
+        "containers/add-building/SecondFormSection.js",
+        49
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.error.add_building": {
+    "translation": "There was an error adding the building, please try again later.",
+    "origin": [
+      [
+        "containers/add-building/FormFragment.js",
+        55
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.error.fetch_risk_categories": {
+    "translation": "Server unavailable, please try again later.",
+    "origin": [
+      [
+        "containers/add-building/FormFragment.js",
+        85
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.error.validate_fields": {
+    "translation": "Not all fields are valid. Please check the form and try again.",
+    "origin": [
+      [
+        "containers/add-building/FormFragment.js",
+        48
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.first_section.extra": {
+    "translation": "TODO Text despre punerea pin-ului pe harta si descrierea procesului si informatiile aditionale de mai jos & stuff.",
+    "origin": [
+      [
+        "containers/add-building/FirstFormSection.js",
+        113
+      ]
+    ],
+    "extractedComments": [],
+    "obsolete": true
+  },
+  "form.first_section.title": {
+    "translation": "About the building",
+    "origin": [
+      [
+        "containers/add-building/FirstFormSection.js",
+        52
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.full_name.label": {
+    "translation": "Full name:",
+    "origin": [
+      [
+        "containers/add-building/SecondFormSection.js",
+        40
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.gdpr_agreement": {
+    "translation": "By this check, you agree that the data provided by you through this form will be processed exclusively to upload this document on the platform and that the MKBT team will contact you only in connection with this submission. Here you can find <0>our regulations on the processing of personal data</0>.",
+    "message": "By this check, you agree that the data provided by you through this form will be processed exclusively to upload this document on the platform and that the MKBT team will contact you only in connection with this submission. Here you can find <0>our regulations on the processing of personal data</0>.",
+    "origin": [
+      [
+        "containers/add-building/FormFragment.js",
+        118
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.has_owners_association.label": {
+    "translation": "Is there an owners' association?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        125
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.has_owners_association.note": {
+    "translation": "According to the law, owners' associations are established for condomiums with a minimum of 3 living units.",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        126
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.height_regime.label": {
+    "translation": "Height regime:",
+    "origin": [
+      [
+        "containers/add-building/FirstFormSection.js",
+        106
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.images.label": {
+    "translation": "Please add some photos of the building",
+    "origin": [
+      [
+        "containers/add-building/FirstFormSection.js",
+        126
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.images.note": {
+    "translation": "Note: we suggest uploading 3 photos on average, showing if the building has the red dot warning indicator, the building in its whole, and its proximity.",
+    "origin": [
+      [
+        "containers/add-building/FirstFormSection.js",
+        129
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.is_still_present.info": {
+    "translation": "Some buildings have been demolished since the date of their expertise and, if this is the case for your building, you do not need to continue completing the questionnaire after checking the option. Thank you!",
+    "origin": [
+      [
+        "containers/add-building/ThirdFormSection.js",
+        72
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.is_still_present.label": {
+    "translation": "Is the building still at the indicated address?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        39
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.locality.label": {
+    "translation": "Locality:",
+    "origin": [
+      [
+        "containers/add-building/FirstFormSection.js",
+        87
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.necessary_support.label": {
+    "translation": "In your opinion, as tenant in this building, what kind of support would you need and what issues have you been confronted with, in any attemt of increasing the safety of the building you are living in?",
+    "origin": [
+      [
+        "containers/add-building/SecondFormSection.js",
+        84
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.office_count.label": {
+    "translation": "How many apartments are used as an office headquarter?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        161
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.owners_count.label": {
+    "translation": "How many people own apartments in this building?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        95
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.permanently_occupied_apartment_count.label": {
+    "translation": "Number of residences permanently occupied:",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        81
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.phone_number.label": {
+    "translation": "Phone number:",
+    "origin": [
+      [
+        "containers/add-building/SecondFormSection.js",
+        64
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.proximal_utilities.label": {
+    "translation": "What exists in the proximity of the building?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        183
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.proximal_utilities.note": {
+    "translation": "Note: Through proximity we reffer to buildings and functions at a distance of up to 10m from the building in question",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        184
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.proximal_utilities_description.label": {
+    "translation": "Comments regarding the utilities from the building's proximity",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        190
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.public_apartment_count.label": {
+    "translation": "Of which, how many apartments are public property?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        102
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.public_owners.label": {
+    "translation": "Please mention the public owners:",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        109
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.public_owners.note": {
+    "translation": "Note: Through \"public property\" we understand residences owned by the Real Estate Fund Administration - AFI (formerly known as ICRAL), RAPPS, City Hall offices, ANAF (NAFA) etc.",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        110
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.rented_apartment_count.label": {
+    "translation": "How many apartments are in a rental regime?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        116
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.residents_count.label": {
+    "translation": "How many people live in these residences?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        88
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.risk_class.label": {
+    "translation": "Risk class:",
+    "origin": [
+      [
+        "containers/add-building/FirstFormSection.js",
+        97
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.second_section.description": {
+    "translation": "Contact info for the person filling out the form",
+    "origin": [
+      [
+        "containers/add-building/SecondFormSection.js",
+        31
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.second_section.title": {
+    "translation": "About you",
+    "origin": [
+      [
+        "containers/add-building/SecondFormSection.js",
+        30
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.self_owned_commercial_space_count.label": {
+    "translation": "Out of these spaces/apartments with a function other than housing, how many are owned by the companies using them?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        176
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.street_number.label": {
+    "translation": "Street number:",
+    "origin": [
+      [
+        "containers/add-building/FirstFormSection.js",
+        69
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.third_section.other_info_btn": {
+    "translation": "Add other information",
+    "origin": [
+      [
+        "containers/add-building/ThirdFormSection.js",
+        53
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.third_section.sub_one.description": {
+    "translation": "Note: The questions from section A reffer to the number of apartments and the people that live in the building added in this form.",
+    "origin": [
+      [
+        "containers/add-building/ThirdFormSection.js",
+        61
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.third_section.sub_one.title": {
+    "translation": "General data",
+    "origin": [
+      [
+        "containers/add-building/ThirdFormSection.js",
+        60
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.third_section.sub_three.title": {
+    "translation": "Structure and occupancy type",
+    "origin": [
+      [
+        "containers/add-building/ThirdFormSection.js",
+        125
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.third_section.sub_two.description": {
+    "translation": "Note: The questions from section B reffer to the general problems and needs of the building and of its residents",
+    "origin": [
+      [
+        "containers/add-building/ThirdFormSection.js",
+        113
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.third_section.sub_two.title": {
+    "translation": "Building administration",
+    "origin": [
+      [
+        "containers/add-building/ThirdFormSection.js",
+        112
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.third_section.title": {
+    "translation": "Do you have other information about this building?",
+    "origin": [
+      [
+        "containers/add-building/ThirdFormSection.js",
+        48
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.type_of_contract.admin": {
+    "translation": "Representative with a management position in the homeowners' association",
+    "origin": [
+      [
+        "containers/add-building/SecondFormSection.js",
+        22
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.type_of_contract.label": {
+    "translation": "Role:",
+    "origin": [
+      [
+        "containers/add-building/SecondFormSection.js",
+        74
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.type_of_contract.owner": {
+    "translation": "Owner",
+    "origin": [
+      [
+        "containers/add-building/SecondFormSection.js",
+        14
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.type_of_contract.tenant": {
+    "translation": "Tenant",
+    "origin": [
+      [
+        "containers/add-building/SecondFormSection.js",
         18
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.upload_button.label": {
+    "translation": "Add one or more photos",
+    "origin": [
+      [
+        "containers/add-building/FirstFormSection.js",
+        142
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.validation.captcha": {
+    "translation": "Captcha requires verification!",
+    "origin": [
+      [
+        "hooks/form/useFormValidationRules.js",
+        29
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.validation.email": {
+    "translation": "Email address is not valid!",
+    "origin": [
+      [
+        "hooks/form/useFormValidationRules.js",
+        11
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.validation.gdpr": {
+    "translation": "Please confirm that you have read and you agree with our regulations on the processing of personal data.",
+    "origin": [
+      [
+        "hooks/form/useFormValidationRules.js",
+        31
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.validation.image_size": {
+    "translation": "Files are limited to 20Mb, please choose another file.",
+    "origin": [
+      [
+        "containers/add-building/FirstFormSection.js",
+        33
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.validation.integer": {
+    "translation": "Value must be an integer greater than zero!",
+    "origin": [
+      [
+        "hooks/form/useFormValidationRules.js",
+        15
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.validation.max": {
+    "translation": "Field cannot exceed a maximum of {value} characters!",
+    "message": "Field cannot exceed a maximum of {value} characters!",
+    "origin": [
+      [
+        "hooks/form/useFormValidationRules.js",
+        23
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.validation.required": {
+    "translation": "Field cannot be left empty!",
+    "origin": [
+      [
+        "hooks/form/useFormValidationRules.js",
+        18
+      ]
+    ],
+    "extractedComments": []
+  },
+  "form.work_performed.label": {
+    "translation": "What construction has been performed?",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        68
+      ]
+    ],
+    "extractedComments": []
+  },
+  "general.no": {
+    "translation": "No",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        45
+      ],
+      [
+        "containers/add-building/utils/index.js",
+        55
+      ],
+      [
+        "containers/add-building/utils/index.js",
+        132
+      ]
+    ],
+    "extractedComments": []
+  },
+  "general.yes": {
+    "translation": "Yes",
+    "origin": [
+      [
+        "containers/add-building/utils/index.js",
+        43
+      ],
+      [
+        "containers/add-building/utils/index.js",
+        130
       ]
     ],
     "extractedComments": []
@@ -646,7 +1307,7 @@
     "origin": [
       [
         "components/BuildingDetails/BuildingDetailsTitle.js",
-        24
+        23
       ]
     ],
     "extractedComments": []

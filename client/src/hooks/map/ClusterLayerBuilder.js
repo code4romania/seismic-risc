@@ -10,7 +10,7 @@ export default {
     const clusteredDataProvider = new H.clustering.Provider(dataPoints, {
       clusteringOptions: {
         eps: 32,
-        minWeight: 3,
+        minWeight: 15,
       },
     });
     const defaultTheme = clusteredDataProvider.getTheme();

@@ -6,7 +6,7 @@ import Hero from '../../components/Hero';
 
 import heroImage from '../../images/home_hero.png';
 
-const { Paragraph } = Typography;
+const { Paragraph, Link } = Typography;
 
 export default () => {
   return (
@@ -16,13 +16,10 @@ export default () => {
       </Paragraph>
       <Paragraph>
         <Trans id="404.contact_message" />
-        <a href="mailto:contact@code4.ro"> contact@code4.ro</a>.
+        <Link href="mailto:contact@code4.ro"> contact@code4.ro</Link>.
       </Paragraph>
       <Button type="primary" className="hero-btn-primary" href="/">
         <Trans>Back to home page</Trans>
-      </Button>
-      <Button type="default" href="/despre">
-        <Trans>About the project</Trans>
       </Button>
     </Hero>
   );

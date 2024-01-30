@@ -1,28 +1,26 @@
-from blog.views import PostViewSet, TagViewSet
-from buildings.views import BuildingViewSet, statistics
 from django.conf import settings
 from django.conf.urls.i18n import i18n_patterns
 from django.conf.urls.static import static
 from django.contrib import admin
 from django.contrib.auth import views as auth_views
 from django.urls import include, path
-from pages.views import PagesViewSet
-from rest_framework import routers
 from drf_spectacular.views import (
     SpectacularAPIView,
     SpectacularSwaggerView,
 )
+from rest_framework import routers
 
-admin.site.site_title = "Seismic Risk Admin"
-admin.site.site_header = "Seismic Risk Admin"
-admin.site.index_title = "Seismic Risk Admin"
-admin.site.site_url = settings.SITE_URL
+from buildings.views import BuildingViewSet, ProximalUtilitiesViewSet, WorkPerformedViewSet, statistics
+
+admin_site_string = "Acasă în Siguranță"
+admin.site.site_title = admin_site_string
+admin.site.site_header = admin_site_string
+admin.site.index_title = admin_site_string
 
 router = routers.DefaultRouter()
 router.register(r"buildings", BuildingViewSet, basename="buildings")
-router.register(r"pages", PagesViewSet, basename="pages")
-router.register(r"posts", PostViewSet, basename="posts")
-router.register(r"tags", TagViewSet, basename="tags")
+router.register(r"proximal_utilities", ProximalUtilitiesViewSet, basename="building_proximal_utilities")
+router.register(r"work_performed", WorkPerformedViewSet, basename="building_work_performed")
 
 
 urlpatterns = (
@@ -49,7 +47,6 @@ urlpatterns = (
             name="password_reset_complete",
         ),
         path("admin/", admin.site.urls),
-        path("ckeditor/", include("ckeditor_uploader.urls")),
     )
     + [
         # URL patterns which do not use a language prefix
@@ -65,3 +62,10 @@ urlpatterns = (
     ]
     + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 )
+
+if settings.DEBUG and settings.ENABLE_DEBUG_TOOLBAR:
+    import debug_toolbar
+
+    urlpatterns = [path("__debug__/", include(debug_toolbar.urls))] + urlpatterns
+
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

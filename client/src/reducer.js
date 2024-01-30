@@ -62,7 +62,16 @@ const reducer = (state, action) => {
     }
 
     case 'CLEAR_SEARCH':
-      return { ...state, searchResults: [], searchError: null, searchInput: '' };
+      return {
+        ...state,
+        searchResults: [],
+        searchError: null,
+        searchInput: '',
+        searchSelectedBuilding: null,
+      };
+
+    case 'RISK_CATEGORY_CHANGED':
+      return { ...state, riskCategory: action.payload };
 
     default:
       return state;

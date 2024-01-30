@@ -24,9 +24,6 @@ export default () => {
       <Button className="hero-btn-primary" href="/">
         <Trans>Back to home page</Trans>
       </Button>
-      <Button className="hero-btn-secondary" href="/despre">
-        <Trans>About the project</Trans>
-      </Button>
     </Hero>
   );
 };

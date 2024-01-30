@@ -2,7 +2,7 @@ div.add-building {
   margin-top: 3rem;
   text-align: left;
 
-  & > h2.ant-typography {
+  &>h2.ant-typography {
     color: $primary-color;
     font-size: 1.5rem;
   }
@@ -15,17 +15,32 @@ div.add-building {
     }
   }
 
-  label {
+  .ant-form-item-label {
     font-size: 1rem;
     font-weight: 600;
-  }
-
-  .ant-form-item {
-    margin-left: 2.25rem;
+    padding-bottom: 0;
   }
 
   .form-loading {
     text-align: center;
     height: 300px;
+  }
+
+  label.ant-radio-wrapper {
+    white-space: normal;
+  }
+}
+
+.upload-btn {
+  align-items: center;
+  justify-content: center;
+  color: $primary-color;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  font-size: 14px;
+
+  & .anticon {
+    font-size: 28px;
   }
 }

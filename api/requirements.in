@@ -1,32 +1,36 @@
 # django and related apps
-django~=3.2.4
-django-configurations
-django-import-export
-djangorestframework
-django-cors-headers
-django-ckeditor
-django-storages
-django-taggit
-django-taggit-serializer
-django-jquery
+django==4.2.6
+django-environ==0.11.2
+django-cors-headers==4.2.0
+django-storages==1.14.2
+
+# django admin
+django-jquery==3.1.0
+django-import-export==3.3.1
+django-jazzmin==2.6.0
+
+# job scheduler
+django-q2~=1.6.1
+blessed~=1.20.0  # optional requirement for django-q2
+psutil~=5.9.6  # optional requirement for django-q2
+croniter~=2.0.1  # optional requirement for django-q2
+
+# REST framework
+djangorestframework==3.14.0
+drf-spectacular==0.26.5
 
 # database
-psycopg2
-dj-database-url
+psycopg2-binary==2.9.9
+dj-database-url==2.1.0
 
 # file handling
-boto3
-Pillow
-whitenoise
-brotlipy
+boto3==1.28.61
+pillow==10.0.1
+whitenoise==6.5.0
 
 # misc libraries
-pytz
-tablib
+tablib==3.5.0
 
 # wsgi server
-gunicorn
-
-# doc-generation
-drf-spectacular
-
+gunicorn==21.2.0
+gevent==23.9.1

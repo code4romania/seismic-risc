@@ -1,8 +1,8 @@
 import React, { createContext, useReducer, useContext } from 'react';
-import { i18n } from '@lingui/core';
 
 import reducer from './reducer';
 import config from './config';
+import { dynamicActivate, getCurrentLanguage } from './utils/i18n';
 
 const { BUILDINGS_URL } = config;
 
@@ -16,30 +16,35 @@ const initialState = {
   searchSelectedBuilding: null,
   showSearchResults: false,
   searchError: null,
-  currentLanguage: 'ro',
+  currentLanguage: getCurrentLanguage(),
+  riskCategory: '',
 };
 
 const AppProvider = ({ children }) => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const languageChange = async (locale) => {
-    const { messages } = await import(`./locales/${locale}/messages`);
-    i18n.load(locale, messages);
-    i18n.activate(locale);
     dispatch({ type: 'LANGUAGE_CHANGE', payload: locale });
+    dynamicActivate(locale, true);
   };
 
   const onSearchInputChange = (searchInput) => {
-    dispatch({ type: 'SEARCH_INPUT', payload: searchInput });
+    if (!searchInput) {
+      dispatch({ type: 'CLEAR_SEARCH', payload: searchInput });
+    } else {
+      dispatch({ type: 'SEARCH_INPUT', payload: searchInput });
+    }
   };
 
   const onSearchLoading = (isLoading) => {
     dispatch({ type: 'SEARCH_LOADING', payload: isLoading });
   };
 
-  const searchBuildings = async (searchInput) => {
+  const searchBuildings = async (searchInput, riskCategory) => {
     try {
-      const res = await fetch(`${BUILDINGS_URL}/search/?query=${searchInput}`);
+      const res = await fetch(
+        `${BUILDINGS_URL}/search/?query=${searchInput}&riskCategory=${riskCategory}`,
+      );
       const searchResults = await res.json();
       onSearchLoading(false);
       if (searchResults.length > 0) {
@@ -64,8 +69,13 @@ const AppProvider = ({ children }) => {
     dispatch({ type: 'MAP_LOADED', payload: map });
   };
 
+  const onCategoryChange = (riskCategory) => {
+    dispatch({ type: 'RISK_CATEGORY_CHANGED', payload: riskCategory });
+  };
+
   return (
     <AppContext.Provider
+      // eslint-disable-next-line react/jsx-no-constructed-context-values
       value={{
         ...state,
         searchBuildings,
@@ -75,6 +85,7 @@ const AppProvider = ({ children }) => {
         onHereMapLoaded,
         onSearchInputChange,
         languageChange,
+        onCategoryChange,
       }}
     >
       {children}

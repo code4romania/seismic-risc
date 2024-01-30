@@ -1,0 +1,4 @@
+#!/command/with-contenv sh
+cd /var/www/seismic/api/ || exit 1
+
+python3 manage.py qcluster
