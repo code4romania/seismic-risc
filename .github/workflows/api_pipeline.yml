@@ -43,7 +43,7 @@ jobs:
 
       - name: Check formatting with Black
         run: |
-          black --check ./backend
+          black --check ./api
 
   linting_with_ruff:
     name: Run Ruff linting check
@@ -65,7 +65,7 @@ jobs:
 
       - name: Lint files using Ruff
         run: |
-          ruff check ./backend
+          ruff check ./api
 
   checking_migrations:
     name: Check for migrations
