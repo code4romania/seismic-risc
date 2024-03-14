@@ -1,10 +1,19 @@
 name: API Pipeline
 
 on:
+  push:
+    branches:
+      - '*'
+      - 'main'
+    paths:
+      - 'api/**.py'
+      - 'api/requirements*.*'
+      - 'docker/dockerfiles/Dockerfile.backend*'
+      - 'docker-compose.yml'
+      - '.github/workflows/api_pipeline.yml'
   pull_request:
     branches:
       - 'main'
-      - 'develop'
     paths:
       - 'api/**.py'
       - 'api/requirements*.*'
@@ -13,30 +22,79 @@ on:
       - '.github/workflows/api_pipeline.yml'
 
 jobs:
-  static_analysis:
-    name: Run black formatting check
-    runs-on: ubuntu-22.04
+
+  formatting_with_black:
+    name: Run Black formatting check
+    runs-on: ubuntu-latest
+
     steps:
-    - name: Check out Git repository
-      uses: actions/checkout@v4
+      - name: Check out Git repository
+        uses: actions/checkout@v4
 
-    - name: Set up Python 3.11
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.11
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.11
+          cache: 'pip'
 
-    - name: Install Black with latest pip
-      run: |
-        python -m pip install --upgrade pip
-        cat ./api/requirements-dev.txt | grep black== | cut -d' ' -f1 | xargs pip install
+      - name: Install Black with latest pip
+        run: |
+          cat ./api/requirements-dev.txt | grep black== | cut -d' ' -f1 | xargs pip install
 
-    - name: Check formatting with black
-      run: |
-        black --line-length 120 --target-version py311 --exclude migrations --check ./api
+      - name: Check formatting with Black
+        run: |
+          black --check ./backend
+
+  linting_with_ruff:
+    name: Run Ruff linting check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.11
+          cache: 'pip'
+
+      - name: Install Black & Ruff with latest pip
+        run: |
+          cat ./api/requirements-dev.txt | grep ruff== | cut -d' ' -f1 | xargs pip install
+
+      - name: Lint files using Ruff
+        run: |
+          ruff check ./backend
+
+  checking_migrations:
+    name: Check for migrations
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out Git repository
+        uses: actions/checkout@v4
+
+      - name: Set up Python 3.11
+        uses: actions/setup-python@v5
+        with:
+          python-version: 3.11
+          cache: 'pip'
+
+      - name: Install dependencies
+        run: |
+          pip install -r ./api/requirements-dev.txt
+
+      - name: Check for migrations
+        run: |
+          set -a
+          . ./.env.example
+          python ./api/manage.py makemigrations --check --dry-run
+          set +a
 
   tests:
     name: Run api tests
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
     - name: Check out Git repository
       uses: actions/checkout@v4
