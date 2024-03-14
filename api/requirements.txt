@@ -5,20 +5,22 @@
 #    pip-compile --output-file=requirements.txt --strip-extras requirements.in
 #
 asgiref==3.7.2
-    # via django
-attrs==23.1.0
+    # via
+    #   django
+    #   django-cors-headers
+attrs==23.2.0
     # via
     #   jsonschema
     #   referencing
 blessed==1.20.0
     # via -r requirements.in
-boto3==1.28.61
+boto3==1.34.62
     # via -r requirements.in
-botocore==1.31.61
+botocore==1.34.62
     # via
     #   boto3
     #   s3transfer
-croniter==2.0.1
+croniter==2.0.2
     # via -r requirements.in
 defusedxml==0.7.1
     # via odfpy
@@ -26,7 +28,7 @@ diff-match-patch==20230430
     # via django-import-export
 dj-database-url==2.1.0
     # via -r requirements.in
-django==4.2.6
+django==4.2.11
     # via
     #   -r requirements.in
     #   dj-database-url
@@ -39,11 +41,11 @@ django==4.2.6
     #   django-storages
     #   djangorestframework
     #   drf-spectacular
-django-cors-headers==4.2.0
+django-cors-headers==4.3.1
     # via -r requirements.in
 django-environ==0.11.2
     # via -r requirements.in
-django-import-export==3.3.1
+django-import-export==3.3.7
     # via -r requirements.in
 django-jazzmin==2.6.0
     # via -r requirements.in
@@ -51,7 +53,7 @@ django-jquery==3.1.0
     # via -r requirements.in
 django-picklefield==3.1
     # via django-q2
-django-q2==1.6.1
+django-q2==1.6.2
     # via -r requirements.in
 django-storages==1.14.2
     # via -r requirements.in
@@ -59,13 +61,13 @@ djangorestframework==3.14.0
     # via
     #   -r requirements.in
     #   drf-spectacular
-drf-spectacular==0.26.5
+drf-spectacular==0.27.1
     # via -r requirements.in
 et-xmlfile==1.1.0
     # via openpyxl
-gevent==23.9.1
+gevent==24.2.1
     # via -r requirements.in
-greenlet==3.0.0
+greenlet==3.0.3
     # via gevent
 gunicorn==21.2.0
     # via -r requirements.in
@@ -75,9 +77,9 @@ jmespath==1.0.1
     # via
     #   boto3
     #   botocore
-jsonschema==4.19.1
+jsonschema==4.21.1
     # via drf-spectacular
-jsonschema-specifications==2023.7.1
+jsonschema-specifications==2023.12.1
     # via jsonschema
 markuppy==1.14
     # via tablib
@@ -85,19 +87,19 @@ odfpy==1.4.1
     # via tablib
 openpyxl==3.1.2
     # via tablib
-packaging==23.2
+packaging==24.0
     # via gunicorn
-pillow==10.0.1
+pillow==10.2.0
     # via -r requirements.in
-psutil==5.9.6
+psutil==5.9.8
     # via -r requirements.in
 psycopg2-binary==2.9.9
     # via -r requirements.in
-python-dateutil==2.8.2
+python-dateutil==2.9.0.post0
     # via
     #   botocore
     #   croniter
-pytz==2023.3.post1
+pytz==2024.1
     # via
     #   croniter
     #   djangorestframework
@@ -105,15 +107,15 @@ pyyaml==6.0.1
     # via
     #   drf-spectacular
     #   tablib
-referencing==0.30.2
+referencing==0.33.0
     # via
     #   jsonschema
     #   jsonschema-specifications
-rpds-py==0.10.4
+rpds-py==0.18.0
     # via
     #   jsonschema
     #   referencing
-s3transfer==0.7.0
+s3transfer==0.10.0
     # via boto3
 six==1.16.0
     # via
@@ -125,15 +127,15 @@ tablib==3.5.0
     # via
     #   -r requirements.in
     #   django-import-export
-typing-extensions==4.8.0
+typing-extensions==4.10.0
     # via dj-database-url
 uritemplate==4.1.1
     # via drf-spectacular
-urllib3==1.26.17
+urllib3==2.0.7
     # via botocore
-wcwidth==0.2.8
+wcwidth==0.2.13
     # via blessed
-whitenoise==6.5.0
+whitenoise==6.6.0
     # via -r requirements.in
 xlrd==2.0.1
     # via tablib
@@ -141,7 +143,7 @@ xlwt==1.3.0
     # via tablib
 zope-event==5.0
     # via gevent
-zope-interface==6.1
+zope-interface==6.2
     # via gevent
 
 # The following packages are considered to be unsafe in a requirements file:
