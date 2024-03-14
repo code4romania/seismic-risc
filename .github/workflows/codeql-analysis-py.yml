@@ -12,8 +12,6 @@ on:
       - 'docker-compose.yml'
       - '.github/workflows/api_pipeline.yml'
       - '.github/workflows/code-analysis-py.yml'
-  schedule:
-    - cron: '15 7 * * 2'
 
 jobs:
   analyze_py:

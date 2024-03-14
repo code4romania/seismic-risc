@@ -5,17 +5,16 @@ services:
 
   db:
     container_name: seismic_db-dev
-    extends:
-      file: dk-cp.base.yml
-      service: db_base
+    image: postgres:15.4-bookworm
+    env_file:
+      - .env
+    volumes:
+      - pgdata:/var/lib/postgresql/data
     ports:
       - "${DB_PORT:-5444}:5432"
 
   api:
     container_name: seismic_api-dev
-    extends:
-      file: dk-cp.base.yml
-      service: api_base
     build:
       context: ./
       dockerfile: ./docker/dockerfiles/Dockerfile.backend.dev
@@ -23,17 +22,17 @@ services:
         - ENVIRONMENT=development
     env_file:
       - .env
-      - .env.dev
     environment:
       ENVIRONMENT: "development"
+    depends_on:
+      - db
+    ports:
+      - "${API_PORT:-8030}:8000"
     volumes:
       - ./api:/var/www/seismic/api/
 
   client:
     container_name: seismic_client-dev
-    extends:
-      file: dk-cp.base.yml
-      service: client_base
     build:
       context: ./
       dockerfile: ./docker/dockerfiles/Dockerfile.frontend.dev
@@ -41,9 +40,10 @@ services:
         - ENVIRONMENT=development
     env_file:
       - .env
-      - .env.dev
     environment:
       ENVIRONMENT: "development"
+    depends_on:
+      - api
     volumes:
       - ./client:/code
     ports:
