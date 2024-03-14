@@ -16,6 +16,7 @@ ipython~=8.22.2
 
 # style checker
 black~=24.2.0
+ruff~=0.3.2
 
 # dependency management
 pip-tools~=7.4.1

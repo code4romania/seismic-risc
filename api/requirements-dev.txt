@@ -232,6 +232,8 @@ rpds-py==0.18.0
     #   -r requirements.txt
     #   jsonschema
     #   referencing
+ruff==0.3.2
+    # via -r requirements-dev.in
 s3transfer==0.10.0
     # via
     #   -r requirements.txt
