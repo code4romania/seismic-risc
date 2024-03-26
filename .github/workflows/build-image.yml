@@ -4,6 +4,9 @@ on:
       - 'main'
     tags:
       - 'v*'
+  pull_request:
+    branches:
+      - '*'
 
 name: Build Docker image
 
