@@ -14,3 +14,5 @@ jobs:
     uses: code4romania/.github/.github/workflows/build-push-image.yml@main
     with:
       images: ghcr.io/code4romania/seismic-risc
+      context: ./
+      dockerfile: ./docker/dockerfiles/Dockerfile.backend
