@@ -13,4 +13,9 @@ jobs:
     name: Build Docker image
     uses: code4romania/.github/.github/workflows/build-push-image.yml@main
     with:
-      images: ghcr.io/code4romania/seismic-risc
+      images: code4romania/seismic-risc
+      context: ./
+      dockerfile: ./docker/dockerfiles/Dockerfile.backend
+    secrets:
+      username: ${{ secrets.DOCKER_HUB_USERNAME }}
+      token: ${{ secrets.DOCKER_HUB_ACCESS_TOKEN }}
