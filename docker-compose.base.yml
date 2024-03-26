@@ -52,8 +52,8 @@ services:
     volumes:
       - seismic_psql:/var/lib/postgresql/data
     environment:
-      POSTGRES_DB: "${DATABASE_NAME}"
-      POSTGRES_USER: "${DATABASE_USER}"
-      POSTGRES_PASSWORD: "${DATABASE_PASSWORD}"
+      DATABASE_NAME: "${DATABASE_NAME}"
+      DATABASE_USER: "${DATABASE_USER}"
+      DATABASE_PASSWORD: "${DATABASE_PASSWORD}"
     ports:
       - "${DATABASE_PORT:-5432}:5432"

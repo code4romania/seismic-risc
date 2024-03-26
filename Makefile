@@ -7,23 +7,22 @@ help:                             ## Display a help message detailing commands a
 ## [Managing the project]
 ### Stopping the containers and dropping the databases
 stop-sqlite:                      ## stops the sqlite dev project
-	docker compose down -t 60
+	$(error SQLite is not supported)
 
 drop-sqlite:                      ## stops the sqlite dev project
-	docker compose down -v -t 60
-	rm -rf ./api/.db_sqlite
+	$(error SQLite is not supported)
 
 stop-mysql:                       ## stops the mysql dev project
-	docker compose -f docker-compose.mysql.yml down -t 60
+	$(error MySQL is not supported)
 
 drop-mysql:                       ## stops the mysql dev project
-	docker compose -f docker-compose.mysql.yml down -v -t 60
+	$(error MySQL is not supported)
 
 stop-psql:                       ## stops the psql dev project
-	docker compose -f docker-compose.psql.yml down -t 60
+	docker compose -f docker-compose.yml down -t 60
 
 drop-psql:                       ## stops the psql dev project
-	docker compose -f docker-compose.psql.yml down -v -t 60
+	docker compose -f docker-compose.yml down -v -t 60
 
 stop-prod:                        ## stops the mysql dev project
 	docker compose -f docker-compose.prod.yml down -t 60
@@ -33,22 +32,22 @@ drop-prod:                        ## stops the mysql dev project
 
 ### Building & starting the containers
 up-sqlite:                        ## run the project with sqlite
-	docker compose up --build
+	$(error SQLite is not supported)
 
 upd-sqlite:                       ## run the project with sqlite in detached mode
-	docker compose up -d --build
+	$(error SQLite is not supported)
 
 up-mysql:                         ## run the project with mysql
-	docker compose -f docker-compose.mysql.yml up --build
+	$(error MySQL is not supported)
 
 upd-mysql:                        ## run the project with mysql in detached mode
-	docker compose -f docker-compose.mysql.yml up -d --build
+	$(error MySQL is not supported)
 
 up-psql:                         ## run the project with psql
-	docker compose -f docker-compose.psql.yml up --build
+	docker compose -f docker-compose.yml up --build
 
 upd-psql:                        ## run the project with psql in detached mode
-	docker compose -f docker-compose.psql.yml up -d --build
+	docker compose -f docker-compose.yml up -d --build
 
 up-prod:                         ## run the project with mysql
 	docker compose -f docker-compose.prod.yml up --build
@@ -66,20 +65,28 @@ build-prod:
 		--build-arg $$(cat .env.prod | grep REACT_APP_DJANGO_API_ENDPOINT)
 
 ### Using the SQLite database
-run-sqlite: stop-psql stop-mysql up-sqlite   ## run the project with sqlite and stop the mysql project beforehand
-rund-sqlite: stop-psql stop-mysql upd-sqlite ## run the project with sqlite in detached mode and stop the mysql project beforehand
-redo-sqlite: drop-sqlite up-sqlite           ## delete the db and rerun the project with sqlite
-redod-sqlite: drop-sqlite upd-sqlite         ## delete the db and rerun the project with sqlite in detached mode
+run-sqlite: 
+	$(error SQLite is not supported)   ## run the project with sqlite and stop the mysql project beforehand
+rund-sqlite: 
+	$(error SQLite is not supported) ## run the project with sqlite in detached mode and stop the mysql project beforehand
+redo-sqlite: 
+	$(error SQLite is not supported)           ## delete the db and rerun the project with sqlite
+redod-sqlite: 
+	$(error SQLite is not supported)         ## delete the db and rerun the project with sqlite in detached mode
 
 ### Using the MySQL database
-run-mysql: stop-psql stop-sqlite up-mysql    ## run the project with mysql and stop the sqlite project beforehand
-rund-mysql: stop-psql stop-sqlite upd-mysql  ## run the project with mysql in detached mode and stop the sqlite project beforehand
-redo-mysql: drop-mysql up-mysql              ## delete the db and rerun the project with mysql
-redod-mysql: drop-mysql upd-mysql            ## delete the db and rerun the project with mysql in detached mode
+run-mysql: 
+	$(error SQLite is not supported)    ## run the project with mysql and stop the sqlite project beforehand
+rund-mysql: 
+	$(error SQLite is not supported)  ## run the project with mysql in detached mode and stop the sqlite project beforehand
+redo-mysql: 
+	$(error SQLite is not supported)              ## delete the db and rerun the project with mysql
+redod-mysql: 
+	$(error SQLite is not supported)            ## delete the db and rerun the project with mysql in detached mode
 
 ### Using the PostgreSQL database
-run-psql: stop-mysql stop-sqlite up-psql      ## run the project with psql and stop the mysql project beforehand
-rund-psql: stop-mysql stop-sqlite upd-psql    ## run the project with psql in detached mode and stop the mysql project beforehand
+run-psql: up-psql      ## run the project with psql and stop the mysql project beforehand
+rund-psql: upd-psql    ## run the project with psql in detached mode and stop the mysql project beforehand
 redo-psql: drop-psql up-psql                  ## delete the db and rerun the project with psql
 redod-psql: drop-psql upd-psql                ## delete the db and rerun the project with psql in detached mode
 
@@ -90,14 +97,14 @@ redo-prod: drop-prod up-prod      ## delete the db and rerun the project with my
 redod-prod: drop-prod upd-prod    ## delete the db and rerun the project with mysql in detached mode
 
 ### Other run options
-run: run-sqlite                   ## set the default run command to sqlite
-redo: redo-sqlite                 ## set the default redo command to sqlite
-rund: rund-sqlite                 ## set the default run command to sqlite
-redod: redod-sqlite               ## set the default redo command to sqlite
+run: run-psql                   ## set the default run command to sqlite
+redo: redo-psql                 ## set the default redo command to sqlite
+rund: rund-psql                 ## set the default run command to sqlite
+redod: redod-psql               ## set the default redo command to sqlite
 
-stop: stop-sqlite stop-mysql stop-psql stop-prod ## stop all running projects
+stop: stop-psql stop-prod ## stop all running projects
 
-drop: drop-sqlite drop-mysql drop-psql drop-prod ## drop all databases
+drop: drop-psql drop-prod ## drop all databases
 
 
 ## [Monitoring the containers]
@@ -174,8 +181,6 @@ tests-cover:                      ## run the tests with coverage
 
 ## [Clean-up]
 clean-docker:                     ## stop docker containers and remove orphaned images and volumes
-	docker compose -f docker-compose.mysql.yml down -t 60
-	docker compose -f docker-compose.psql.yml down -t 60
 	docker compose down -t 60
 	docker compose -f docker-compose.prod.yml down -t 60
 	docker system prune -f
