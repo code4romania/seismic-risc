@@ -2,10 +2,10 @@ name: seismic_multi
 
 services:
 
-  api:
+  backend:
     extends:
       file: docker-compose.base.yml
-      service: seismic_base
+      service: backend_base
     build:
       context: .
       dockerfile: ./docker/dockerfiles/Dockerfile.backend
@@ -19,13 +19,12 @@ services:
       - db_psql
 
   client:
-    container_name: seismic_client-prod
     extends:
-      file: dk-cp.base.yml
+      file: docker-compose.base.yml
       service: client_base
     build:
-      context: ./client
-      dockerfile: ../docker/dockerfiles/Dockerfile.frontend
+      context: ./
+      dockerfile: ./docker/dockerfiles/Dockerfile.frontend
     environment:
       - "ENVIRONMENT=production"
     ports:
