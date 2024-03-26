@@ -1,5 +1,7 @@
+ARG NODE_VERSION=20.11.1
+
 # base image
-FROM node:18.18-bookworm-slim
+FROM node:${NODE_VERSION}-bookworm-slim
 
 ARG ENVIRONMENT
 

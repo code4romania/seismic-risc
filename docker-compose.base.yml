@@ -1,0 +1,59 @@
+services:
+
+  seismic_base:
+    container_name: seismic_dev
+    env_file:
+      - .env
+    environment:
+      - "PYTHONUNBUFFERED=1"
+    restart: on-failure
+
+  seismic_dev_base:
+    extends:
+      service: seismic_base
+    build:
+      context: .
+      dockerfile: ./docker/dockerfiles/Dockerfile.backend.dev
+    volumes:
+      - ./api:/var/www/seismic/api
+      - ./client/src:/var/www/seismic/client/src
+    env_file:
+      - .env
+    environment:
+      - "ENVIRONMENT=development"
+    ports:
+      - "${WEBAPP_PORT:-8080}:8000"
+      - "${CLIENT_PORT:-3000}:3000"
+
+  db_base:
+    container_name: seismic_db_dev
+    env_file:
+      - .env
+    restart: always
+
+  db_base_mysql:
+    extends:
+      service: db_base
+    image: mysql:8.3.0
+    volumes:
+      - seismic_mysql:/var/lib/mysql
+    environment:
+      MYSQL_DATABASE: "${DATABASE_NAME}"
+      MYSQL_USER: "${DATABASE_USER}"
+      MYSQL_PASSWORD: "${DATABASE_PASSWORD}"
+      MYSQL_ROOT_PASSWORD: "${DATABASE_PASSWORD}"
+    ports:
+      - "${DATABASE_PORT:-3306}:3306"
+
+  db_base_psql:
+    extends:
+      service: db_base
+    image: postgres:16.2
+    volumes:
+      - seismic_psql:/var/lib/postgresql/data
+    environment:
+      POSTGRES_DB: "${DATABASE_NAME}"
+      POSTGRES_USER: "${DATABASE_USER}"
+      POSTGRES_PASSWORD: "${DATABASE_PASSWORD}"
+    ports:
+      - "${DATABASE_PORT:-5432}:5432"

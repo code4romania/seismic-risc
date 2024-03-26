@@ -1,4 +1,6 @@
-FROM python:3.11.6-slim-bookworm
+ARG PYTHON_VERSION=3.11.8
+
+FROM python:${PYTHON_VERSION}-slim-bookworm
 
 ENV PYTHONUNBUFFERED=1
 
@@ -42,12 +44,14 @@ RUN python3 -m venv $VIRTUAL_ENV
 ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 
-# Copy the back-end source code and install the backend libraries:
+# install the backend libraries:
+COPY ./api/pyproject.toml ./api/requirements.txt /var/www/seismic/api/
 WORKDIR /var/www/seismic/api/
-COPY ./api/ .
 RUN python3 -m pip install --upgrade pip setuptools && \
-    python3 -m pip install -r ./requirements-dev.txt
+    python3 -m pip install -r ./requirements.txt
 
+# Copy the back-end source code and install the backend libraries:
+COPY ./api/ .
 
 # Make sure scripts in .local are usable:
 ENV PATH=/root/.local/bin:$PATH

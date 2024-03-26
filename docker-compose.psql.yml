@@ -1,0 +1,24 @@
+name: seismic_dev
+
+services:
+
+  webapp_psql:
+    extends:
+      file: docker-compose.base.yml
+      service: seismic_dev_base
+    environment:
+      - "DATABASE_ENGINE=postgresql"
+      - "DATABASE_HOST=seismic_db_dev"
+      - "DATABASE_PORT=5432"
+    depends_on:
+      - db_psql_dev
+
+  db_psql_dev:
+    extends:
+      file: docker-compose.base.yml
+      service: db_base_psql
+    volumes:
+      - ./docker/init-psql:/docker-entrypoint-initdb.d
+
+volumes:
+  seismic_psql:
