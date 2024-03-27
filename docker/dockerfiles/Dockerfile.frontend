@@ -1,4 +1,4 @@
-ARG NODE_VERSION=20.11.1
+ARG NODE_VERSION=18.19.1
 ARG NGINX_VERSION=1.25.4
 
 FROM node:${NODE_VERSION}-bookworm-slim as frontend
@@ -16,7 +16,7 @@ ENV REACT_APP_DJANGO_API_ENDPOINT ${REACT_APP_DJANGO_API_ENDPOINT}
 
 WORKDIR /var/www/seismic/frontend
 
-COPY ./ .
+COPY ./client/ ./
 
 # install the frontend libraries:
 RUN npm ci && \

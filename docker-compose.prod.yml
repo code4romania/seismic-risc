@@ -1,4 +1,4 @@
-name: seismic_multi
+name: seismic_prod
 
 services:
 
@@ -9,10 +9,10 @@ services:
     container_name: seismic_db
 
   backend:
-    container_name: seismic_backend
     extends:
       file: docker-compose.base.yml
       service: backend_base
+    container_name: seismic_backend
     build:
       context: .
       dockerfile: ./docker/dockerfiles/Dockerfile.backend
@@ -25,6 +25,7 @@ services:
     extends:
       file: docker-compose.base.yml
       service: client_base
+    container_name: seismic_client
     build:
       context: ./
       dockerfile: ./docker/dockerfiles/Dockerfile.frontend
