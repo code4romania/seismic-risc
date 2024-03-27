@@ -32,7 +32,6 @@ services:
     restart: on-failure
 
   client_dev_base:
-    container_name: client_base
     build:
       context: ./
       dockerfile: ./docker/dockerfiles/Dockerfile.frontend.dev
