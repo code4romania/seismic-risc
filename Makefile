@@ -19,10 +19,10 @@ drop-mysql:                       ## stops the mysql dev project
 	$(error MySQL is not supported)
 
 stop-psql:                       ## stops the psql dev project
-	docker compose -f docker-compose.yml down -t 60
+	docker compose down -t 60
 
 drop-psql:                       ## stops the psql dev project
-	docker compose -f docker-compose.yml down -v -t 60
+	docker compose down -v -t 60
 
 stop-prod:                        ## stops the mysql dev project
 	docker compose -f docker-compose.prod.yml down -t 60
@@ -44,10 +44,10 @@ upd-mysql:                        ## run the project with mysql in detached mode
 	$(error MySQL is not supported)
 
 up-psql:                         ## run the project with psql
-	docker compose -f docker-compose.yml up --build
+	docker compose up --build
 
 upd-psql:                        ## run the project with psql in detached mode
-	docker compose -f docker-compose.yml up -d --build
+	docker compose up -d --build
 
 up-prod:                         ## run the project with mysql
 	docker compose -f docker-compose.prod.yml up --build
@@ -65,23 +65,23 @@ build-prod:
 		--build-arg $$(cat .env.prod | grep REACT_APP_DJANGO_API_ENDPOINT)
 
 ### Using the SQLite database
-run-sqlite: 
+run-sqlite:
 	$(error SQLite is not supported)   ## run the project with sqlite and stop the mysql project beforehand
-rund-sqlite: 
+rund-sqlite:
 	$(error SQLite is not supported) ## run the project with sqlite in detached mode and stop the mysql project beforehand
-redo-sqlite: 
+redo-sqlite:
 	$(error SQLite is not supported)           ## delete the db and rerun the project with sqlite
-redod-sqlite: 
+redod-sqlite:
 	$(error SQLite is not supported)         ## delete the db and rerun the project with sqlite in detached mode
 
 ### Using the MySQL database
-run-mysql: 
+run-mysql:
 	$(error SQLite is not supported)    ## run the project with mysql and stop the sqlite project beforehand
-rund-mysql: 
+rund-mysql:
 	$(error SQLite is not supported)  ## run the project with mysql in detached mode and stop the sqlite project beforehand
-redo-mysql: 
+redo-mysql:
 	$(error SQLite is not supported)              ## delete the db and rerun the project with mysql
-redod-mysql: 
+redod-mysql:
 	$(error SQLite is not supported)            ## delete the db and rerun the project with mysql in detached mode
 
 ### Using the PostgreSQL database

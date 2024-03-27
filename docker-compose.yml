@@ -2,32 +2,38 @@ name: seismic_dev
 
 services:
 
-  backend_psql:
-    extends:
-      file: docker-compose.base.yml
-      service: backend_dev_base
-    environment:
-      - "DATABASE_ENGINE=postgresql"
-      - "DATABASE_HOST=db_psql_dev"
-      - "DATABASE_PORT=5432"
-    depends_on:
-      - db_psql_dev
-
-  client_dev:
-    extends:
-      file: docker-compose.base.yml
-      service: client_dev_base
-    environment:
-      - "ENVIRONMENT=development"
-    ports:
-      - "${CLIENT_PORT:-3030}:3000"
-
-  db_psql_dev:
+  db:
     extends:
       file: docker-compose.base.yml
       service: db_base_psql
+
+  backend:
+    extends:
+      file: docker-compose.base.yml
+      service: backend_base
+    build:
+      context: .
+      dockerfile: ./docker/dockerfiles/Dockerfile.backend.dev
     volumes:
-      - ./docker/init-psql:/docker-entrypoint-initdb.d
+      - ./api:/var/www/seismic/api
+    depends_on:
+      - db
+
+  client:
+    extends:
+      file: docker-compose.base.yml
+      service: client_base
+    build:
+      context: ./
+      dockerfile: ./docker/dockerfiles/Dockerfile.frontend.dev
+      args:
+        - ENVIRONMENT=development
+    ports:
+      - "${CLIENT_PORT:-3030}:3000"
+    volumes:
+      - ./client:/code
+    depends_on:
+      - backend
 
 volumes:
   seismic_psql:

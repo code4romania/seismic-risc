@@ -2,7 +2,14 @@ name: seismic_multi
 
 services:
 
+  db:
+    extends:
+      file: docker-compose.base.yml
+      service: db_base_psql
+    container_name: seismic_db
+
   backend:
+    container_name: seismic_backend
     extends:
       file: docker-compose.base.yml
       service: backend_base
@@ -11,12 +18,8 @@ services:
       dockerfile: ./docker/dockerfiles/Dockerfile.backend
     volumes:
       - ./api/media:/var/www/seismic/api/media
-    environment:
-      - "ENVIRONMENT=production"
-    ports:
-      - "${WEBAPP_PORT:-8080}:80"
     depends_on:
-      - db_psql
+      - db
 
   client:
     extends:
@@ -29,11 +32,8 @@ services:
       - "ENVIRONMENT=production"
     ports:
       - "${CLIENT_PORT:-3030}:80"
-
-  db_psql:
-    extends:
-      file: docker-compose.base.yml
-      service: db_base_psql
+    depends_on:
+      - backend
 
 volumes:
   seismic_psql:
