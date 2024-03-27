@@ -1,5 +1,5 @@
-api/static/*
-api/public/*
+backend/static/*
+backend/public/*
 
 # dotenv environment variables file
 .env
