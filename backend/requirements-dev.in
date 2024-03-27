@@ -15,7 +15,7 @@ tqdm~=4.66.2
 ipython~=8.22.2
 
 # style checker
-black~=24.2.0
+black~=24.3.0
 ruff~=0.3.2
 
 # dependency management
