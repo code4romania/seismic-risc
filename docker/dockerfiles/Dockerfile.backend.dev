@@ -22,7 +22,9 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y --no-install-recommends \
-    nginx gcc xz-utils gettext build-essential postgresql-client libpq-dev
+    locales locales-all \
+    nginx gcc xz-utils gettext build-essential python3 python3-pip python3-venv python3-dev postgresql-client libpq-dev && \
+    apt-get clean
 
 
 ARG S6_OVERLAY_VERSION=3.1.2.1
