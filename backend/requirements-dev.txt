@@ -16,7 +16,7 @@ attrs==23.2.0
     #   -r requirements.txt
     #   jsonschema
     #   referencing
-black==24.2.0
+black==24.3.0
     # via -r requirements-dev.in
 blessed==1.20.0
     # via -r requirements.txt
