@@ -130,17 +130,17 @@ you can use [Google's style guide](http://google.github.io/styleguide/pyguide.ht
 
 ### Frameworks
 
-**API:** [Django](https://www.djangoproject.com)
+**Backend:** [Django](https://www.djangoproject.com)
 **Client:** [React](https://reactjs.org/)
 
 ### Package managers
 
-**API:** [pip](https://pypi.org/)
+**Backend:** [pip](https://pypi.org/)
 **Client:** [npm](https://www.npmjs.com/)
 
 ### Code styling
 
-**API:** [Black](https://black.readthedocs.io/en/stable/)
+**Backend:** [Black](https://black.readthedocs.io/en/stable/)
 **Client:** [Prettier](https://prettier.io/) + [ESLint](https://eslint.org/) + [Airbnb style guide](https://github.com/airbnb/javascript)
 
 ### Database technology & provider
@@ -149,7 +149,7 @@ you can use [Google's style guide](http://google.github.io/styleguide/pyguide.ht
 
 ## Getting started
 
-Risc Seismic API is a Django application, built on top of Python 3.9+ with a PostgreSQL database. The Client is a React
+Risc Seismic backend is a Django application, built on top of Python 3.9+ with a PostgreSQL database. The Client is a React
 single page application.
 
 ### Pre-requisites
@@ -235,7 +235,7 @@ docker-compose exec api ./manage.py createsuperuser
 
 #### Deployment variables
 
-The following variables change the way the API is deployed.
+The following variables change the way the backend is deployed.
 
 `RUN_MIGRATIONS`
 Run the initial migrations (sets up the data models from the database).
@@ -331,7 +331,7 @@ make help
     ```shell
     python -m venv .venv
     .venv\Scripts\activate.bat
-    pip install -r ./api/requirements-dev.txt
+    pip install -r ./backend/requirements-dev.txt
     copy .env.dev .env
     ```
 
@@ -348,27 +348,27 @@ make help
 4. Check database connection. If this fails double check database configuration.
 
     ```shell
-    python api/wait_for_db.py
+    python backend/wait_for_db.py
     ```
 
 5. Run migrations:
 
     ```shell
-    python api/manage.py migrate --no-input
+    python backend/manage.py migrate --no-input
     ```
 
 6. Create admin user (user to login into admin panel):
 
     ```shell
-    python api/manage.py createsuperuser
+    python backend/manage.py createsuperuser
     ```
 
 7. Load dummy data in database:
 
     ```shell
-    python api/manage.py loaddata statistics
-    python api/manage.py loaddata buildings
-    python api/manage.py loaddata pages
+    python backend/manage.py loaddata statistics
+    python backend/manage.py loaddata buildings
+    python backend/manage.py loaddata pages
     ```
 
 8. Install node modules.
@@ -380,14 +380,14 @@ make help
 
 #### Steps needed to start development servers
 
-*1. Start API server.*
+*1. Start backend server.*
 
 Open terminal in the project directory and run environment activation script, then start the server.
 
 ```shell
 .venv\Scripts\activate.bat
 activate_dev_env.bat
-python api\manage.py runserver 0.0.0.0:8030
+python backend\manage.py runserver 0.0.0.0:8030
 ```
 
 Check functionality at http://localhost:8030 you should get a 404 page.
@@ -499,7 +499,7 @@ make test
 To get the container ready for production use, we need to first build it:
 
 ```shell
-docker build -t seismic-risc:latest ./api
+docker build -t seismic-risc:latest ./backend
 ```
 
 Use the `prod.env.dist` template file and create a `prod.env` file with the correct environment variables and run like

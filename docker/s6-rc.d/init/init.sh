@@ -18,7 +18,7 @@ is_enabled() {
     fi
 }
 
-cd "${BACKEND_ROOT:-/var/www/seismic/api}" || exit 1
+cd "${BACKEND_ROOT:-/var/www/seismic/backend}" || exit 1
 
 echo "Running Django self-checks"
 python3 manage.py check

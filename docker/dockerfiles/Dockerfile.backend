@@ -16,7 +16,7 @@ RUN python3 -m venv ${VIRTUAL_ENV}
 ENV PATH="${VIRTUAL_ENV}/bin:${PATH}"
 
 WORKDIR /build
-COPY ./api/requirements.txt ./api/pyproject.toml ./
+COPY ./backend/requirements.txt ./backend/pyproject.toml ./
 RUN python3 -m pip install --upgrade pip setuptools && \
     python3 -m pip install -r ./requirements.txt
 
@@ -68,8 +68,8 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 # copy the backend source code and libraries from the build stage:
 COPY --from=build "${VIRTUAL_ENV}" "${VIRTUAL_ENV}"
 
-WORKDIR /var/www/seismic/api/
-COPY ./api .
+WORKDIR /var/www/seismic/backend/
+COPY ./backend .
 
 # Make sure scripts in .local are usable:
 ENV PATH=/root/.local/bin:$PATH
