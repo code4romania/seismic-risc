@@ -6,11 +6,11 @@ on:
   pull_request:
     branches: [develop]
     paths:
-      - 'api/**.py'
-      - 'api/requirements*.*'
+      - 'backend/**.py'
+      - 'backend/requirements*.*'
       - 'docker/dockerfiles/Dockerfile.backend*'
       - 'docker-compose.yml'
-      - '.github/workflows/api_pipeline.yml'
+      - '.github/workflows/backend_pipeline.yml'
       - '.github/workflows/code-analysis-py.yml'
 
 jobs:
