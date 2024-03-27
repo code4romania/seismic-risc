@@ -9,7 +9,7 @@ from time import sleep, time
 import dj_database_url
 import psycopg2
 
-logger = logging.getLogger()
+logger = logging.getLogger(__name__)
 logger.setLevel(logging.INFO)
 logger.addHandler(logging.StreamHandler())
 
@@ -34,7 +34,7 @@ if __name__ == "__main__":
             conn.close()
             sys.exit()
         except psycopg2.OperationalError:
-            logger.info(f"DB not ready. Waiting for 1 second ...")
+            logger.info("DB not ready. Waiting for 1 second ...")
             sleep(1)
 
-    logger.error(f"Could not connect to DB within {timeout} seconds.")
+    logger.error("Could not connect to DB within %d seconds.", timeout)

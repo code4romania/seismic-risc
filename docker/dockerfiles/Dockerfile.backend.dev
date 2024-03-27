@@ -22,7 +22,9 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && \
     apt-get upgrade -y && \
     apt-get install -y --no-install-recommends \
-    nginx gcc xz-utils gettext build-essential postgresql-client libpq-dev
+    locales locales-all \
+    nginx gcc xz-utils gettext build-essential python3 python3-pip python3-venv python3-dev postgresql-client libpq-dev && \
+    apt-get clean
 
 
 ARG S6_OVERLAY_VERSION=3.1.2.1
@@ -45,10 +47,10 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 
 # install the backend libraries:
-COPY ./api/pyproject.toml ./api/requirements.txt /var/www/seismic/api/
+COPY ./api/pyproject.toml ./api/requirements-dev.txt /var/www/seismic/api/
 WORKDIR /var/www/seismic/api/
 RUN python3 -m pip install --upgrade pip setuptools && \
-    python3 -m pip install -r ./requirements.txt
+    python3 -m pip install -r ./requirements-dev.txt
 
 # Copy the back-end source code and install the backend libraries:
 COPY ./api/ .
