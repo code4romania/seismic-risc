@@ -1,54 +1,39 @@
-version: "3.8"
-name: seismic-dev
+name: seismic_dev
 
 services:
 
   db:
-    container_name: seismic_db-dev
-    image: postgres:15.4-bookworm
-    env_file:
-      - .env
-    volumes:
-      - pgdata:/var/lib/postgresql/data
-    ports:
-      - "${DB_PORT:-5444}:5432"
+    extends:
+      file: docker-compose.base.yml
+      service: db_base_psql
 
-  api:
-    container_name: seismic_api-dev
+  backend:
+    extends:
+      file: docker-compose.base.yml
+      service: backend_base
     build:
-      context: ./
+      context: .
       dockerfile: ./docker/dockerfiles/Dockerfile.backend.dev
-      args:
-        - ENVIRONMENT=development
-    env_file:
-      - .env
-    environment:
-      ENVIRONMENT: "development"
+    volumes:
+      - ./api:/var/www/seismic/api
     depends_on:
       - db
-    ports:
-      - "${API_PORT:-8030}:8000"
-    volumes:
-      - ./api:/var/www/seismic/api/
 
   client:
-    container_name: seismic_client-dev
+    extends:
+      file: docker-compose.base.yml
+      service: client_base
     build:
       context: ./
       dockerfile: ./docker/dockerfiles/Dockerfile.frontend.dev
       args:
         - ENVIRONMENT=development
-    env_file:
-      - .env
-    environment:
-      ENVIRONMENT: "development"
-    depends_on:
-      - api
-    volumes:
-      - ./client:/code
     ports:
       - "${CLIENT_PORT:-3030}:3000"
+    volumes:
+      - ./client:/code
+    depends_on:
+      - backend
 
 volumes:
-    pgdata:
-        name: seismic_pgdata-dev
+  seismic_psql:

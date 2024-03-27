@@ -24,7 +24,7 @@ echo "Running Django self-checks"
 python3 manage.py check
 
 # Run the database migrations
-if is_enabled "${RUN_MIGRATION:-False}"; then
+if is_enabled "${RUN_MIGRATIONS:-False}"; then
     echo "Migrating database"
     python3 manage.py migrate --run-syncdb
     python3 manage.py createcachetable

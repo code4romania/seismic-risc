@@ -1,46 +1,40 @@
-version: "3.8"
-name: seismic-prod
+name: seismic_prod
 
 services:
 
   db:
-    container_name: seismic_db-prod
     extends:
-      file: dk-cp.base.yml
-      service: db_base
+      file: docker-compose.base.yml
+      service: db_base_psql
+    container_name: seismic_db
 
-  api:
-    container_name: seismic_api-prod
+  backend:
     extends:
-      file: dk-cp.base.yml
-      service: api_base
+      file: docker-compose.base.yml
+      service: backend_base
+    container_name: seismic_backend
     build:
-      context: ./
+      context: .
       dockerfile: ./docker/dockerfiles/Dockerfile.backend
-      args:
-        - ENVIRONMENT=production
-    env_file:
-      - .env.prod
-    environment:
-      ENVIRONMENT: "production"
+    volumes:
+      - ./api/media:/var/www/seismic/api/media
+    depends_on:
+      - db
 
   client:
-    container_name: seismic_client-prod
     extends:
-      file: dk-cp.base.yml
+      file: docker-compose.base.yml
       service: client_base
+    container_name: seismic_client
     build:
-      context: ./client
-      dockerfile: ../docker/dockerfiles/Dockerfile.frontend
-      args:
-        - ENVIRONMENT=production
-    env_file:
-      - .env.prod
+      context: ./
+      dockerfile: ./docker/dockerfiles/Dockerfile.frontend
     environment:
-      ENVIRONMENT: "production"
+      - "ENVIRONMENT=production"
     ports:
       - "${CLIENT_PORT:-3030}:80"
+    depends_on:
+      - backend
 
 volumes:
-    pgdata:
-        name: seismic_pgdata-prod
+  seismic_psql:

@@ -1,4 +1,6 @@
-FROM python:3.11.6-slim-bookworm as build
+ARG PYTHON_VERSION=3.11.8
+
+FROM python:${PYTHON_VERSION}-slim-bookworm as build
 
 ENV DEBIAN_FRONTEND=noninteractive
 
@@ -19,14 +21,14 @@ RUN python3 -m pip install --upgrade pip setuptools && \
     python3 -m pip install -r ./requirements.txt
 
 
-FROM python:3.11.6-slim-bookworm
+FROM python:${PYTHON_VERSION}-slim-bookworm
 
 ENV PYTHONUNBUFFERED=1
 
 ENV ENVIRONMENT=production
 ENV DEBUG=${DEBUG:-False}
 
-ENV RUN_MIGRATION=True
+ENV RUN_MIGRATIONS=True
 ENV RUN_COMPILE_MESSAGES=True
 ENV RUN_COLLECT_STATIC=True
 ENV RUN_CREATE_SUPER_USER=True

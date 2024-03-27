@@ -237,7 +237,7 @@ docker-compose exec api ./manage.py createsuperuser
 
 The following variables change the way the API is deployed.
 
-`RUN_MIGRATION`
+`RUN_MIGRATIONS`
 Run the initial migrations (sets up the data models from the database).
 
 `RUN_LOAD_INITIAL_DATA`
@@ -512,7 +512,7 @@ docker run --env-file prod.env -p HOST_PORT:GUNICORN_PORT seismic-risc:latest
 Or, you can provide all the environment variables at runtime:
 
 ```shell
-docker run -e DJANGO_CONFIGURATION=Prod -e DJANGO_SECRET_KEY= -e DATABASE_URL=postgres://USER:PASSWORD@HOST:PORT/NAME -e GUNICORN_PORT=5000 -e GUNICORN_WORKERS=2 -p HOST_PORT:GUNICORN_PORT seismic-risc:latest
+docker run -e DJANGO_CONFIGURATION=Prod -e DJANGO_SECRET_KEY= -e DATABASE_URL=postgres://USER:PASSWORD@HOST:PORT/NAME -e GUNICORN_PORT=5000 -e GUNICORN_WORKERS_COUNT=2 -p HOST_PORT:GUNICORN_PORT seismic-risc:latest
 ```
 
 After testing the container runs properly, tag and upload the self to Docker hub:

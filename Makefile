@@ -6,24 +6,54 @@ help:                             ## Display a help message detailing commands a
 
 ## [Managing the project]
 ### Stopping the containers and dropping the databases
-stop-dev:                         ## stops the dev project
+stop-sqlite:                      ## stops the sqlite dev project
+	$(error SQLite is not supported)
+
+drop-sqlite:                      ## stops the sqlite dev project
+	$(error SQLite is not supported)
+
+stop-mysql:                       ## stops the mysql dev project
+	$(error MySQL is not supported)
+
+drop-mysql:                       ## stops the mysql dev project
+	$(error MySQL is not supported)
+
+stop-psql:                       ## stops the psql dev project
 	docker compose down -t 60
 
-drop-dev:                         ## stops the dev project
+drop-psql:                       ## stops the psql dev project
 	docker compose down -v -t 60
 
-stop-prod:                        ## stops the dev project
+stop-prod:                        ## stops the mysql dev project
 	docker compose -f docker-compose.prod.yml down -t 60
 
-drop-prod:                        ## stops the dev project
+drop-prod:                        ## stops the mysql dev project
 	docker compose -f docker-compose.prod.yml down -v -t 60
 
 ### Building & starting the containers
-up-dev:                           ## run the project
+up-sqlite:                        ## run the project with sqlite
+	$(error SQLite is not supported)
+
+upd-sqlite:                       ## run the project with sqlite in detached mode
+	$(error SQLite is not supported)
+
+up-mysql:                         ## run the project with mysql
+	$(error MySQL is not supported)
+
+upd-mysql:                        ## run the project with mysql in detached mode
+	$(error MySQL is not supported)
+
+up-psql:                         ## run the project with psql
 	docker compose up --build
 
-upd-dev:                          ## run the project in detached mode
+upd-psql:                        ## run the project with psql in detached mode
 	docker compose up -d --build
+
+up-prod:                         ## run the project with mysql
+	docker compose -f docker-compose.prod.yml up --build
+
+upd-prod:                        ## run the project with mysql in detached mode
+	docker compose -f docker-compose.prod.yml up -d --build
 
 build-prod:
 	docker compose -f docker-compose.prod.yml build \
@@ -34,111 +64,147 @@ build-prod:
 		--build-arg $$(cat .env.prod | grep REACT_APP_DJANGO_PORT) \
 		--build-arg $$(cat .env.prod | grep REACT_APP_DJANGO_API_ENDPOINT)
 
+### Using the SQLite database
+run-sqlite:
+	$(error SQLite is not supported)   ## run the project with sqlite and stop the mysql project beforehand
+rund-sqlite:
+	$(error SQLite is not supported) ## run the project with sqlite in detached mode and stop the mysql project beforehand
+redo-sqlite:
+	$(error SQLite is not supported)           ## delete the db and rerun the project with sqlite
+redod-sqlite:
+	$(error SQLite is not supported)         ## delete the db and rerun the project with sqlite in detached mode
 
-up-prod:                          ## run the project
-	docker compose -f docker-compose.prod.yml up
+### Using the MySQL database
+run-mysql:
+	$(error SQLite is not supported)    ## run the project with mysql and stop the sqlite project beforehand
+rund-mysql:
+	$(error SQLite is not supported)  ## run the project with mysql in detached mode and stop the sqlite project beforehand
+redo-mysql:
+	$(error SQLite is not supported)              ## delete the db and rerun the project with mysql
+redod-mysql:
+	$(error SQLite is not supported)            ## delete the db and rerun the project with mysql in detached mode
 
-upd-prod:                       ## builds the container with the production flag
-	docker compose -f docker-compose.prod.yml up -d
-
-### Using the dev setup
-run-dev: up-dev                   ## run the project
-rund-dev: upd-dev                 ## run the project in detached mode
-redo-dev: drop-dev up-dev         ## delete the db and rerun the project
-redod-dev: drop-dev upd-dev       ## delete the db and rerun the project in detached mode
+### Using the PostgreSQL database
+run-psql: up-psql      ## run the project with psql and stop the mysql project beforehand
+rund-psql: upd-psql    ## run the project with psql in detached mode and stop the mysql project beforehand
+redo-psql: drop-psql up-psql                  ## delete the db and rerun the project with psql
+redod-psql: drop-psql upd-psql                ## delete the db and rerun the project with psql in detached mode
 
 ### With an image built for production
-run-prod: build-prod up-prod               ## run the project with production settings
-rund-prod: build-prod upd-prod             ## run the project with production settings in detached mode
-redo-prod: drop-prod build-prod up-prod    ## delete the db and rerun the project
-redod-prod: drop-prod build-prod upd-prod  ## delete the db and rerun the project in detached mode
+run-prod: up-prod                 ## run the project with production settings
+rund-prod: upd-prod               ## run the project with production settings in detached mode
+redo-prod: drop-prod up-prod      ## delete the db and rerun the project with mysql
+redod-prod: drop-prod upd-prod    ## delete the db and rerun the project with mysql in detached mode
 
 ### Other run options
-run: run-dev                      ## set the default run command to dev
-redo: redo-dev                    ## set the default redo command to dev
-rund: rund-dev                    ## set the default run command to dev
-redod: redod-dev                  ## set the default redo command to dev
+run: run-psql                   ## set the default run command to sqlite
+redo: redo-psql                 ## set the default redo command to sqlite
+rund: rund-psql                 ## set the default run command to sqlite
+redod: redod-psql               ## set the default redo command to sqlite
 
-stop: stop-dev stop-prod ## stop all running projects
+stop: stop-psql stop-prod ## stop all running projects
 
-drop: drop-dev drop-prod ## drop all databases
+drop: drop-psql drop-prod ## drop all databases
 
 
 ## [Monitoring the containers]
 logs-dev:                         ## show the logs of the containers
-	docker compose logs -f api
+	docker logs -f seismic_dev
 
 logs: logs-dev                    ## set the default logs command to dev
 
 logs-prod:                        ## show the logs of the containers
-	docker compose -f docker-compose.prod.yml logs -f api
+	docker logs -f seismic_prod
 
 
 ## [Django operations]
 makemigrations:                   ## generate migrations in a clean container
-	docker compose exec api sh -c "python3 -Wd ./manage.py makemigrations $(apps)"
+	docker exec seismic_dev sh -c "python3 -Wd ./api/manage.py makemigrations $(apps)"
 
 migrate:                          ## apply migrations in a clean container
-	docker compose exec api sh -c "python3 -Wd ./manage.py migrate $(apps)"
+	docker exec seismic_dev sh -c "python3 -Wd ./api/manage.py migrate $(apps)"
 
 migrations: makemigrations migrate ## generate and apply migrations
 
-
 makemessages:                     ## generate the strings marked for translation
-	docker compose exec api sh -c "python3 -Wd ./manage.py makemessages -a"
+	docker exec seismic_dev sh -c "python3 -Wd ./api/manage.py makemessages -a"
 
 compilemessages:                  ## compile the translations
-	docker compose exec api sh -c "python3 -Wd ./manage.py compilemessages"
+	docker exec seismic_dev sh -c "python3 -Wd ./api/manage.py compilemessages"
 
 messages: makemessages compilemessages ## generate and compile the translations
 
-
 collectstatic:                    ## collect the static files
-	docker compose exec api sh -c "python3 -Wd ./manage.py collectstatic --no-input"
+	docker exec seismic_dev sh -c "python3 -Wd ./api/manage.py collectstatic --no-input"
 
 format:                           ## format the code with black & ruff
-	docker compose exec api sh -c "black ./api && ruff check --fix ./api"
+	docker exec seismic_dev sh -c "black ./api && ruff check --fix ./api"
 
 pyshell:                          ## start a django shell
-	docker compose exec -it api sh -c "python3 -Wd ./manage.py shell"
+	docker exec -it seismic_dev sh -c "python3 -Wd ./api/manage.py shell"
 
 sh:                               ## start a sh shell
-	docker compose exec -it api sh -c "sh"
+	docker exec -it seismic_dev sh -c "sh"
 
 bash:                             ## start a bash shell
-	docker compose exec -it api sh -c "bash"
+	docker exec -it seismic_dev sh -c "bash"
 
 
 ## [Requirements management]
 requirements-build:               ## run pip compile and add requirements from the *.in files
-	docker compose exec api sh -c " \
+	docker exec seismic_dev sh -c " \
+		cd ./api && \
 		pip-compile --strip-extras --resolver=backtracking -o requirements.txt requirements.in && \
+		pip-compile --strip-extras --resolver=backtracking -o requirements-test.txt requirements-test.in && \
 		pip-compile --strip-extras --resolver=backtracking -o requirements-dev.txt requirements-dev.in \
 	"
 
 requirements-update:              ## run pip compile and rebuild the requirements files
-	docker compose exec api sh -c " \
+	docker exec seismic_dev sh -c " \
+		cd ./api && \
 		pip-compile --strip-extras --resolver=backtracking -r -U -o requirements.txt requirements.in && \
+		pip-compile --strip-extras --resolver=backtracking -r -U -o requirements-test.txt requirements-test.in && \
 		pip-compile --strip-extras --resolver=backtracking -r -U -o requirements-dev.txt requirements-dev.in && \
 		chmod a+r requirements.txt && \
+		chmod a+r requirements-test.txt && \
 		chmod a+r requirements-dev.txt \
 	"
 
 
+## [Tests]
+tests:                            ## run the tests
+	docker exec seismic_dev sh -c "cd ./api && pytest -Wd $(apps)"
+
+tests-cover:                      ## run the tests with coverage
+	docker exec seismic_dev sh -c "cd ./api && pytest -Wd  --cov --cov-report=xml --cov-report=term-missing --cov-fail-under=60 $(apps)"
+
+
 ## [Clean-up]
 clean-docker:                     ## stop docker containers and remove orphaned images and volumes
-	docker compose down -v -t 60
-	docker compose -f docker-compose.prod.yml down -v -t 60
+	docker compose down -t 60
+	docker compose -f docker-compose.prod.yml down -t 60
 	docker system prune -f
 
-clean-py:                         ## remove Python test, coverage, file artifacts, and compiled message files
-	find ./backend -name '*.mo' -delete
-	find ./backend -name '*.pyc' -delete
-	find ./backend -name '*.pyo' -delete
-	find ./backend -name '.coverage' -delete
-	find ./backend -name '.pytest_cache' -delete
-	find ./backend -name '.ruff_cache' -delete
-	find ./backend -name '__pycache__' -delete
-	find ./backend -name 'htmlcov' -delete
+clean-extras:                        ## remove test, coverage, file artifacts, and compiled message files
+	find ./api -name '*.mo' -delete
+	find ./api -name '*.pyc' -delete
+	find ./api -name '*.pyo' -delete
+	find ./api -name '.coverage' -delete
+	find ./api -name '.pytest_cache' -delete
+	find ./api -name '.ruff_cache' -delete
+	find ./api -name '__pycache__' -delete
+	find ./api -name 'htmlcov' -delete
 
-clean: clean-docker clean-py      ## remove all build, test, coverage and Python artifacts
+clean-db:                          ## remove the database files
+	rm -rf ./api/media ./api/static ./frontend/dist
+
+clean: clean-docker clean-extras clean-db  ## remove all build, test, coverage and Python artifacts
+
+
+## [Project-specific operations]
+mock-data:                        ## generate fake data
+	docker exec seismic_dev python3 -Wd ./api/manage.py generate_editions 5
+	docker exec seismic_dev python3 -Wd ./api/manage.py generate_users 20 --type U
+	docker exec seismic_dev python3 -Wd ./api/manage.py generate_projects 40
+	docker exec seismic_dev python3 -Wd ./api/manage.py generate_marketplace 10
+	docker exec seismic_dev python3 -Wd ./api/manage.py generate_users 2 --type J

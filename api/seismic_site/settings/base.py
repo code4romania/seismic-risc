@@ -36,7 +36,7 @@ env = environ.Env(
     AWS_STORAGE_BUCKET_NAME=(str, ""),
     AWS_SUBDOMAIN=(str, "s3.amazonaws.com"),
     AWS_S3_REGION_NAME=(str, ""),
-    BACKGROUND_WORKERS=(int, 1),
+    BACKGROUND_WORKERS_COUNT=(int, 1),
 )
 
 DATA_UPLOAD_MAX_NUMBER_FIELDS = env.int("DATA_UPLOAD_MAX_NUMBER_FIELDS")
@@ -126,12 +126,14 @@ if env("ENVIRONMENT") == "test":
     }
 else:
     DATABASES = {
-        "ENGINE": "django.db.backends.postgresql",
-        "USER": env("POSTGRES_USER"),
-        "PASSWORD": env("POSTGRES_PASSWORD"),
-        "NAME": env("POSTGRES_DB"),
-        "HOST": env("POSTGRES_HOST"),
-        "PORT": env("POSTGRES_PORT"),
+        "default": {
+            "ENGINE": "django.db.backends.postgresql",
+            "USER": env("DATABASE_USER"),
+            "PASSWORD": env("DATABASE_PASSWORD"),
+            "NAME": env("DATABASE_NAME"),
+            "HOST": env("DATABASE_HOST"),
+            "PORT": env("DATABASE_PORT"),
+        }
     }
 
 DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
@@ -473,7 +475,7 @@ JAZZMIN_UI_TWEAKS = {
 
 Q_CLUSTER = {
     "name": "seismic",
-    "workers": env.int("BACKGROUND_WORKERS"),
+    "workers": env.int("BACKGROUND_WORKERS_COUNT"),
     "recycle": 100,
     "timeout": 900,  # A task must finish in less than 15 minutes
     "retry": 1200,  # Retry an unfinished tasks after 20 minutes

@@ -4,7 +4,7 @@ cd /var/www/seismic/api/ || exit 1
 # if ENVIRONMENT="production", then run with gunicorn
 if [ "${ENVIRONMENT}" = "production" ]; then
   # https://docs.gunicorn.org/en/latest/design.html#how-many-workers
-  WORKERS=${GUNICORN_WORKESRS:-$(((2 * $(nproc)) + 1))}
+  WORKERS=${GUNICORN_WORKERS_COUNT:-$(((2 * $(nproc)) + 1))}
 
   python3 -m gunicorn seismic_site.wsgi \
     --bind "unix:///run/gunicorn.sock" \
@@ -14,5 +14,5 @@ if [ "${ENVIRONMENT}" = "production" ]; then
     --bind 0.0.0.0:8000 \
     --timeout 60
 else
-  python3 manage.py runserver_plus 0.0.0.0:8000
+  python3 manage.py runserver 0.0.0.0:8000
 fi
