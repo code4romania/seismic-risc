@@ -119,29 +119,29 @@ logs-prod:                        ## show the logs of the containers
 
 ## [Django operations]
 makemigrations:                   ## generate migrations in a clean container
-	docker exec seismic_backend_dev sh -c "python3 -Wd ./api/manage.py makemigrations $(apps)"
+	docker exec seismic_backend_dev sh -c "python3 -Wd ./backend/manage.py makemigrations $(apps)"
 
 migrate:                          ## apply migrations in a clean container
-	docker exec seismic_backend_dev sh -c "python3 -Wd ./api/manage.py migrate $(apps)"
+	docker exec seismic_backend_dev sh -c "python3 -Wd ./backend/manage.py migrate $(apps)"
 
 migrations: makemigrations migrate ## generate and apply migrations
 
 makemessages:                     ## generate the strings marked for translation
-	docker exec seismic_backend_dev sh -c "python3 -Wd ./api/manage.py makemessages -a"
+	docker exec seismic_backend_dev sh -c "python3 -Wd ./backend/manage.py makemessages -a"
 
 compilemessages:                  ## compile the translations
-	docker exec seismic_backend_dev sh -c "python3 -Wd ./api/manage.py compilemessages"
+	docker exec seismic_backend_dev sh -c "python3 -Wd ./backend/manage.py compilemessages"
 
 messages: makemessages compilemessages ## generate and compile the translations
 
 collectstatic:                    ## collect the static files
-	docker exec seismic_backend_dev sh -c "python3 -Wd ./api/manage.py collectstatic --no-input"
+	docker exec seismic_backend_dev sh -c "python3 -Wd ./backend/manage.py collectstatic --no-input"
 
 format:                           ## format the code with black & ruff
-	docker exec seismic_backend_dev sh -c "black ./api && ruff check --fix ./api"
+	docker exec seismic_backend_dev sh -c "black ./backend && ruff check --fix ./backend"
 
 pyshell:                          ## start a django shell
-	docker exec -it seismic_backend_dev sh -c "python3 -Wd ./api/manage.py shell"
+	docker exec -it seismic_backend_dev sh -c "python3 -Wd ./backend/manage.py shell"
 
 sh:                               ## start a sh shell
 	docker exec -it seismic_backend_dev sh -c "sh"
@@ -171,10 +171,10 @@ requirements-update:              ## run pip compile and rebuild the requirement
 
 ## [Tests]
 tests:                            ## run the tests
-	docker exec seismic_backend_dev sh -c "cd ./api && pytest -Wd $(apps)"
+	docker exec seismic_backend_dev sh -c "cd ./backend && pytest -Wd $(apps)"
 
 tests-cover:                      ## run the tests with coverage
-	docker exec seismic_backend_dev sh -c "cd ./api && pytest -Wd  --cov --cov-report=xml --cov-report=term-missing --cov-fail-under=60 $(apps)"
+	docker exec seismic_backend_dev sh -c "cd ./backend && pytest -Wd  --cov --cov-report=xml --cov-report=term-missing --cov-fail-under=60 $(apps)"
 
 
 ## [Clean-up]
@@ -184,25 +184,25 @@ clean-docker:                     ## stop docker containers and remove orphaned 
 	docker system prune -f
 
 clean-extras:                        ## remove test, coverage, file artifacts, and compiled message files
-	find ./api -name '*.mo' -delete
-	find ./api -name '*.pyc' -delete
-	find ./api -name '*.pyo' -delete
-	find ./api -name '.coverage' -delete
-	find ./api -name '.pytest_cache' -delete
-	find ./api -name '.ruff_cache' -delete
-	find ./api -name '__pycache__' -delete
-	find ./api -name 'htmlcov' -delete
+	find ./backend -name '*.mo' -delete
+	find ./backend -name '*.pyc' -delete
+	find ./backend -name '*.pyo' -delete
+	find ./backend -name '.coverage' -delete
+	find ./backend -name '.pytest_cache' -delete
+	find ./backend -name '.ruff_cache' -delete
+	find ./backend -name '__pycache__' -delete
+	find ./backend -name 'htmlcov' -delete
 
 clean-db:                          ## remove the database files
-	rm -rf ./api/media ./api/static ./frontend/dist
+	rm -rf ./backend/media ./backend/static ./frontend/dist
 
 clean: clean-docker clean-extras clean-db  ## remove all build, test, coverage and Python artifacts
 
 
 ## [Project-specific operations]
 mock-data:                        ## generate fake data
-	docker exec seismic_backend_dev python3 -Wd ./api/manage.py generate_editions 5
-	docker exec seismic_backend_dev python3 -Wd ./api/manage.py generate_users 20 --type U
-	docker exec seismic_backend_dev python3 -Wd ./api/manage.py generate_projects 40
-	docker exec seismic_backend_dev python3 -Wd ./api/manage.py generate_marketplace 10
-	docker exec seismic_backend_dev python3 -Wd ./api/manage.py generate_users 2 --type J
+	docker exec seismic_backend_dev python3 -Wd ./backend/manage.py generate_editions 5
+	docker exec seismic_backend_dev python3 -Wd ./backend/manage.py generate_users 20 --type U
+	docker exec seismic_backend_dev python3 -Wd ./backend/manage.py generate_projects 40
+	docker exec seismic_backend_dev python3 -Wd ./backend/manage.py generate_marketplace 10
+	docker exec seismic_backend_dev python3 -Wd ./backend/manage.py generate_users 2 --type J

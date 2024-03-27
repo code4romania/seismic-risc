@@ -47,13 +47,13 @@ ENV PATH="$VIRTUAL_ENV/bin:$PATH"
 
 
 # install the backend libraries:
-COPY ./api/pyproject.toml ./api/requirements-dev.txt /var/www/seismic/api/
-WORKDIR /var/www/seismic/api/
+COPY ./backend/pyproject.toml ./backend/requirements-dev.txt /var/www/seismic/backend/
+WORKDIR /var/www/seismic/backend/
 RUN python3 -m pip install --upgrade pip setuptools && \
     python3 -m pip install -r ./requirements-dev.txt
 
 # Copy the back-end source code and install the backend libraries:
-COPY ./api/ .
+COPY ./backend/ .
 
 # Make sure scripts in .local are usable:
 ENV PATH=/root/.local/bin:$PATH

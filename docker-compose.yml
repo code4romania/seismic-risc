@@ -15,7 +15,7 @@ services:
       context: .
       dockerfile: ./docker/dockerfiles/Dockerfile.backend.dev
     volumes:
-      - ./api:/var/www/seismic/api
+      - ./backend:/var/www/seismic/backend
     depends_on:
       - db
 

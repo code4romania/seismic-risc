@@ -1,5 +1,5 @@
 #!/command/with-contenv sh
-cd /var/www/seismic/api/ || exit 1
+cd /var/www/seismic/backend/ || exit 1
 
 # if ENVIRONMENT="production", then run with gunicorn
 if [ "${ENVIRONMENT}" = "production" ]; then
