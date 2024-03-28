@@ -48,7 +48,6 @@ if is_enabled "${RUN_CREATE_SUPER_USER:-False}"; then
     echo "Running the superuser seed script"
 
     python3 manage.py seed_superuser \
-        --email "${DJANGO_ADMIN_EMAIL}" \
         --first_name "${DJANGO_ADMIN_FIRST_NAME}" \
         --last_name "${DJANGO_ADMIN_LAST_NAME}"
 fi
