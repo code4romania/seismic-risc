@@ -1,4 +1,4 @@
-from seismic_site.settings.base import *
+from seismic_site.settings import *  # noqa
 
 DEBUG = True
 SECRET_KEY = "test_secret"

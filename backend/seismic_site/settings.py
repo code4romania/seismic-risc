@@ -2,55 +2,130 @@
 Django settings for the project.
 
 For more information on this file, see
-https://docs.djangoproject.com/en/3.2/topics/settings/
+https://docs.djangoproject.com/en/4.2/topics/settings/
 
 For the full list of settings and their values, see
-https://docs.djangoproject.com/en/3.2/ref/settings/
+https://docs.djangoproject.com/en/4.2/ref/settings/
 """
 
 import os
+from copy import deepcopy
+from pathlib import Path
 from typing import Any, Dict, List
 
 import environ
 from django.utils.translation import gettext_lazy as _
 
+# Build paths inside the project like this: BASE_DIR / 'subdir'.
+ROOT = Path(__file__).resolve().parent.parent.parent
+BASE_DIR = os.path.abspath(os.path.join(ROOT, "backend"))
+
+ENV_FILE_NAME = os.environ.get("ENV_FILE_NAME", ".env.local")
+ENV_FILE_PATH = os.path.join(BASE_DIR, os.pardir, ENV_FILE_NAME)
+
 env = environ.Env(
     # set casting, default value
     DEBUG=(bool, False),
     ENVIRONMENT=(str, "production"),
-    ENABLE_DEBUG_TOOLBAR=(bool, False),
+    SECRET_KEY=(str, "secret-key"),
+    LOG_LEVEL=(str, "INFO"),
     LANGUAGE_CODE=(str, "en"),
-    NO_REPLY_EMAIL=(str, "noreply@code4.ro"),
-    DEFAULT_FROM_EMAIL=(str, "noreply@code4.ro"),
     HERE_MAPS_API_KEY=(str, ""),
     DATA_UPLOAD_MAX_NUMBER_FIELDS=(int, 1000),
-    # hosts and origins
-    ALLOWED_HOSTS=(list, []),
+    BACKGROUND_WORKERS_COUNT=(int, 1),
+    # email settings
+    EMAIL_SEND_METHOD=(str, "async"),
+    EMAIL_BACKEND=(str, "django.core.mail.backends.console.EmailBackend"),
+    EMAIL_HOST=(str, ""),
+    EMAIL_PORT=(str, ""),
+    EMAIL_HOST_USER=(str, ""),
+    EMAIL_HOST_PASSWORD=(str, ""),
+    EMAIL_USE_TLS=(str, ""),
+    EMAIL_FAIL_SILENTLY=(bool, False),
+    DEFAULT_FROM_EMAIL=(str, "no-reply@code4.ro"),
+    NO_REPLY_EMAIL=(str, "no-reply@code4.ro"),
+    # security settings
+    ALLOWED_HOSTS=(list, ["*"]),
     CSRF_TRUSTED_ORIGINS=(list, []),
+    CORS_ALLOW_ALL_ORIGINS=(bool, False),
     CORS_ALLOWED_ORIGINS=(list, []),
     CORS_ALLOWED_ORIGIN_REGEXES=(list, []),
     # aws settings
+    AWS_REGION_NAME=(str, ""),
+    # S3
     USE_S3=(bool, False),
-    AWS_ACCESS_KEY_ID=(str, ""),
-    AWS_SECRET_ACCESS_KEY=(str, ""),
-    AWS_STORAGE_BUCKET_NAME=(str, ""),
-    AWS_SUBDOMAIN=(str, "s3.amazonaws.com"),
     AWS_S3_REGION_NAME=(str, ""),
-    BACKGROUND_WORKERS_COUNT=(int, 1),
+    AWS_S3_SIGNATURE_VERSION=(str, "s3v4"),
+    AWS_S3_ADDRESSING_STYLE=(str, "virtual"),
+    AWS_S3_STORAGE_DEFAULT_BUCKET_NAME=(str, ""),
+    AWS_S3_STORAGE_PUBLIC_BUCKET_NAME=(str, ""),
+    AWS_S3_STORAGE_STATIC_BUCKET_NAME=(str, ""),
+    AWS_S3_DEFAULT_ACL=(str, "private"),
+    AWS_S3_PUBLIC_ACL=(str, ""),
+    AWS_S3_STATIC_ACL=(str, ""),
+    AWS_S3_DEFAULT_PREFIX=(str, ""),
+    AWS_S3_PUBLIC_PREFIX=(str, ""),
+    AWS_S3_STATIC_PREFIX=(str, ""),
+    AWS_S3_DEFAULT_CUSTOM_DOMAIN=(str, ""),
+    AWS_S3_PUBLIC_CUSTOM_DOMAIN=(str, ""),
+    AWS_S3_STATIC_CUSTOM_DOMAIN=(str, ""),
+    # SES
+    AWS_SES_REGION_NAME=(str, ""),
+    AWS_SES_USE_V2=(bool, True),
+    AWS_SES_CONFIGURATION_SET_NAME=(str, None),
+    AWS_SES_AUTO_THROTTLE=(float, 0.5),
+    AWS_SES_REGION_ENDPOINT=(str, ""),
 )
+
+environ.Env.read_env(ENV_FILE_PATH)
+
+# SECURITY WARNING: don't run with debug turned on in production
+DEBUG = TEMPLATE_DEBUG = env("DEBUG")
+ENVIRONMENT = env.str("ENVIRONMENT")
+
+# SECURITY WARNING: keep the secret key used in production secret
+SECRET_KEY = env.str("SECRET_KEY")
+if SECRET_KEY == "secret-key" and DEBUG is False:
+    raise ValueError("SECRET_KEY must be set in production environment")
 
 DATA_UPLOAD_MAX_NUMBER_FIELDS = env.int("DATA_UPLOAD_MAX_NUMBER_FIELDS")
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.join(os.path.dirname(os.path.abspath(__file__)), "../..")
+# Proxy HOST & Scheme headers
+USE_X_FORWARDED_HOST = env.bool("USE_PROXY_FORWARDED_HOST", False)
+if proxy_ssl_header_name := env.str("PROXY_SSL_HEADER", ""):
+    SECURE_PROXY_SSL_HEADER = (proxy_ssl_header_name, "https")
 
-DEBUG = TEMPLATE_DEBUG = env("DEBUG")
 
-ALLOWED_HOSTS: List[str] = env.list("ALLOWED_HOSTS")
-CORS_ORIGIN_ALLOW_ALL = False
+ALLOWED_HOSTS = env.list("ALLOWED_HOSTS")
 
+CSRF_HEADER_NAME = "HTTP_X_XSRF_TOKEN"
+CSRF_COOKIE_NAME = "XSRF-TOKEN"
 CSRF_TRUSTED_ORIGINS: List[str] = env.list("CSRF_TRUSTED_ORIGINS")
 
+CORS_ALLOW_ALL_ORIGINS: bool = env.bool("CORS_ALLOW_ALL_ORIGINS")
+CORS_ALLOWED_ORIGINS: List[str] = env.list("CORS_ALLOWED_ORIGINS")
+CORS_ALLOWED_ORIGIN_REGEXES: List[str] = env.list("CORS_ALLOWED_ORIGIN_REGEXES")
+
+
+# Logging
+DJANGO_LOG_LEVEL = env.str("LOG_LEVEL").upper()
+
+LOGGING = {
+    "version": 1,
+    "disable_existing_loggers": False,
+    "handlers": {
+        "console": {
+            "class": "logging.StreamHandler",
+        },
+    },
+    "root": {
+        "handlers": ["console"],
+        "level": DJANGO_LOG_LEVEL,
+    },
+}
+
+
+# Application definition
 INSTALLED_APPS = [
     "jazzmin",
     # django apps
@@ -69,6 +144,7 @@ INSTALLED_APPS = [
     "storages",
     "corsheaders",
     "django_q",
+    "whitenoise.runserver_nostatic",
     # project apps
     "utils",
     "buildings",
@@ -92,8 +168,6 @@ MIDDLEWARE = [
 
 SITE_ID = 1
 
-ENABLE_DEBUG_TOOLBAR = env.bool("ENABLE_DEBUG_TOOLBAR")
-
 ROOT_URLCONF = "seismic_site.urls"
 
 TEMPLATES = [
@@ -115,39 +189,21 @@ TEMPLATES = [
 WSGI_APPLICATION = "seismic_site.wsgi.application"
 
 # Database
-# https://docs.djangoproject.com/en/3.2/ref/settings/#databases
+# https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
-if env("ENVIRONMENT") == "test":
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": "/tmp/test.db",  # noqa
-        }
+DATABASES = {
+    "default": {
+        "ENGINE": "django.db.backends.postgresql",
+        "NAME": env("DATABASE_NAME"),
+        "USER": env("DATABASE_USER"),
+        "PASSWORD": env("DATABASE_PASSWORD"),
+        "HOST": env("DATABASE_HOST"),
+        "PORT": env("DATABASE_PORT"),
     }
-else:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.postgresql",
-            "USER": env("DATABASE_USER"),
-            "PASSWORD": env("DATABASE_PASSWORD"),
-            "NAME": env("DATABASE_NAME"),
-            "HOST": env("DATABASE_HOST"),
-            "PORT": env("DATABASE_PORT"),
-        }
-    }
+}
 
-DEFAULT_AUTO_FIELD = "django.db.models.AutoField"
 
-# Password validation
-# https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
-
-AUTH_PASSWORD_VALIDATORS = [
-    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},  # noqa
-    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},  # noqa
-    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},  # noqa
-    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},  # noqa
-]
-
+# Cache
 CACHES = {
     "default": {
         "BACKEND": "django.core.cache.backends.db.DatabaseCache",
@@ -161,8 +217,63 @@ CACHES = {
     },
 }
 
+
+# Default primary key field type
+# https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
+
+DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+# Password validation
+# https://docs.djangoproject.com/en/4.2/ref/settings/#auth-password-validators
+
+AUTH_PASSWORD_VALIDATORS = [
+    {"NAME": "django.contrib.auth.password_validation.UserAttributeSimilarityValidator"},  # noqa
+    {"NAME": "django.contrib.auth.password_validation.MinimumLengthValidator"},  # noqa
+    {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},  # noqa
+    {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},  # noqa
+]
+
+
+# Email settings
+EMAIL_BACKEND = env.str("EMAIL_BACKEND")
+EMAIL_SEND_METHOD = env.str("EMAIL_SEND_METHOD")
+
+DEFAULT_FROM_EMAIL = env.str("DEFAULT_FROM_EMAIL")
+NO_REPLY_EMAIL = env.str("NO_REPLY_EMAIL")
+
+EMAIL_HOST = env.str("EMAIL_HOST")
+EMAIL_PORT = env.str("EMAIL_PORT")
+EMAIL_HOST_USER = env.str("EMAIL_HOST_USER")
+EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD")
+EMAIL_USE_TLS = env.bool("EMAIL_USE_TLS")
+
+EMAIL_FAIL_SILENTLY = env.bool("EMAIL_FAIL_SILENTLY")
+
+if EMAIL_BACKEND == "django_ses.SESBackend":
+    AWS_SES_CONFIGURATION_SET_NAME = env.str("AWS_SES_CONFIGURATION_SET_NAME")
+
+    AWS_SES_AUTO_THROTTLE = env.float("AWS_SES_AUTO_THROTTLE", default=0.5)
+    AWS_SES_REGION_NAME = env.str("AWS_SES_REGION_NAME") if env("AWS_SES_REGION_NAME") else env("AWS_REGION_NAME")
+    AWS_SES_REGION_ENDPOINT = env.str("AWS_SES_REGION_ENDPOINT", default=f"email.{AWS_SES_REGION_NAME}.amazonaws.com")
+
+    AWS_SES_FROM_EMAIL = DEFAULT_FROM_EMAIL
+
+    USE_SES_V2 = env.bool("AWS_SES_USE_V2", default=True)
+
+    if aws_access_key := env("AWS_ACCESS_KEY_ID", default=None):
+        AWS_ACCESS_KEY_ID = aws_access_key
+        AWS_SECRET_ACCESS_KEY = env("AWS_SECRET_ACCESS_KEY")
+else:
+    EMAIL_HOST = env.str("EMAIL_HOST")
+    EMAIL_PORT = env.str("EMAIL_PORT")
+    EMAIL_HOST_USER = env.str("EMAIL_HOST_USER")
+    EMAIL_HOST_PASSWORD = env.str("EMAIL_HOST_PASSWORD")
+    EMAIL_USE_TLS = env.bool("EMAIL_USE_TLS")
+
+
 # Internationalization
-# https://docs.djangoproject.com/en/3.2/topics/i18n/
+# https://docs.djangoproject.com/en/4.2/topics/i18n/
 
 LANGUAGE_CODE = env("LANGUAGE_CODE")
 TIME_ZONE = "Europe/Bucharest"
@@ -175,46 +286,107 @@ LANGUAGES = [
     ("en", _("English")),
 ]
 
-# Static files (CSS, JavaScript, Images)
-# https://docs.djangoproject.com/en/3.2/howto/static-files/
-
-USE_S3 = (
-    env.bool("USE_S3") and env("AWS_ACCESS_KEY_ID") and env("AWS_SECRET_ACCESS_KEY") and env("AWS_STORAGE_BUCKET_NAME")
-)
-
-if USE_S3:
-    # aws settings
-    AWS_ACCESS_KEY_ID = env("AWS_ACCESS_KEY_ID")
-    AWS_SECRET_ACCESS_KEY = env("AWS_SECRET_ACCESS_KEY")
-    AWS_STORAGE_BUCKET_NAME = env("AWS_STORAGE_BUCKET_NAME")
-
-    AWS_SUBDOMAIN = env("AWS_SUBDOMAIN")
-
-    AWS_DEFAULT_ACL = None
-    AWS_S3_REGION_NAME = env("AWS_S3_REGION_NAME")
-    AWS_S3_CUSTOM_DOMAIN = f"{AWS_STORAGE_BUCKET_NAME}.{AWS_SUBDOMAIN}"
-    AWS_S3_OBJECT_PARAMETERS = {"CacheControl": "max-age=86400"}
-    AWS_S3_FILE_OVERWRITE = True
-
-    DEFAULT_FILE_STORAGE = "storages.backends.s3boto3.S3Boto3Storage"
-
-    # s3 public media settings
-    PUBLIC_MEDIA_LOCATION = "media"
-    MEDIA_URL = f"https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/"
-
-    # s3 private media settings
-    PRIVATE_MEDIA_LOCATION = "private"
-else:
-    PRIVATE_FILE_STORAGE = "django.core.files.storage.FileSystemStorage"
-    MEDIA_URL = "/media/"
-    MEDIA_ROOT = os.path.join(BASE_DIR, "./public/media")
-
-STATIC_URL = "/static/"
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
-STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
-
 LOCALE_PATHS = (os.path.join(BASE_DIR, "locale"),)
 
+
+# Media & Static files storage
+# https://docs.djangoproject.com/en/4.2/howto/static-files/
+
+static_static_location = "static"
+public_media_location = "media"
+private_media_location = "media"
+
+static_storage = "whitenoise.storage.CompressedStaticFilesStorage"
+media_storage = "django.core.files.storage.FileSystemStorage"
+
+STATIC_URL = f"{static_static_location}/"
+MEDIA_URL = f"{public_media_location}/"
+
+STATIC_ROOT = os.path.abspath(os.path.join(BASE_DIR, "static"))
+MEDIA_ROOT = os.path.abspath(os.path.join(BASE_DIR, "media"))
+
+DEV_DEPENDECIES_LOCATION = "bower_components"
+
+STATICFILES_DIRS = [
+    os.path.abspath(os.path.join(DEV_DEPENDECIES_LOCATION)),
+    os.path.abspath(os.path.join("static_extras")),
+]
+
+default_storage_options = {}
+
+public_storage_options = {}
+static_storage_options = {}
+
+if env.bool("USE_S3"):
+    media_storage = "storages.backends.s3boto3.S3Boto3Storage"
+    static_storage = "storages.backends.s3boto3.S3StaticStorage"
+
+    # https://django-storages.readthedocs.io/en/latest/backends/amazon-S3.html
+    default_storage_options = {
+        "bucket_name": env.str("AWS_S3_STORAGE_DEFAULT_BUCKET_NAME"),
+        "default_acl": env.str("AWS_S3_DEFAULT_ACL"),
+        "region_name": env.str("AWS_S3_REGION_NAME") or env.str("AWS_REGION_NAME"),
+        "object_parameters": {"CacheControl": "max-age=86400"},
+        "file_overwrite": False,
+        "signature_version": env.str("AWS_S3_SIGNATURE_VERSION"),
+        "addressing_style": env.str("AWS_S3_ADDRESSING_STYLE"),
+    }
+
+    # Authentication, if not using IAM roles
+    if aws_session_profile := env.str("AWS_S3_SESSION_PROFILE", default=None):
+        default_storage_options["session_profile"] = aws_session_profile
+    elif aws_access_key := env.str("AWS_ACCESS_KEY_ID", default=None):
+        default_storage_options["access_key"] = aws_access_key
+        default_storage_options["secret_key"] = env.str("AWS_SECRET_ACCESS_KEY")
+
+    # Additional default configurations
+    if default_prefix := env.str("AWS_S3_DEFAULT_PREFIX", default=None):
+        default_storage_options["location"] = default_prefix
+    if custom_domain := env.str("AWS_S3_DEFAULT_CUSTOM_DOMAIN", default=None):
+        public_storage_options["custom_domain"] = custom_domain
+
+    # Public storage options
+    public_storage_options = deepcopy(default_storage_options)
+    if public_acl := env.str("AWS_S3_PUBLIC_ACL"):
+        public_storage_options["default_acl"] = public_acl
+    if public_bucket_name := env.str("AWS_S3_STORAGE_PUBLIC_BUCKET_NAME"):
+        public_storage_options["bucket_name"] = public_bucket_name
+    if public_prefix := env.str("AWS_S3_PUBLIC_PREFIX", default=None):
+        public_storage_options["location"] = public_prefix
+    if custom_domain := env.str("AWS_S3_PUBLIC_CUSTOM_DOMAIN", default=None):
+        public_storage_options["custom_domain"] = custom_domain
+
+    static_storage_options = deepcopy(public_storage_options)
+    if static_acl := env.str("AWS_S3_STATIC_ACL"):
+        static_storage_options["default_acl"] = static_acl
+    if static_bucket_name := env.str("AWS_S3_STORAGE_STATIC_BUCKET_NAME"):
+        static_storage_options["bucket_name"] = static_bucket_name
+    if static_prefix := env.str("AWS_S3_STATIC_PREFIX", default=None):
+        static_storage_options["location"] = static_prefix
+    if custom_domain := env.str("AWS_S3_STATIC_CUSTOM_DOMAIN", default=None):
+        static_storage_options["custom_domain"] = custom_domain
+
+
+STORAGES = {
+    "default": {
+        "BACKEND": media_storage,
+        "LOCATION": private_media_location,
+        "OPTIONS": default_storage_options,
+    },
+    "public": {
+        "BACKEND": media_storage,
+        "LOCATION": public_media_location,
+        "OPTIONS": public_storage_options,
+    },
+    "staticfiles": {
+        "BACKEND": static_storage,
+        "LOCATION": static_static_location,
+        "OPTIONS": static_storage_options,
+    },
+}
+
+
+# API settings
 REST_FRAMEWORK = {
     # Use Django's standard `django.contrib.auth` permissions
     # or allow read-only access for unauthenticated users.

@@ -6,9 +6,9 @@ werkzeug~=3.0.1
 # tests
 pytest~=8.1.1
 pytest-flake8~=1.1.1
-pytest-cov~=4.1.0
+pytest-cov~=5.0.0
 pytest-django~=4.8.0
-faker~=24.2.0
+faker~=24.4.0
 tqdm~=4.66.2
 
 # utils

@@ -4,7 +4,7 @@
 #
 #    pip-compile --output-file=requirements-dev.txt --strip-extras requirements-dev.in
 #
-asgiref==3.7.2
+asgiref==3.8.1
     # via
     #   -r requirements.txt
     #   django
@@ -20,9 +20,11 @@ black==24.3.0
     # via -r requirements-dev.in
 blessed==1.20.0
     # via -r requirements.txt
-boto3==1.34.62
-    # via -r requirements.txt
-botocore==1.34.62
+boto3==1.34.72
+    # via
+    #   -r requirements.txt
+    #   django-ses
+botocore==1.34.72
     # via
     #   -r requirements.txt
     #   boto3
@@ -33,9 +35,9 @@ click==8.1.7
     # via
     #   black
     #   pip-tools
-coverage==7.4.3
+coverage==7.4.4
     # via pytest-cov
-croniter==2.0.2
+croniter==2.0.3
     # via -r requirements.txt
 decorator==5.1.1
     # via ipython
@@ -61,6 +63,7 @@ django==4.2.11
     #   django-jquery
     #   django-picklefield
     #   django-q2
+    #   django-ses
     #   django-storages
     #   djangorestframework
     #   drf-spectacular
@@ -74,7 +77,7 @@ django-extensions==3.2.3
     # via -r requirements-dev.in
 django-import-export==3.3.7
     # via -r requirements.txt
-django-jazzmin==2.6.0
+django-jazzmin==2.6.1
     # via -r requirements.txt
 django-jquery==3.1.0
     # via -r requirements.txt
@@ -83,6 +86,8 @@ django-picklefield==3.1
     #   -r requirements.txt
     #   django-q2
 django-q2==1.6.2
+    # via -r requirements.txt
+django-ses==3.5.2
     # via -r requirements.txt
 django-storages==1.14.2
     # via -r requirements.txt
@@ -98,7 +103,7 @@ et-xmlfile==1.1.0
     #   openpyxl
 executing==2.0.1
     # via stack-data
-faker==24.2.0
+faker==24.2.1
     # via -r requirements-dev.in
 flake8==7.0.0
     # via pytest-flake8
@@ -200,7 +205,7 @@ pytest==8.1.1
     #   pytest-cov
     #   pytest-django
     #   pytest-flake8
-pytest-cov==4.1.0
+pytest-cov==5.0.0
     # via -r requirements-dev.in
 pytest-django==4.8.0
     # via -r requirements-dev.in
@@ -216,13 +221,14 @@ pytz==2024.1
     # via
     #   -r requirements.txt
     #   croniter
+    #   django-ses
     #   djangorestframework
 pyyaml==6.0.1
     # via
     #   -r requirements.txt
     #   drf-spectacular
     #   tablib
-referencing==0.33.0
+referencing==0.34.0
     # via
     #   -r requirements.txt
     #   jsonschema
@@ -232,9 +238,9 @@ rpds-py==0.18.0
     #   -r requirements.txt
     #   jsonschema
     #   referencing
-ruff==0.3.2
+ruff==0.3.4
     # via -r requirements-dev.in
-s3transfer==0.10.0
+s3transfer==0.10.1
     # via
     #   -r requirements.txt
     #   boto3
@@ -269,7 +275,7 @@ uritemplate==4.1.1
     # via
     #   -r requirements.txt
     #   drf-spectacular
-urllib3==2.0.7
+urllib3==2.2.1
     # via
     #   -r requirements.txt
     #   botocore
