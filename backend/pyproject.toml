@@ -53,7 +53,7 @@ max-complexity = 10
 "*/__init__.py" = ["F401"]
 
 [tool.pytest.ini_options]
-DJANGO_SETTINGS_MODULE = "backend.test_settings"
+DJANGO_SETTINGS_MODULE = "seismic_site.settings"
 
 python_files = [
     "test.py",
