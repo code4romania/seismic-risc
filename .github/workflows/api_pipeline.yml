@@ -95,6 +95,17 @@ jobs:
   tests:
     name: Run backend tests
     runs-on: ubuntu-latest
+
+    services:
+      postgres:
+        image: postgres:16.2
+        env:
+          POSTGRES_DB: seismic
+          POSTGRES_USER: user
+          POSTGRES_PASSWORD: password
+        ports:
+          - 5432:5432
+
     steps:
     - name: Check out Git repository
       uses: actions/checkout@v4
@@ -110,5 +121,18 @@ jobs:
         pip install -r ./backend/requirements-dev.txt
 
     - name: Run tests
+      env:
+        ENVIRONMENT: "test"
+        DJANGO_SETTINGS_MODULE: "seismic_site.settings"
+        DEBUG: "True"
+        SECRET_KEY: "test_secret"
+        SITE_URL: "http://localhost"
+        EMAIL_BACKEND: "django.core.mail.backends.dummy.EmailBackend"
+        TEST_RUNNER: "tests.runner.PytestTestRunner"
+        DATABASE_NAME: seismic
+        DATABASE_USER: user
+        DATABASE_PASSWORD: password
+        DATABASE_HOST: postgres
+        DATABASE_PORT: 5432
       run: |
-        ENVIRONMENT=test DJANGO_SETTINGS_MODULE=seismic_site.test_settings ./backend/manage.py test
+        ./backend/manage.py test
