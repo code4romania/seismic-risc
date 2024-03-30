@@ -9,9 +9,9 @@ logger = logging.getLogger(__name__)
 class CommonCreateUserCommand(BaseCommand):
     def add_arguments(self, parser):
         parser.add_argument(
-            "--username",
+            "--email",
             type=str,
-            help="Username of the superuser (default: email)",
+            help="Email of the superuser",
             required=False,
         )
         parser.add_argument(
@@ -34,7 +34,6 @@ class CommonCreateUserCommand(BaseCommand):
         password: str,
         is_superuser: bool,
         is_staff: bool,
-        username: str = None,
         first_name: str = "Admin",
         last_name: str = "Admin",
     ):
@@ -49,7 +48,6 @@ class CommonCreateUserCommand(BaseCommand):
 
         user = user_model(
             email=admin_email,
-            username=username or admin_email,
             first_name=first_name,
             last_name=last_name,
             is_active=True,

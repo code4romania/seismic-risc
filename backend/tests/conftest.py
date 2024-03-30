@@ -15,4 +15,4 @@ def test_user(db, django_user_model, basic_user_data):
 
 @pytest.fixture
 def basic_user_data():
-    return {"username": "testuser", "password": "testpassword"}
+    return {"email": "testuser", "password": "testpassword"}
