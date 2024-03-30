@@ -146,6 +146,7 @@ INSTALLED_APPS = [
     "django_q",
     "whitenoise.runserver_nostatic",
     # project apps
+    "users",
     "utils",
     "buildings",
     "static_custom",
@@ -222,6 +223,9 @@ CACHES = {
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
+
+
+AUTH_USER_MODEL = "users.User"
 
 
 # Password validation
