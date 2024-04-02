@@ -33,6 +33,8 @@ env = environ.Env(
     HERE_MAPS_API_KEY=(str, ""),
     DATA_UPLOAD_MAX_NUMBER_FIELDS=(int, 1000),
     BACKGROUND_WORKERS_COUNT=(int, 1),
+    DJANGO_ADMIN_EMAIL=(str, ""),
+    DJANGO_ADMIN_PASSWORD=(str, ""),
     # email settings
     EMAIL_SEND_METHOD=(str, "async"),
     EMAIL_BACKEND=(str, "django.core.mail.backends.console.EmailBackend"),
@@ -226,6 +228,8 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
 AUTH_USER_MODEL = 'users.User'
+DJANGO_ADMIN_EMAIL = env.str("DJANGO_ADMIN_EMAIL")
+DJANGO_ADMIN_PASSWORD = env.str("DJANGO_ADMIN_PASSWORD")
 
 
 # Password validation
