@@ -309,12 +309,7 @@ MEDIA_URL = f"{public_media_location}/"
 STATIC_ROOT = os.path.abspath(os.path.join(BASE_DIR, "static"))
 MEDIA_ROOT = os.path.abspath(os.path.join(BASE_DIR, "media"))
 
-DEV_DEPENDECIES_LOCATION = "bower_components"
-
-STATICFILES_DIRS = [
-    os.path.abspath(os.path.join(DEV_DEPENDECIES_LOCATION)),
-    os.path.abspath(os.path.join("static_extras")),
-]
+STATICFILES_DIRS = []
 
 default_storage_options = {}
 
