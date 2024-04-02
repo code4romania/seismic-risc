@@ -227,7 +227,7 @@ CACHES = {
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 
-AUTH_USER_MODEL = 'users.User'
+AUTH_USER_MODEL = "users.User"
 DJANGO_ADMIN_EMAIL = env.str("DJANGO_ADMIN_EMAIL")
 DJANGO_ADMIN_PASSWORD = env.str("DJANGO_ADMIN_PASSWORD")
 
