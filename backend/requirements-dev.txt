@@ -103,7 +103,7 @@ et-xmlfile==1.1.0
     #   openpyxl
 executing==2.0.1
     # via stack-data
-faker==24.2.1
+faker==24.4.0
     # via -r requirements-dev.in
 flake8==7.0.0
     # via pytest-flake8
@@ -171,7 +171,7 @@ pathspec==0.12.1
     # via black
 pexpect==4.9.0
     # via ipython
-pillow==10.2.0
+pillow==10.3.0
     # via -r requirements.txt
 pip-tools==7.4.1
     # via -r requirements-dev.in
