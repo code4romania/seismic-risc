@@ -33,6 +33,7 @@ env = environ.Env(
     HERE_MAPS_API_KEY=(str, ""),
     DATA_UPLOAD_MAX_NUMBER_FIELDS=(int, 1000),
     BACKGROUND_WORKERS_COUNT=(int, 1),
+    IS_CONTAINERIZED=(bool, True),
     DJANGO_ADMIN_EMAIL=(str, ""),
     DJANGO_ADMIN_PASSWORD=(str, ""),
     # email settings
@@ -111,6 +112,23 @@ CORS_ALLOWED_ORIGIN_REGEXES: List[str] = env.list("CORS_ALLOWED_ORIGIN_REGEXES")
 
 # Logging
 DJANGO_LOG_LEVEL = env.str("LOG_LEVEL").upper()
+
+# some settings will be different if it's not running in a container (e.g., locally, on a PC)
+IS_CONTAINERIZED = BASE_DIR.startswith(os.path.join("/", "var", "www"))  # noqa
+
+VERSION = env.str("VERSION", "edge")
+REVISION = env.str("REVISION", "develop")
+
+if IS_CONTAINERIZED and VERSION == "edge" and REVISION == "develop":
+    version_file = os.path.join(BASE_DIR, ".version")  # noqa
+    if os.path.exists(version_file):
+        with open(version_file) as f:
+            VERSION, REVISION = f.read().strip().split("+")
+
+REVISION = REVISION[:7]
+
+VERSION_SUFFIX = f"seismic@{VERSION}+{REVISION}"
+
 
 LOGGING = {
     "version": 1,
@@ -502,7 +520,7 @@ JAZZMIN_SETTINGS: Dict[str, Any] = {
     # Welcome text on the login screen
     "welcome_sign": "",
     # Copyright on the footer
-    "copyright": "Commit Global",
+    "copyright": f"Commit Global | {VERSION_SUFFIX}",
     # The model admin to search from the search bar, search bar omitted if excluded
     # "search_model": "donors.Donor",
     # The field name on the user model that contains avatar image
