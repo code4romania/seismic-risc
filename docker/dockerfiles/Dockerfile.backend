@@ -80,9 +80,6 @@ RUN . "${VIRTUAL_ENV}/bin/activate"
 ARG VERSION
 ARG REVISION
 
-ENV VERSION=${VERSION}
-ENV REVISION=${REVISION}
-
 RUN touch /var/www/seismic/.version && \
     echo "$VERSION+$(echo ${REVISION} | cut -c 1-7)" > /var/www/seismic/.version
 
