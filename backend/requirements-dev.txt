@@ -103,7 +103,7 @@ et-xmlfile==1.1.0
     #   openpyxl
 executing==2.0.1
     # via stack-data
-faker==24.2.1
+faker==24.4.0
     # via -r requirements-dev.in
 flake8==7.0.0
     # via pytest-flake8
@@ -250,7 +250,7 @@ six==1.16.0
     #   asttokens
     #   blessed
     #   python-dateutil
-sqlparse==0.4.4
+sqlparse==0.5.0
     # via
     #   -r requirements.txt
     #   django
