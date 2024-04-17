@@ -35,5 +35,5 @@ django-ses~=3.5.2
 tablib~=3.5.0
 
 # wsgi server
-gunicorn~=21.2.0
+gunicorn~=22.0.0
 gevent~=24.2.1

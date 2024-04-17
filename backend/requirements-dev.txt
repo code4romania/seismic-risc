@@ -103,7 +103,7 @@ et-xmlfile==1.1.0
     #   openpyxl
 executing==2.0.1
     # via stack-data
-faker==24.2.1
+faker==24.4.0
     # via -r requirements-dev.in
 flake8==7.0.0
     # via pytest-flake8
@@ -113,7 +113,7 @@ greenlet==3.0.3
     # via
     #   -r requirements.txt
     #   gevent
-gunicorn==21.2.0
+gunicorn==22.0.0
     # via -r requirements.txt
 inflection==0.5.1
     # via
