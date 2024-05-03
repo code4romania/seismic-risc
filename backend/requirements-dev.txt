@@ -103,7 +103,7 @@ et-xmlfile==1.1.0
     #   openpyxl
 executing==2.0.1
     # via stack-data
-faker==24.2.1
+faker==24.4.0
     # via -r requirements-dev.in
 flake8==7.0.0
     # via pytest-flake8
@@ -261,7 +261,7 @@ tablib==3.5.0
     # via
     #   -r requirements.txt
     #   django-import-export
-tqdm==4.66.2
+tqdm==4.66.3
     # via -r requirements-dev.in
 traitlets==5.14.2
     # via
