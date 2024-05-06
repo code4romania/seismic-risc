@@ -1,7 +1,7 @@
 # django
 django-debug-toolbar~=4.3.0
 django-extensions~=3.2.3
-werkzeug~=3.0.1
+werkzeug~=3.0.3
 
 # tests
 pytest~=8.1.1

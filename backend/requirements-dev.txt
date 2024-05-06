@@ -103,7 +103,7 @@ et-xmlfile==1.1.0
     #   openpyxl
 executing==2.0.1
     # via stack-data
-faker==24.2.1
+faker==24.4.0
     # via -r requirements-dev.in
 flake8==7.0.0
     # via pytest-flake8
@@ -284,7 +284,7 @@ wcwidth==0.2.13
     #   -r requirements.txt
     #   blessed
     #   prompt-toolkit
-werkzeug==3.0.1
+werkzeug==3.0.3
     # via -r requirements-dev.in
 wheel==0.43.0
     # via pip-tools
