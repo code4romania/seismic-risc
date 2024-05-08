@@ -195,7 +195,7 @@ If you didn't set up the `RUN_LOAD_INITIAL_DATA` variable, you can add dummy dat
 make build-dev
 ```
 
-If the `RUN_LOAD_INITIAL_DATA` was `yes`, then you should have dummy data but will have to create a superuser:
+If the `RUN_LOAD_INITIAL_DATA` was `True`, then you should have dummy data but will have to create a superuser:
 
 ```shell
 docker-compose exec api ./manage.py createsuperuser
