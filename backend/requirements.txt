@@ -137,7 +137,7 @@ typing-extensions==4.10.0
     # via dj-database-url
 uritemplate==4.1.1
     # via drf-spectacular
-urllib3==2.2.1
+urllib3==2.2.2
     # via botocore
 wcwidth==0.2.13
     # via blessed

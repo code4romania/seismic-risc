@@ -103,7 +103,7 @@ et-xmlfile==1.1.0
     #   openpyxl
 executing==2.0.1
     # via stack-data
-faker==24.2.1
+faker==24.4.0
     # via -r requirements-dev.in
 flake8==7.0.0
     # via pytest-flake8
@@ -275,7 +275,7 @@ uritemplate==4.1.1
     # via
     #   -r requirements.txt
     #   drf-spectacular
-urllib3==2.2.1
+urllib3==2.2.2
     # via
     #   -r requirements.txt
     #   botocore
